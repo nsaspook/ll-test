@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CMI-9705-0380-SMT-TR
+D 9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer
+K
+F https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-devices
+$ENDCMP
+#
+#End Doc Library

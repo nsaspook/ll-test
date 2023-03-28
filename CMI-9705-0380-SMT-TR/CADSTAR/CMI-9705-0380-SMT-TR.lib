@@ -1,0 +1,16 @@
+.CMI-9705-0380-SMT-TR :1 ;9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer
+CMI97050380SMTTR
+*STM LS
+*NGS
+*PLB 1="+" 2="-"
+*MXP 2
+*DFN CMI-9705-0380-SMT-TR
+~!Mouser Part Number (490-CMI97050380SMTTR)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/CUI-Devices/CMI-9705-0380-SMT-TR?qs=P1JMDcb91o7eIePojyn4BA%3D%3D)
+~!Manufacturer_Name (CUI Devices)
+~!Manufacturer_Part_Number (CMI-9705-0380-SMT-TR)
+~!Link Datasheet (https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-devices)
+~!Height (5.7mm)
+~!3D_Model (CMI-9705-0380-SMT-TR)
+CMI-9705-0380-SMT-TR
+1.1!U 2.1!U 

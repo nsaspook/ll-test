@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "CMI-9705-0380-SMT-TR"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2020-11-24-09:21:43)
+    (mountForm default
+        (footprintRef "CMI97050380SMTTR")
+        (spec "System")
+    )
+)

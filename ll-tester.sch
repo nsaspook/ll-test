@@ -17374,6 +17374,75 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="CMI-9705-0380-SMT-TR">
+<description>&lt;9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="CMI97050380SMTTR">
+<description>&lt;b&gt;CMI-9705-0380-SMT-TR-2&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="0" y="-4.95" dx="1.7" dy="1.5" layer="1"/>
+<smd name="2" x="0" y="4.95" dx="1.7" dy="1.5" layer="1"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-4.85" y1="4.85" x2="4.85" y2="4.85" width="0.2" layer="51"/>
+<wire x1="4.85" y1="4.85" x2="4.85" y2="-4.85" width="0.2" layer="51"/>
+<wire x1="4.85" y1="-4.85" x2="-4.85" y2="-4.85" width="0.2" layer="51"/>
+<wire x1="-4.85" y1="-4.85" x2="-4.85" y2="4.85" width="0.2" layer="51"/>
+<wire x1="-5.85" y1="6.7" x2="5.85" y2="6.7" width="0.1" layer="51"/>
+<wire x1="5.85" y1="6.7" x2="5.85" y2="-6.7" width="0.1" layer="51"/>
+<wire x1="5.85" y1="-6.7" x2="-5.85" y2="-6.7" width="0.1" layer="51"/>
+<wire x1="-5.85" y1="-6.7" x2="-5.85" y2="6.7" width="0.1" layer="51"/>
+<wire x1="1.2" y1="4.85" x2="4.85" y2="4.85" width="0.1" layer="21"/>
+<wire x1="4.85" y1="4.85" x2="4.85" y2="-4.85" width="0.1" layer="21"/>
+<wire x1="4.85" y1="-4.85" x2="1.2" y2="-4.85" width="0.1" layer="21"/>
+<wire x1="-1.2" y1="-4.85" x2="-4.85" y2="-4.85" width="0.1" layer="21"/>
+<wire x1="-4.85" y1="-4.85" x2="-4.85" y2="4.85" width="0.1" layer="21"/>
+<wire x1="-4.85" y1="4.85" x2="-1.2" y2="4.85" width="0.1" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="CMI-9705-0380-SMT-TR">
+<wire x1="5.08" y1="1.27" x2="7.112" y2="1.27" width="0.254" layer="94"/>
+<wire x1="9.652" y1="3.81" x2="7.112" y2="1.27" width="0.254" layer="94"/>
+<wire x1="9.652" y1="3.81" x2="9.652" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="7.112" y1="-3.81" x2="9.652" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="7.112" y1="-3.81" x2="5.08" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="5.08" y1="1.27" x2="5.08" y2="-3.81" width="0.254" layer="94"/>
+<text x="11.43" y="0" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="11.43" y="-2.54" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="+" x="0" y="0" length="middle"/>
+<pin name="-" x="0" y="-2.54" length="middle"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="CMI-9705-0380-SMT-TR" prefix="LS">
+<description>&lt;b&gt;9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-devices"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="CMI-9705-0380-SMT-TR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="CMI97050380SMTTR">
+<connects>
+<connect gate="G$1" pin="+" pad="1"/>
+<connect gate="G$1" pin="-" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer" constant="no"/>
+<attribute name="HEIGHT" value="5.7mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="CUI Devices" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="CMI-9705-0380-SMT-TR" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="490-CMI97050380SMTTR" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/CUI-Devices/CMI-9705-0380-SMT-TR?qs=P1JMDcb91o7eIePojyn4BA%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -17565,6 +17634,16 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 <part name="S4" library="PTS635SL50LFS" deviceset="PTS635SL50LFS" device=""/>
 <part name="S5" library="PTS635SL50LFS" deviceset="PTS635SL50LFS" device=""/>
 <part name="VSS10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="C24" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="C25" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="C26" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="C27" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="VSS11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VSS13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VSS14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VSS54" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="LS1" library="CMI-9705-0380-SMT-TR" deviceset="CMI-9705-0380-SMT-TR" device=""/>
+<part name="VSS55" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18192,6 +18271,41 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 </instance>
 <instance part="VSS10" gate="G$1" x="-60.96" y="-68.58" smashed="yes" rot="R270">
 <attribute name="VALUE" x="-66.04" y="-66.04" size="1.778" layer="96"/>
+</instance>
+<instance part="C24" gate="G$1" x="-66.04" y="-73.66" smashed="yes">
+<attribute name="NAME" x="-65.024" y="-73.025" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-65.024" y="-77.851" size="1.778" layer="96"/>
+</instance>
+<instance part="C25" gate="G$1" x="-66.04" y="-88.9" smashed="yes">
+<attribute name="NAME" x="-65.024" y="-88.265" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-65.024" y="-93.091" size="1.778" layer="96"/>
+</instance>
+<instance part="C26" gate="G$1" x="-66.04" y="-104.14" smashed="yes">
+<attribute name="NAME" x="-65.024" y="-103.505" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-65.024" y="-108.331" size="1.778" layer="96"/>
+</instance>
+<instance part="C27" gate="G$1" x="-66.04" y="-119.38" smashed="yes">
+<attribute name="NAME" x="-65.024" y="-118.745" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-65.024" y="-123.571" size="1.778" layer="96"/>
+</instance>
+<instance part="VSS11" gate="G$1" x="-66.04" y="-81.28" smashed="yes">
+<attribute name="VALUE" x="-68.58" y="-86.36" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="VSS13" gate="G$1" x="-66.04" y="-96.52" smashed="yes">
+<attribute name="VALUE" x="-68.58" y="-101.6" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="VSS14" gate="G$1" x="-66.04" y="-111.76" smashed="yes">
+<attribute name="VALUE" x="-68.58" y="-116.84" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="VSS54" gate="G$1" x="-66.04" y="-127" smashed="yes">
+<attribute name="VALUE" x="-68.58" y="-132.08" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="LS1" gate="G$1" x="-45.72" y="-132.08" smashed="yes">
+<attribute name="NAME" x="-34.29" y="-132.08" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="-34.29" y="-134.62" size="1.778" layer="96" align="center-left"/>
+</instance>
+<instance part="VSS55" gate="G$1" x="-45.72" y="-137.16" smashed="yes">
+<attribute name="VALUE" x="-48.26" y="-142.24" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -18855,6 +18969,31 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 <junction x="-58.42" y="-114.3"/>
 <junction x="-50.8" y="-114.3"/>
 </segment>
+<segment>
+<pinref part="C24" gate="G$1" pin="2"/>
+<pinref part="VSS11" gate="G$1" pin="VSS"/>
+<junction x="-66.04" y="-78.74"/>
+</segment>
+<segment>
+<pinref part="C25" gate="G$1" pin="2"/>
+<pinref part="VSS13" gate="G$1" pin="VSS"/>
+<junction x="-66.04" y="-93.98"/>
+</segment>
+<segment>
+<pinref part="C26" gate="G$1" pin="2"/>
+<pinref part="VSS14" gate="G$1" pin="VSS"/>
+<junction x="-66.04" y="-109.22"/>
+</segment>
+<segment>
+<pinref part="C27" gate="G$1" pin="2"/>
+<pinref part="VSS54" gate="G$1" pin="VSS"/>
+<junction x="-66.04" y="-124.46"/>
+</segment>
+<segment>
+<pinref part="LS1" gate="G$1" pin="-"/>
+<pinref part="VSS55" gate="G$1" pin="VSS"/>
+<junction x="-45.72" y="-134.62"/>
+</segment>
 </net>
 <net name="AVDD" class="2">
 <segment>
@@ -19441,6 +19580,13 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 <junction x="-73.66" y="63.5"/>
 <junction x="-60.96" y="63.5"/>
 </segment>
+<segment>
+<wire x1="-45.72" y1="-132.08" x2="-58.42" y2="-132.08" width="0.1524" layer="91"/>
+<pinref part="LS1" gate="G$1" pin="+"/>
+<label x="-58.42" y="-132.08" size="1.778" layer="95"/>
+<junction x="-58.42" y="-132.08"/>
+<junction x="-45.72" y="-132.08"/>
+</segment>
 </net>
 <net name="PWM1H" class="0">
 <segment>
@@ -19468,11 +19614,14 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 </segment>
 <segment>
 <pinref part="S4" gate="G$1" pin="NO"/>
-<wire x1="-50.8" y1="-101.6" x2="-71.12" y2="-101.6" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="-101.6" x2="-66.04" y2="-101.6" width="0.1524" layer="91"/>
+<wire x1="-66.04" y1="-101.6" x2="-71.12" y2="-101.6" width="0.1524" layer="91"/>
 <wire x1="-71.12" y1="-101.6" x2="-83.82" y2="-101.6" width="0.1524" layer="91"/>
 <junction x="-50.8" y="-101.6"/>
 <junction x="-83.82" y="-101.6"/>
 <label x="-76.2" y="-99.06" size="1.778" layer="95"/>
+<pinref part="C26" gate="G$1" pin="1"/>
+<junction x="-66.04" y="-101.6"/>
 </segment>
 </net>
 <net name="PWM4H" class="0">
@@ -19485,11 +19634,14 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 </segment>
 <segment>
 <pinref part="S5" gate="G$1" pin="NO"/>
-<wire x1="-50.8" y1="-116.84" x2="-71.12" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="-116.84" x2="-66.04" y2="-116.84" width="0.1524" layer="91"/>
+<wire x1="-66.04" y1="-116.84" x2="-71.12" y2="-116.84" width="0.1524" layer="91"/>
 <wire x1="-83.82" y1="-116.84" x2="-71.12" y2="-116.84" width="0.1524" layer="91"/>
 <junction x="-50.8" y="-116.84"/>
 <junction x="-83.82" y="-116.84"/>
 <label x="-76.2" y="-114.3" size="1.778" layer="95"/>
+<pinref part="C27" gate="G$1" pin="1"/>
+<junction x="-66.04" y="-116.84"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -19509,11 +19661,14 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 </segment>
 <segment>
 <pinref part="S2" gate="G$1" pin="NO"/>
-<wire x1="-50.8" y1="-71.12" x2="-71.12" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="-71.12" x2="-66.04" y2="-71.12" width="0.1524" layer="91"/>
+<wire x1="-66.04" y1="-71.12" x2="-71.12" y2="-71.12" width="0.1524" layer="91"/>
 <wire x1="-83.82" y1="-71.12" x2="-71.12" y2="-71.12" width="0.1524" layer="91"/>
 <junction x="-50.8" y="-71.12"/>
 <junction x="-83.82" y="-71.12"/>
 <label x="-78.74" y="-68.58" size="1.778" layer="95"/>
+<pinref part="C24" gate="G$1" pin="1"/>
+<junction x="-66.04" y="-71.12"/>
 </segment>
 </net>
 <net name="SCK1" class="0">
@@ -19549,12 +19704,15 @@ Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
 </segment>
 <segment>
 <pinref part="S3" gate="G$1" pin="NO"/>
-<wire x1="-50.8" y1="-86.36" x2="-71.12" y2="-86.36" width="0.1524" layer="91"/>
+<wire x1="-50.8" y1="-86.36" x2="-66.04" y2="-86.36" width="0.1524" layer="91"/>
+<wire x1="-66.04" y1="-86.36" x2="-71.12" y2="-86.36" width="0.1524" layer="91"/>
 <wire x1="-83.82" y1="-86.36" x2="-81.28" y2="-86.36" width="0.1524" layer="91"/>
 <junction x="-50.8" y="-86.36"/>
 <junction x="-81.28" y="-86.36"/>
 <wire x1="-81.28" y1="-86.36" x2="-71.12" y2="-86.36" width="0.1524" layer="91"/>
 <label x="-76.2" y="-83.82" size="1.778" layer="95"/>
+<pinref part="C25" gate="G$1" pin="1"/>
+<junction x="-66.04" y="-86.36"/>
 </segment>
 </net>
 <net name="PWM4EN" class="0">

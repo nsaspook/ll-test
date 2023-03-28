@@ -1,0 +1,105 @@
+
+(EDIF
+  (rename &CMI_9705_0380_SMT_TR "CMI_9705_0380_SMT_TR")
+  (EDIFVersion 2 0 0)
+  (EDIFLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timestamp 2023 03 28 03 13 51)
+      (dataOrigin "11522838/122786/2.50/2/4/Loudspeaker or Buzzer")
+      (program "SamacSys ECAD Model CMI_9705_0380_SMT_TR"
+        (version "1.2"))))
+  (library
+  (rename &CMI_9705_0380_SMT_TR "CMI_9705_0380_SMT_TR")
+    (EDIFLevel 0)
+    (technology
+      (numberDefinition (scale 1 (e 254 -6) (unit DISTANCE)))
+      (userData GRIDRESOLUTION (integer 50 50))
+      (figureGroup DEFAULT (pathWidth 10) (textHeight 100))
+      (figureGroup PROPERTY (pathWidth 10) (textHeight 90))
+      (figureGroup PINNUMBER (pathWidth 10) (textHeight 90))
+      (figureGroup PINNAME (pathWidth 10) (textHeight 90))
+      (figureGroup COMMENT (pathWidth 10) (textHeight 90))
+      (figureGroup PIN (pathWidth 10) (textHeight 90))
+      (figureGroup GRAPHIC (pathWidth 10) (textHeight 100))
+    )
+    (cell
+      (rename &CMI_9705_0380_SMT_TR "CMI_9705_0380_SMT_TR")
+      (cellType GENERIC)
+      (view
+        (rename NORMAL "Normal")
+        (viewType SCHEMATIC)
+        (interface
+          (designator "LS")
+          (property (rename PACKAGENAME "PackageName") (string "CMI_9705_0380_SMT_TR"))
+          (property (rename ISHETEROGENEOUS "IsHeterogeneous") (string "False"))
+          (property (rename DEVICESINVIEW "DevicesInView") (string "1"))
+          (property (rename DEVICESINPACKAGE "DevicesInPackage") (string "1"))
+          (property (rename DEVICEDESIGNATOR "DeviceDesignator") (string "A"))
+          (property (rename DEVICENUMBERING "DeviceNumbering") (string "Alpha"))
+          (property (rename PCB_32_FOOTPRINT "PCB Footprint") (string "CMI97050380SMTTR"))
+          (property (rename &Mouser_Part_Number "Mouser Part Number") (string "490-CMI97050380SMTTR"))
+          (property (rename &Mouser_Price_Stock "Mouser Price/Stock") (string "https://www.mouser.co.uk/ProductDetail/CUI-Devices/CMI-9705-0380-SMT-TR?qs=P1JMDcb91o7eIePojyn4BA%3D%3D"))
+          (property (rename &Manufacturer_Name "Manufacturer_Name") (string "CUI Devices"))
+          (property (rename &Manufacturer_Part_Number "Manufacturer_Part_Number") (string "CMI-9705-0380-SMT-TR"))
+          (property (rename &Description "Description") (string "9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer"))
+          (property (rename &Datasheet_Link "Datasheet Link") (string "https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-devices"))
+          (property (rename &Height "Height") (string "5.7 mm"))
+          (property (rename &_60__32_VALUE_32__62_ "Value") (string "CMI_9705_0380_SMT_TR"))
+          (property (rename VALUE "Value") (string "Value"))
+          (port
+            (rename &P "P")
+            (designator "1")
+            (property (rename ORDER "Order") (string "0") (owner "OrCAD"))
+          )
+          (port
+            (rename &M "M")
+            (designator "2")
+            (property (rename ORDER "Order") (string "1") (owner "OrCAD"))
+          )
+          (symbol
+            (portImplementation
+              (name &P (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -200) (pt 0 -200))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -200))))
+            )
+            (portImplementation
+              (name &M (display PINNAME))
+              (keywordDisplay DESIGNATOR (display PINNUMBER))
+              (figure PIN (path (pointList (pt -200 -300) (pt 0 -300))))
+              (connectLocation (figure GRAPHIC (dot (pt -200 -300))))
+            )
+            (figure GRAPHIC
+              (figureGroupOverride GRAPHIC
+                (pathWidth 10))
+              (path
+                (pointList
+                  (pt 0 -150)
+                  (pt 80 -150)
+                  (pt 180 -50)
+                  (pt 180 -450)
+                  (pt 80 -350)
+                  (pt 0 -350)
+                )
+              )
+            )
+            (figure GRAPHIC
+              (figureGroupOverride GRAPHIC
+                (pathWidth 10))
+              (path
+                (pointList
+                  (pt 0 -150)
+                  (pt 0 -350)
+                )
+              )
+            )
+            (keywordDisplay DESIGNATOR (display PROPERTY (justify LOWERLEFT) (orientation R0) (origin (pt 250 -270))))
+            (propertyDisplay &_60__32_VALUE_32__62_ (display PROPERTY (justify LOWERLEFT) (orientation R0) (origin (pt 250 -370))))
+          )
+        )
+      )
+    )
+  )
+)

@@ -1,0 +1,106 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "CMI-9705-0380-SMT-TR"
+   (description "9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer")
+   (family "ANA")
+   (package "CMI97050380SMTTR")
+   (attribute "Datasheet Link" "https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-devices")
+   (attribute "Geometry.Height" "5.7mm")
+   (attribute "Mouser Part Number" "490-CMI97050380SMTTR")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/CUI-Devices/CMI-9705-0380-SMT-TR?qs=P1JMDcb91o7eIePojyn4BA%3D%3D")
+   (attribute "Manufacturer_Name" "CUI Devices")
+   (attribute "Manufacturer_Part_Number" "CMI-9705-0380-SMT-TR")
+   (gate
+    (symbol "CMI-9705-0380-SMT-TR")
+    (pin "+" 1 PS)
+    (pin "-" 2 PS)
+   )
+  )
+  (symbol "CMI-9705-0380-SMT-TR"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 50) (pt 280 50) (pt 380 150) (pt 380 -250) (pt 280 -150) (pt 200 -150))
+   )
+   (graphic
+    (stroke 10)
+    (path (pt 200 50) (pt 200 -150))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 210 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 210 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "CMI97050380SMTTR"
+   (units MM)
+   (layer TASM
+    (graphic
+     (stroke 0.2)
+     (path
+      (closed true)
+      (pt -4.85 4.85)
+      (pt 4.85 4.85)
+      (pt 4.85 -4.85)
+      (pt -4.85 -4.85)
+      (pt -4.85 4.85))))
+   (layer OCCA
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed true)
+      (pt -5.85 6.7)
+      (pt 5.85 6.7)
+      (pt 5.85 -6.7)
+      (pt -5.85 -6.7)
+      (pt -5.85 6.7))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt 1.2 4.85)
+      (pt 4.85 4.85)
+      (pt 4.85 -4.85)
+      (pt 1.2 -4.85))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1)
+     (path
+      (closed false)
+      (pt -1.2 -4.85)
+      (pt -4.85 -4.85)
+      (pt -4.85 4.85)
+      (pt -1.2 4.85))))
+   (leg 1 (pt 0.000 -4.950) (padstack 0))
+   (leg 2 (pt 0.000 4.950) (padstack 0))
+   (padstack 0
+    (plated false)
+    (pad (layer TCOP) (rectf 1.500 1.700 0 0 0.000))
+   )
+   (model "CMI-9705-0380-SMT-TR.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

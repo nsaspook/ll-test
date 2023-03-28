@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'CMI_9705_0380_SMT_TR'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "CUI Devices", "CMI-9705-0380-SMT-TR" (!) = "", "CMI97050380SMTTR", "Other", "490-CMI97050380SMTTR", "https://www.mouser.co.uk/ProductDetail/CUI-Devices/CMI-9705-0380-SMT-TR?qs=P1JMDcb91o7eIePojyn4BA%3D%3D", "9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer", "https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-devices", "5.7 mm"
+END_PART
+
+END.
