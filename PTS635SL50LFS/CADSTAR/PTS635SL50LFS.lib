@@ -1,0 +1,16 @@
+.PTS635SL50LFS :1 ;Tactile Switches TACT
+PTS635SL50LFS
+*STM S
+*NGS
+*PLB 1="COM" 2="NO"
+*MXP 2
+*DFN PTS635SL50LFS
+~!Mouser Part Number (611-PTS635SL50LFS)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/CK/PTS635SL50LFS?qs=u2NJ%252B70r0gpkXWlfBVOo5A%3D%3D)
+~!Manufacturer_Name (C & K COMPONENTS)
+~!Manufacturer_Part_Number (PTS635SL50LFS)
+~!Link Datasheet (-)
+~!Height (5mm)
+~!3D_Model (PTS635SL50LFS)
+PTS635SL50LFS
+1.1!U 2.1!U 
