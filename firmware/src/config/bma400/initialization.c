@@ -189,9 +189,9 @@ void SYS_Initialize ( void* data )
 
 	UART1_Initialize();
 
-    TMR5_Initialize();
-
 	UART2_Initialize();
+
+    TMR5_Initialize();
 
 	SPI2_Initialize();
 

@@ -161,6 +161,15 @@
 #define DIS_MODE_Get()               ((PORTB >> 6) & 0x1U)
 #define DIS_MODE_PIN                  GPIO_PIN_RB6
 
+/*** Macros for GPIO_RB8 pin ***/
+#define GPIO_RB8_Set()               (LATBSET = (1U<<8))
+#define GPIO_RB8_Clear()             (LATBCLR = (1U<<8))
+#define GPIO_RB8_Toggle()            (LATBINV= (1U<<8))
+#define GPIO_RB8_OutputEnable()      (TRISBCLR = (1U<<8))
+#define GPIO_RB8_InputEnable()       (TRISBSET = (1U<<8))
+#define GPIO_RB8_Get()               ((PORTB >> 8) & 0x1U)
+#define GPIO_RB8_PIN                  GPIO_PIN_RB8
+
 /*** Macros for EXT_SW1 pin ***/
 #define EXT_SW1_Set()               (LATBSET = (1U<<9))
 #define EXT_SW1_Clear()             (LATBCLR = (1U<<9))
