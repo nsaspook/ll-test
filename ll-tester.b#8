@@ -1992,39 +1992,6 @@ Source: http://www.ledtronics.com/ds/smd-0603/Dstr0093.pdf</description>
 </package3d>
 </packages3d>
 </library>
-<library name="MLE-105-01-G-DV">
-<description>&lt;10 Position, 1.00 mm Tiger Beam&amp;trade; Cost-Effective Single Beam Socket Strip&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="MLE-105-01-G-DV">
-<description>&lt;b&gt;MLE-105-01-G-DV&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="2" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="2" x="2" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="3" x="1" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="4" x="1" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="5" x="0" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="6" x="0" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="7" x="-1" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="8" x="-1" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="9" x="-2" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="10" x="-2" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-2.6" y1="1.535" x2="2.6" y2="1.535" width="0.2" layer="51"/>
-<wire x1="2.6" y1="1.535" x2="2.6" y2="-1.535" width="0.2" layer="51"/>
-<wire x1="2.6" y1="-1.535" x2="-2.6" y2="-1.535" width="0.2" layer="51"/>
-<wire x1="-2.6" y1="-1.535" x2="-2.6" y2="1.535" width="0.2" layer="51"/>
-<wire x1="2.6" y1="1.535" x2="2.6" y2="-1.535" width="0.1" layer="21"/>
-<wire x1="-2.6" y1="-1.535" x2="-2.6" y2="1.535" width="0.1" layer="21"/>
-<circle x="2" y="-3.1855" radius="0.05" width="0.2" layer="25"/>
-<wire x1="-3.8" y1="3.54" x2="3.8" y2="3.54" width="0.05" layer="51"/>
-<wire x1="3.8" y1="3.54" x2="3.8" y2="-4.2855" width="0.05" layer="51"/>
-<wire x1="3.8" y1="-4.2855" x2="-3.8" y2="-4.2855" width="0.05" layer="51"/>
-<wire x1="-3.8" y1="-4.2855" x2="-3.8" y2="3.54" width="0.05" layer="51"/>
-</package>
-</packages>
-</library>
 <library name="MAX6126B30">
 <packages>
 <package name="SOP65P490X110-8N">
@@ -2966,41 +2933,11 @@ design rules under a new name.</description>
 <attribute name="POPULARITY" value="79" x="57.15" y="41.91" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="57.15" y="51.435" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="J1" library="MLE-105-01-G-DV" package="MLE-105-01-G-DV" value="MLE-105-01-G-DV" x="41.91" y="35.56" smashed="yes">
-<attribute name="DESCRIPTION" value="10 Position, 1.00 mm Tiger Beam&amp;trade; Cost-Effective Single Beam Socket Strip" x="41.91" y="35.56" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="mm" x="41.91" y="35.56" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="SAMTEC" x="41.91" y="35.56" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="MLE-105-01-G-DV" x="41.91" y="35.56" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="200-MLE10501GDV" x="41.91" y="35.56" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Samtec/MLE-105-01-G-DV?qs=rU5fayqh%252BE2dXiDvl4XeQQ%3D%3D" x="41.91" y="35.56" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="43.18" y="35.56" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="43.18" y="30.48" size="1.27" layer="27" align="center"/>
-</element>
-<element name="J2" library="MLE-105-01-G-DV" package="MLE-105-01-G-DV" value="MLE-105-01-G-DV" x="41.91" y="45.72" smashed="yes">
-<attribute name="DESCRIPTION" value="10 Position, 1.00 mm Tiger Beam&amp;trade; Cost-Effective Single Beam Socket Strip" x="41.91" y="45.72" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="mm" x="41.91" y="45.72" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="SAMTEC" x="41.91" y="45.72" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="MLE-105-01-G-DV" x="41.91" y="45.72" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="200-MLE10501GDV" x="41.91" y="45.72" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Samtec/MLE-105-01-G-DV?qs=rU5fayqh%252BE2dXiDvl4XeQQ%3D%3D" x="41.91" y="45.72" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="46.99" y="45.72" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="44.45" y="40.64" size="1.27" layer="27" align="center"/>
-</element>
 <element name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" package="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uf" x="29.21" y="20.32" smashed="yes">
 <attribute name="NAME" x="27.94" y="21.59" size="1.27" layer="25"/>
 <attribute name="POPULARITY" value="63" x="29.21" y="20.32" size="1.778" layer="27" display="off"/>
 <attribute name="SPICEPREFIX" value="C" x="29.21" y="20.32" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="27.94" y="17.78" size="1.27" layer="27"/>
-</element>
-<element name="J3" library="MLE-105-01-G-DV" package="MLE-105-01-G-DV" value="MLE-105-01-G-DV" x="41.91" y="55.88" smashed="yes">
-<attribute name="DESCRIPTION" value="10 Position, 1.00 mm Tiger Beam&amp;trade; Cost-Effective Single Beam Socket Strip" x="41.91" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="mm" x="41.91" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="SAMTEC" x="41.91" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="MLE-105-01-G-DV" x="41.91" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="200-MLE10501GDV" x="41.91" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Samtec/MLE-105-01-G-DV?qs=rU5fayqh%252BE2dXiDvl4XeQQ%3D%3D" x="41.91" y="55.88" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="46.99" y="52.07" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="53.34" y="50.8" size="1.27" layer="27" align="center"/>
 </element>
 <element name="U2" library="MAX6126B30" package="SOP65P490X110-8N" value="MAX6126B30" x="5.08" y="30.48" smashed="yes" rot="MR0">
 <attribute name="DESCRIPTION" value=" Series Voltage Reference IC Fixed 3V V ±0.1% 10 mA 8-uMAX-EP|8-uSOP-EP " x="5.08" y="30.48" size="1.778" layer="28" rot="MR0" display="off"/>
@@ -3059,16 +2996,6 @@ design rules under a new name.</description>
 <attribute name="POPULARITY" value="2" x="-2.54" y="57.15" size="1.778" layer="27" display="off"/>
 <attribute name="TP_SIGNAL_NAME" value="" x="-2.54" y="57.15" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-2.54" y="57.15" size="0.0254" layer="28" rot="MR0"/>
-</element>
-<element name="J4" library="MLE-105-01-G-DV" package="MLE-105-01-G-DV" value="MLE-105-01-G-DV" x="20.32" y="54.61" smashed="yes" rot="MR0">
-<attribute name="DESCRIPTION" value="10 Position, 1.00 mm Tiger Beam&amp;trade; Cost-Effective Single Beam Socket Strip" x="20.32" y="54.61" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="HEIGHT" value="mm" x="20.32" y="54.61" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="SAMTEC" x="20.32" y="54.61" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="MLE-105-01-G-DV" x="20.32" y="54.61" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="200-MLE10501GDV" x="20.32" y="54.61" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Samtec/MLE-105-01-G-DV?qs=rU5fayqh%252BE2dXiDvl4XeQQ%3D%3D" x="20.32" y="54.61" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="NAME" x="15.24" y="52.07" size="1.27" layer="26" rot="MR0" align="center"/>
-<attribute name="VALUE" x="13.97" y="49.53" size="1.27" layer="27" align="center"/>
 </element>
 <element name="AC1" library="SCA3300-D01-1" package="SCA3300" value="SCA3300-D01-1" x="19.05" y="41.91" smashed="yes" rot="MR0">
 <attribute name="AVAILABILITY" value="In Stock" x="19.05" y="41.91" size="1.778" layer="28" rot="MR0" display="off"/>
@@ -3491,12 +3418,8 @@ design rules under a new name.</description>
 <contactref element="C4" pad="1"/>
 <contactref element="C5" pad="1"/>
 <contactref element="R3" pad="2"/>
-<contactref element="J1" pad="10"/>
-<contactref element="J2" pad="10"/>
 <contactref element="C7" pad="1"/>
 <contactref element="JP2" pad="2"/>
-<contactref element="J4" pad="3"/>
-<contactref element="J4" pad="7"/>
 <contactref element="AC1" pad="9"/>
 <contactref element="JP5" pad="4"/>
 <contactref element="SV1" pad="6"/>
@@ -3544,9 +3467,6 @@ design rules under a new name.</description>
 <wire x1="11.18" y1="43.6499" x2="12.45" y2="47.485" width="0" layer="19" extent="1-16"/>
 <wire x1="7.1501" y1="39.62" x2="11.18" y2="43.6499" width="0" layer="19" extent="1-1"/>
 <wire x1="18.55" y1="45.845" x2="12.45" y2="47.485" width="0" layer="19" extent="16-16"/>
-<wire x1="39.91" y1="47.4055" x2="18.55" y2="45.845" width="0" layer="19" extent="1-16"/>
-<wire x1="21.32" y1="52.9245" x2="39.91" y2="47.4055" width="0" layer="19" extent="1-16"/>
-<wire x1="19.32" y1="52.9245" x2="21.32" y2="52.9245" width="0" layer="19" extent="16-16"/>
 <wire x1="13.18" y1="35.0901" x2="7.1501" y2="39.62" width="0" layer="19" extent="1-1"/>
 <wire x1="15.7099" y1="37.12" x2="13.18" y2="35.0901" width="0" layer="19" extent="1-1"/>
 <wire x1="15.47" y1="27.94" x2="13.18" y2="35.0901" width="0" layer="19" extent="1-1"/>
@@ -3554,7 +3474,6 @@ design rules under a new name.</description>
 <wire x1="22.54" y1="20.32" x2="16.51" y2="22.86" width="0" layer="19" extent="16-16"/>
 <wire x1="28.26" y1="20.32" x2="22.54" y2="20.32" width="0" layer="19" extent="1-16"/>
 <wire x1="21.59" y1="30.8" x2="15.47" y2="27.94" width="0" layer="19" extent="1-16"/>
-<wire x1="39.91" y1="37.2455" x2="18.55" y2="45.845" width="0" layer="19" extent="1-16"/>
 <wire x1="4.76" y1="20.32" x2="16.51" y2="22.86" width="0" layer="19" extent="16-16"/>
 <wire x1="2.86" y1="24.13" x2="4.76" y2="20.32" width="0" layer="19" extent="1-16"/>
 <wire x1="2.86" y1="27.94" x2="2.86" y2="24.13" width="0" layer="19" extent="1-1"/>
@@ -3569,7 +3488,7 @@ design rules under a new name.</description>
 <wire x1="-31.75" y1="21.59" x2="-24.384" y2="25.4" width="0" layer="19" extent="1-1"/>
 <wire x1="-43.18" y1="45.72" x2="-45.72" y2="70.85" width="0" layer="19" extent="1-1"/>
 <wire x1="-54.61" y1="33.02" x2="-43.18" y2="45.72" width="0" layer="19" extent="1-1"/>
-<wire x1="57.15" y1="38.1" x2="39.91" y2="37.2455" width="0" layer="19" extent="1-1"/>
+<wire x1="57.15" y1="38.1" x2="28.26" y2="20.32" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VSS" class="2">
 <contactref element="C1" pad="2"/>
@@ -3587,11 +3506,7 @@ design rules under a new name.</description>
 <contactref element="LED2" pad="C"/>
 <contactref element="C6" pad="2"/>
 <contactref element="JP1" pad="2"/>
-<contactref element="J1" pad="1"/>
-<contactref element="J2" pad="1"/>
 <contactref element="C7" pad="2"/>
-<contactref element="J3" pad="1"/>
-<contactref element="J3" pad="2"/>
 <contactref element="U2" pad="4"/>
 <contactref element="U2" pad="3"/>
 <contactref element="C8" pad="2"/>
@@ -3605,7 +3520,6 @@ design rules under a new name.</description>
 <vertex x="-57.15" y="17.78"/>
 </polygon>
 <contactref element="JP2" pad="3"/>
-<contactref element="J4" pad="8"/>
 <contactref element="IC1" pad="8"/>
 <contactref element="AC1" pad="1"/>
 <contactref element="AC1" pad="11"/>
@@ -3705,7 +3619,6 @@ design rules under a new name.</description>
 <wire x1="-6.35" y1="29.65" x2="-2.22" y2="31.75" width="0" layer="19" extent="1-1"/>
 <wire x1="21.59" y1="32.7" x2="16.83" y2="30.48" width="0" layer="19" extent="16-16"/>
 <wire x1="27.62" y1="34.29" x2="21.59" y2="32.7" width="0" layer="19" extent="16-16"/>
-<wire x1="43.91" y1="33.8745" x2="27.62" y2="34.29" width="0" layer="19" extent="1-16"/>
 <wire x1="20.64" y1="20.32" x2="13.97" y2="22.86" width="0" layer="19" extent="16-16"/>
 <wire x1="26.67" y1="24.13" x2="20.64" y2="20.32" width="0" layer="19" extent="16-16"/>
 <wire x1="29.21" y1="24.13" x2="26.67" y2="24.13" width="0" layer="19" extent="1-1"/>
@@ -3721,11 +3634,7 @@ design rules under a new name.</description>
 <wire x1="21.55" y1="45.845" x2="21.55" y2="37.975" width="0" layer="19" extent="16-16"/>
 <wire x1="20.55" y1="45.845" x2="21.55" y2="45.845" width="0" layer="19" extent="16-16"/>
 <wire x1="26.35" y1="46.99" x2="21.55" y2="45.845" width="0" layer="19" extent="16-16"/>
-<wire x1="43.91" y1="44.0345" x2="26.35" y2="46.99" width="0" layer="19" extent="1-16"/>
-<wire x1="43.91" y1="54.1945" x2="26.35" y2="46.99" width="0" layer="19" extent="1-16"/>
-<wire x1="43.91" y1="57.5655" x2="43.91" y2="54.1945" width="0" layer="19" extent="1-1"/>
-<wire x1="21.32" y1="56.2955" x2="43.91" y2="57.5655" width="0" layer="19" extent="1-16"/>
-<wire x1="13.97" y1="57.15" x2="21.32" y2="56.2955" width="0" layer="19" extent="16-16"/>
+<wire x1="13.97" y1="57.15" x2="12.95" y2="49.035" width="0" layer="19" extent="16-16"/>
 <wire x1="-29.21" y1="21.59" x2="-21.336" y2="25.4" width="0" layer="19" extent="1-1"/>
 <wire x1="-33.02" y1="45.72" x2="-15.24" y2="49.85" width="0" layer="19" extent="1-1"/>
 <wire x1="-52.07" y1="41.91" x2="-33.02" y2="45.72" width="0" layer="19" extent="1-1"/>
@@ -3778,9 +3687,7 @@ design rules under a new name.</description>
 <signal name="IMU_CS">
 <contactref element="U1" pad="41"/>
 <contactref element="IC1" pad="10"/>
-<contactref element="J4" pad="9"/>
 <contactref element="AC1" pad="5"/>
-<wire x1="13.45" y1="49.035" x2="22.32" y2="52.9245" width="0" layer="19" extent="16-16"/>
 <wire x1="12.18" y1="43.6499" x2="13.45" y2="49.035" width="0" layer="19" extent="1-16"/>
 <wire x1="17.55" y1="37.975" x2="12.18" y2="43.6499" width="0" layer="19" extent="1-16"/>
 </signal>
@@ -3803,36 +3710,28 @@ design rules under a new name.</description>
 <signal name="SCK2">
 <contactref element="U1" pad="38"/>
 <contactref element="IC1" pad="12"/>
-<contactref element="J4" pad="10"/>
 <contactref element="AC1" pad="8"/>
-<wire x1="17.55" y1="45.845" x2="22.32" y2="56.2955" width="0" layer="19" extent="16-16"/>
 <wire x1="13.68" y1="43.6499" x2="17.55" y2="45.845" width="0" layer="19" extent="1-16"/>
 <wire x1="13.475" y1="48.01" x2="13.68" y2="43.6499" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="SDO2">
 <contactref element="U1" pad="39"/>
 <contactref element="IC1" pad="2"/>
-<contactref element="J4" pad="2"/>
 <contactref element="AC1" pad="7"/>
-<wire x1="12.95" y1="47.485" x2="18.32" y2="56.2955" width="0" layer="19" extent="16-16"/>
+<wire x1="12.95" y1="47.485" x2="16.55" y2="45.845" width="0" layer="19" extent="16-16"/>
 <wire x1="13.18" y1="43.6499" x2="12.95" y2="47.485" width="0" layer="19" extent="1-16"/>
-<wire x1="16.55" y1="45.845" x2="12.95" y2="47.485" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="SDI2">
 <contactref element="U1" pad="40"/>
 <contactref element="IC1" pad="1"/>
-<contactref element="J4" pad="1"/>
 <contactref element="AC1" pad="6"/>
-<wire x1="13.45" y1="47.485" x2="18.32" y2="52.9245" width="0" layer="19" extent="16-16"/>
 <wire x1="12.68" y1="43.6499" x2="13.45" y2="47.485" width="0" layer="19" extent="1-16"/>
 <wire x1="16.55" y1="37.975" x2="12.68" y2="43.6499" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="EXT_INT2">
 <contactref element="U1" pad="35"/>
 <contactref element="IC1" pad="5"/>
-<contactref element="J4" pad="5"/>
-<wire x1="11.925" y1="48.01" x2="20.32" y2="52.9245" width="0" layer="19" extent="16-16"/>
-<wire x1="15.7099" y1="41.62" x2="11.925" y2="48.01" width="0" layer="19" extent="1-16"/>
+<wire x1="11.925" y1="48.01" x2="15.7099" y2="41.62" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="PGD_C1TX">
 <contactref element="JP2" pad="4"/>
@@ -3850,91 +3749,69 @@ design rules under a new name.</description>
 </signal>
 <signal name="U1RX">
 <contactref element="U1" pad="18"/>
-<contactref element="J1" pad="2"/>
 <contactref element="SV1" pad="3"/>
 <contactref element="UART_POINTS" pad="1"/>
-<wire x1="11.18" y1="35.0901" x2="43.91" y2="37.2455" width="0" layer="19" extent="1-1"/>
 <wire x1="-6.35" y1="44.45" x2="11.18" y2="35.0901" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.13" y1="31.75" x2="-6.35" y2="44.45" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="U1TX">
-<contactref element="J1" pad="3"/>
 <contactref element="U1" pad="17"/>
 <contactref element="SV1" pad="2"/>
 <contactref element="UART_POINTS" pad="2"/>
-<wire x1="10.68" y1="35.0901" x2="42.91" y2="33.8745" width="0" layer="19" extent="1-1"/>
 <wire x1="-6.35" y1="41.91" x2="10.68" y2="35.0901" width="0" layer="19" extent="1-1"/>
 <wire x1="-21.59" y1="31.75" x2="-6.35" y2="41.91" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DIS_RESET">
 <contactref element="U1" pad="37"/>
-<contactref element="J1" pad="4"/>
 <contactref element="SV2" pad="6"/>
 <contactref element="LCD2" pad="37"/>
 <contactref element="SJ5" pad="1"/>
 <wire x1="25.146" y1="67.31" x2="-16.51" y2="142.24" width="0" layer="19" extent="1-1"/>
 <wire x1="14.18" y1="43.6499" x2="25.146" y2="67.31" width="0" layer="19" extent="1-1"/>
-<wire x1="42.91" y1="37.2455" x2="14.18" y2="43.6499" width="0" layer="19" extent="1-1"/>
 <wire x1="-34.29" y1="21.59" x2="14.18" y2="43.6499" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDI1">
 <contactref element="U1" pad="24"/>
-<contactref element="J1" pad="5"/>
 <contactref element="SV2" pad="1"/>
-<wire x1="14.18" y1="35.0901" x2="41.91" y2="33.8745" width="0" layer="19" extent="1-1"/>
 <wire x1="-46.99" y1="21.59" x2="14.18" y2="35.0901" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SDO1">
 <contactref element="U1" pad="31"/>
-<contactref element="J1" pad="7"/>
 <contactref element="SV2" pad="2"/>
 <contactref element="R15" pad="2"/>
 <wire x1="15.7099" y1="39.62" x2="-18.1" y2="146.05" width="0" layer="19" extent="1-1"/>
-<wire x1="40.91" y1="33.8745" x2="15.7099" y2="39.62" width="0" layer="19" extent="1-1"/>
 <wire x1="-44.45" y1="21.59" x2="15.7099" y2="39.62" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DIS_MODE">
 <contactref element="U1" pad="32"/>
-<contactref element="J1" pad="9"/>
 <contactref element="SV2" pad="4"/>
 <contactref element="R17" pad="2"/>
 <wire x1="15.7099" y1="40.12" x2="-11.75" y2="151.13" width="0" layer="19" extent="1-1"/>
-<wire x1="39.91" y1="33.8745" x2="15.7099" y2="40.12" width="0" layer="19" extent="1-1"/>
 <wire x1="-39.37" y1="21.59" x2="15.7099" y2="40.12" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="DIS_CS">
 <contactref element="U1" pad="8"/>
-<contactref element="J1" pad="6"/>
 <contactref element="SV2" pad="5"/>
 <contactref element="R18" pad="2"/>
 <wire x1="7.1501" y1="38.62" x2="-11.75" y2="146.05" width="0" layer="19" extent="1-1"/>
-<wire x1="41.91" y1="37.2455" x2="7.1501" y2="38.62" width="0" layer="19" extent="1-1"/>
 <wire x1="-36.83" y1="21.59" x2="7.1501" y2="38.62" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="EXT_SW2">
 <contactref element="U1" pad="7"/>
-<contactref element="J2" pad="8"/>
-<wire x1="7.1501" y1="39.12" x2="40.91" y2="47.4055" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="AN0">
 <contactref element="U1" pad="9"/>
-<contactref element="J2" pad="3"/>
-<wire x1="7.1501" y1="38.12" x2="42.91" y2="44.0345" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="AN1">
 <contactref element="U1" pad="10"/>
-<contactref element="J2" pad="5"/>
-<wire x1="7.1501" y1="37.62" x2="41.91" y2="44.0345" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="VREF+">
 <contactref element="U1" pad="12"/>
-<contactref element="J2" pad="7"/>
 <contactref element="U2" pad="6"/>
 <contactref element="U2" pad="7"/>
 <contactref element="C9" pad="1"/>
 <contactref element="C11" pad="1"/>
 <contactref element="VREF_TP" pad="TP"/>
-<wire x1="18.73" y1="30.48" x2="40.91" y2="44.0345" width="0" layer="19" extent="1-16"/>
 <wire x1="7.1501" y1="36.62" x2="18.73" y2="30.48" width="0" layer="19" extent="1-16"/>
 <wire x1="2.915" y1="30.805" x2="7.1501" y2="36.62" width="0" layer="19" extent="1-16"/>
 <wire x1="2.915" y1="30.155" x2="2.915" y2="30.805" width="0" layer="19" extent="16-16"/>
@@ -3943,53 +3820,37 @@ design rules under a new name.</description>
 </signal>
 <signal name="DAC1">
 <contactref element="U1" pad="33"/>
-<contactref element="J2" pad="9"/>
-<wire x1="15.7099" y1="40.62" x2="39.91" y2="44.0345" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="QEA2">
-<contactref element="J2" pad="2"/>
 <contactref element="U1" pad="44"/>
 <contactref element="SV2" pad="9"/>
-<wire x1="10.68" y1="43.6499" x2="43.91" y2="47.4055" width="0" layer="19" extent="1-1"/>
 <wire x1="-26.67" y1="21.59" x2="10.68" y2="43.6499" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="QEB2">
 <contactref element="U1" pad="47"/>
-<contactref element="J2" pad="4"/>
 <contactref element="SV2" pad="10"/>
 <contactref element="SJ5" pad="3"/>
-<wire x1="42.91" y1="47.4055" x2="28.194" y2="67.31" width="0" layer="19" extent="1-1"/>
-<wire x1="9.18" y1="43.6499" x2="42.91" y2="47.4055" width="0" layer="19" extent="1-1"/>
+<wire x1="9.18" y1="43.6499" x2="28.194" y2="67.31" width="0" layer="19" extent="1-1"/>
 <wire x1="-24.13" y1="21.59" x2="9.18" y2="43.6499" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="INDX2">
 <contactref element="U1" pad="46"/>
-<contactref element="J2" pad="6"/>
-<wire x1="9.68" y1="43.6499" x2="41.91" y2="47.4055" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PWM1L">
 <contactref element="U1" pad="3"/>
-<contactref element="J3" pad="7"/>
 <contactref element="SV1" pad="4"/>
-<wire x1="7.1501" y1="41.12" x2="40.91" y2="54.1945" width="0" layer="19" extent="1-1"/>
 <wire x1="-6.35" y1="46.99" x2="7.1501" y2="41.12" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PWM1H">
 <contactref element="U1" pad="2"/>
-<contactref element="J3" pad="9"/>
 <contactref element="SV1" pad="1"/>
-<wire x1="7.1501" y1="41.62" x2="39.91" y2="54.1945" width="0" layer="19" extent="1-1"/>
 <wire x1="-6.35" y1="39.37" x2="7.1501" y2="41.62" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PWM4L">
 <contactref element="U1" pad="1"/>
-<contactref element="J3" pad="8"/>
-<wire x1="7.1501" y1="42.12" x2="40.91" y2="57.5655" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PWM4H">
 <contactref element="U1" pad="48"/>
-<contactref element="J3" pad="10"/>
-<wire x1="8.68" y1="43.6499" x2="39.91" y2="57.5655" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$4">
 <contactref element="U2" pad="1"/>
@@ -3998,32 +3859,22 @@ design rules under a new name.</description>
 </signal>
 <signal name="PWM1EN">
 <contactref element="U1" pad="30"/>
-<contactref element="J3" pad="5"/>
-<wire x1="15.7099" y1="39.12" x2="41.91" y2="54.1945" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="SCK1">
 <contactref element="U1" pad="34"/>
-<contactref element="J1" pad="8"/>
 <contactref element="SV2" pad="3"/>
 <contactref element="R16" pad="2"/>
 <wire x1="15.7099" y1="41.12" x2="-18.1" y2="151.13" width="0" layer="19" extent="1-1"/>
-<wire x1="40.91" y1="37.2455" x2="15.7099" y2="41.12" width="0" layer="19" extent="1-1"/>
 <wire x1="-41.91" y1="21.59" x2="15.7099" y2="41.12" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PWM1ER">
 <contactref element="U1" pad="36"/>
-<contactref element="J3" pad="3"/>
-<wire x1="15.7099" y1="42.12" x2="42.91" y2="54.1945" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PWM4EN">
 <contactref element="U1" pad="45"/>
-<contactref element="J3" pad="6"/>
-<wire x1="10.18" y1="43.6499" x2="41.91" y2="57.5655" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="PWM4ER">
 <contactref element="U1" pad="23"/>
-<contactref element="J3" pad="4"/>
-<wire x1="13.68" y1="35.0901" x2="42.91" y2="57.5655" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="U1" pad="20"/>
@@ -4034,8 +3885,6 @@ design rules under a new name.</description>
 <contactref element="U1" pad="11"/>
 <contactref element="TP3" pad="TP"/>
 <contactref element="IC1" pad="6"/>
-<contactref element="J4" pad="6"/>
-<wire x1="11.925" y1="48.51" x2="20.32" y2="56.2955" width="0" layer="19" extent="16-16"/>
 <wire x1="7.1501" y1="37.12" x2="11.925" y2="48.51" width="0" layer="19" extent="1-16"/>
 <wire x1="-1.27" y1="52.07" x2="11.925" y2="48.51" width="0" layer="19" extent="16-16"/>
 </signal>
