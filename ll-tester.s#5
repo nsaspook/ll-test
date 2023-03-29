@@ -14102,94 +14102,6 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="MLE-105-01-G-DV">
-<description>&lt;10 Position, 1.00 mm Tiger Beam&amp;trade; Cost-Effective Single Beam Socket Strip&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="MLE-105-01-G-DV">
-<description>&lt;b&gt;MLE-105-01-G-DV&lt;/b&gt;&lt;br&gt;
-</description>
-<smd name="1" x="2" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="2" x="2" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="3" x="1" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="4" x="1" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="5" x="0" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="6" x="0" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="7" x="-1" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="8" x="-1" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="9" x="-2" y="-1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<smd name="10" x="-2" y="1.6855" dx="1.709" dy="0.61" layer="1" rot="R90"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-2.6" y1="1.535" x2="2.6" y2="1.535" width="0.2" layer="51"/>
-<wire x1="2.6" y1="1.535" x2="2.6" y2="-1.535" width="0.2" layer="51"/>
-<wire x1="2.6" y1="-1.535" x2="-2.6" y2="-1.535" width="0.2" layer="51"/>
-<wire x1="-2.6" y1="-1.535" x2="-2.6" y2="1.535" width="0.2" layer="51"/>
-<wire x1="2.6" y1="1.535" x2="2.6" y2="-1.535" width="0.1" layer="21"/>
-<wire x1="-2.6" y1="-1.535" x2="-2.6" y2="1.535" width="0.1" layer="21"/>
-<circle x="2" y="-3.1855" radius="0.05" width="0.2" layer="25"/>
-<wire x1="-3.8" y1="3.54" x2="3.8" y2="3.54" width="0.05" layer="51"/>
-<wire x1="3.8" y1="3.54" x2="3.8" y2="-4.2855" width="0.05" layer="51"/>
-<wire x1="3.8" y1="-4.2855" x2="-3.8" y2="-4.2855" width="0.05" layer="51"/>
-<wire x1="-3.8" y1="-4.2855" x2="-3.8" y2="3.54" width="0.05" layer="51"/>
-</package>
-</packages>
-<symbols>
-<symbol name="MLE-105-01-G-DV">
-<wire x1="5.08" y1="2.54" x2="17.78" y2="2.54" width="0.254" layer="94"/>
-<wire x1="17.78" y1="-12.7" x2="17.78" y2="2.54" width="0.254" layer="94"/>
-<wire x1="17.78" y1="-12.7" x2="5.08" y2="-12.7" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-12.7" width="0.254" layer="94"/>
-<text x="19.05" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="19.05" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="1" x="0" y="-10.16" length="middle"/>
-<pin name="2" x="22.86" y="-10.16" length="middle" rot="R180"/>
-<pin name="3" x="0" y="-7.62" length="middle"/>
-<pin name="4" x="22.86" y="-7.62" length="middle" rot="R180"/>
-<pin name="5" x="0" y="-5.08" length="middle"/>
-<pin name="6" x="22.86" y="-5.08" length="middle" rot="R180"/>
-<pin name="7" x="0" y="-2.54" length="middle"/>
-<pin name="8" x="22.86" y="-2.54" length="middle" rot="R180"/>
-<pin name="9" x="0" y="0" length="middle"/>
-<pin name="10" x="22.86" y="0" length="middle" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="MLE-105-01-G-DV" prefix="J">
-<description>&lt;b&gt;10 Position, 1.00 mm Tiger Beam&amp;trade; Cost-Effective Single Beam Socket Strip&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="http://suddendocs.samtec.com/prints/mle-1xx-xx-x-dv-x-mkt1.pdf"&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="MLE-105-01-G-DV" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="MLE-105-01-G-DV">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="10" pad="10"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
-<connect gate="G$1" pin="7" pad="7"/>
-<connect gate="G$1" pin="8" pad="8"/>
-<connect gate="G$1" pin="9" pad="9"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="10 Position, 1.00 mm Tiger Beam&amp;trade; Cost-Effective Single Beam Socket Strip" constant="no"/>
-<attribute name="HEIGHT" value="mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="SAMTEC" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="MLE-105-01-G-DV" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="200-MLE10501GDV" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Samtec/MLE-105-01-G-DV?qs=rU5fayqh%252BE2dXiDvl4XeQQ%3D%3D" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="MAX6126B30">
 <packages>
 <package name="SOP65P490X110-8N">
@@ -17439,17 +17351,9 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="RESET_JMP"/>
 <part name="VSS8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X6" device="" package3d_urn="urn:adsk.eagle:package:22472/2" value="ICSP"/>
-<part name="J1" library="MLE-105-01-G-DV" deviceset="MLE-105-01-G-DV" device=""/>
-<part name="J2" library="MLE-105-01-G-DV" deviceset="MLE-105-01-G-DV" device=""/>
-<part name="VSS10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
-<part name="VSS11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
-<part name="VDD4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="VDD5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="C7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uf"/>
 <part name="VSS12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
-<part name="J3" library="MLE-105-01-G-DV" deviceset="MLE-105-01-G-DV" device=""/>
-<part name="VSS13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
-<part name="VSS14" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="U2" library="MAX6126B30" deviceset="MAX6126B30" device=""/>
 <part name="VSS15" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="C8" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
@@ -17465,7 +17369,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <part name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1"/>
 <part name="GLED" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1"/>
 <part name="VSS20" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
-<part name="J4" library="MLE-105-01-G-DV" deviceset="MLE-105-01-G-DV" device=""/>
 <part name="VSS9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="AC1" library="SCA3300-D01-1" deviceset="SCA3300-D01-1" device=""/>
 <part name="C12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.01uf"/>
@@ -17695,23 +17598,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <attribute name="NAME" x="44.45" y="-15.875" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="44.45" y="5.08" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="J1" gate="G$1" x="170.18" y="129.54" smashed="yes">
-<attribute name="NAME" x="189.23" y="137.16" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="189.23" y="134.62" size="1.778" layer="96" align="center-left"/>
-</instance>
-<instance part="J2" gate="G$1" x="170.18" y="93.98" smashed="yes">
-<attribute name="NAME" x="189.23" y="101.6" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="189.23" y="99.06" size="1.778" layer="96" align="center-left"/>
-</instance>
-<instance part="VSS10" gate="G$1" x="170.18" y="116.84" smashed="yes">
-<attribute name="VALUE" x="167.64" y="111.76" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="VSS11" gate="G$1" x="170.18" y="81.28" smashed="yes">
-<attribute name="VALUE" x="167.64" y="76.2" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="VDD4" gate="G$1" x="193.04" y="132.08" smashed="yes">
-<attribute name="VALUE" x="190.5" y="129.54" size="1.778" layer="96" rot="R90"/>
-</instance>
 <instance part="VDD5" gate="G$1" x="193.04" y="96.52" smashed="yes">
 <attribute name="VALUE" x="190.5" y="93.98" size="1.778" layer="96" rot="R90"/>
 </instance>
@@ -17721,16 +17607,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 </instance>
 <instance part="VSS12" gate="G$1" x="213.36" y="83.82" smashed="yes">
 <attribute name="VALUE" x="210.82" y="78.74" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="J3" gate="G$1" x="170.18" y="-5.08" smashed="yes">
-<attribute name="NAME" x="189.23" y="2.54" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="189.23" y="0" size="1.778" layer="96" align="center-left"/>
-</instance>
-<instance part="VSS13" gate="G$1" x="170.18" y="-17.78" smashed="yes">
-<attribute name="VALUE" x="167.64" y="-22.86" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="VSS14" gate="G$1" x="193.04" y="-17.78" smashed="yes">
-<attribute name="VALUE" x="190.5" y="-22.86" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="U2" gate="A" x="99.06" y="-17.78" smashed="yes">
 <attribute name="NAME" x="86.36" y="-1.54" size="2.0828" layer="95" ratio="10" rot="SR0"/>
@@ -17785,10 +17661,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 </instance>
 <instance part="VSS20" gate="G$1" x="91.44" y="137.16" smashed="yes" rot="R270">
 <attribute name="VALUE" x="86.36" y="139.7" size="1.778" layer="96"/>
-</instance>
-<instance part="J4" gate="G$1" x="132.08" y="147.32" smashed="yes">
-<attribute name="NAME" x="151.13" y="154.94" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="151.13" y="152.4" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="VSS9" gate="G$1" x="93.98" y="139.7" smashed="yes" rot="R270">
 <attribute name="VALUE" x="88.9" y="142.24" size="1.778" layer="96"/>
@@ -18301,14 +18173,7 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="-17.78" y="111.76"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="10"/>
-<pinref part="VDD4" gate="G$1" pin="VDD"/>
-<junction x="193.04" y="129.54"/>
-</segment>
-<segment>
-<pinref part="J2" gate="G$1" pin="10"/>
 <pinref part="VDD5" gate="G$1" pin="VDD"/>
-<junction x="193.04" y="93.98"/>
 <pinref part="C7" gate="G$1" pin="1"/>
 <wire x1="213.36" y1="93.98" x2="193.04" y2="93.98" width="0.1524" layer="91"/>
 <junction x="213.36" y="93.98"/>
@@ -18319,18 +18184,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="40.64" y="-10.16"/>
 <junction x="53.34" y="-10.16"/>
 <label x="58.42" y="-10.16" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="132.08" y1="139.7" x2="121.92" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="3"/>
-<label x="124.46" y="139.7" size="1.778" layer="95"/>
-<junction x="132.08" y="139.7"/>
-</segment>
-<segment>
-<wire x1="132.08" y1="144.78" x2="119.38" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="7"/>
-<label x="121.92" y="144.78" size="1.778" layer="95"/>
-<junction x="132.08" y="144.78"/>
 </segment>
 <segment>
 <wire x1="15.24" y1="-27.94" x2="5.08" y2="-27.94" width="0.1524" layer="91"/>
@@ -18580,29 +18433,9 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="-7.62" y="99.06"/>
 </segment>
 <segment>
-<pinref part="J1" gate="G$1" pin="1"/>
-<pinref part="VSS10" gate="G$1" pin="VSS"/>
-<junction x="170.18" y="119.38"/>
-</segment>
-<segment>
-<pinref part="J2" gate="G$1" pin="1"/>
-<pinref part="VSS11" gate="G$1" pin="VSS"/>
-<junction x="170.18" y="83.82"/>
-</segment>
-<segment>
 <pinref part="C7" gate="G$1" pin="2"/>
 <pinref part="VSS12" gate="G$1" pin="VSS"/>
 <junction x="213.36" y="86.36"/>
-</segment>
-<segment>
-<pinref part="J3" gate="G$1" pin="1"/>
-<pinref part="VSS13" gate="G$1" pin="VSS"/>
-<junction x="170.18" y="-15.24"/>
-</segment>
-<segment>
-<pinref part="J3" gate="G$1" pin="2"/>
-<pinref part="VSS14" gate="G$1" pin="VSS"/>
-<junction x="193.04" y="-15.24"/>
 </segment>
 <segment>
 <pinref part="U2" gate="A" pin="GNDS"/>
@@ -18640,12 +18473,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="40.64" y="-7.62"/>
 <junction x="53.34" y="-7.62"/>
 <label x="58.42" y="-7.62" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="167.64" y1="144.78" x2="154.94" y2="144.78" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="8"/>
-<label x="167.64" y="144.78" size="1.778" layer="95"/>
-<junction x="154.94" y="144.78"/>
 </segment>
 <segment>
 <wire x1="96.52" y1="132.08" x2="96.52" y2="139.7" width="0.1524" layer="91"/>
@@ -18903,7 +18730,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <pinref part="GND19" gate="1" pin="GND"/>
 <pinref part="VSS51" gate="G$1" pin="VSS"/>
 <junction x="30.48" y="-193.04"/>
-<pinref part="VSS51" gate="G$1" pin="VSS"/>
 </segment>
 <segment>
 <pinref part="C34" gate="G$1" pin="2"/>
@@ -19020,12 +18846,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="78.74" y="132.08"/>
 </segment>
 <segment>
-<wire x1="119.38" y1="147.32" x2="132.08" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="9"/>
-<label x="121.92" y="147.32" size="1.778" layer="95"/>
-<junction x="132.08" y="147.32"/>
-</segment>
-<segment>
 <wire x1="-43.18" y1="-33.02" x2="-30.48" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="AC1" gate="G$1" pin="CSB"/>
 <label x="-43.18" y="-33.02" size="1.778" layer="95"/>
@@ -19083,12 +18903,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="68.58" y="111.76"/>
 </segment>
 <segment>
-<wire x1="154.94" y1="147.32" x2="167.64" y2="147.32" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="10"/>
-<label x="165.1" y="147.32" size="1.778" layer="95"/>
-<junction x="154.94" y="147.32"/>
-</segment>
-<segment>
 <wire x1="5.08" y1="-25.4" x2="17.78" y2="-25.4" width="0.1524" layer="91"/>
 <pinref part="AC1" gate="G$1" pin="SCK"/>
 <label x="12.7" y="-25.4" size="1.778" layer="95"/>
@@ -19110,12 +18924,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="86.36" y="86.36" size="1.778" layer="95"/>
 <junction x="93.98" y="93.98"/>
 <junction x="93.98" y="81.28"/>
-</segment>
-<segment>
-<wire x1="167.64" y1="137.16" x2="154.94" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="2"/>
-<label x="165.1" y="137.16" size="1.778" layer="95"/>
-<junction x="154.94" y="137.16"/>
 </segment>
 <segment>
 <wire x1="17.78" y1="-22.86" x2="5.08" y2="-22.86" width="0.1524" layer="91"/>
@@ -19141,12 +18949,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="78.74" y="93.98"/>
 </segment>
 <segment>
-<wire x1="119.38" y1="137.16" x2="132.08" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="1"/>
-<label x="121.92" y="137.16" size="1.778" layer="95"/>
-<junction x="132.08" y="137.16"/>
-</segment>
-<segment>
 <wire x1="-43.18" y1="-35.56" x2="-30.48" y2="-35.56" width="0.1524" layer="91"/>
 <pinref part="AC1" gate="G$1" pin="MISO"/>
 <label x="-43.18" y="-35.56" size="1.778" layer="95"/>
@@ -19170,12 +18972,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="109.22" y="111.76"/>
 <junction x="121.92" y="111.76"/>
 <label x="116.84" y="109.22" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="119.38" y1="142.24" x2="132.08" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="5"/>
-<label x="121.92" y="142.24" size="1.778" layer="95"/>
-<junction x="132.08" y="142.24"/>
 </segment>
 </net>
 <net name="PGD_C1TX" class="0">
@@ -19233,13 +19029,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="-30.48" y="27.94"/>
 </segment>
 <segment>
-<wire x1="205.74" y1="119.38" x2="193.04" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="2"/>
-<label x="208.28" y="119.38" size="1.778" layer="95"/>
-<junction x="193.04" y="119.38"/>
-<junction x="205.74" y="119.38"/>
-</segment>
-<segment>
 <wire x1="-60.96" y1="60.96" x2="-73.66" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="SV1" gate="1" pin="3"/>
 <junction x="-73.66" y="60.96"/>
@@ -19255,13 +19044,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 </segment>
 </net>
 <net name="U1TX" class="0">
-<segment>
-<wire x1="170.18" y1="121.92" x2="157.48" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="3"/>
-<label x="147.32" y="121.92" size="1.778" layer="95"/>
-<junction x="170.18" y="121.92"/>
-<junction x="157.48" y="121.92"/>
-</segment>
 <segment>
 <wire x1="-17.78" y1="30.48" x2="-30.48" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="U1" gate="A" pin="OA3OUT/AN6/CVD6/C3IN4-/C4IN1+/C4IN4-/RPC0/RC0"/>
@@ -19291,13 +19073,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="215.9" y="43.18" size="1.778" layer="95"/>
 <junction x="200.66" y="43.18"/>
 <junction x="213.36" y="43.18"/>
-</segment>
-<segment>
-<wire x1="193.04" y1="121.92" x2="205.74" y2="121.92" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="4"/>
-<label x="208.28" y="121.92" size="1.778" layer="95"/>
-<junction x="193.04" y="121.92"/>
-<junction x="205.74" y="121.92"/>
 </segment>
 <segment>
 <wire x1="-99.06" y1="7.62" x2="-86.36" y2="7.62" width="0.1524" layer="91"/>
@@ -19332,13 +19107,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="-17.78" y="12.7"/>
 </segment>
 <segment>
-<wire x1="170.18" y1="124.46" x2="157.48" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="5"/>
-<junction x="170.18" y="124.46"/>
-<junction x="157.48" y="124.46"/>
-<label x="147.32" y="124.46" size="1.778" layer="95"/>
-</segment>
-<segment>
 <wire x1="-86.36" y1="-5.08" x2="-99.06" y2="-5.08" width="0.1524" layer="91"/>
 <pinref part="SV2" gate="1" pin="1"/>
 <label x="-83.82" y="-5.08" size="1.778" layer="95"/>
@@ -19359,13 +19127,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="215.9" y="27.94" size="1.778" layer="95"/>
 <junction x="200.66" y="27.94"/>
 <junction x="213.36" y="27.94"/>
-</segment>
-<segment>
-<wire x1="157.48" y1="127" x2="170.18" y2="127" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="7"/>
-<label x="147.32" y="127" size="1.778" layer="95"/>
-<junction x="157.48" y="127"/>
-<junction x="170.18" y="127"/>
 </segment>
 <segment>
 <wire x1="-99.06" y1="-2.54" x2="-86.36" y2="-2.54" width="0.1524" layer="91"/>
@@ -19391,13 +19152,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="213.36" y="30.48"/>
 </segment>
 <segment>
-<wire x1="157.48" y1="129.54" x2="170.18" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="9"/>
-<label x="142.24" y="129.54" size="1.778" layer="95"/>
-<junction x="170.18" y="129.54"/>
-<junction x="157.48" y="129.54"/>
-</segment>
-<segment>
 <wire x1="-99.06" y1="2.54" x2="-86.36" y2="2.54" width="0.1524" layer="91"/>
 <pinref part="SV2" gate="1" pin="4"/>
 <label x="-86.36" y="2.54" size="1.778" layer="95"/>
@@ -19419,13 +19173,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="-40.64" y="53.34" size="1.778" layer="95"/>
 <junction x="-17.78" y="53.34"/>
 <junction x="-30.48" y="53.34"/>
-</segment>
-<segment>
-<wire x1="205.74" y1="124.46" x2="193.04" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="6"/>
-<label x="208.28" y="124.46" size="1.778" layer="95"/>
-<junction x="193.04" y="124.46"/>
-<junction x="205.74" y="124.46"/>
 </segment>
 <segment>
 <wire x1="-86.36" y1="5.08" x2="-99.06" y2="5.08" width="0.1524" layer="91"/>
@@ -19450,13 +19197,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="-17.78" y="55.88"/>
 <junction x="-30.48" y="55.88"/>
 </segment>
-<segment>
-<wire x1="205.74" y1="91.44" x2="193.04" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="8"/>
-<label x="198.12" y="91.44" size="1.778" layer="95"/>
-<junction x="193.04" y="91.44"/>
-<junction x="205.74" y="91.44"/>
-</segment>
 </net>
 <net name="AN0" class="0">
 <segment>
@@ -19465,13 +19205,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="-40.64" y="50.8" size="1.778" layer="95"/>
 <junction x="-17.78" y="50.8"/>
 <junction x="-30.48" y="50.8"/>
-</segment>
-<segment>
-<wire x1="170.18" y1="86.36" x2="157.48" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="3"/>
-<label x="147.32" y="86.36" size="1.778" layer="95"/>
-<junction x="170.18" y="86.36"/>
-<junction x="157.48" y="86.36"/>
 </segment>
 </net>
 <net name="AN1" class="0">
@@ -19482,13 +19215,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="-17.78" y="48.26"/>
 <junction x="-30.48" y="48.26"/>
 </segment>
-<segment>
-<wire x1="170.18" y1="88.9" x2="157.48" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="5"/>
-<label x="147.32" y="88.9" size="1.778" layer="95"/>
-<junction x="170.18" y="88.9"/>
-<junction x="157.48" y="88.9"/>
-</segment>
 </net>
 <net name="VREF+" class="0">
 <segment>
@@ -19497,13 +19223,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="-43.18" y="43.18" size="1.778" layer="95"/>
 <junction x="-17.78" y="43.18"/>
 <junction x="-30.48" y="43.18"/>
-</segment>
-<segment>
-<wire x1="170.18" y1="91.44" x2="157.48" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="7"/>
-<label x="147.32" y="91.44" size="1.778" layer="95"/>
-<junction x="170.18" y="91.44"/>
-<junction x="157.48" y="91.44"/>
 </segment>
 <segment>
 <pinref part="U2" gate="A" pin="OUTS"/>
@@ -19533,22 +19252,8 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="200.66" y="33.02"/>
 <junction x="213.36" y="33.02"/>
 </segment>
-<segment>
-<wire x1="157.48" y1="93.98" x2="170.18" y2="93.98" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="9"/>
-<junction x="170.18" y="93.98"/>
-<junction x="157.48" y="93.98"/>
-<label x="147.32" y="93.98" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="QEA2" class="0">
-<segment>
-<wire x1="193.04" y1="83.82" x2="205.74" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="2"/>
-<label x="198.12" y="81.28" size="1.778" layer="95"/>
-<junction x="193.04" y="83.82"/>
-<junction x="205.74" y="83.82"/>
-</segment>
 <segment>
 <wire x1="200.66" y1="60.96" x2="213.36" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="U1" gate="A" pin="RPB10/PWM3H/RB10"/>
@@ -19577,13 +19282,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="215.9" y="68.58" size="1.778" layer="95"/>
 <junction x="200.66" y="68.58"/>
 <junction x="213.36" y="68.58"/>
-</segment>
-<segment>
-<wire x1="193.04" y1="86.36" x2="205.74" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="4"/>
-<label x="198.12" y="83.82" size="1.778" layer="95"/>
-<junction x="193.04" y="86.36"/>
-<junction x="205.74" y="86.36"/>
 </segment>
 <segment>
 <wire x1="-99.06" y1="17.78" x2="-86.36" y2="17.78" width="0.1524" layer="91"/>
@@ -19615,13 +19313,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="200.66" y="66.04"/>
 <junction x="213.36" y="66.04"/>
 </segment>
-<segment>
-<wire x1="193.04" y1="88.9" x2="205.74" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="J2" gate="G$1" pin="6"/>
-<junction x="193.04" y="88.9"/>
-<junction x="205.74" y="88.9"/>
-<label x="198.12" y="86.36" size="1.778" layer="95"/>
-</segment>
 </net>
 <net name="PWM1L" class="0">
 <segment>
@@ -19630,13 +19321,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="-43.18" y="66.04" size="1.778" layer="95"/>
 <junction x="-17.78" y="66.04"/>
 <junction x="-30.48" y="66.04"/>
-</segment>
-<segment>
-<wire x1="170.18" y1="-7.62" x2="157.48" y2="-7.62" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="7"/>
-<label x="147.32" y="-7.62" size="1.778" layer="95"/>
-<junction x="170.18" y="-7.62"/>
-<junction x="157.48" y="-7.62"/>
 </segment>
 <segment>
 <wire x1="-60.96" y1="63.5" x2="-73.66" y2="63.5" width="0.1524" layer="91"/>
@@ -19655,15 +19339,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="-30.48" y="68.58"/>
 </segment>
 <segment>
-<wire x1="170.18" y1="-5.08" x2="157.48" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="9"/>
-<label x="147.32" y="-5.08" size="1.778" layer="95"/>
-<junction x="170.18" y="-5.08"/>
-<junction x="157.48" y="-5.08"/>
-<junction x="170.18" y="-5.08"/>
-<junction x="170.18" y="-5.08"/>
-</segment>
-<segment>
 <wire x1="-60.96" y1="55.88" x2="-73.66" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="SV1" gate="1" pin="1"/>
 <label x="-66.04" y="55.88" size="1.778" layer="95"/>
@@ -19679,13 +19354,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="-17.78" y="71.12"/>
 <junction x="-30.48" y="71.12"/>
 </segment>
-<segment>
-<wire x1="205.74" y1="-7.62" x2="193.04" y2="-7.62" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="8"/>
-<label x="208.28" y="-7.62" size="1.778" layer="95"/>
-<junction x="193.04" y="-7.62"/>
-<junction x="205.74" y="-7.62"/>
-</segment>
 </net>
 <net name="PWM4H" class="0">
 <segment>
@@ -19694,13 +19362,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="215.9" y="71.12" size="1.778" layer="95"/>
 <junction x="200.66" y="71.12"/>
 <junction x="213.36" y="71.12"/>
-</segment>
-<segment>
-<wire x1="193.04" y1="-5.08" x2="205.74" y2="-5.08" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="10"/>
-<label x="208.28" y="-5.08" size="1.778" layer="95"/>
-<junction x="193.04" y="-5.08"/>
-<junction x="205.74" y="-5.08"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -19718,13 +19379,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="200.66" y="25.4"/>
 <junction x="213.36" y="25.4"/>
 </segment>
-<segment>
-<wire x1="157.48" y1="-10.16" x2="170.18" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="5"/>
-<label x="144.78" y="-10.16" size="1.778" layer="95"/>
-<junction x="170.18" y="-10.16"/>
-<junction x="157.48" y="-10.16"/>
-</segment>
 </net>
 <net name="SCK1" class="0">
 <segment>
@@ -19733,13 +19387,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="218.44" y="35.56" size="1.778" layer="95"/>
 <junction x="200.66" y="35.56"/>
 <junction x="213.36" y="35.56"/>
-</segment>
-<segment>
-<wire x1="193.04" y1="127" x2="205.74" y2="127" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="8"/>
-<label x="208.28" y="127" size="1.778" layer="95"/>
-<junction x="193.04" y="127"/>
-<junction x="205.74" y="127"/>
 </segment>
 <segment>
 <wire x1="-99.06" y1="0" x2="-86.36" y2="0" width="0.1524" layer="91"/>
@@ -19764,13 +19411,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="200.66" y="40.64"/>
 <junction x="213.36" y="40.64"/>
 </segment>
-<segment>
-<wire x1="157.48" y1="-12.7" x2="170.18" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="3"/>
-<label x="144.78" y="-12.7" size="1.778" layer="95"/>
-<junction x="170.18" y="-12.7"/>
-<junction x="157.48" y="-12.7"/>
-</segment>
 </net>
 <net name="PWM4EN" class="0">
 <segment>
@@ -19780,13 +19420,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="213.36" y="63.5"/>
 <junction x="200.66" y="63.5"/>
 </segment>
-<segment>
-<wire x1="193.04" y1="-10.16" x2="205.74" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="6"/>
-<label x="208.28" y="-10.16" size="1.778" layer="95"/>
-<junction x="193.04" y="-10.16"/>
-<junction x="205.74" y="-10.16"/>
-</segment>
 </net>
 <net name="PWM4ER" class="0">
 <segment>
@@ -19795,13 +19428,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <label x="-40.64" y="15.24" size="1.778" layer="95"/>
 <junction x="-30.48" y="15.24"/>
 <junction x="-17.78" y="15.24"/>
-</segment>
-<segment>
-<wire x1="205.74" y1="-12.7" x2="193.04" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="J3" gate="G$1" pin="4"/>
-<label x="208.28" y="-12.7" size="1.778" layer="95"/>
-<junction x="193.04" y="-12.7"/>
-<junction x="205.74" y="-12.7"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -19828,12 +19454,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <junction x="109.22" y="114.3"/>
 <junction x="137.16" y="114.3"/>
 <label x="119.38" y="114.3" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="154.94" y1="142.24" x2="182.88" y2="142.24" width="0.1524" layer="91"/>
-<pinref part="J4" gate="G$1" pin="6"/>
-<label x="180.34" y="142.24" size="1.778" layer="95"/>
-<junction x="154.94" y="142.24"/>
 </segment>
 </net>
 <net name="N$6" class="0">
