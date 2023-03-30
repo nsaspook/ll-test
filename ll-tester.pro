@@ -1,25 +1,25 @@
 EAGLE AutoRouter Statistics:
 
-Job           : C:/Users/nsasp/ll-test/ll-tester.brd
+Job           : /root/ll-test/ll-tester.brd
 
-Start at      : 11:53:23 (3/29/2023)
-End at        : 11:55:26 (3/29/2023)
-Elapsed time  : 00:02:02
+Start at      : 14:00:01 (3/29/23)
+End at        : 15:00:45 (3/29/23)
+Elapsed time  : 01:00:42
 
 Signals       :    78   RoutingGrid: 3 mil  Layers: 4
-Connections   :   260   predefined:  256 ( 95 Vias )
+Connections   :   260   predefined:  24 ( 0 Vias )
 
-Router memory :   26020288
+Router memory :   26051136
 
 Passname          : TopRouter     Route Optimize1 Optimize2 Optimize3 Optimize4 Optimize5 Optimize6 Optimize7 Optimize8 Optimize9Optimize10Optimize11Optimize12
 
-Time per pass     :  00:01:27  00:00:01  00:00:03  00:00:03  00:00:02  00:00:03  00:00:03  00:00:03  00:00:03  00:00:02  00:00:03  00:00:03  00:00:03  00:00:03
-Number of Ripups  :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
-max. Level        :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
-max. Total        :         0         0         0         0         0         0         0         0         0         0         0         0         0         0
+Time per pass     :  00:03:16  00:13:28  00:04:14  00:03:48  00:03:29  00:03:26  00:03:28  00:03:20  00:04:07  00:03:44  00:03:38  00:03:34  00:03:36  00:03:34
+Number of Ripups  :         0        37         0         0         0         0         0         0         0         0         0         0         0         0
+max. Level        :         0         2         0         0         0         0         0         0         0         0         0         0         0         0
+max. Total        :         0        60         0         0         0         0         0         0         0         0         0         0         0         0
 
-Routed            :         2         4         4         4         4         4         4         4         4         4         4         4         4         4
-Vias              :         0         0         0         0         0         0         0         0         1         1         1         1         1         1
-Resolution        :    99.2 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
+Routed            :        78       236       232       235       235       235       235       235       235       235       235       236       236       236
+Vias              :         0       105       116        98        99        97        97        98        98        97        94        96        96        96
+Resolution        :    39.2 %   100.0 %    98.5 %    99.6 %    99.6 %    99.6 %    99.6 %    99.6 %    99.6 %    99.6 %    99.6 %   100.0 %   100.0 %   100.0 %
 
 Final             : 100.0% finished
