@@ -61,11 +61,15 @@
 
 
 void CORE_TIMER_InterruptHandler( void );
+void TIMER_2_InterruptHandler( void );
 void EXTERNAL_2_InterruptHandler( void );
 void TIMER_5_InterruptHandler( void );
 void RTCC_InterruptHandler( void );
 void SPI1_RX_InterruptHandler( void );
 void SPI1_TX_InterruptHandler( void );
+void CHANGE_NOTICE_A_InterruptHandler( void );
+void CHANGE_NOTICE_B_InterruptHandler( void );
+void CHANGE_NOTICE_D_InterruptHandler( void );
 void SPI2_RX_InterruptHandler( void );
 void SPI2_TX_InterruptHandler( void );
 void UART2_FAULT_InterruptHandler( void );
@@ -83,6 +87,11 @@ void DMA7_InterruptHandler( void );
 void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
+}
+
+void __ISR(_TIMER_2_VECTOR, ipl1SRS) TIMER_2_Handler (void)
+{
+    TIMER_2_InterruptHandler();
 }
 
 void __ISR(_EXTERNAL_2_VECTOR, ipl1SRS) EXTERNAL_2_Handler (void)
@@ -108,6 +117,21 @@ void __ISR(_SPI1_RX_VECTOR, ipl2SRS) SPI1_RX_Handler (void)
 void __ISR(_SPI1_TX_VECTOR, ipl2SRS) SPI1_TX_Handler (void)
 {
     SPI1_TX_InterruptHandler();
+}
+
+void __ISR(_CHANGE_NOTICE_A_VECTOR, ipl1SRS) CHANGE_NOTICE_A_Handler (void)
+{
+    CHANGE_NOTICE_A_InterruptHandler();
+}
+
+void __ISR(_CHANGE_NOTICE_B_VECTOR, ipl1SRS) CHANGE_NOTICE_B_Handler (void)
+{
+    CHANGE_NOTICE_B_InterruptHandler();
+}
+
+void __ISR(_CHANGE_NOTICE_D_VECTOR, ipl1SRS) CHANGE_NOTICE_D_Handler (void)
+{
+    CHANGE_NOTICE_D_InterruptHandler();
 }
 
 void __ISR(_SPI2_RX_VECTOR, ipl3SRS) SPI2_RX_Handler (void)

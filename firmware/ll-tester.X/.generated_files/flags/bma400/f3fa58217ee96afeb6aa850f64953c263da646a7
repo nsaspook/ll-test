@@ -1,1 +1,0 @@
- $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -ffunction-sections -O2 -fcommon -I"../src" -I"../src/config/bma400" -I"../src/config/mcj" -Werror -Wall   -DXPRJ_bma400=$(CND_CONF)    $(COMPARISON_BUILD)  -mdfp="${DFP_DIR}"  C:\Users\nsasp\ll-test\firmware\src\gfx.c

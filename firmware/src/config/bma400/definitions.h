@@ -60,6 +60,8 @@
 #include "peripheral/uart/plib_uart1.h"
 #include "peripheral/uart/plib_uart2.h"
 #include "peripheral/tmr/plib_tmr5.h"
+#include "peripheral/tmr/plib_tmr2.h"
+#include "peripheral/mcpwm/plib_mcpwm.h"
 #include "peripheral/spi/spi_master/plib_spi2_master.h"
 #include "peripheral/spi/spi_master/plib_spi1_master.h"
 #include "peripheral/rtcc/plib_rtcc.h"

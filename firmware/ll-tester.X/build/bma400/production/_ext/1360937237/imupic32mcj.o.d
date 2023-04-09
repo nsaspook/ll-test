@@ -17,6 +17,9 @@ build/bma400/production/_ext/1360937237/imupic32mcj.o: \
  ../src/config/bma400/peripheral/uart/plib_uart_common.h \
  ../src/config/bma400/peripheral/uart/plib_uart2.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr5.h \
+ ../src/config/bma400/peripheral/tmr/plib_tmr2.h \
+ ../src/config/bma400/peripheral/mcpwm/plib_mcpwm.h \
+ ../src/config/bma400/peripheral/mcpwm/plib_mcpwm_common.h \
  ../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.h \
  ../src/config/bma400/peripheral/spi/spi_master/plib_spi_master_common.h \
  ../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h \
@@ -61,6 +64,12 @@ build/bma400/production/_ext/1360937237/imupic32mcj.o: \
 ../src/config/bma400/peripheral/uart/plib_uart2.h:
 
 ../src/config/bma400/peripheral/tmr/plib_tmr5.h:
+
+../src/config/bma400/peripheral/tmr/plib_tmr2.h:
+
+../src/config/bma400/peripheral/mcpwm/plib_mcpwm.h:
+
+../src/config/bma400/peripheral/mcpwm/plib_mcpwm_common.h:
 
 ../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.h:
 

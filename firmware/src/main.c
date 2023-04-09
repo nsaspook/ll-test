@@ -55,6 +55,7 @@
 #include "timers.h"
 #include "../../firmware/lcd_drv/lcd_drv.h"
 #include "gfx.h"
+#include "buzzer.h"
 
 #ifdef __32MK0512MCJ048__
 #include "canfd.h"
@@ -235,6 +236,7 @@ int main(void)
 	snprintf(buffer, max_buf, "%s Driver %s", REMOTE_ALIAS, REMOTE_DRIVER);
 	eaDogM_WriteStringAtPos(4, 0, buffer);
 	OledUpdate();
+	buzzer_init();
 
 	/*
 	 * check to see if we actually have a working IMU
@@ -269,17 +271,9 @@ int main(void)
 
 	LED_RED_Off();
 	LED_GREEN_Off();
+	buzzer_trigger(1);
 	WaitMs(2500);
-#ifdef __32MK0512MCJ048__
-#ifdef XPRJ_mcj
-	MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, 1024);
-#endif
-#ifdef XPRJ_bma400
-//	MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, 1024);
-#endif	
-//	MCPWM_ChannelPrimaryDutySet(MCPWM_CH_4, 1024);
-//	MCPWM_Start();
-#endif
+
 	TP1_Set(); // ETH modules display trigger
 
 	/* set can-fd extended ID filters and masks */
@@ -322,15 +316,7 @@ int main(void)
 			imu0.op.imu_getdata(&imu0); // read data from the chip
 			imu0.update = false;
 			getAllData(&accel, &imu0); // convert data from the chip
-#ifdef __32MK0512MCJ048__
-#ifdef XPRJ_mcj
-			MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, 1024 + (uint32_t) (10.0 * accel.xa));
-#endif
-#ifdef XPRJ_bma400
-//			MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, 1024 + (uint32_t) (10.0 * accel.xa));
-#endif			
-//			MCPWM_ChannelPrimaryDutySet(MCPWM_CH_4, 1024 + (uint32_t) (10.0 * accel.ya));
-#endif
+
 			accel.xerr = UpdatePI(&xpid, (double) accel.xa);
 			accel.yerr = UpdatePI(&ypid, (double) accel.ya);
 			accel.zerr = UpdatePI(&zpid, (double) accel.za);
@@ -439,6 +425,7 @@ int main(void)
 			if (rx_msg_ready) {
 				rx_msg_ready = false;
 				remote_cmd_decode(host_ptr);
+				buzzer_trigger(1);
 			}
 			eaDogM_WriteStringAtPos(12, 0, hbuffer);
 
@@ -498,9 +485,9 @@ static void fh_start_AT_nodma(void *a_data)
 	ETH_CFG_Set();
 	WaitMs(1500); // wait until the module is back online
 #else
-//	ETH_CFG_Clear();
+	//	ETH_CFG_Clear();
 	WaitMs(500);
-//	ETH_CFG_Set();
+	//	ETH_CFG_Set();
 	WaitMs(4500); // wait until the module is back online
 #endif
 
@@ -516,9 +503,9 @@ static void fh_start_AT_nodma(void *a_data)
 		UART1_Read(response_buffer, 30);
 	} else { // nothing
 		snprintf(response_buffer, max_buf, "AT command failed           ");
-//		ETH_RESET_Clear();
+		//		ETH_RESET_Clear();
 		WaitMs(200);
-//		ETH_RESET_Set();
+		//		ETH_RESET_Set();
 	}
 	/*
 	 * AT mode will timeout after 30 seconds and go back to transparent data mode
