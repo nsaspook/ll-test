@@ -13,11 +13,14 @@ build/bma400/production/_ext/1684788505/OledDriver.o: \
  ../src/config/bma400/peripheral/coretimer/plib_coretimer.h \
  ../src/config/bma400/peripheral/adchs/plib_adchs.h \
  ../src/config/bma400/peripheral/adchs/plib_adchs_common.h \
+ ../src/config/bma400/peripheral/qei/plib_qei2.h \
+ ../src/config/bma400/peripheral/qei/plib_qei_common.h \
  ../src/config/bma400/peripheral/uart/plib_uart1.h \
  ../src/config/bma400/peripheral/uart/plib_uart_common.h \
- ../src/config/bma400/peripheral/uart/plib_uart2.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr5.h \
+ ../src/config/bma400/peripheral/uart/plib_uart2.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr2.h \
+ ../src/config/bma400/peripheral/tmr/plib_tmr3.h \
  ../src/config/bma400/peripheral/mcpwm/plib_mcpwm.h \
  ../src/config/bma400/peripheral/mcpwm/plib_mcpwm_common.h \
  ../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.h \
@@ -59,15 +62,21 @@ build/bma400/production/_ext/1684788505/OledDriver.o: \
 
 ../src/config/bma400/peripheral/adchs/plib_adchs_common.h:
 
+../src/config/bma400/peripheral/qei/plib_qei2.h:
+
+../src/config/bma400/peripheral/qei/plib_qei_common.h:
+
 ../src/config/bma400/peripheral/uart/plib_uart1.h:
 
 ../src/config/bma400/peripheral/uart/plib_uart_common.h:
 
-../src/config/bma400/peripheral/uart/plib_uart2.h:
-
 ../src/config/bma400/peripheral/tmr/plib_tmr5.h:
 
+../src/config/bma400/peripheral/uart/plib_uart2.h:
+
 ../src/config/bma400/peripheral/tmr/plib_tmr2.h:
+
+../src/config/bma400/peripheral/tmr/plib_tmr3.h:
 
 ../src/config/bma400/peripheral/mcpwm/plib_mcpwm.h:
 

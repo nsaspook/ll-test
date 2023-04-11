@@ -64,7 +64,7 @@
 #pragma config DBGPER =     PG_ALL
 #pragma config SMCLR =      MCLR_NORM
 #pragma config SOSCGAIN =   G2
-#pragma config SOSCBOOST =  ON
+#pragma config SOSCBOOST =  OFF
 #pragma config POSCGAIN =   G3
 #pragma config POSCBOOST =  ON
 #pragma config EJTAGBEN =   NORMAL
@@ -187,13 +187,17 @@ void SYS_Initialize ( void* data )
     CORETIMER_Initialize();
     ADCHS_Initialize();
 
-	UART1_Initialize();
+    QEI2_Initialize();
 
-	UART2_Initialize();
+	UART1_Initialize();
 
     TMR5_Initialize();
 
+	UART2_Initialize();
+
     TMR2_Initialize();
+
+    TMR3_Initialize();
 
     MCPWM_Initialize();
 

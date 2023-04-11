@@ -170,6 +170,8 @@ const uint32_t update_delay = 5;
 uint32_t board_serial_id = 0x35A, cpu_serial_id = 0x1957;
 
 static void fh_start_AT_nodma(void *);
+static void sw2_cb(GPIO_PIN, uintptr_t);
+static void sw5_cb(GPIO_PIN, uintptr_t);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -237,6 +239,7 @@ int main(void)
 	eaDogM_WriteStringAtPos(4, 0, buffer);
 	OledUpdate();
 	buzzer_init();
+	TMR3_Start();
 
 	/*
 	 * check to see if we actually have a working IMU
@@ -272,6 +275,23 @@ int main(void)
 	LED_RED_Off();
 	LED_GREEN_Off();
 	buzzer_trigger(1);
+	QEI2_Start();
+	POS2CNT = 0;
+	GPIO_PinInterruptCallbackRegister(SW2_PIN, sw2_cb, 0);
+	GPIO_PinIntEnable(SW2_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
+	SW2_InterruptEnable();
+
+	GPIO_PinInterruptCallbackRegister(SW3_PIN, sw2_cb, 0);
+	GPIO_PinIntEnable(SW3_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
+	SW3_InterruptEnable();
+
+	GPIO_PinInterruptCallbackRegister(SW4_PIN, sw2_cb, 0);
+	GPIO_PinIntEnable(SW4_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
+	SW4_InterruptEnable();
+
+	GPIO_PinInterruptCallbackRegister(SW5_PIN, sw5_cb, 0);
+	GPIO_PinIntEnable(SW5_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
+	SW5_InterruptEnable();
 	WaitMs(2500);
 
 	TP1_Set(); // ETH modules display trigger
@@ -336,7 +356,7 @@ int main(void)
 			eaDogM_WriteStringAtPos(4, 0, buffer);
 			snprintf(buffer, max_buf, "RAN %d", imu0.acc_range);
 			eaDogM_WriteStringAtPos(5, 0, buffer);
-			snprintf(buffer, max_buf, "ANG %s", imu0.angles ? "Yes" : "No");
+			snprintf(buffer, max_buf, "ANG %s , %d", imu0.angles ? "Yes" : "No", POS2CNT);
 			eaDogM_WriteStringAtPos(6, 0, buffer);
 
 			/*
@@ -512,6 +532,34 @@ static void fh_start_AT_nodma(void *a_data)
 	 */
 	WaitMs(500);
 	UART1_ErrorGet(); // clear UART junk
+}
+
+void sw2_cb(GPIO_PIN pin, uintptr_t context)
+{
+	static uint32_t dbounce = 0;
+
+	if (TMR3_CounterGet() > (dbounce + 70000)) {
+		buzzer_trigger(1);
+		dbounce = TMR3_CounterGet();
+		POS2CNT--;
+	} else {
+		//		dbounce = TMR3_CounterGet();
+	}
+
+}
+
+void sw5_cb(GPIO_PIN pin, uintptr_t context)
+{
+	static uint32_t dbounce = 0;
+
+	if (TMR3_CounterGet() > (dbounce + 70000)) {
+		buzzer_trigger(1);
+		dbounce = TMR3_CounterGet();
+		POS2CNT++;
+	} else {
+		//		dbounce = TMR3_CounterGet();
+	}
+
 }
 /*******************************************************************************
  End of File

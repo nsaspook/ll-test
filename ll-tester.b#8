@@ -4819,7 +4819,7 @@ design rules under a new name.</description>
 <via x="14.5542" y="50.9016" extent="1-16" drill="0.35"/>
 <via x="-20.955" y="46.3296" extent="1-16" drill="0.35"/>
 </signal>
-<signal name="PWM1L">
+<signal name="RB15">
 <contactref element="U1" pad="3"/>
 <contactref element="SV1" pad="4"/>
 <contactref element="LS1" pad="1"/>
@@ -4850,7 +4850,7 @@ design rules under a new name.</description>
 <wire x1="-6.4008" y1="47.0154" x2="-6.35" y2="46.99" width="0.1524" layer="16"/>
 <via x="30.7086" y="53.2638" extent="1-16" drill="0.35"/>
 </signal>
-<signal name="PWM1H">
+<signal name="U2TX">
 <contactref element="U1" pad="2"/>
 <contactref element="SV1" pad="1"/>
 <wire x1="9.3726" y1="44.1198" x2="14.7066" y2="44.1198" width="0.1524" layer="1"/>
@@ -4862,8 +4862,10 @@ design rules under a new name.</description>
 <wire x1="-5.9436" y1="39.7764" x2="-0.6096" y2="39.7764" width="0.1524" layer="1"/>
 <wire x1="-6.35" y1="39.37" x2="-5.9436" y2="39.7764" width="0.1524" layer="1"/>
 <wire x1="14.7066" y1="44.1198" x2="14.7701" y2="44.16" width="0.1524" layer="1"/>
+<contactref element="I/O_MON" pad="7"/>
+<wire x1="-6.35" y1="39.37" x2="-48.26" y2="12.7" width="0" layer="19" extent="1-1"/>
 </signal>
-<signal name="PWM4L">
+<signal name="RA7">
 <contactref element="U1" pad="1"/>
 <contactref element="S4" pad="2"/>
 <contactref element="C26" pad="1"/>
@@ -4894,7 +4896,7 @@ design rules under a new name.</description>
 <via x="7.0866" y="39.4716" extent="1-16" drill="0.35"/>
 <via x="24.0792" y="37.2618" extent="1-16" drill="0.35"/>
 </signal>
-<signal name="PWM4H">
+<signal name="RA10">
 <contactref element="U1" pad="48"/>
 <contactref element="S5" pad="2"/>
 <contactref element="C27" pad="1"/>
@@ -4926,7 +4928,7 @@ design rules under a new name.</description>
 <wire x1="7.3152" y1="31.4706" x2="7.245" y2="31.455" width="0.1524" layer="16"/>
 <wire x1="13.6398" y1="30.48" x2="13.65" y2="30.48" width="0.1524" layer="16"/>
 </signal>
-<signal name="PWM1EN">
+<signal name="RD8">
 <contactref element="U1" pad="30"/>
 <contactref element="S2" pad="2"/>
 <contactref element="C24" pad="1"/>
@@ -4974,7 +4976,7 @@ design rules under a new name.</description>
 <via x="-18.1356" y="149.8092" extent="1-16" drill="0.35"/>
 <via x="13.4874" y="61.341" extent="1-16" drill="0.35"/>
 </signal>
-<signal name="PWM1ER">
+<signal name="RB8">
 <contactref element="U1" pad="36"/>
 <contactref element="S3" pad="2"/>
 <contactref element="C25" pad="1"/>
@@ -4996,7 +4998,7 @@ design rules under a new name.</description>
 <via x="20.6502" y="53.6448" extent="1-16" drill="0.35"/>
 <via x="-32.0802" y="110.49" extent="1-16" drill="0.35"/>
 </signal>
-<signal name="PWM4EN">
+<signal name="RB11">
 <contactref element="U1" pad="45"/>
 <contactref element="SV3" pad="6"/>
 <wire x1="17.7546" y1="49.4538" x2="17.7546" y2="46.2534" width="0.1524" layer="1"/>
@@ -5016,7 +5018,7 @@ design rules under a new name.</description>
 <via x="13.8684" y="51.5874" extent="1-16" drill="0.35"/>
 <via x="-17.907" y="53.2638" extent="1-16" drill="0.35"/>
 </signal>
-<signal name="PWM4ER">
+<signal name="U2RX">
 <contactref element="U1" pad="23"/>
 <contactref element="SV3" pad="8"/>
 <wire x1="21.2598" y1="36.1188" x2="21.2598" y2="37.5666" width="0.1524" layer="1"/>
@@ -5028,6 +5030,8 @@ design rules under a new name.</description>
 <wire x1="-25.4" y1="40.64" x2="-21.6408" y2="36.8808" width="0.1524" layer="15"/>
 <wire x1="21.2598" y1="37.5666" x2="21.3" y2="37.6301" width="0.1524" layer="1"/>
 <via x="12.6492" y="33.6804" extent="1-16" drill="0.35"/>
+<contactref element="I/O_MON" pad="6"/>
+<wire x1="-25.4" y1="40.64" x2="-50.8" y2="12.7" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$5">
 <contactref element="U1" pad="20"/>

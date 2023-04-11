@@ -17318,7 +17318,6 @@ Source: http://onsemi.com .. MBR0520LT1-D.pdf</description>
 <class number="1" name="icurrent" width="0.3048" drill="0">
 </class>
 <class number="2" name="led" width="0.3048" drill="0">
-<clearance class="2" value="0.4064"/>
 </class>
 <class number="3" name="diff_can" width="0.0508" drill="0">
 </class>
