@@ -64,7 +64,6 @@ void EVIC_Initialize( void )
     IPC9SET = 0x8 | 0x0;  /* SPI1_RX:  Priority 2 / Subpriority 0 */
     IPC9SET = 0x800 | 0x0;  /* SPI1_TX:  Priority 2 / Subpriority 0 */
     IPC11SET = 0x4 | 0x0;  /* CHANGE_NOTICE_A:  Priority 1 / Subpriority 0 */
-    IPC11SET = 0x400 | 0x0;  /* CHANGE_NOTICE_B:  Priority 1 / Subpriority 0 */
     IPC11SET = 0x4000000 | 0x0;  /* CHANGE_NOTICE_D:  Priority 1 / Subpriority 0 */
     IPC13SET = 0xc0000 | 0x0;  /* SPI2_RX:  Priority 3 / Subpriority 0 */
     IPC13SET = 0xc000000 | 0x0;  /* SPI2_TX:  Priority 3 / Subpriority 0 */

@@ -68,7 +68,6 @@ void RTCC_InterruptHandler( void );
 void SPI1_RX_InterruptHandler( void );
 void SPI1_TX_InterruptHandler( void );
 void CHANGE_NOTICE_A_InterruptHandler( void );
-void CHANGE_NOTICE_B_InterruptHandler( void );
 void CHANGE_NOTICE_D_InterruptHandler( void );
 void SPI2_RX_InterruptHandler( void );
 void SPI2_TX_InterruptHandler( void );
@@ -122,11 +121,6 @@ void __ISR(_SPI1_TX_VECTOR, ipl2SRS) SPI1_TX_Handler (void)
 void __ISR(_CHANGE_NOTICE_A_VECTOR, ipl1SRS) CHANGE_NOTICE_A_Handler (void)
 {
     CHANGE_NOTICE_A_InterruptHandler();
-}
-
-void __ISR(_CHANGE_NOTICE_B_VECTOR, ipl1SRS) CHANGE_NOTICE_B_Handler (void)
-{
-    CHANGE_NOTICE_B_InterruptHandler();
 }
 
 void __ISR(_CHANGE_NOTICE_D_VECTOR, ipl1SRS) CHANGE_NOTICE_D_Handler (void)

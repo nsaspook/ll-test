@@ -168,8 +168,6 @@
 #define SW3_InputEnable()       (TRISBSET = (1U<<8))
 #define SW3_Get()               ((PORTB >> 8) & 0x1U)
 #define SW3_PIN                  GPIO_PIN_RB8
-#define SW3_InterruptEnable()   (CNENBSET = (1U<<8))
-#define SW3_InterruptDisable()  (CNENBCLR = (1U<<8))
 
 /*** Macros for EXT_SW1 pin ***/
 #define EXT_SW1_Set()               (LATBSET = (1U<<9))
