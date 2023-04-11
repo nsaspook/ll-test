@@ -34,8 +34,8 @@ extern "C" {
 	/*
 	 * what IMU chip are we using
 	 */
-	//#define SCA3300 // this includes the SCL3300 device, SPI2 32-bit transfers
-#define BMA400 // Bosch devices, SPI2 8-bit transfers
+#define SCA3300 // this includes the SCL3300 device, SPI2 32-bit transfers
+	//#define BMA400 // Bosch devices, SPI2 8-bit transfers
 
 #ifdef SCA3300
 #define	SPI2_32BIT
