@@ -64,6 +64,7 @@ extern "C" {
 	typedef enum {
 		D_INIT,
 		D_MISC,
+		D_BLANK,
 	} LCD_DVR_STATE;
 
 #define lcd_frame	0	// frame buffer 1 or 0

@@ -19727,7 +19727,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="-43.18" y="0"/>
 </segment>
 </net>
-<net name="PWM1L" class="0">
+<net name="RB15" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="RPB15/PWM1L/RB15"/>
 <wire x1="-17.78" y1="66.04" x2="-30.48" y2="66.04" width="0.1524" layer="91"/>
@@ -19750,7 +19750,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="-45.72" y="-132.08"/>
 </segment>
 </net>
-<net name="PWM1H" class="0">
+<net name="U2TX" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="RPB14/PWM1H/RB14"/>
 <wire x1="-17.78" y1="68.58" x2="-30.48" y2="68.58" width="0.1524" layer="91"/>
@@ -19765,8 +19765,15 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="-73.66" y="55.88"/>
 <junction x="-60.96" y="55.88"/>
 </segment>
+<segment>
+<wire x1="-86.36" y1="-30.48" x2="-99.06" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="I/O_MON" gate="1" pin="7"/>
+<junction x="-99.06" y="-30.48"/>
+<junction x="-86.36" y="-30.48"/>
+<label x="-93.98" y="-30.48" size="1.778" layer="95"/>
+</segment>
 </net>
-<net name="PWM4L" class="0">
+<net name="RA7" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="TCK/RPA7/PWM4L/RA7"/>
 <wire x1="-17.78" y1="71.12" x2="-30.48" y2="71.12" width="0.1524" layer="91"/>
@@ -19786,7 +19793,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="-66.04" y="-101.6"/>
 </segment>
 </net>
-<net name="PWM4H" class="0">
+<net name="RA10" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="TDO/PWM4H/RA10"/>
 <wire x1="200.66" y1="71.12" x2="213.36" y2="71.12" width="0.1524" layer="91"/>
@@ -19819,7 +19826,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="81.28" y="-17.78"/>
 </segment>
 </net>
-<net name="PWM1EN" class="0">
+<net name="RD8" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="RD8"/>
 <wire x1="200.66" y1="25.4" x2="213.36" y2="25.4" width="0.1524" layer="91"/>
@@ -19862,7 +19869,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="30.48" y="-129.54"/>
 </segment>
 </net>
-<net name="PWM1ER" class="0">
+<net name="RB8" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="SOSCO/RPB8/T1CK/RB8"/>
 <wire x1="200.66" y1="40.64" x2="213.36" y2="40.64" width="0.1524" layer="91"/>
@@ -19883,7 +19890,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="-66.04" y="-86.36"/>
 </segment>
 </net>
-<net name="PWM4EN" class="0">
+<net name="RB11" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="RPB11/PWM3L/RB11"/>
 <wire x1="200.66" y1="63.5" x2="213.36" y2="63.5" width="0.1524" layer="91"/>
@@ -19899,7 +19906,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="-43.18" y="-2.54"/>
 </segment>
 </net>
-<net name="PWM4ER" class="0">
+<net name="U2RX" class="0">
 <segment>
 <pinref part="U1" gate="A" pin="TDI/DAC2/AN26/CVD26/RPA8/SDA2/RA8"/>
 <wire x1="-17.78" y1="15.24" x2="-30.48" y2="15.24" width="0.1524" layer="91"/>
@@ -19913,6 +19920,13 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <label x="-45.72" y="2.54" size="1.778" layer="95"/>
 <junction x="-55.88" y="2.54"/>
 <junction x="-43.18" y="2.54"/>
+</segment>
+<segment>
+<wire x1="-86.36" y1="-33.02" x2="-99.06" y2="-33.02" width="0.1524" layer="91"/>
+<pinref part="I/O_MON" gate="1" pin="6"/>
+<junction x="-99.06" y="-33.02"/>
+<junction x="-86.36" y="-33.02"/>
+<label x="-93.98" y="-33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$5" class="0">

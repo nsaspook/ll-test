@@ -170,9 +170,6 @@ const uint32_t update_delay = 5;
 uint32_t board_serial_id = 0x35A, cpu_serial_id = 0x1957;
 
 static void fh_start_AT_nodma(void *);
-static void sw2_cb(GPIO_PIN, uintptr_t);
-static void sw4_cb(GPIO_PIN, uintptr_t);
-static void sw5_cb(GPIO_PIN, uintptr_t);
 
 // *****************************************************************************
 // *****************************************************************************
@@ -239,8 +236,9 @@ int main(void)
 	snprintf(buffer, max_buf, "%s Driver %s", REMOTE_ALIAS, REMOTE_DRIVER);
 	eaDogM_WriteStringAtPos(4, 0, buffer);
 	OledUpdate();
-	buzzer_init();
-	TMR3_Start();
+	buzzer_init(); // audio device
+	TMR3_Start(); // audio device effects timer
+	hid_init(H_init); // screen blanking, input effects
 
 	/*
 	 * check to see if we actually have a working IMU
@@ -393,6 +391,14 @@ int main(void)
 				w++;
 			}
 			TP3_Clear(); // end of drawing function
+
+			if ((fft_buffer[32]+ fft_buffer[50] + fft_buffer[96]) > 100) {
+				if (H.dis_reset) { // display is blanked so show the screen
+					H.dis_unblank = true;
+				} else { // activity trigger, reset the blanking timer
+					hid_init(H_zero_blank);
+				}
+			}
 #ifdef SHOW_VG
 			q0 = accel.x;
 			q1 = accel.y;
@@ -421,6 +427,13 @@ int main(void)
 				}
 			}
 #endif 
+			if (H.dis_unblank) {
+				H.dis_unblank = false;
+				ReSet_SetHigh();
+				init_lcd_drv(D_BLANK);
+				hid_init(H_zero_blank);
+				H.dis_reset = false;
+			}
 			OledUpdate();
 #endif
 			if (TimerDone(TMR_LOG)) {
@@ -548,54 +561,6 @@ static void fh_start_AT_nodma(void *a_data)
 	UART1_ErrorGet(); // clear UART junk
 }
 
-void sw2_cb(GPIO_PIN pin, uintptr_t context)
-{
-	static uint32_t dbounce = 0;
-
-	if (TMR3_CounterGet() > (dbounce + 70000)) {
-		buzzer_trigger(1);
-		dbounce = TMR3_CounterGet();
-		H.show_la = !H.show_la;
-		if (SW3_Get()) {
-			POS2CNT--;
-		} else {
-			POS2CNT++;
-		}
-		if (!H.show_la) {
-			LA_gfx(true, false, 0);
-		}
-	}
-
-}
-
-void sw4_cb(GPIO_PIN pin, uintptr_t context)
-{
-	static uint32_t dbounce = 0;
-
-	if (TMR3_CounterGet() > (dbounce + 70000)) {
-		buzzer_trigger(1);
-		dbounce = TMR3_CounterGet();
-		H.dis_alt = !H.dis_alt;
-	}
-
-}
-
-void sw5_cb(GPIO_PIN pin, uintptr_t context)
-{
-	static uint32_t dbounce = 0;
-
-	if (TMR3_CounterGet() > (dbounce + 70000)) {
-		buzzer_trigger(1);
-		dbounce = TMR3_CounterGet();
-		H.la_mod = !H.la_mod;
-		if (SW3_Get()) {
-			POS2CNT++;
-		} else {
-			POS2CNT--;
-		}
-	}
-
-}
 /*******************************************************************************
  End of File
  */

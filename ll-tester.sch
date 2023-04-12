@@ -17664,6 +17664,8 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <part name="C28" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
 <part name="C29" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uf"/>
 <part name="VSS59" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
+<part name="VDD18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18360,6 +18362,13 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <instance part="VSS59" gate="G$1" x="-71.12" y="-35.56" smashed="yes">
 <attribute name="VALUE" x="-73.66" y="-40.64" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="R7" gate="G$1" x="-81.28" y="-81.28" smashed="yes" rot="R90">
+<attribute name="NAME" x="-82.7786" y="-85.09" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-77.978" y="-85.09" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="VDD18" gate="G$1" x="-83.82" y="-76.2" smashed="yes" rot="R90">
+<attribute name="VALUE" x="-81.28" y="-78.74" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -18620,6 +18629,11 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <pinref part="C28" gate="G$1" pin="1"/>
 <pinref part="C29" gate="G$1" pin="1"/>
 <junction x="-78.74" y="-33.02"/>
+</segment>
+<segment>
+<pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="VDD18" gate="G$1" pin="VDD"/>
+<junction x="-81.28" y="-76.2"/>
 </segment>
 </net>
 <net name="VSS" class="2">
@@ -19914,6 +19928,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <label x="-76.2" y="-83.82" size="1.778" layer="95"/>
 <pinref part="C25" gate="G$1" pin="1"/>
 <junction x="-66.04" y="-86.36"/>
+<pinref part="R7" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="RB11" class="0">

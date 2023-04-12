@@ -19,8 +19,14 @@ void init_lcd_drv(LCD_DVR_STATE init_type)
 	delay_freq = CORETIMER_FrequencyGet() / 1000000;
 	switch (init_type) {
 	case D_MISC:
+	case D_BLANK:
+		CSB_SetHigh(); // select SPI GLCD display, DOGXL240 @30MHz SPI clock
+		lcd_init();
+		OledInit();
+		OledSetCharUpdate(0); // manual LCD screen updates for speed
+		break;
 	case D_INIT: // send the GLCD buffer data via DMA
-		CSB_SetHigh(); // select SPI GLCD display, DOGXL240 @15MHz SPI clock
+		CSB_SetHigh(); // select SPI GLCD display, DOGXL240 @30MHz SPI clock
 		delay_us(IS_DELAYPOWERUP); // > 400ms power up delay
 		lcd_init();
 		OledInit();

@@ -97,13 +97,13 @@ void SPI1_Initialize_internal(void)
 void ReSet_SetLow(void)
 {
 	wait_lcd_done();
-	EXT_SW1_Clear();
+	DIS_RESET_Clear();
 };
 
 void ReSet_SetHigh(void)
 {
 	wait_lcd_done();
-	EXT_SW1_Set();
+	DIS_RESET_Set();
 };
 
 void RS_SetLow(void)

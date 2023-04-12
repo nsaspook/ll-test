@@ -169,14 +169,14 @@
 #define SW3_Get()               ((PORTB >> 8) & 0x1U)
 #define SW3_PIN                  GPIO_PIN_RB8
 
-/*** Macros for EXT_SW1 pin ***/
-#define EXT_SW1_Set()               (LATBSET = (1U<<9))
-#define EXT_SW1_Clear()             (LATBCLR = (1U<<9))
-#define EXT_SW1_Toggle()            (LATBINV= (1U<<9))
-#define EXT_SW1_OutputEnable()      (TRISBCLR = (1U<<9))
-#define EXT_SW1_InputEnable()       (TRISBSET = (1U<<9))
-#define EXT_SW1_Get()               ((PORTB >> 9) & 0x1U)
-#define EXT_SW1_PIN                  GPIO_PIN_RB9
+/*** Macros for DIS_RESET pin ***/
+#define DIS_RESET_Set()               (LATBSET = (1U<<9))
+#define DIS_RESET_Clear()             (LATBCLR = (1U<<9))
+#define DIS_RESET_Toggle()            (LATBINV= (1U<<9))
+#define DIS_RESET_OutputEnable()      (TRISBCLR = (1U<<9))
+#define DIS_RESET_InputEnable()       (TRISBSET = (1U<<9))
+#define DIS_RESET_Get()               ((PORTB >> 9) & 0x1U)
+#define DIS_RESET_PIN                  GPIO_PIN_RB9
 
 /*** Macros for IMU_CS pin ***/
 #define IMU_CS_Set()               (LATCSET = (1U<<9))
