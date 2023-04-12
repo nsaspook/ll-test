@@ -16,6 +16,7 @@ extern "C" {
 #include "../../firmware/lcd_drv/OledGrph.h"
 
 	//#define GFX_BOX
+#define SHOW_LA
 #define fft_max_pixel		64
 #define fft_resolution_shift	1
 
@@ -29,6 +30,7 @@ extern "C" {
 
 	void line_rot(uint32_t, uint32_t, uint32_t, uint32_t);
 	void vector_graph(void);
+	void vector_graph_fs(void);
 	void LA_gfx(bool, bool, uint32_t);
 	void fft_draw(uint8_t, uint8_t);
 

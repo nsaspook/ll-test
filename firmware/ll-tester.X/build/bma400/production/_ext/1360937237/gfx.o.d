@@ -14,10 +14,10 @@ build/bma400/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr_common.h \
  ../src/config/bma400/peripheral/adchs/plib_adchs.h \
  ../src/config/bma400/peripheral/adchs/plib_adchs_common.h \
- ../src/config/bma400/peripheral/qei/plib_qei2.h \
- ../src/config/bma400/peripheral/qei/plib_qei_common.h \
  ../src/config/bma400/peripheral/uart/plib_uart1.h \
  ../src/config/bma400/peripheral/uart/plib_uart_common.h \
+ ../src/config/bma400/peripheral/qei/plib_qei2.h \
+ ../src/config/bma400/peripheral/qei/plib_qei_common.h \
  ../src/config/bma400/peripheral/uart/plib_uart2.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr5.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr2.h \
@@ -34,7 +34,8 @@ build/bma400/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
  ../src/../../firmware/lcd_drv/dogm-graphic.h ../src/timers.h \
  ../src/../../firmware/lcd_drv/OledDriver.h \
  ../src/../../firmware/lcd_drv/OledChar.h \
- ../src/../../firmware/lcd_drv/OledGrph.h
+ ../src/../../firmware/lcd_drv/OledGrph.h ../src/hid.h ../src/buzzer.h \
+ ../src/imupic32mcj.h ../src/imu.h ../src/timers.h
 
 ../src/gfx.h:
 
@@ -70,13 +71,13 @@ build/bma400/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
 
 ../src/config/bma400/peripheral/adchs/plib_adchs_common.h:
 
-../src/config/bma400/peripheral/qei/plib_qei2.h:
-
-../src/config/bma400/peripheral/qei/plib_qei_common.h:
-
 ../src/config/bma400/peripheral/uart/plib_uart1.h:
 
 ../src/config/bma400/peripheral/uart/plib_uart_common.h:
+
+../src/config/bma400/peripheral/qei/plib_qei2.h:
+
+../src/config/bma400/peripheral/qei/plib_qei_common.h:
 
 ../src/config/bma400/peripheral/uart/plib_uart2.h:
 
@@ -113,3 +114,13 @@ build/bma400/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
 ../src/../../firmware/lcd_drv/OledChar.h:
 
 ../src/../../firmware/lcd_drv/OledGrph.h:
+
+../src/hid.h:
+
+../src/buzzer.h:
+
+../src/imupic32mcj.h:
+
+../src/imu.h:
+
+../src/timers.h:

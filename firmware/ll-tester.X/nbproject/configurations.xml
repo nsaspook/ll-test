@@ -83,6 +83,7 @@
       <itemPath>../src/cmd_scanner.h</itemPath>
       <itemPath>../src/remote_cmd.h</itemPath>
       <itemPath>../src/buzzer.h</itemPath>
+      <itemPath>../src/hid.h</itemPath>
     </logicalFolder>
     <logicalFolder name="lcd_drv" displayName="lcd_drv" projectFiles="true">
       <itemPath>../lcd_drv/lcd_drv.c</itemPath>
@@ -188,6 +189,7 @@
       <itemPath>../src/remote_cmd.c</itemPath>
       <itemPath>../src/imupic32mcj.c</itemPath>
       <itemPath>../src/buzzer.c</itemPath>
+      <itemPath>../src/hid.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -2381,7 +2383,7 @@
         <targetDevice>PIC32MK0512MCJ048</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>ICD4Tool</platformTool>
+        <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.21</languageToolchainVersion>
         <platform>2</platform>
