@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/fred/ll-tester/firmware/src/host.c</file>
-            <file>file:/fred/ll-tester/firmware/src/imupic32mcj.c</file>
-            <file>file:/fred/ll-tester/firmware/src/main.c</file>
-            <file>file:/fred/ll-tester/firmware/src/config/bma400/peripheral/canfd/plib_canfd1.c</file>
-            <file>file:/fred/ll-tester/firmware/src/remote_cmd.c</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
