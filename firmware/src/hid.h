@@ -32,7 +32,7 @@ extern "C" {
 	typedef struct H_type {
 		volatile uint32_t pacing;
 		H_STATE hid_state;
-		volatile bool dis_alt, show_la, la_mod, dis_unblank, dis_reset;
+		volatile bool dis_alt, show_la, la_mod, dis_unblank, dis_reset, silent;
 	} H_type;
 
 	extern H_type H;

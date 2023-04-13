@@ -1,4 +1,5 @@
 #include "buzzer.h"
+#include "hid.h"
 
 static const uint32_t vol_high = 10000, vol_mute = 0, vol_low = 2000;
 
@@ -89,12 +90,20 @@ void buzzer_tone(uint32_t status, uintptr_t context)
 			buzzer_state = BZ0;
 		}
 		break;
+	case BZ_OFF:
+		H.silent = true;
+		break;
 	default:
 		buzzer_state = BZ0;
 		volume = vol_mute;
 		break;
 	}
-	MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, volume);
+
+	if (H.silent) {
+		MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, vol_mute);
+	} else {
+		MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, volume);
+	}
 	if (volume == vol_mute) { // stop callback interrupts
 		TMR2_Stop();
 	}
@@ -104,4 +113,9 @@ void buzzer_trigger(uint32_t trigger)
 {
 	TMR2_Start(); // start callback interrupts to process buzzer profiles
 	buzzer_state = trigger;
+}
+
+uint32_t get_buzzer_trigger(void)
+{
+	return buzzer_state;
 }

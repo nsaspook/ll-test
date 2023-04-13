@@ -21,12 +21,15 @@ extern "C" {
 #define BZ2	11
 #define BZ3	21
 	
+#define BZ_OFF	255
+	
 #define BZ_ON_LOUD	100
 #define BZ_ON_LOW	101
 
 	void buzzer_init(void);
 	void buzzer_tone(uint32_t, uintptr_t);
 	void buzzer_trigger(uint32_t);
+	uint32_t get_buzzer_trigger(void);
 
 #ifdef	__cplusplus
 }

@@ -7,6 +7,7 @@ H_type H = {
 	.show_la = true,
 	.la_mod = true,
 	.dis_reset = false,
+	.silent = false,
 	.pacing = 0,
 	.hid_state = H_init,
 };
@@ -70,7 +71,18 @@ void sw4_cb(GPIO_PIN pin, uintptr_t context)
 		buzzer_trigger(BZ3);
 		dbounce = TMR3_CounterGet();
 		H.dis_alt = !H.dis_alt;
+		if (H.dis_reset) {
+			H.dis_unblank = true;
+		}
 		hid_init(H_zero_blank); // reset the screen blanking counter
+		if (!SW3_Get()) {
+			if (!H.silent) { // toggle buzzer sound
+				buzzer_trigger(BZ_OFF);
+			} else {
+				H.silent = false;
+			}
+			hid_init(H_blank);
+		}
 	}
 
 }
@@ -83,6 +95,9 @@ void sw5_cb(GPIO_PIN pin, uintptr_t context)
 		buzzer_trigger(BZ1);
 		dbounce = TMR3_CounterGet();
 		H.la_mod = !H.la_mod;
+		if (H.dis_reset) {
+			H.dis_unblank = true;
+		}
 		if (SW3_Get()) {
 			POS2CNT++;
 		} else {
