@@ -17644,6 +17644,9 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <part name="VSS54" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="LS1" library="CMI-9705-0380-SMT-TR" deviceset="CMI-9705-0380-SMT-TR" device=""/>
 <part name="VSS55" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="SV3" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA10-1" device="" package3d_urn="urn:adsk.eagle:package:8346/1" value="MISC0"/>
+<part name="VSS56" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VDD4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18307,6 +18310,16 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <instance part="VSS55" gate="G$1" x="-45.72" y="-137.16" smashed="yes">
 <attribute name="VALUE" x="-48.26" y="-142.24" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="SV3" gate="1" x="-63.5" y="-5.08" smashed="yes">
+<attribute name="VALUE" x="-64.77" y="-20.32" size="1.778" layer="96"/>
+<attribute name="NAME" x="-64.77" y="10.922" size="1.778" layer="95"/>
+</instance>
+<instance part="VSS56" gate="G$1" x="-55.88" y="-17.78" smashed="yes">
+<attribute name="VALUE" x="-58.42" y="-22.86" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="VDD4" gate="G$1" x="-55.88" y="10.16" smashed="yes">
+<attribute name="VALUE" x="-48.26" y="10.16" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -18538,6 +18551,10 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <wire x1="91.44" y1="-180.34" x2="91.44" y2="-175.26" width="0.1524" layer="91"/>
 <pinref part="L5" gate="G$1" pin="2"/>
 <junction x="91.44" y="-180.34"/>
+</segment>
+<segment>
+<pinref part="SV3" gate="1" pin="10"/>
+<pinref part="VDD4" gate="G$1" pin="VDD"/>
 </segment>
 </net>
 <net name="VSS" class="2">
@@ -18994,6 +19011,10 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <pinref part="VSS55" gate="G$1" pin="VSS"/>
 <junction x="-45.72" y="-134.62"/>
 </segment>
+<segment>
+<pinref part="SV3" gate="1" pin="1"/>
+<pinref part="VSS56" gate="G$1" pin="VSS"/>
+</segment>
 </net>
 <net name="AVDD" class="2">
 <segment>
@@ -19448,6 +19469,11 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <junction x="-17.78" y="55.88"/>
 <junction x="-30.48" y="55.88"/>
 </segment>
+<segment>
+<wire x1="-43.18" y1="5.08" x2="-55.88" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="SV3" gate="1" pin="9"/>
+<label x="-45.72" y="5.08" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="AN0" class="0">
 <segment>
@@ -19457,6 +19483,11 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <junction x="-17.78" y="50.8"/>
 <junction x="-30.48" y="50.8"/>
 </segment>
+<segment>
+<wire x1="-43.18" y1="-12.7" x2="-55.88" y2="-12.7" width="0.1524" layer="91"/>
+<pinref part="SV3" gate="1" pin="2"/>
+<label x="-43.18" y="-12.7" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="AN1" class="0">
 <segment>
@@ -19465,6 +19496,11 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <label x="-40.64" y="48.26" size="1.778" layer="95"/>
 <junction x="-17.78" y="48.26"/>
 <junction x="-30.48" y="48.26"/>
+</segment>
+<segment>
+<wire x1="-43.18" y1="-10.16" x2="-55.88" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="SV3" gate="1" pin="3"/>
+<label x="-43.18" y="-10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VREF+" class="0">
@@ -19502,6 +19538,11 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <label x="215.9" y="33.02" size="1.778" layer="95"/>
 <junction x="200.66" y="33.02"/>
 <junction x="213.36" y="33.02"/>
+</segment>
+<segment>
+<wire x1="-55.88" y1="-7.62" x2="-43.18" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="SV3" gate="1" pin="4"/>
+<label x="-45.72" y="-7.62" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="QEA2" class="0">
@@ -19563,6 +19604,11 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <label x="215.9" y="66.04" size="1.778" layer="95"/>
 <junction x="200.66" y="66.04"/>
 <junction x="213.36" y="66.04"/>
+</segment>
+<segment>
+<wire x1="-55.88" y1="0" x2="-43.18" y2="0" width="0.1524" layer="91"/>
+<pinref part="SV3" gate="1" pin="7"/>
+<label x="-45.72" y="0" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="PWM1L" class="0">
@@ -19723,6 +19769,11 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <junction x="213.36" y="63.5"/>
 <junction x="200.66" y="63.5"/>
 </segment>
+<segment>
+<wire x1="-55.88" y1="-2.54" x2="-43.18" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="SV3" gate="1" pin="6"/>
+<label x="-45.72" y="-2.54" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="PWM4ER" class="0">
 <segment>
@@ -19731,6 +19782,11 @@ Source: &lt;a href="https://www.arrow.com/en/products/cmi-9705-0380-smt-tr/cui-d
 <label x="-40.64" y="15.24" size="1.778" layer="95"/>
 <junction x="-30.48" y="15.24"/>
 <junction x="-17.78" y="15.24"/>
+</segment>
+<segment>
+<wire x1="-43.18" y1="2.54" x2="-55.88" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="SV3" gate="1" pin="8"/>
+<label x="-45.72" y="2.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$5" class="0">

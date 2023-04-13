@@ -19072,12 +19072,12 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <wire x1="33.02" y1="-68.58" x2="40.64" y2="-68.58" width="0.1524" layer="91"/>
 <junction x="40.64" y="-68.58"/>
 <junction x="33.02" y="-68.58"/>
-</segment>
-<segment>
-<wire x1="40.64" y1="-73.66" x2="33.02" y2="-73.66" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="-68.58" x2="25.4" y2="-68.58" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="-68.58" x2="25.4" y2="-73.66" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="SWITCH_TERMINAL_1"/>
 <junction x="40.64" y="-73.66"/>
 <label x="33.02" y="-73.66" size="1.778" layer="95"/>
+<wire x1="25.4" y1="-73.66" x2="40.64" y2="-73.66" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="I/O_MON" gate="1" pin="1"/>

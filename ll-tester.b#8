@@ -3503,15 +3503,15 @@ design rules under a new name.</description>
 <attribute name="SPICEPREFIX" value="C" x="44.45" y="104.14" size="1.778" layer="28" rot="MR0" display="off"/>
 <attribute name="VALUE" x="45.72" y="101.6" size="1.27" layer="28" rot="MR0"/>
 </element>
-<element name="LS1" library="CMI-9705-0380-SMT-TR" package="CMI97050380SMTTR" value="CMI-9705-0380-SMT-TR" x="45.72" y="43.18" smashed="yes">
-<attribute name="DESCRIPTION" value="9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer" x="45.72" y="43.18" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="5.7mm" x="45.72" y="43.18" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="CUI Devices" x="45.72" y="43.18" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="CMI-9705-0380-SMT-TR" x="45.72" y="43.18" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="490-CMI97050380SMTTR" x="45.72" y="43.18" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/CUI-Devices/CMI-9705-0380-SMT-TR?qs=P1JMDcb91o7eIePojyn4BA%3D%3D" x="45.72" y="43.18" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="46.99" y="44.45" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="45.72" y="43.18" size="1.27" layer="27" align="center"/>
+<element name="LS1" library="CMI-9705-0380-SMT-TR" package="CMI97050380SMTTR" value="CMI-9705-0380-SMT-TR" x="45.72" y="49.53" smashed="yes">
+<attribute name="DESCRIPTION" value="9.7 mm, 3 Vdc, 80 dB, Surface Mount, Driving Circuit, Magnetic Audio Indicator Buzzer" x="45.72" y="49.53" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="5.7mm" x="45.72" y="49.53" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="CUI Devices" x="45.72" y="49.53" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="CMI-9705-0380-SMT-TR" x="45.72" y="49.53" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="490-CMI97050380SMTTR" x="45.72" y="49.53" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/CUI-Devices/CMI-9705-0380-SMT-TR?qs=P1JMDcb91o7eIePojyn4BA%3D%3D" x="45.72" y="49.53" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="46.99" y="50.8" size="1.27" layer="25" align="center"/>
+<attribute name="VALUE" x="45.72" y="49.53" size="1.27" layer="27" align="center"/>
 </element>
 <element name="SV3" library="con-lstb" library_urn="urn:adsk.eagle:library:162" package="MA10-1" package3d_urn="urn:adsk.eagle:package:8346/1" value="MISC0" x="-31.75" y="40.64" smashed="yes">
 <attribute name="MF" value="" x="-31.75" y="40.64" size="1.778" layer="27" display="off"/>
@@ -3674,8 +3674,6 @@ design rules under a new name.</description>
 <wire x1="48.3108" y1="25.3746" x2="51.435" y2="22.2504" width="0.3048" layer="16"/>
 <wire x1="55.5498" y1="20.2692" x2="55.56" y2="20.32" width="0.3048" layer="16"/>
 <wire x1="48.3108" y1="25.3746" x2="48.26" y2="25.4" width="0.3048" layer="16"/>
-<wire x1="45.72" y1="49.53" x2="45.72" y2="62.23" width="0.3048" layer="16"/>
-<wire x1="57.15" y1="38.1" x2="45.72" y2="49.53" width="0.3048" layer="16"/>
 <wire x1="48.3108" y1="29.2608" x2="48.3108" y2="25.527" width="0.3048" layer="1"/>
 <wire x1="57.15" y1="38.1" x2="48.3108" y2="29.2608" width="0.3048" layer="1"/>
 <wire x1="48.3108" y1="25.527" x2="48.26" y2="25.4" width="0.3048" layer="1"/>
@@ -3853,6 +3851,9 @@ design rules under a new name.</description>
 <wire x1="-42.8244" y1="62.1792" x2="-42.86" y2="62.23" width="0.3048" layer="1"/>
 <wire x1="-48.3489" y1="67.7037" x2="-42.9768" y2="62.3316" width="0.3048" layer="1"/>
 <wire x1="-42.9768" y1="62.3316" x2="-42.86" y2="62.23" width="0.3048" layer="1"/>
+<wire x1="47.4726" y1="47.7774" x2="47.4726" y2="61.2648" width="0.3048" layer="1"/>
+<wire x1="57.15" y1="38.1" x2="47.4726" y2="47.7774" width="0.3048" layer="1"/>
+<wire x1="47.4726" y1="61.2648" x2="47.3964" y2="61.341" width="0.3048" layer="1"/>
 </signal>
 <signal name="VSS" class="2">
 <contactref element="C1" pad="2"/>
@@ -4108,9 +4109,7 @@ design rules under a new name.</description>
 <wire x1="13.4112" y1="42.672" x2="14.7066" y2="42.672" width="0.3048" layer="1"/>
 <wire x1="14.7066" y1="42.672" x2="14.7701" y2="42.66" width="0.3048" layer="1"/>
 <wire x1="-21.336" y1="24.003" x2="-21.336" y2="25.4" width="0.3048" layer="1"/>
-<wire x1="49.7586" y1="48.0822" x2="45.72" y2="48.0822" width="0.3048" layer="1"/>
-<wire x1="57.15" y1="40.6908" x2="49.7586" y2="48.0822" width="0.3048" layer="1"/>
-<wire x1="45.72" y1="48.0822" x2="45.72" y2="48.13" width="0.3048" layer="1"/>
+<wire x1="45.72" y1="54.4322" x2="45.72" y2="54.48" width="0.3048" layer="1"/>
 <wire x1="57.15" y1="40.6908" x2="57.15" y2="40.64" width="0.3048" layer="1"/>
 <wire x1="-6.6294" y1="49.7586" x2="-12.573" y2="49.7586" width="0.3048" layer="1"/>
 <wire x1="-6.4008" y1="49.53" x2="-6.6294" y2="49.7586" width="0.3048" layer="1"/>
@@ -4174,6 +4173,10 @@ design rules under a new name.</description>
 <wire x1="-40.9956" y1="58.4454" x2="-40.96" y2="58.42" width="0.3048" layer="1"/>
 <wire x1="-40.9956" y1="62.1792" x2="-40.96" y2="62.23" width="0.3048" layer="1"/>
 <via x="-40.9956" y="60.3504" extent="1-16" drill="0.35"/>
+<wire x1="45.6438" y1="59.7408" x2="45.6438" y2="54.5592" width="0.3048" layer="1"/>
+<wire x1="43.2054" y1="62.1792" x2="45.6438" y2="59.7408" width="0.3048" layer="1"/>
+<wire x1="45.6438" y1="54.5592" x2="45.72" y2="54.48" width="0.3048" layer="1"/>
+<wire x1="43.2054" y1="62.1792" x2="43.18" y2="62.23" width="0.3048" layer="1"/>
 </signal>
 <signal name="AVDD" class="2">
 <contactref element="U1" pad="15"/>
@@ -4905,18 +4908,19 @@ design rules under a new name.</description>
 <wire x1="-6.3246" y1="46.9392" x2="0.5334" y2="46.9392" width="0.1524" layer="15"/>
 <wire x1="14.7066" y1="43.6626" x2="14.7701" y2="43.66" width="0.1524" layer="1"/>
 <wire x1="-6.3246" y1="46.9392" x2="-6.35" y2="46.99" width="0.1524" layer="15"/>
-<wire x1="44.2722" y1="38.1762" x2="45.72" y2="38.1762" width="0.1524" layer="1"/>
-<wire x1="25.0698" y1="38.1762" x2="44.2722" y2="38.1762" width="0.1524" layer="15"/>
 <wire x1="24.765" y1="38.1762" x2="25.0698" y2="38.1762" width="0.1524" layer="16"/>
 <wire x1="24.1554" y1="37.5666" x2="24.765" y2="38.1762" width="0.1524" layer="16"/>
 <wire x1="23.0886" y1="37.5666" x2="24.1554" y2="37.5666" width="0.1524" layer="16"/>
 <wire x1="16.9926" y1="43.6626" x2="23.0886" y2="37.5666" width="0.1524" layer="16"/>
 <wire x1="13.6398" y1="43.6626" x2="16.9926" y2="43.6626" width="0.1524" layer="16"/>
 <wire x1="13.4112" y1="43.8912" x2="13.6398" y2="43.6626" width="0.1524" layer="16"/>
-<wire x1="45.72" y1="38.1762" x2="45.72" y2="38.23" width="0.1524" layer="1"/>
 <via x="13.4112" y="43.8912" extent="1-16" drill="0.35"/>
 <via x="44.2722" y="38.1762" extent="1-16" drill="0.35"/>
 <via x="25.0698" y="38.1762" extent="1-16" drill="0.35"/>
+<wire x1="44.2722" y1="43.1292" x2="44.2722" y2="38.1762" width="0.1524" layer="1"/>
+<wire x1="45.72" y1="44.577" x2="44.2722" y2="43.1292" width="0.1524" layer="1"/>
+<wire x1="45.72" y1="44.577" x2="45.72" y2="44.58" width="0.1524" layer="1"/>
+<wire x1="25.0698" y1="38.1762" x2="44.2722" y2="38.1762" width="0.1524" layer="15"/>
 </signal>
 <signal name="U2TX">
 <contactref element="U1" pad="2"/>

@@ -196,6 +196,15 @@
 #define MISC_0_Get()               ((PORTB >> 11) & 0x1U)
 #define MISC_0_PIN                  GPIO_PIN_RB11
 
+/*** Macros for DIS_BLANK pin ***/
+#define DIS_BLANK_Set()               (LATBSET = (1U<<12))
+#define DIS_BLANK_Clear()             (LATBCLR = (1U<<12))
+#define DIS_BLANK_Toggle()            (LATBINV= (1U<<12))
+#define DIS_BLANK_OutputEnable()      (TRISBCLR = (1U<<12))
+#define DIS_BLANK_InputEnable()       (TRISBSET = (1U<<12))
+#define DIS_BLANK_Get()               ((PORTB >> 12) & 0x1U)
+#define DIS_BLANK_PIN                  GPIO_PIN_RB12
+
 /*** Macros for SW5 pin ***/
 #define SW5_Set()               (LATASET = (1U<<10))
 #define SW5_Clear()             (LATACLR = (1U<<10))

@@ -75,8 +75,8 @@ void GPIO_Initialize ( void )
     PORTA;
     IEC1SET = _IEC1_CNAIE_MASK;
     /* PORTB Initialization */
-    LATB = 0xca40U; /* Initial Latch Value */
-    TRISBCLR = 0xa41U; /* Direction Control */
+    LATB = 0xda40U; /* Initial Latch Value */
+    TRISBCLR = 0x1a41U; /* Direction Control */
     ANSELBCLR = 0x28dU; /* Digital Mode Enable */
     CNPUBSET = 0xfffcU; /* Pull-Up Enable */
     SRCON0BSET = 0xc00cU; /* Slew Rate Control */
@@ -108,7 +108,6 @@ void GPIO_Initialize ( void )
     SDI1R = 2;
     QEA2R = 3;
     QEB2R = 3;
-    INDX2R = 7;
     C1RXR = 4;
     U2RXR = 5;
 

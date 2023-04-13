@@ -57,6 +57,7 @@ void sw2_cb(GPIO_PIN pin, uintptr_t context)
 		if (!H.show_la) {
 			LA_gfx(true, false, 0);
 		}
+		hid_init(H_zero_blank); // reset the screen blanking counter
 	}
 
 }
@@ -69,6 +70,7 @@ void sw4_cb(GPIO_PIN pin, uintptr_t context)
 		buzzer_trigger(1);
 		dbounce = TMR3_CounterGet();
 		H.dis_alt = !H.dis_alt;
+		hid_init(H_zero_blank); // reset the screen blanking counter
 	}
 
 }
@@ -86,6 +88,7 @@ void sw5_cb(GPIO_PIN pin, uintptr_t context)
 		} else {
 			POS2CNT--;
 		}
+		hid_init(H_zero_blank); // reset the screen blanking counter
 	}
 
 }
