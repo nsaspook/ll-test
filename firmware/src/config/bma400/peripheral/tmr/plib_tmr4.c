@@ -74,7 +74,7 @@ void TMR4_Initialize(void)
     TMR4 = 0x0;
 
     /*Set period */
-    PR4 = 70312499U;
+    PR4 = 14062499U;
 
     IEC0SET = _IEC0_T4IE_MASK;
 

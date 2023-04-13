@@ -41,7 +41,7 @@ void sw2_cb(GPIO_PIN pin, uintptr_t context)
 	static uint32_t dbounce = 0;
 
 	if (TMR3_CounterGet() > (dbounce + 70000)) {
-		buzzer_trigger(1);
+		buzzer_trigger(BZ1);
 		dbounce = TMR3_CounterGet();
 		H.show_la = !H.show_la;
 
@@ -67,7 +67,7 @@ void sw4_cb(GPIO_PIN pin, uintptr_t context)
 	static uint32_t dbounce = 0;
 
 	if (TMR3_CounterGet() > (dbounce + 70000)) {
-		buzzer_trigger(1);
+		buzzer_trigger(BZ3);
 		dbounce = TMR3_CounterGet();
 		H.dis_alt = !H.dis_alt;
 		hid_init(H_zero_blank); // reset the screen blanking counter
@@ -80,7 +80,7 @@ void sw5_cb(GPIO_PIN pin, uintptr_t context)
 	static uint32_t dbounce = 0;
 
 	if (TMR3_CounterGet() > (dbounce + 70000)) {
-		buzzer_trigger(1);
+		buzzer_trigger(BZ1);
 		dbounce = TMR3_CounterGet();
 		H.la_mod = !H.la_mod;
 		if (SW3_Get()) {
@@ -96,4 +96,5 @@ void sw5_cb(GPIO_PIN pin, uintptr_t context)
 void hid_blank_cb(uint32_t status, uintptr_t context)
 {
 	hid_init(H_blank);
+	buzzer_trigger(BZ2);
 }

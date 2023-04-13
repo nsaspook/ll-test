@@ -15,6 +15,11 @@ extern "C" {
 #include "buzzer.h"
 #include "gfx.h"
 
+#define HID_DRIVER "V1.000" 
+#define HID_ALIAS "HID"
+
+#define FFT_WAKE	1500
+	
 	typedef enum {
 		H_init,
 		H_home,

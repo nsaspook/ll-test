@@ -188,6 +188,7 @@ int main(void)
 	bool wait = true, fft_settle = false;
 	uint8_t ffti = 0, w = 0;
 	uint16_t fft_count = 0;
+	int32_t wake_fft = 0, i = 0;
 
 	/* Initialize all modules */
 	SYS_Initialize(NULL);
@@ -235,6 +236,10 @@ int main(void)
 	eaDogM_WriteStringAtPos(3, 0, buffer);
 	snprintf(buffer, max_buf, "%s Driver %s", REMOTE_ALIAS, REMOTE_DRIVER);
 	eaDogM_WriteStringAtPos(4, 0, buffer);
+	snprintf(buffer, max_buf, "%s Driver %s", BUZZER_ALIAS, BUZZER_DRIVER);
+	eaDogM_WriteStringAtPos(5, 0, buffer);
+	snprintf(buffer, max_buf, "%s Driver %s", HID_ALIAS, HID_DRIVER);
+	eaDogM_WriteStringAtPos(6, 0, buffer);
 	OledUpdate();
 	buzzer_init(); // audio device
 	TMR3_Start(); // audio device effects timer
@@ -273,7 +278,7 @@ int main(void)
 
 	LED_RED_Off();
 	LED_GREEN_Off();
-	buzzer_trigger(1);
+	buzzer_trigger(BZ2);
 	QEI2_Start();
 	POS2CNT = 0;
 	GPIO_PinInterruptCallbackRegister(SW2_PIN, sw2_cb, 0);
@@ -350,7 +355,7 @@ int main(void)
 				eaDogM_WriteStringAtPos(4, 0, buffer);
 				snprintf(buffer, max_buf, "RAN %d", imu0.acc_range);
 				eaDogM_WriteStringAtPos(5, 0, buffer);
-				snprintf(buffer, max_buf, "ANG %s , %d %d", imu0.angles ? "Yes" : "No", POS2CNT, SW3_Get());
+				snprintf(buffer, max_buf, "ANG %s , %d %d %d", imu0.angles ? "Yes" : "No", POS2CNT, SW3_Get(), wake_fft);
 				eaDogM_WriteStringAtPos(6, 0, buffer);
 			} else {
 
@@ -392,7 +397,11 @@ int main(void)
 			}
 			TP3_Clear(); // end of drawing function
 
-			if ((fft_buffer[32]+ fft_buffer[50] + fft_buffer[96]) > 100) {
+			wake_fft = 0;
+			for (i = 0; i < N_FFT - 1; i++) {
+				wake_fft += fft_buffer[i];
+			}
+			if (wake_fft > FFT_WAKE) {
 				if (H.dis_reset) { // display is blanked so show the screen
 					H.dis_unblank = true;
 				} else { // activity trigger, reset the blanking timer
@@ -433,6 +442,7 @@ int main(void)
 				init_lcd_drv(D_BLANK);
 				hid_init(H_zero_blank);
 				H.dis_reset = false;
+				buzzer_trigger(BZ2);
 			}
 			OledUpdate();
 #endif
