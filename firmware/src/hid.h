@@ -19,6 +19,7 @@ extern "C" {
 #define HID_ALIAS "HID"
 
 #define FFT_WAKE	1500
+#define HID_LONG_BLANK	14062499U * 10U
 	
 	typedef enum {
 		H_init,

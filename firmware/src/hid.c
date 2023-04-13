@@ -76,12 +76,18 @@ void sw4_cb(GPIO_PIN pin, uintptr_t context)
 		}
 		hid_init(H_zero_blank); // reset the screen blanking counter
 		if (!SW3_Get()) {
-			if (!H.silent) { // toggle buzzer sound
-				buzzer_trigger(BZ_OFF);
-			} else {
-				H.silent = false;
-			}
 			hid_init(H_blank);
+			if (!SW2_Get() && !SW5_Get()) {
+				PR4 = HID_LONG_BLANK;
+				buzzer_trigger(BZ_ON_LOW);
+			} else {
+				if (!H.silent) { // toggle buzzer sound
+					buzzer_trigger(BZ_OFF);
+				} else {
+					H.silent = false;
+				}
+			}
+
 		}
 	}
 
