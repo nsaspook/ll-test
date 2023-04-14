@@ -72,6 +72,9 @@ extern "C" {
 #define LED_RED_Off() LED_RED_Clear()
 #endif 
 
+	/* hardware dependant define */
+#define BLANK_COUNTER	TMR4
+
 	/*
 	 * setup external interrupt #2 for IMU BMA4x0 data update interrupt trigger output
 	 */

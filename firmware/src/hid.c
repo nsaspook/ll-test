@@ -1,4 +1,6 @@
-
+/*
+ * Human input device handler, GLCD screen back-light blank and FSM
+ */
 #include "hid.h"
 
 H_type H = {
@@ -8,21 +10,39 @@ H_type H = {
 	.la_mod = true,
 	.dis_reset = false,
 	.silent = false,
-	.pacing = 0,
 	.hid_state = H_init,
 };
 
-void hid_blank_cb(uint32_t, uintptr_t);
+static void hid_blank_cb(uint32_t, uintptr_t);
+static	void sw2_cb(GPIO_PIN, uintptr_t);
+static	void sw4_cb(GPIO_PIN, uintptr_t);
+static	void sw5_cb(GPIO_PIN, uintptr_t);
 
+/*
+ * setup and start the needed hardware and software
+ */
 void hid_init(H_STATE hs)
 {
+	H.hid_state = hs;
 	switch (hs) {
 	case H_init:
+		TMR3_Start(); // debounce counter
 		TMR4_CallbackRegister(hid_blank_cb, 0);
-		TMR4_Start();
+		TMR4_Start(); // screen blank counter
+		GPIO_PinInterruptCallbackRegister(SW2_PIN, sw2_cb, 0);
+		GPIO_PinIntEnable(SW2_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
+		SW2_InterruptEnable();
+
+		GPIO_PinInterruptCallbackRegister(SW4_PIN, sw4_cb, 0);
+		GPIO_PinIntEnable(SW4_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
+		SW4_InterruptEnable();
+
+		GPIO_PinInterruptCallbackRegister(SW5_PIN, sw5_cb, 0);
+		GPIO_PinIntEnable(SW5_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
+		SW5_InterruptEnable();
 		break;
 	case H_zero_blank:
-		TMR4 = 0x0;
+		BLANK_COUNTER = 0x0; /* Clear counter to restart blanking period */
 		break;
 	case H_blank:
 		ReSet_SetLow();
@@ -34,14 +54,14 @@ void hid_init(H_STATE hs)
 }
 
 /*
- * Switch button pressed call-back functions
+ * Switch button pressed IOC pin call-back functions
  * SW3 is input level only with no IOC functions
  */
-void sw2_cb(GPIO_PIN pin, uintptr_t context)
+static void sw2_cb(GPIO_PIN pin, uintptr_t context)
 {
 	static uint32_t dbounce = 0;
 
-	if (TMR3_CounterGet() > (dbounce + 70000)) {
+	if (TMR3_CounterGet() > (dbounce + DBOUNCE_COUNTS)) {
 		buzzer_trigger(BZ1);
 		dbounce = TMR3_CounterGet();
 		H.show_la = !H.show_la;
@@ -63,11 +83,11 @@ void sw2_cb(GPIO_PIN pin, uintptr_t context)
 
 }
 
-void sw4_cb(GPIO_PIN pin, uintptr_t context)
+static void sw4_cb(GPIO_PIN pin, uintptr_t context)
 {
 	static uint32_t dbounce = 0;
 
-	if (TMR3_CounterGet() > (dbounce + 70000)) {
+	if (TMR3_CounterGet() > (dbounce + DBOUNCE_COUNTS)) {
 		buzzer_trigger(BZ3);
 		dbounce = TMR3_CounterGet();
 		H.dis_alt = !H.dis_alt;
@@ -77,8 +97,8 @@ void sw4_cb(GPIO_PIN pin, uintptr_t context)
 		hid_init(H_zero_blank); // reset the screen blanking counter
 		if (!SW3_Get()) {
 			hid_init(H_blank);
-			if (!SW2_Get() && !SW5_Get()) {
-				PR4 = HID_LONG_BLANK;
+			if (!SW2_Get() && !SW5_Get()) { // set screen blanking period to ~10min
+				TMR4_PeriodSet(HID_LONG_BLANK);
 				buzzer_trigger(BZ_ON_LOW);
 			} else {
 				if (!H.silent) { // toggle buzzer sound
@@ -93,11 +113,11 @@ void sw4_cb(GPIO_PIN pin, uintptr_t context)
 
 }
 
-void sw5_cb(GPIO_PIN pin, uintptr_t context)
+static void sw5_cb(GPIO_PIN pin, uintptr_t context)
 {
 	static uint32_t dbounce = 0;
 
-	if (TMR3_CounterGet() > (dbounce + 70000)) {
+	if (TMR3_CounterGet() > (dbounce + DBOUNCE_COUNTS)) {
 		buzzer_trigger(BZ1);
 		dbounce = TMR3_CounterGet();
 		H.la_mod = !H.la_mod;
@@ -114,7 +134,7 @@ void sw5_cb(GPIO_PIN pin, uintptr_t context)
 
 }
 
-void hid_blank_cb(uint32_t status, uintptr_t context)
+static void hid_blank_cb(uint32_t status, uintptr_t context)
 {
 	hid_init(H_blank);
 	buzzer_trigger(BZ2);

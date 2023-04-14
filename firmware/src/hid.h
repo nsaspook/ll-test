@@ -1,8 +1,6 @@
 /* 
- * File:   hid.h
- * Author: root
- *
- * Created on April 11, 2023, 6:43 PM
+ * TMR3 debounce timer
+ * TMR4 screen blank timer
  */
 
 #ifndef HID_H
@@ -15,12 +13,14 @@ extern "C" {
 #include "buzzer.h"
 #include "gfx.h"
 
-#define HID_DRIVER "V1.000" 
+#define HID_DRIVER "V1.002" 
 #define HID_ALIAS "HID"
 
 #define FFT_WAKE	1500
 #define HID_LONG_BLANK	14062499U * 10U
-	
+
+#define DBOUNCE_COUNTS	70000
+
 	typedef enum {
 		H_init,
 		H_home,
@@ -31,7 +31,6 @@ extern "C" {
 	} H_STATE;
 
 	typedef struct H_type {
-		volatile uint32_t pacing;
 		H_STATE hid_state;
 		volatile bool dis_alt, show_la, la_mod, dis_unblank, dis_reset, silent;
 	} H_type;
@@ -39,10 +38,6 @@ extern "C" {
 	extern H_type H;
 
 	extern void hid_init(H_STATE);
-
-	void sw2_cb(GPIO_PIN, uintptr_t);
-	void sw4_cb(GPIO_PIN, uintptr_t);
-	void sw5_cb(GPIO_PIN, uintptr_t);
 
 #ifdef	__cplusplus
 }

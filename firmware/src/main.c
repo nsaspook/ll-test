@@ -241,9 +241,8 @@ int main(void)
 	snprintf(buffer, max_buf, "%s Driver %s", HID_ALIAS, HID_DRIVER);
 	eaDogM_WriteStringAtPos(6, 0, buffer);
 	OledUpdate();
-	buzzer_init(); // audio device
-	TMR3_Start(); // audio device effects timer
-	hid_init(H_init); // screen blanking, input effects
+	buzzer_init(B_init); // audio device handler setup
+	hid_init(H_init); // screen blanking, input effects handler setup
 
 	/*
 	 * check to see if we actually have a working IMU
@@ -281,18 +280,7 @@ int main(void)
 	buzzer_trigger(BZ2);
 	QEI2_Start();
 	POS2CNT = 0;
-	GPIO_PinInterruptCallbackRegister(SW2_PIN, sw2_cb, 0);
-	GPIO_PinIntEnable(SW2_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
-	SW2_InterruptEnable();
-
-	GPIO_PinInterruptCallbackRegister(SW4_PIN, sw4_cb, 0);
-	GPIO_PinIntEnable(SW4_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
-	SW4_InterruptEnable();
-
-	GPIO_PinInterruptCallbackRegister(SW5_PIN, sw5_cb, 0);
-	GPIO_PinIntEnable(SW5_PIN, GPIO_INTERRUPT_ON_FALLING_EDGE);
-	SW5_InterruptEnable();
-	WaitMs(1000);
+	WaitMs(1000); // small delay for screen info display
 
 	TP1_Set(); // ETH modules display trigger
 
