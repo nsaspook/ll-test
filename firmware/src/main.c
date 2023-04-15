@@ -317,6 +317,10 @@ int main(void)
 		 * convert the SPI XYZ response to standard floating point acceleration values and rolling integer time-stamps per measurement
 		 */
 		if (imu0.update || TimerDone(TMR_LOG)) {
+			if (TimerDone(TMR_LOG)) {
+				LED_GREEN_Toggle();
+			}
+			StartTimer(TMR_LOG, imu0.log_timeout);
 
 #ifdef SHOW_LCD   
 			OledClearBuffer();
@@ -328,6 +332,49 @@ int main(void)
 			accel.xerr = UpdatePI(&xpid, (double) accel.xa);
 			accel.yerr = UpdatePI(&ypid, (double) accel.ya);
 			accel.zerr = UpdatePI(&zpid, (double) accel.za);
+
+			canfd_state(CAN_RECEIVE, accel.buffer);
+			host_ptr = (imu_host_t *) accel.buffer;
+			if (rx_msg_ready) {
+				rx_msg_ready = false;
+				remote_cmd_decode(host_ptr);
+			}
+			if (!H.dis_alt) {
+				eaDogM_WriteStringAtPos(12, 0, hbuffer);
+			}
+
+			switch (alter) {
+			case 0:
+				canfd_state(CAN_TRANSMIT_FD, &imu0);
+				alter++;
+				break;
+			case 1:
+				canfd_state(CAN_TRANSMIT_FD, &accel);
+				alter++;
+				break;
+			case 2:
+				fft0.id = CAN_FFT_LO;
+				if (fft_settle) {
+					memcpy(fft0.buffer, &fft_buffer[0], 60);
+					canfd_state(CAN_TRANSMIT_FD, &fft0);
+				}
+				alter++;
+				break;
+			case 3:
+				fft0.id = CAN_FFT_HI;
+				if (fft_settle) {
+					memcpy(fft0.buffer, &fft_buffer[60], 60);
+					canfd_state(CAN_TRANSMIT_FD, &fft0);
+				}
+				if (!fft_settle && (fft_count++ >= FFT_COUNT)) {
+					fft_settle = true;
+				}
+				alter = 0; // restart data sequence
+				break;
+			default:
+				alter = 0;
+				break;
+			}
 
 #ifdef SHOW_LCD
 			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %X\r\n", accel.x, accel.y, accel.z, imu0.rs, imu0.ss);
@@ -434,9 +481,6 @@ int main(void)
 			}
 			OledUpdate();
 #endif
-			if (TimerDone(TMR_LOG)) {
-				LED_GREEN_Toggle();
-			}
 
 #ifdef __32MK0512MCJ048__
 #ifdef SHOW_LCD
@@ -464,50 +508,8 @@ int main(void)
 				eaDogM_WriteStringAtPos(13, 0, buffer);
 			}
 #endif
-			canfd_state(CAN_RECEIVE, accel.buffer);
-			host_ptr = (imu_host_t *) accel.buffer;
-			if (rx_msg_ready) {
-				rx_msg_ready = false;
-				remote_cmd_decode(host_ptr);
-			}
-			if (!H.dis_alt) {
-				eaDogM_WriteStringAtPos(12, 0, hbuffer);
-			}
 
-			switch (alter) {
-			case 0:
-				canfd_state(CAN_TRANSMIT_FD, &imu0);
-				alter++;
-				break;
-			case 1:
-				canfd_state(CAN_TRANSMIT_FD, &accel);
-				alter++;
-				break;
-			case 2:
-				fft0.id = CAN_FFT_LO;
-				if (fft_settle) {
-					memcpy(fft0.buffer, &fft_buffer[0], 60);
-					canfd_state(CAN_TRANSMIT_FD, &fft0);
-				}
-				alter++;
-				break;
-			case 3:
-				fft0.id = CAN_FFT_HI;
-				if (fft_settle) {
-					memcpy(fft0.buffer, &fft_buffer[60], 60);
-					canfd_state(CAN_TRANSMIT_FD, &fft0);
-				}
-				if (!fft_settle && (fft_count++ >= FFT_COUNT)) {
-					fft_settle = true;
-				}
-				alter = 0; // restart data sequence
-				break;
-			default:
-				alter = 0;
-				break;
-			}
 #endif
-			StartTimer(TMR_LOG, imu0.log_timeout);
 		}
 	}
 

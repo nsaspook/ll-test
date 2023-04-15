@@ -24,7 +24,7 @@ extern "C" {
 
 #define N_FFT 256
 #define PI2N 2 * M_PI / N_FFT
-#define FFT_COUNT   512
+#define FFT_COUNT   256
 
 #ifdef BMA400 // Bosch devices, gain and noise product
 #define FFT_GAIN	5.0  // low cost, high noise
