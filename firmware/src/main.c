@@ -48,6 +48,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include <stdio.h>
 #include <string.h>
+#include <proc/p32mk0512mcj048.h>
 
 #include "imupic32mcj.h"
 #include "bma490l.h"
@@ -286,6 +287,7 @@ int main(void)
 
 	/* set can-fd extended ID filters and masks */
 	canfd_set_filter(board_serial_id, HOST_MAGIC_ID);
+	set_can_retran();
 
 #ifdef DEBUG_FILTER
 	snprintf(cmd_buffer, max_buf, "%X %X", CAN1_MessageAcceptanceFilterMaskGet(0), CAN1_MessageAcceptanceFilterGet(0));

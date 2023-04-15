@@ -106,8 +106,8 @@ void start_tick(void)
 
 #ifdef __32MK0512MCJ048__
 	TMR9_Start(); // IMU time-stamp counter
-//	QEI2_CallbackRegister(qei_index_cb, 0);
-//	QEI2_Start();
+	//	QEI2_CallbackRegister(qei_index_cb, 0);
+	//	QEI2_Start();
 #endif
 #ifdef __32MZ1025W104132__
 	TMR2_Start(); // IMU time-stamp counter
@@ -160,4 +160,13 @@ void clear_can_errors(void)
 	CFD1INTbits.WAKIF = 0;
 	CFD1INTbits.MODIF = 0;
 	CFD1INTbits.TBCIF = 0;
+}
+
+void set_can_retran(void)
+{
+	CFD1FIFOCON1bits.TXAT = CFD_RETRAN;
+	CFD1FIFOCON2bits.TXAT = CFD_RETRAN;
+	CFD1FIFOCON3bits.TXAT = CFD_RETRAN;
+	CFD1FIFOCON4bits.TXAT = CFD_RETRAN;
+	CFD1CONbits.RTXAT = CFD_RETRAN_MODE;
 }

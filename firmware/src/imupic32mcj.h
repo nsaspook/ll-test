@@ -74,6 +74,9 @@ extern "C" {
 
 	/* hardware dependant define */
 #define BLANK_COUNTER	TMR4
+	
+#define CFD_RETRAN	0b01
+#define CFD_RETRAN_MODE	1
 
 	/*
 	 * setup external interrupt #2 for IMU BMA4x0 data update interrupt trigger output
@@ -96,7 +99,7 @@ extern "C" {
 	uint8_t set_imu_bits(void);
 	void canfd_set_filter(uint32_t, uint32_t);
 	void clear_can_errors(void);
-
+	void set_can_retran(void);
 	extern uint32_t board_serial_id, cpu_serial_id;
 
 #ifdef __cplusplus
