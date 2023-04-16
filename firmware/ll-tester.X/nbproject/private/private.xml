@@ -14,6 +14,7 @@
             <file>file:/root/ll-test/firmware/src/main.c</file>
             <file>file:/root/ll-test/firmware/src/hid.h</file>
             <file>file:/root/ll-test/firmware/src/sca3300.c</file>
+            <file>file:/root/ll-test/firmware/lcd_drv/display_type.h</file>
         </group>
     </open-files>
 </project-private>

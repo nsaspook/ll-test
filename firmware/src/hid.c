@@ -14,9 +14,9 @@ H_type H = {
 };
 
 static void hid_blank_cb(uint32_t, uintptr_t);
-static	void sw2_cb(GPIO_PIN, uintptr_t);
-static	void sw4_cb(GPIO_PIN, uintptr_t);
-static	void sw5_cb(GPIO_PIN, uintptr_t);
+static void sw2_cb(GPIO_PIN, uintptr_t);
+static void sw4_cb(GPIO_PIN, uintptr_t);
+static void sw5_cb(GPIO_PIN, uintptr_t);
 
 /*
  * setup and start the needed hardware and software
@@ -90,7 +90,7 @@ static void sw4_cb(GPIO_PIN pin, uintptr_t context)
 	if (TMR3_CounterGet() > (dbounce + DBOUNCE_COUNTS)) {
 		buzzer_trigger(BZ3);
 		dbounce = TMR3_CounterGet();
-		H.dis_alt = !H.dis_alt;
+
 		if (H.dis_reset) {
 			H.dis_unblank = true;
 		}
@@ -108,6 +108,9 @@ static void sw4_cb(GPIO_PIN pin, uintptr_t context)
 				}
 			}
 
+		} else {
+			H.dis_alt = !H.dis_alt;
+			buzzer_trigger(BZ1);
 		}
 	}
 

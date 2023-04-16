@@ -20,6 +20,11 @@ extern "C" {
 #define HID_LONG_BLANK	14062499U * 10U
 
 #define DBOUNCE_COUNTS	70000
+	/*
+	 * silent mode animation
+	 */
+#define SDOT_ON		70
+#define SDOT_OFF	140
 
 	typedef enum {
 		H_init,

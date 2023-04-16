@@ -188,7 +188,7 @@ int main(void)
 #endif
 	bool wait = true, fft_settle = false;
 	uint8_t ffti = 0, w = 0;
-	uint16_t fft_count = 0;
+	uint16_t fft_count = 0, dot_anim = 0;
 	int32_t wake_fft = 0, i = 0;
 
 	/* Initialize all modules */
@@ -480,6 +480,16 @@ int main(void)
 				hid_init(H_zero_blank);
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
+			}
+			if (H.silent) {
+				if (dot_anim++ < SDOT_ON) {
+					OledMoveTo(0, 0); // set silent indication dot on screen
+					OledDrawPixel();
+				} else {
+					if (dot_anim > SDOT_OFF) {
+						dot_anim = 0;
+					}
+				}
 			}
 			OledUpdate();
 #endif
