@@ -17453,6 +17453,129 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 </deviceset>
 </devicesets>
 </library>
+<library name="BNO080">
+<packages>
+<package name="IC_BNO080">
+<wire x1="-2.6" y1="1.9" x2="2.6" y2="1.9" width="0.127" layer="51"/>
+<wire x1="2.6" y1="1.9" x2="2.6" y2="-1.9" width="0.127" layer="51"/>
+<wire x1="2.6" y1="-1.9" x2="-2.6" y2="-1.9" width="0.127" layer="51"/>
+<wire x1="-2.6" y1="-1.9" x2="-2.6" y2="1.9" width="0.127" layer="51"/>
+<wire x1="-2.6885" y1="1.9" x2="-2.6885" y2="1.1885" width="0.127" layer="21"/>
+<wire x1="-2.6885" y1="-1.9" x2="-2.6885" y2="-1.1885" width="0.127" layer="21"/>
+<wire x1="2.6885" y1="-1.9" x2="2.6885" y2="-1.1885" width="0.127" layer="21"/>
+<wire x1="2.6885" y1="1.9" x2="2.6885" y2="1.1885" width="0.127" layer="21"/>
+<wire x1="-2.85" y1="2.15" x2="2.85" y2="2.15" width="0.05" layer="39"/>
+<wire x1="2.85" y1="2.15" x2="2.85" y2="-2.15" width="0.05" layer="39"/>
+<wire x1="2.85" y1="-2.15" x2="-2.85" y2="-2.15" width="0.05" layer="39"/>
+<wire x1="-2.85" y1="-2.15" x2="-2.85" y2="2.15" width="0.05" layer="39"/>
+<circle x="-2.5" y="2.4" radius="0.05" width="0.1" layer="21"/>
+<circle x="-2.5" y="2.4" radius="0.05" width="0.1" layer="51"/>
+<text x="-2.2" y="3.1" size="0.8128" layer="25" align="top-left">&gt;NAME</text>
+<text x="-2.2" y="-3.1" size="0.8128" layer="27">&gt;VALUE</text>
+<smd name="1" x="-2.25" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="2" x="-2.3125" y="0.75" dx="0.575" dy="0.25" layer="1"/>
+<smd name="3" x="-2.3125" y="0.25" dx="0.575" dy="0.25" layer="1"/>
+<smd name="4" x="-2.3125" y="-0.25" dx="0.575" dy="0.25" layer="1"/>
+<smd name="5" x="-2.3125" y="-0.75" dx="0.575" dy="0.25" layer="1"/>
+<smd name="6" x="-2.25" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="7" x="-1.75" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="8" x="-1.25" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="9" x="-0.75" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="10" x="-0.25" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="11" x="0.25" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="12" x="0.75" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="13" x="1.25" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="14" x="1.75" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="15" x="2.25" y="-1.5625" dx="0.675" dy="0.25" layer="1" rot="R270"/>
+<smd name="16" x="2.3125" y="-0.75" dx="0.575" dy="0.25" layer="1" rot="R180"/>
+<smd name="17" x="2.3125" y="-0.25" dx="0.575" dy="0.25" layer="1" rot="R180"/>
+<smd name="18" x="2.3125" y="0.25" dx="0.575" dy="0.25" layer="1" rot="R180"/>
+<smd name="19" x="2.3125" y="0.75" dx="0.575" dy="0.25" layer="1" rot="R180"/>
+<smd name="20" x="2.25" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="21" x="1.75" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="22" x="1.25" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="23" x="0.75" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="24" x="0.25" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="25" x="-0.25" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="26" x="-0.75" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="27" x="-1.25" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+<smd name="28" x="-1.75" y="1.5625" dx="0.675" dy="0.25" layer="1" rot="R90"/>
+</package>
+</packages>
+<symbols>
+<symbol name="BNO080">
+<wire x1="20.32" y1="25.4" x2="20.32" y2="-25.4" width="0.1524" layer="94"/>
+<wire x1="20.32" y1="-25.4" x2="-20.32" y2="-25.4" width="0.1524" layer="94"/>
+<wire x1="-20.32" y1="-25.4" x2="-20.32" y2="25.4" width="0.1524" layer="94"/>
+<wire x1="-20.32" y1="25.4" x2="20.32" y2="25.4" width="0.1524" layer="94"/>
+<text x="-20.32" y="26.67" size="2.54" layer="95">&gt;NAME</text>
+<text x="-20.32" y="-29.21" size="2.54" layer="96">&gt;VALUE</text>
+<pin name="GND" x="25.4" y="-22.86" length="middle" direction="pwr" rot="R180"/>
+<pin name="!RST" x="-25.4" y="10.16" length="middle" direction="in"/>
+<pin name="CAP" x="-25.4" y="-12.7" length="middle" direction="pas"/>
+<pin name="VDD" x="25.4" y="22.86" length="middle" direction="pwr" rot="R180"/>
+<pin name="XIN32" x="25.4" y="-10.16" length="middle" direction="in" rot="R180"/>
+<pin name="XOUT32/CLKSEL1" x="25.4" y="-12.7" length="middle" direction="out" rot="R180"/>
+<pin name="ENV_SDA" x="25.4" y="0" length="middle" rot="R180"/>
+<pin name="ENV_SCL" x="25.4" y="2.54" length="middle" function="clk" rot="R180"/>
+<pin name="!BOOT" x="-25.4" y="7.62" length="middle" direction="in"/>
+<pin name="!H_INT" x="25.4" y="15.24" length="middle" direction="out" rot="R180"/>
+<pin name="H_SCL/SCK/RX" x="25.4" y="10.16" length="middle" rot="R180"/>
+<pin name="H_SDA/H_MISO/TX" x="25.4" y="7.62" length="middle" rot="R180"/>
+<pin name="SA0/H_MOSI" x="-25.4" y="0" length="middle" direction="in"/>
+<pin name="VDDIO" x="25.4" y="20.32" length="middle" direction="pwr" rot="R180"/>
+<pin name="GNDIO" x="25.4" y="-20.32" length="middle" direction="pwr" rot="R180"/>
+<pin name="!H_CS" x="-25.4" y="2.54" length="middle" direction="in"/>
+<pin name="CLKSEL0" x="-25.4" y="15.24" length="middle" direction="in"/>
+<pin name="PS0/WAKE" x="-25.4" y="-5.08" length="middle" direction="in"/>
+<pin name="PS1" x="-25.4" y="-7.62" length="middle" direction="in"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BNO080" prefix="U">
+<description>Imu Accel/Gyro/Mag I2c 32bit &lt;a href="https://pricing.snapeda.com/parts/BNO080/CEVA%20Technologies%2C%20Inc./view-part?ref=eda"&gt;Check availability&lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="BNO080" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="IC_BNO080">
+<connects>
+<connect gate="G$1" pin="!BOOT" pad="4"/>
+<connect gate="G$1" pin="!H_CS" pad="18"/>
+<connect gate="G$1" pin="!H_INT" pad="14"/>
+<connect gate="G$1" pin="!RST" pad="11"/>
+<connect gate="G$1" pin="CAP" pad="9"/>
+<connect gate="G$1" pin="CLKSEL0" pad="10"/>
+<connect gate="G$1" pin="ENV_SCL" pad="15"/>
+<connect gate="G$1" pin="ENV_SDA" pad="16"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="GNDIO" pad="25"/>
+<connect gate="G$1" pin="H_SCL/SCK/RX" pad="19"/>
+<connect gate="G$1" pin="H_SDA/H_MISO/TX" pad="20"/>
+<connect gate="G$1" pin="PS0/WAKE" pad="6"/>
+<connect gate="G$1" pin="PS1" pad="5"/>
+<connect gate="G$1" pin="SA0/H_MOSI" pad="17"/>
+<connect gate="G$1" pin="VDD" pad="3"/>
+<connect gate="G$1" pin="VDDIO" pad="28"/>
+<connect gate="G$1" pin="XIN32" pad="27"/>
+<connect gate="G$1" pin="XOUT32/CLKSEL1" pad="26"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="AVAILABILITY" value="In Stock"/>
+<attribute name="DESCRIPTION" value=" BNO080 series Accelerometer, Gyroscope, Magnetometer Sensor Evaluation Board "/>
+<attribute name="MF" value="CEVA Technologies, Inc."/>
+<attribute name="MP" value="BNO080"/>
+<attribute name="PACKAGE" value="None"/>
+<attribute name="PRICE" value="None"/>
+<attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/BNO080/?ref=eda"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -17666,6 +17789,11 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <part name="VSS59" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
 <part name="VDD18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
+<part name="U3" library="BNO080" deviceset="BNO080" device=""/>
+<part name="C30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="VSS60" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="OS2" library="IQD-Frequency-Products" library_urn="urn:adsk.eagle:library:90" deviceset="OSC-OE" device="-IQXO-793" package3d_urn="urn:adsk.eagle:package:3371/1"/>
+<part name="C31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
 </parts>
 <sheets>
 <sheet>
@@ -18369,6 +18497,25 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <instance part="VDD18" gate="G$1" x="-83.82" y="-76.2" smashed="yes" rot="R90">
 <attribute name="VALUE" x="-81.28" y="-78.74" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="U3" gate="G$1" x="200.66" y="137.16" smashed="yes">
+<attribute name="NAME" x="180.34" y="163.83" size="2.54" layer="95"/>
+<attribute name="VALUE" x="180.34" y="107.95" size="2.54" layer="96"/>
+</instance>
+<instance part="C30" gate="G$1" x="175.26" y="121.92" smashed="yes">
+<attribute name="NAME" x="176.276" y="122.555" size="1.778" layer="95"/>
+<attribute name="VALUE" x="176.276" y="117.729" size="1.778" layer="96"/>
+</instance>
+<instance part="VSS60" gate="G$1" x="175.26" y="114.3" smashed="yes">
+<attribute name="VALUE" x="172.72" y="109.22" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="OS2" gate="A" x="271.78" y="127" smashed="yes" rot="R180">
+<attribute name="NAME" x="279.4" y="118.745" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="279.4" y="137.16" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C31" gate="G$1" x="292.1" y="124.46" smashed="yes" rot="R180">
+<attribute name="NAME" x="291.084" y="123.825" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="291.084" y="128.651" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -18635,6 +18782,50 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <pinref part="VDD18" gate="G$1" pin="VDD"/>
 <junction x="-81.28" y="-76.2"/>
 </segment>
+<segment>
+<wire x1="238.76" y1="160.02" x2="226.06" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="VDD"/>
+<junction x="226.06" y="160.02"/>
+<junction x="238.76" y="160.02"/>
+<label x="246.38" y="160.02" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="236.22" y1="157.48" x2="226.06" y2="157.48" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="VDDIO"/>
+<junction x="226.06" y="157.48"/>
+<junction x="236.22" y="157.48"/>
+<label x="246.38" y="157.48" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="236.22" y1="124.46" x2="226.06" y2="124.46" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="XOUT32/CLKSEL1"/>
+<junction x="226.06" y="124.46"/>
+<junction x="236.22" y="124.46"/>
+<label x="231.14" y="121.92" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="175.26" y1="152.4" x2="165.1" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="CLKSEL0"/>
+<junction x="175.26" y="152.4"/>
+<junction x="165.1" y="152.4"/>
+<label x="152.4" y="152.4" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="297.18" y1="121.92" x2="292.1" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="OS2" gate="A" pin="VDD"/>
+<pinref part="C31" gate="G$1" pin="1"/>
+<wire x1="292.1" y1="121.92" x2="284.48" y2="121.92" width="0.1524" layer="91"/>
+<junction x="292.1" y="121.92"/>
+<junction x="284.48" y="121.92"/>
+<label x="297.18" y="119.38" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="259.08" y1="121.92" x2="248.92" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="OS2" gate="A" pin="CON"/>
+<junction x="259.08" y="121.92"/>
+<junction x="248.92" y="121.92"/>
+<label x="251.46" y="119.38" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="VSS" class="2">
 <segment>
@@ -18657,6 +18848,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <label x="88.9" y="142.24" size="1.778" layer="95"/>
 <label x="91.44" y="147.32" size="1.778" layer="95"/>
 <junction x="93.98" y="137.16"/>
+<junction x="93.98" y="132.08"/>
 </segment>
 <segment>
 <wire x1="-30.48" y1="60.96" x2="-17.78" y2="60.96" width="0.1524" layer="91"/>
@@ -18779,6 +18971,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <pinref part="IC1" gate="G$1" pin="GNDIO"/>
 <pinref part="VSS9" gate="G$1" pin="VSS"/>
 <junction x="96.52" y="139.7"/>
+<junction x="96.52" y="132.08"/>
 </segment>
 <segment>
 <wire x1="-30.48" y1="-22.86" x2="-38.1" y2="-22.86" width="0.1524" layer="91"/>
@@ -19114,6 +19307,35 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="-71.12" y="-33.02"/>
 <junction x="-71.12" y="-27.94"/>
 </segment>
+<segment>
+<wire x1="233.68" y1="116.84" x2="226.06" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="GNDIO"/>
+<junction x="226.06" y="116.84"/>
+<junction x="233.68" y="116.84"/>
+<label x="238.76" y="116.84" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="231.14" y1="114.3" x2="226.06" y2="114.3" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="GND"/>
+<junction x="226.06" y="114.3"/>
+<junction x="231.14" y="114.3"/>
+<label x="238.76" y="114.3" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="C30" gate="G$1" pin="2"/>
+<pinref part="VSS60" gate="G$1" pin="VSS"/>
+<junction x="175.26" y="116.84"/>
+</segment>
+<segment>
+<wire x1="292.1" y1="132.08" x2="284.48" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="OS2" gate="A" pin="VSS"/>
+<pinref part="C31" gate="G$1" pin="2"/>
+<wire x1="292.1" y1="129.54" x2="292.1" y2="132.08" width="0.1524" layer="91"/>
+<junction x="292.1" y="129.54"/>
+<junction x="292.1" y="132.08"/>
+<junction x="284.48" y="132.08"/>
+<label x="297.18" y="132.08" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="AVDD" class="2">
 <segment>
@@ -19223,6 +19445,15 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="-30.48" y="-33.02"/>
 <junction x="-43.18" y="-33.02"/>
 </segment>
+<segment>
+<wire x1="162.56" y1="139.7" x2="165.1" y2="139.7" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="!H_CS"/>
+<junction x="175.26" y="139.7"/>
+<junction x="165.1" y="139.7"/>
+<wire x1="165.1" y1="139.7" x2="175.26" y2="139.7" width="0.1524" layer="91"/>
+<junction x="162.56" y="139.7"/>
+<label x="149.86" y="139.7" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>
@@ -19287,6 +19518,13 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="5.08" y="-25.4"/>
 <junction x="17.78" y="-25.4"/>
 </segment>
+<segment>
+<wire x1="226.06" y1="147.32" x2="238.76" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="H_SCL/SCK/RX"/>
+<junction x="226.06" y="147.32"/>
+<junction x="238.76" y="147.32"/>
+<label x="243.84" y="147.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SDO2" class="0">
 <segment>
@@ -19310,6 +19548,13 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="5.08" y="-22.86"/>
 <junction x="17.78" y="-22.86"/>
 </segment>
+<segment>
+<wire x1="175.26" y1="137.16" x2="162.56" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="SA0/H_MOSI"/>
+<junction x="175.26" y="137.16"/>
+<junction x="162.56" y="137.16"/>
+<label x="149.86" y="137.16" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SDI2" class="0">
 <segment>
@@ -19332,6 +19577,13 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <label x="-43.18" y="-35.56" size="1.778" layer="95"/>
 <junction x="-30.48" y="-35.56"/>
 <junction x="-43.18" y="-35.56"/>
+</segment>
+<segment>
+<wire x1="226.06" y1="144.78" x2="238.76" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="H_SDA/H_MISO/TX"/>
+<junction x="226.06" y="144.78"/>
+<junction x="238.76" y="144.78"/>
+<label x="243.84" y="144.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="EXT_INT2" class="0">
@@ -19995,6 +20247,13 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="137.16" y="114.3"/>
 <label x="119.38" y="114.3" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="226.06" y1="152.4" x2="254" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="U3" gate="G$1" pin="!H_INT"/>
+<junction x="226.06" y="152.4"/>
+<junction x="254" y="152.4"/>
+<label x="256.54" y="152.4" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="N$6" class="0">
 <segment>
@@ -20411,6 +20670,23 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="134.62" y="-198.12"/>
 </segment>
 </net>
+<net name="N$14" class="0">
+<segment>
+<pinref part="U3" gate="G$1" pin="CAP"/>
+<pinref part="C30" gate="G$1" pin="1"/>
+<junction x="175.26" y="124.46"/>
+</segment>
+</net>
+<net name="32KHZ" class="0">
+<segment>
+<pinref part="U3" gate="G$1" pin="XIN32"/>
+<pinref part="OS2" gate="A" pin="OUT"/>
+<wire x1="226.06" y1="127" x2="259.08" y2="127" width="0.1524" layer="91"/>
+<junction x="259.08" y="127"/>
+<junction x="226.06" y="127"/>
+<label x="243.84" y="127" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -20433,6 +20709,32 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <approved hash="104,1,104.14,-111.76,LCD2,GND,VSS,,,"/>
 <approved hash="104,1,104.14,-114.3,LCD2,GND,VSS,,,"/>
 <approved hash="104,1,71.12,-187.96,IC4,GND,VSS,,,"/>
+<approved hash="104,1,226.06,114.3,U3,GND,VSS,,,"/>
+<approved hash="104,1,226.06,157.48,U3,VDDIO,VDD,,,"/>
+<approved hash="104,1,226.06,116.84,U3,GNDIO,VSS,,,"/>
+<approved hash="208,1,5.08,132.08,VDD,sup,,,,"/>
+<approved hash="208,1,-17.78,111.76,VDD,sup,,,,"/>
+<approved hash="208,1,193.04,93.98,VDD,sup,,,,"/>
+<approved hash="208,1,-68.58,96.52,VDD,sup,,,,"/>
+<approved hash="208,1,-66.04,68.58,VDD,sup,,,,"/>
+<approved hash="208,1,-76.2,45.72,VDD,sup,,,,"/>
+<approved hash="208,1,-68.58,45.72,VDD,sup,,,,"/>
+<approved hash="208,1,-55.88,104.14,VDD,sup,,,,"/>
+<approved hash="208,1,-45.72,104.14,VDD,sup,,,,"/>
+<approved hash="208,1,210.82,-27.94,VDD,sup,,,,"/>
+<approved hash="208,1,246.38,-27.94,VDD,sup,,,,"/>
+<approved hash="208,1,180.34,-35.56,VDD,sup,,,,"/>
+<approved hash="208,1,-58.42,137.16,VDD,sup,,,,"/>
+<approved hash="208,1,-81.28,10.16,VDD,sup,,,,"/>
+<approved hash="208,1,101.6,-93.98,VDD,sup,,,,"/>
+<approved hash="208,1,83.82,-134.62,VDD,sup,,,,"/>
+<approved hash="208,1,58.42,-119.38,VDD,sup,,,,"/>
+<approved hash="208,1,124.46,-187.96,VDD,sup,,,,"/>
+<approved hash="208,1,-55.88,7.62,VDD,sup,,,,"/>
+<approved hash="208,1,20.32,-78.74,VDD,sup,,,,"/>
+<approved hash="208,1,-78.74,-27.94,VDD,sup,,,,"/>
+<approved hash="208,1,-81.28,-76.2,VDD,sup,,,,"/>
+<approved hash="208,1,226.06,124.46,VDD,out,,,,"/>
 <approved hash="206,1,116.84,-7.62,VREF+,,,,,"/>
 <approved hash="206,1,116.84,-5.08,VREF+,,,,,"/>
 </errors>
