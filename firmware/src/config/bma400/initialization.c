@@ -187,15 +187,15 @@ void SYS_Initialize ( void* data )
     CORETIMER_Initialize();
     ADCHS_Initialize();
 
-    QEI2_Initialize();
-
     TMR4_Initialize();
+
+    QEI2_Initialize();
 
 	UART1_Initialize();
 
-	UART2_Initialize();
-
     TMR5_Initialize();
+
+	UART2_Initialize();
 
     TMR2_Initialize();
 

@@ -412,13 +412,11 @@ int main(void)
 
 			ffti++;
 			if (FFT_MIX || ffti == 0) {
-				TP3_Set(); // FFT processing timing mark
 				do_fft(false); // convert to 256 frequency bins in 8-bit sample buffer
-				TP3_Clear(); // end of FFT function
 				memset(inB + (N_FFT / 2), 0, N_FFT / 2); // clear upper 128 bytes
 				memcpy(fft_buffer, inB, N_FFT); // copy to results buffer
 			}
-			TP3_Set(); // drawing processing mark
+
 			if (fft_settle) {
 				if (!H.dis_alt) {
 					snprintf(buffer, max_buf, "FFTs %3d,%3d ", fft_buffer[ffti], ffti);
@@ -432,7 +430,7 @@ int main(void)
 				}
 				w++;
 			}
-			TP3_Clear(); // end of drawing function
+
 
 			wake_fft = 0;
 			for (i = 0; i < N_FFT - 1; i++) {

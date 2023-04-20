@@ -75,7 +75,7 @@ void GPIO_Initialize ( void )
     PORTA;
     IEC1SET = _IEC1_CNAIE_MASK;
     /* PORTB Initialization */
-    LATB = 0xda40U; /* Initial Latch Value */
+    LATB = 0xda41U; /* Initial Latch Value */
     TRISBCLR = 0x1a41U; /* Direction Control */
     ANSELBCLR = 0x28dU; /* Digital Mode Enable */
     CNPUBSET = 0xfffcU; /* Pull-Up Enable */
