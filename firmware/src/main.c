@@ -489,7 +489,9 @@ int main(void)
 					}
 				}
 			}
-			OledUpdate();
+			if (!H.dis_unblank) {
+				OledUpdate();
+			}
 #endif
 
 #ifdef __32MK0512MCJ048__
