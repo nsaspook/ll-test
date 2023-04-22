@@ -17,6 +17,7 @@ extern "C" {
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include <math.h>
 #include "imupic32mcj.h"
+#include "bno086_reg.h"
 
 #define IMU_DRIVER "V1.705" 
 #define IMU_ALIAS "IMU"
@@ -40,6 +41,7 @@ extern "C" {
 		uint32_t sensortime; /**< sensor time */
 		float sensortemp;
 		uint8_t buffer[64]; // can-fd frame buffer space
+		sh2_Quaternion_t fusion;
 	} sSensorData_t;
 
 	/*
@@ -58,6 +60,7 @@ extern "C" {
 		IMU_SCA3300,
 		IMU_SCL3300,
 		IMU_BMA400,
+		IMU_BNO086,
 		IMU_NONE,
 		IMU_LAST,
 	};

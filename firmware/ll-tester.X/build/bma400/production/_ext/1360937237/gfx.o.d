@@ -36,7 +36,7 @@ build/bma400/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
  ../src/../../firmware/lcd_drv/OledDriver.h \
  ../src/../../firmware/lcd_drv/OledChar.h \
  ../src/../../firmware/lcd_drv/OledGrph.h ../src/hid.h ../src/buzzer.h \
- ../src/imupic32mcj.h ../src/imu.h ../src/timers.h
+ ../src/imupic32mcj.h ../src/imu.h ../src/bno086_reg.h ../src/timers.h
 
 ../src/gfx.h:
 
@@ -125,5 +125,7 @@ build/bma400/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
 ../src/imupic32mcj.h:
 
 ../src/imu.h:
+
+../src/bno086_reg.h:
 
 ../src/timers.h:

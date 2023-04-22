@@ -237,6 +237,15 @@ void imu_set_reg(imu_cmd_t * imu, const uint8_t reg, const uint8_t data, const b
 #endif
 #endif
 
+#ifdef BNO086
+// dummy routine for bno086 mode
+
+void imu_set_reg(imu_cmd_t * imu, const uint8_t reg, const uint8_t data, const bool fast)
+{
+
+}
+#endif
+
 #ifdef BMA400
 
 /*

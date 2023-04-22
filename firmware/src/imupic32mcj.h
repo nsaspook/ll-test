@@ -34,8 +34,9 @@ extern "C" {
 	/*
 	 * what IMU chip are we using
 	 */
-#define SCA3300 // this includes the SCL3300 device, SPI2 32-bit transfers
+	//#define SCA3300 // this includes the SCL3300 device, SPI2 32-bit transfers
 	//#define BMA400 // Bosch devices, SPI2 8-bit transfers
+#define BNO086
 
 #ifdef SCA3300
 #define	SPI2_32BIT
@@ -74,7 +75,7 @@ extern "C" {
 
 	/* hardware dependant define */
 #define BLANK_COUNTER	TMR4
-	
+
 #define CFD_RETRAN	0b01
 #define CFD_RETRAN_MODE	1
 

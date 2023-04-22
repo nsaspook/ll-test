@@ -29,7 +29,7 @@ build/bma400/production/_ext/1360937237/imupic32mcj.o: \
  ../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h \
  ../src/config/bma400/peripheral/rtcc/plib_rtcc.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr9.h ../src/imu.h \
- ../src/timers.h
+ ../src/bno086_reg.h ../src/timers.h
 
 ../src/imupic32mcj.h:
 
@@ -94,5 +94,7 @@ build/bma400/production/_ext/1360937237/imupic32mcj.o: \
 ../src/config/bma400/peripheral/tmr/plib_tmr9.h:
 
 ../src/imu.h:
+
+../src/bno086_reg.h:
 
 ../src/timers.h:

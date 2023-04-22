@@ -53,6 +53,7 @@
 #include "imupic32mcj.h"
 #include "bma490l.h"
 #include "sca3300.h"
+#include "bno086.h"
 #include "timers.h"
 #include "../../firmware/lcd_drv/lcd_drv.h"
 #include "gfx.h"
@@ -126,6 +127,32 @@ imu_cmd_t imu0 = {
 	.acc_range = range_15gl,
 	.acc_range_scl = range_inc2,
 	.angles = false,
+	.locked = true,
+	.warn = false,
+	.down = false,
+};
+#endif
+
+#ifdef BNO086
+/*
+ * BNO086 instance
+ */
+imu_cmd_t imu0 = {
+	.id = CAN_IMU_INFO,
+	.tbuf[0] = CHIP_ID | RBIT,
+	.online = false,
+	.device = IMU_BNO086, // device type
+	.cs = IMU_CS, // chip select number
+	.run = false,
+	.log_timeout = BMA_LOG_TIMEOUT,
+	.update = true,
+	.features = false,
+	.spi_bytes = 1,
+	.op.info_ptr = &bno086_version,
+	.op.imu_set_spimode = &bno086_set_spimode,
+	.op.imu_getid = &bno086_getid,
+	.op.imu_getdata = &bno086_getdata,
+	.acc_range = range_8g,
 	.locked = true,
 	.warn = false,
 	.down = false,
