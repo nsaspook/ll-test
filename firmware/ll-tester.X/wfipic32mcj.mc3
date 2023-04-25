@@ -1388,8 +1388,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;473&quot; canvasWidth=&quot;1346&quot; dnOrder=&quot;0&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adchs&quot; x=&quot;224&quot; y=&quot;83&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;can1&quot; x=&quot;510&quot; y=&quot;100&quot;/&gt;
@@ -1412,6 +1411,7 @@
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;uart2&quot; x=&quot;660&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
+    &lt;GraphSettings canvasHeight=&quot;473&quot; canvasWidth=&quot;1346&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -1546,7 +1546,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;BSP_PIN_11_LAT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;High&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5155,28 +5155,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_185_PRIORITY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_185_PRIORITY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_185_PRIVALUE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_185_PRIVALUE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1024&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_19_ENABLE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_19_ENABLE&quot;&gt;
@@ -5445,7 +5423,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_36_PRIORITY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5456,29 +5434,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_36_PRIVALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_36_SUBPRIORITY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_36_SUBPRIORITY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_36_SUBPRIVALUE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_36_SUBPRIVALUE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;8&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5522,7 +5478,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_37_PRIORITY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5533,29 +5489,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_37_PRIVALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1024&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_37_SUBPRIORITY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_37_SUBPRIORITY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_37_SUBPRIVALUE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_37_SUBPRIVALUE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;256&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;2048&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5896,7 +5830,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_54_PRIORITY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;3&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5907,29 +5841,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_54_PRIVALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;262144&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_54_SUBPRIORITY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_54_SUBPRIORITY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_54_SUBPRIVALUE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_54_SUBPRIVALUE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;131072&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;786432&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5973,7 +5885,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_55_PRIORITY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;3&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -5984,29 +5896,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_55_PRIVALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;67108864&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_55_SUBPRIORITY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_55_SUBPRIORITY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;2&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_55_SUBPRIVALUE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_55_SUBPRIVALUE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;33554432&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;201326592&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -6145,28 +6035,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_72_PRIORITY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_72_PRIORITY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_72_PRIVALUE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_72_PRIVALUE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;4&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_73_ENABLE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_73_ENABLE&quot;&gt;
@@ -6200,28 +6068,6 @@
 </value>
       </entry>
       <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_73_PRIORITY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_73_PRIORITY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_73_PRIVALUE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_73_PRIVALUE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1024&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_74_ENABLE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_74_ENABLE&quot;&gt;
@@ -6249,28 +6095,6 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_74_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;DMA2_InterruptHandler&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_74_PRIORITY"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_74_PRIORITY&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
-    &lt;/Values&gt;
-  &lt;/core&gt;
-&lt;/core&gt;
-</value>
-      </entry>
-      <entry>
-         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="EVIC_74_PRIVALUE"/>
-         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
-  &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_74_PRIVALUE&quot;&gt;
-    &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;262144&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -7670,7 +7494,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SYS_PORT_B_LAT&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;55873&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;55872&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -13116,7 +12940,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;spi2&gt;
   &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_BAUD_RATE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;8000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;3000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/spi2&gt;
 &lt;/spi2&gt;
@@ -13127,7 +12951,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;spi2&gt;
   &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;spi2&quot; value=&quot;7&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;spi2&quot; value=&quot;19&quot;/&gt;
     &lt;/Values&gt;
   &lt;/spi2&gt;
 &lt;/spi2&gt;
@@ -13139,11 +12963,11 @@
   &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_DUMMY_DATA&quot;&gt;
     &lt;Attributes dnOrder=&quot;0&quot;&gt;
       &lt;Long dnOrder=&quot;0&quot; id=&quot;max&quot;&gt;
-        &lt;Value dnOrder=&quot;0&quot;&gt;4294967295&lt;/Value&gt;
+        &lt;Value dnOrder=&quot;0&quot;&gt;255&lt;/Value&gt;
       &lt;/Long&gt;
     &lt;/Attributes&gt;
     &lt;Values dnOrder=&quot;1&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;spi2&quot; value=&quot;4294967295&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;spi2&quot; value=&quot;255&quot;/&gt;
     &lt;/Values&gt;
   &lt;/spi2&gt;
 &lt;/spi2&gt;
@@ -13161,11 +12985,33 @@
 </value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="spi2" name="SPI_SPICON_CLK_PH"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;spi2&gt;
+  &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_SPICON_CLK_PH&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/spi2&gt;
+&lt;/spi2&gt;
+</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="spi2" name="SPI_SPICON_CLK_POL"/>
+         <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;spi2&gt;
+  &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_SPICON_CLK_POL&quot;&gt;
+    &lt;Values dnOrder=&quot;0&quot;&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
+    &lt;/Values&gt;
+  &lt;/spi2&gt;
+&lt;/spi2&gt;
+</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="spi2" name="SPI_SPICON_MODE"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;spi2&gt;
   &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_SPICON_MODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;3&quot;/&gt;
     &lt;/Values&gt;
   &lt;/spi2&gt;
 &lt;/spi2&gt;
@@ -15017,202 +14863,154 @@
 </value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.TreeMap">
-      <entry>
-         <file>../src/config/bma400/definitions.h</file>
-         <hash>da12dfd6caf59d918fc23979f625be4b6d9ef1380cab6dbf000c25a6456e7ebb</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/device.h</file>
-         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/exceptions.c</file>
-         <hash>bacd9060af8add5471ec3170808fe766dbd651e25104b5ecc8a7ebc02935e727</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/initialization.c</file>
-         <hash>04df0425edd79aa24b2bde836fb9f826ec1a77accf9a5f8ec209514f0d100a64</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/interrupts.c</file>
-         <hash>79db41f7db0323be17b8d3af29da1ccf5d0aecae760108b268ab589949f3467d</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/p32MK0512MCJ048.ld</file>
-         <hash>6b3d7aeb85d7682571d01621bb9f286b9a8ab42ba720b8a660c85459f8452d12</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/adchs/plib_adchs.c</file>
-         <hash>04d4c40d3d3b7c07615878a44209822111e04f9ddf120960df7e60b6df7cc981</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/adchs/plib_adchs.h</file>
-         <hash>92e6af4a81b6f5ec626422a05fb890e0c5d536acd35a0b67ec71723a05832baa</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/adchs/plib_adchs_common.h</file>
-         <hash>1a4c2059bdc6e2b0bc68496e4dbf798280a7d236652655ac138b97ace6147bcb</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/canfd/plib_canfd1.c</file>
-         <hash>a2d152d2fda9c432c1f6cc28c2a2b4ad51ff8837e69e915883167f77e930011e</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/canfd/plib_canfd1.h</file>
-         <hash>b75d9f762de983263e9c6dc009d2b74a1504e2d4695402535a576fc3f5deabb7</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/canfd/plib_canfd_common.h</file>
-         <hash>85c035049f7cdd738e11d547cea98940329249529ba267c6a338f6caaaf5f9e3</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/clk/plib_clk.c</file>
-         <hash>2ad6c3334813ef172d049780b058358f535e26f2a530f71b2f3463edef083829</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/clk/plib_clk.h</file>
-         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/coretimer/plib_coretimer.c</file>
-         <hash>9d6acf01226eb43c1db60b4b6fba498114ee1980a8693a3acfc41326583ba8e1</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/coretimer/plib_coretimer.h</file>
-         <hash>b4803baa11440eb8b100ddfccdcbb61bde17bf7b68cc78685c858d2a33fee12b</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/dmac/plib_dmac.c</file>
-         <hash>db8c8528eb01baa1b7c4c8a6bb6feaf608ffea566b05026bd76ab4e4b0f59048</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/dmac/plib_dmac.h</file>
-         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/evic/plib_evic.c</file>
-         <hash>4001e161e44d590dcc7f28168c169472efe8cebee4cd8b58740f3e61db2cc97c</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/evic/plib_evic.h</file>
-         <hash>e92944d182b8c03b8839d1ba8f65627b4cd4f8fe40aed2fc30b397096b4c529c</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/gpio/plib_gpio.c</file>
-         <hash>2f24260bd00b247e50236b2e644fbb910c544c8a257eba4de2ef069c51002936</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/gpio/plib_gpio.h</file>
-         <hash>880080b34b133395543332da29d293d23d96383e36b46df68ecadf13107eb1a6</hash>
-      </entry>
+   <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
          <file>../src/config/bma400/peripheral/mcpwm/plib_mcpwm.c</file>
          <hash>46e4e75afb33853eb0dbfcec35139f7eb31f41afed9afb52739becc0cf0318c8</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/mcpwm/plib_mcpwm.h</file>
-         <hash>bcd46f45b3b2e8bf6f48002edc8ae381b25de602627153dac37269c2680c6269</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/mcpwm/plib_mcpwm_common.h</file>
-         <hash>92097067525e006e027efa54d1c6a97066c4870f41eac3b57dd02b6a9bb4cc2b</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/qei/plib_qei2.c</file>
-         <hash>8b7c8bf2ccdf3ae557541f841bdc91441ea8427d5531f5136393bedfdba68807</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/qei/plib_qei2.h</file>
-         <hash>81d0185b43ae7a90801b8c4e345e7b2a980da2c6438257da8c811b41011c171d</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/qei/plib_qei_common.h</file>
-         <hash>9ea3b4f643d5ca367a1e9a98b6e2fe8f9d16f5b6ab36f65e27ca41b52f2bfcd5</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/rtcc/plib_rtcc.c</file>
-         <hash>fc2d12de522615c0d6475cf813328f5c0b286525ed7d38d007c9c5e21b374c49</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/rtcc/plib_rtcc.h</file>
          <hash>f6e5f8ac90300fe16c18b0ef127a3aaf3b522ac36c87f64571f3cafabadf3e13</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.c</file>
-         <hash>8f267cd11707f9235e45e6614e270b6203cb39daa400795f597e06634a7d8a1e</hash>
+         <file>../src/config/bma400/peripheral/uart/plib_uart_common.h</file>
+         <hash>90d1791d0855caa86d5d529a0ba209330f20cd0da2436950a7e71b38ef8da02b</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h</file>
-         <hash>e022deaa6bc614442c072622acf6a7ebb292ba4db067510bd6e37af805bea226</hash>
+         <file>../src/config/bma400/peripheral/rtcc/plib_rtcc.c</file>
+         <hash>fc2d12de522615c0d6475cf813328f5c0b286525ed7d38d007c9c5e21b374c49</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.c</file>
-         <hash>13bf9cf6c9be5eb2f2e5102f8c7203712574c7804516f118dc0e581bd5469f7f</hash>
+         <file>../src/config/bma400/peripheral/uart/plib_uart2.c</file>
+         <hash>c5c9863b3c77af72822e4eb2da668ba268c0202b44926be99bc41ddf62f40237</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.h</file>
-         <hash>5e78a42e59de34629f92f7916be364a44ed98f1fbaecd993eb121c485092d7d1</hash>
+         <file>../src/config/bma400/definitions.h</file>
+         <hash>6e55f8d3d22e2ff24f7c96979db1047963499bf42014ab7e5569a33587a646c7</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/gpio/plib_gpio.h</file>
+         <hash>880080b34b133395543332da29d293d23d96383e36b46df68ecadf13107eb1a6</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/gpio/plib_gpio.c</file>
+         <hash>20bf6b9c5dbc344e76fef9208c64f92e3df5eaeefcd733845f749818fba7e4b4</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/evic/plib_evic.c</file>
+         <hash>58abc34c31eedd9cbcddab54f36299d940442283f932bbf01b71314efc2e5ed2</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/mcpwm/plib_mcpwm_common.h</file>
+         <hash>92097067525e006e027efa54d1c6a97066c4870f41eac3b57dd02b6a9bb4cc2b</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/mcpwm/plib_mcpwm.h</file>
+         <hash>bcd46f45b3b2e8bf6f48002edc8ae381b25de602627153dac37269c2680c6269</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/adchs/plib_adchs_common.h</file>
+         <hash>1a4c2059bdc6e2b0bc68496e4dbf798280a7d236652655ac138b97ace6147bcb</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/interrupts.h</file>
+         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/device.h</file>
+         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi_master_common.h</file>
          <hash>844a71566e886cd1f28024000d440ac48841cdb4f4059f5feefac8e4334f12ef</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr2.c</file>
-         <hash>d24b96f43bd869a12a562e447124afc0c9a7a7208ce5914f9199d741184a9bd5</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr2.h</file>
-         <hash>b1b006af9a8d82224e366535485154f5c0cbbe3bfba90d3b5eed6028e8bdb887</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr3.c</file>
-         <hash>eeaddcf933986f69a9b4ea430e0c79d9afcbb46b16825d0567c141739610670b</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr3.h</file>
-         <hash>93f614d9bd9ebcac62cc522c494a8d6694d3e2b705e69bea1fe2c1b84e1b604b</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr4.c</file>
-         <hash>4b0a493d5706fa57001a9a690de2acec5ec6dfb917daaae65ccdb24eb26b1047</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr4.h</file>
-         <hash>9044df34ae4c6535f5fe5298b5f9b0430db33d713d8bdb8576c4a597ffd009dc</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr5.c</file>
-         <hash>d739eca1f54b691ea558023107a95a1a9383ce3816533a88ae82413099e16b62</hash>
-      </entry>
-      <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr5.h</file>
-         <hash>712a32bdde271364fb406e66908e62408bf51ab62268ce29f1d7829e569bc3a7</hash>
+         <file>../src/config/bma400/peripheral/canfd/plib_canfd_common.h</file>
+         <hash>85c035049f7cdd738e11d547cea98940329249529ba267c6a338f6caaaf5f9e3</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr6.c</file>
          <hash>d80270d36578b780adde1c49f8e211992d2146ab922028a81964b1de4a76c976</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr6.h</file>
-         <hash>10b7394a78b0a49cd652e852d9347108c00f6e39e59c43b3e5c87b8e82a40414</hash>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr2.h</file>
+         <hash>b1b006af9a8d82224e366535485154f5c0cbbe3bfba90d3b5eed6028e8bdb887</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr9.c</file>
-         <hash>7a797dd12b048facf453b5d74ea6242050c633f3ccd74b5c9a0f12a2fd28b047</hash>
+         <file>../src/config/bma400/interrupts.c</file>
+         <hash>9bd84bb28aa75041618271e34b776030e3f3351dd5e1ae138f01fc4fd0f7b78d</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/tmr/plib_tmr9.h</file>
-         <hash>5f927916b534a7995ade50cdf8da6d6a4046207285665302113a559a06e35314</hash>
+         <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h</file>
+         <hash>e022deaa6bc614442c072622acf6a7ebb292ba4db067510bd6e37af805bea226</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr4.h</file>
+         <hash>9044df34ae4c6535f5fe5298b5f9b0430db33d713d8bdb8576c4a597ffd009dc</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.c</file>
+         <hash>8f267cd11707f9235e45e6614e270b6203cb39daa400795f597e06634a7d8a1e</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr_common.h</file>
          <hash>fe0f7e886eba99992a90f718b6aa9f2b438b8204094495f72a0d1e83418d3187</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr6.h</file>
+         <hash>10b7394a78b0a49cd652e852d9347108c00f6e39e59c43b3e5c87b8e82a40414</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/canfd/plib_canfd1.c</file>
+         <hash>a2d152d2fda9c432c1f6cc28c2a2b4ad51ff8837e69e915883167f77e930011e</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/dmac/plib_dmac.h</file>
+         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/uart/plib_uart2.h</file>
+         <hash>af76cd7d7d14987f5d6dd27d7ad44f2efa6eb78e4b9c9f69d85d7f47c2971db6</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/canfd/plib_canfd1.h</file>
+         <hash>b75d9f762de983263e9c6dc009d2b74a1504e2d4695402535a576fc3f5deabb7</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr2.c</file>
+         <hash>d24b96f43bd869a12a562e447124afc0c9a7a7208ce5914f9199d741184a9bd5</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr4.c</file>
+         <hash>4b0a493d5706fa57001a9a690de2acec5ec6dfb917daaae65ccdb24eb26b1047</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/toolchain_specifics.h</file>
+         <hash>9dfc75809b6eb23cee342231de51f6b382f8f7eabf8a939539cf44c0da32acbc</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.h</file>
+         <hash>5e78a42e59de34629f92f7916be364a44ed98f1fbaecd993eb121c485092d7d1</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/qei/plib_qei2.c</file>
+         <hash>8b7c8bf2ccdf3ae557541f841bdc91441ea8427d5531f5136393bedfdba68807</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.c</file>
+         <hash>0a634ff6bebbcf46673cadbc34b2c80bd22d807d4dbd85110775a672f457b309</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/stdio/xc32_monitor.c</file>
+         <hash>34c7efa285dd6778faf01a0097bf7bebc131e7a8a0ed97bb737ff3e0a39895d2</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/dmac/plib_dmac.c</file>
+         <hash>db8c8528eb01baa1b7c4c8a6bb6feaf608ffea566b05026bd76ab4e4b0f59048</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/adchs/plib_adchs.h</file>
+         <hash>92e6af4a81b6f5ec626422a05fb890e0c5d536acd35a0b67ec71723a05832baa</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart1.c</file>
@@ -15223,28 +15021,76 @@
          <hash>7a1eb131a20e49ee5e46ba34845ec01b77fdcea9750992bbebccd3dec805b35a</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/uart/plib_uart2.c</file>
-         <hash>c5c9863b3c77af72822e4eb2da668ba268c0202b44926be99bc41ddf62f40237</hash>
+         <file>../src/config/bma400/peripheral/adchs/plib_adchs.c</file>
+         <hash>04d4c40d3d3b7c07615878a44209822111e04f9ddf120960df7e60b6df7cc981</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/uart/plib_uart2.h</file>
-         <hash>af76cd7d7d14987f5d6dd27d7ad44f2efa6eb78e4b9c9f69d85d7f47c2971db6</hash>
+         <file>../src/config/bma400/initialization.c</file>
+         <hash>6d076551ee8067170958b15a2270dbc1bad9b7f8f58ef1af44f4fbea71527731</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/peripheral/uart/plib_uart_common.h</file>
-         <hash>90d1791d0855caa86d5d529a0ba209330f20cd0da2436950a7e71b38ef8da02b</hash>
+         <file>../src/config/bma400/peripheral/qei/plib_qei2.h</file>
+         <hash>81d0185b43ae7a90801b8c4e345e7b2a980da2c6438257da8c811b41011c171d</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/stdio/xc32_monitor.c</file>
-         <hash>34c7efa285dd6778faf01a0097bf7bebc131e7a8a0ed97bb737ff3e0a39895d2</hash>
+         <file>../src/config/bma400/peripheral/evic/plib_evic.h</file>
+         <hash>e92944d182b8c03b8839d1ba8f65627b4cd4f8fe40aed2fc30b397096b4c529c</hash>
       </entry>
       <entry>
-         <file>../src/config/bma400/toolchain_specifics.h</file>
-         <hash>9dfc75809b6eb23cee342231de51f6b382f8f7eabf8a939539cf44c0da32acbc</hash>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr9.h</file>
+         <hash>5f927916b534a7995ade50cdf8da6d6a4046207285665302113a559a06e35314</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/coretimer/plib_coretimer.h</file>
+         <hash>b4803baa11440eb8b100ddfccdcbb61bde17bf7b68cc78685c858d2a33fee12b</hash>
       </entry>
       <entry>
          <file>../src/main.c</file>
          <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/p32MK0512MCJ048.ld</file>
+         <hash>6b3d7aeb85d7682571d01621bb9f286b9a8ab42ba720b8a660c85459f8452d12</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr5.c</file>
+         <hash>d739eca1f54b691ea558023107a95a1a9383ce3816533a88ae82413099e16b62</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/clk/plib_clk.h</file>
+         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr3.h</file>
+         <hash>93f614d9bd9ebcac62cc522c494a8d6694d3e2b705e69bea1fe2c1b84e1b604b</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr5.h</file>
+         <hash>712a32bdde271364fb406e66908e62408bf51ab62268ce29f1d7829e569bc3a7</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr9.c</file>
+         <hash>7a797dd12b048facf453b5d74ea6242050c633f3ccd74b5c9a0f12a2fd28b047</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/clk/plib_clk.c</file>
+         <hash>2ad6c3334813ef172d049780b058358f535e26f2a530f71b2f3463edef083829</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/qei/plib_qei_common.h</file>
+         <hash>9ea3b4f643d5ca367a1e9a98b6e2fe8f9d16f5b6ab36f65e27ca41b52f2bfcd5</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/tmr/plib_tmr3.c</file>
+         <hash>eeaddcf933986f69a9b4ea430e0c79d9afcbb46b16825d0567c141739610670b</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/exceptions.c</file>
+         <hash>bacd9060af8add5471ec3170808fe766dbd651e25104b5ecc8a7ebc02935e727</hash>
+      </entry>
+      <entry>
+         <file>../src/config/bma400/peripheral/coretimer/plib_coretimer.c</file>
+         <hash>9d6acf01226eb43c1db60b4b6fba498114ee1980a8693a3acfc41326583ba8e1</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

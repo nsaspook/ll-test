@@ -36,7 +36,13 @@ extern "C" {
 	 */
 	//#define SCA3300 // this includes the SCL3300 device, SPI2 32-bit transfers
 	//#define BMA400 // Bosch devices, SPI2 8-bit transfers
-#define BNO086
+#define BNO086 // SPI2 8-bit transfers 3MHz mode 3
+
+
+#ifdef BNO086
+#undef BMA400
+#undef SCA3300
+#endif
 
 #ifdef SCA3300
 #define	SPI2_32BIT

@@ -51,8 +51,8 @@
 SPI_OBJECT spi2Obj;
 
 #define SPI2_CON_MSTEN                      (1 << _SPI2CON_MSTEN_POSITION)
-#define SPI2_CON_CKP                        (0 << _SPI2CON_CKP_POSITION)
-#define SPI2_CON_CKE                        (1 << _SPI2CON_CKE_POSITION)
+#define SPI2_CON_CKP                        (1 << _SPI2CON_CKP_POSITION)
+#define SPI2_CON_CKE                        (0 << _SPI2CON_CKE_POSITION)
 #define SPI2_CON_MODE_32_MODE_16            (0 << _SPI2CON_MODE16_POSITION)
 #define SPI2_CON_ENHBUF                     (1 << _SPI2CON_ENHBUF_POSITION)
 #define SPI2_CON_MCLKSEL                    (1 << _SPI2CON_MCLKSEL_POSITION)
@@ -81,15 +81,15 @@ void SPI2_Initialize ( void )
     IFS1CLR = 0x800000;
 
     /* BAUD Rate register Setup */
-    SPI2BRG = 7;
+    SPI2BRG = 19;
 
     /* CLear the Overflow */
     SPI2STATCLR = _SPI2STAT_SPIROV_MASK;
 
     /*
     MSTEN = 1
-    CKP = 0
-    CKE = 1
+    CKP = 1
+    CKE = 0
     MODE<32,16> = 0
     ENHBUF = 1
     MSSEN = 0

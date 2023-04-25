@@ -1,3 +1,4 @@
+
 #include "imupic32mcj.h"
 
 static uint32_t delay_freq = 0;
@@ -21,6 +22,19 @@ uint8_t set_imu_bits(void)
 {
 	uint8_t imu_bits = 8;
 
+#ifdef BNO086 // mode 3
+#define SPI2_CON_MSTEN                      (1 << _SPI2CON_MSTEN_POSITION)
+#define SPI2_CON_CKP                        (1 << _SPI2CON_CKP_POSITION)
+#define SPI2_CON_CKE                        (0 << _SPI2CON_CKE_POSITION)
+#define SPI2_CON_MODE_32_MODE_16            (0 << _SPI2CON_MODE16_POSITION)
+#define SPI2_CON_ENHBUF                     (1 << _SPI2CON_ENHBUF_POSITION)
+#define SPI2_CON_MCLKSEL                    (1 << _SPI2CON_MCLKSEL_POSITION)
+#define SPI2_CON_MSSEN                      (0 << _SPI2CON_MSSEN_POSITION)
+#define SPI2_CON_SMP                        (0 << _SPI2CON_SMP_POSITION)
+
+	/* BAUD Rate register Setup */
+	SPI2BRG = 19; // 3MHz
+#else // mode 0
 #define SPI2_CON_MSTEN                      (1 << _SPI2CON_MSTEN_POSITION)
 #define SPI2_CON_CKP                        (0 << _SPI2CON_CKP_POSITION)
 #define SPI2_CON_CKE                        (1 << _SPI2CON_CKE_POSITION)
@@ -29,12 +43,16 @@ uint8_t set_imu_bits(void)
 #define SPI2_CON_MSSEN                      (0 << _SPI2CON_MSSEN_POSITION)
 #define SPI2_CON_SMP                        (0 << _SPI2CON_SMP_POSITION)
 
+	SPI2BRG = 7; // 8MHz
+
 #ifdef SPI2_32BIT
 	imu_bits = 32;
 #define SPI2_CON_MODE_32_MODE_16            (3 << _SPI2CON_MODE16_POSITION)
 #else
 #define SPI2_CON_MODE_32_MODE_16            (0 << _SPI2CON_MODE16_POSITION)
 #endif
+#endif
+
 	SPI2CONSET = (SPI2_CON_MSSEN | SPI2_CON_MCLKSEL | SPI2_CON_ENHBUF | SPI2_CON_MODE_32_MODE_16 | SPI2_CON_CKE | SPI2_CON_CKP | SPI2_CON_MSTEN | SPI2_CON_SMP);
 
 	return imu_bits;
