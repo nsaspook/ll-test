@@ -93,6 +93,15 @@ extern "C" {
 	 * user callback function per BMA490L data interrupt
 	 */
 	void update_imu_int1(uint32_t, uintptr_t);
+
+	/*
+	 * setup external interrupt #2 for IMU BNO08X data update interrupt trigger output
+	 */
+	void init_imu_int_bno(const imu_cmd_t *);
+	/*
+	 * user callback function per BNO08X data interrupt
+	 */
+	void update_imu_int_bno(uint32_t, uintptr_t);
 	void delay_us(uint32_t);
 	/*
 	 * start core-timer

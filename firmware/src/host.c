@@ -255,6 +255,7 @@ int host_sm(void)
 	 */
 	init_lcd_drv(D_INIT);
 	OledClearBuffer();
+	wait_lcd_done();
 	snprintf(buffer, max_buf, "%s Driver %s %s %s", LCD_ALIAS, LCD_DRIVER, build_date, build_time);
 	eaDogM_WriteStringAtPos(0, 0, buffer);
 	snprintf(buffer, max_buf, "%s Controller %s %llX", HOST_ALIAS, HOST_DRIVER, host_cpu_serial_id);

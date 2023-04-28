@@ -156,6 +156,7 @@ imu_cmd_t imu0 = {
 	.locked = true,
 	.warn = false,
 	.down = false,
+	.init_good = false,
 };
 #endif
 
@@ -237,9 +238,8 @@ int main(void)
 	start_tick();
 
 	/*
-	 * print the driver version
+	 * configure port if needed, detect sensor and config
 	 */
-	imu0.op.info_ptr(); // print driver version on the serial port
 	imu0.op.imu_set_spimode(&imu0); // setup the IMU chip for SPI comms, X updates per second @ selected G range
 
 	/*
@@ -248,6 +248,8 @@ int main(void)
 	lcd_version();
 	init_lcd_drv(D_INIT);
 	OledClearBuffer();
+	wait_lcd_done();
+	eaDogM_WriteStringAtPos(9, 0, imu_buffer);
 	imu0.op.info_ptr();
 	eaDogM_WriteStringAtPos(10, 0, imu_buffer);
 	fft_version();
@@ -269,6 +271,11 @@ int main(void)
 	snprintf(buffer, max_buf, "%s Driver %s", HID_ALIAS, HID_DRIVER);
 	eaDogM_WriteStringAtPos(6, 0, buffer);
 	OledUpdate();
+	/*
+	 * debug detection
+	 */
+	while (true);
+	
 	buzzer_init(B_init); // audio device handler setup
 	hid_init(H_init); // screen blanking, input effects handler setup
 
@@ -334,6 +341,7 @@ int main(void)
 		if (TP1_check()) {
 			LED_RED_On();
 			OledClearBuffer();
+			wait_lcd_done();
 			fh_start_AT_nodma(0);
 			eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
 			eaDogM_WriteStringAtPos(7, 0, response_buffer);

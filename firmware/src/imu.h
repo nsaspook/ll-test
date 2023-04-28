@@ -78,10 +78,15 @@ extern "C" {
 		volatile bool online, run, update, features, crc_error, angles;
 		uint64_t host_serial_id;
 		bool locked, warn, down;
+#ifdef BNO086
+		uint8_t rbuf[SHTP_HEADER_SIZE + SHTP_RX_PACKET_SIZE + SHTP_HEADER_SIZE], tbuf[64];
+#else
 		uint8_t rbuf[64], tbuf[64];
+#endif
 		uint32_t rbuf32[2], tbuf32[2];
 		uint16_t serial1, serial2;
 		op_t op;
+		volatile bool init_good;
 	} imu_cmd_t;
 
 	enum hcmd_type { // IMU sensor chip commands from the host

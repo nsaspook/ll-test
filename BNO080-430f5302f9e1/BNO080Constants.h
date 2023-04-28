@@ -1,45 +1,14 @@
-/* 
- * File:   bno086.h
- * Author: root
- *
- * Created on April 20, 2023, 11:51 AM
- */
+//
+// Constants used in communication with the BNO080
+//
 
-#ifndef BNO086_H
-#define	BNO086_H
-
-#ifdef	__cplusplus
-extern "C" {
-#endif
-
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include <math.h>
-#include "definitions.h"                // SYS function prototypes
-#include "imupic32mcj.h"
-#include "bno086_reg.h"
-#include "imu.h"
-
-#define BNO086_DRIVER	"V1.000" 
-#define BNO086_ALIAS	"BNO086  "
-
-#define SQRT_2 1.414213562f
-
-#define BNO_INIT_DELAY_INT	200
-
-#define SHTP_HEADER_SIZE 4
-
-	// Size of the largest individual packet we can receive.
-	// Min value is set by the advertisement packet (272 bytes)
-	// If you enable lots of sensor reports and get an error, you might need to increase this.
-#define SHTP_RX_PACKET_SIZE 272
-
-	// Size of largest packet that we need to transmit (not including header)
-#define SHTP_MAX_TX_PACKET_SIZE 17
+#ifndef HAMSTER_BNO080CONSTANTS_H
+#define HAMSTER_BNO080CONSTANTS_H
 
 
-	// Channels
+//-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+// Channels
 #define CHANNEL_COMMAND 0
 #define CHANNEL_EXECUTABLE 1
 #define CHANNEL_CONTROL 2
@@ -47,13 +16,13 @@ extern "C" {
 #define CHANNEL_WAKE_REPORTS 4
 #define CHANNEL_GYRO 5
 
-	// Report IDs on the command channel.
-	// Unlike the other constants, these come from the Sensor Hub Transport Protocol datasheet, section 5.1
+// Report IDs on the command channel.
+// Unlike the other constants, these come from the Sensor Hub Transport Protocol datasheet, section 5.1
 #define COMMAND_REPORTID_ADVERTISEMENT 0x0
 #define COMMAND_REPORTID_ERRORLIST 0x1
 
-	//All the ways we can configure or talk to the BNO080, figure 34, page 36 reference manual
-	//These are used for low level communication with the sensor, on channel 2
+//All the ways we can configure or talk to the BNO080, figure 34, page 36 reference manual
+//These are used for low level communication with the sensor, on channel 2
 #define SHTP_REPORT_COMMAND_RESPONSE 0xF1
 #define SHTP_REPORT_COMMAND_REQUEST 0xF2
 #define SHTP_REPORT_FRS_READ_RESPONSE 0xF3
@@ -67,8 +36,8 @@ extern "C" {
 #define SHTP_REPORT_SET_FEATURE_COMMAND 0xFD
 #define SHTP_REPORT_GET_FEATURE_RESPONSE 0xFC
 
-	//All the different sensors and features we can get reports from
-	//These are used when enabling a given sensor
+//All the different sensors and features we can get reports from
+//These are used when enabling a given sensor
 #define SENSOR_REPORTID_TIMESTAMP_REBASE 0xFA
 #define SENSOR_REPORTID_ACCELEROMETER 0x01
 #define SENSOR_REPORTID_GYROSCOPE_CALIBRATED 0x02
@@ -86,10 +55,10 @@ extern "C" {
 #define SENSOR_REPORTID_STEP_DETECTOR 0x18
 #define SENSOR_REPORTID_SHAKE_DETECTOR 0x19
 
-	// sensor report ID with the largest numeric value
+// sensor report ID with the largest numeric value
 #define MAX_SENSOR_REPORTID SENSOR_REPORTID_SHAKE_DETECTOR
 
-	// Q points for various sensor data elements
+// Q points for various sensor data elements
 #define ACCELEROMETER_Q_POINT 8 // for accelerometer based data
 #define GYRO_Q_POINT 9 // for gyroscope data
 #define MAGNETOMETER_Q_POINT 4 // for magnetometer data
@@ -99,17 +68,17 @@ extern "C" {
 #define ORIENTATION_QUAT_Q_POINT 14 // for the set orientation command
 #define FRS_ORIENTATION_Q_POINT 30 // for the sensor orientation FRS record
 
-	// Report IDs on the Executable channel
-	// See Figure 1-27 in the BNO080 datasheet
+// Report IDs on the Executable channel
+// See Figure 1-27 in the BNO080 datasheet
 #define EXECUTABLE_REPORTID_RESET 0x1
 
-	//Record IDs from SH-2 figure 28
-	//These are used to read and set various configuration options
+//Record IDs from SH-2 figure 28
+//These are used to read and set various configuration options
 #define FRS_RECORDID_SERIAL_NUMBER 0x4B4B
 #define FRS_RECORDID_SYSTEM_ORIENTATION 0x2D3E
 
-	//Command IDs from section 6.4, page 42
-	//These are used to calibrate, initialize, set orientation, tare etc the sensor
+//Command IDs from section 6.4, page 42
+//These are used to calibrate, initialize, set orientation, tare etc the sensor
 #define COMMAND_ERRORS 1
 #define COMMAND_COUNTER 2
 #define COMMAND_TARE 3
@@ -128,38 +97,11 @@ extern "C" {
 #define CALIBRATE_ACCEL_GYRO_MAG 4
 #define CALIBRATE_STOP 5
 
-	// timing for reset
-	// per my measurement, reset takes about 90ms, so let's take twice that
-	// By the way, I discovered (by accident) that a symptom of brownout is the chip taking
-	// a long time to reset.  So if you had to increase this, check that your Vcc is 
-	// within the allowed range.
+// timing for reset
+// per my measurement, reset takes about 90ms, so let's take twice that
+// By the way, I discovered (by accident) that a symptom of brownout is the chip taking
+// a long time to reset.  So if you had to increase this, check that your Vcc is 
+// within the allowed range.
 #define BNO080_RESET_TIMEOUT 180ms
 
-	/*
-	 * function pointer templates
-	 */
-	void bno086_set_spimode(void *);
-	bool bno086_getid(void *);
-	bool bno086_getdata(void *);
-	void bno086_version(void);
-	bool bno086_get_cpacket(size_t, void *);
-	void bno086_get_header(void *);
-	bool bno086_receive_packet(void *);
-	void processPacket(void);
-	void parseSensorDataPacket(void);
-	bool sendPacket(uint8_t, uint8_t, void *);
-
-	/*
-	 * BNO086 chip instance
-	 */
-	extern imu_cmd_t imu0;
-	extern sh2_Quaternion_t fusion_q;
-
-
-
-#ifdef	__cplusplus
-}
-#endif
-
-#endif	/* BNO086_H */
-
+#endif //HAMSTER_BNO080CONSTANTS_H

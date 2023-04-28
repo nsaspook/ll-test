@@ -438,6 +438,7 @@ void OledDisplayOff(void)
 void OledClear(void)
 {
 	OledClearBuffer();
+	wait_lcd_done();
 	OledUpdate();
 }
 

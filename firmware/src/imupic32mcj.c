@@ -94,6 +94,41 @@ void update_imu_int1(uint32_t a, uintptr_t context)
 }
 
 /*
+ * setup external interrupt #2 for IMU BNO08X data update interrupt trigger output
+ */
+void init_imu_int_bno(const imu_cmd_t * imu)
+{
+	if (imu) {
+		INTCONCLR = _INTCON_INT2EP_MASK; //External interrupt on falling edge
+		IFS0CLR = _IFS0_INT2IF_MASK; // Clear the external interrupt flag
+		EVIC_ExternalInterruptCallbackRegister(EXTERNAL_INT_2, update_imu_int_bno, (uintptr_t) imu);
+		EVIC_ExternalInterruptEnable(EXTERNAL_INT_2);
+	}
+}
+
+/*
+ * user callback function per BNO08X data interrupt
+ * update pacing flag from IMU ISR
+ */
+void update_imu_int_bno(uint32_t a, uintptr_t context)
+{
+	imu_cmd_t * imu = (imu_cmd_t *) context;
+	static int8_t i = 0;
+	static uint8_t tog = 0;
+
+	if (imu) {
+		if (!i++) {
+
+		}
+		if (++tog >= 0) {
+			imu->update = true;
+			tog = 0;
+			LED_GREEN_Toggle();
+		}
+	}
+}
+
+/*
  * microsecond busy wait delay, 90 seconds MAX
  * Careful, uses core timer
  */
