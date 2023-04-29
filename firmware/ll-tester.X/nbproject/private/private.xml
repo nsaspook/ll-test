@@ -6,9 +6,10 @@
             <file>file:/root/ll-test/firmware/src/imupic32mcj.h</file>
             <file>file:/root/ll-test/firmware/src/bma490l.c</file>
             <file>file:/root/ll-test/firmware/src/bno086.c</file>
+            <file>file:/root/ll-test/firmware/src/quat.c</file>
             <file>file:/root/ll-test/firmware/src/timers.h</file>
             <file>file:/root/ll-test/firmware/src/imu.h</file>
-            <file>file:/root/ll-test/firmware/src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.c</file>
+            <file>file:/root/ll-test/firmware/src/quat.h</file>
             <file>file:/root/ll-test/firmware/src/bno086.h</file>
             <file>file:/root/ll-test/firmware/src/imupic32mcj.c</file>
             <file>file:/root/ll-test/firmware/src/main.c</file>

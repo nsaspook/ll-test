@@ -461,13 +461,13 @@ void imu_cs_cb(uintptr_t context)
 
 void bma490_version(void)
 {
-	snprintf(imu_buffer, max_buf, "%s Driver Version  %s %s %s ", BMA400_ALIAS, BMA400_DRIVER, build_date, build_time);
+	snprintf(imu_buffer, max_buf, "%s Driver %s %s %s ", BMA400_ALIAS, BMA400_DRIVER, build_date, build_time);
 }
 #else
 
 void bma490_version(void)
 {
-	snprintf(imu_buffer, max_buf, "%s Driver Version  %s %s %s ", BMA490_ALIAS, BMA490_DRIVER, build_date, build_time);
+	snprintf(imu_buffer, max_buf, "%s Driver %s %s %s ", BMA490_ALIAS, BMA490_DRIVER, build_date, build_time);
 }
 #endif
 

@@ -28,7 +28,7 @@ extern "C" {
 
 #define SCA3300_DRIVER	"V1.006" 
 
-#define SCA3300_ALIAS	"SCx3300  "
+#define SCA3300_ALIAS	"SCx3300"
 
 	/* Device commands and response */
 #define SCA3300_REG_WHOAMI	0x10

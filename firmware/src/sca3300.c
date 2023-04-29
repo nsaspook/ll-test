@@ -352,6 +352,6 @@ void imu_cs_cb(uintptr_t context)
 
 void sca3300_version(void)
 {
-	snprintf(imu_buffer, max_buf, "%s Driver Version  %s %s %s", SCA3300_ALIAS, SCA3300_DRIVER, build_date, build_time);
+	snprintf(imu_buffer, max_buf, "%s Driver %s %s %s", SCA3300_ALIAS, SCA3300_DRIVER, build_date, build_time);
 }
 
