@@ -5,7 +5,7 @@ static const char *build_date = __DATE__, *build_time = __TIME__;
 static uint8_t CRC8(uint8_t, uint8_t);
 
 static bool imu_cs(imu_cmd_t *);
-static void imu_cs_cb(uintptr_t);
+void imu_cs_cb(uintptr_t);
 
 void sca3300_cs_disable(imu_cmd_t *);
 
@@ -306,7 +306,9 @@ bool imu_cs(imu_cmd_t * imu)
 			imu->run = true;
 			IMU_CS_Clear();
 			// set SPI receive complete callback
+#ifndef BNO086
 			SPI2_CallbackRegister(imu_cs_cb, (uintptr_t) imu);
+#endif
 			break;
 		}
 		return true;
@@ -331,6 +333,7 @@ void sca3300_cs_disable(imu_cmd_t * imu)
 	}
 }
 
+#ifndef BNO086
 /*
  * SPI interrupt completed callback
  * disables sca3300 CS and clears run flags
@@ -349,6 +352,7 @@ void imu_cs_cb(uintptr_t context)
 		}
 	}
 }
+#endif
 
 void sca3300_version(void)
 {

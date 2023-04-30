@@ -67,9 +67,6 @@ bool SPI2_TransferSetup (SPI_TRANSFER_SETUP *setup, uint32_t spiSourceClock);
 
 bool SPI2_IsTransmitterBusy (void);
 
-bool SPI2_IsBusy(void);
-
-void SPI2_CallbackRegister(SPI_CALLBACK callback, uintptr_t context);
 
 /* Provide C++ Compatibility */
 #ifdef __cplusplus

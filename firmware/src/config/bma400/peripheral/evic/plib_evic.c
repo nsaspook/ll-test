@@ -62,12 +62,10 @@ void EVIC_Initialize( void )
     IPC4SET = 0x4000000 | 0x0;  /* TIMER_4:  Priority 1 / Subpriority 0 */
     IPC6SET = 0x4 | 0x0;  /* TIMER_5:  Priority 1 / Subpriority 0 */
     IPC7SET = 0x40000 | 0x0;  /* RTCC:  Priority 1 / Subpriority 0 */
-    IPC9SET = 0x4 | 0x1;  /* SPI1_RX:  Priority 1 / Subpriority 1 */
-    IPC9SET = 0x400 | 0x100;  /* SPI1_TX:  Priority 1 / Subpriority 1 */
+    IPC9SET = 0x8 | 0x0;  /* SPI1_RX:  Priority 2 / Subpriority 0 */
+    IPC9SET = 0x800 | 0x0;  /* SPI1_TX:  Priority 2 / Subpriority 0 */
     IPC11SET = 0x4 | 0x0;  /* CHANGE_NOTICE_A:  Priority 1 / Subpriority 0 */
     IPC11SET = 0x4000000 | 0x0;  /* CHANGE_NOTICE_D:  Priority 1 / Subpriority 0 */
-    IPC13SET = 0x40000 | 0x20000;  /* SPI2_RX:  Priority 1 / Subpriority 2 */
-    IPC13SET = 0x4000000 | 0x2000000;  /* SPI2_TX:  Priority 1 / Subpriority 2 */
     IPC14SET = 0x4 | 0x0;  /* UART2_FAULT:  Priority 1 / Subpriority 0 */
     IPC14SET = 0x400 | 0x0;  /* UART2_RX:  Priority 1 / Subpriority 0 */
     IPC14SET = 0x40000 | 0x0;  /* UART2_TX:  Priority 1 / Subpriority 0 */

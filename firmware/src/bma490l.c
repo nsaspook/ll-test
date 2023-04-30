@@ -10,7 +10,7 @@ static uint8_t R_DATA_CMD[BMA490_DATA_BUFFER_LEN] = {BMA490_DATA_INDEX | RBIT, B
 #endif
 
 static bool imu_cs(imu_cmd_t *);
-static void imu_cs_cb(uintptr_t);
+void imu_cs_cb(uintptr_t);
 static void imu_cs_disable(imu_cmd_t *);
 
 void imu_set_reg(imu_cmd_t *, const uint8_t, const uint8_t, const bool);
@@ -413,7 +413,9 @@ bool imu_cs(imu_cmd_t * imu)
 			imu->run = true;
 			IMU_CS_Clear();
 			// set SPI receive complete callback
+#ifndef BNO086
 			SPI2_CallbackRegister(imu_cs_cb, (uintptr_t) imu);
+#endif
 			break;
 		}
 		return true;
@@ -438,6 +440,7 @@ void imu_cs_disable(imu_cmd_t * imu)
 	}
 }
 
+#ifndef BNO086
 /*
  * SPI interrupt completed callback
  * disables BMA490L CS and sets flags
@@ -456,6 +459,7 @@ void imu_cs_cb(uintptr_t context)
 		}
 	}
 }
+#endif
 
 #ifdef BMA400
 
