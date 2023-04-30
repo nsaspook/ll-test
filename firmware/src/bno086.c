@@ -85,6 +85,7 @@ void bno086_set_spimode(void * imup)
 	static bool first = true;
 	bool wait = true;
 
+	IMU_CS_Set();
 	// set SPI MODE
 	set_imu_bits(); // set 8 or 32-bit SPI transfers
 	LED_GREEN_Off();
@@ -98,6 +99,7 @@ void bno086_set_spimode(void * imup)
 		 */
 		init_imu_int_bno(imu);
 		snprintf(cmd_buffer, max_buf, "init_imu_int_bno");
+		WaitMs(20);
 
 		if (first) { // lets see if the device is alive and talking
 			first = false;
@@ -117,7 +119,6 @@ void bno086_set_spimode(void * imup)
 				}
 				if (imu->update) { // ISR set detection flag
 					wait = false;
-					LED_GREEN_On();
 					snprintf(imu_buffer, max_buf, "BNO08X interrupt detected");
 
 					/*
@@ -131,6 +132,7 @@ void bno086_set_spimode(void * imup)
 					} else { // bad or no packet
 						imu->init_good = false;
 						snprintf(response_buffer, max_buf, "BNO08X bad, no packet");
+						LED_RED_On();
 						return;
 					}
 
@@ -152,9 +154,13 @@ void bno086_set_spimode(void * imup)
 							buildNumber, partNumber);
 					} else {
 						imu->init_good = false;
+						LED_RED_On();
 						return;
 					}
+					LED_RED_Off();
+					LED_GREEN_On();
 				}
+
 			}
 		}
 	}
@@ -199,7 +205,9 @@ bool sendPacket(uint8_t channelNumber, uint8_t dataLength, void * imup)
 
 	// send packet to IMU.
 	// This also might receive the first part of another packet, which there is no way to avoid.
+	IMU_CS_Clear();
 	SPI2_WriteRead(imu->tbuf, totalLength, imu->rbuf, totalLength);
+	IMU_CS_Set();
 
 	if (imu->rbuf[0] == 0 && imu->rbuf[0] == 0) {
 		// no header data so no packet received
@@ -411,7 +419,9 @@ void bno086_get_header(void * imup)
 {
 	imu_cmd_t * imu = imup;
 
+	IMU_CS_Clear();
 	SPI2_WriteRead(NULL, 0, imu->rbuf, SHTP_HEADER_SIZE);
+	IMU_CS_Set();
 }
 
 // check for new data and read contents into imu.rbuf
@@ -456,6 +466,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 		return false;
 	}
 
+	IMU_CS_Clear();
 	if (read_b == SHTP_HEADER_SIZE) {
 		// just read the entire packet into the buffer
 		SPI2_WriteRead(NULL, 0, imu->rbuf, totalLength);
@@ -469,6 +480,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 		// erase the new header we just read, leaving only the data as a contiguous block
 		memmove(imu->rbuf + read_b, imu->rbuf + read_b + SHTP_HEADER_SIZE, receiveLength - SHTP_HEADER_SIZE);
 	}
+	IMU_CS_Set();
 
 	return true;
 }
