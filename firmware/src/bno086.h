@@ -27,6 +27,11 @@ extern "C" {
 #define BNO086_DRIVER	"V1.000" 
 #define BNO086_ALIAS	"BNO086"
 
+	/*
+	 * fake IMU for code testing
+	 */
+//#define FAKE_IMU
+
 #define SQRT_2 1.414213562f
 
 #define BNO_INIT_DELAY_INT	200
@@ -198,6 +203,8 @@ extern "C" {
 	extern imu_cmd_t imu0;
 	extern sh2_Quaternion_t fusion_q;
 
+	extern char response_buffer[RBUFFER_SIZE];
+	extern char cmd_buffer[RBUFFER_SIZE];
 
 
 #ifdef	__cplusplus

@@ -270,6 +270,8 @@ int main(void)
 	eaDogM_WriteStringAtPos(5, 0, buffer);
 	snprintf(buffer, max_buf, "%s Driver %s", HID_ALIAS, HID_DRIVER);
 	eaDogM_WriteStringAtPos(6, 0, buffer);
+	eaDogM_WriteStringAtPos(7, 0, cmd_buffer);
+	eaDogM_WriteStringAtPos(8, 0, response_buffer);
 	OledUpdate();
 	/*
 	 * debug detection

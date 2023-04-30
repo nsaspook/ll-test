@@ -51,9 +51,6 @@ magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVec
 bool tapDetected;
 bool doubleTap;
 
-
-
-
 enum Stability stability;
 bool stepDetected;
 uint16_t stepCount;
@@ -100,6 +97,7 @@ void bno086_set_spimode(void * imup)
 		 * trigger ISR on IMU data update interrupts
 		 */
 		init_imu_int_bno(imu);
+		snprintf(cmd_buffer, max_buf, "init_imu_int_bno");
 
 		if (first) { // lets see if the device is alive and talking
 			first = false;
@@ -110,6 +108,12 @@ void bno086_set_spimode(void * imup)
 					LED_RED_On();
 					snprintf(imu_buffer, max_buf, "** BNO08X detection failed **");
 					imu->init_good = false;
+					/*
+					 * fake IMU
+					 */
+#ifdef FAKE_IMU
+					imu->update = true;
+#endif
 				}
 				if (imu->update) { // ISR set detection flag
 					wait = false;
@@ -121,10 +125,12 @@ void bno086_set_spimode(void * imup)
 					 */
 					bno086_get_header(imu); // first 4 bytes
 
+					snprintf(cmd_buffer, max_buf, "bno086_get_cpacket");
 					if (bno086_get_cpacket(SHTP_HEADER_SIZE, imu)) {
 						imu->init_good = true;
 					} else { // bad or no packet
 						imu->init_good = false;
+						snprintf(response_buffer, max_buf, "BNO08X bad, no packet");
 						return;
 					}
 
@@ -141,6 +147,9 @@ void bno086_set_spimode(void * imup)
 						patchSoftwareVersion = (rxShtpData[13] << 8) | rxShtpData[12];
 						partNumber = (rxShtpData[7] << 24) | (rxShtpData[6] << 16) | (rxShtpData[5] << 8) | rxShtpData[4];
 						buildNumber = (rxShtpData[11] << 24) | (rxShtpData[10] << 16) | (rxShtpData[9] << 8) | rxShtpData[8];
+						snprintf(response_buffer, max_buf, "BNO08X reports version %hhu.%hhu.%hu, build %u, part no. %u\n",
+							majorSoftwareVersion, minorSoftwareVersion, patchSoftwareVersion,
+							buildNumber, partNumber);
 					} else {
 						imu->init_good = false;
 						return;
