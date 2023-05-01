@@ -41,7 +41,7 @@ extern "C" {
 	// Size of the largest individual packet we can receive.
 	// Min value is set by the advertisement packet (272 bytes)
 	// If you enable lots of sensor reports and get an error, you might need to increase this.
-#define SHTP_RX_PACKET_SIZE 272
+#define SHTP_RX_PACKET_SIZE 274
 
 	// Size of largest packet that we need to transmit (not including header)
 #define SHTP_MAX_TX_PACKET_SIZE 17

@@ -30,6 +30,7 @@ uint8_t * txShtpData = imu0.tbuf + SHTP_HEADER_SIZE;
 uint8_t * rxShtpData = imu0.rbuf + SHTP_HEADER_SIZE;
 
 uint16_t rxPacketLength;
+uint8_t dummy_header[512];
 
 /// Current sequence number for each channel, incremented after transmission. 
 uint8_t sequenceNumber[6];
@@ -87,7 +88,7 @@ void bno086_set_spimode(void * imup)
 
 	IMU_CS_Set();
 	// set SPI MODE
-	set_imu_bits(); // set 8 or 32-bit SPI transfers
+	//	set_imu_bits(); // set 8 or 32-bit SPI transfers
 	LED_GREEN_Off();
 	LED_RED_Off();
 	if (imu) {
@@ -131,7 +132,6 @@ void bno086_set_spimode(void * imup)
 						imu->init_good = true;
 					} else { // bad or no packet
 						imu->init_good = false;
-						snprintf(response_buffer, max_buf, "BNO08X bad, no packet");
 						LED_RED_On();
 						return;
 					}
@@ -420,7 +420,7 @@ void bno086_get_header(void * imup)
 	imu_cmd_t * imu = imup;
 
 	IMU_CS_Clear();
-	SPI2_WriteRead(NULL, 0, imu->rbuf, SHTP_HEADER_SIZE);
+	SPI2_WriteRead(dummy_header, SHTP_HEADER_SIZE, imu->rbuf, SHTP_HEADER_SIZE);
 	IMU_CS_Set();
 }
 
@@ -441,6 +441,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 
 	if (imu->rbuf[0] == 0xff && imu->rbuf[1] == 0xff) { // check for invalid device data
 		LED_RED_On(); // 
+		snprintf(response_buffer, max_buf, "BNO08X bad, invalid data");
 		return false;
 	}
 
@@ -452,6 +453,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 
 	if (totalLength == 0) {
 		// Packet is empty
+		snprintf(response_buffer, max_buf, "BNO08X empty packet");
 		return(false); //All done
 	}
 
@@ -463,19 +465,20 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 	}
 
 	if (rxPacketLength > SHTP_RX_PACKET_SIZE) {
+		snprintf(response_buffer, max_buf, "BNO08X long packet %u > %u", rxPacketLength, SHTP_RX_PACKET_SIZE);
 		return false;
 	}
 
 	IMU_CS_Clear();
 	if (read_b == SHTP_HEADER_SIZE) {
 		// just read the entire packet into the buffer
-		SPI2_WriteRead(NULL, 0, imu->rbuf, totalLength);
+		SPI2_WriteRead(dummy_header, totalLength, imu->rbuf, totalLength);
 	} else {
 		// we want to receive a new header, plus the remaining data bytes that haven't been read.
 		size_t receiveLength = SHTP_HEADER_SIZE + (totalLength - read_b);
 
 		// read remaining bytes into the data buffer starting at the next byte
-		SPI2_WriteRead(NULL, 0, imu->rbuf + read_b, receiveLength);
+		SPI2_WriteRead(dummy_header, receiveLength, imu->rbuf + read_b, receiveLength);
 
 		// erase the new header we just read, leaving only the data as a contiguous block
 		memmove(imu->rbuf + read_b, imu->rbuf + read_b + SHTP_HEADER_SIZE, receiveLength - SHTP_HEADER_SIZE);
