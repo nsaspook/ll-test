@@ -249,6 +249,7 @@ int main(void)
 	init_lcd_drv(D_INIT);
 	OledClearBuffer();
 	wait_lcd_done();
+
 	eaDogM_WriteStringAtPos(9, 0, imu_buffer);
 	imu0.op.info_ptr();
 	eaDogM_WriteStringAtPos(10, 0, imu_buffer);
@@ -277,7 +278,7 @@ int main(void)
 	 * debug detection
 	 */
 	while (true);
-	
+
 	buzzer_init(B_init); // audio device handler setup
 	hid_init(H_init); // screen blanking, input effects handler setup
 

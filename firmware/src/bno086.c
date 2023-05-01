@@ -135,7 +135,7 @@ void bno086_set_spimode(void * imup)
 						LED_RED_On();
 						return;
 					}
-
+					
 					clearSendBuffer(imu);
 					txShtpData[0] = SHTP_REPORT_PRODUCT_ID_REQUEST; //Request the product ID and reset info
 					txShtpData[1] = 0; //Reserved
