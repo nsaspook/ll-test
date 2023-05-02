@@ -277,7 +277,9 @@ int main(void)
 	/*
 	 * debug detection
 	 */
-	while (true);
+	while (true) {
+		//		imu0.op.imu_set_spimode(&imu0);
+	};
 
 	buzzer_init(B_init); // audio device handler setup
 	hid_init(H_init); // screen blanking, input effects handler setup
@@ -511,9 +513,7 @@ int main(void)
 #endif 
 			if (H.dis_unblank) {
 				H.dis_unblank = false;
-				ReSet_SetHigh();
-				init_lcd_drv(D_BLANK);
-				hid_init(H_zero_blank);
+				MISC_0_Set(); // blanking off
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
 			}

@@ -77,7 +77,7 @@ void clearSendBuffer(void * imup)
 {
 	imu_cmd_t * imu = imup;
 
-	memset(imu->tbuf, 0, SHTP_HEADER_SIZE + SHTP_MAX_TX_PACKET_SIZE);
+	memset(imu->tbuf, 0, 256);
 }
 
 void bno086_set_spimode(void * imup)
@@ -86,7 +86,7 @@ void bno086_set_spimode(void * imup)
 	static bool first = true;
 	bool wait = true;
 
-	IMU_CS_Set();
+	IMU_CS_Clear(); // enable IMU
 	// set SPI MODE
 	//	set_imu_bits(); // set 8 or 32-bit SPI transfers
 	LED_GREEN_Off();
@@ -100,7 +100,6 @@ void bno086_set_spimode(void * imup)
 		 */
 		init_imu_int_bno(imu);
 		snprintf(cmd_buffer, max_buf, "init_imu_int_bno");
-		WaitMs(20);
 
 		if (first) { // lets see if the device is alive and talking
 			first = false;
@@ -132,16 +131,18 @@ void bno086_set_spimode(void * imup)
 						imu->init_good = true;
 					} else { // bad or no packet
 						imu->init_good = false;
+						snprintf(imu_buffer, max_buf, "BNO08X bad cpacket");
 						LED_RED_On();
 						return;
 					}
-					
+
 					clearSendBuffer(imu);
 					txShtpData[0] = SHTP_REPORT_PRODUCT_ID_REQUEST; //Request the product ID and reset info
 					txShtpData[1] = 0; //Reserved
 					sendPacket(CHANNEL_CONTROL, 2, imu);
 
 					waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_PRODUCT_ID_RESPONSE, imu);
+					snprintf(cmd_buffer, max_buf, "BNO08X waitForPacket");
 
 					if (rxShtpData[0] == SHTP_REPORT_PRODUCT_ID_RESPONSE) {
 						majorSoftwareVersion = rxShtpData[2];
@@ -154,6 +155,7 @@ void bno086_set_spimode(void * imup)
 							buildNumber, partNumber);
 					} else {
 						imu->init_good = false;
+						snprintf(imu_buffer, max_buf, "BNO08X bad ID %X", rxShtpData[0]);
 						LED_RED_On();
 						return;
 					}
@@ -446,7 +448,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 	}
 
 	//Calculate the number of data bytes in this packet
-	totalLength = ((uint16_t) (imu->rbuf[1]) << 8 | imu->rbuf[0]);
+	totalLength = (uint16_t) imu->rbuf[1] + (((uint16_t) imu->rbuf[0]) << 8);
 
 	// Clear the MSbit.
 	totalLength &= ~(1 << 15);
@@ -468,6 +470,8 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 		snprintf(response_buffer, max_buf, "BNO08X long packet %u > %u", rxPacketLength, SHTP_RX_PACKET_SIZE);
 		return false;
 	}
+
+	snprintf(response_buffer, max_buf, "BNO08X packet %u %u", rxPacketLength, SHTP_RX_PACKET_SIZE);
 
 	IMU_CS_Clear();
 	if (read_b == SHTP_HEADER_SIZE) {

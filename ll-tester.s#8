@@ -17792,6 +17792,8 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <part name="U3" library="BNO080" deviceset="BNO080" device=""/>
 <part name="C30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
 <part name="VSS60" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="OS2" library="IQD-Frequency-Products" library_urn="urn:adsk.eagle:library:90" deviceset="OSC-OE" device="-IQXO-793" package3d_urn="urn:adsk.eagle:package:3371/1"/>
+<part name="C31" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
 </parts>
 <sheets>
 <sheet>
@@ -18506,6 +18508,14 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <instance part="VSS60" gate="G$1" x="175.26" y="114.3" smashed="yes">
 <attribute name="VALUE" x="172.72" y="109.22" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="OS2" gate="A" x="271.78" y="127" smashed="yes" rot="R180">
+<attribute name="NAME" x="279.4" y="118.745" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="279.4" y="137.16" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C31" gate="G$1" x="292.1" y="124.46" smashed="yes" rot="R180">
+<attribute name="NAME" x="291.084" y="123.825" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="291.084" y="128.651" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -18797,6 +18807,22 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <pinref part="U3" gate="G$1" pin="CLKSEL0"/>
 <junction x="175.26" y="152.4"/>
 <junction x="165.1" y="152.4"/>
+</segment>
+<segment>
+<wire x1="297.18" y1="121.92" x2="292.1" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="OS2" gate="A" pin="VDD"/>
+<pinref part="C31" gate="G$1" pin="1"/>
+<wire x1="292.1" y1="121.92" x2="284.48" y2="121.92" width="0.1524" layer="91"/>
+<junction x="292.1" y="121.92"/>
+<junction x="284.48" y="121.92"/>
+<label x="297.18" y="119.38" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="259.08" y1="121.92" x2="248.92" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="OS2" gate="A" pin="CON"/>
+<junction x="259.08" y="121.92"/>
+<junction x="248.92" y="121.92"/>
+<label x="251.46" y="119.38" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VSS" class="2">
@@ -19297,6 +19323,16 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <pinref part="C30" gate="G$1" pin="2"/>
 <pinref part="VSS60" gate="G$1" pin="VSS"/>
 <junction x="175.26" y="116.84"/>
+</segment>
+<segment>
+<wire x1="292.1" y1="132.08" x2="284.48" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="OS2" gate="A" pin="VSS"/>
+<pinref part="C31" gate="G$1" pin="2"/>
+<wire x1="292.1" y1="129.54" x2="292.1" y2="132.08" width="0.1524" layer="91"/>
+<junction x="292.1" y="129.54"/>
+<junction x="292.1" y="132.08"/>
+<junction x="284.48" y="132.08"/>
+<label x="297.18" y="132.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="AVDD" class="2">
@@ -20637,6 +20673,16 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <pinref part="U3" gate="G$1" pin="CAP"/>
 <pinref part="C30" gate="G$1" pin="1"/>
 <junction x="175.26" y="124.46"/>
+</segment>
+</net>
+<net name="32KHZ" class="0">
+<segment>
+<pinref part="U3" gate="G$1" pin="XIN32"/>
+<pinref part="OS2" gate="A" pin="OUT"/>
+<wire x1="226.06" y1="127" x2="259.08" y2="127" width="0.1524" layer="91"/>
+<junction x="259.08" y="127"/>
+<junction x="226.06" y="127"/>
+<label x="243.84" y="127" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>

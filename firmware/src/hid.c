@@ -45,7 +45,7 @@ void hid_init(H_STATE hs)
 		BLANK_COUNTER = 0x0; /* Clear counter to restart blanking period */
 		break;
 	case H_blank:
-		ReSet_SetLow();
+		MISC_0_Clear(); // blank
 		H.dis_reset = true;
 		break;
 	default:

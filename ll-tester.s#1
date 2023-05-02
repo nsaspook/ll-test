@@ -17808,6 +17808,10 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <part name="GLORY" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="GLORY"/>
 <part name="SV4" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA10-1" device="" package3d_urn="urn:adsk.eagle:package:8346/1" value="IMU_SIG"/>
 <part name="VSS64" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
+<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
+<part name="VDD19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
+<part name="VDD24" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18530,9 +18534,9 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <attribute name="NAME" x="291.084" y="123.825" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="291.084" y="128.651" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OSCI1" gate="G$1" x="231.14" y="129.54" smashed="yes" rot="R180">
-<attribute name="NAME" x="232.156" y="135.89" size="1.778" layer="95" rot="R270"/>
-<attribute name="TP_SIGNAL_NAME" x="229.87" y="132.08" size="1.778" layer="97" rot="R180"/>
+<instance part="OSCI1" gate="G$1" x="238.76" y="129.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="239.776" y="135.89" size="1.778" layer="95" rot="R270"/>
+<attribute name="TP_SIGNAL_NAME" x="237.49" y="132.08" size="1.778" layer="97" rot="R180"/>
 </instance>
 <instance part="R8" gate="G$1" x="139.7" y="149.86" smashed="yes" rot="R90">
 <attribute name="NAME" x="138.2014" y="146.05" size="1.778" layer="95" rot="R90"/>
@@ -18581,6 +18585,20 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 </instance>
 <instance part="VSS64" gate="G$1" x="256.54" y="73.66" smashed="yes">
 <attribute name="VALUE" x="254" y="68.58" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="R10" gate="G$1" x="231.14" y="137.16" smashed="yes" rot="R180">
+<attribute name="NAME" x="229.87" y="135.6614" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="234.95" y="135.382" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="R11" gate="G$1" x="231.14" y="139.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="229.87" y="143.2814" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="234.95" y="143.002" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="VDD19" gate="G$1" x="238.76" y="139.7" smashed="yes" rot="R270">
+<attribute name="VALUE" x="236.22" y="142.24" size="1.778" layer="96"/>
+</instance>
+<instance part="VDD24" gate="G$1" x="238.76" y="137.16" smashed="yes" rot="R270">
+<attribute name="VALUE" x="236.22" y="139.7" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -18927,6 +18945,16 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="157.48" y="-83.82"/>
 <junction x="149.86" y="-83.82"/>
 <label x="142.24" y="-83.82" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="R11" gate="G$1" pin="1"/>
+<pinref part="VDD19" gate="G$1" pin="VDD"/>
+<junction x="236.22" y="139.7"/>
+</segment>
+<segment>
+<pinref part="R10" gate="G$1" pin="1"/>
+<pinref part="VDD24" gate="G$1" pin="VDD"/>
+<junction x="236.22" y="137.16"/>
 </segment>
 </net>
 <net name="VSS" class="2">
@@ -20846,13 +20874,13 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <segment>
 <pinref part="U3" gate="G$1" pin="XIN32"/>
 <pinref part="OS2" gate="A" pin="OUT"/>
-<wire x1="226.06" y1="127" x2="231.14" y2="127" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="127" x2="238.76" y2="127" width="0.1524" layer="91"/>
 <junction x="259.08" y="127"/>
 <junction x="226.06" y="127"/>
 <label x="243.84" y="127" size="1.778" layer="95"/>
-<wire x1="231.14" y1="127" x2="259.08" y2="127" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="127" x2="259.08" y2="127" width="0.1524" layer="91"/>
 <pinref part="OSCI1" gate="G$1" pin="TP"/>
-<junction x="231.14" y="127"/>
+<junction x="238.76" y="127"/>
 </segment>
 <segment>
 <wire x1="256.54" y1="96.52" x2="284.48" y2="96.52" width="0.1524" layer="91"/>
@@ -20916,6 +20944,20 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <label x="17.78" y="-99.06" size="1.778" layer="95"/>
 </segment>
 </net>
+<net name="N$17" class="0">
+<segment>
+<pinref part="U3" gate="G$1" pin="ENV_SDA"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<junction x="226.06" y="137.16"/>
+</segment>
+</net>
+<net name="N$18" class="0">
+<segment>
+<pinref part="U3" gate="G$1" pin="ENV_SCL"/>
+<pinref part="R11" gate="G$1" pin="2"/>
+<junction x="226.06" y="139.7"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -20964,6 +21006,8 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <approved hash="208,1,-78.74,-27.94,VDD,sup,,,,"/>
 <approved hash="208,1,-81.28,-76.2,VDD,sup,,,,"/>
 <approved hash="208,1,226.06,124.46,VDD,out,,,,"/>
+<approved hash="208,1,236.22,139.7,VDD,sup,,,,"/>
+<approved hash="208,1,236.22,137.16,VDD,sup,,,,"/>
 <approved hash="206,1,116.84,-7.62,VREF+,,,,,"/>
 <approved hash="206,1,116.84,-5.08,VREF+,,,,,"/>
 </errors>
