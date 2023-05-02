@@ -154,7 +154,7 @@ void bno086_set_spimode(void * imup)
 							majorSoftwareVersion, minorSoftwareVersion, patchSoftwareVersion,
 							buildNumber, partNumber);
 					} else {
-						imu->init_good = false;
+						//imu->init_good = false;
 						snprintf(imu_buffer, max_buf, "BNO08X bad ID %X", rxShtpData[0]);
 						LED_RED_On();
 						return;
@@ -448,7 +448,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 	}
 
 	//Calculate the number of data bytes in this packet
-	totalLength = (uint16_t) imu->rbuf[1] + (((uint16_t) imu->rbuf[0]) << 8);
+	totalLength = (uint16_t) imu->rbuf[0] + (((uint16_t) imu->rbuf[1]) << 8);
 
 	// Clear the MSbit.
 	totalLength &= ~(1 << 15);
@@ -468,7 +468,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 
 	if (rxPacketLength > SHTP_RX_PACKET_SIZE) {
 		snprintf(response_buffer, max_buf, "BNO08X long packet %u > %u", rxPacketLength, SHTP_RX_PACKET_SIZE);
-		return false;
+		return true;
 	}
 
 	snprintf(response_buffer, max_buf, "BNO08X packet %u %u", rxPacketLength, SHTP_RX_PACKET_SIZE);
@@ -497,12 +497,12 @@ bool bno086_getid(void * imup)
 	imu_cmd_t * imu = imup;
 
 	if (imu) {
-		if (!imu->run) {
-		}
-		return imu->online;
-	} else {
-		return false;
+		imu->device = IMU_BNO086;
+		imu->angles = false;
+		imu->online = true;
+		return true;
 	}
+	return false;
 }
 
 bool bno086_getdata(void * imup)

@@ -59,6 +59,7 @@ extern "C" {
 #define LCD_CS 0
 
 #define BMA_LOG_TIMEOUT 150
+#define BNO_LOG_TIMEOUT	12
 #define SCA_LOG_TIMEOUT 10 // 8
 
 	//#define SHOW_LOG
@@ -117,6 +118,7 @@ extern "C" {
 	void clear_can_errors(void);
 	void set_can_retran(void);
 	extern uint32_t board_serial_id, cpu_serial_id;
+	extern volatile uint32_t bno08x_int_count;
 
 #ifdef __cplusplus
 }

@@ -144,7 +144,7 @@ imu_cmd_t imu0 = {
 	.device = IMU_BNO086, // device type
 	.cs = IMU_CS, // chip select number
 	.run = false,
-	.log_timeout = BMA_LOG_TIMEOUT,
+	.log_timeout = BNO_LOG_TIMEOUT,
 	.update = true,
 	.features = false,
 	.spi_bytes = 1,
@@ -273,16 +273,17 @@ int main(void)
 	eaDogM_WriteStringAtPos(6, 0, buffer);
 	eaDogM_WriteStringAtPos(7, 0, cmd_buffer);
 	eaDogM_WriteStringAtPos(8, 0, response_buffer);
+	snprintf(buffer, max_buf, "IMU interrupts %u", bno08x_int_count);
+	eaDogM_WriteStringAtPos(13, 0, buffer);
 	OledUpdate();
-	/*
-	 * debug detection
-	 */
-	while (true) {
-		//		imu0.op.imu_set_spimode(&imu0);
-	};
 
 	buzzer_init(B_init); // audio device handler setup
 	hid_init(H_init); // screen blanking, input effects handler setup
+
+	/*
+	 * debug detection
+	 */
+//	while (true);
 
 	/*
 	 * check to see if we actually have a working IMU
@@ -294,7 +295,6 @@ int main(void)
 		LED_RED_Toggle();
 		LED_GREEN_Toggle();
 		if (TimerDone(TMR_IMU)) {
-
 			while (wait) {
 				if (TimerDone(TMR_IMU)) {
 					LED_RED_Toggle();

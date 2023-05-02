@@ -21,6 +21,7 @@ static const uint8_t imu_name [][8] = {
 	"SCA3300",
 	"SCL3300",
 	"BMA400",
+	"BNO086",
 	"NO IMU ",
 };
 
@@ -185,6 +186,11 @@ void getAllData(sSensorData_t *accel, imu_cmd_t * imu)
 				accel->ya = ya / ANGLE_RES1 * ANGLE_RES2;
 				accel->za = za / ANGLE_RES1 * ANGLE_RES2;
 			}
+#endif
+#ifdef BNO086
+			x=1024;
+			y=512;
+			z=768;
 #endif
 			accel->x = x * accelRange; // scale to the correct units
 			accel->y = y * accelRange;

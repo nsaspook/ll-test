@@ -2,6 +2,7 @@
 #include "imupic32mcj.h"
 
 static uint32_t delay_freq = 0;
+volatile uint32_t bno08x_int_count = 0;
 
 #ifdef __32MK0512MCJ048__
 //void qei_index_cb(QEI_STATUS, uintptr_t);
@@ -113,18 +114,10 @@ void init_imu_int_bno(const imu_cmd_t * imu)
 void update_imu_int_bno(uint32_t a, uintptr_t context)
 {
 	imu_cmd_t * imu = (imu_cmd_t *) context;
-	static int8_t i = 0;
-	static uint8_t tog = 0;
 
 	if (imu) {
-		if (!i++) {
-
-		}
-		if (++tog >= 0) {
-			imu->update = true;
-			tog = 0;
-			LED_GREEN_Toggle();
-		}
+		imu->update = true;
+		bno08x_int_count++;
 	}
 }
 
