@@ -110,6 +110,7 @@ void init_imu_int_bno(const imu_cmd_t * imu)
 /*
  * user callback function per BNO08X data interrupt
  * update pacing flag from IMU ISR
+ * passes an pointer to the IMU data object
  */
 void update_imu_int_bno(uint32_t a, uintptr_t context)
 {
