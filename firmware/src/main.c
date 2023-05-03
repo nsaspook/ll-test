@@ -283,7 +283,7 @@ int main(void)
 	/*
 	 * debug detection
 	 */
-//	while (true);
+	//	while (true);
 
 	/*
 	 * check to see if we actually have a working IMU
@@ -367,8 +367,12 @@ int main(void)
 #ifdef SHOW_LCD   
 			OledClearBuffer();
 #endif
-			imu0.op.imu_getdata(&imu0); // read data from the chip
-			imu0.update = false;
+			if (imu0.update) {
+				imu0.update = false;
+				enableReport(TOTAL_ACCELERATION, 10);
+				imu0.op.imu_getdata(&imu0); // read data from the chip
+			}
+			
 			getAllData(&accel, &imu0); // convert data from the chip
 
 			accel.xerr = UpdatePI(&xpid, (double) accel.xa);
@@ -434,6 +438,9 @@ int main(void)
 				eaDogM_WriteStringAtPos(5, 0, buffer);
 				snprintf(buffer, max_buf, "ANG %s , %d %d %d", imu0.angles ? "Yes" : "No", POS2CNT, SW3_Get(), wake_fft);
 				eaDogM_WriteStringAtPos(6, 0, buffer);
+				snprintf(buffer, max_buf, "IMU interrupts %u", bno08x_int_count);
+				eaDogM_WriteStringAtPos(12, 0, buffer);
+
 			} else {
 
 			}

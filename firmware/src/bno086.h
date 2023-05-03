@@ -30,7 +30,7 @@ extern "C" {
 	/*
 	 * fake IMU for code testing
 	 */
-//#define FAKE_IMU
+	//#define FAKE_IMU
 
 #define SQRT_2 1.414213562f
 
@@ -196,6 +196,9 @@ extern "C" {
 	float qToFloat_dword(uint32_t, int16_t);
 	int16_t floatToQ(float, uint8_t);
 	int32_t floatToQ_dword(float t, uint16_t);
+
+	void setFeatureCommand(uint8_t, uint16_t, uint32_t);
+	void enableReport(enum Report, uint16_t);
 
 	/*
 	 * BNO086 chip instance

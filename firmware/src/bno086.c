@@ -73,6 +73,49 @@ uint32_t buildNumber;
  */
 float rotationAccuracy, geomagneticRotationAccuracy;
 
+//Sends the packet to enable the rotation vector
+
+void enableReport(enum Report report, uint16_t timeBetweenReports)
+{
+
+	// check time is valid
+	float periodSeconds = (float) (timeBetweenReports / 1000.0);
+
+	snprintf(imu_buffer, max_buf, "BNO08X time %.06f s", periodSeconds);
+
+	setFeatureCommand((uint8_t) report, timeBetweenReports, 0);
+
+	// note: we don't wait for ACKs on these packets because they can take quite a while, like half a second, to come in
+}
+
+void setFeatureCommand(uint8_t reportID, uint16_t timeBetweenReports, uint32_t specificConfig)
+{
+	uint32_t microsBetweenReports = (uint32_t) (timeBetweenReports * 1000);
+
+	const uint32_t batchMicros = 0;
+
+	txShtpData[0] = SHTP_REPORT_SET_FEATURE_COMMAND; //Set feature command. Reference page 55
+	txShtpData[1] = reportID; //Feature Report ID. 0x01 = Accelerometer, 0x05 = Rotation vector
+	txShtpData[2] = 0; //Feature flags
+	txShtpData[3] = 0; //Change sensitivity (LSB)
+	txShtpData[4] = 0; //Change sensitivity (MSB)
+	txShtpData[5] = (microsBetweenReports >> 0) & 0xFF; //Report interval (LSB) in microseconds. 0x7A120 = 500ms
+	txShtpData[6] = (microsBetweenReports >> 8) & 0xFF; //Report interval
+	txShtpData[7] = (microsBetweenReports >> 16) & 0xFF; //Report interval
+	txShtpData[8] = (microsBetweenReports >> 24) & 0xFF; //Report interval (MSB)
+	txShtpData[9] = (batchMicros >> 0) & 0xFF; //Batch Interval (LSB)
+	txShtpData[10] = (batchMicros >> 8) & 0xFF; //Batch Interval
+	txShtpData[11] = (batchMicros >> 16) & 0xFF; //Batch Interval
+	txShtpData[12] = (batchMicros >> 24) & 0xFF; //Batch Interval (MSB)
+	txShtpData[13] = (specificConfig >> 0) & 0xFF; //Sensor-specific config (LSB)
+	txShtpData[14] = (specificConfig >> 8) & 0xFF; //Sensor-specific config
+	txShtpData[15] = (specificConfig >> 16) & 0xFF; //Sensor-specific config
+	txShtpData[16] = (specificConfig >> 24) & 0xFF; //Sensor-specific config (MSB)
+
+	//Transmit packet on channel 2, 17 bytes
+	sendPacket(CHANNEL_CONTROL, 17, &imu0);
+}
+
 void clearSendBuffer(void * imup)
 {
 	imu_cmd_t * imu = imup;
@@ -118,6 +161,7 @@ void bno086_set_spimode(void * imup)
 #endif
 				}
 				if (imu->update) { // ISR set detection flag
+					imu->update = false;
 					wait = false;
 					snprintf(imu_buffer, max_buf, "BNO08X interrupt detected");
 
@@ -137,34 +181,41 @@ void bno086_set_spimode(void * imup)
 					}
 
 					clearSendBuffer(imu);
-					txShtpData[0] = SHTP_REPORT_PRODUCT_ID_REQUEST; //Request the product ID and reset info
-					txShtpData[1] = 0; //Reserved
-					sendPacket(CHANNEL_CONTROL, 2, imu);
+					snprintf(cmd_buffer, max_buf, "enableReport");
+					enableReport(TOTAL_ACCELERATION, 10);
 
-					waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_PRODUCT_ID_RESPONSE, imu);
-					snprintf(cmd_buffer, max_buf, "BNO08X waitForPacket");
-
-					if (rxShtpData[0] == SHTP_REPORT_PRODUCT_ID_RESPONSE) {
-						majorSoftwareVersion = rxShtpData[2];
-						minorSoftwareVersion = rxShtpData[3];
-						patchSoftwareVersion = (rxShtpData[13] << 8) | rxShtpData[12];
-						partNumber = (rxShtpData[7] << 24) | (rxShtpData[6] << 16) | (rxShtpData[5] << 8) | rxShtpData[4];
-						buildNumber = (rxShtpData[11] << 24) | (rxShtpData[10] << 16) | (rxShtpData[9] << 8) | rxShtpData[8];
-						snprintf(response_buffer, max_buf, "BNO08X reports version %hhu.%hhu.%hu, build %u, part no. %u\n",
-							majorSoftwareVersion, minorSoftwareVersion, patchSoftwareVersion,
-							buildNumber, partNumber);
-					} else {
-						//imu->init_good = false;
-						snprintf(imu_buffer, max_buf, "BNO08X bad ID %X", rxShtpData[0]);
-						LED_RED_On();
-						return;
-					}
 					LED_RED_Off();
 					LED_GREEN_On();
 				}
 
 			}
 		}
+	}
+}
+
+void get_id_dummy(void)
+{
+	txShtpData[0] = SHTP_REPORT_PRODUCT_ID_REQUEST; //Request the product ID and reset info
+	txShtpData[1] = 0; //Reserved
+	sendPacket(CHANNEL_CONTROL, 2, &imu0);
+
+	waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_PRODUCT_ID_RESPONSE, &imu0);
+	snprintf(cmd_buffer, max_buf, "BNO08X waitForPacket");
+
+	if (rxShtpData[0] == SHTP_REPORT_PRODUCT_ID_RESPONSE) {
+		majorSoftwareVersion = rxShtpData[2];
+		minorSoftwareVersion = rxShtpData[3];
+		patchSoftwareVersion = (rxShtpData[13] << 8) | rxShtpData[12];
+		partNumber = (rxShtpData[7] << 24) | (rxShtpData[6] << 16) | (rxShtpData[5] << 8) | rxShtpData[4];
+		buildNumber = (rxShtpData[11] << 24) | (rxShtpData[10] << 16) | (rxShtpData[9] << 8) | rxShtpData[8];
+		snprintf(response_buffer, max_buf, "BNO08X reports version %hhu.%hhu.%hu, build %u, part no. %u\n",
+			majorSoftwareVersion, minorSoftwareVersion, patchSoftwareVersion,
+			buildNumber, partNumber);
+	} else {
+		//imu->init_good = false;
+		snprintf(imu_buffer, max_buf, "BNO08X bad ID %X", rxShtpData[0]);
+		LED_RED_On();
+		return;
 	}
 }
 
@@ -511,6 +562,7 @@ bool bno086_getdata(void * imup)
 
 	if (imu) {
 		if (!imu->run) {
+			bno086_receive_packet(imu);
 		}
 		return imu->online;
 	} else {
