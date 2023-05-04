@@ -1,0 +1,15 @@
+.MYRBP500080B21RE :1 ;Non-Isolated DC/DC Converters
+MYRBP500080B21RE
+*STM PS
+*NGS
+*PLB 1="VBAT" 2="GND_1" 3="CE" 4="GND_2" 5="LX" 6="VOUT" 7="L1" 8="L2" 9="EP"
+*MXP 9
+*DFN MYRBP500080B21RE
+~!Mouser Part Number (81-MYRBP500080B21RE)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Murata-Electronics/MYRBP500080B21RE?qs=hd1VzrDQEGi2HKFlO8%252BP9Q%3D%3D)
+~!Manufacturer_Name (Murata Electronics)
+~!Manufacturer_Part_Number (MYRBP500080B21RE)
+~!Link Datasheet (https://www.murata.com/products/productdata/8809985572894/MYRBP-B-W.pdf?1604930424000)
+~!Height (1.04mm)
+MYRBP500080B21RE
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 9.1!U 

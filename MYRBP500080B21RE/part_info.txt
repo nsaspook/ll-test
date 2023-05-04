@@ -1,0 +1,9 @@
+Manufacturer=Murata Electronics
+PartNumber=MYRBP500080B21RE
+PartCategory=Power Supply
+PackageCategory=Other
+PinCount=9
+Version=1.2
+Released=2022-09-03 08:29:49
+Downloaded=2023-05-03 16:32:52
+3D=N

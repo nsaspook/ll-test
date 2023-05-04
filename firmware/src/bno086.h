@@ -199,6 +199,7 @@ extern "C" {
 
 	void setFeatureCommand(uint8_t, uint16_t, uint32_t);
 	void enableReport(enum Report, uint16_t);
+	bool bno086_updateData(void);
 
 	/*
 	 * BNO086 chip instance

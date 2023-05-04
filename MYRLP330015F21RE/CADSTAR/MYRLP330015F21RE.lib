@@ -1,0 +1,15 @@
+.MYRLP330015F21RE :1 ;Non-Isolated DC/DC Converters 150mA 1.8-6.0Vin 3.30Vout -40 to 85degC PWM
+MYRLP330015F21RE
+*STM PS
+*NGS
+*PLB 1="LX" 2="GND_1" 3="VOUT" 4="CE" 5="GND_2" 6="VIN" 7="L1" 8="L2" 9="EP"
+*MXP 9
+*DFN MYRLP330015F21RE
+~!Mouser Part Number (580-MYRLP330015F21RE)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Murata-Power-Solutions/MYRLP330015F21RE?qs=vvQtp7zwQdNOX7V%2FydgWKA%3D%3D)
+~!Manufacturer_Name (Murata Electronics)
+~!Manufacturer_Part_Number (MYRLP330015F21RE)
+~!Link Datasheet (https://www.murata.com/products/productdata/8816917708830/MYRLP-F.pdf?1656300615000)
+~!Height (1.04mm)
+MYRLP330015F21RE
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 9.1!U 

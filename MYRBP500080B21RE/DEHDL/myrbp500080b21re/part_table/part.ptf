@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'MYRBP500080B21RE'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Murata Electronics", "MYRBP500080B21RE" (!) = "", "MYRBP500080B21RE", "Other", "81-MYRBP500080B21RE", "https://www.mouser.co.uk/ProductDetail/Murata-Electronics/MYRBP500080B21RE?qs=hd1VzrDQEGi2HKFlO8%252BP9Q%3D%3D", "Non-Isolated DC/DC Converters", "https://www.murata.com/products/productdata/8809985572894/MYRBP-B-W.pdf?1604930424000", "1.04 mm"
+END_PART
+
+END.

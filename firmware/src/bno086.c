@@ -73,7 +73,21 @@ uint32_t buildNumber;
  */
 float rotationAccuracy, geomagneticRotationAccuracy;
 
-//Sends the packet to enable the rotation vector
+bool bno086_updateData(void)
+{
+
+	if (!bno086_receive_packet(&imu0)) {
+		// comms error
+		return false;
+	}
+
+	processPacket();
+
+	// packets were received, so data may have changed
+	return true;
+}
+
+//Sends the packet to enable reports
 
 void enableReport(enum Report report, uint16_t timeBetweenReports)
 {
@@ -164,31 +178,19 @@ void bno086_set_spimode(void * imup)
 					imu->update = false;
 					wait = false;
 					snprintf(imu_buffer, max_buf, "BNO08X interrupt detected");
-
-					/*
-					 * let's talk to the device
-					 */
-					bno086_get_header(imu); // first 4 bytes
-
-					snprintf(cmd_buffer, max_buf, "bno086_get_cpacket");
-					if (bno086_get_cpacket(SHTP_HEADER_SIZE, imu)) {
-						imu->init_good = true;
-					} else { // bad or no packet
-						imu->init_good = false;
-						snprintf(imu_buffer, max_buf, "BNO08X bad cpacket");
-						LED_RED_On();
-						return;
-					}
-
-					clearSendBuffer(imu);
-					snprintf(cmd_buffer, max_buf, "enableReport");
-					enableReport(TOTAL_ACCELERATION, 10);
-
-					LED_RED_Off();
-					LED_GREEN_On();
+					bno086_receive_packet(imu);
 				}
 
+				clearSendBuffer(imu);
+				snprintf(cmd_buffer, max_buf, "enableReport");
+				enableReport(TOTAL_ACCELERATION, 50);
+				enableReport(LINEAR_ACCELERATION, 50);
+				enableReport(ROTATION, 50);
+
+				LED_RED_Off();
+				LED_GREEN_On();
 			}
+
 		}
 	}
 }
@@ -474,7 +476,7 @@ void bno086_get_header(void * imup)
 
 	IMU_CS_Clear();
 	SPI2_WriteRead(dummy_header, SHTP_HEADER_SIZE, imu->rbuf, SHTP_HEADER_SIZE);
-	IMU_CS_Set();
+//	IMU_CS_Set();
 }
 
 // check for new data and read contents into imu.rbuf
@@ -561,9 +563,9 @@ bool bno086_getdata(void * imup)
 	imu_cmd_t * imu = imup;
 
 	if (imu) {
-		if (!imu->run) {
-			bno086_receive_packet(imu);
-		}
+
+		bno086_receive_packet(imu);
+
 		return imu->online;
 	} else {
 		return false;

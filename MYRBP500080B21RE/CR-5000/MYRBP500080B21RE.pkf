@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "MYRBP500080B21RE"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "MYRBP500080B21RE")
+        (spec "default")
+    )
+)

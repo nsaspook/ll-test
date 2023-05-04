@@ -369,8 +369,13 @@ int main(void)
 #endif
 			if (imu0.update) {
 				imu0.update = false;
-				enableReport(TOTAL_ACCELERATION, 10);
 				imu0.op.imu_getdata(&imu0); // read data from the chip
+				//				enableReport(TOTAL_ACCELERATION, 10);
+			} else {
+				TP3_Clear();
+				WaitMs(1);
+				TP3_Set();
+				enableReport(TOTAL_ACCELERATION, 50);
 			}
 			
 			getAllData(&accel, &imu0); // convert data from the chip
@@ -440,7 +445,6 @@ int main(void)
 				eaDogM_WriteStringAtPos(6, 0, buffer);
 				snprintf(buffer, max_buf, "IMU interrupts %u", bno08x_int_count);
 				eaDogM_WriteStringAtPos(12, 0, buffer);
-
 			} else {
 
 			}

@@ -18801,12 +18801,14 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <pinref part="U3" gate="G$1" pin="XOUT32/CLKSEL1"/>
 <junction x="226.06" y="124.46"/>
 <junction x="236.22" y="124.46"/>
+<label x="231.14" y="121.92" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="175.26" y1="152.4" x2="165.1" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="U3" gate="G$1" pin="CLKSEL0"/>
 <junction x="175.26" y="152.4"/>
 <junction x="165.1" y="152.4"/>
+<label x="152.4" y="152.4" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="297.18" y1="121.92" x2="292.1" y2="121.92" width="0.1524" layer="91"/>
@@ -20707,6 +20709,32 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <approved hash="104,1,104.14,-111.76,LCD2,GND,VSS,,,"/>
 <approved hash="104,1,104.14,-114.3,LCD2,GND,VSS,,,"/>
 <approved hash="104,1,71.12,-187.96,IC4,GND,VSS,,,"/>
+<approved hash="104,1,226.06,114.3,U3,GND,VSS,,,"/>
+<approved hash="104,1,226.06,157.48,U3,VDDIO,VDD,,,"/>
+<approved hash="104,1,226.06,116.84,U3,GNDIO,VSS,,,"/>
+<approved hash="208,1,5.08,132.08,VDD,sup,,,,"/>
+<approved hash="208,1,-17.78,111.76,VDD,sup,,,,"/>
+<approved hash="208,1,193.04,93.98,VDD,sup,,,,"/>
+<approved hash="208,1,-68.58,96.52,VDD,sup,,,,"/>
+<approved hash="208,1,-66.04,68.58,VDD,sup,,,,"/>
+<approved hash="208,1,-76.2,45.72,VDD,sup,,,,"/>
+<approved hash="208,1,-68.58,45.72,VDD,sup,,,,"/>
+<approved hash="208,1,-55.88,104.14,VDD,sup,,,,"/>
+<approved hash="208,1,-45.72,104.14,VDD,sup,,,,"/>
+<approved hash="208,1,210.82,-27.94,VDD,sup,,,,"/>
+<approved hash="208,1,246.38,-27.94,VDD,sup,,,,"/>
+<approved hash="208,1,180.34,-35.56,VDD,sup,,,,"/>
+<approved hash="208,1,-58.42,137.16,VDD,sup,,,,"/>
+<approved hash="208,1,-81.28,10.16,VDD,sup,,,,"/>
+<approved hash="208,1,101.6,-93.98,VDD,sup,,,,"/>
+<approved hash="208,1,83.82,-134.62,VDD,sup,,,,"/>
+<approved hash="208,1,58.42,-119.38,VDD,sup,,,,"/>
+<approved hash="208,1,124.46,-187.96,VDD,sup,,,,"/>
+<approved hash="208,1,-55.88,7.62,VDD,sup,,,,"/>
+<approved hash="208,1,20.32,-78.74,VDD,sup,,,,"/>
+<approved hash="208,1,-78.74,-27.94,VDD,sup,,,,"/>
+<approved hash="208,1,-81.28,-76.2,VDD,sup,,,,"/>
+<approved hash="208,1,226.06,124.46,VDD,out,,,,"/>
 <approved hash="206,1,116.84,-7.62,VREF+,,,,,"/>
 <approved hash="206,1,116.84,-5.08,VREF+,,,,,"/>
 </errors>

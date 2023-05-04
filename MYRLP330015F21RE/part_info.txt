@@ -1,0 +1,9 @@
+Manufacturer=Murata Electronics
+PartNumber=MYRLP330015F21RE
+PartCategory=Power Supply
+PackageCategory=Other
+PinCount=9
+Version=1.2
+Released=2023-02-13 04:47:26
+Downloaded=2023-05-03 16:34:08
+3D=N

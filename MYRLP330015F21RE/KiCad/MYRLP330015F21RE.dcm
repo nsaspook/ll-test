@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MYRLP330015F21RE
+D Non-Isolated DC/DC Converters 150mA 1.8-6.0Vin 3.30Vout -40 to 85degC PWM
+K
+F https://www.murata.com/products/productdata/8816917708830/MYRLP-F.pdf?1656300615000
+$ENDCMP
+#
+#End Doc Library
