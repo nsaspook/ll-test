@@ -14383,7 +14383,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart1&gt;
   &lt;uart1 dnOrder=&quot;0&quot; id=&quot;BAUD_RATE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;460800&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;115200&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart1&gt;
 &lt;/uart1&gt;
@@ -14394,7 +14394,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart1&gt;
   &lt;uart1 dnOrder=&quot;0&quot; id=&quot;BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart1&quot; value=&quot;32&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart1&quot; value=&quot;129&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart1&gt;
 &lt;/uart1&gt;
@@ -14963,7 +14963,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/definitions.h</file>
-         <hash>f193fb0990a669ec5a885fff0f169493cb3170f56b80af0ea2cbec4f4e4ef3c6</hash>
+         <hash>e575e4ecfcbe0287b42d3a2a53bbe5834fe0cd233af0535b40b251296aef3063</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/gpio/plib_gpio.h</file>
@@ -15091,7 +15091,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart1.c</file>
-         <hash>b699c0915d87ba370a61fc60405224729ef2f5ea7d5390967ef0a2a66b67fd2b</hash>
+         <hash>d9c4611484d0cb5372ff6f0430a0f25b6cbc30f301d5c1bdf1f564f24ebdac89</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart1.h</file>
@@ -15103,7 +15103,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/initialization.c</file>
-         <hash>17a85702ef16d62229a8339f8f10f61ad962729c8034affec8e1c7ff81a7c897</hash>
+         <hash>2db6d6d57f55bbdb9fae2b6dd682e18d48100ac6b6b54f38ae5df9b572073960</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/qei/plib_qei2.h</file>

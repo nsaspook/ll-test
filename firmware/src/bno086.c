@@ -178,14 +178,14 @@ void bno086_set_spimode(void * imup)
 					imu->update = false;
 					wait = false;
 					snprintf(imu_buffer, max_buf, "BNO08X interrupt detected");
-					bno086_receive_packet(imu);
 				}
 
 				clearSendBuffer(imu);
 				snprintf(cmd_buffer, max_buf, "enableReport");
-				enableReport(TOTAL_ACCELERATION, 50);
-				enableReport(LINEAR_ACCELERATION, 50);
-				enableReport(ROTATION, 50);
+//				enableReport(TOTAL_ACCELERATION, 10);
+				//				enableReport(LINEAR_ACCELERATION, 50);
+				//
+				//				enableReport(ROTATION, 50);
 
 				LED_RED_Off();
 				LED_GREEN_On();
@@ -264,20 +264,22 @@ bool sendPacket(uint8_t channelNumber, uint8_t dataLength, void * imup)
 	SPI2_WriteRead(imu->tbuf, totalLength, imu->rbuf, totalLength);
 	IMU_CS_Set();
 
-	if (imu->rbuf[0] == 0 && imu->rbuf[0] == 0) {
-		// no header data so no packet received
-		return true;
-	} else {
-		// received first part of data packet while writing
-		if (bno086_get_cpacket(totalLength, imu)) {
-			// received data packet, send to proper channels
-			processPacket();
-			return true;
-		}
+	return true;
 
-		// receive failed
-		return false;
-	}
+	//	if (imu->rbuf[0] == 0 && imu->rbuf[0] == 0) {
+	//		// no header data so no packet received
+	//		return true;
+	//	} else {
+	// received first part of data packet while writing
+	//		if (bno086_get_cpacket(totalLength, imu)) {
+	// received data packet, send to proper channels
+	//			processPacket();
+	//			return true;
+	//		}
+
+	// receive failed
+	//		return false;
+	//	}
 }
 
 void processPacket(void)
@@ -475,8 +477,8 @@ void bno086_get_header(void * imup)
 	imu_cmd_t * imu = imup;
 
 	IMU_CS_Clear();
-	SPI2_WriteRead(dummy_header, SHTP_HEADER_SIZE, imu->rbuf, SHTP_HEADER_SIZE);
-//	IMU_CS_Set();
+	SPI2_WriteRead(dummy_header, SHTP_HEADER_SIZE+1, imu->rbuf, SHTP_HEADER_SIZE+1);
+	IMU_CS_Set();
 }
 
 // check for new data and read contents into imu.rbuf
@@ -486,7 +488,11 @@ bool bno086_receive_packet(void * imup)
 	imu_cmd_t * imu = imup;
 
 	bno086_get_header(imu); // first 4 bytes
-	return bno086_get_cpacket(SHTP_HEADER_SIZE, imu);
+//	while (!(imu->rbuf[0] == 0xff && imu->rbuf[1] == 0xff)) {
+//		//		bno086_get_cpacket(SHTP_HEADER_SIZE, imu);
+//		bno086_get_header(imu);
+//	}
+	return true;
 }
 
 bool bno086_get_cpacket(size_t read_b, void * imup)
