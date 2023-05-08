@@ -43,6 +43,9 @@ double get_imu_scale(imu_cmd_t * imu)
 		 * load the proper scaling constants
 		 */
 		switch (imu->acc_range) {
+		case range_bno:
+			accelRange = IMU_BNO_ACCEL_MG_SCALE;
+			break;
 		case range_16g:
 			accelRange = BMA490_ACCEL_MG_LSB_16G * GRAVITY_EARTH * IMU_ACCEL_MG_SCALE;
 			break;
@@ -190,7 +193,6 @@ void getAllData(sSensorData_t *accel, imu_cmd_t * imu)
 			}
 #endif
 #ifdef BNO086
-			accelRange = 1.0f;
 			accel->x = totalAcceleration.v[0] * accelRange; // scale to the correct units
 			accel->y = totalAcceleration.v[1] * accelRange;
 			accel->z = totalAcceleration.v[2] * accelRange;

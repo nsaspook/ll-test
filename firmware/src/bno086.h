@@ -27,7 +27,7 @@ extern "C" {
 #include "bno086_reg.h"
 #include "imu.h"
 
-#define BNO086_DRIVER	"V1.000" 
+#define BNO086_DRIVER	"V1.001" 
 #define BNO086_ALIAS	"BNO086"
 
 	/*
@@ -35,7 +35,7 @@ extern "C" {
 	 */
 	//#define FAKE_IMU
 
-#define PDEBUG
+//#define PDEBUG
 	int printf_stub(const char*, ...);
 
 #ifdef PDEBUG

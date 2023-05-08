@@ -141,6 +141,7 @@ extern "C" {
 		range_24g,
 		range_inc1,
 		range_inc2,
+		range_bno,
 	};
 
 	enum sca3300_scan_indexes {
@@ -164,7 +165,8 @@ extern "C" {
 #define BMA490_ACCEL_MG_LSB_4G  0.000122070 ///< Macro for mg per LSB at +/- 4g sensitivity (1 LSB = 0.000122070mg) */
 #define BMA490_ACCEL_MG_LSB_8G  0.000244141 ///< Macro for mg per LSB at +/- 8g sensitivity (1 LSB = 0.000244141mg) */
 #define BMA490_ACCEL_MG_LSB_16G  0.000488281 ///< Macro for mg per LSB at +/- 16g sensitivity (1 LSB = 0.000488281mg) */
-#define IMU_ACCEL_MG_SCALE  1.000000000
+#define IMU_ACCEL_MG_SCALE	1.000000000
+#define IMU_BNO_ACCEL_MG_SCALE  0.9840000000
 #define SCA3300_ACCEL_MG_LSB_15G 0.000207000 ///< Macro for mg per LSB at +/- 1.5g sensitivity	LSB/g 5400
 #define SCA3300_ACCEL_MG_LSB_3G  0.000395000 ///< Macro for mg per LSB at +/- 3g sensitivity		LSB/g 2700
 #define SCA3300_ACCEL_MG_LSB_6G  0.000765000 ///< Macro for mg per LSB at +/- 6g sensitivity		LSB/g 1350

@@ -7252,7 +7252,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;SPI2_CLOCK_FREQUENCY&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;60000000&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;120000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -12995,7 +12995,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;spi2&gt;
   &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_BAUD_RATE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1000000&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;3000000&quot;/&gt;
     &lt;/Values&gt;
   &lt;/spi2&gt;
 &lt;/spi2&gt;
@@ -13006,7 +13006,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;spi2&gt;
   &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;spi2&quot; value=&quot;29&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;spi2&quot; value=&quot;19&quot;/&gt;
     &lt;/Values&gt;
   &lt;/spi2&gt;
 &lt;/spi2&gt;
@@ -13044,7 +13044,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;spi2&gt;
   &lt;spi2 dnOrder=&quot;0&quot; id=&quot;SPI_MASTER_CLOCK&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;1&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;0&quot;/&gt;
     &lt;/Values&gt;
   &lt;/spi2&gt;
 &lt;/spi2&gt;
@@ -14383,7 +14383,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart1&gt;
   &lt;uart1 dnOrder=&quot;0&quot; id=&quot;BAUD_RATE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;115200&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;460800&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart1&gt;
 &lt;/uart1&gt;
@@ -14394,7 +14394,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;uart1&gt;
   &lt;uart1 dnOrder=&quot;0&quot; id=&quot;BRG_VALUE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart1&quot; value=&quot;129&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;uart1&quot; value=&quot;32&quot;/&gt;
     &lt;/Values&gt;
   &lt;/uart1&gt;
 &lt;/uart1&gt;
@@ -14963,7 +14963,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/definitions.h</file>
-         <hash>e575e4ecfcbe0287b42d3a2a53bbe5834fe0cd233af0535b40b251296aef3063</hash>
+         <hash>6e55f8d3d22e2ff24f7c96979db1047963499bf42014ab7e5569a33587a646c7</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/gpio/plib_gpio.h</file>
@@ -15075,7 +15075,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.c</file>
-         <hash>a76f3af27e8c5c4d2621913f7f3e60d4332f9d3c2bbf8dc8391556c10018b807</hash>
+         <hash>a7709fadd6eb78839214190eac5ef932685a9a73a9af2b9f463430bd98b18dc2</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/stdio/xc32_monitor.c</file>
@@ -15091,7 +15091,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart1.c</file>
-         <hash>d9c4611484d0cb5372ff6f0430a0f25b6cbc30f301d5c1bdf1f564f24ebdac89</hash>
+         <hash>b699c0915d87ba370a61fc60405224729ef2f5ea7d5390967ef0a2a66b67fd2b</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart1.h</file>
@@ -15103,7 +15103,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/initialization.c</file>
-         <hash>2db6d6d57f55bbdb9fae2b6dd682e18d48100ac6b6b54f38ae5df9b572073960</hash>
+         <hash>6d076551ee8067170958b15a2270dbc1bad9b7f8f58ef1af44f4fbea71527731</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/qei/plib_qei2.h</file>

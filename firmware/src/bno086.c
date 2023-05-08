@@ -307,6 +307,7 @@ bool sendPacket(uint8_t channelNumber, uint8_t dataLength, void * imup)
 	IMU_CS_Clear();
 	SPI2_WriteRead(imu->tbuf, totalLength, imu->rbuf, totalLength);
 	IMU_CS_Set();
+	delay_us(100);
 
 	if (imu->rbuf[0] == 0 && imu->rbuf[0] == 0) {
 		// no header data so no packet received
@@ -535,8 +536,10 @@ bool bno086_receive_packet(void * imup)
 
 
 	bno086_get_header(imu); // first 4 bytes
+	delay_us(100);
 	if (bno086_get_cpacket(SHTP_HEADER_SIZE, imu)) {
 		dprintf("bno086_receive_packet\r\n");
+		delay_us(100);
 		processPacket();
 		return true;
 	}
@@ -668,11 +671,10 @@ int32_t floatToQ_dword(float qFloat, uint16_t qPoint)
 	return qVal;
 }
 
+/*
+ * dummy prinf replacement for debug lines
+ */
 int printf_stub(const char* s, ...)
 {
- //   va_list args;
- //   va_start(args, s);
- //   vprintf(s, args);
- //  va_end(args);
-    return 0;
+	return 1; // dummy printed value
 }

@@ -153,7 +153,7 @@ imu_cmd_t imu0 = {
 	.op.imu_set_spimode = &bno086_set_spimode,
 	.op.imu_getid = &bno086_getid,
 	.op.imu_getdata = &bno086_getdata,
-	.acc_range = range_8g,
+	.acc_range = range_bno,
 	.locked = true,
 	.warn = false,
 	.down = false,
@@ -371,7 +371,7 @@ int main(void)
 			if (imu0.update) {
 				imu0.update = false;
 				imu0.op.imu_getdata(&imu0); // read data from the chip
-//				printf("%x %x %x %x %x %c\r\n", imu0.rbuf[0], imu0.rbuf[1], imu0.rbuf[2], imu0.rbuf[3], imu0.rbuf[4], isprint(imu0.rbuf[4]) ? imu0.rbuf[4] : ' ');
+				//				printf("%x %x %x %x %x %c\r\n", imu0.rbuf[0], imu0.rbuf[1], imu0.rbuf[2], imu0.rbuf[3], imu0.rbuf[4], isprint(imu0.rbuf[4]) ? imu0.rbuf[4] : ' ');
 			} else {
 
 			}
@@ -525,8 +525,8 @@ int main(void)
 				MISC_0_Set(); // blanking off
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
-				enableReport(ROTATION, 200);
-				enableReport(TOTAL_ACCELERATION, 200);
+				enableReport(ROTATION, 50);
+				enableReport(TOTAL_ACCELERATION, 50);
 			}
 			if (H.silent) {
 				if (dot_anim++ < SDOT_ON) {
