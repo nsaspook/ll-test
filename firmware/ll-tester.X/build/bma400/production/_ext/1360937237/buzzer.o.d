@@ -28,8 +28,8 @@ build/bma400/production/_ext/1360937237/buzzer.o: ../src/buzzer.c \
  ../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h \
  ../src/config/bma400/peripheral/rtcc/plib_rtcc.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr9.h ../src/imu.h \
- ../src/bno086_reg.h ../src/timers.h ../src/hid.h ../src/gfx.h \
- ../src/../../firmware/lcd_drv/OledGrph.h \
+ ../src/bno086_reg.h ../src/quat.h ../src/timers.h ../src/hid.h \
+ ../src/gfx.h ../src/../../firmware/lcd_drv/OledGrph.h \
  ../src/../../firmware/lcd_drv/lcd_drv.h \
  ../src/../../firmware/lcd_drv/display_type.h \
  ../src/../../firmware/lcd_drv/eadog.h \
@@ -105,6 +105,8 @@ build/bma400/production/_ext/1360937237/buzzer.o: ../src/buzzer.c \
 ../src/imu.h:
 
 ../src/bno086_reg.h:
+
+../src/quat.h:
 
 ../src/timers.h:
 

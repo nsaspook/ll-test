@@ -28,7 +28,8 @@ build/bma400/production/_ext/1360937237/bma490l.o: ../src/bma490l.c \
  ../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h \
  ../src/config/bma400/peripheral/rtcc/plib_rtcc.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr9.h ../src/imupic32mcj.h \
- ../src/imu.h ../src/bno086_reg.h ../src/timers.h ../src/bma490l_reg.h
+ ../src/imu.h ../src/bno086_reg.h ../src/quat.h ../src/timers.h \
+ ../src/bma490l_reg.h
 
 ../src/bma490l.h:
 
@@ -97,6 +98,8 @@ build/bma400/production/_ext/1360937237/bma490l.o: ../src/bma490l.c \
 ../src/imu.h:
 
 ../src/bno086_reg.h:
+
+../src/quat.h:
 
 ../src/timers.h:
 

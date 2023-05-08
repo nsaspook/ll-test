@@ -18,6 +18,8 @@ extern "C" {
 #include <stddef.h>                     // Defines NULL
 #include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
+#include <ctype.h>
+#include <stdio.h>
 #include <math.h>
 #include "definitions.h"                // SYS function prototypes
 #include "imupic32mcj.h"
@@ -200,12 +202,17 @@ extern "C" {
 	void setFeatureCommand(uint8_t, uint16_t, uint32_t);
 	void enableReport(enum Report, uint16_t);
 	bool bno086_updateData(void);
+	void productIdReg(void);
+	void softreset(void);
+	void get_id_dummy(void);
 
 	/*
 	 * BNO086 chip instance
 	 */
 	extern imu_cmd_t imu0;
 	extern sh2_Quaternion_t fusion_q;
+	extern Quaternion rotationVector, totalAcceleration, linearAcceleration, gravityAcceleration, gyroRotation, magField,
+magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVector;
 
 	extern char response_buffer[RBUFFER_SIZE];
 	extern char cmd_buffer[RBUFFER_SIZE];

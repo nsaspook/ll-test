@@ -371,12 +371,9 @@ int main(void)
 			if (imu0.update) {
 				imu0.update = false;
 				imu0.op.imu_getdata(&imu0); // read data from the chip
-				printf("%x %x %x %x %x %c\r\n", imu0.rbuf[0], imu0.rbuf[1], imu0.rbuf[2], imu0.rbuf[3], imu0.rbuf[4], isprint(imu0.rbuf[4]) ? imu0.rbuf[4] : ' ');
+//				printf("%x %x %x %x %x %c\r\n", imu0.rbuf[0], imu0.rbuf[1], imu0.rbuf[2], imu0.rbuf[3], imu0.rbuf[4], isprint(imu0.rbuf[4]) ? imu0.rbuf[4] : ' ');
 			} else {
-				TP3_Clear();
-				WaitMs(1);
-				TP3_Set();
-				enableReport(TOTAL_ACCELERATION, 50);
+
 			}
 
 			getAllData(&accel, &imu0); // convert data from the chip
@@ -528,7 +525,8 @@ int main(void)
 				MISC_0_Set(); // blanking off
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
-//				enableReport(ROTATION, 50);
+//				enableReport(ROTATION, 10);
+				enableReport(TOTAL_ACCELERATION, 200);
 			}
 			if (H.silent) {
 				if (dot_anim++ < SDOT_ON) {

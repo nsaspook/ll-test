@@ -31,6 +31,8 @@ static uint32_t sensortime;
 static void move_bma490_transfer_data(uint8_t *, imu_cmd_t *);
 
 extern struct sca3300_data sdata;
+extern Quaternion rotationVector, totalAcceleration, linearAcceleration, gravityAcceleration, gyroRotation, magField,
+	magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVector;
 
 double get_imu_scale(imu_cmd_t * imu)
 {
@@ -188,9 +190,10 @@ void getAllData(sSensorData_t *accel, imu_cmd_t * imu)
 			}
 #endif
 #ifdef BNO086
-			x=1024;
-			y=512;
-			z=768;
+			accelRange = 10.0f;
+			x = totalAcceleration.v[0];
+			y = totalAcceleration.v[1];
+			z = totalAcceleration.v[2];
 #endif
 			accel->x = x * accelRange; // scale to the correct units
 			accel->y = y * accelRange;

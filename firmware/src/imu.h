@@ -18,6 +18,7 @@ extern "C" {
 #include <math.h>
 #include "imupic32mcj.h"
 #include "bno086_reg.h"
+#include "quat.h"
 
 #define IMU_DRIVER "V1.705" 
 #define IMU_ALIAS "IMU"

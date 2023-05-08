@@ -28,7 +28,7 @@ build/bma400/production/_ext/1360937237/main.o: ../src/main.c \
  ../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h \
  ../src/config/bma400/peripheral/rtcc/plib_rtcc.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr9.h ../src/imu.h \
- ../src/bno086_reg.h ../src/timers.h ../src/bma490l.h \
+ ../src/bno086_reg.h ../src/quat.h ../src/timers.h ../src/bma490l.h \
  ../src/bma490l_reg.h ../src/sca3300.h ../src/canfd.h ../src/bno086.h \
  ../src/../../firmware/lcd_drv/lcd_drv.h \
  ../src/../../firmware/lcd_drv/display_type.h \
@@ -107,6 +107,8 @@ build/bma400/production/_ext/1360937237/main.o: ../src/main.c \
 ../src/imu.h:
 
 ../src/bno086_reg.h:
+
+../src/quat.h:
 
 ../src/timers.h:
 
