@@ -190,14 +190,15 @@ void getAllData(sSensorData_t *accel, imu_cmd_t * imu)
 			}
 #endif
 #ifdef BNO086
-			accelRange = 10.0f;
-			x = totalAcceleration.v[0];
-			y = totalAcceleration.v[1];
-			z = totalAcceleration.v[2];
-#endif
+			accelRange = 1.0f;
+			accel->x = totalAcceleration.v[0] * accelRange; // scale to the correct units
+			accel->y = totalAcceleration.v[1] * accelRange;
+			accel->z = totalAcceleration.v[2] * accelRange;
+#else
 			accel->x = x * accelRange; // scale to the correct units
 			accel->y = y * accelRange;
 			accel->z = z * accelRange;
+#endif
 		}
 	}
 }

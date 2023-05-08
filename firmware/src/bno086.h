@@ -21,6 +21,7 @@ extern "C" {
 #include <ctype.h>
 #include <stdio.h>
 #include <math.h>
+#include <stdarg.h>
 #include "definitions.h"                // SYS function prototypes
 #include "imupic32mcj.h"
 #include "bno086_reg.h"
@@ -33,6 +34,15 @@ extern "C" {
 	 * fake IMU for code testing
 	 */
 	//#define FAKE_IMU
+
+#define PDEBUG
+	int printf_stub(const char*, ...);
+
+#ifdef PDEBUG
+#define	dprintf	printf
+#else
+#define dprintf	printf_stub
+#endif
 
 #define SQRT_2 1.414213562f
 
@@ -194,7 +204,7 @@ extern "C" {
 	bool waitForPacket(int, uint8_t, void *);
 	void clearSendBuffer(void *);
 
-	float qToFloat(int16_t, uint8_t);
+	double qToFloat(int16_t, uint8_t);
 	float qToFloat_dword(uint32_t, int16_t);
 	int16_t floatToQ(float, uint8_t);
 	int32_t floatToQ_dword(float t, uint16_t);
@@ -212,7 +222,7 @@ extern "C" {
 	extern imu_cmd_t imu0;
 	extern sh2_Quaternion_t fusion_q;
 	extern Quaternion rotationVector, totalAcceleration, linearAcceleration, gravityAcceleration, gyroRotation, magField,
-magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVector;
+		magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVector;
 
 	extern char response_buffer[RBUFFER_SIZE];
 	extern char cmd_buffer[RBUFFER_SIZE];

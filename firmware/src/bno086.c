@@ -106,7 +106,7 @@ void enableReport(enum Report report, uint16_t timeBetweenReports)
 	float periodSeconds = (float) (timeBetweenReports / 1000.0);
 
 	snprintf(imu_buffer, max_buf, "BNO08X time %.06f s", periodSeconds);
-	printf("%s\r\n", imu_buffer);
+	dprintf("%s\r\n", imu_buffer);
 
 	setFeatureCommand((uint8_t) report, timeBetweenReports, 0);
 
@@ -166,7 +166,7 @@ void bno086_set_spimode(void * imup)
 	bool wait = true;
 
 	IMU_CS_Clear(); // enable IMU
-	printf("\r\nbno086 setup start\r\n");
+	dprintf("\r\nbno086 setup start\r\n");
 	// set SPI MODE
 	//	set_imu_bits(); // set 8 or 32-bit SPI transfers
 	LED_GREEN_Off();
@@ -180,7 +180,7 @@ void bno086_set_spimode(void * imup)
 		 */
 		init_imu_int_bno(imu);
 		snprintf(cmd_buffer, max_buf, "init_imu_int_bno");
-		printf("%s\r\n", cmd_buffer);
+		dprintf("%s\r\n", cmd_buffer);
 
 		if (first) { // lets see if the device is alive and talking
 			StartTimer(TMR_BNO_INT, BNO_INIT_DELAY_INT);
@@ -189,7 +189,7 @@ void bno086_set_spimode(void * imup)
 					wait = false; // exit wait loop to fail detection
 					LED_RED_On();
 					snprintf(imu_buffer, max_buf, "** BNO08X detection failed **");
-					printf("%s\r\n", imu_buffer);
+					dprintf("%s\r\n", imu_buffer);
 					imu->init_good = false;
 					/*
 					 * fake IMU interrupt for testing
@@ -201,7 +201,7 @@ void bno086_set_spimode(void * imup)
 				if (imu->update) { // ISR set detection flag
 					wait = false;
 					snprintf(imu_buffer, max_buf, "BNO08X interrupt detected");
-					printf("%s\r\n", imu_buffer);
+					dprintf("%s\r\n", imu_buffer);
 				}
 
 				LED_RED_Off();
@@ -209,13 +209,13 @@ void bno086_set_spimode(void * imup)
 			}
 
 		}
-		printf("\r\nSoft Reset\r\n");
+		dprintf("\r\nSoft Reset\r\n");
 		softreset();
 		productIdReg();
 		/*
 		 * eat any IMU boot messages
 		 */
-		printf("\r\nEmpty IMU message buffer\r\n");
+		dprintf("\r\nEmpty IMU message buffer\r\n");
 		wait = false;
 		StartTimer(TMR_BNO_INT, BNO_INIT_DELAY_INT);
 		while (wait && (!TimerDone(TMR_BNO_INT) || imu->update)) {
@@ -226,10 +226,10 @@ void bno086_set_spimode(void * imup)
 				IMU_CS_Clear();
 				SPI2_WriteRead(imu->tbuf, 5, imu->rbuf, 5);
 				IMU_CS_Set();
-				printf("%x %x %x %x %x %c\r\n", imu0.rbuf[0], imu0.rbuf[1], imu0.rbuf[2], imu0.rbuf[3], imu0.rbuf[4], isprint(imu0.rbuf[4]) ? imu0.rbuf[4] : ' ');
+				dprintf("%x %x %x %x %x %c\r\n", imu0.rbuf[0], imu0.rbuf[1], imu0.rbuf[2], imu0.rbuf[3], imu0.rbuf[4], isprint(imu0.rbuf[4]) ? imu0.rbuf[4] : ' ');
 			}
 		}
-		printf("\r\nbno086 setup done\r\n");
+		dprintf("\r\nbno086 setup done\r\n");
 	}
 }
 
@@ -241,7 +241,7 @@ void get_id_dummy(void)
 
 	waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_PRODUCT_ID_RESPONSE, &imu0);
 	snprintf(cmd_buffer, max_buf, "BNO08X waitForPacket");
-	printf("%s\r\n", cmd_buffer);
+	dprintf("%s\r\n", cmd_buffer);
 
 	if (rxShtpData[0] == SHTP_REPORT_PRODUCT_ID_RESPONSE) {
 		majorSoftwareVersion = rxShtpData[2];
@@ -252,11 +252,11 @@ void get_id_dummy(void)
 		snprintf(response_buffer, max_buf, "\r\nBNO08X reports version %hhu.%hhu.%hu, build %u, part no. %u\r\n",
 			majorSoftwareVersion, minorSoftwareVersion, patchSoftwareVersion,
 			buildNumber, partNumber);
-		printf("%s\r\n", response_buffer);
+		dprintf("%s\r\n", response_buffer);
 	} else {
 		//imu->init_good = false;
 		snprintf(imu_buffer, max_buf, "BNO08X bad ID 0x%X", rxShtpData[0]);
-		printf("%s\r\n", response_buffer);
+		dprintf("%s\r\n", response_buffer);
 		LED_RED_On();
 		return;
 	}
@@ -326,7 +326,7 @@ bool sendPacket(uint8_t channelNumber, uint8_t dataLength, void * imup)
 
 void processPacket(void)
 {
-	printf("processPacket\r\n");
+	dprintf("processPacket\r\n");
 	if (rxShtpHeader[2] == CHANNEL_CONTROL) {
 		// currently no command reports are read
 	} else if (rxShtpHeader[2] == CHANNEL_EXECUTABLE) {
@@ -343,7 +343,7 @@ void processPacket(void)
 
 void parseSensorDataPacket(void)
 {
-	printf("parseSensorDataPacket\r\n");
+	dprintf("parseSensorDataPacket\r\n");
 	size_t currReportOffset = 0;
 
 	currReportOffset += SIZEOF_BASE_TIMESTAMP;
@@ -367,11 +367,11 @@ void parseSensorDataPacket(void)
 
 		switch (rxShtpData[currReportOffset]) {
 		case SENSOR_REPORTID_TIMESTAMP_REBASE:
-			printf("SENSOR_REPORTID_TIMESTAMP_REBASE\r\n");
+			dprintf("SENSOR_REPORTID_TIMESTAMP_REBASE\r\n");
 			currReportOffset += SIZEOF_TIMESTAMP_REBASE;
 			break;
 		case SENSOR_REPORTID_ACCELEROMETER:
-			printf("SENSOR_REPORTID_ACCELEROMETER\r\n");
+			dprintf("SENSOR_REPORTID_ACCELEROMETER\r\n");
 			totalAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
 			totalAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
 			totalAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
@@ -428,6 +428,7 @@ void parseSensorDataPacket(void)
 			uint16_t realPartQ = (uint16_t) rxShtpData[currReportOffset + 11] << 8 | rxShtpData[currReportOffset + 10];
 			uint16_t accuracyQ = (uint16_t) rxShtpData[currReportOffset + 13] << 8 | rxShtpData[currReportOffset + 12];
 
+			dprintf("SENSOR_REPORTID_ROTATION_VECTOR\r\n");
 			rotationVector.v[0] = qToFloat(data1, ROTATION_Q_POINT);
 			rotationVector.v[1] = qToFloat(data2, ROTATION_Q_POINT);
 			rotationVector.v[2] = qToFloat(data3, ROTATION_Q_POINT);
@@ -535,7 +536,7 @@ bool bno086_receive_packet(void * imup)
 
 	bno086_get_header(imu); // first 4 bytes
 	if (bno086_get_cpacket(SHTP_HEADER_SIZE, imu)) {
-		printf("bno086_receive_packet\r\n");
+		dprintf("bno086_receive_packet\r\n");
 		processPacket();
 		return true;
 	}
@@ -547,7 +548,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 	imu_cmd_t * imu = imup;
 	uint16_t totalLength;
 
-	printf("bno086_get_packet\r\n");
+	dprintf("bno086_get_packet\r\n");
 	if (imu->rbuf[0] == 0xff && imu->rbuf[1] == 0xff) { // check for invalid device data
 		LED_RED_On(); // 
 		snprintf(response_buffer, max_buf, "BNO08X bad, invalid data");
@@ -563,7 +564,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 	if (totalLength == 0) {
 		// Packet is empty
 		snprintf(response_buffer, max_buf, "BNO08X empty packet");
-		printf("%s\r\n", response_buffer);
+		dprintf("%s\r\n", response_buffer);
 		return(false); //All done
 	}
 
@@ -576,18 +577,18 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 
 	if (rxPacketLength > SHTP_RX_PACKET_SIZE) {
 		snprintf(response_buffer, max_buf, "BNO08X long packet 0x%x > 0x%x", rxPacketLength, SHTP_RX_PACKET_SIZE);
-		printf("%s\r\n", response_buffer);
+		dprintf("%s\r\n", response_buffer);
 		return false;
 	}
 
 	snprintf(response_buffer, max_buf, "BNO08X packet 0x%x 0x%x", rxPacketLength, SHTP_RX_PACKET_SIZE);
-	printf("%s\r\n", response_buffer);
+	dprintf("%s\r\n", response_buffer);
 
 	IMU_CS_Clear();
 	if (read_b == SHTP_HEADER_SIZE) {
 		// just read the entire packet into the buffer
 		SPI2_WriteRead(dummy_header, totalLength, imu->rbuf, totalLength);
-		printf("Read entire packet into rbuf\r\n");
+		dprintf("Read entire packet into rbuf\r\n");
 	} else {
 		// we want to receive a new header, plus the remaining data bytes that haven't been read.
 		size_t receiveLength = SHTP_HEADER_SIZE + (totalLength - read_b);
@@ -638,10 +639,10 @@ void bno086_version(void)
 //Given a register value and a Q point, convert to float
 //See https://en.wikipedia.org/wiki/Q_(number_format)
 
-float qToFloat(int16_t fixedPointValue, uint8_t qPoint)
+double qToFloat(int16_t fixedPointValue, uint8_t qPoint)
 {
-	float qFloat = fixedPointValue;
-	qFloat *= pow(2.0f, qPoint * -1);
+	double qFloat = fixedPointValue;
+	qFloat *= pow(2.0f, -qPoint);
 	return(qFloat);
 }
 
@@ -665,4 +666,13 @@ int32_t floatToQ_dword(float qFloat, uint16_t qPoint)
 {
 	int32_t qVal = (int32_t) (qFloat * pow(2.0f, qPoint));
 	return qVal;
+}
+
+int printf_stub(const char* s, ...)
+{
+ //   va_list args;
+ //   va_start(args, s);
+ //   vprintf(s, args);
+ //  va_end(args);
+    return 0;
 }

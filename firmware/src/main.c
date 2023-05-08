@@ -525,7 +525,7 @@ int main(void)
 				MISC_0_Set(); // blanking off
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
-//				enableReport(ROTATION, 10);
+				enableReport(ROTATION, 200);
 				enableReport(TOTAL_ACCELERATION, 200);
 			}
 			if (H.silent) {
