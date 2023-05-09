@@ -37,6 +37,10 @@ extern "C" {
 	 */
 	//#define FAKE_IMU
 
+	/*
+	 * Use terminal program TIO for 460800 speed serial debugging
+	 * https://github.com/tio/tio
+	 */
 //#define PDEBUG
 	int printf_stub(const char*, ...);
 
@@ -48,7 +52,7 @@ extern "C" {
 
 #define SQRT_2 1.414213562f
 
-#define BNO_INIT_DELAY_INT	200
+#define BNO_INIT_DELAY_INT	400
 
 #define SHTP_HEADER_SIZE 4
 

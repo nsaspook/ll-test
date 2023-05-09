@@ -172,6 +172,7 @@ void bno086_set_spimode(void * imup)
 	//	set_imu_bits(); // set 8 or 32-bit SPI transfers
 	LED_GREEN_Off();
 	LED_RED_Off();
+	softreset();
 	if (imu) {
 		if (first) { // power up restart device detection mode
 			imu->update = false;
@@ -529,6 +530,7 @@ void bno086_get_header(void * imup)
 }
 
 // check for new data and read contents into imu.rbuf
+
 bool bno086_receive_packet(void * imup)
 {
 	imu_cmd_t * imu = imup;

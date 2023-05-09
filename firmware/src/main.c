@@ -426,7 +426,13 @@ int main(void)
 #ifdef SHOW_LCD
 			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %X\r\n", accel.x, accel.y, accel.z, imu0.rs, imu0.ss);
 			eaDogM_WriteStringAtPos(0, 0, buffer);
+#ifndef BNO086
 			snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
+#else
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", linearAcceleration.v[0], linearAcceleration.v[1], linearAcceleration.v[1], accel.sensortemp);
+			eaDogM_WriteStringAtPos(2, 0, buffer);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", rotationVector.v[0], rotationVector.v[1], rotationVector.v[1], rotationVector.w);
+#endif
 			eaDogM_WriteStringAtPos(1, 0, buffer);
 			if (!H.dis_alt) {
 				snprintf(buffer, max_buf, "PIC32 IMU Controller %s   %s %s", IMU_DRIVER, build_date, build_time);
@@ -525,6 +531,7 @@ int main(void)
 				buzzer_trigger(BZ2);
 				enableReport(ROTATION, UPDATE_MS);
 				enableReport(TOTAL_ACCELERATION, UPDATE_MS);
+				enableReport(LINEAR_ACCELERATION, UPDATE_MS);
 			}
 			if (H.silent) {
 				if (dot_anim++ < SDOT_ON) {
