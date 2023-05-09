@@ -18851,6 +18851,7 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <junction x="175.26" y="152.4"/>
 <junction x="165.1" y="152.4"/>
 <label x="152.4" y="152.4" size="1.778" layer="95"/>
+<label x="167.64" y="152.4" size="1.778" layer="95"/>
 </segment>
 <segment>
 <wire x1="297.18" y1="121.92" x2="292.1" y2="121.92" width="0.1524" layer="91"/>

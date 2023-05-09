@@ -87,15 +87,16 @@ bool bno086_updateData(void)
 	return true;
 }
 
+/*
+ * 
+ */
 void softreset(void)
-{ //		bno086_get_header(imu);
-	//	}
+{
 	txShtpData[0] = 1;
 
 	sendPacket(CHANNEL_EXECUTABLE, 1, &imu0);
 }
-//		bno086_get_header(imu);
-//	}
+
 
 //Sends the packet to enable reports
 
@@ -254,7 +255,6 @@ void get_id_dummy(void)
 			buildNumber, partNumber);
 		dprintf("%s\r\n", response_buffer);
 	} else {
-		//imu->init_good = false;
 		snprintf(imu_buffer, max_buf, "BNO08X bad ID 0x%X", rxShtpData[0]);
 		dprintf("%s\r\n", response_buffer);
 		LED_RED_On();
@@ -529,11 +529,9 @@ void bno086_get_header(void * imup)
 }
 
 // check for new data and read contents into imu.rbuf
-
 bool bno086_receive_packet(void * imup)
 {
 	imu_cmd_t * imu = imup;
-
 
 	bno086_get_header(imu); // first 4 bytes
 	delay_us(100);
@@ -672,7 +670,7 @@ int32_t floatToQ_dword(float qFloat, uint16_t qPoint)
 }
 
 /*
- * dummy prinf replacement for debug lines
+ * dummy printf replacement for debug lines
  */
 int printf_stub(const char* s, ...)
 {

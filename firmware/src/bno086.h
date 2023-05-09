@@ -29,6 +29,8 @@ extern "C" {
 
 #define BNO086_DRIVER	"V1.001" 
 #define BNO086_ALIAS	"BNO086"
+	
+#define UPDATE_MS	1
 
 	/*
 	 * fake IMU for code testing
