@@ -235,7 +235,7 @@ void LA_gfx(bool reset, bool redraw, uint32_t turns)
 	double zt = z + t * (x * y - c * z);
 	x = xt + q0;
 	y = yt + q1;
-	z = zt;
+	z = zt + q2;
 #ifdef SHOW_STATS
 	xa = (x * 1.5) + 40;
 	ya = (z * 1.5) + 10; // xz plot

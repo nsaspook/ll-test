@@ -511,6 +511,12 @@ int main(void)
 #ifdef SHOW_LA
 			{
 				uint16_t i = 1;
+#ifdef BNO086
+				q0 = linearAcceleration.v[0] / 2.0f;
+				q1 = linearAcceleration.v[1] / 2.0f;
+				q2 = linearAcceleration.v[2] / 2.0f;
+				q3 = rotationVector.w;
+#endif
 
 				if (!H.dis_alt) {
 				} else {
