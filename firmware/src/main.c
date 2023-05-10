@@ -429,9 +429,9 @@ int main(void)
 #ifndef BNO086
 			snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
 #else
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", linearAcceleration.v[0], linearAcceleration.v[1], linearAcceleration.v[1], accel.sensortemp);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", linearAcceleration.v[0], linearAcceleration.v[1], linearAcceleration.v[2], accel.sensortemp);
 			eaDogM_WriteStringAtPos(2, 0, buffer);
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", rotationVector.v[0], rotationVector.v[1], rotationVector.v[1], rotationVector.w);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", rotationVector.v[0], rotationVector.v[1], rotationVector.v[2], rotationVector.w);
 #endif
 			eaDogM_WriteStringAtPos(1, 0, buffer);
 			if (!H.dis_alt) {
@@ -516,6 +516,15 @@ int main(void)
 				q1 = linearAcceleration.v[1] / 2.0f;
 				q2 = linearAcceleration.v[2] / 2.0f;
 				q3 = rotationVector.w;
+
+				accel.fusion.x = rotationVector.v[0];
+				accel.fusion.y = rotationVector.v[1];
+				accel.fusion.z = rotationVector.v[2];
+				accel.fusion.w = rotationVector.w;
+
+				accel.xa = linearAcceleration.v[0];
+				accel.ya = linearAcceleration.v[1];
+				accel.za = linearAcceleration.v[2];
 #endif
 
 				if (!H.dis_alt) {

@@ -30,6 +30,7 @@ extern "C" {
 
 	typedef struct _sSensorData_t {
 		const uint16_t id;
+		sh2_Quaternion_t fusion;
 		double x; /**< X-axis sensor data */
 		double y; /**< Y-axis sensor data */
 		double z; /**< Z-axis sensor data */
@@ -42,7 +43,6 @@ extern "C" {
 		uint32_t sensortime; /**< sensor time */
 		float sensortemp;
 		uint8_t buffer[64]; // can-fd frame buffer space
-		sh2_Quaternion_t fusion;
 	} sSensorData_t;
 
 	/*

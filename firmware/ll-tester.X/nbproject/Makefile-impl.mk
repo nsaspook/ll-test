@@ -31,7 +31,7 @@ DEFAULTCONF=bma400
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=mcj mcj_testing mjc_remote bma400 
+ALLCONFS=mcj mcj_testing mjc_remote bma400 nsensor 
 
 
 # build
@@ -49,6 +49,7 @@ ALLCONFS=mcj mcj_testing mjc_remote bma400
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mcj_testing clean
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mjc_remote clean
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=bma400 clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=nsensor clean
 
 
 
@@ -58,6 +59,7 @@ ALLCONFS=mcj mcj_testing mjc_remote bma400
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mcj_testing build
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mjc_remote build
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=bma400 build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=nsensor build
 
 
 

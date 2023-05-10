@@ -239,11 +239,12 @@ void imu_set_reg(imu_cmd_t * imu, const uint8_t reg, const uint8_t data, const b
 
 #ifdef BNO086
 // dummy routine for bno086 mode
-
+#ifndef XPRJ_nsensor
 void imu_set_reg(imu_cmd_t * imu, const uint8_t reg, const uint8_t data, const bool fast)
 {
 
 }
+#endif
 #endif
 
 #ifdef BMA400

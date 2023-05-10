@@ -33,6 +33,10 @@
                     <name>bma400</name>
                     <type>2</type>
                 </confElem>
+                <confElem>
+                    <name>nsensor</name>
+                    <type>2</type>
+                </confElem>
             </confList>
             <formatting>
                 <project-formatting-style>false</project-formatting-style>

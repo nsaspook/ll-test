@@ -29,3 +29,5 @@ funclist
 nbproject/Makefile-*
 disassembly/
 .generated_files/
+/cube/parallax_cube/nbproject/private/
+/cube/bno_cube/nbproject/private/

@@ -202,7 +202,7 @@ void CAN1_Initialize(void)
     CFD1FLTCON0 |= (((0x2 << _CFD1FLTCON0_F1BP_POSITION) & _CFD1FLTCON0_F1BP_MASK)| _CFD1FLTCON0_FLTEN1_MASK);
 
     /* Enable Timestamp */
-    CFD1TSCON = (512 & _CFD1TSCON_TBCPRE_MASK)
+    CFD1TSCON = (0 & _CFD1TSCON_TBCPRE_MASK)
                                 | ((0x1 << _CFD1TSCON_TSEOF_POSITION) & _CFD1TSCON_TSEOF_MASK)
 
                                 | _CFD1TSCON_TBCEN_MASK;

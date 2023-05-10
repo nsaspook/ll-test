@@ -20,3 +20,7 @@ CND_ARTIFACT_PATH_mjc_remote=dist/mjc_remote/production/ll-tester.X.production.h
 CND_ARTIFACT_DIR_bma400=dist/bma400/production
 CND_ARTIFACT_NAME_bma400=ll-tester.X.production.hex
 CND_ARTIFACT_PATH_bma400=dist/bma400/production/ll-tester.X.production.hex
+# nsensor configuration
+CND_ARTIFACT_DIR_nsensor=dist/nsensor/production
+CND_ARTIFACT_NAME_nsensor=ll-tester.X.production.hex
+CND_ARTIFACT_PATH_nsensor=dist/nsensor/production/ll-tester.X.production.hex
