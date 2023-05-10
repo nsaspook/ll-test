@@ -1,0 +1,31 @@
+# Created by Ultra Librarian Gold 8.3.313 Copyright © 1999-2021
+# Frank Frank, Accelerated Designs
+
+Grid mil;
+Set Wire_Bend 2;
+
+
+Edit 'DFN8_0p65_2p5SQ.sym';
+Grid Mil;
+Layer 94;
+Pin 'GND_2' Pas None Middle R0 Both 0 (100 0)
+Pin 'CSB' Pas None Middle R0 Both 0 (100 -100)
+Pin 'SDI' Pas None Middle R0 Both 0 (100 -200)
+Pin 'SCK' Pas None Middle R0 Both 0 (100 -300)
+Pin 'SDO' Pas None Middle R180 Both 0 (1500 -300)
+Pin 'VDDIO' Pas None Middle R180 Both 0 (1500 -200)
+Pin 'GND' Pas None Middle R180 Both 0 (1500 -100)
+Pin 'VDD' Pas None Middle R180 Both 0 (1500 0)
+Wire 6 (300 200) (300 -500);
+Wire 6 (300 -500) (1300 -500);
+Wire 6 (1300 -500) (1300 200);
+Wire 6 (1300 200) (300 200);
+Layer 97;
+Layer 95;
+Change Size 82;
+Change Ratio 6;
+Text '>Name' SR0 (614 359);
+Layer 96;
+Change Size 82;
+Change Ratio 6;
+Text '>Value' SR0 (589 259);
