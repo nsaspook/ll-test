@@ -5152,32 +5152,32 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="-8.89" y="69.85" size="1.27" layer="27" rot="R180"/>
 </element>
 <element name="PAD7" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:30830/1" value="led+" x="-24.13" y="76.2" smashed="yes">
-<attribute name="NAME" x="-24.892" y="77.216" size="1.27" layer="25" ratio="10"/>
+<attribute name="NAME" x="-29.972" y="75.946" size="1.27" layer="25" ratio="10"/>
 <attribute name="POPULARITY" value="15" x="-24.13" y="76.2" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-24.13" y="76.8" size="0.0254" layer="27"/>
 </element>
 <element name="PAD8" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:30830/1" value="led-" x="24.13" y="76.2" smashed="yes">
-<attribute name="NAME" x="23.368" y="77.216" size="1.27" layer="25" ratio="10"/>
+<attribute name="NAME" x="25.908" y="73.406" size="1.27" layer="25" ratio="10"/>
 <attribute name="POPULARITY" value="15" x="24.13" y="76.2" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="24.13" y="76.8" size="0.0254" layer="27"/>
 </element>
 <element name="PAD9" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:30830/1" value="c1" x="19.05" y="76.2" smashed="yes">
-<attribute name="NAME" x="18.288" y="77.216" size="1.27" layer="25" ratio="10"/>
+<attribute name="NAME" x="14.478" y="73.406" size="1.27" layer="25" ratio="10"/>
 <attribute name="POPULARITY" value="15" x="19.05" y="76.2" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="19.05" y="76.8" size="0.0254" layer="27"/>
 </element>
 <element name="PAD10" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:30830/1" value="a2" x="-21.59" y="76.2" smashed="yes">
-<attribute name="NAME" x="-22.352" y="77.216" size="1.27" layer="25" ratio="10"/>
+<attribute name="NAME" x="-26.162" y="73.406" size="1.27" layer="25" ratio="10"/>
 <attribute name="POPULARITY" value="15" x="-21.59" y="76.2" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-21.59" y="76.8" size="0.0254" layer="27"/>
 </element>
 <element name="PAD11" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:30830/1" value="c2" x="21.59" y="76.2" smashed="yes">
-<attribute name="NAME" x="20.828" y="77.216" size="1.27" layer="25" ratio="10"/>
+<attribute name="NAME" x="19.558" y="73.406" size="1.27" layer="25" ratio="10"/>
 <attribute name="POPULARITY" value="15" x="21.59" y="76.2" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="21.59" y="76.8" size="0.0254" layer="27"/>
 </element>
 <element name="PAD12" library="wirepad" library_urn="urn:adsk.eagle:library:412" package="1,6/0,8" package3d_urn="urn:adsk.eagle:package:30830/1" value="a3" x="-19.05" y="76.2" smashed="yes">
-<attribute name="NAME" x="-19.812" y="77.216" size="1.27" layer="25" ratio="10"/>
+<attribute name="NAME" x="-19.812" y="73.406" size="1.27" layer="25" ratio="10"/>
 <attribute name="POPULARITY" value="15" x="-19.05" y="76.2" size="1.778" layer="27" display="off"/>
 <attribute name="VALUE" x="-19.05" y="76.8" size="0.0254" layer="27"/>
 </element>
