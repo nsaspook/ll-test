@@ -17801,6 +17801,296 @@ In this library the device names are the same as the pin names of the symbols, t
 </deviceset>
 </devicesets>
 </library>
+<library name="BME280">
+<packages>
+<package name="PSON65P250X250X100-8N">
+<description>2.5 mm x 2.5 mm x 0.93 mm metal lid LGA</description>
+<text x="-1.256709375" y="1.66246875" size="0.4085875" layer="25">&gt;NAME</text>
+<text x="-1.204140625" y="-2.010759375" size="0.4078" layer="27">&gt;VALUE</text>
+<wire x1="-1.3" y1="1.3" x2="-1.3" y2="-1.3" width="0.127" layer="51"/>
+<wire x1="-1.3" y1="-1.3" x2="1.3" y2="-1.3" width="0.127" layer="51"/>
+<wire x1="1.3" y1="-1.3" x2="1.3" y2="1.3" width="0.127" layer="51"/>
+<wire x1="1.3" y1="1.3" x2="-1.3" y2="1.3" width="0.127" layer="51"/>
+<wire x1="-1.3" y1="-1.385" x2="1.3" y2="-1.385" width="0.127" layer="21"/>
+<wire x1="-1.3" y1="1.385" x2="1.3" y2="1.385" width="0.127" layer="21"/>
+<circle x="1.6" y="1" radius="0.05" width="0.2" layer="21"/>
+<wire x1="-1.55" y1="1.55" x2="1.55" y2="1.55" width="0.05" layer="39"/>
+<wire x1="1.55" y1="1.55" x2="1.55" y2="-1.55" width="0.05" layer="39"/>
+<wire x1="1.55" y1="-1.55" x2="-1.55" y2="-1.55" width="0.05" layer="39"/>
+<wire x1="-1.55" y1="-1.55" x2="-1.55" y2="1.55" width="0.05" layer="39"/>
+<circle x="1" y="1" radius="0.05" width="0.2" layer="51"/>
+<smd name="3" x="0.97" y="-0.325" dx="0.49" dy="0.45" layer="1" roundness="25"/>
+<smd name="2" x="0.97" y="0.325" dx="0.49" dy="0.45" layer="1" roundness="25"/>
+<smd name="1" x="0.97" y="0.975" dx="0.49" dy="0.45" layer="1" roundness="25"/>
+<smd name="4" x="0.97" y="-0.975" dx="0.49" dy="0.45" layer="1" roundness="25"/>
+<smd name="6" x="-0.97" y="-0.325" dx="0.49" dy="0.45" layer="1" roundness="25"/>
+<smd name="7" x="-0.97" y="0.325" dx="0.49" dy="0.45" layer="1" roundness="25"/>
+<smd name="8" x="-0.97" y="0.975" dx="0.49" dy="0.45" layer="1" roundness="25"/>
+<smd name="5" x="-0.97" y="-0.975" dx="0.49" dy="0.45" layer="1" roundness="25"/>
+</package>
+</packages>
+<symbols>
+<symbol name="BME280">
+<wire x1="-10.16" y1="12.7" x2="10.16" y2="12.7" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="10.16" y2="-12.7" width="0.4064" layer="94"/>
+<wire x1="10.16" y1="-12.7" x2="-10.16" y2="-12.7" width="0.4064" layer="94"/>
+<wire x1="-10.16" y1="-12.7" x2="-10.16" y2="12.7" width="0.4064" layer="94"/>
+<text x="-10.1662" y="13.3431" size="1.786590625" layer="95">&gt;NAME</text>
+<text x="-10.1683" y="-15.2524" size="1.782940625" layer="96">&gt;VALUE</text>
+<pin name="VDD" x="15.24" y="7.62" length="middle" direction="pwr" rot="R180"/>
+<pin name="GND" x="15.24" y="-10.16" length="middle" direction="pwr" rot="R180"/>
+<pin name="VDDIO" x="15.24" y="10.16" length="middle" direction="pwr" rot="R180"/>
+<pin name="CSB" x="-15.24" y="2.54" length="middle" direction="in"/>
+<pin name="SDO" x="-15.24" y="-5.08" length="middle"/>
+<pin name="SDI" x="-15.24" y="-2.54" length="middle"/>
+<pin name="SCK" x="-15.24" y="0" length="middle" direction="in" function="clk"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="BME280" prefix="U">
+<description>DIGITAL HUMIDITY, PRESSURE AND TEMPERATURE SENSOR&lt;br&gt;* Digital interface I²C (up to 3.4 MHz) and SPI (3 and 4 wire, up to 10 MHz)* Supply voltage VDD main supply voltage range: 1.71 V to 3.6 V*VDDIO interface voltage range: 1.2 V to 3.6 V&lt;br&gt;
+Operating range -40…+85 °C, 0…100 % rel. humidity, 300…1100 hPa
+&lt;br&gt;&lt;br&gt;
+
+The library has been designed by&lt;a href="https://www.facebook.com/groups/eaglecadsoftUK"&gt; Richard Magdycz&lt;/a&gt; &lt;a href="https://pricing.snapeda.com/parts/BME280/Bosch/view-part?ref=eda"&gt;Check availability&lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="BME280" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="PSON65P250X250X100-8N">
+<connects>
+<connect gate="G$1" pin="CSB" pad="2"/>
+<connect gate="G$1" pin="GND" pad="1 7"/>
+<connect gate="G$1" pin="SCK" pad="4"/>
+<connect gate="G$1" pin="SDI" pad="3"/>
+<connect gate="G$1" pin="SDO" pad="5"/>
+<connect gate="G$1" pin="VDD" pad="8"/>
+<connect gate="G$1" pin="VDDIO" pad="6"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="AVAILABILITY" value="In Stock"/>
+<attribute name="DESCRIPTION" value=" Board Mount Humidity Sensors MEMS humidity, pressure and temperature sensor "/>
+<attribute name="MF" value="Bosch"/>
+<attribute name="MP" value="BME280"/>
+<attribute name="PACKAGE" value="LGA-8 Bosch"/>
+<attribute name="PRICE" value="None"/>
+<attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/BME280/?ref=eda"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+<library name="VCNL4040M3OE">
+<packages>
+<package name="VISHAY_VCNL4040_4X2X1.1">
+<text x="-1.34115" y="2.467959375" size="0.763225" layer="25">&gt;NAME</text>
+<text x="-1.64613125" y="-3.13996875" size="0.76345" layer="27">&gt;VALUE</text>
+<wire x1="-1.175" y1="2.17" x2="1.175" y2="2.17" width="0.127" layer="51"/>
+<wire x1="1.175" y1="2.17" x2="1.175" y2="-2.17" width="0.127" layer="51"/>
+<wire x1="1.175" y1="-2.17" x2="-1.175" y2="-2.17" width="0.127" layer="52"/>
+<wire x1="-1.175" y1="-2.17" x2="-1.175" y2="2.17" width="0.127" layer="51"/>
+<circle x="-1.907" y="2.05" radius="0.05" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="2.5" x2="1.5" y2="2.5" width="0.127" layer="39"/>
+<wire x1="1.5" y1="2.5" x2="1.5" y2="-2.5" width="0.127" layer="39"/>
+<wire x1="1.5" y1="-2.5" x2="-1.5" y2="-2.5" width="0.127" layer="39"/>
+<wire x1="-1.5" y1="-2.5" x2="-1.5" y2="2.5" width="0.127" layer="39"/>
+<smd name="4" x="-0.7" y="-1.6125" dx="0.7" dy="0.725" layer="1"/>
+<smd name="1" x="-0.7" y="1.6125" dx="0.7" dy="0.725" layer="1"/>
+<smd name="2" x="-0.7" y="0.5375" dx="0.7" dy="0.725" layer="1"/>
+<smd name="3" x="-0.7" y="-0.5375" dx="0.7" dy="0.725" layer="1"/>
+<smd name="5" x="0.7" y="-1.6125" dx="0.7" dy="0.725" layer="1"/>
+<smd name="8" x="0.7" y="1.6125" dx="0.7" dy="0.725" layer="1"/>
+<smd name="6" x="0.7" y="-0.5375" dx="0.7" dy="0.725" layer="1"/>
+<smd name="7" x="0.7" y="0.5375" dx="0.7" dy="0.725" layer="1"/>
+</package>
+</packages>
+<symbols>
+<symbol name="VCNL4040M3OE">
+<wire x1="-12.7" y1="12.7" x2="12.7" y2="12.7" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="12.7" x2="12.7" y2="-12.7" width="0.4064" layer="94"/>
+<wire x1="12.7" y1="-12.7" x2="-12.7" y2="-12.7" width="0.4064" layer="94"/>
+<wire x1="-12.7" y1="-12.7" x2="-12.7" y2="12.7" width="0.4064" layer="94"/>
+<wire x1="-11.43" y1="11.43" x2="8.89" y2="11.43" width="0.254" layer="94"/>
+<wire x1="8.89" y1="11.43" x2="11.43" y2="11.43" width="0.254" layer="94"/>
+<wire x1="11.43" y1="11.43" x2="11.43" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="11.43" y1="-11.43" x2="-11.43" y2="-11.43" width="0.254" layer="94"/>
+<wire x1="-11.43" y1="-11.43" x2="-11.43" y2="11.43" width="0.254" layer="94"/>
+<text x="-17.7928" y="-1.270909375" size="1.270909375" layer="94">VDD</text>
+<text x="13.9811" y="-6.35503125" size="1.271009375" layer="94">C-LED</text>
+<text x="13.9802" y="-1.27093125" size="1.27093125" layer="94">INT</text>
+<text x="13.9854" y="3.814190625" size="1.2714" layer="94">SDA</text>
+<text x="13.9972" y="8.9073" size="1.27246875" layer="94">SCL</text>
+<text x="-17.8006" y="8.90031875" size="1.27146875" layer="94">GND</text>
+<text x="-22.8829" y="3.813809375" size="1.27126875" layer="94">C-SENSOR</text>
+<text x="-21.6" y="-6.352940625" size="1.270590625" layer="94">VDD-LED</text>
+<text x="-5.087840625" y="13.9915" size="1.780740625" layer="95">&gt;NAME</text>
+<text x="-5.08491875" y="-15.2548" size="1.77971875" layer="96">&gt;VALUE</text>
+<wire x1="10.16" y1="-10.16" x2="6.35" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="6.35" y1="-10.16" x2="6.35" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="6.35" y1="-7.62" x2="6.35" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="6.35" y1="-1.27" x2="10.16" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-1.27" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="3.81" y1="-8.89" x2="3.81" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="3.81" y1="-7.62" x2="3.81" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="3.81" y1="-3.81" x2="-3.81" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-3.81" x2="-6.35" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="-3.81" x2="-6.35" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="-5.08" x2="-6.35" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="-8.89" x2="3.81" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="10.16" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="-7.62" y2="6.35" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="6.35" x2="-3.81" y2="6.35" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="6.35" x2="-2.54" y2="6.35" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="6.35" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="7.62" x2="-2.54" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="3.81" x2="-6.35" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="-1.27" x2="-3.81" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-1.27" x2="2.54" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="2.54" y1="-1.27" x2="2.54" y2="3.81" width="0.254" layer="94"/>
+<wire x1="2.54" y1="3.81" x2="-3.81" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="3.81" x2="-6.35" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="6.35" x2="-3.81" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-3.81" y1="-1.27" x2="-3.81" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="3.81" y1="-7.62" x2="6.35" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="10.16" x2="-1.27" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="7.62" x2="-1.27" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="5.08" x2="6.35" y2="5.08" width="0.254" layer="94"/>
+<wire x1="6.35" y1="5.08" x2="6.35" y2="6.35" width="0.254" layer="94"/>
+<wire x1="6.35" y1="6.35" x2="6.35" y2="10.16" width="0.254" layer="94"/>
+<wire x1="6.35" y1="10.16" x2="-1.27" y2="10.16" width="0.254" layer="94"/>
+<wire x1="6.35" y1="6.35" x2="8.89" y2="6.35" width="0.254" layer="94"/>
+<wire x1="8.89" y1="6.35" x2="8.89" y2="7.62" width="0.254" layer="94"/>
+<wire x1="8.89" y1="7.62" x2="8.89" y2="11.43" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="7.62" x2="-2.54" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="7.62" x2="-8.89" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="7.62" x2="-8.89" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="2.54" x2="-8.89" y2="1.778" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="1.778" x2="-10.16" y2="1.778" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="1.778" x2="-7.62" y2="1.778" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="-5.08" x2="-8.89" y2="-5.08" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="-5.08" x2="-8.89" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="-8.89" x2="-8.89" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="-10.16" x2="-10.16" y2="-10.16" width="0.254" layer="94"/>
+<text x="-6.86868125" y="7.63186875" size="1.27198125" layer="94">DSP</text>
+<text x="1.0163" y="8.130390625" size="1.27036875" layer="94">LED</text>
+<text x="-0.762878125" y="5.848740625" size="1.27146875" layer="94">DRIVER</text>
+<text x="-3.81336875" y="0.762675" size="1.27111875" layer="94">OSCI</text>
+<text x="-4.321590625" y="-5.33843125" size="1.27105" layer="94">I2C BUS</text>
+<text x="-5.59296875" y="-8.64368125" size="1.27113125" layer="94">CONTROLL</text>
+<text x="-3.30783125" y="-6.87011875" size="1.272240625" layer="94">Logic</text>
+<text x="6.86768125" y="-3.81538125" size="1.271790625" layer="94">ALS</text>
+<text x="7.116" y="-6.09943125" size="1.270709375" layer="94">16</text>
+<text x="6.864340625" y="-8.89821875" size="1.27116875" layer="94">BIT</text>
+<wire x1="-8.89" y1="2.54" x2="-10.16" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="5.08" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="5.08" x2="-8.89" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="2.54" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-6.35" x2="-10.16" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="-6.35" x2="-8.89" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="-8.89" x2="-7.62" y2="-6.35" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-8.89" x2="-10.16" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="7.62" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="10.16" x2="8.89" y2="7.62" width="0.254" layer="94"/>
+<wire x1="8.89" y1="7.62" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="7.62" y1="7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="9.398" y1="7.112" x2="10.16" y2="6.35" width="0.127" layer="94"/>
+<wire x1="10.16" y1="6.35" x2="9.906" y2="6.858" width="0.127" layer="94"/>
+<wire x1="9.906" y1="6.858" x2="9.652" y2="6.604" width="0.127" layer="94"/>
+<wire x1="9.652" y1="6.604" x2="10.16" y2="6.35" width="0.127" layer="94"/>
+<wire x1="10.16" y1="7.112" x2="10.922" y2="6.35" width="0.127" layer="94"/>
+<wire x1="10.922" y1="6.35" x2="10.668" y2="6.858" width="0.127" layer="94"/>
+<wire x1="10.668" y1="6.858" x2="10.414" y2="6.604" width="0.127" layer="94"/>
+<wire x1="10.414" y1="6.604" x2="10.922" y2="6.35" width="0.127" layer="94"/>
+<wire x1="-10.922" y1="6.35" x2="-10.16" y2="5.588" width="0.127" layer="94"/>
+<wire x1="-10.16" y1="5.588" x2="-10.414" y2="6.096" width="0.127" layer="94"/>
+<wire x1="-10.414" y1="6.096" x2="-10.668" y2="5.842" width="0.127" layer="94"/>
+<wire x1="-10.668" y1="5.842" x2="-10.16" y2="5.588" width="0.127" layer="94"/>
+<wire x1="-10.16" y1="6.35" x2="-9.398" y2="5.588" width="0.127" layer="94"/>
+<wire x1="-9.398" y1="5.588" x2="-9.652" y2="6.096" width="0.127" layer="94"/>
+<wire x1="-9.652" y1="6.096" x2="-9.906" y2="5.842" width="0.127" layer="94"/>
+<wire x1="-9.906" y1="5.842" x2="-9.398" y2="5.588" width="0.127" layer="94"/>
+<wire x1="-10.922" y1="-5.08" x2="-10.16" y2="-5.842" width="0.127" layer="94"/>
+<wire x1="-10.16" y1="-5.842" x2="-10.414" y2="-5.334" width="0.127" layer="94"/>
+<wire x1="-10.414" y1="-5.334" x2="-10.668" y2="-5.588" width="0.127" layer="94"/>
+<wire x1="-10.668" y1="-5.588" x2="-10.16" y2="-5.842" width="0.127" layer="94"/>
+<wire x1="-10.16" y1="-5.08" x2="-9.398" y2="-5.842" width="0.127" layer="94"/>
+<wire x1="-9.398" y1="-5.842" x2="-9.652" y2="-5.334" width="0.127" layer="94"/>
+<wire x1="-9.652" y1="-5.334" x2="-9.906" y2="-5.588" width="0.127" layer="94"/>
+<wire x1="-9.906" y1="-5.588" x2="-9.398" y2="-5.842" width="0.127" layer="94"/>
+<text x="-9.908490625" y="-2.28656875" size="1.27031875" layer="94">DS</text>
+<text x="-9.91813125" y="-0.2543125" size="1.27155" layer="94">PS</text>
+<text x="-6.868809375" y="-10.6848" size="1.272" layer="94">ALS</text>
+<text x="-2.79466875" y="-10.6706" size="1.270309375" layer="94">PD</text>
+<circle x="-10.668" y="10.668" radius="0.254" width="0.254" layer="94"/>
+<circle x="-10.668" y="10.668" radius="0.179603125" width="0.254" layer="94"/>
+<circle x="-10.541" y="10.668" radius="0.127" width="0.254" layer="94"/>
+<pin name="C-SENSOR" x="-17.78" y="2.54" visible="pad" length="middle" direction="out"/>
+<pin name="VDD" x="-17.78" y="-2.54" visible="pad" length="middle" direction="pwr"/>
+<pin name="VDD-LED" x="-17.78" y="-7.62" visible="pad" length="middle" direction="pwr"/>
+<pin name="SCL" x="17.78" y="7.62" visible="pad" length="middle" direction="in" function="clk" rot="R180"/>
+<pin name="SDA" x="17.78" y="2.54" visible="pad" length="middle" rot="R180"/>
+<pin name="INT" x="17.78" y="-2.54" visible="pad" length="middle" direction="out" rot="R180"/>
+<pin name="C-LED" x="17.78" y="-7.62" visible="pad" length="middle" direction="out" rot="R180"/>
+<pin name="GND" x="-17.78" y="7.62" visible="pad" length="middle" direction="pwr"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="VCNL4040M3OE" prefix="U">
+<description>&lt;b&gt;VCNL4040&lt;/b&gt;
+
+&lt;p&gt;Fully Integrated Proximity and Ambient Light Sensor with
+Infrared Emitter, I2C Interface, and Interrupt Function:
+&lt;ul&gt; 
+
+VCNL4040 integrates a proximity sensor (PS), ambient
+light sensor (ALS), and a high power IRED into one small
+package. It incorporates photodiodes, amplifiers, and
+analog to digital converting circuits into a single chip by
+CMOS process. The 16-bit high resolution ALS offers
+excellent sensing capabilities with sufficient selections to
+fulfill most applications whether dark or high transparency
+lens design. High and low interrupt thresholds can be
+programmed for both ALS and PS, allowing the component
+to use a minimal amount of the microcontrollers resources.
+
+&lt;ul&gt;
+Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt;a href="https://pricing.snapeda.com/parts/VCNL4040M3OE/Vishay/view-part?ref=eda"&gt;Check availability&lt;/a&gt;</description>
+<gates>
+<gate name="_VCNL4040" symbol="VCNL4040M3OE" x="0" y="-2.54"/>
+</gates>
+<devices>
+<device name="" package="VISHAY_VCNL4040_4X2X1.1">
+<connects>
+<connect gate="_VCNL4040" pin="C-LED" pad="5"/>
+<connect gate="_VCNL4040" pin="C-SENSOR" pad="2"/>
+<connect gate="_VCNL4040" pin="GND" pad="1"/>
+<connect gate="_VCNL4040" pin="INT" pad="6"/>
+<connect gate="_VCNL4040" pin="SCL" pad="8"/>
+<connect gate="_VCNL4040" pin="SDA" pad="7"/>
+<connect gate="_VCNL4040" pin="VDD" pad="3"/>
+<connect gate="_VCNL4040" pin="VDD-LED" pad="4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="AVAILABILITY" value="In Stock"/>
+<attribute name="DESCRIPTION" value=" Optical Sensor Ambient 550nm I²C 8-SMD Module "/>
+<attribute name="MF" value="Vishay"/>
+<attribute name="MP" value="VCNL4040M3OE"/>
+<attribute name="PACKAGE" value="None"/>
+<attribute name="PRICE" value="None"/>
+<attribute name="PURCHASE-URL" value="https://pricing.snapeda.com/search/part/VCNL4040M3OE/?ref=eda"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -18013,7 +18303,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="VSS59" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="R7" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
 <part name="VDD18" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
-<part name="U3" library="BNO080" deviceset="BNO080" device=""/>
+<part name="U3" library="BNO080" deviceset="BNO080" device="" value="BNO086"/>
 <part name="C30" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
 <part name="VSS60" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="OS2" library="IQD-Frequency-Products" library_urn="urn:adsk.eagle:library:90" deviceset="OSC-OE" device="-IQXO-793" package3d_urn="urn:adsk.eagle:package:3371/1"/>
@@ -18023,7 +18313,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="VSS61" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="SJ3" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="BOOT_ON"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
-<part name="C32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="C32" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.47uf"/>
 <part name="VSS62" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="SJ4" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="IMU_RESET"/>
 <part name="VSS63" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
@@ -18032,8 +18322,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="GLORY" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="GLORY"/>
 <part name="SV4" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA10-1" device="" package3d_urn="urn:adsk.eagle:package:8346/1" value="IMU_SIG"/>
 <part name="VSS64" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
-<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
-<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="10k"/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="2.2k"/>
+<part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="2.2k"/>
 <part name="VDD19" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="VDD24" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="PS1" library="MYRBP500080B21RE" deviceset="MYRBP500080B21RE" device=""/>
@@ -18059,6 +18349,16 @@ In this library the device names are the same as the pin names of the symbols, t
 <part name="SJ8" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="BLANK_ON"/>
 <part name="+5VDC" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="+5VDC"/>
 <part name="P+3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="U4" library="BME280" deviceset="BME280" device=""/>
+<part name="U5" library="VCNL4040M3OE" deviceset="VCNL4040M3OE" device=""/>
+<part name="VSS73" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VSS74" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="C45" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="VSS75" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="C46" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="VSS76" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="C47" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uf"/>
+<part name="VSS77" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18919,6 +19219,41 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="P+3" gate="1" x="213.36" y="-58.42" smashed="yes" rot="R270">
 <attribute name="VALUE" x="208.28" y="-55.88" size="1.778" layer="96"/>
 </instance>
+<instance part="U4" gate="G$1" x="287.02" y="43.18" smashed="yes">
+<attribute name="NAME" x="276.8538" y="56.5231" size="1.786590625" layer="95"/>
+<attribute name="VALUE" x="276.8517" y="27.9276" size="1.782940625" layer="96"/>
+</instance>
+<instance part="U5" gate="_VCNL4040" x="294.64" y="-2.54" smashed="yes">
+<attribute name="NAME" x="289.552159375" y="11.4515" size="1.780740625" layer="95"/>
+<attribute name="VALUE" x="289.55508125" y="-17.7948" size="1.77971875" layer="96"/>
+</instance>
+<instance part="VSS73" gate="G$1" x="276.86" y="7.62" smashed="yes" rot="R180">
+<attribute name="VALUE" x="279.4" y="12.7" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="VSS74" gate="G$1" x="302.26" y="30.48" smashed="yes">
+<attribute name="VALUE" x="299.72" y="25.4" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C45" gate="G$1" x="312.42" y="55.88" smashed="yes">
+<attribute name="NAME" x="313.436" y="56.515" size="1.778" layer="95"/>
+<attribute name="VALUE" x="313.436" y="51.689" size="1.778" layer="96"/>
+</instance>
+<instance part="VSS75" gate="G$1" x="312.42" y="48.26" smashed="yes">
+<attribute name="VALUE" x="309.88" y="43.18" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C46" gate="G$1" x="276.86" y="-17.78" smashed="yes">
+<attribute name="NAME" x="277.876" y="-17.145" size="1.778" layer="95"/>
+<attribute name="VALUE" x="277.876" y="-21.971" size="1.778" layer="96"/>
+</instance>
+<instance part="VSS76" gate="G$1" x="276.86" y="-25.4" smashed="yes">
+<attribute name="VALUE" x="274.32" y="-30.48" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="C47" gate="G$1" x="266.7" y="-17.78" smashed="yes">
+<attribute name="NAME" x="267.716" y="-17.145" size="1.778" layer="95"/>
+<attribute name="VALUE" x="267.716" y="-21.971" size="1.778" layer="96"/>
+</instance>
+<instance part="VSS77" gate="G$1" x="266.7" y="-25.4" smashed="yes">
+<attribute name="VALUE" x="264.16" y="-30.48" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -19304,6 +19639,40 @@ In this library the device names are the same as the pin names of the symbols, t
 <label x="241.3" y="-101.6" size="1.778" layer="95"/>
 <junction x="238.76" y="-101.6"/>
 <pinref part="VDD26" gate="G$1" pin="VDD"/>
+</segment>
+<segment>
+<pinref part="U4" gate="G$1" pin="VDD"/>
+<wire x1="302.26" y1="50.8" x2="302.26" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="VDDIO"/>
+<wire x1="302.26" y1="53.34" x2="302.26" y2="58.42" width="0.1524" layer="91"/>
+<junction x="302.26" y="53.34"/>
+<junction x="302.26" y="58.42"/>
+<wire x1="312.42" y1="58.42" x2="302.26" y2="58.42" width="0.1524" layer="91"/>
+<junction x="312.42" y="58.42"/>
+<junction x="302.26" y="50.8"/>
+<label x="304.8" y="58.42" size="1.778" layer="95"/>
+<pinref part="C45" gate="G$1" pin="1"/>
+</segment>
+<segment>
+<wire x1="271.78" y1="45.72" x2="261.62" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="CSB"/>
+<junction x="271.78" y="45.72"/>
+<junction x="261.62" y="45.72"/>
+<label x="266.7" y="45.72" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="U5" gate="_VCNL4040" pin="VDD"/>
+<wire x1="276.86" y1="-5.08" x2="276.86" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="U5" gate="_VCNL4040" pin="VDD-LED"/>
+<wire x1="276.86" y1="-10.16" x2="276.86" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="276.86" y="-10.16"/>
+<junction x="276.86" y="-5.08"/>
+<wire x1="276.86" y1="-15.24" x2="266.7" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="266.7" y="-15.24"/>
+<label x="266.7" y="-17.78" size="1.778" layer="95"/>
+<pinref part="C46" gate="G$1" pin="1"/>
+<junction x="276.86" y="-15.24"/>
+<pinref part="C47" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="VSS" class="1">
@@ -19885,6 +20254,31 @@ In this library the device names are the same as the pin names of the symbols, t
 <label x="243.84" y="-63.5" size="1.778" layer="95"/>
 <pinref part="VSS72" gate="G$1" pin="VSS"/>
 <junction x="236.22" y="-60.96"/>
+</segment>
+<segment>
+<pinref part="U5" gate="_VCNL4040" pin="GND"/>
+<pinref part="VSS73" gate="G$1" pin="VSS"/>
+<junction x="276.86" y="5.08"/>
+</segment>
+<segment>
+<pinref part="U4" gate="G$1" pin="GND"/>
+<pinref part="VSS74" gate="G$1" pin="VSS"/>
+<junction x="302.26" y="33.02"/>
+</segment>
+<segment>
+<pinref part="C45" gate="G$1" pin="2"/>
+<pinref part="VSS75" gate="G$1" pin="VSS"/>
+<junction x="312.42" y="50.8"/>
+</segment>
+<segment>
+<pinref part="C46" gate="G$1" pin="2"/>
+<pinref part="VSS76" gate="G$1" pin="VSS"/>
+<junction x="276.86" y="-22.86"/>
+</segment>
+<segment>
+<pinref part="C47" gate="G$1" pin="2"/>
+<pinref part="VSS77" gate="G$1" pin="VSS"/>
+<junction x="266.7" y="-22.86"/>
 </segment>
 </net>
 <net name="AVDD" class="2">
@@ -21383,18 +21777,54 @@ In this library the device names are the same as the pin names of the symbols, t
 <label x="2.54" y="-7.62" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$17" class="0">
+<net name="BSDA" class="0">
 <segment>
 <pinref part="U3" gate="G$1" pin="ENV_SDA"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <junction x="226.06" y="137.16"/>
+<wire x1="226.06" y1="137.16" x2="226.06" y2="132.08" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="132.08" x2="233.68" y2="132.08" width="0.1524" layer="91"/>
+<junction x="233.68" y="132.08"/>
+<label x="243.84" y="137.16" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="264.16" y1="40.64" x2="271.78" y2="40.64" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="SDI"/>
+<junction x="271.78" y="40.64"/>
+<junction x="264.16" y="40.64"/>
+<label x="266.7" y="40.64" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="312.42" y1="0" x2="320.04" y2="0" width="0.1524" layer="91"/>
+<pinref part="U5" gate="_VCNL4040" pin="SDA"/>
+<junction x="320.04" y="0"/>
+<junction x="312.42" y="0"/>
+<label x="314.96" y="0" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$18" class="0">
+<net name="BSCL" class="0">
 <segment>
 <pinref part="U3" gate="G$1" pin="ENV_SCL"/>
 <pinref part="R11" gate="G$1" pin="2"/>
 <junction x="226.06" y="139.7"/>
+<wire x1="226.06" y1="139.7" x2="226.06" y2="142.24" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="142.24" x2="233.68" y2="142.24" width="0.1524" layer="91"/>
+<junction x="233.68" y="142.24"/>
+<label x="243.84" y="139.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="264.16" y1="43.18" x2="271.78" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="U4" gate="G$1" pin="SCK"/>
+<junction x="271.78" y="43.18"/>
+<junction x="264.16" y="43.18"/>
+<label x="266.7" y="43.18" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="312.42" y1="5.08" x2="320.04" y2="5.08" width="0.1524" layer="91"/>
+<pinref part="U5" gate="_VCNL4040" pin="SCL"/>
+<junction x="320.04" y="5.08"/>
+<junction x="312.42" y="5.08"/>
+<label x="314.96" y="5.08" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$20" class="1">
@@ -21452,6 +21882,19 @@ In this library the device names are the same as the pin names of the symbols, t
 <junction x="203.2" y="-60.96"/>
 </segment>
 </net>
+<net name="N$22" class="0">
+<segment>
+<pinref part="U5" gate="_VCNL4040" pin="C-SENSOR"/>
+<wire x1="276.86" y1="0" x2="269.24" y2="0" width="0.1524" layer="91"/>
+<wire x1="269.24" y1="0" x2="269.24" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="269.24" y1="17.78" x2="330.2" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="330.2" y1="17.78" x2="330.2" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="U5" gate="_VCNL4040" pin="C-LED"/>
+<wire x1="330.2" y1="-10.16" x2="312.42" y2="-10.16" width="0.1524" layer="91"/>
+<junction x="276.86" y="0"/>
+<junction x="312.42" y="-10.16"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -21477,6 +21920,12 @@ In this library the device names are the same as the pin names of the symbols, t
 <approved hash="104,1,226.06,114.3,U3,GND,VSS,,,"/>
 <approved hash="104,1,226.06,157.48,U3,VDDIO,VDD,,,"/>
 <approved hash="104,1,226.06,116.84,U3,GNDIO,VSS,,,"/>
+<approved hash="104,1,302.26,33.02,U4,GND,VSS,,,"/>
+<approved hash="104,1,302.26,53.34,U4,VDDIO,VDD,,,"/>
+<approved hash="104,1,276.86,-10.16,U5,VDD-LED,VDD,,,"/>
+<approved hash="104,1,276.86,5.08,U5,GND,VSS,,,"/>
+<approved hash="206,1,276.86,0,N$22,,,,,"/>
+<approved hash="206,1,312.42,-10.16,N$22,,,,,"/>
 <approved hash="208,1,5.08,132.08,VDD,sup,,,,"/>
 <approved hash="208,1,-17.78,111.76,VDD,sup,,,,"/>
 <approved hash="208,1,193.04,93.98,VDD,sup,,,,"/>

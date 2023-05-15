@@ -16991,6 +16991,12 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <pin name="VB1+" x="15.24" y="-5.08" length="middle" direction="pas" rot="R180"/>
 <pin name="VB1-" x="15.24" y="-7.62" length="middle" direction="pas" rot="R180"/>
 <pin name="VLCD" x="15.24" y="-12.7" length="middle" direction="pas" rot="R180"/>
+<pin name="CAT1" x="-7.62" y="-25.4" length="middle" direction="in" rot="R90"/>
+<pin name="CAT2" x="-5.08" y="-25.4" length="middle" direction="in" rot="R90"/>
+<pin name="CAT3" x="-2.54" y="-25.4" length="middle" direction="in" rot="R90"/>
+<pin name="CAT4" x="0" y="-25.4" length="middle" direction="in" rot="R90"/>
+<pin name="CAT5" x="2.54" y="-25.4" length="middle" direction="in" rot="R90"/>
+<pin name="CAT6" x="5.08" y="-25.4" length="middle" direction="in" rot="R90"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -17004,6 +17010,12 @@ http://www.fairchildsemi.com/ds/LM/LM7805.pdf</description>
 <connect gate="G$1" pin="!CS0!" pad="36"/>
 <connect gate="G$1" pin="!RST!" pad="37"/>
 <connect gate="G$1" pin="BM0" pad="33"/>
+<connect gate="G$1" pin="CAT1" pad="1"/>
+<connect gate="G$1" pin="CAT2" pad="2"/>
+<connect gate="G$1" pin="CAT3" pad="3"/>
+<connect gate="G$1" pin="CAT4" pad="18"/>
+<connect gate="G$1" pin="CAT5" pad="19"/>
+<connect gate="G$1" pin="CAT6" pad="20"/>
 <connect gate="G$1" pin="CD" pad="34"/>
 <connect gate="G$1" pin="CLK" pad="38"/>
 <connect gate="G$1" pin="CS1" pad="35"/>
@@ -21675,53 +21687,6 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <junction x="48.26" y="-185.42"/>
 </segment>
 </net>
-<net name="N$66" class="2">
-<segment>
-<pinref part="IC4" gate="G$1" pin="FB"/>
-<wire x1="71.12" y1="-190.5" x2="71.12" y2="-210.82" width="0.1524" layer="91"/>
-<junction x="71.12" y="-190.5"/>
-<pinref part="R19" gate="G$1" pin="1"/>
-<wire x1="71.12" y1="-210.82" x2="17.78" y2="-210.82" width="0.1524" layer="91"/>
-<junction x="71.12" y="-210.82"/>
-<pinref part="PAD8" gate="P" pin="P"/>
-<junction x="17.78" y="-210.82"/>
-</segment>
-</net>
-<net name="N$67" class="2">
-<segment>
-<pinref part="D2" gate="G$1" pin="C"/>
-<wire x1="40.64" y1="-185.42" x2="38.1" y2="-185.42" width="0.1524" layer="91"/>
-<pinref part="C43" gate="G$1" pin="1"/>
-<wire x1="38.1" y1="-185.42" x2="30.48" y2="-185.42" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="-185.42" x2="17.78" y2="-185.42" width="0.1524" layer="91"/>
-<junction x="30.48" y="-185.42"/>
-<pinref part="PAD7" gate="P" pin="P"/>
-<junction x="17.78" y="-185.42"/>
-<junction x="38.1" y="-185.42"/>
-</segment>
-</net>
-<net name="N$68" class="2">
-<segment>
-<pinref part="PAD10" gate="P" pin="P"/>
-<wire x1="17.78" y1="-157.48" x2="27.94" y2="-157.48" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="-157.48" x2="27.94" y2="-149.86" width="0.1524" layer="91"/>
-<pinref part="PAD9" gate="P" pin="P"/>
-<wire x1="27.94" y1="-149.86" x2="17.78" y2="-149.86" width="0.1524" layer="91"/>
-<junction x="17.78" y="-149.86"/>
-<junction x="17.78" y="-157.48"/>
-</segment>
-</net>
-<net name="N$69" class="2">
-<segment>
-<pinref part="PAD12" gate="P" pin="P"/>
-<wire x1="17.78" y1="-172.72" x2="27.94" y2="-172.72" width="0.1524" layer="91"/>
-<wire x1="27.94" y1="-172.72" x2="27.94" y2="-165.1" width="0.1524" layer="91"/>
-<pinref part="PAD11" gate="P" pin="P"/>
-<wire x1="27.94" y1="-165.1" x2="17.78" y2="-165.1" width="0.1524" layer="91"/>
-<junction x="17.78" y="-165.1"/>
-<junction x="17.78" y="-172.72"/>
-</segment>
-</net>
 <net name="N$70" class="0">
 <segment>
 <pinref part="SJ5" gate="G$1" pin="2"/>
@@ -21994,6 +21959,114 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <junction x="33.02" y="-63.5"/>
 <label x="22.86" y="-63.5" size="1.778" layer="95"/>
 <junction x="17.78" y="-63.5"/>
+</segment>
+</net>
+<net name="CA1" class="1">
+<segment>
+<pinref part="LCD2" gate="G$1" pin="CAT1"/>
+<wire x1="111.76" y1="-147.32" x2="111.76" y2="-154.94" width="0.1524" layer="91"/>
+<junction x="111.76" y="-147.32"/>
+<junction x="111.76" y="-154.94"/>
+<label x="111.76" y="-157.48" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="D2" gate="G$1" pin="C"/>
+<wire x1="40.64" y1="-185.42" x2="38.1" y2="-185.42" width="0.1524" layer="91"/>
+<pinref part="C43" gate="G$1" pin="1"/>
+<wire x1="38.1" y1="-185.42" x2="30.48" y2="-185.42" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="-185.42" x2="17.78" y2="-185.42" width="0.1524" layer="91"/>
+<junction x="30.48" y="-185.42"/>
+<pinref part="PAD7" gate="P" pin="P"/>
+<junction x="17.78" y="-185.42"/>
+<junction x="38.1" y="-185.42"/>
+<wire x1="17.78" y1="-185.42" x2="10.16" y2="-185.42" width="0.1524" layer="91"/>
+<label x="12.7" y="-185.42" size="1.778" layer="95" rot="R90"/>
+<junction x="10.16" y="-185.42"/>
+</segment>
+</net>
+<net name="CA2" class="1">
+<segment>
+<pinref part="LCD2" gate="G$1" pin="CAT2"/>
+<wire x1="114.3" y1="-147.32" x2="114.3" y2="-154.94" width="0.1524" layer="91"/>
+<junction x="114.3" y="-147.32"/>
+<junction x="114.3" y="-154.94"/>
+<label x="114.3" y="-157.48" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="PAD10" gate="P" pin="P"/>
+<wire x1="17.78" y1="-157.48" x2="27.94" y2="-157.48" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="-157.48" x2="27.94" y2="-149.86" width="0.1524" layer="91"/>
+<pinref part="PAD9" gate="P" pin="P"/>
+<wire x1="27.94" y1="-149.86" x2="17.78" y2="-149.86" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="-157.48" x2="17.78" y2="-157.48" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="-149.86" x2="17.78" y2="-149.86" width="0.1524" layer="91"/>
+<label x="7.62" y="-157.48" size="1.778" layer="95" rot="R180"/>
+<label x="7.62" y="-149.86" size="1.778" layer="95" rot="R180"/>
+<junction x="10.16" y="-149.86"/>
+<junction x="10.16" y="-157.48"/>
+<junction x="17.78" y="-149.86"/>
+<junction x="17.78" y="-157.48"/>
+</segment>
+<segment>
+<wire x1="119.38" y1="-147.32" x2="119.38" y2="-154.94" width="0.1524" layer="91"/>
+<pinref part="LCD2" gate="G$1" pin="CAT4"/>
+<label x="119.38" y="-157.48" size="1.778" layer="95" rot="R90"/>
+<junction x="119.38" y="-154.94"/>
+<junction x="119.38" y="-147.32"/>
+</segment>
+</net>
+<net name="CA3" class="1">
+<segment>
+<pinref part="LCD2" gate="G$1" pin="CAT3"/>
+<wire x1="116.84" y1="-147.32" x2="116.84" y2="-154.94" width="0.1524" layer="91"/>
+<junction x="116.84" y="-147.32"/>
+<junction x="116.84" y="-154.94"/>
+<wire x1="116.84" y1="-147.32" x2="116.84" y2="-154.94" width="0.1524" layer="91"/>
+<label x="116.84" y="-157.48" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="PAD12" gate="P" pin="P"/>
+<wire x1="17.78" y1="-172.72" x2="27.94" y2="-172.72" width="0.1524" layer="91"/>
+<wire x1="27.94" y1="-172.72" x2="27.94" y2="-165.1" width="0.1524" layer="91"/>
+<pinref part="PAD11" gate="P" pin="P"/>
+<wire x1="27.94" y1="-165.1" x2="17.78" y2="-165.1" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="-172.72" x2="17.78" y2="-172.72" width="0.1524" layer="91"/>
+<wire x1="10.16" y1="-165.1" x2="17.78" y2="-165.1" width="0.1524" layer="91"/>
+<label x="7.62" y="-172.72" size="1.778" layer="95" rot="R180"/>
+<label x="7.62" y="-165.1" size="1.778" layer="95" rot="R180"/>
+<junction x="10.16" y="-165.1"/>
+<junction x="10.16" y="-172.72"/>
+<junction x="17.78" y="-165.1"/>
+<junction x="17.78" y="-172.72"/>
+</segment>
+<segment>
+<wire x1="121.92" y1="-147.32" x2="121.92" y2="-154.94" width="0.1524" layer="91"/>
+<pinref part="LCD2" gate="G$1" pin="CAT5"/>
+<label x="121.92" y="-157.48" size="1.778" layer="95" rot="R90"/>
+<junction x="121.92" y="-154.94"/>
+<junction x="121.92" y="-147.32"/>
+</segment>
+</net>
+<net name="CA6" class="1">
+<segment>
+<pinref part="LCD2" gate="G$1" pin="CAT6"/>
+<wire x1="124.46" y1="-147.32" x2="124.46" y2="-154.94" width="0.1524" layer="91"/>
+<junction x="124.46" y="-147.32"/>
+<junction x="124.46" y="-154.94"/>
+<label x="124.46" y="-157.48" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="IC4" gate="G$1" pin="FB"/>
+<wire x1="71.12" y1="-190.5" x2="71.12" y2="-210.82" width="0.1524" layer="91"/>
+<junction x="71.12" y="-190.5"/>
+<pinref part="R19" gate="G$1" pin="1"/>
+<wire x1="71.12" y1="-210.82" x2="17.78" y2="-210.82" width="0.1524" layer="91"/>
+<junction x="71.12" y="-210.82"/>
+<pinref part="PAD8" gate="P" pin="P"/>
+<junction x="17.78" y="-210.82"/>
+<wire x1="10.16" y1="-210.82" x2="17.78" y2="-210.82" width="0.1524" layer="91"/>
+<label x="12.7" y="-210.82" size="1.778" layer="95" rot="R90"/>
+<junction x="10.16" y="-210.82"/>
 </segment>
 </net>
 </nets>
