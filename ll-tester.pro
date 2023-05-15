@@ -1,27 +1,25 @@
 EAGLE AutoRouter Statistics:
 
-Job           : /fred/ll-tester/ll-tester.brd
+Job           : /root/ll-test/ll-tester.brd
 
-Start at      : 17:41:55 (5/14/23)
-End at        : 17:55:20 (5/14/23)
-Elapsed time  : 00:13:23
+Start at      : 19:49:02 (5/14/23)
+End at        : 19:51:57 (5/14/23)
+Elapsed time  : 00:02:53
 
 Signals       :    92   RoutingGrid: 3 mil  Layers: 4
-Connections   :   369   predefined:  25 ( 0 Vias )
+Connections   :   369   predefined:  368 ( 140 Vias )
 
-Router memory :   26051136
+Router memory :   26020288
 
-Job has been interrupted!
+Passname          : TopRouter     Route Optimize1 Optimize2 Optimize3 Optimize4
 
-Passname          : TopRouter     Route
+Time per pass     :  00:02:35  00:00:00  00:00:05  00:00:04  00:00:04  00:00:05
+Number of Ripups  :         0         0         0         0         0         0
+max. Level        :         0         0         0         0         0         0
+max. Total        :         0         0         0         0         0         0
 
-Time per pass     :  00:03:17  00:10:06
-Number of Ripups  :         0        15
-max. Level        :         0         1
-max. Total        :         0        84
+Routed            :         1         1         1         1         1         1
+Vias              :         0         0         0         0         0         0
+Resolution        :   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %   100.0 %
 
-Routed            :        93       276
-Vias              :         0        59
-Resolution        :    32.0 %    81.6 %
-
-Final             : 76.2% finished. Polygons may have fallen apart.
+Final             : 100.0% finished
