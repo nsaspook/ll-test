@@ -122,7 +122,6 @@ void setFeatureCommand(uint8_t reportID, uint16_t timeBetweenReports, uint32_t s
 
 	const uint32_t batchMicros = 0;
 
-	microsBetweenReports = 60000;
 	txShtpData[0] = SHTP_REPORT_SET_FEATURE_COMMAND; //Set feature command. Reference page 55
 	txShtpData[1] = reportID; //Feature Report ID. 0x01 = Accelerometer, 0x05 = Rotation vector
 	txShtpData[2] = 0; //Feature flags
@@ -391,6 +390,7 @@ void parseSensorDataPacket(void)
 			totalAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
 			totalAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
 			totalAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
+            imu0.accel_report=true; // send CAN data after this is updated
 
 			currReportOffset += SIZEOF_ACCELEROMETER;
 			break;

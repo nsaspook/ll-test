@@ -30,9 +30,9 @@ extern "C" {
 #define BNO086_DRIVER	"V1.001" 
 #define BNO086_ALIAS	"BNO086"
 	
-#define UPDATE_MS_T	60
-#define UPDATE_MS_R	50
-#define UPDATE_MS_L	40	
+#define UPDATE_MS_T	30
+#define UPDATE_MS_R	30
+#define UPDATE_MS_L	30	
 
 	/*
 	 * fake IMU for code testing

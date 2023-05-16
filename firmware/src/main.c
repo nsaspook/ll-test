@@ -25,6 +25,7 @@
 
 /*
  * BMA490L, BMA400 and SCA3300 high-performance 16-bit digital triaxial acceleration sensor DEMO
+ * BNO086 IMU SPI interface DEMO
  * http://download.mikroe.com/documents/datasheets/BMA490L%20Datasheet.pdf
  * for logging XYZ force values @ 115200 via a serial comm port
  * Original test configuration: 
@@ -84,24 +85,24 @@
  * BMA490L instance
  */
 imu_cmd_t imu0 = {
-	.id = CAN_IMU_INFO,
-	.tbuf[0] = CHIP_ID | RBIT,
-	.online = false,
-	.device = IMU_BMA490L, // device type
-	.cs = IMU_CS, // chip select number
-	.run = false,
-	.log_timeout = BMA_LOG_TIMEOUT,
-	.update = true,
-	.features = false,
-	.spi_bytes = 1,
-	.op.info_ptr = &bma490_version,
-	.op.imu_set_spimode = &bma490l_set_spimode,
-	.op.imu_getid = &bma490l_getid,
-	.op.imu_getdata = &bma490l_getdata,
-	.acc_range = range_2g,
-	.locked = true,
-	.warn = false,
-	.down = false,
+    .id = CAN_IMU_INFO,
+    .tbuf[0] = CHIP_ID | RBIT,
+    .online = false,
+    .device = IMU_BMA490L, // device type
+    .cs = IMU_CS, // chip select number
+    .run = false,
+    .log_timeout = BMA_LOG_TIMEOUT,
+    .update = true,
+    .features = false,
+    .spi_bytes = 1,
+    .op.info_ptr = &bma490_version,
+    .op.imu_set_spimode = &bma490l_set_spimode,
+    .op.imu_getid = &bma490l_getid,
+    .op.imu_getdata = &bma490l_getdata,
+    .acc_range = range_2g,
+    .locked = true,
+    .warn = false,
+    .down = false,
 };
 #endif
 
@@ -110,27 +111,27 @@ imu_cmd_t imu0 = {
  * SCA3300-D01 instance
  */
 imu_cmd_t imu0 = {
-	.id = CAN_IMU_INFO,
-	.tbuf32[SCA3300_TRM] = SCA3300_SWRESET_32B,
-	.online = false,
-	.device = IMU_SCA3300, // device type
-	.cs = IMU_CS, // chip select number
-	.run = false,
-	.crc_error = false,
-	.log_timeout = SCA_LOG_TIMEOUT,
-	.update = true,
-	.features = false,
-	.spi_bytes = 4,
-	.op.info_ptr = &sca3300_version,
-	.op.imu_set_spimode = &sca3300_set_spimode,
-	.op.imu_getid = &sca3300_getid,
-	.op.imu_getdata = &sca3300_getdata,
-	.acc_range = range_15gl,
-	.acc_range_scl = range_inc2,
-	.angles = false,
-	.locked = true,
-	.warn = false,
-	.down = false,
+    .id = CAN_IMU_INFO,
+    .tbuf32[SCA3300_TRM] = SCA3300_SWRESET_32B,
+    .online = false,
+    .device = IMU_SCA3300, // device type
+    .cs = IMU_CS, // chip select number
+    .run = false,
+    .crc_error = false,
+    .log_timeout = SCA_LOG_TIMEOUT,
+    .update = true,
+    .features = false,
+    .spi_bytes = 4,
+    .op.info_ptr = &sca3300_version,
+    .op.imu_set_spimode = &sca3300_set_spimode,
+    .op.imu_getid = &sca3300_getid,
+    .op.imu_getdata = &sca3300_getdata,
+    .acc_range = range_15gl,
+    .acc_range_scl = range_inc2,
+    .angles = false,
+    .locked = true,
+    .warn = false,
+    .down = false,
 };
 #endif
 
@@ -139,57 +140,58 @@ imu_cmd_t imu0 = {
  * BNO086 instance
  */
 imu_cmd_t imu0 = {
-	.id = CAN_IMU_INFO,
-	.tbuf[0] = CHIP_ID | RBIT,
-	.online = false,
-	.device = IMU_BNO086, // device type
-	.cs = IMU_CS, // chip select number
-	.run = false,
-	.log_timeout = BNO_LOG_TIMEOUT,
-	.update = true,
-	.features = false,
-	.spi_bytes = 1,
-	.op.info_ptr = &bno086_version,
-	.op.imu_set_spimode = &bno086_set_spimode,
-	.op.imu_getid = &bno086_getid,
-	.op.imu_getdata = &bno086_getdata,
-	.acc_range = range_bno,
-	.locked = true,
-	.warn = false,
-	.down = false,
-	.init_good = false,
+    .id = CAN_IMU_INFO,
+    .tbuf[0] = CHIP_ID | RBIT,
+    .online = false,
+    .device = IMU_BNO086, // device type
+    .cs = IMU_CS, // chip select number
+    .run = false,
+    .log_timeout = BNO_LOG_TIMEOUT,
+    .update = true,
+    .features = false,
+    .spi_bytes = 1,
+    .op.info_ptr = &bno086_version,
+    .op.imu_set_spimode = &bno086_set_spimode,
+    .op.imu_getid = &bno086_getid,
+    .op.imu_getdata = &bno086_getdata,
+    .acc_range = range_bno,
+    .locked = true,
+    .warn = false,
+    .down = false,
+    .init_good = false,
+    .accel_report = false,
 };
 #endif
 
 imu_host_t *host_ptr;
 sFFTData_t fft0 = {
-	.id = CAN_FFT_LO,
+    .id = CAN_FFT_LO,
 };
 
 /*
  * Logging data structure
  */
 sSensorData_t accel = {
-	.id = CAN_IMU_DATA,
+    .id = CAN_IMU_DATA,
 };
 
 volatile SPid
 xpid = {
-	.iMax = 600.0,
-	.iMin = -600.0,
-	.pGain = 4.0,
-	.iGain = 1.05,
+    .iMax = 600.0,
+    .iMin = -600.0,
+    .pGain = 4.0,
+    .iGain = 1.05,
 },
 ypid = {
-	.iMax = 600.0,
-	.iMin = -600.0,
-	.pGain = 4.0,
-	.iGain = 1.05,
+    .iMax = 600.0,
+    .iMin = -600.0,
+    .pGain = 4.0,
+    .iGain = 1.05,
 }, zpid = {
-	.iMax = 600.0,
-	.iMin = -600.0,
-	.pGain = 4.0,
-	.iGain = 1.05,
+    .iMax = 600.0,
+    .iMin = -600.0,
+    .pGain = 4.0,
+    .iGain = 1.05,
 };
 
 volatile SPid xpid, ypid, zpid;
@@ -207,439 +209,448 @@ static void fh_start_AT_nodma(void *);
 // *****************************************************************************
 // *****************************************************************************
 
-int main(void)
-{
+int main(void) {
 #ifdef __32MK0512MCJ048__
 #ifdef SHOW_LCD
-	uint8_t rxe, txe, times = 0;
+    uint8_t rxe, txe, times = 0;
 #endif
-	uint8_t alter = 0;
+    uint8_t alter = 0;
 #endif
-	bool wait = true, fft_settle = false;
-	uint8_t ffti = 0, w = 0;
-	uint16_t fft_count = 0, dot_anim = 0;
-	int32_t wake_fft = 0, i = 0;
+    bool wait = true, fft_settle = false;
+    uint8_t ffti = 0, w = 0;
+    uint16_t fft_count = 0, dot_anim = 0;
+    int32_t wake_fft = 0, i = 0;
 
-	/* Initialize all modules */
-	SYS_Initialize(NULL);
+    /* Initialize all modules */
+    SYS_Initialize(NULL);
 
 #ifdef XPRJ_mcj
-	//	setup the reset and command pins for the Ethernet adapter
+    //	setup the reset and command pins for the Ethernet adapter
 #endif
 
 #ifdef HOST_BOARD
-	host_sm();
+    host_sm();
 #endif
 
-	/*
-	 * start core-timer for delay_us
-	 * ms tick-timer
-	 * set cpu serial ID numbers
-	 */
-	start_tick();
+    /*
+     * start core-timer for delay_us
+     * ms tick-timer
+     * set cpu serial ID numbers
+     */
+    start_tick();
 
-	/*
-	 * configure port if needed, detect sensor and config
-	 */
-	imu0.op.imu_set_spimode(&imu0); // setup the IMU chip for SPI comms, X updates per second @ selected G range
+    /*
+     * configure port if needed, detect sensor and config
+     */
+    imu0.op.imu_set_spimode(&imu0); // setup the IMU chip for SPI comms, X updates per second @ selected G range
 
-	/*
-	 * start the graphic LCD driver
-	 */
-	lcd_version();
-	init_lcd_drv(D_INIT);
-	OledClearBuffer();
-	wait_lcd_done();
+    /*
+     * start the graphic LCD driver
+     */
+    lcd_version();
+    init_lcd_drv(D_INIT);
+    OledClearBuffer();
+    wait_lcd_done();
 
-	eaDogM_WriteStringAtPos(9, 0, imu_buffer);
-	imu0.op.info_ptr();
-	eaDogM_WriteStringAtPos(10, 0, imu_buffer);
-	fft_version();
-	do_fft_version();
-	board_serial_id = cpu_serial_id; // this ID could be changed to the ID of the IMU for IMU data transfers
-	imu0.board_serial_id = board_serial_id;
-	snprintf(buffer, max_buf, "%s Controller %s %X", IMU_ALIAS, IMU_DRIVER, cpu_serial_id);
-	eaDogM_WriteStringAtPos(15, 0, buffer);
-	snprintf(buffer, max_buf, "Configuration %s", "Sensor node");
-	eaDogM_WriteStringAtPos(14, 0, buffer);
-	snprintf(buffer, max_buf, "%s Driver %s %s %s", LCD_ALIAS, LCD_DRIVER, build_date, build_time);
-	eaDogM_WriteStringAtPos(1, 0, buffer);
-	snprintf(buffer, max_buf, "%s Driver %s", CMD_ALIAS, CMD_DRIVER);
-	eaDogM_WriteStringAtPos(3, 0, buffer);
-	snprintf(buffer, max_buf, "%s Driver %s", REMOTE_ALIAS, REMOTE_DRIVER);
-	eaDogM_WriteStringAtPos(4, 0, buffer);
-	snprintf(buffer, max_buf, "%s Driver %s", BUZZER_ALIAS, BUZZER_DRIVER);
-	eaDogM_WriteStringAtPos(5, 0, buffer);
-	snprintf(buffer, max_buf, "%s Driver %s", HID_ALIAS, HID_DRIVER);
-	eaDogM_WriteStringAtPos(6, 0, buffer);
-	eaDogM_WriteStringAtPos(7, 0, cmd_buffer);
-	eaDogM_WriteStringAtPos(8, 0, response_buffer);
-	snprintf(buffer, max_buf, "IMU interrupts %u", bno08x_int_count);
-	eaDogM_WriteStringAtPos(13, 0, buffer);
-	OledUpdate();
+    eaDogM_WriteStringAtPos(9, 0, imu_buffer);
+    imu0.op.info_ptr();
+    eaDogM_WriteStringAtPos(10, 0, imu_buffer);
+    fft_version();
+    do_fft_version();
+    board_serial_id = cpu_serial_id; // this ID could be changed to the ID of the IMU for IMU data transfers
+    imu0.board_serial_id = board_serial_id;
+    snprintf(buffer, max_buf, "%s Controller %s %X", IMU_ALIAS, IMU_DRIVER, cpu_serial_id);
+    eaDogM_WriteStringAtPos(15, 0, buffer);
+    snprintf(buffer, max_buf, "Configuration %s", "Sensor node");
+    eaDogM_WriteStringAtPos(14, 0, buffer);
+    snprintf(buffer, max_buf, "%s Driver %s %s %s", LCD_ALIAS, LCD_DRIVER, build_date, build_time);
+    eaDogM_WriteStringAtPos(1, 0, buffer);
+    snprintf(buffer, max_buf, "%s Driver %s", CMD_ALIAS, CMD_DRIVER);
+    eaDogM_WriteStringAtPos(3, 0, buffer);
+    snprintf(buffer, max_buf, "%s Driver %s", REMOTE_ALIAS, REMOTE_DRIVER);
+    eaDogM_WriteStringAtPos(4, 0, buffer);
+    snprintf(buffer, max_buf, "%s Driver %s", BUZZER_ALIAS, BUZZER_DRIVER);
+    eaDogM_WriteStringAtPos(5, 0, buffer);
+    snprintf(buffer, max_buf, "%s Driver %s", HID_ALIAS, HID_DRIVER);
+    eaDogM_WriteStringAtPos(6, 0, buffer);
+    eaDogM_WriteStringAtPos(7, 0, cmd_buffer);
+    eaDogM_WriteStringAtPos(8, 0, response_buffer);
+    snprintf(buffer, max_buf, "IMU interrupts %u   ", bno08x_int_count);
+    eaDogM_WriteStringAtPos(13, 0, buffer);
+    OledUpdate();
 
-	buzzer_init(B_init); // audio device handler setup
-	hid_init(H_init); // screen blanking, input effects handler setup
+    buzzer_init(B_init); // audio device handler setup
+    hid_init(H_init); // screen blanking, input effects handler setup
 
-	/*
-	 * debug detection
-	 */
-	//	while (true);
+    /*
+     * debug detection
+     */
+    //	while (true);
 
-	/*
-	 * check to see if we actually have a working IMU
-	 */
-	StartTimer(TMR_IMU, IMU_ID_DELAY);
-	ADCHS_ChannelConversionStart(ADCHS_CH0);
-	ADCHS_ChannelConversionStart(ADCHS_CH1);
-	while (!imu0.op.imu_getid(&imu0)) {
-		LED_RED_Toggle();
-		LED_GREEN_Toggle();
-		if (TimerDone(TMR_IMU)) {
-			while (wait) {
-				if (TimerDone(TMR_IMU)) {
-					LED_RED_Toggle();
-					LED_GREEN_Toggle();
-					snprintf(buffer, max_buf, "IMU NO ID, %d %d ", ADCHS_ChannelResultGet(ADCHS_CH0), ADCHS_ChannelResultGet(ADCHS_CH1));
-					eaDogM_WriteStringAtPos(13, 0, buffer);
-					eaDogM_WriteStringAtPos(9, 0, imu_buffer);
-					OledUpdate();
-					StartTimer(TMR_IMU, 200);
-					ADCHS_ChannelConversionStart(ADCHS_CH0);
-					ADCHS_ChannelConversionStart(ADCHS_CH1);
-					if (imu0.op.imu_getid(&imu0)) {
-						wait = false;
-						break;
-					};
-				}
-			}
-		}
-	};
+    /*
+     * check to see if we actually have a working IMU
+     */
+    StartTimer(TMR_IMU, IMU_ID_DELAY);
+    ADCHS_ChannelConversionStart(ADCHS_CH0);
+    ADCHS_ChannelConversionStart(ADCHS_CH1);
+    while (!imu0.op.imu_getid(&imu0)) {
+        LED_RED_Toggle();
+        LED_GREEN_Toggle();
+        if (TimerDone(TMR_IMU)) {
+            while (wait) {
+                if (TimerDone(TMR_IMU)) {
+                    LED_RED_Toggle();
+                    LED_GREEN_Toggle();
+                    snprintf(buffer, max_buf, "IMU NO ID, %d %d ", ADCHS_ChannelResultGet(ADCHS_CH0), ADCHS_ChannelResultGet(ADCHS_CH1));
+                    eaDogM_WriteStringAtPos(13, 0, buffer);
+                    eaDogM_WriteStringAtPos(9, 0, imu_buffer);
+                    OledUpdate();
+                    StartTimer(TMR_IMU, 200);
+                    ADCHS_ChannelConversionStart(ADCHS_CH0);
+                    ADCHS_ChannelConversionStart(ADCHS_CH1);
+                    if (imu0.op.imu_getid(&imu0)) {
+                        wait = false;
+                        break;
+                    };
+                }
+            }
+        }
+    };
 
-	LED_RED_Off();
-	LED_GREEN_Off();
-	buzzer_trigger(BZ2);
-	QEI2_Start();
-	POS2CNT = 0;
-	WaitMs(1000); // small delay for screen info display
+    LED_RED_Off();
+    LED_GREEN_Off();
+    buzzer_trigger(BZ2);
+    QEI2_Start();
+    POS2CNT = 0;
+    WaitMs(1000); // small delay for screen info display
 
-	TP1_Set(); // ETH modules display trigger
+    TP1_Set(); // ETH modules display trigger
 
-	/* set can-fd extended ID filters and masks */
-	canfd_set_filter(board_serial_id, HOST_MAGIC_ID);
-	set_can_retran();
+    /* set can-fd extended ID filters and masks */
+    canfd_set_filter(board_serial_id, HOST_MAGIC_ID);
+    set_can_retran();
 
 #ifdef DEBUG_FILTER
-	snprintf(cmd_buffer, max_buf, "%X %X", CAN1_MessageAcceptanceFilterMaskGet(0), CAN1_MessageAcceptanceFilterGet(0));
-	snprintf(response_buffer, max_buf, "%X %X", CAN1_MessageAcceptanceFilterMaskGet(1), CAN1_MessageAcceptanceFilterGet(1));
-	eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
-	eaDogM_WriteStringAtPos(7, 0, response_buffer);
-	OledUpdate();
-	WaitMs(5000);
+    snprintf(cmd_buffer, max_buf, "%X %X", CAN1_MessageAcceptanceFilterMaskGet(0), CAN1_MessageAcceptanceFilterGet(0));
+    snprintf(response_buffer, max_buf, "%X %X", CAN1_MessageAcceptanceFilterMaskGet(1), CAN1_MessageAcceptanceFilterGet(1));
+    eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
+    eaDogM_WriteStringAtPos(7, 0, response_buffer);
+    OledUpdate();
+    WaitMs(5000);
 #endif
 
-	// loop collecting data
-	StartTimer(TMR_LOG, imu0.log_timeout);
-	while (true) {
-		/* Maintain state machines of all polled MPLAB Harmony modules. */
-		SYS_Tasks();
+    // loop collecting data
+    StartTimer(TMR_LOG, imu0.log_timeout);
+    while (true) {
+        /* Maintain state machines of all polled MPLAB Harmony modules. */
+        SYS_Tasks();
 
-		if (TP1_check()) {
-			LED_RED_On();
-			OledClearBuffer();
-			wait_lcd_done();
-			fh_start_AT_nodma(0);
-			eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
-			eaDogM_WriteStringAtPos(7, 0, response_buffer);
-			OledUpdate();
-			WaitMs(5000);
-		}
+        if (TP1_check()) {
+            LED_RED_On();
+            OledClearBuffer();
+            wait_lcd_done();
+            fh_start_AT_nodma(0);
+            eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
+            eaDogM_WriteStringAtPos(7, 0, response_buffer);
+            OledUpdate();
+            WaitMs(5000);
+        }
 
-		/*
-		 * data logging routine
-		 * convert the SPI XYZ response to standard floating point acceleration values and rolling integer time-stamps per measurement
-		 */
-		if (imu0.update || TimerDone(TMR_LOG)) {
-			if (TimerDone(TMR_LOG)) {
-				LED_GREEN_Toggle();
-			}
-			StartTimer(TMR_LOG, imu0.log_timeout);
+        /*
+         * data logging routine
+         * convert the SPI XYZ response to standard floating point acceleration values and rolling integer time-stamps per measurement
+         */
+        if (imu0.update || TimerDone(TMR_LOG)) {
+            if (TimerDone(TMR_LOG)) {
+                LED_GREEN_Toggle();
+            }
+            StartTimer(TMR_LOG, imu0.log_timeout);
 
 #ifdef SHOW_LCD   
-			OledClearBuffer();
+            OledClearBuffer();
 #endif
-			if (imu0.update) {
-				imu0.update = false;
-				imu0.op.imu_getdata(&imu0); // read data from the chip
-				dprintf("%x %x %x %x %x %c\r\n", imu0.rbuf[0], imu0.rbuf[1], imu0.rbuf[2], imu0.rbuf[3], imu0.rbuf[4], isprint(imu0.rbuf[4]) ? imu0.rbuf[4] : ' ');
-			}
+            if (imu0.update) {
+                imu0.update = false;
+                imu0.op.imu_getdata(&imu0); // read data from the chip
+                dprintf("%x %x %x %x %x %c\r\n", imu0.rbuf[0], imu0.rbuf[1], imu0.rbuf[2], imu0.rbuf[3], imu0.rbuf[4], isprint(imu0.rbuf[4]) ? imu0.rbuf[4] : ' ');
+            }
 
-			getAllData(&accel, &imu0); // convert data from the chip
+            getAllData(&accel, &imu0); // convert data from the chip
 
-			accel.xerr = UpdatePI(&xpid, (double) accel.xa);
-			accel.yerr = UpdatePI(&ypid, (double) accel.ya);
-			accel.zerr = UpdatePI(&zpid, (double) accel.za);
+            accel.xerr = UpdatePI(&xpid, (double) accel.xa);
+            accel.yerr = UpdatePI(&ypid, (double) accel.ya);
+            accel.zerr = UpdatePI(&zpid, (double) accel.za);
 
-			canfd_state(CAN_RECEIVE, accel.buffer);
-			host_ptr = (imu_host_t *) accel.buffer;
-			if (rx_msg_ready) {
-				rx_msg_ready = false;
-				remote_cmd_decode(host_ptr);
-			}
-			if (!H.dis_alt) {
-				eaDogM_WriteStringAtPos(12, 0, hbuffer);
-			}
+            canfd_state(CAN_RECEIVE, accel.buffer);
+            host_ptr = (imu_host_t *) accel.buffer;
+            if (rx_msg_ready) {
+                rx_msg_ready = false;
+                remote_cmd_decode(host_ptr);
+            }
+            if (!H.dis_alt) {
+                eaDogM_WriteStringAtPos(12, 0, hbuffer);
+            }
 
-			switch (alter) {
-			case 0:
-				canfd_state(CAN_TRANSMIT_FD, &imu0);
-				alter++;
-				break;
-			case 1:
-				canfd_state(CAN_TRANSMIT_FD, &accel);
-				alter++;
-				break;
-			case 2:
-				fft0.id = CAN_FFT_LO;
-				if (fft_settle) {
-					memcpy(fft0.buffer, &fft_buffer[0], 60);
-					canfd_state(CAN_TRANSMIT_FD, &fft0);
-				}
-				alter++;
-				break;
-			case 3:
-				fft0.id = CAN_FFT_HI;
-				if (fft_settle) {
-					memcpy(fft0.buffer, &fft_buffer[60], 60);
-					canfd_state(CAN_TRANSMIT_FD, &fft0);
-				}
-				if (!fft_settle && (fft_count++ >= FFT_COUNT)) {
-					fft_settle = true;
-				}
-				alter = 0; // restart data sequence
-				break;
-			default:
-				alter = 0;
-				break;
-			}
+            /*
+             * we get several IMU records per update, only send CAN-FD packets on one
+             * type of report, acceleration
+             */
+#ifdef BNO086
+            if (imu0.accel_report) {
+#endif
+                switch (alter) {
+                    case 0:
+                        canfd_state(CAN_TRANSMIT_FD, &imu0);
+                        alter++;
+                        break;
+                    case 1:
+                        canfd_state(CAN_TRANSMIT_FD, &accel);
+                        alter++;
+                        break;
+                    case 2:
+                        fft0.id = CAN_FFT_LO;
+                        if (fft_settle) {
+                            memcpy(fft0.buffer, &fft_buffer[0], 60);
+                            canfd_state(CAN_TRANSMIT_FD, &fft0);
+                        }
+                        alter++;
+                        break;
+                    case 3:
+                        fft0.id = CAN_FFT_HI;
+                        if (fft_settle) {
+                            memcpy(fft0.buffer, &fft_buffer[60], 60);
+                            canfd_state(CAN_TRANSMIT_FD, &fft0);
+                        }
+                        if (!fft_settle && (fft_count++ >= FFT_COUNT)) {
+                            fft_settle = true;
+                        }
+                        alter = 0; // restart data sequence
+                        break;
+                    default:
+                        alter = 0;
+                        break;
+                }
+#ifdef BNO086
+                imu0.accel_report = false;
+            }
+#endif
 
 #ifdef SHOW_LCD
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %X\r\n", accel.x, accel.y, accel.z, imu0.rs, imu0.ss);
-			eaDogM_WriteStringAtPos(0, 0, buffer);
+            snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %X\r\n", accel.x, accel.y, accel.z, imu0.rs, imu0.ss);
+            eaDogM_WriteStringAtPos(0, 0, buffer);
 #ifndef BNO086
-			snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
+            snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
 #else
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", linearAcceleration.v[0], linearAcceleration.v[1], linearAcceleration.v[2], accel.sensortemp);
-			eaDogM_WriteStringAtPos(2, 0, buffer);
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", rotationVector.v[0], rotationVector.v[1], rotationVector.v[2], rotationVector.w);
+            snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", linearAcceleration.v[0], linearAcceleration.v[1], linearAcceleration.v[2], accel.sensortemp);
+            eaDogM_WriteStringAtPos(2, 0, buffer);
+            snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", rotationVector.v[0], rotationVector.v[1], rotationVector.v[2], rotationVector.w);
 #endif
-			eaDogM_WriteStringAtPos(1, 0, buffer);
-			if (!H.dis_alt) {
-				snprintf(buffer, max_buf, "PIC32 IMU Controller %s   %s %s", IMU_DRIVER, build_date, build_time);
-				eaDogM_WriteStringAtPos(14, 0, buffer);
-				snprintf(buffer, max_buf, "IMU %s", imu_string(&imu0));
-				eaDogM_WriteStringAtPos(3, 0, buffer);
-				snprintf(buffer, max_buf, "DEV %d", imu0.device);
-				eaDogM_WriteStringAtPos(4, 0, buffer);
-				snprintf(buffer, max_buf, "RAN %d", imu0.acc_range);
-				eaDogM_WriteStringAtPos(5, 0, buffer);
-				snprintf(buffer, max_buf, "ANG %s , %d %d %d", imu0.angles ? "Yes" : "No", POS2CNT, SW3_Get(), wake_fft);
-				eaDogM_WriteStringAtPos(6, 0, buffer);
-				snprintf(buffer, max_buf, "IMU interrupts %u", bno08x_int_count);
-				eaDogM_WriteStringAtPos(12, 0, buffer);
-			} else {
+            eaDogM_WriteStringAtPos(1, 0, buffer);
+            if (!H.dis_alt) {
+                snprintf(buffer, max_buf, "PIC32 IMU Controller %s   %s %s", IMU_DRIVER, build_date, build_time);
+                eaDogM_WriteStringAtPos(14, 0, buffer);
+                snprintf(buffer, max_buf, "IMU %s", imu_string(&imu0));
+                eaDogM_WriteStringAtPos(3, 0, buffer);
+                snprintf(buffer, max_buf, "DEV %d", imu0.device);
+                eaDogM_WriteStringAtPos(4, 0, buffer);
+                snprintf(buffer, max_buf, "RAN %d", imu0.acc_range);
+                eaDogM_WriteStringAtPos(5, 0, buffer);
+                snprintf(buffer, max_buf, "ANG %s , %d %d %d", imu0.angles ? "Yes" : "No", POS2CNT, SW3_Get(), wake_fft);
+                eaDogM_WriteStringAtPos(6, 0, buffer);
+                snprintf(buffer, max_buf, "IMU interrupts %u   ", bno08x_int_count);
+                eaDogM_WriteStringAtPos(12, 0, buffer);
+            } else {
 
-			}
+            }
 
-			/*
-			 * load FFT sample 128 element 8-bit buffer from
-			 * 256 element signal buffer
-			 * as we process each IMU 3-axis sample
-			 * if FFT_mIX is set this is not a pure FFT as it mixes bin data
-			 * with sample data for a feedback signature
-			 * 
-			 * it recomputes with every new IMU data update
-			 * unless FFT_MIX is set to false
-			 */
-			inB[ffti] = 128 + (uint8_t) (fft_gain * (do_fft_dc_x(accel.x) + do_fft_dc_y(accel.y) + do_fft_dc_z(accel.z))); // select one axis for display
+            /*
+             * load FFT sample 128 element 8-bit buffer from
+             * 256 element signal buffer
+             * as we process each IMU 3-axis sample
+             * if FFT_mIX is set this is not a pure FFT as it mixes bin data
+             * with sample data for a feedback signature
+             * 
+             * it recomputes with every new IMU data update
+             * unless FFT_MIX is set to false
+             */
+            inB[ffti] = 128 + (uint8_t) (fft_gain * (do_fft_dc_x(accel.x) + do_fft_dc_y(accel.y) + do_fft_dc_z(accel.z))); // select one axis for display
 
-			ffti++;
-			if (FFT_MIX || ffti == 0) {
-				do_fft(false); // convert to 256 frequency bins in 8-bit sample buffer
-				memset(inB + (N_FFT / 2), 0, N_FFT / 2); // clear upper 128 bytes
-				memcpy(fft_buffer, inB, N_FFT); // copy to results buffer
-			}
+            ffti++;
+            if (FFT_MIX || ffti == 0) {
+                do_fft(false); // convert to 256 frequency bins in 8-bit sample buffer
+                memset(inB + (N_FFT / 2), 0, N_FFT / 2); // clear upper 128 bytes
+                memcpy(fft_buffer, inB, N_FFT); // copy to results buffer
+            }
 
-			if (fft_settle) {
-				if (!H.dis_alt) {
-					snprintf(buffer, max_buf, "FFTs %3d,%3d ", fft_buffer[ffti], ffti);
-					eaDogM_WriteStringAtPos(7, 4, buffer);
-				}
-			}
-			w = 0;
-			while (w < 128) {
-				if (!H.dis_alt) {
-					fft_draw(w, fft_buffer[w]); // create screen graph from bin data
-				}
-				w++;
-			}
+            if (fft_settle) {
+                if (!H.dis_alt) {
+                    snprintf(buffer, max_buf, "FFTs %3d,%3d ", fft_buffer[ffti], ffti);
+                    eaDogM_WriteStringAtPos(7, 4, buffer);
+                }
+            }
+            w = 0;
+            while (w < 128) {
+                if (!H.dis_alt) {
+                    fft_draw(w, fft_buffer[w]); // create screen graph from bin data
+                }
+                w++;
+            }
 
 
-			wake_fft = 0;
-			for (i = 0; i < N_FFT - 1; i++) {
-				wake_fft += fft_buffer[i];
-			}
-			if (wake_fft > FFT_WAKE) {
-				if (H.dis_reset) { // display is blanked so show the screen
-					H.dis_unblank = true;
-				} else { // activity trigger, reset the blanking timer
-					hid_init(H_zero_blank);
-				}
-			}
+            wake_fft = 0;
+            for (i = 0; i < N_FFT - 1; i++) {
+                wake_fft += fft_buffer[i];
+            }
+            if (wake_fft > FFT_WAKE) {
+                if (H.dis_reset) { // display is blanked so show the screen
+                    H.dis_unblank = true;
+                } else { // activity trigger, reset the blanking timer
+                    hid_init(H_zero_blank);
+                }
+            }
 #ifdef SHOW_VG
-			q0 = accel.x;
-			q1 = accel.y;
-			q2 = accel.z;
-			q3 = accel.x;
-			if (!H.dis_alt) {
-				vector_graph();
-			} else {
-				vector_graph_fs();
-			}
+            q0 = accel.x;
+            q1 = accel.y;
+            q2 = accel.z;
+            q3 = accel.x;
+            if (!H.dis_alt) {
+                vector_graph();
+            } else {
+                vector_graph_fs();
+            }
 #endif
 
 #ifdef SHOW_LA
-			{
-				uint16_t i = 1;
+            {
+                uint16_t i = 1;
 #ifdef BNO086
-				q0 = linearAcceleration.v[0] / 2.0f;
-				q1 = linearAcceleration.v[1] / 2.0f;
-				q2 = linearAcceleration.v[2] / 2.0f;
-				q3 = rotationVector.w;
+                q0 = linearAcceleration.v[0] / 2.0f;
+                q1 = linearAcceleration.v[1] / 2.0f;
+                q2 = linearAcceleration.v[2] / 2.0f;
+                q3 = rotationVector.w;
 
-				accel.fusion.x = rotationVector.v[0];
-				accel.fusion.y = rotationVector.v[1];
-				accel.fusion.z = rotationVector.v[2];
-				accel.fusion.w = rotationVector.w;
+                accel.fusion.x = rotationVector.v[0];
+                accel.fusion.y = rotationVector.v[1];
+                accel.fusion.z = rotationVector.v[2];
+                accel.fusion.w = rotationVector.w;
 
-				accel.xa = linearAcceleration.v[0];
-				accel.ya = linearAcceleration.v[1];
-				accel.za = linearAcceleration.v[2];
+                accel.xa = linearAcceleration.v[0];
+                accel.ya = linearAcceleration.v[1];
+                accel.za = linearAcceleration.v[2];
 #endif
 
-				if (!H.dis_alt) {
-				} else {
-					if (H.show_la) {
-						LA_gfx(false, false, 0);
-						while ((i++ < 700)) {
-							// extra processing loop while waiting for clock time to expire
-							LA_gfx(false, false, 700);
-						}
-					}
-				}
-			}
+                if (!H.dis_alt) {
+                } else {
+                    if (H.show_la) {
+                        LA_gfx(false, false, 0);
+                        while ((i++ < 700)) {
+                            // extra processing loop while waiting for clock time to expire
+                            LA_gfx(false, false, 700);
+                        }
+                    }
+                }
+            }
 #endif 
-			if (H.dis_unblank) {
-				H.dis_unblank = false;
-				MISC_0_Set(); // blanking off
-				H.dis_reset = false;
-				buzzer_trigger(BZ2);
-				enableReport(ROTATION, UPDATE_MS_R);
-				enableReport(TOTAL_ACCELERATION, UPDATE_MS_T);
-				enableReport(LINEAR_ACCELERATION, UPDATE_MS_L);
-			}
-			if (H.silent) {
-				if (dot_anim++ < SDOT_ON) {
-					OledMoveTo(0, 0); // set silent indication dot on screen
-					OledDrawPixel();
-				} else {
-					if (dot_anim > SDOT_OFF) {
-						dot_anim = 0;
-					}
-				}
-			}
-			if (!H.dis_unblank) {
-				OledUpdate();
-			}
+            if (H.dis_unblank) {
+                H.dis_unblank = false;
+                MISC_0_Set(); // blanking off
+                H.dis_reset = false;
+                buzzer_trigger(BZ2);
+                enableReport(ROTATION, UPDATE_MS_R);
+                enableReport(TOTAL_ACCELERATION, UPDATE_MS_T);
+                enableReport(LINEAR_ACCELERATION, UPDATE_MS_L);
+            }
+            if (H.silent) {
+                if (dot_anim++ < SDOT_ON) {
+                    OledMoveTo(0, 0); // set silent indication dot on screen
+                    OledDrawPixel();
+                } else {
+                    if (dot_anim > SDOT_OFF) {
+                        dot_anim = 0;
+                    }
+                }
+            }
+            if (!H.dis_unblank) {
+                OledUpdate();
+            }
 #endif
 
 #ifdef __32MK0512MCJ048__
 #ifdef SHOW_LCD
-			CAN1_ErrorCountGet(&txe, &rxe);
-			if (!H.dis_alt) {
-				snprintf(buffer, max_buf, "can-fd %X", board_serial_id);
-				eaDogM_WriteStringAtPos(11, 0, buffer);
-				snprintf(buffer, max_buf, "ErrorT %d", txe);
-				eaDogM_WriteStringAtPos(4, 20, buffer);
-				snprintf(buffer, max_buf, "ErrorR %d", rxe);
-				eaDogM_WriteStringAtPos(5, 20, buffer);
-				snprintf(buffer, max_buf, "Can INT %d", CAN1_InterruptGet(1, 0x1f));
-				eaDogM_WriteStringAtPos(6, 20, buffer);
-				snprintf(buffer, max_buf, "TX Full %s", CAN1_TxFIFOQueueIsFull(1) ? "Y" : "N");
-				eaDogM_WriteStringAtPos(7, 20, buffer);
-				snprintf(buffer, max_buf, "Update %d", ++times);
-				eaDogM_WriteStringAtPos(8, 20, buffer);
-				snprintf(buffer, max_buf, "REQ %X", CFD1TXREQ);
-				eaDogM_WriteStringAtPos(9, 20, buffer);
-				snprintf(buffer, max_buf, "Ce0 %X", CFD1BDIAG0);
-				eaDogM_WriteStringAtPos(10, 18, buffer);
-				snprintf(buffer, max_buf, "Ce1 %X", CFD1BDIAG1);
-				eaDogM_WriteStringAtPos(11, 18, buffer);
-				snprintf(buffer, max_buf, "CINT %X, %d, %d, %d", CFD1INT, canfd_num_tx(), canfd_num_stall(), canfd_num_rx());
-				eaDogM_WriteStringAtPos(13, 0, buffer);
-			}
+            CAN1_ErrorCountGet(&txe, &rxe);
+            if (!H.dis_alt) {
+                snprintf(buffer, max_buf, "can-fd %X", board_serial_id);
+                eaDogM_WriteStringAtPos(11, 0, buffer);
+                snprintf(buffer, max_buf, "ErrorT %d", txe);
+                eaDogM_WriteStringAtPos(4, 20, buffer);
+                snprintf(buffer, max_buf, "ErrorR %d", rxe);
+                eaDogM_WriteStringAtPos(5, 20, buffer);
+                snprintf(buffer, max_buf, "Can INT %d", CAN1_InterruptGet(1, 0x1f));
+                eaDogM_WriteStringAtPos(6, 20, buffer);
+                snprintf(buffer, max_buf, "TX Full %s", CAN1_TxFIFOQueueIsFull(1) ? "Y" : "N");
+                eaDogM_WriteStringAtPos(7, 20, buffer);
+                snprintf(buffer, max_buf, "Update %d", ++times);
+                eaDogM_WriteStringAtPos(8, 20, buffer);
+                snprintf(buffer, max_buf, "REQ %X", CFD1TXREQ);
+                eaDogM_WriteStringAtPos(9, 20, buffer);
+                snprintf(buffer, max_buf, "Ce0 %X", CFD1BDIAG0);
+                eaDogM_WriteStringAtPos(10, 18, buffer);
+                snprintf(buffer, max_buf, "Ce1 %X", CFD1BDIAG1);
+                eaDogM_WriteStringAtPos(11, 18, buffer);
+                snprintf(buffer, max_buf, "CINT %X, %d, %d, %d", CFD1INT, canfd_num_tx(), canfd_num_stall(), canfd_num_rx());
+                eaDogM_WriteStringAtPos(13, 0, buffer);
+            }
 #endif
 
 #endif
-		}
-	}
+        }
+    }
 
-	/* Execution should not come here during normal operation */
+    /* Execution should not come here during normal operation */
 
-	return( EXIT_FAILURE);
+    return ( EXIT_FAILURE);
 }
 
 /*
  * capture and display ETH module network IP address
  * none-DMA serial driver
  */
-static void fh_start_AT_nodma(void *a_data)
-{
-	snprintf(cmd_buffer, max_buf, "Start AT commands            ");
+static void fh_start_AT_nodma(void *a_data) {
+    snprintf(cmd_buffer, max_buf, "Start AT commands            ");
 
 #ifdef USR_TCP
-	ETH_CFG_Clear();
-	WaitMs(30);
-	ETH_CFG_Set();
-	WaitMs(1500); // wait until the module is back online
+    ETH_CFG_Clear();
+    WaitMs(30);
+    ETH_CFG_Set();
+    WaitMs(1500); // wait until the module is back online
 #else
-	//	ETH_CFG_Clear();
-	WaitMs(500);
-	//	ETH_CFG_Set();
-	WaitMs(4500); // wait until the module is back online
+    //	ETH_CFG_Clear();
+    WaitMs(500);
+    //	ETH_CFG_Set();
+    WaitMs(4500); // wait until the module is back online
 #endif
 
-	// AT command mode
-	UART1_Write("+++", 3); // send data to the ETH module
-	WaitMs(20);
-	UART1_Write("a", 1); // send data to the ETH module
-	WaitMs(20);
-	if (UART1_ReceiverIsReady()) { // check to see if we have a response
-		// send a Ethernet connection query
-		UART1_Write("AT+WANN\r", 8); // send data to the ETH module
-		// put the result in a buffer for the GLCD to display
-		UART1_Read(response_buffer, 30);
-	} else { // nothing
-		snprintf(response_buffer, max_buf, "AT command failed           ");
-		//		ETH_RESET_Clear();
-		WaitMs(200);
-		//		ETH_RESET_Set();
-	}
-	/*
-	 * AT mode will timeout after 30 seconds and go back to transparent data mode
-	 */
-	WaitMs(500);
-	UART1_ErrorGet(); // clear UART junk
+    // AT command mode
+    UART1_Write("+++", 3); // send data to the ETH module
+    WaitMs(20);
+    UART1_Write("a", 1); // send data to the ETH module
+    WaitMs(20);
+    if (UART1_ReceiverIsReady()) { // check to see if we have a response
+        // send a Ethernet connection query
+        UART1_Write("AT+WANN\r", 8); // send data to the ETH module
+        // put the result in a buffer for the GLCD to display
+        UART1_Read(response_buffer, 30);
+    } else { // nothing
+        snprintf(response_buffer, max_buf, "AT command failed           ");
+        //		ETH_RESET_Clear();
+        WaitMs(200);
+        //		ETH_RESET_Set();
+    }
+    /*
+     * AT mode will timeout after 30 seconds and go back to transparent data mode
+     */
+    WaitMs(500);
+    UART1_ErrorGet(); // clear UART junk
 }
 
 /*******************************************************************************
