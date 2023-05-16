@@ -67,6 +67,8 @@ uint16_t patchSoftwareVersion;
 uint32_t partNumber;
 uint32_t buildNumber;
 
+static bool first = true;
+
 /**
  * Auxiliary accuracy readout from the Rotation Vector report.
  * Represents the estimated accuracy of the rotation vector in radians.
@@ -163,13 +165,22 @@ void clearSendBuffer(void * imup)
 void bno086_set_spimode(void * imup)
 {
 	imu_cmd_t * imu = imup;
-	static bool first = true;
 	bool wait = true;
 
+	/*
+	 * power boot/reset
+	 */
 	IMU_CS_Clear(); // enable IMU
+	WaitMs(800);
+	//	DIS_RESET_Clear();
+	WaitMs(30);
+	//	DIS_RESET_Set();
+	WaitMs(170);
+
+
 	dprintf("\r\nbno086 setup start\r\n");
 	// set SPI MODE
-	//	set_imu_bits(); // set 8 or 32-bit SPI transfers
+	set_imu_bits(); // set 8 or 32-bit SPI transfers
 	LED_GREEN_Off();
 	LED_RED_Off();
 	softreset();
@@ -232,6 +243,7 @@ void bno086_set_spimode(void * imup)
 			}
 		}
 		dprintf("\r\nbno086 setup done\r\n");
+		first = false;
 	}
 }
 
@@ -317,7 +329,9 @@ bool sendPacket(uint8_t channelNumber, uint8_t dataLength, void * imup)
 		// received first part of data packet while writing
 		if (bno086_get_cpacket(totalLength, imu)) {
 			// received data packet, send to proper channels
-			processPacket();
+			if (!first) {
+				processPacket();
+			}
 			return true;
 		}
 
