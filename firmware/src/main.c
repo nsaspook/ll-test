@@ -544,9 +544,9 @@ int main(void)
 				MISC_0_Set(); // blanking off
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
-				enableReport(ROTATION, UPDATE_MS);
-				enableReport(TOTAL_ACCELERATION, UPDATE_MS);
-				enableReport(LINEAR_ACCELERATION, UPDATE_MS);
+				enableReport(ROTATION, UPDATE_MS_R);
+				enableReport(TOTAL_ACCELERATION, UPDATE_MS_T);
+				enableReport(LINEAR_ACCELERATION, UPDATE_MS_L);
 			}
 			if (H.silent) {
 				if (dot_anim++ < SDOT_ON) {
