@@ -364,6 +364,7 @@ void parseSensorDataPacket(void)
 	currReportOffset += SIZEOF_BASE_TIMESTAMP;
 
 	while (currReportOffset < rxPacketLength) {
+		TP3_Toggle(); // debug signal
 		// lots of sensor reports use 3 16-bit numbers stored in bytes 4 through 9
 		// we can save some time by parsing those out here.
 
@@ -390,7 +391,7 @@ void parseSensorDataPacket(void)
 			totalAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
 			totalAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
 			totalAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
-            imu0.accel_report=true; // send CAN data after this is updated
+			imu0.accel_report = true; // send CAN data after this is updated
 
 			currReportOffset += SIZEOF_ACCELEROMETER;
 			break;
