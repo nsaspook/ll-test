@@ -457,9 +457,9 @@ int main(void)
 #ifndef BNO086
 			snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
 #else
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", linearAcceleration.v[0], linearAcceleration.v[1], linearAcceleration.v[2], accel.sensortemp);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.linearAcceleration.v[0], bno.linearAcceleration.v[1], bno.linearAcceleration.v[2], accel.sensortemp);
 			eaDogM_WriteStringAtPos(2, 0, buffer);
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", rotationVector.v[0], rotationVector.v[1], rotationVector.v[2], rotationVector.w);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.rotationVector.v[0], bno.rotationVector.v[1], bno.rotationVector.v[2], bno.rotationVector.w);
 #endif
 			eaDogM_WriteStringAtPos(1, 0, buffer);
 			if (!H.dis_alt) {
@@ -469,7 +469,7 @@ int main(void)
 				eaDogM_WriteStringAtPos(3, 0, buffer);
 				snprintf(buffer, max_buf, "DEV %d", imu0.device);
 				eaDogM_WriteStringAtPos(4, 0, buffer);
-				snprintf(buffer, max_buf, "RAN %d: %d,%d,%d,%d,%d,%d", imu0.acc_range, stability, tapDetected, doubleTap, significantMotionDetected, shakeDetected, circleDetected);
+				snprintf(buffer, max_buf, "RAN %d: %d,%d,%d,%d,%d,%d", imu0.acc_range, bno.stability, bno.tapDetected, bno.doubleTap, bno.significantMotionDetected, bno.shakeDetected, bno.circleDetected);
 				eaDogM_WriteStringAtPos(5, 0, buffer);
 				snprintf(buffer, max_buf, "ANG %s , %d %d %d", imu0.angles ? "Yes" : "No", POS2CNT, SW3_Get(), wake_fft);
 				eaDogM_WriteStringAtPos(6, 0, buffer);
@@ -482,12 +482,12 @@ int main(void)
 			/*
 			 * IMU computed events
 			 */
-			if (stability == ON_TABLE) {
-				tapDetected = doubleTap = significantMotionDetected = shakeDetected = circleDetected = false;
+			if (bno.stability == ON_TABLE) {
+				bno.tapDetected = bno.doubleTap = bno.significantMotionDetected = bno.shakeDetected = bno.circleDetected = false;
 			}
 
-			if (stability == STABLE) {
-				shakeDetected = false;
+			if (bno.stability == STABLE) {
+				bno.shakeDetected = false;
 			}
 
 			/*
@@ -551,19 +551,19 @@ int main(void)
 			{
 				uint16_t i = 1;
 #ifdef BNO086
-				q0 = linearAcceleration.v[0] / 2.0f;
-				q1 = linearAcceleration.v[1] / 2.0f;
-				q2 = linearAcceleration.v[2] / 2.0f;
-				q3 = rotationVector.w;
+				q0 = bno.linearAcceleration.v[0] / 2.0f;
+				q1 = bno.linearAcceleration.v[1] / 2.0f;
+				q2 = bno.linearAcceleration.v[2] / 2.0f;
+				q3 = bno.rotationVector.w;
 
-				accel.fusion.x = rotationVector.v[0];
-				accel.fusion.y = rotationVector.v[1];
-				accel.fusion.z = rotationVector.v[2];
-				accel.fusion.w = rotationVector.w;
+				accel.fusion.x = bno.rotationVector.v[0];
+				accel.fusion.y = bno.rotationVector.v[1];
+				accel.fusion.z = bno.rotationVector.v[2];
+				accel.fusion.w = bno.rotationVector.w;
 
-				accel.xa = linearAcceleration.v[0];
-				accel.ya = linearAcceleration.v[1];
-				accel.za = linearAcceleration.v[2];
+				accel.xa = bno.linearAcceleration.v[0];
+				accel.ya = bno.linearAcceleration.v[1];
+				accel.za = bno.linearAcceleration.v[2];
 #endif
 
 				if (!H.dis_alt) {

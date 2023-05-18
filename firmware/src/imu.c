@@ -1,5 +1,6 @@
 #include "imupic32mcj.h"
 #include "imu.h"
+#include "bno086.h"
 
 const double imu_table[] = {
 	BMA490_ACCEL_MG_LSB_2G,
@@ -31,8 +32,6 @@ static uint32_t sensortime;
 static void move_bma490_transfer_data(uint8_t *, imu_cmd_t *);
 
 extern struct sca3300_data sdata;
-extern Quaternion rotationVector, totalAcceleration, linearAcceleration, gravityAcceleration, gyroRotation, magField,
-	magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVector;
 
 double get_imu_scale(imu_cmd_t * imu)
 {
@@ -193,9 +192,9 @@ void getAllData(sSensorData_t *accel, imu_cmd_t * imu)
 			}
 #endif
 #ifdef BNO086
-			accel->x = totalAcceleration.v[0] * accelRange; // scale to the correct units
-			accel->y = totalAcceleration.v[1] * accelRange;
-			accel->z = totalAcceleration.v[2] * accelRange;
+			accel->x = bno.totalAcceleration.v[0] * accelRange; // scale to the correct units
+			accel->y = bno.totalAcceleration.v[1] * accelRange;
+			accel->z = bno.totalAcceleration.v[2] * accelRange;
 #else
 			accel->x = x * accelRange; // scale to the correct units
 			accel->y = y * accelRange;

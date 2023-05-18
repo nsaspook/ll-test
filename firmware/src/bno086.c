@@ -22,7 +22,10 @@
 
 static const char *build_date = __DATE__, *build_time = __TIME__;
 
-sh2_Quaternion_t fusion_q;
+/*
+ * IMU sensor data structure
+ */
+_BnoData_t bno;
 
 uint8_t * txShtpHeader = imu0.tbuf;
 uint8_t * rxShtpHeader = imu0.rbuf;
@@ -47,35 +50,8 @@ uint8_t reportStatus[STATUS_ARRAY_LEN];
 /// stores whether a sensor has been updated since the last call to hasNewData()
 bool reportHasBeenUpdated[STATUS_ARRAY_LEN];
 
-Quaternion rotationVector, totalAcceleration, linearAcceleration, gravityAcceleration, gyroRotation, magField,
-magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVector;
-
-bool tapDetected;
-bool doubleTap;
-
-enum Stability stability;
-bool stepDetected;
-uint16_t stepCount;
-bool significantMotionDetected;
-bool shakeDetected;
-bool circleDetected;
-bool xAxisShake;
-bool yAxisShake;
-bool zAxisShake;
-
-uint8_t majorSoftwareVersion;
-uint8_t minorSoftwareVersion;
-uint16_t patchSoftwareVersion;
-uint32_t partNumber;
-uint32_t buildNumber;
-
 static bool first = true;
 
-/**
- * Auxiliary accuracy readout from the Rotation Vector report.
- * Represents the estimated accuracy of the rotation vector in radians.
- */
-float rotationAccuracy, geomagneticRotationAccuracy;
 
 bool bno086_updateData(void)
 {
@@ -257,14 +233,14 @@ void get_id_dummy(void)
 	dprintf("%s\r\n", cmd_buffer);
 
 	if (rxShtpData[0] == SHTP_REPORT_PRODUCT_ID_RESPONSE) {
-		majorSoftwareVersion = rxShtpData[2];
-		minorSoftwareVersion = rxShtpData[3];
-		patchSoftwareVersion = (rxShtpData[13] << 8) | rxShtpData[12];
-		partNumber = (rxShtpData[7] << 24) | (rxShtpData[6] << 16) | (rxShtpData[5] << 8) | rxShtpData[4];
-		buildNumber = (rxShtpData[11] << 24) | (rxShtpData[10] << 16) | (rxShtpData[9] << 8) | rxShtpData[8];
+		bno.majorSoftwareVersion = rxShtpData[2];
+		bno.minorSoftwareVersion = rxShtpData[3];
+		bno.patchSoftwareVersion = (rxShtpData[13] << 8) | rxShtpData[12];
+		bno.partNumber = (rxShtpData[7] << 24) | (rxShtpData[6] << 16) | (rxShtpData[5] << 8) | rxShtpData[4];
+		bno.buildNumber = (rxShtpData[11] << 24) | (rxShtpData[10] << 16) | (rxShtpData[9] << 8) | rxShtpData[8];
 		snprintf(response_buffer, max_buf, "\r\nBNO08X reports version %hhu.%hhu.%hu, build %u, part no. %u\r\n",
-			majorSoftwareVersion, minorSoftwareVersion, patchSoftwareVersion,
-			buildNumber, partNumber);
+			bno.majorSoftwareVersion, bno.minorSoftwareVersion, bno.patchSoftwareVersion,
+			bno.buildNumber, bno.partNumber);
 		dprintf("%s\r\n", response_buffer);
 	} else {
 		snprintf(imu_buffer, max_buf, "BNO08X bad ID 0x%X", rxShtpData[0]);
@@ -312,8 +288,8 @@ bool sendPacket(uint8_t channelNumber, uint8_t dataLength, void * imup)
 
 	// send packet to IMU.
 	// This also might receive the first part of another packet, which there is no way to avoid.
-	TP3_Clear();
-	WaitMs(1);
+	TP3_Clear(); // send a WAKE signal to the IMU
+	delay_us(2000);
 	TP3_Set();
 	IMU_CS_Clear();
 	SPI2_WriteRead(imu->tbuf, totalLength, imu->rbuf, totalLength);
@@ -388,53 +364,53 @@ void parseSensorDataPacket(void)
 			break;
 		case SENSOR_REPORTID_ACCELEROMETER:
 			dprintf("SENSOR_REPORTID_ACCELEROMETER\r\n");
-			totalAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
-			totalAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
-			totalAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
+			bno.totalAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
+			bno.totalAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
+			bno.totalAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
 
 			currReportOffset += SIZEOF_ACCELEROMETER;
 			break;
 		case SENSOR_REPORTID_LINEAR_ACCELERATION:
-			linearAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
-			linearAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
-			linearAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
+			bno.linearAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
+			bno.linearAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
+			bno.linearAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
 
 			currReportOffset += SIZEOF_LINEAR_ACCELERATION;
 			break;
 		case SENSOR_REPORTID_GRAVITY:
-			gravityAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
-			gravityAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
-			gravityAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
+			bno.gravityAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
+			bno.gravityAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
+			bno.gravityAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
 
 			currReportOffset += SIZEOF_LINEAR_ACCELERATION;
 			break;
 		case SENSOR_REPORTID_GYROSCOPE_CALIBRATED:
-			gyroRotation.v[0] = qToFloat(data1, GYRO_Q_POINT);
-			gyroRotation.v[1] = qToFloat(data2, GYRO_Q_POINT);
-			gyroRotation.v[2] = qToFloat(data3, GYRO_Q_POINT);
+			bno.gyroRotation.v[0] = qToFloat(data1, GYRO_Q_POINT);
+			bno.gyroRotation.v[1] = qToFloat(data2, GYRO_Q_POINT);
+			bno.gyroRotation.v[2] = qToFloat(data3, GYRO_Q_POINT);
 
 			currReportOffset += SIZEOF_GYROSCOPE_CALIBRATED;
 			break;
 		case SENSOR_REPORTID_MAGNETIC_FIELD_CALIBRATED:
-			magField.v[0] = qToFloat(data1, MAGNETOMETER_Q_POINT);
-			magField.v[1] = qToFloat(data2, MAGNETOMETER_Q_POINT);
-			magField.v[2] = qToFloat(data3, MAGNETOMETER_Q_POINT);
+			bno.magField.v[0] = qToFloat(data1, MAGNETOMETER_Q_POINT);
+			bno.magField.v[1] = qToFloat(data2, MAGNETOMETER_Q_POINT);
+			bno.magField.v[2] = qToFloat(data3, MAGNETOMETER_Q_POINT);
 
 			currReportOffset += SIZEOF_MAGNETIC_FIELD_CALIBRATED;
 			break;
 		case SENSOR_REPORTID_MAGNETIC_FIELD_UNCALIBRATED:
 		{
-			magFieldUncalibrated.v[0] = qToFloat(data1, MAGNETOMETER_Q_POINT);
-			magFieldUncalibrated.v[1] = qToFloat(data2, MAGNETOMETER_Q_POINT);
-			magFieldUncalibrated.v[2] = qToFloat(data3, MAGNETOMETER_Q_POINT);
+			bno.magFieldUncalibrated.v[0] = qToFloat(data1, MAGNETOMETER_Q_POINT);
+			bno.magFieldUncalibrated.v[1] = qToFloat(data2, MAGNETOMETER_Q_POINT);
+			bno.magFieldUncalibrated.v[2] = qToFloat(data3, MAGNETOMETER_Q_POINT);
 
 			uint16_t ironOffsetXQ = (uint16_t) rxShtpData[currReportOffset + 11] << 8 | rxShtpData[currReportOffset + 10];
 			uint16_t ironOffsetYQ = (uint16_t) rxShtpData[currReportOffset + 13] << 8 | rxShtpData[currReportOffset + 12];
 			uint16_t ironOffsetZQ = (uint16_t) rxShtpData[currReportOffset + 15] << 8 | rxShtpData[currReportOffset + 14];
 
-			hardIronOffset.v[0] = qToFloat(ironOffsetXQ, MAGNETOMETER_Q_POINT);
-			hardIronOffset.v[1] = qToFloat(ironOffsetYQ, MAGNETOMETER_Q_POINT);
-			hardIronOffset.v[1] = qToFloat(ironOffsetZQ, MAGNETOMETER_Q_POINT);
+			bno.hardIronOffset.v[0] = qToFloat(ironOffsetXQ, MAGNETOMETER_Q_POINT);
+			bno.hardIronOffset.v[1] = qToFloat(ironOffsetYQ, MAGNETOMETER_Q_POINT);
+			bno.hardIronOffset.v[1] = qToFloat(ironOffsetZQ, MAGNETOMETER_Q_POINT);
 
 			currReportOffset += SIZEOF_MAGNETIC_FIELD_UNCALIBRATED;
 		}
@@ -445,12 +421,12 @@ void parseSensorDataPacket(void)
 			uint16_t accuracyQ = (uint16_t) rxShtpData[currReportOffset + 13] << 8 | rxShtpData[currReportOffset + 12];
 
 			dprintf("SENSOR_REPORTID_ROTATION_VECTOR\r\n");
-			rotationVector.v[0] = qToFloat(data1, ROTATION_Q_POINT);
-			rotationVector.v[1] = qToFloat(data2, ROTATION_Q_POINT);
-			rotationVector.v[2] = qToFloat(data3, ROTATION_Q_POINT);
-			rotationVector.w = qToFloat(realPartQ, ROTATION_Q_POINT);
+			bno.rotationVector.v[0] = qToFloat(data1, ROTATION_Q_POINT);
+			bno.rotationVector.v[1] = qToFloat(data2, ROTATION_Q_POINT);
+			bno.rotationVector.v[2] = qToFloat(data3, ROTATION_Q_POINT);
+			bno.rotationVector.w = qToFloat(realPartQ, ROTATION_Q_POINT);
 
-			rotationAccuracy = qToFloat(accuracyQ, ROTATION_ACCURACY_Q_POINT);
+			bno.rotationAccuracy = qToFloat(accuracyQ, ROTATION_ACCURACY_Q_POINT);
 
 			currReportOffset += SIZEOF_ROTATION_VECTOR;
 		}
@@ -459,10 +435,10 @@ void parseSensorDataPacket(void)
 		{
 			uint16_t realPartQ = (uint16_t) rxShtpData[currReportOffset + 11] << 8 | rxShtpData[currReportOffset + 10];
 
-			gameRotationVector.v[0] = qToFloat(data1, ROTATION_Q_POINT);
-			gameRotationVector.v[1] = qToFloat(data2, ROTATION_Q_POINT);
-			gameRotationVector.v[2] = qToFloat(data3, ROTATION_Q_POINT);
-			gameRotationVector.w = qToFloat(realPartQ, ROTATION_Q_POINT);
+			bno.gameRotationVector.v[0] = qToFloat(data1, ROTATION_Q_POINT);
+			bno.gameRotationVector.v[1] = qToFloat(data2, ROTATION_Q_POINT);
+			bno.gameRotationVector.v[2] = qToFloat(data3, ROTATION_Q_POINT);
+			bno.gameRotationVector.w = qToFloat(realPartQ, ROTATION_Q_POINT);
 
 			currReportOffset += SIZEOF_GAME_ROTATION_VECTOR;
 		}
@@ -472,12 +448,12 @@ void parseSensorDataPacket(void)
 			uint16_t realPartQ = (uint16_t) rxShtpData[currReportOffset + 11] << 8 | rxShtpData[currReportOffset + 10];
 			uint16_t accuracyQ = (uint16_t) rxShtpData[currReportOffset + 13] << 8 | rxShtpData[currReportOffset + 12];
 
-			geomagneticRotationVector.v[0] = qToFloat(data1, ROTATION_Q_POINT);
-			geomagneticRotationVector.v[1] = qToFloat(data2, ROTATION_Q_POINT);
-			geomagneticRotationVector.v[2] = qToFloat(data3, ROTATION_Q_POINT);
-			geomagneticRotationVector.w = qToFloat(realPartQ, ROTATION_Q_POINT);
+			bno.geomagneticRotationVector.v[0] = qToFloat(data1, ROTATION_Q_POINT);
+			bno.geomagneticRotationVector.v[1] = qToFloat(data2, ROTATION_Q_POINT);
+			bno.geomagneticRotationVector.v[2] = qToFloat(data3, ROTATION_Q_POINT);
+			bno.geomagneticRotationVector.w = qToFloat(realPartQ, ROTATION_Q_POINT);
 
-			geomagneticRotationAccuracy = qToFloat(accuracyQ, ROTATION_ACCURACY_Q_POINT);
+			bno.geomagneticRotationAccuracy = qToFloat(accuracyQ, ROTATION_ACCURACY_Q_POINT);
 
 			currReportOffset += SIZEOF_GEOMAGNETIC_ROTATION_VECTOR;
 		}
@@ -485,9 +461,9 @@ void parseSensorDataPacket(void)
 		case SENSOR_REPORTID_TAP_DETECTOR:
 
 			// since we got the report, a tap was detected
-			tapDetected = true;
+			bno.tapDetected = true;
 
-			doubleTap = (rxShtpData[currReportOffset + 4] & (1 << 6)) != 0;
+			bno.doubleTap = (rxShtpData[currReportOffset + 4] & (1 << 6)) != 0;
 
 			currReportOffset += SIZEOF_TAP_DETECTOR;
 			break;
@@ -499,36 +475,36 @@ void parseSensorDataPacket(void)
 				classificationNumber = 0;
 			}
 
-			stability = (enum Stability) (classificationNumber);
+			bno.stability = (enum Stability) (classificationNumber);
 			currReportOffset += SIZEOF_STABILITY_REPORT;
 		}
 			break;
 		case SENSOR_REPORTID_STEP_DETECTOR:
 			// the fact that we got the report means that a step was detected
-			stepDetected = true;
+			bno.stepDetected = true;
 			currReportOffset += SIZEOF_STEP_DETECTOR;
 			break;
 		case SENSOR_REPORTID_STEP_COUNTER:
-			stepCount = rxShtpData[currReportOffset + 9] << 8 | rxShtpData[currReportOffset + 8];
+			bno.stepCount = rxShtpData[currReportOffset + 9] << 8 | rxShtpData[currReportOffset + 8];
 			currReportOffset += SIZEOF_STEP_COUNTER;
 			break;
 		case SENSOR_REPORTID_SIGNIFICANT_MOTION:
 			// the fact that we got the report means that significant motion was detected
-			significantMotionDetected = true;
+			bno.significantMotionDetected = true;
 
 			currReportOffset += SIZEOF_SIGNIFICANT_MOTION;
 			break;
 		case SENSOR_REPORTID_SHAKE_DETECTOR:
-			shakeDetected = true;
+			bno.shakeDetected = true;
 
-			xAxisShake = (rxShtpData[currReportOffset + 4] & 1) != 0;
-			yAxisShake = (rxShtpData[currReportOffset + 4] & (1 << 1)) != 0;
-			zAxisShake = (rxShtpData[currReportOffset + 4] & (1 << 2)) != 0;
+			bno.xAxisShake = (rxShtpData[currReportOffset + 4] & 1) != 0;
+			bno.yAxisShake = (rxShtpData[currReportOffset + 4] & (1 << 1)) != 0;
+			bno.zAxisShake = (rxShtpData[currReportOffset + 4] & (1 << 2)) != 0;
 
 			currReportOffset += SIZEOF_SHAKE_DETECTOR;
 			break;
 		case SENSOR_REPORTID_CIRCLE_DETECTOR:
-			circleDetected = true;
+			bno.circleDetected = true;
 
 			currReportOffset += SIZEOF_CIRCLE_DETECTOR;
 			break;

@@ -27,7 +27,7 @@ extern "C" {
 #include "bno086_reg.h"
 #include "imu.h"
 
-#define BNO086_DRIVER	"V1.002" 
+#define BNO086_DRIVER	"V1.003" 
 #define BNO086_ALIAS	"BNO086"
 
 #define UPDATE_MS_T	20
@@ -161,6 +161,8 @@ extern "C" {
 
 #define BNO080_RESET_TIMEOUT 180ms
 
+
+
 	/// List of all sensor reports that the IMU supports.
 
 	enum Report {
@@ -202,6 +204,32 @@ extern "C" {
 		MOTION = 4
 	};
 
+	typedef struct _BnoData_t {
+		sh2_Quaternion_t fusion_q;
+		Quaternion rotationVector, totalAcceleration, linearAcceleration, gravityAcceleration, gyroRotation, magField,
+		magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVector;
+
+		bool tapDetected;
+		bool doubleTap;
+
+		enum Stability stability;
+		bool stepDetected;
+		uint16_t stepCount;
+		bool significantMotionDetected;
+		bool shakeDetected;
+		bool circleDetected;
+		bool xAxisShake;
+		bool yAxisShake;
+		bool zAxisShake;
+
+		uint8_t majorSoftwareVersion;
+		uint8_t minorSoftwareVersion;
+		uint16_t patchSoftwareVersion;
+		uint32_t partNumber;
+		uint32_t buildNumber;
+		float rotationAccuracy, geomagneticRotationAccuracy;
+	} _BnoData_t;
+
 	/*
 	 * function pointer templates
 	 */
@@ -235,16 +263,9 @@ extern "C" {
 	 * BNO086 chip instance
 	 */
 	extern imu_cmd_t imu0;
-	extern sh2_Quaternion_t fusion_q;
-	extern Quaternion rotationVector, totalAcceleration, linearAcceleration, gravityAcceleration, gyroRotation, magField,
-		magFieldUncalibrated, hardIronOffset, gameRotationVector, geomagneticRotationVector;
-
 	extern char response_buffer[RBUFFER_SIZE];
 	extern char cmd_buffer[RBUFFER_SIZE];
-	extern bool tapDetected, doubleTap, shakeDetected, circleDetected;
-	extern enum Stability stability;
-	extern bool significantMotionDetected;
-
+	extern _BnoData_t bno;
 
 #ifdef	__cplusplus
 }
