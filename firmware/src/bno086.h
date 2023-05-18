@@ -27,9 +27,9 @@ extern "C" {
 #include "bno086_reg.h"
 #include "imu.h"
 
-#define BNO086_DRIVER	"V1.001" 
+#define BNO086_DRIVER	"V1.002" 
 #define BNO086_ALIAS	"BNO086"
-	
+
 #define UPDATE_MS_T	20
 #define UPDATE_MS_R	20
 #define UPDATE_MS_L	20	
@@ -43,7 +43,7 @@ extern "C" {
 	 * Use terminal program TIO for 460800 speed serial debugging
 	 * https://github.com/tio/tio
 	 */
-//#define PDEBUG
+	//#define PDEBUG
 	int printf_stub(const char*, ...);
 
 #ifdef PDEBUG
@@ -113,6 +113,9 @@ extern "C" {
 #define SENSOR_REPORTID_STABILITY_CLASSIFIER 0x13
 #define SENSOR_REPORTID_STEP_DETECTOR 0x18
 #define SENSOR_REPORTID_SHAKE_DETECTOR 0x19
+#define SENSOR_REPORTID_X20 0x20
+#define SENSOR_REPORTID_X21 0x21
+#define SENSOR_REPORTID_CIRCLE_DETECTOR 0x22
 
 	// sensor report ID with the largest numeric value
 #define MAX_SENSOR_REPORTID SENSOR_REPORTID_SHAKE_DETECTOR
@@ -175,7 +178,10 @@ extern "C" {
 		STEP_DETECTOR = SENSOR_REPORTID_STEP_DETECTOR,
 		STEP_COUNTER = SENSOR_REPORTID_STEP_COUNTER,
 		SIGNIFICANT_MOTION = SENSOR_REPORTID_SIGNIFICANT_MOTION,
-		SHAKE_DETECTOR = SENSOR_REPORTID_SHAKE_DETECTOR
+		SHAKE_DETECTOR = SENSOR_REPORTID_SHAKE_DETECTOR,
+		X20 = SENSOR_REPORTID_X20,
+		X21 = SENSOR_REPORTID_X21,
+		CIRCLE_DETECTOR = SENSOR_REPORTID_CIRCLE_DETECTOR,
 	};
 
 	enum Stability {
@@ -235,6 +241,9 @@ extern "C" {
 
 	extern char response_buffer[RBUFFER_SIZE];
 	extern char cmd_buffer[RBUFFER_SIZE];
+	extern bool tapDetected, doubleTap, shakeDetected, circleDetected;
+	extern enum Stability stability;
+	extern bool significantMotionDetected;
 
 
 #ifdef	__cplusplus

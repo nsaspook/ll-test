@@ -18,6 +18,7 @@
 #define SIZEOF_STEP_COUNTER 12
 #define SIZEOF_SIGNIFICANT_MOTION 6
 #define SIZEOF_SHAKE_DETECTOR 6
+#define SIZEOF_CIRCLE_DETECTOR 6
 
 static const char *build_date = __DATE__, *build_time = __TIME__;
 
@@ -57,6 +58,7 @@ bool stepDetected;
 uint16_t stepCount;
 bool significantMotionDetected;
 bool shakeDetected;
+bool circleDetected;
 bool xAxisShake;
 bool yAxisShake;
 bool zAxisShake;
@@ -524,6 +526,11 @@ void parseSensorDataPacket(void)
 			zAxisShake = (rxShtpData[currReportOffset + 4] & (1 << 2)) != 0;
 
 			currReportOffset += SIZEOF_SHAKE_DETECTOR;
+			break;
+		case SENSOR_REPORTID_CIRCLE_DETECTOR:
+			circleDetected = true;
+
+			currReportOffset += SIZEOF_CIRCLE_DETECTOR;
 			break;
 		default:
 			return;

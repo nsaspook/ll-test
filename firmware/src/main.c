@@ -354,6 +354,11 @@ int main(void)
 			enableReport(ROTATION, UPDATE_MS_R);
 			enableReport(TOTAL_ACCELERATION, UPDATE_MS_T);
 			enableReport(LINEAR_ACCELERATION, UPDATE_MS_L);
+			enableReport(SENSOR_REPORTID_TAP_DETECTOR, 100);
+			enableReport(SENSOR_REPORTID_STABILITY_CLASSIFIER, 100);
+			enableReport(SENSOR_REPORTID_SIGNIFICANT_MOTION, 100);
+			enableReport(SENSOR_REPORTID_SHAKE_DETECTOR, 100);
+			enableReport(SENSOR_REPORTID_CIRCLE_DETECTOR, 100);
 			imu_start = false;
 		}
 
@@ -464,7 +469,7 @@ int main(void)
 				eaDogM_WriteStringAtPos(3, 0, buffer);
 				snprintf(buffer, max_buf, "DEV %d", imu0.device);
 				eaDogM_WriteStringAtPos(4, 0, buffer);
-				snprintf(buffer, max_buf, "RAN %d", imu0.acc_range);
+				snprintf(buffer, max_buf, "RAN %d: %d,%d,%d,%d,%d,%d", imu0.acc_range, stability, tapDetected, doubleTap, significantMotionDetected, shakeDetected, circleDetected);
 				eaDogM_WriteStringAtPos(5, 0, buffer);
 				snprintf(buffer, max_buf, "ANG %s , %d %d %d", imu0.angles ? "Yes" : "No", POS2CNT, SW3_Get(), wake_fft);
 				eaDogM_WriteStringAtPos(6, 0, buffer);
@@ -472,6 +477,17 @@ int main(void)
 				eaDogM_WriteStringAtPos(12, 0, buffer);
 			} else {
 
+			}
+
+			/*
+			 * IMU computed events
+			 */
+			if (stability == ON_TABLE) {
+				tapDetected = doubleTap = significantMotionDetected = shakeDetected = circleDetected = false;
+			}
+
+			if (stability == STABLE) {
+				shakeDetected = false;
 			}
 
 			/*
