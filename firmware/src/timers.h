@@ -17,6 +17,7 @@ enum APP_TIMERS {
 	TMR_REPLY,
 	TMR_BNO_INT,
 	TMR_BNO_TO,
+	TMR_IMU_DATA,
 	//
 	//(Add timers here as needed)
 	//

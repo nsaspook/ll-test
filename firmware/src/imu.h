@@ -91,7 +91,7 @@ extern "C" {
         uint32_t rbuf32[2], tbuf32[2];
         uint16_t serial1, serial2;
         op_t op;
-        volatile bool init_good, accel_report;
+        volatile bool init_good;
     } imu_cmd_t;
 
     enum hcmd_type { // IMU sensor chip commands from the host

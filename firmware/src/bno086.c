@@ -30,7 +30,7 @@ uint8_t * txShtpData = imu0.tbuf + SHTP_HEADER_SIZE;
 uint8_t * rxShtpData = imu0.rbuf + SHTP_HEADER_SIZE;
 
 uint16_t rxPacketLength;
-uint8_t dummy_header[512];
+uint8_t dummy_header[512] = {0};
 
 /// Current sequence number for each channel, incremented after transmission. 
 uint8_t sequenceNumber[6];
@@ -169,12 +169,13 @@ void bno086_set_spimode(void * imup)
 	/*
 	 * power boot/reset
 	 */
-	IMU_CS_Clear(); // enable IMU
+	IMU_CS_Set(); // disable IMU
 	WaitMs(800);
-	//	DIS_RESET_Clear();
-	WaitMs(30);
-	//	DIS_RESET_Set();
-	WaitMs(170);
+	TP3_Set(); // wake high for spi mode
+	DIS_RESET_Clear();
+	WaitMs(5);
+	DIS_RESET_Set();
+	WaitMs(10);
 
 
 	dprintf("\r\nbno086 setup start\r\n");
@@ -221,9 +222,6 @@ void bno086_set_spimode(void * imup)
 			}
 
 		}
-		dprintf("\r\nSoft Reset\r\n");
-		softreset();
-		productIdReg();
 		/*
 		 * eat any IMU boot messages
 		 */
@@ -294,7 +292,6 @@ bool waitForPacket(int channel, uint8_t reportID, void * imup)
 			}
 		}
 	}
-
 	return false;
 }
 
@@ -364,7 +361,8 @@ void parseSensorDataPacket(void)
 	currReportOffset += SIZEOF_BASE_TIMESTAMP;
 
 	while (currReportOffset < rxPacketLength) {
-		TP3_Toggle(); // debug signal
+#ifdef SDEBUG_psd
+#endif
 		// lots of sensor reports use 3 16-bit numbers stored in bytes 4 through 9
 		// we can save some time by parsing those out here.
 
@@ -391,7 +389,6 @@ void parseSensorDataPacket(void)
 			totalAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
 			totalAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
 			totalAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
-			imu0.accel_report = true; // send CAN data after this is updated
 
 			currReportOffset += SIZEOF_ACCELEROMETER;
 			break;
@@ -618,7 +615,6 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 		memmove(imu->rbuf + read_b, imu->rbuf + read_b + SHTP_HEADER_SIZE, receiveLength - SHTP_HEADER_SIZE);
 	}
 	IMU_CS_Set();
-
 	return true;
 }
 
@@ -640,9 +636,7 @@ bool bno086_getdata(void * imup)
 	imu_cmd_t * imu = imup;
 
 	if (imu) {
-
 		bno086_receive_packet(imu);
-
 		return imu->online;
 	} else {
 		return false;
@@ -691,5 +685,16 @@ int32_t floatToQ_dword(float qFloat, uint16_t qPoint)
  */
 int printf_stub(const char* s, ...)
 {
-	return 1; // dummy printed value
+	return 1; // dummy printed char value
+}
+
+bool bno086_hasNewData(const uint8_t reportNum)
+{
+	if (reportNum > STATUS_ARRAY_LEN) {
+		return false;
+	}
+
+	bool newData = reportHasBeenUpdated[reportNum];
+	reportHasBeenUpdated[reportNum] = false; // clear flag
+	return newData;
 }

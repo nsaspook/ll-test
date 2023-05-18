@@ -30,9 +30,9 @@ extern "C" {
 #define BNO086_DRIVER	"V1.001" 
 #define BNO086_ALIAS	"BNO086"
 	
-#define UPDATE_MS_T	30
-#define UPDATE_MS_R	30
-#define UPDATE_MS_L	30	
+#define UPDATE_MS_T	20
+#define UPDATE_MS_R	20
+#define UPDATE_MS_L	20	
 
 	/*
 	 * fake IMU for code testing
@@ -206,6 +206,7 @@ extern "C" {
 	bool bno086_get_cpacket(size_t, void *);
 	void bno086_get_header(void *);
 	bool bno086_receive_packet(void *);
+	bool bno086_hasNewData(const uint8_t);
 	void processPacket(void);
 	void parseSensorDataPacket(void);
 	bool sendPacket(uint8_t, uint8_t, void *);

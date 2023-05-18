@@ -20,6 +20,9 @@ extern "C" {
 #include "imu.h"
 #include "timers.h"
 
+#define SDEBUG_psd	// parse sensor data
+	
+
 	/*
 	 * Board hardware configurations
 	 * and hardware specific functions
