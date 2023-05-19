@@ -52,7 +52,6 @@ bool reportHasBeenUpdated[STATUS_ARRAY_LEN];
 
 static bool first = true;
 
-
 bool bno086_updateData(void)
 {
 
@@ -224,10 +223,26 @@ void bno086_set_spimode(void * imup)
 
 void get_id_dummy(void)
 {
+	clearSendBuffer(&imu0);
+	TP3_Clear(); // send a WAKE signal to the IMU
+	delay_us(2000);
+	TP3_Set();
+	IMU_CS_Clear();
+	SPI2_WriteRead(imu0.tbuf, 256, imu0.rbuf, 256);
+	IMU_CS_Set();
+	clearSendBuffer(&imu0);
+	TP3_Clear(); // send a WAKE signal to the IMU
+	delay_us(2000);
+	TP3_Set();
+	IMU_CS_Clear();
+	SPI2_WriteRead(imu0.tbuf, 256, imu0.rbuf, 256);
+	IMU_CS_Set();
+
 	txShtpData[0] = SHTP_REPORT_PRODUCT_ID_REQUEST; //Request the product ID and reset info
 	txShtpData[1] = 0; //Reserved
-	sendPacket(CHANNEL_CONTROL, 2, &imu0);
 
+	sendPacket(CHANNEL_CONTROL, 2, &imu0);
+	//	while (true);
 	waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_PRODUCT_ID_RESPONSE, &imu0);
 	snprintf(cmd_buffer, max_buf, "BNO08X waitForPacket");
 	dprintf("%s\r\n", cmd_buffer);
@@ -292,6 +307,7 @@ bool sendPacket(uint8_t channelNumber, uint8_t dataLength, void * imup)
 	delay_us(2000);
 	TP3_Set();
 	IMU_CS_Clear();
+	delay_us(2);
 	SPI2_WriteRead(imu->tbuf, totalLength, imu->rbuf, totalLength);
 	IMU_CS_Set();
 	delay_us(100);
@@ -609,6 +625,7 @@ bool bno086_getid(void * imup)
 		imu->device = IMU_BNO086;
 		imu->angles = false;
 		imu->online = true;
+		get_id_dummy();
 		return true;
 	}
 	return false;
@@ -680,4 +697,29 @@ bool bno086_hasNewData(const uint8_t reportNum)
 	bool newData = reportHasBeenUpdated[reportNum];
 	reportHasBeenUpdated[reportNum] = false; // clear flag
 	return newData;
+}
+
+void sendTareCommand(uint8_t command, uint8_t axis, uint8_t rotationVectorBasis)
+{
+	for (uint8_t x = 3; x < 12; x++) //Clear this section of the txdata array
+		txShtpData[x] = 0;
+
+	txShtpData[3] = command;
+
+	if (command == TARE_NOW) {
+		txShtpData[4] = axis; // axis setting
+		txShtpData[5] = rotationVectorBasis; // rotation vector
+	}
+
+	//Using this txshtpData packet, send a command
+	sendCommand(COMMAND_TARE);
+}
+
+void sendCommand(uint8_t command)
+{
+	txShtpData[0] = SHTP_REPORT_COMMAND_REQUEST; //Command Request
+	txShtpData[1] = commandSequenceNumber++; //Increments automatically each function call
+	txShtpData[2] = command; //Command
+	//Transmit packet on channel 2, 12 bytes
+	sendPacket(CHANNEL_CONTROL, 12, &imu0);
 }

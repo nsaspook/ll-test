@@ -27,7 +27,7 @@ extern "C" {
 #include "bno086_reg.h"
 #include "imu.h"
 
-#define BNO086_DRIVER	"V1.003" 
+#define BNO086_DRIVER	"V1.005" 
 #define BNO086_ALIAS	"BNO086"
 
 #define UPDATE_MS_T	20
@@ -158,6 +158,13 @@ extern "C" {
 #define CALIBRATE_PLANAR_ACCEL 3
 #define CALIBRATE_ACCEL_GYRO_MAG 4
 #define CALIBRATE_STOP 5
+	
+#define TARE_NOW 0
+#define TARE_PERSIST 1
+#define TARE_SET_REORIENTATION 2
+
+#define TARE_AXIS_ALL 0x07
+#define TARE_AXIS_Z   0x04
 
 #define BNO080_RESET_TIMEOUT 180ms
 
@@ -246,6 +253,8 @@ extern "C" {
 	bool sendPacket(uint8_t, uint8_t, void *);
 	bool waitForPacket(int, uint8_t, void *);
 	void clearSendBuffer(void *);
+	void sendCommand(uint8_t);
+	void sendTareCommand(uint8_t, uint8_t, uint8_t);
 
 	double qToFloat(int16_t, uint8_t);
 	float qToFloat_dword(uint32_t, int16_t);

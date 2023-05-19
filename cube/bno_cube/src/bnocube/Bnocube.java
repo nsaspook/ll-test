@@ -80,9 +80,9 @@ public class Bnocube {
                     if (token[0].equals("  1")) {
                         System.out.println(String.format("dtype = %3s  device = %s :%s:%s:%s:%s:%s:%s:%s:", token[0], token[1], token[2], token[3], token[4], token[5], token[6], token[7], token[8]));
                         // multiply x/y/z by -1 to swap frames of reference
-                        double x = Double.parseDouble(token[4]);
-                        double y = Double.parseDouble(token[2]);
-                        double z = -Double.parseDouble(token[3]);
+                        double x = Double.parseDouble(token[2]);
+                        double y = Double.parseDouble(token[3]);
+                        double z = Double.parseDouble(token[4]);
                         double w = Double.parseDouble(token[5]);
                         double ax = Double.parseDouble(token[6]);
                         double ay = Double.parseDouble(token[7]);
