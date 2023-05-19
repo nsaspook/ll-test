@@ -701,6 +701,8 @@ bool bno086_hasNewData(const uint8_t reportNum)
 
 void sendTareCommand(uint8_t command, uint8_t axis, uint8_t rotationVectorBasis)
 {
+	int16_t * reor = (int16_t *) & imu0.tbuf[9];
+
 	for (uint8_t x = 3; x < 12; x++) //Clear this section of the txdata array
 		txShtpData[x] = 0;
 
@@ -710,6 +712,14 @@ void sendTareCommand(uint8_t command, uint8_t axis, uint8_t rotationVectorBasis)
 		txShtpData[4] = axis; // axis setting
 		txShtpData[5] = rotationVectorBasis; // rotation vector
 	}
+
+	if (command == TARE_SET_REORIENTATION) {
+		reor[0] = floatToQ(0.0f, 14);
+		reor[1] = floatToQ(01.0f, 14);
+		reor[2] = floatToQ(0.0f, 14);
+		reor[3] = floatToQ(0.0f, 14);
+	}
+
 
 	//Using this txshtpData packet, send a command
 	sendCommand(COMMAND_TARE);

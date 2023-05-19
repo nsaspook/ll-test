@@ -53,6 +53,7 @@ extern "C" {
 #endif
 
 #define SQRT_2 1.414213562f
+#define SQRT_2_DIV_2	SQRT_2/1.0f
 
 #define BNO_INIT_DELAY_INT	400
 

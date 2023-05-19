@@ -43,7 +43,7 @@ public class Bnocube {
         ColorCube cube = new ColorCube(0.3);
         Font myFont = new Font("TimesRoman", Font.CENTER_BASELINE, 1);
         Font3D myFont3D = new Font3D(myFont, new FontExtrusion());
-        Point3f textPt = new Point3f(-1.6f, 0.4f, 0.0f);
+        Point3f textPt = new Point3f(-1.6f, 0.4f, -1.0f);
         Text3D myText3D = new Text3D(myFont3D, "BNO086", textPt);
         Shape3D myShape3D = new Shape3D(myText3D, new Appearance());
 
@@ -80,16 +80,16 @@ public class Bnocube {
                     if (token[0].equals("  1")) {
                         System.out.println(String.format("dtype = %3s  device = %s :%s:%s:%s:%s:%s:%s:%s:", token[0], token[1], token[2], token[3], token[4], token[5], token[6], token[7], token[8]));
                         // multiply x/y/z by -1 to swap frames of reference
-                        double x = Double.parseDouble(token[2]);
+                        double x = Double.parseDouble(token[4]);
                         double y = Double.parseDouble(token[3]);
-                        double z = Double.parseDouble(token[4]);
+                        double z = Double.parseDouble(token[2]);
                         double w = Double.parseDouble(token[5]);
                         double ax = Double.parseDouble(token[6]);
                         double ay = Double.parseDouble(token[7]);
                         double az = Double.parseDouble(token[8]);
 
-                        Quat4d quaternion = new Quat4d(w, x, y, z);
-                        Vector3d vector = new Vector3d((az * 0.02), (ay * 0.02), (az * 0.02));
+                        Quat4d quaternion = new Quat4d(w, -x, -y, -z);
+                        Vector3d vector = new Vector3d((ax * 0.02), (ay * 0.02), (az * 0.02));
                         transformGroup.setTransform(new Transform3D(quaternion, vector, 0.5));
 
                         // the inverse cosine of w gives you the pitch *if* you normalize the quaternion with x and z being zero

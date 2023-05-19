@@ -351,6 +351,7 @@ int main(void)
 			/*
 			 * start the IMU sensor data reports
 			 */
+			sendTareCommand(TARE_SET_REORIENTATION, 0, 0);
 			enableReport(ROTATION, UPDATE_MS_R);
 			enableReport(TOTAL_ACCELERATION, UPDATE_MS_T);
 			enableReport(LINEAR_ACCELERATION, UPDATE_MS_L);
@@ -583,10 +584,11 @@ int main(void)
 				MISC_0_Set(); // blanking off
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
-				//				enableReport(ROTATION, UPDATE_MS_R);
-				//				enableReport(TOTAL_ACCELERATION, UPDATE_MS_T);
-				//				enableReport(LINEAR_ACCELERATION, UPDATE_MS_L);
+
 				sendTareCommand(TARE_NOW, TARE_AXIS_ALL, 0);
+				WaitMs(150);
+				sendTareCommand(TARE_PERSIST, 0, 0);
+
 			}
 			if (H.silent) {
 				if (dot_anim++ < SDOT_ON) {
