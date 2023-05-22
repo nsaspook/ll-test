@@ -360,6 +360,9 @@ int main(void)
 			enableReport(SENSOR_REPORTID_SIGNIFICANT_MOTION, 100);
 			enableReport(SENSOR_REPORTID_SHAKE_DETECTOR, 100);
 			enableReport(SENSOR_REPORTID_CIRCLE_DETECTOR, 100);
+			enableReport(SENSOR_REPORTID_AMBIENT_DETECTOR, 1);
+			enableReport(SENSOR_REPORTID_PRESSURE_DETECTOR, 1);
+			enableCalibration(true, true, true);
 			imu_start = false;
 		}
 
@@ -453,12 +456,12 @@ int main(void)
 #endif
 
 #ifdef SHOW_LCD
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %X\r\n", accel.x, accel.y, accel.z, imu0.rs, imu0.ss);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %d\r\n", accel.x, accel.y, accel.z, imu0.rs, -POS2CNT);
 			eaDogM_WriteStringAtPos(0, 0, buffer);
 #ifndef BNO086
 			snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
 #else
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.linearAcceleration.v[0], bno.linearAcceleration.v[1], bno.linearAcceleration.v[2], accel.sensortemp);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.linearAcceleration.v[0], bno.linearAcceleration.v[1], bno.linearAcceleration.v[2], bno.pressure + bno.ambient);
 			eaDogM_WriteStringAtPos(2, 0, buffer);
 			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.rotationVector.v[0], bno.rotationVector.v[1], bno.rotationVector.v[2], bno.rotationVector.w);
 #endif

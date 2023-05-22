@@ -19,6 +19,8 @@
 #define SIZEOF_SIGNIFICANT_MOTION 6
 #define SIZEOF_SHAKE_DETECTOR 6
 #define SIZEOF_CIRCLE_DETECTOR 6
+#define SIZEOF_AMBIENT_DETECTOR 8
+#define SIZEOF_PRESSURE_DETECTOR 8
 
 static const char *build_date = __DATE__, *build_time = __TIME__;
 
@@ -519,6 +521,16 @@ void parseSensorDataPacket(void)
 
 			currReportOffset += SIZEOF_SHAKE_DETECTOR;
 			break;
+		case SENSOR_REPORTID_AMBIENT_DETECTOR:
+			bno.ambient = 12.34f;
+
+			currReportOffset += SIZEOF_AMBIENT_DETECTOR;
+			break;
+		case SENSOR_REPORTID_PRESSURE_DETECTOR:
+			bno.pressure = 56.78f;
+
+			currReportOffset += SIZEOF_PRESSURE_DETECTOR;
+			break;
 		case SENSOR_REPORTID_CIRCLE_DETECTOR:
 			bno.circleDetected = true;
 
@@ -732,4 +744,78 @@ void sendCommand(uint8_t command)
 	txShtpData[2] = command; //Command
 	//Transmit packet on channel 2, 12 bytes
 	sendPacket(CHANNEL_CONTROL, 12, &imu0);
+}
+
+bool enableCalibration(bool calibrateAccel, bool calibrateGyro, bool calibrateMag)
+{
+	// send the Configure ME Calibration command
+	clearSendBuffer(&imu0);
+
+	txShtpData[3] = (uint8_t) (calibrateAccel ? 1 : 0);
+	txShtpData[4] = (uint8_t) (calibrateGyro ? 1 : 0);
+	txShtpData[5] = (uint8_t) (calibrateMag ? 1 : 0);
+
+	txShtpData[6] = 0; // Configure ME Calibration command
+
+	txShtpData[7] = 0; // planar accelerometer calibration always disabled
+
+	sendCommand(COMMAND_ME_CALIBRATE);
+
+	// now, wait for the response
+	if (!waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_COMMAND_RESPONSE, &imu0)) {
+#if BNO_DEBUG
+		_debugPort->printf("Timeout waiting for calibration response!\n");
+#endif
+		return false;
+	}
+
+	if (rxShtpData[2] != COMMAND_ME_CALIBRATE) {
+#if BNO_DEBUG
+		_debugPort->printf("Received wrong response to calibration command!\n");
+#endif
+		return false;
+	}
+
+	if (rxShtpData[5] != 0) {
+#if BNO_DEBUG
+		_debugPort->printf("IMU reports calibrate command failed!\n");
+#endif
+		return false;
+	}
+
+	// acknowledge checks out!
+	return true;
+}
+
+bool saveCalibration(void)
+{
+	clearSendBuffer(&imu0);
+
+	// no arguments
+	sendCommand(COMMAND_SAVE_DCD);
+
+	// now, wait for the response
+	if (!waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_COMMAND_RESPONSE, &imu0)) {
+#if BNO_DEBUG
+		_debugPort->printf("Timeout waiting for calibration response!\n");
+#endif
+		return false;
+	}
+
+	if (rxShtpData[2] != COMMAND_SAVE_DCD) {
+#if BNO_DEBUG
+		_debugPort->printf("Received wrong response to calibration command!\n");
+#endif
+		return false;
+	}
+
+	if (rxShtpData[5] != 0) {
+#if BNO_DEBUG
+		_debugPort->printf("IMU reports calibrate command failed!\n");
+#endif
+		return false;
+	}
+
+	// acknowledge checks out!
+	return true;
 }

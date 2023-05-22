@@ -107,6 +107,8 @@ extern "C" {
 #define SENSOR_REPORTID_GRAVITY 0x06
 #define SENSOR_REPORTID_GAME_ROTATION_VECTOR 0x08
 #define SENSOR_REPORTID_GEOMAGNETIC_ROTATION_VECTOR 0x09
+#define SENSOR_REPORTID_PRESSURE_DETECTOR 0x0A
+#define SENSOR_REPORTID_AMBIENT_DETECTOR 0x0B
 #define SENSOR_REPORTID_MAGNETIC_FIELD_UNCALIBRATED 0x0F
 #define SENSOR_REPORTID_TAP_DETECTOR 0x10
 #define SENSOR_REPORTID_STEP_COUNTER 0x11
@@ -159,7 +161,7 @@ extern "C" {
 #define CALIBRATE_PLANAR_ACCEL 3
 #define CALIBRATE_ACCEL_GYRO_MAG 4
 #define CALIBRATE_STOP 5
-	
+
 #define TARE_NOW 0
 #define TARE_PERSIST 1
 #define TARE_SET_REORIENTATION 2
@@ -192,6 +194,8 @@ extern "C" {
 		X20 = SENSOR_REPORTID_X20,
 		X21 = SENSOR_REPORTID_X21,
 		CIRCLE_DETECTOR = SENSOR_REPORTID_CIRCLE_DETECTOR,
+		AMBIENT_DETECTOR = SENSOR_REPORTID_AMBIENT_DETECTOR,
+		PRESSURE_DETECTOR = SENSOR_REPORTID_PRESSURE_DETECTOR,
 	};
 
 	enum Stability {
@@ -235,7 +239,7 @@ extern "C" {
 		uint16_t patchSoftwareVersion;
 		uint32_t partNumber;
 		uint32_t buildNumber;
-		float rotationAccuracy, geomagneticRotationAccuracy;
+		float rotationAccuracy, geomagneticRotationAccuracy, ambient, pressure;
 	} _BnoData_t;
 
 	/*
@@ -269,6 +273,8 @@ extern "C" {
 	void softreset(void);
 	void get_id_dummy(void);
 
+	bool enableCalibration(bool, bool, bool);
+	bool saveCalibration(void);
 	/*
 	 * BNO086 chip instance
 	 */
