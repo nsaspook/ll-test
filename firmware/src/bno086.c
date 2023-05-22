@@ -23,6 +23,7 @@
 #define SIZEOF_PRESSURE_DETECTOR 8
 
 static const char *build_date = __DATE__, *build_time = __TIME__;
+const char *bno_Status = "ULMH";
 
 /*
  * IMU sensor data structure
@@ -76,6 +77,14 @@ void softreset(void)
 	txShtpData[0] = 1;
 
 	sendPacket(CHANNEL_EXECUTABLE, 1, &imu0);
+}
+
+void bno086_flush(void)
+{
+	txShtpData[0] = 0xf0;
+	txShtpData[2] = 0x0b;
+
+	sendPacket(CHANNEL_CONTROL, 2, &imu0);
 }
 
 
@@ -385,7 +394,7 @@ void parseSensorDataPacket(void)
 			bno.totalAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
 			bno.totalAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
 			bno.totalAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
-			bno.status = reportStatus[reportNum];
+			bno.statusA = reportStatus[reportNum];
 
 			currReportOffset += SIZEOF_ACCELEROMETER;
 			break;
@@ -407,6 +416,7 @@ void parseSensorDataPacket(void)
 			bno.gyroRotation.v[0] = qToFloat(data1, GYRO_Q_POINT);
 			bno.gyroRotation.v[1] = qToFloat(data2, GYRO_Q_POINT);
 			bno.gyroRotation.v[2] = qToFloat(data3, GYRO_Q_POINT);
+			bno.statusG = reportStatus[reportNum];
 
 			currReportOffset += SIZEOF_GYROSCOPE_CALIBRATED;
 			break;
@@ -414,6 +424,7 @@ void parseSensorDataPacket(void)
 			bno.magField.v[0] = qToFloat(data1, MAGNETOMETER_Q_POINT);
 			bno.magField.v[1] = qToFloat(data2, MAGNETOMETER_Q_POINT);
 			bno.magField.v[2] = qToFloat(data3, MAGNETOMETER_Q_POINT);
+			bno.statusM = reportStatus[reportNum];
 
 			currReportOffset += SIZEOF_MAGNETIC_FIELD_CALIBRATED;
 			break;
@@ -523,12 +534,20 @@ void parseSensorDataPacket(void)
 			currReportOffset += SIZEOF_SHAKE_DETECTOR;
 			break;
 		case SENSOR_REPORTID_AMBIENT_DETECTOR:
-			bno.ambient = 12.34f;
+		{
+			uint16_t env_data;
+			env_data = (uint16_t) rxShtpData[currReportOffset + 6] << 8 | rxShtpData[currReportOffset + 5];
+			bno.ambient = qToFloat(env_data, 8);
+		}
 
 			currReportOffset += SIZEOF_AMBIENT_DETECTOR;
 			break;
 		case SENSOR_REPORTID_PRESSURE_DETECTOR:
-			bno.pressure = 56.78f;
+		{
+			uint16_t env_data;
+			env_data = (uint16_t) rxShtpData[currReportOffset + 6] << 8 | rxShtpData[currReportOffset + 5];
+			bno.pressure = qToFloat(env_data, 8);
+		}
 
 			currReportOffset += SIZEOF_PRESSURE_DETECTOR;
 			break;

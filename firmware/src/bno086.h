@@ -32,7 +32,10 @@ extern "C" {
 
 #define UPDATE_MS_T	20
 #define UPDATE_MS_R	20
-#define UPDATE_MS_L	20	
+#define UPDATE_MS_L	20
+#define UPDATE_MS_ENV	1000
+#define UPDATE_MS_CAL	500
+#define UPDATE_MS_MISC	100
 
 	/*
 	 * fake IMU for code testing
@@ -240,7 +243,7 @@ extern "C" {
 		uint32_t partNumber;
 		uint32_t buildNumber;
 		float rotationAccuracy, geomagneticRotationAccuracy, ambient, pressure;
-		uint8_t	status;
+		uint8_t statusA, statusG, statusM;
 	} _BnoData_t;
 
 	/*
@@ -254,6 +257,7 @@ extern "C" {
 	void bno086_get_header(void *);
 	bool bno086_receive_packet(void *);
 	bool bno086_hasNewData(const uint8_t);
+	void bno086_flush(void);
 	void processPacket(void);
 	void parseSensorDataPacket(void);
 	bool sendPacket(uint8_t, uint8_t, void *);
@@ -283,6 +287,7 @@ extern "C" {
 	extern char response_buffer[RBUFFER_SIZE];
 	extern char cmd_buffer[RBUFFER_SIZE];
 	extern _BnoData_t bno;
+	extern const char *bno_Status;
 
 #ifdef	__cplusplus
 }

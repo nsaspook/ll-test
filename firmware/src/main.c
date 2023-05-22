@@ -355,20 +355,22 @@ int main(void)
 			enableReport(ROTATION, UPDATE_MS_R);
 			enableReport(TOTAL_ACCELERATION, UPDATE_MS_T);
 			enableReport(LINEAR_ACCELERATION, UPDATE_MS_L);
-			enableReport(SENSOR_REPORTID_TAP_DETECTOR, 100);
-			enableReport(SENSOR_REPORTID_STABILITY_CLASSIFIER, 100);
-			enableReport(SENSOR_REPORTID_SIGNIFICANT_MOTION, 100);
-			enableReport(SENSOR_REPORTID_SHAKE_DETECTOR, 100);
-			enableReport(SENSOR_REPORTID_CIRCLE_DETECTOR, 100);
-			enableReport(SENSOR_REPORTID_AMBIENT_DETECTOR, 1);
-			enableReport(SENSOR_REPORTID_PRESSURE_DETECTOR, 1);
+			enableReport(GYROSCOPE, UPDATE_MS_CAL);
+			enableReport(MAG_FIELD, UPDATE_MS_CAL);
+			enableReport(SENSOR_REPORTID_TAP_DETECTOR, UPDATE_MS_MISC);
+			enableReport(SENSOR_REPORTID_STABILITY_CLASSIFIER, UPDATE_MS_MISC);
+			enableReport(SENSOR_REPORTID_SIGNIFICANT_MOTION, UPDATE_MS_MISC);
+			enableReport(SENSOR_REPORTID_SHAKE_DETECTOR, UPDATE_MS_MISC);
+			enableReport(SENSOR_REPORTID_CIRCLE_DETECTOR, UPDATE_MS_MISC);
+			enableReport(SENSOR_REPORTID_AMBIENT_DETECTOR, UPDATE_MS_ENV);
+			enableReport(SENSOR_REPORTID_PRESSURE_DETECTOR, UPDATE_MS_ENV);
 			if (!enableCalibration(true, true, true)) {
-				while (true) {
-					eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
-					eaDogM_WriteStringAtPos(7, 0, response_buffer);
-					OledUpdate();
-					WaitMs(5000);
-				}
+				//				while (true) {
+				eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
+				eaDogM_WriteStringAtPos(7, 0, response_buffer);
+				OledUpdate();
+				WaitMs(5000);
+				//				}
 			}
 			imu_start = false;
 		}
@@ -463,16 +465,16 @@ int main(void)
 #endif
 
 #ifdef SHOW_LCD
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %d\r\n", accel.x, accel.y, accel.z, bno.status, -POS2CNT);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", accel.x, accel.y, accel.z, bno.ambient);
 			eaDogM_WriteStringAtPos(0, 0, buffer);
 #ifndef BNO086
 			snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
 #else
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.linearAcceleration.v[0], bno.linearAcceleration.v[1], bno.linearAcceleration.v[2], bno.pressure + bno.ambient);
-			eaDogM_WriteStringAtPos(2, 0, buffer);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.linearAcceleration.v[0], bno.linearAcceleration.v[1], bno.linearAcceleration.v[2], bno.pressure);
+			eaDogM_WriteStringAtPos(1, 0, buffer);
 			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.rotationVector.v[0], bno.rotationVector.v[1], bno.rotationVector.v[2], bno.rotationVector.w);
 #endif
-			eaDogM_WriteStringAtPos(1, 0, buffer);
+			eaDogM_WriteStringAtPos(2, 0, buffer);
 			if (!H.dis_alt) {
 				snprintf(buffer, max_buf, "PIC32 IMU Controller %s   %s %s", IMU_DRIVER, build_date, build_time);
 				eaDogM_WriteStringAtPos(14, 0, buffer);
@@ -596,8 +598,8 @@ int main(void)
 				buzzer_trigger(BZ2);
 
 				if (POS2CNT < -100) {
-//					sendTareCommand(TARE_NOW, TARE_AXIS_ALL, 0);
-//					WaitMs(150);
+					//					sendTareCommand(TARE_NOW, TARE_AXIS_ALL, 0);
+					//					WaitMs(150);
 					sendTareCommand(TARE_PERSIST, 0, 0);
 					POS2CNT = 0;
 				}
@@ -624,6 +626,8 @@ int main(void)
 			if (!H.dis_alt) {
 				snprintf(buffer, max_buf, "can-fd %X", board_serial_id);
 				eaDogM_WriteStringAtPos(11, 0, buffer);
+				snprintf(buffer, max_buf, "Status %c%c%c", bno_Status[bno.statusA], bno_Status[bno.statusG], bno_Status[bno.statusM]);
+				eaDogM_WriteStringAtPos(3, 20, buffer);
 				snprintf(buffer, max_buf, "ErrorT %d", txe);
 				eaDogM_WriteStringAtPos(4, 20, buffer);
 				snprintf(buffer, max_buf, "ErrorR %d", rxe);
