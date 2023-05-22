@@ -385,6 +385,7 @@ void parseSensorDataPacket(void)
 			bno.totalAcceleration.v[0] = qToFloat(data1, ACCELEROMETER_Q_POINT);
 			bno.totalAcceleration.v[1] = qToFloat(data2, ACCELEROMETER_Q_POINT);
 			bno.totalAcceleration.v[2] = qToFloat(data3, ACCELEROMETER_Q_POINT);
+			bno.status = reportStatus[reportNum];
 
 			currReportOffset += SIZEOF_ACCELEROMETER;
 			break;
@@ -750,39 +751,28 @@ bool enableCalibration(bool calibrateAccel, bool calibrateGyro, bool calibrateMa
 {
 	// send the Configure ME Calibration command
 	clearSendBuffer(&imu0);
-
 	txShtpData[3] = (uint8_t) (calibrateAccel ? 1 : 0);
 	txShtpData[4] = (uint8_t) (calibrateGyro ? 1 : 0);
 	txShtpData[5] = (uint8_t) (calibrateMag ? 1 : 0);
-
 	txShtpData[6] = 0; // Configure ME Calibration command
-
 	txShtpData[7] = 0; // planar accelerometer calibration always disabled
-
 	sendCommand(COMMAND_ME_CALIBRATE);
-
 	// now, wait for the response
 	if (!waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_COMMAND_RESPONSE, &imu0)) {
-#if BNO_DEBUG
-		_debugPort->printf("Timeout waiting for calibration response!\n");
-#endif
+		snprintf(cmd_buffer, max_buf, "Timeout waiting for calibration response!");
+		snprintf(response_buffer, max_buf, " enableCalibration");
 		return false;
 	}
-
 	if (rxShtpData[2] != COMMAND_ME_CALIBRATE) {
-#if BNO_DEBUG
-		_debugPort->printf("Received wrong response to calibration command!\n");
-#endif
+		snprintf(cmd_buffer, max_buf, "Received wrong response to calibration command!");
+		snprintf(response_buffer, max_buf, " enableCalibration");
 		return false;
 	}
-
 	if (rxShtpData[5] != 0) {
-#if BNO_DEBUG
-		_debugPort->printf("IMU reports calibrate command failed!\n");
-#endif
+		snprintf(cmd_buffer, max_buf, "IMU reports calibrate command failed!");
+		snprintf(response_buffer, max_buf, " enableCalibration");
 		return false;
 	}
-
 	// acknowledge checks out!
 	return true;
 }
@@ -793,29 +783,22 @@ bool saveCalibration(void)
 
 	// no arguments
 	sendCommand(COMMAND_SAVE_DCD);
-
 	// now, wait for the response
 	if (!waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_COMMAND_RESPONSE, &imu0)) {
-#if BNO_DEBUG
-		_debugPort->printf("Timeout waiting for calibration response!\n");
-#endif
+		snprintf(cmd_buffer, max_buf, "Timeout waiting for calibration response!");
+		snprintf(response_buffer, max_buf, " saveCalibration");
 		return false;
 	}
-
 	if (rxShtpData[2] != COMMAND_SAVE_DCD) {
-#if BNO_DEBUG
-		_debugPort->printf("Received wrong response to calibration command!\n");
-#endif
+		snprintf(cmd_buffer, max_buf, "Received wrong response to calibration command!");
+		snprintf(response_buffer, max_buf, " saveCalibration");
 		return false;
 	}
-
 	if (rxShtpData[5] != 0) {
-#if BNO_DEBUG
-		_debugPort->printf("IMU reports calibrate command failed!\n");
-#endif
+		snprintf(cmd_buffer, max_buf, "IMU reports calibrate command failed!");
+		snprintf(response_buffer, max_buf, " saveCalibration");
 		return false;
 	}
-
 	// acknowledge checks out!
 	return true;
 }

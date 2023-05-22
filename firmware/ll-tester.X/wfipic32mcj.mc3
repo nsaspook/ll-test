@@ -1388,7 +1388,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;473&quot; canvasWidth=&quot;1346&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adchs&quot; x=&quot;224&quot; y=&quot;83&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;can1&quot; x=&quot;510&quot; y=&quot;100&quot;/&gt;
@@ -1411,7 +1412,6 @@
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;uart2&quot; x=&quot;660&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;473&quot; canvasWidth=&quot;1346&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -14943,7 +14943,7 @@
    <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>../src/config/bma400/definitions.h</file>
-         <hash>e34f259d5c14867f9a3b2f38281c1ebf25b12a4a5edd913a513cf20c85cda3bb</hash>
+         <hash>da12dfd6caf59d918fc23979f625be4b6d9ef1380cab6dbf000c25a6456e7ebb</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/device.h</file>
@@ -14955,7 +14955,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/initialization.c</file>
-         <hash>6ad8283a26e24cf2fbba68057fe64c6614c19916e57c5aeef6d1ec5d251bab26</hash>
+         <hash>04df0425edd79aa24b2bde836fb9f826ec1a77accf9a5f8ec209514f0d100a64</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/interrupts.c</file>

@@ -362,7 +362,14 @@ int main(void)
 			enableReport(SENSOR_REPORTID_CIRCLE_DETECTOR, 100);
 			enableReport(SENSOR_REPORTID_AMBIENT_DETECTOR, 1);
 			enableReport(SENSOR_REPORTID_PRESSURE_DETECTOR, 1);
-			enableCalibration(true, true, true);
+			if (!enableCalibration(true, true, true)) {
+				while (true) {
+					eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
+					eaDogM_WriteStringAtPos(7, 0, response_buffer);
+					OledUpdate();
+					WaitMs(5000);
+				}
+			}
 			imu_start = false;
 		}
 
@@ -456,7 +463,7 @@ int main(void)
 #endif
 
 #ifdef SHOW_LCD
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %d\r\n", accel.x, accel.y, accel.z, imu0.rs, -POS2CNT);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %X, %d\r\n", accel.x, accel.y, accel.z, bno.status, -POS2CNT);
 			eaDogM_WriteStringAtPos(0, 0, buffer);
 #ifndef BNO086
 			snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
@@ -588,10 +595,13 @@ int main(void)
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
 
-				sendTareCommand(TARE_NOW, TARE_AXIS_ALL, 0);
-				WaitMs(150);
-				sendTareCommand(TARE_PERSIST, 0, 0);
-
+				if (POS2CNT < -100) {
+//					sendTareCommand(TARE_NOW, TARE_AXIS_ALL, 0);
+//					WaitMs(150);
+					sendTareCommand(TARE_PERSIST, 0, 0);
+					POS2CNT = 0;
+				}
+				saveCalibration();
 			}
 			if (H.silent) {
 				if (dot_anim++ < SDOT_ON) {

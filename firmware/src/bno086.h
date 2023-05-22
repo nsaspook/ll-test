@@ -121,7 +121,7 @@ extern "C" {
 #define SENSOR_REPORTID_CIRCLE_DETECTOR 0x22
 
 	// sensor report ID with the largest numeric value
-#define MAX_SENSOR_REPORTID SENSOR_REPORTID_SHAKE_DETECTOR
+#define MAX_SENSOR_REPORTID SENSOR_REPORTID_CIRCLE_DETECTOR
 
 	// Q points for various sensor data elements
 #define ACCELEROMETER_Q_POINT 8 // for accelerometer based data
@@ -240,6 +240,7 @@ extern "C" {
 		uint32_t partNumber;
 		uint32_t buildNumber;
 		float rotationAccuracy, geomagneticRotationAccuracy, ambient, pressure;
+		uint8_t	status;
 	} _BnoData_t;
 
 	/*
