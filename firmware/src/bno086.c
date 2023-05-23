@@ -21,6 +21,9 @@
 #define SIZEOF_CIRCLE_DETECTOR 6
 #define SIZEOF_AMBIENT_DETECTOR 8
 #define SIZEOF_PRESSURE_DETECTOR 8
+#define SIZEOF_HUMIDITY_DETECTOR 6
+#define SIZEOF_PROXIMITY_DETECTOR 6
+#define SIZEOF_TEMPERATURE_DETECTOR 6
 
 static const char *build_date = __DATE__, *build_time = __TIME__;
 const char *bno_Status = "ULMH";
@@ -535,21 +538,44 @@ void parseSensorDataPacket(void)
 			break;
 		case SENSOR_REPORTID_AMBIENT_DETECTOR:
 		{
-			uint16_t env_data;
-			env_data = (uint16_t) rxShtpData[currReportOffset + 6] << 8 | rxShtpData[currReportOffset + 5];
-			bno.ambient = qToFloat(env_data, 8);
+			TP2_Toggle();
+			uint32_t env_data;
+			env_data = (uint32_t) rxShtpData[currReportOffset + 7] << 24 | rxShtpData[currReportOffset + 6] << 16 | rxShtpData[currReportOffset + 5] << 8 | rxShtpData[currReportOffset + 4];
+			bno.ambient = qToFloat_dword(env_data, 8);
 		}
-
 			currReportOffset += SIZEOF_AMBIENT_DETECTOR;
 			break;
 		case SENSOR_REPORTID_PRESSURE_DETECTOR:
 		{
-			uint16_t env_data;
-			env_data = (uint16_t) rxShtpData[currReportOffset + 6] << 8 | rxShtpData[currReportOffset + 5];
-			bno.pressure = qToFloat(env_data, 8);
+			uint32_t env_data;
+			env_data = (uint32_t) rxShtpData[currReportOffset + 7] << 24 | rxShtpData[currReportOffset + 6] << 16 | rxShtpData[currReportOffset + 5] << 8 | rxShtpData[currReportOffset + 4];
+			bno.pressure = qToFloat_dword(env_data, 20);
 		}
-
 			currReportOffset += SIZEOF_PRESSURE_DETECTOR;
+			break;
+		case SENSOR_REPORTID_TEMPERATURE_DETECTOR:
+		{
+			uint16_t env_data;
+			env_data = (uint16_t) rxShtpData[currReportOffset + 5] << 8 | rxShtpData[currReportOffset + 4];
+			bno.temperature = qToFloat(env_data, 7);
+		}
+			currReportOffset += SIZEOF_TEMPERATURE_DETECTOR;
+			break;
+		case SENSOR_REPORTID_PROXIMITY_DETECTOR:
+		{
+			uint16_t env_data;
+			env_data = (uint16_t) rxShtpData[currReportOffset + 5] << 8 | rxShtpData[currReportOffset + 4];
+			bno.proximity = qToFloat(env_data, 4);
+		}
+			currReportOffset += SIZEOF_PROXIMITY_DETECTOR;
+			break;
+		case SENSOR_REPORTID_HUMIDITY_DETECTOR:
+		{
+			uint16_t env_data;
+			env_data = (uint16_t) rxShtpData[currReportOffset + 5] << 8 | rxShtpData[currReportOffset + 4];
+			bno.humidity = qToFloat(env_data, 8);
+		}
+			currReportOffset += SIZEOF_HUMIDITY_DETECTOR;
 			break;
 		case SENSOR_REPORTID_CIRCLE_DETECTOR:
 			bno.circleDetected = true;
@@ -690,25 +716,25 @@ double qToFloat(int16_t fixedPointValue, uint8_t qPoint)
 	return(qFloat);
 }
 
-float qToFloat_dword(uint32_t fixedPointValue, int16_t qPoint)
+double qToFloat_dword(uint32_t fixedPointValue, uint16_t qPoint)
 {
-	float qFloat = fixedPointValue;
-	qFloat *= pow(2.0f, qPoint * -1);
+	double qFloat = fixedPointValue;
+	qFloat *= pow(2.0f, -qPoint);
 	return(qFloat);
 }
 
 //Given a floating point value and a Q point, convert to Q
 //See https://en.wikipedia.org/wiki/Q_(number_format)
 
-int16_t floatToQ(float qFloat, uint8_t qPoint)
+uint16_t floatToQ(float qFloat, uint8_t qPoint)
 {
-	int16_t qVal = (int16_t) (qFloat * pow(2.0f, qPoint));
+	uint16_t qVal = (uint16_t) (qFloat * pow(2.0f, qPoint));
 	return qVal;
 }
 
-int32_t floatToQ_dword(float qFloat, uint16_t qPoint)
+uint32_t floatToQ_dword(float qFloat, uint16_t qPoint)
 {
-	int32_t qVal = (int32_t) (qFloat * pow(2.0f, qPoint));
+	uint32_t qVal = (uint32_t) (qFloat * pow(2.0f, qPoint));
 	return qVal;
 }
 

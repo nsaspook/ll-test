@@ -147,7 +147,7 @@ void APP_CAN_Callback_h(uintptr_t context)
 		}
 		case APP_STATE_CAN_TRANSMIT:
 		{
-			TP2_Clear();
+//			TP2_Clear();
 			LED_RED_Set();
 			tx_num++;
 			break;
@@ -164,7 +164,7 @@ void APP_CAN_Callback_hs(uintptr_t context)
 {
 	xferContext = context;
 
-	TP2_Clear();
+//	TP2_Clear();
 	tx_num++;
 	send_wait = false;
 }
@@ -569,7 +569,7 @@ void send_from_host(uint32_t hostid)
 		messageLength = 64;
 		host0.host_serial_id = DEVSN0 & 0x1fffffff;
 
-		TP2_Set();
+//		TP2_Set();
 		if (CAN1_MessageTransmit(messageID, messageLength, (void *) &host0, 1, CANFD_MODE_FD_WITH_BRS, CANFD_MSG_TX_DATA_FRAME) == false) {
 		}
 		LED_RED_Clear();

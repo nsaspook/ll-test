@@ -112,6 +112,9 @@ extern "C" {
 #define SENSOR_REPORTID_GEOMAGNETIC_ROTATION_VECTOR 0x09
 #define SENSOR_REPORTID_PRESSURE_DETECTOR 0x0A
 #define SENSOR_REPORTID_AMBIENT_DETECTOR 0x0B
+#define SENSOR_REPORTID_HUMIDITY_DETECTOR 0x0C
+#define SENSOR_REPORTID_PROXIMITY_DETECTOR 0x0D
+#define SENSOR_REPORTID_TEMPERATURE_DETECTOR 0x0E	
 #define SENSOR_REPORTID_MAGNETIC_FIELD_UNCALIBRATED 0x0F
 #define SENSOR_REPORTID_TAP_DETECTOR 0x10
 #define SENSOR_REPORTID_STEP_COUNTER 0x11
@@ -199,6 +202,9 @@ extern "C" {
 		CIRCLE_DETECTOR = SENSOR_REPORTID_CIRCLE_DETECTOR,
 		AMBIENT_DETECTOR = SENSOR_REPORTID_AMBIENT_DETECTOR,
 		PRESSURE_DETECTOR = SENSOR_REPORTID_PRESSURE_DETECTOR,
+		HUMIDITY_DETECTOR = SENSOR_REPORTID_HUMIDITY_DETECTOR,
+		PROXIMITY_DETECTOR = SENSOR_REPORTID_PROXIMITY_DETECTOR,
+		TEMPERATURE_DETECTOR = SENSOR_REPORTID_TEMPERATURE_DETECTOR,
 	};
 
 	enum Stability {
@@ -242,7 +248,8 @@ extern "C" {
 		uint16_t patchSoftwareVersion;
 		uint32_t partNumber;
 		uint32_t buildNumber;
-		float rotationAccuracy, geomagneticRotationAccuracy, ambient, pressure;
+		float rotationAccuracy, geomagneticRotationAccuracy;
+		double ambient, pressure, humidity, proximity, temperature;
 		uint8_t statusA, statusG, statusM;
 	} _BnoData_t;
 
@@ -267,9 +274,9 @@ extern "C" {
 	void sendTareCommand(uint8_t, uint8_t, uint8_t);
 
 	double qToFloat(int16_t, uint8_t);
-	float qToFloat_dword(uint32_t, int16_t);
-	int16_t floatToQ(float, uint8_t);
-	int32_t floatToQ_dword(float t, uint16_t);
+	double qToFloat_dword(uint32_t, uint16_t);
+	uint16_t floatToQ(float, uint8_t);
+	uint32_t floatToQ_dword(float t, uint16_t);
 
 	void setFeatureCommand(uint8_t, uint16_t, uint32_t);
 	void enableReport(enum Report, uint16_t);

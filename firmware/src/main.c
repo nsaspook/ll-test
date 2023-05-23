@@ -364,6 +364,7 @@ int main(void)
 			enableReport(SENSOR_REPORTID_CIRCLE_DETECTOR, UPDATE_MS_MISC);
 			enableReport(SENSOR_REPORTID_AMBIENT_DETECTOR, UPDATE_MS_ENV);
 			enableReport(SENSOR_REPORTID_PRESSURE_DETECTOR, UPDATE_MS_ENV);
+			enableReport(SENSOR_REPORTID_TEMPERATURE_DETECTOR, UPDATE_MS_ENV);
 			if (!enableCalibration(true, true, true)) {
 				//				while (true) {
 				eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
@@ -465,12 +466,12 @@ int main(void)
 #endif
 
 #ifdef SHOW_LCD
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", accel.x, accel.y, accel.z, bno.ambient);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %6.2fL", accel.x, accel.y, accel.z, bno.ambient);
 			eaDogM_WriteStringAtPos(0, 0, buffer);
 #ifndef BNO086
 			snprintf(buffer, max_buf, "%6.2f,%6.2f,%6.2f,%5.1f", accel.xa, accel.ya, accel.za, accel.sensortemp);
 #else
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.linearAcceleration.v[0], bno.linearAcceleration.v[1], bno.linearAcceleration.v[2], bno.pressure);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %6.2fM", bno.linearAcceleration.v[0], bno.linearAcceleration.v[1], bno.linearAcceleration.v[2], bno.pressure);
 			eaDogM_WriteStringAtPos(1, 0, buffer);
 			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.rotationVector.v[0], bno.rotationVector.v[1], bno.rotationVector.v[2], bno.rotationVector.w);
 #endif
@@ -628,6 +629,8 @@ int main(void)
 				eaDogM_WriteStringAtPos(11, 0, buffer);
 				snprintf(buffer, max_buf, "Status %c%c%c", bno_Status[bno.statusA], bno_Status[bno.statusG], bno_Status[bno.statusM]);
 				eaDogM_WriteStringAtPos(3, 20, buffer);
+				snprintf(buffer, max_buf, " %6.2fC", bno.temperature);
+				eaDogM_WriteStringAtPos(15, 20, buffer);
 				snprintf(buffer, max_buf, "ErrorT %d", txe);
 				eaDogM_WriteStringAtPos(4, 20, buffer);
 				snprintf(buffer, max_buf, "ErrorR %d", rxe);
