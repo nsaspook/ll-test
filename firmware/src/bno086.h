@@ -175,6 +175,9 @@ extern "C" {
 
 #define TARE_AXIS_ALL 0x07
 #define TARE_AXIS_Z   0x04
+	
+#define QEI_TARE_ALL	20
+#define QEI_TARE_Z	10
 
 #define BNO080_RESET_TIMEOUT 180ms
 

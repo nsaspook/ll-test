@@ -18,13 +18,14 @@ import javax.swing.JFrame;
 import javax.vecmath.Quat4d;
 import javax.vecmath.Vector3d;
 import javax.vecmath.Point3f;
-import com.fazecast.jSerialComm.SerialPort;
+//import javax.vecmath.AxisAngle4f;
+//import com.fazecast.jSerialComm.SerialPort;
 import com.sun.j3d.utils.geometry.ColorCube;
 import javax.media.j3d.Text3D;
 import com.sun.j3d.utils.universe.SimpleUniverse;
-import java.util.Properties;
+//import java.util.Properties;
 import java.net.Socket;
-import java.net.InetAddress;
+//import java.net.InetAddress;
 import javax.media.j3d.*;
 
 /**
@@ -43,7 +44,7 @@ public class Bnocube {
         ColorCube cube = new ColorCube(0.3);
         Font myFont = new Font("TimesRoman", Font.CENTER_BASELINE, 1);
         Font3D myFont3D = new Font3D(myFont, new FontExtrusion());
-        Point3f textPt = new Point3f(-1.6f, 0.4f, -1.0f);
+        Point3f textPt = new Point3f(-1.6f, 0.4f, -1.0f); // place the text near the cube
         Text3D myText3D = new Text3D(myFont3D, "BNO086", textPt);
         Shape3D myShape3D = new Shape3D(myText3D, new Appearance());
 
@@ -80,17 +81,21 @@ public class Bnocube {
                     if (token[0].equals("  1")) {
                         System.out.println(String.format("dtype = %3s  device = %s :%s:%s:%s:%s:%s:%s:%s:", token[0], token[1], token[2], token[3], token[4], token[5], token[6], token[7], token[8]));
                         // multiply x/y/z by -1 to swap frames of reference
-                        double x = Double.parseDouble(token[4]);
+                        double x = Double.parseDouble(token[2]);
                         double y = Double.parseDouble(token[3]);
-                        double z = Double.parseDouble(token[2]);
+                        double z = Double.parseDouble(token[4]);
                         double w = Double.parseDouble(token[5]);
                         double ax = Double.parseDouble(token[6]);
                         double ay = Double.parseDouble(token[7]);
                         double az = Double.parseDouble(token[8]);
 
-                        Quat4d quaternion = new Quat4d(w, -x, -y, -z);
-                        Vector3d vector = new Vector3d((ax * 0.02), (ay * 0.02), (az * 0.02));
-                        transformGroup.setTransform(new Transform3D(quaternion, vector, 0.5));
+                        Quat4d quaternion = new Quat4d(w, -y, -z, -x); // cube 3D position
+                        // -(√2)/2 = -0.70710678118f
+                        Quat4d a = new Quat4d(1.0f, 0.0f, 0.0f, 0.0f); // set cube position correction rotation matrix
+                        a.normalize(); // make sure we have a proper rotation quaterion
+                        quaternion.mul(a); // multiply IMU quaternion with rotation quaternion to flip cube and text
+                        Vector3d vector = new Vector3d((ax * 0.02), (ay * 0.02), (az * 0.02)); // acceleration vector for cube vibration
+                        transformGroup.setTransform(new Transform3D(quaternion, vector, 0.5)); // place it on the screen with motions from IMU
 
                         // the inverse cosine of w gives you the pitch *if* you normalize the quaternion with x and z being zero
                         double pitch = Math.acos(w / Math.sqrt(w * w + y * y)) * 2.0 - (Math.PI / 2.0);

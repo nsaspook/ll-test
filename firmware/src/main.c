@@ -352,7 +352,7 @@ int main(void)
 			/*
 			 * start the IMU sensor data reports
 			 */
-			sendTareCommand(TARE_SET_REORIENTATION, 0, 0);
+			//			sendTareCommand(TARE_SET_REORIENTATION, 0, 0);
 			enableReport(ROTATION, UPDATE_MS_R);
 			enableReport(TOTAL_ACCELERATION, UPDATE_MS_T);
 			enableReport(LINEAR_ACCELERATION, UPDATE_MS_L);
@@ -368,12 +368,10 @@ int main(void)
 			enableReport(SENSOR_REPORTID_TEMPERATURE_DETECTOR, UPDATE_MS_ENV);
 			enableReport(SENSOR_REPORTID_PROXIMITY_DETECTOR, UPDATE_MS_PROX);
 			if (!enableCalibration(true, true, true)) {
-				//				while (true) {
 				eaDogM_WriteStringAtPos(6, 0, cmd_buffer);
 				eaDogM_WriteStringAtPos(7, 0, response_buffer);
 				OledUpdate();
-				WaitMs(5000);
-				//				}
+				WaitMs(2000);
 			}
 			imu_start = false;
 		}
@@ -492,7 +490,7 @@ int main(void)
 #else
 			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f, %6.2fM", bno.linearAcceleration.v[0], bno.linearAcceleration.v[1], bno.linearAcceleration.v[2], bno.pressure);
 			eaDogM_WriteStringAtPos(1, 0, buffer);
-			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.rotationVector.v[0], bno.rotationVector.v[1], bno.rotationVector.v[2], bno.rotationVector.w);
+			snprintf(buffer, max_buf, "%6.3f,%6.3f,%6.3f,%6.3f", bno.rotationVector.w, bno.rotationVector.v[0], bno.rotationVector.v[1], bno.rotationVector.v[2]);
 #endif
 			eaDogM_WriteStringAtPos(2, 0, buffer);
 			if (!H.dis_alt) {
@@ -617,13 +615,23 @@ int main(void)
 				H.dis_reset = false;
 				buzzer_trigger(BZ2);
 
-				if (POS2CNT < -100) {
-					//					sendTareCommand(TARE_NOW, TARE_AXIS_ALL, 0);
-					//					WaitMs(150);
+				/*
+				 * https://device.report/m/4c258d2249c126f669c247d75c0baab5eb699404610635b5eb7ac24940ea58a0.pdf
+				 * BNO080 set tare
+				 */
+				if (((int32_t) POS2CNT) > ((int32_t) QEI_TARE_ALL)) { // full position set
+					sendTareCommand(TARE_NOW, TARE_AXIS_ALL, 0);
+					WaitMs(150);
 					sendTareCommand(TARE_PERSIST, 0, 0);
 					POS2CNT = 0;
+					saveCalibration();
+				} else {
+					if (((int32_t) POS2CNT) > ((int32_t) QEI_TARE_Z)) { // set forward
+						sendTareCommand(TARE_NOW, TARE_AXIS_Z, 0);
+						POS2CNT = 0;
+					} else {
+					}
 				}
-				saveCalibration();
 			}
 			if (H.silent) {
 				if (dot_anim++ < SDOT_ON) {
@@ -668,6 +676,8 @@ int main(void)
 					snprintf(buffer, max_buf, "Ce1 %X", CFD1BDIAG1);
 					eaDogM_WriteStringAtPos(11, 18, buffer);
 				} else {
+					snprintf(buffer, max_buf, "RAcc %3.2fR", bno.rotationAccuracy);
+					eaDogM_WriteStringAtPos(4, 20, buffer);
 					if (bno.partNumber != 0) {
 						snprintf(buffer, max_buf, "PN %X", bno.partNumber);
 						eaDogM_WriteStringAtPos(9, 18, buffer);
