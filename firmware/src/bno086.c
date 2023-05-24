@@ -538,7 +538,6 @@ void parseSensorDataPacket(void)
 			break;
 		case SENSOR_REPORTID_AMBIENT_DETECTOR:
 		{
-			TP2_Toggle();
 			uint32_t env_data;
 			env_data = (uint32_t) rxShtpData[currReportOffset + 7] << 24 | rxShtpData[currReportOffset + 6] << 16 | rxShtpData[currReportOffset + 5] << 8 | rxShtpData[currReportOffset + 4];
 			bno.ambient = qToFloat_dword(env_data, 8);
@@ -563,6 +562,7 @@ void parseSensorDataPacket(void)
 			break;
 		case SENSOR_REPORTID_PROXIMITY_DETECTOR:
 		{
+			TP2_Toggle();
 			uint16_t env_data;
 			env_data = (uint16_t) rxShtpData[currReportOffset + 5] << 8 | rxShtpData[currReportOffset + 4];
 			bno.proximity = qToFloat(env_data, 4);

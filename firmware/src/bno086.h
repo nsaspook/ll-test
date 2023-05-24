@@ -36,6 +36,7 @@ extern "C" {
 #define UPDATE_MS_ENV	1000
 #define UPDATE_MS_CAL	500
 #define UPDATE_MS_MISC	100
+#define UPDATE_MS_PROX	333
 
 	/*
 	 * fake IMU for code testing
