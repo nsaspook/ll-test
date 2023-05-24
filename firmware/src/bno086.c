@@ -90,27 +90,22 @@ void bno086_flush(void)
 	sendPacket(CHANNEL_CONTROL, 2, &imu0);
 }
 
-
-//Sends the packet to enable reports
-
+/*
+ * Sends the packet to enable reports
+ */
 void enableReport(enum Report report, uint16_t timeBetweenReports)
 {
-
 	// check time is valid
 	float periodSeconds = (float) (timeBetweenReports / 1000.0);
 
 	snprintf(imu_buffer, max_buf, "BNO08X time %.06f s", periodSeconds);
 	dprintf("%s\r\n", imu_buffer);
-
 	setFeatureCommand((uint8_t) report, timeBetweenReports, 0);
-
-	// note: we don't wait for ACKs on these packets because they can take quite a while, like half a second, to come in
 }
 
 void setFeatureCommand(uint8_t reportID, uint16_t timeBetweenReports, uint32_t specificConfig)
 {
 	uint32_t microsBetweenReports = (uint32_t) (timeBetweenReports * 1000);
-
 	const uint32_t batchMicros = 0;
 
 	txShtpData[0] = SHTP_REPORT_SET_FEATURE_COMMAND; //Set feature command. Reference page 55
@@ -137,7 +132,6 @@ void setFeatureCommand(uint8_t reportID, uint16_t timeBetweenReports, uint32_t s
 
 void productIdReg(void)
 {
-
 	txShtpData[0] = SHTP_REPORT_PRODUCT_ID_REQUEST; //Set feature command. Reference page 55
 	txShtpData[1] = 0;
 
@@ -149,7 +143,7 @@ void clearSendBuffer(void * imup)
 {
 	imu_cmd_t * imu = imup;
 
-	memset(imu->tbuf, 0, 256);
+	memset(imu->tbuf, 0, 512);
 }
 
 void bno086_set_spimode(void * imup)
@@ -167,7 +161,6 @@ void bno086_set_spimode(void * imup)
 	WaitMs(5);
 	DIS_RESET_Set();
 	WaitMs(10);
-
 
 	dprintf("\r\nbno086 setup start\r\n");
 	// set SPI MODE
@@ -207,11 +200,9 @@ void bno086_set_spimode(void * imup)
 					snprintf(imu_buffer, max_buf, "BNO08X interrupt detected");
 					dprintf("%s\r\n", imu_buffer);
 				}
-
 				LED_RED_Off();
 				LED_GREEN_On();
 			}
-
 		}
 		/*
 		 * eat any IMU boot messages
@@ -239,24 +230,23 @@ void get_id_dummy(void)
 {
 	clearSendBuffer(&imu0);
 	TP3_Clear(); // send a WAKE signal to the IMU
-	delay_us(2000);
+	delay_us(500);
 	TP3_Set();
 	IMU_CS_Clear();
-	SPI2_WriteRead(imu0.tbuf, 256, imu0.rbuf, 256);
+	SPI2_WriteRead(imu0.tbuf, 512, imu0.rbuf, 512);
 	IMU_CS_Set();
 	clearSendBuffer(&imu0);
 	TP3_Clear(); // send a WAKE signal to the IMU
-	delay_us(2000);
+	delay_us(500);
 	TP3_Set();
 	IMU_CS_Clear();
-	SPI2_WriteRead(imu0.tbuf, 256, imu0.rbuf, 256);
+	SPI2_WriteRead(imu0.tbuf, 512, imu0.rbuf, 512);
 	IMU_CS_Set();
 
 	txShtpData[0] = SHTP_REPORT_PRODUCT_ID_REQUEST; //Request the product ID and reset info
 	txShtpData[1] = 0; //Reserved
 
 	sendPacket(CHANNEL_CONTROL, 2, &imu0);
-	//	while (true);
 	waitForPacket(CHANNEL_CONTROL, SHTP_REPORT_PRODUCT_ID_RESPONSE, &imu0);
 	snprintf(cmd_buffer, max_buf, "BNO08X waitForPacket");
 	dprintf("%s\r\n", cmd_buffer);
@@ -622,7 +612,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 
 	dprintf("bno086_get_packet\r\n");
 	if (imu->rbuf[0] == 0xff && imu->rbuf[1] == 0xff) { // check for invalid device data
-		LED_RED_On(); // 
+		// not a real failure usually
 		snprintf(response_buffer, max_buf, "BNO08X bad, invalid data");
 		return false;
 	}
@@ -630,7 +620,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 	//Calculate the number of data bytes in this packet
 	totalLength = (uint16_t) imu->rbuf[0] + (((uint16_t) imu->rbuf[1]) << 8);
 
-	// Clear the MSbit.
+	// Clear the MSbit for a continued data packet
 	totalLength &= ~(1 << 15);
 
 	if (totalLength == 0) {
@@ -644,12 +634,14 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 
 	if (totalLength <= read_b) {
 		// the original transaction already read the completed packet!  We're done.
+		LED_GREEN_Set();
 		return true;
 	}
 
 	if (rxPacketLength > SHTP_RX_PACKET_SIZE) {
 		snprintf(response_buffer, max_buf, "BNO08X long packet 0x%x > 0x%x", rxPacketLength, SHTP_RX_PACKET_SIZE);
 		dprintf("%s\r\n", response_buffer);
+		LED_RED_On();
 		return false;
 	}
 
@@ -672,6 +664,7 @@ bool bno086_get_cpacket(size_t read_b, void * imup)
 		memmove(imu->rbuf + read_b, imu->rbuf + read_b + SHTP_HEADER_SIZE, receiveLength - SHTP_HEADER_SIZE);
 	}
 	IMU_CS_Set();
+	LED_GREEN_Set();
 	return true;
 }
 

@@ -19,6 +19,7 @@ extern "C" {
 #define SHOW_LA
 #define fft_max_pixel		64
 #define fft_resolution_shift	1
+#define fft_scale		2
 
 	static const double sine_res = 3600.0;
 	static const double sinea = 0.0;

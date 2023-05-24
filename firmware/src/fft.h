@@ -33,7 +33,7 @@ extern "C" {
 #define FFT_GAIN	40.0 // Murata imu
 #endif
 #else
-#define FFT_GAIN	4.0  // BNO gain
+#define FFT_GAIN	5.0  // BNO gain
 #endif
 
 	extern uint8_t inB[], fft_buffer[];

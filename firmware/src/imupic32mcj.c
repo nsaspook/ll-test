@@ -119,6 +119,7 @@ void update_imu_int_bno(uint32_t a, uintptr_t context)
 	if (imu) {
 		imu->update = true;
 		bno08x_int_count++;
+		LED_GREEN_Set();
 	}
 }
 

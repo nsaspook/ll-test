@@ -340,6 +340,7 @@ int main(void)
 	WaitMs(5000);
 #endif
 
+	get_id_dummy(); // try to read the BNO chip ID
 	// loop collecting data
 	StartTimer(TMR_LOG, imu0.log_timeout);
 	StartTimer(TMR_IMU_DATA, imu_data_ms);
@@ -390,7 +391,7 @@ int main(void)
 
 		/*
 		 * data logging routine
-		 * convert the SPI XYZ response to standard floating point acceleration values and rolling integer time-stamps per measurement
+		 * convert the SPI IMU response to standard floating point acceleration values and rolling integer time-stamps per measurement
 		 */
 		if (imu0.update || TimerDone(TMR_LOG)) {
 			if (TimerDone(TMR_LOG)) {
@@ -667,7 +668,12 @@ int main(void)
 					snprintf(buffer, max_buf, "Ce1 %X", CFD1BDIAG1);
 					eaDogM_WriteStringAtPos(11, 18, buffer);
 				} else {
-
+					if (bno.partNumber != 0) {
+						snprintf(buffer, max_buf, "PN %X", bno.partNumber);
+						eaDogM_WriteStringAtPos(9, 18, buffer);
+						snprintf(buffer, max_buf, "SW %hhu.%hhu.%hu:%X", bno.majorSoftwareVersion, bno.minorSoftwareVersion, bno.patchSoftwareVersion, bno.buildNumber);
+						eaDogM_WriteStringAtPos(10, 18, buffer);
+					}
 				}
 				snprintf(buffer, max_buf, "CINT %X, %d, %d, %d", CFD1INT, canfd_num_tx(), canfd_num_stall(), canfd_num_rx());
 				eaDogM_WriteStringAtPos(13, 0, buffer);
