@@ -13,7 +13,7 @@ extern "C" {
 #include "buzzer.h"
 #include "gfx.h"
 
-#define HID_DRIVER "V1.002" 
+#define HID_DRIVER "V1.015" 
 #define HID_ALIAS "HID"
 
 #define FFT_WAKE	1500
@@ -25,6 +25,9 @@ extern "C" {
 	 */
 #define SDOT_ON		70
 #define SDOT_OFF	140
+
+#define PROX_T_H	8.5f
+#define PROX_T_L	1.0f
 
 	typedef enum {
 		H_init,

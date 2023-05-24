@@ -26,10 +26,14 @@ extern "C" {
 #define PI2N 2 * M_PI / N_FFT
 #define FFT_COUNT   256
 
+#ifndef BNO086
 #ifdef BMA400 // Bosch devices, gain and noise product
 #define FFT_GAIN	5.0  // low cost, high noise
 #else
 #define FFT_GAIN	40.0 // Murata imu
+#endif
+#else
+#define FFT_GAIN	4.0  // BNO gain
 #endif
 
 	extern uint8_t inB[], fft_buffer[];

@@ -21,7 +21,7 @@ extern "C" {
 #include "timers.h"
 
 #define SDEBUG_psd	// parse sensor data
-	
+
 
 	/*
 	 * Board hardware configurations
@@ -57,6 +57,9 @@ extern "C" {
 #define BMA490L // this device is not longer used but functions are needed
 #undef SCA3300
 #endif
+
+#define B_ID_0	0xFF0108
+#define B_ID_1	0x10534743
 
 #define IMU_CS 0
 #define LCD_CS 0

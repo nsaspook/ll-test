@@ -163,7 +163,7 @@ void start_tick(void)
 #ifdef __32MZ1025W104132__
 	cpu_serial_id = USERID & 0x1fffffff; // get CPU device 32-bit serial number and convert that to 29 - bit ID for CAN - FD
 #else
-	cpu_serial_id = DEVSN0 & 0x1fffffff; // get CPU device 32-bit serial number and convert that to 29 - bit ID for CAN - FD
+	cpu_serial_id = DEVSN1 & 0x1fffffff; // get CPU device 32-bit serial number and convert that to 29 - bit ID for CAN - FD
 #endif
 }
 

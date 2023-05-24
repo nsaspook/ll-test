@@ -216,7 +216,7 @@ int main(void)
 #endif
 	uint8_t alter = 0;
 #endif
-	bool wait = true, fft_settle = false, imu_start = true;
+	bool wait = true, fft_settle = false, imu_start = true, proxi = false, can_stats = false;
 	;
 	uint8_t ffti = 0, w = 0;
 	uint16_t fft_count = 0, dot_anim = 0;
@@ -419,8 +419,8 @@ int main(void)
 				rx_msg_ready = false;
 				remote_cmd_decode(host_ptr);
 			}
-			if (!H.dis_alt) {
-				eaDogM_WriteStringAtPos(12, 0, hbuffer);
+			if (!H.dis_alt) { // show remote command from network host
+				//				eaDogM_WriteStringAtPos(12, 0, hbuffer);
 			}
 
 			/*
@@ -453,7 +453,7 @@ int main(void)
 						memcpy(fft0.buffer, &fft_buffer[60], 60);
 						canfd_state(CAN_TRANSMIT_FD, &fft0);
 					}
-					if (!fft_settle && (fft_count++ >= FFT_COUNT)) {
+					if ((!fft_settle) && (fft_count++ >= FFT_COUNT)) {
 						fft_settle = true;
 					}
 					alter = 0; // restart data sequence
@@ -461,6 +461,23 @@ int main(void)
 				default:
 					alter = 0;
 					break;
+				}
+				/*
+				 * Proximity sensor functions
+				 */
+				if ((bno.proximity < PROX_T_H) && (bno.proximity > PROX_T_L)) {
+					if (!proxi) {
+						proxi = true;
+						if (H.dis_reset) {
+							MISC_0_Set(); // blanking off
+							H.dis_reset = false;
+							buzzer_trigger(BZ3);
+						} else {
+							buzzer_trigger(BZ1); // soft buzz for in trigger zone
+						}
+					}
+				} else {
+					proxi = false;
 				}
 #ifdef BNO086
 			}
@@ -626,28 +643,32 @@ int main(void)
 #ifdef SHOW_LCD
 			CAN1_ErrorCountGet(&txe, &rxe);
 			if (!H.dis_alt) {
-				snprintf(buffer, max_buf, "can-fd %X", board_serial_id);
+				snprintf(buffer, max_buf, "CPU-ID %X", board_serial_id);
 				eaDogM_WriteStringAtPos(11, 0, buffer);
 				snprintf(buffer, max_buf, "Status %c%c%c", bno_Status[bno.statusA], bno_Status[bno.statusG], bno_Status[bno.statusM]);
 				eaDogM_WriteStringAtPos(3, 20, buffer);
 				snprintf(buffer, max_buf, " %6.2fC", bno.temperature);
 				eaDogM_WriteStringAtPos(15, 20, buffer);
-				snprintf(buffer, max_buf, "ErrorT %d", txe);
-				eaDogM_WriteStringAtPos(4, 20, buffer);
-				snprintf(buffer, max_buf, "ErrorR %d", rxe);
-				eaDogM_WriteStringAtPos(5, 20, buffer);
-				snprintf(buffer, max_buf, "Can INT %d", CAN1_InterruptGet(1, 0x1f));
-				eaDogM_WriteStringAtPos(6, 20, buffer);
-				snprintf(buffer, max_buf, "TX Full %s", CAN1_TxFIFOQueueIsFull(1) ? "Y" : "N");
-				eaDogM_WriteStringAtPos(7, 20, buffer);
-				snprintf(buffer, max_buf, "Update %d", ++times);
-				eaDogM_WriteStringAtPos(8, 20, buffer);
-				snprintf(buffer, max_buf, "REQ %X", CFD1TXREQ);
-				eaDogM_WriteStringAtPos(9, 20, buffer);
-				snprintf(buffer, max_buf, "Ce0 %X", CFD1BDIAG0);
-				eaDogM_WriteStringAtPos(10, 18, buffer);
-				snprintf(buffer, max_buf, "Ce1 %X", CFD1BDIAG1);
-				eaDogM_WriteStringAtPos(11, 18, buffer);
+				if (can_stats) {
+					snprintf(buffer, max_buf, "ErrorT %d", txe);
+					eaDogM_WriteStringAtPos(4, 20, buffer);
+					snprintf(buffer, max_buf, "ErrorR %d", rxe);
+					eaDogM_WriteStringAtPos(5, 20, buffer);
+					snprintf(buffer, max_buf, "Can INT %d", CAN1_InterruptGet(1, 0x1f));
+					eaDogM_WriteStringAtPos(6, 20, buffer);
+					snprintf(buffer, max_buf, "TX Full %s", CAN1_TxFIFOQueueIsFull(1) ? "Y" : "N");
+					eaDogM_WriteStringAtPos(7, 20, buffer);
+					snprintf(buffer, max_buf, "Update %d", ++times);
+					eaDogM_WriteStringAtPos(8, 20, buffer);
+					snprintf(buffer, max_buf, "REQ %X", CFD1TXREQ);
+					eaDogM_WriteStringAtPos(9, 20, buffer);
+					snprintf(buffer, max_buf, "Ce0 %X", CFD1BDIAG0);
+					eaDogM_WriteStringAtPos(10, 18, buffer);
+					snprintf(buffer, max_buf, "Ce1 %X", CFD1BDIAG1);
+					eaDogM_WriteStringAtPos(11, 18, buffer);
+				} else {
+
+				}
 				snprintf(buffer, max_buf, "CINT %X, %d, %d, %d", CFD1INT, canfd_num_tx(), canfd_num_stall(), canfd_num_rx());
 				eaDogM_WriteStringAtPos(13, 0, buffer);
 			}

@@ -44,6 +44,12 @@ double get_imu_scale(imu_cmd_t * imu)
 		switch (imu->acc_range) {
 		case range_bno:
 			accelRange = IMU_BNO_ACCEL_MG_SCALE;
+			if (board_serial_id == B_ID_0) {
+				accelRange = IMU_BNO_ACCEL_MG_SCALE_0;
+			}
+			if (board_serial_id == B_ID_1) {
+				accelRange = IMU_BNO_ACCEL_MG_SCALE_1;
+			}
 			break;
 		case range_16g:
 			accelRange = BMA490_ACCEL_MG_LSB_16G * GRAVITY_EARTH * IMU_ACCEL_MG_SCALE;

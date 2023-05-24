@@ -20,7 +20,7 @@ extern "C" {
 #include "bno086_reg.h"
 #include "quat.h"
 
-#define IMU_DRIVER "V1.705" 
+#define IMU_DRIVER "V1.715" 
 #ifdef BNO086
 #define IMU_ALIAS "BNO086 IMU"    
 #else
@@ -160,29 +160,31 @@ extern "C" {
 	};
 
 	/*! Earth's gravity in m/s^2 */
-#define GRAVITY_EARTH   (9.80665) 
+#define GRAVITY_EARTH   (9.80665f) 
 	/*
 	 * device earth gravity range calibration scalars
 	 */
-#define BMA400_ACCEL_MG_LSB_2G  0.000980665
-#define BMA490_ACCEL_MG_LSB_2G  0.000061035 ///< Macro for mg per LSB at +/- 2g sensitivity (1 LSB = 0.000061035mg) */
-#define BMA490_ACCEL_MG_LSB_4G  0.000122070 ///< Macro for mg per LSB at +/- 4g sensitivity (1 LSB = 0.000122070mg) */
-#define BMA490_ACCEL_MG_LSB_8G  0.000244141 ///< Macro for mg per LSB at +/- 8g sensitivity (1 LSB = 0.000244141mg) */
-#define BMA490_ACCEL_MG_LSB_16G  0.000488281 ///< Macro for mg per LSB at +/- 16g sensitivity (1 LSB = 0.000488281mg) */
-#define IMU_ACCEL_MG_SCALE	1.000000000
-#define IMU_BNO_ACCEL_MG_SCALE  0.9840000000
-#define SCA3300_ACCEL_MG_LSB_15G 0.000207000 ///< Macro for mg per LSB at +/- 1.5g sensitivity	LSB/g 5400
-#define SCA3300_ACCEL_MG_LSB_3G  0.000395000 ///< Macro for mg per LSB at +/- 3g sensitivity		LSB/g 2700
-#define SCA3300_ACCEL_MG_LSB_6G  0.000765000 ///< Macro for mg per LSB at +/- 6g sensitivity		LSB/g 1350
-#define SCL3300_ACCEL_MG_LSB_12G 0.000167400 ///< Macro for mg per LSB at +/- 1.2g sensitivity	LSB/g 6000
-#define SCL3300_ACCEL_MG_LSB_24G 0.000333800 ///< Macro for mg per LSB at +/- 2.4g sensitivity	LSB/g 3000
-#define SCL3300_INC1   0.000083700
-#define SCL3300_INC2   0.000083700
+#define BMA400_ACCEL_MG_LSB_2G  0.000980665f
+#define BMA490_ACCEL_MG_LSB_2G  0.000061035f ///< Macro for mg per LSB at +/- 2g sensitivity (1 LSB = 0.000061035mg) */
+#define BMA490_ACCEL_MG_LSB_4G  0.000122070f ///< Macro for mg per LSB at +/- 4g sensitivity (1 LSB = 0.000122070mg) */
+#define BMA490_ACCEL_MG_LSB_8G  0.000244141f ///< Macro for mg per LSB at +/- 8g sensitivity (1 LSB = 0.000244141mg) */
+#define BMA490_ACCEL_MG_LSB_16G  0.000488281f ///< Macro for mg per LSB at +/- 16g sensitivity (1 LSB = 0.000488281mg) */
+#define IMU_ACCEL_MG_SCALE		1.000000000f
+#define IMU_BNO_ACCEL_MG_SCALE		0.9840000000f
+#define IMU_BNO_ACCEL_MG_SCALE_0	0.9840000000f
+#define IMU_BNO_ACCEL_MG_SCALE_1	0.9220000000f
+#define SCA3300_ACCEL_MG_LSB_15G 0.000207000f ///< Macro for mg per LSB at +/- 1.5g sensitivity	LSB/g 5400
+#define SCA3300_ACCEL_MG_LSB_3G  0.000395000f ///< Macro for mg per LSB at +/- 3g sensitivity		LSB/g 2700
+#define SCA3300_ACCEL_MG_LSB_6G  0.000765000f ///< Macro for mg per LSB at +/- 6g sensitivity		LSB/g 1350
+#define SCL3300_ACCEL_MG_LSB_12G 0.000167400f ///< Macro for mg per LSB at +/- 1.2g sensitivity	LSB/g 6000
+#define SCL3300_ACCEL_MG_LSB_24G 0.000333800f ///< Macro for mg per LSB at +/- 2.4g sensitivity	LSB/g 3000
+#define SCL3300_INC1   0.000083700f
+#define SCL3300_INC2   0.000083700f
 
-#define ANGLE_RES1  16384.0
-#define ANGLE_RES2  90.0
-#define TEMPERATURE_RES  18.9
-#define TEMPERATURE_OFFSET -273.0
+#define ANGLE_RES1  16384.0f
+#define ANGLE_RES2  90.0f
+#define TEMPERATURE_RES  18.9f
+#define TEMPERATURE_OFFSET -273.0f
 
 	typedef struct sFFTData_t {
 		uint16_t id;

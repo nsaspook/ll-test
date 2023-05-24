@@ -27,7 +27,7 @@ extern "C" {
 #include "bno086_reg.h"
 #include "imu.h"
 
-#define BNO086_DRIVER	"V1.005" 
+#define BNO086_DRIVER	"V1.015" 
 #define BNO086_ALIAS	"BNO086"
 
 #define UPDATE_MS_T	20
