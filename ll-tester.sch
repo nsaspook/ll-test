@@ -18117,6 +18117,8 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 </class>
 <class number="3" name="diff_can" width="0.0508" drill="0">
 </class>
+<class number="4" name="heavy" width="0.762" drill="0">
+</class>
 </classes>
 <parts>
 <part name="U1" library="2022-08-07_22-50-41_Library" deviceset="PIC32MK0512MCJ048T-I/Y8X" device="TQFP48_Y8X_MCH-M"/>
@@ -18174,7 +18176,6 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <part name="S1" library="JS202011SCQN_fixed" deviceset="JS202011SCQN" device=""/>
 <part name="JP5" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="/90" package3d_urn="urn:adsk.eagle:package:22404/2" value="CAN-FD"/>
 <part name="VSS24" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
-<part name="VDD6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="R5" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="M0805" package3d_urn="urn:adsk.eagle:package:23556/2" value="120"/>
 <part name="SV1" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA07-1" device="" package3d_urn="urn:adsk.eagle:package:8341/1" value="ETH1"/>
 <part name="VDD7" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
@@ -18379,6 +18380,9 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
 <part name="VSS78" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="VSS79" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="SJ10" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="heavy_reg"/>
+<part name="SJ11" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="heavy_can"/>
+<part name="VDD6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18582,9 +18586,6 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 </instance>
 <instance part="VSS24" gate="G$1" x="-48.26" y="88.9" smashed="yes">
 <attribute name="VALUE" x="-50.8" y="83.82" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="VDD6" gate="G$1" x="-68.58" y="99.06" smashed="yes">
-<attribute name="VALUE" x="-71.12" y="96.52" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="R5" gate="G$1" x="-5.08" y="137.16" smashed="yes" rot="R90">
 <attribute name="NAME" x="-6.5786" y="133.35" size="1.778" layer="95" rot="R90"/>
@@ -19303,6 +19304,17 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <instance part="VSS79" gate="G$1" x="-5.08" y="-48.26" smashed="yes" rot="R270">
 <attribute name="VALUE" x="-10.16" y="-45.72" size="1.778" layer="96"/>
 </instance>
+<instance part="SJ10" gate="1" x="175.26" y="-30.48" smashed="yes" rot="R270">
+<attribute name="NAME" x="167.64" y="-33.02" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="171.45" y="-38.1" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="SJ11" gate="1" x="-63.5" y="96.52" smashed="yes">
+<attribute name="NAME" x="-60.96" y="88.9" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-55.88" y="92.71" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="VDD6" gate="G$1" x="-58.42" y="99.06" smashed="yes">
+<attribute name="VALUE" x="-60.96" y="96.52" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -19407,12 +19419,6 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <junction x="-7.62" y="124.46"/>
 </segment>
 <segment>
-<pinref part="JP5" gate="A" pin="4"/>
-<wire x1="-78.74" y1="96.52" x2="-68.58" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="VDD6" gate="G$1" pin="VDD"/>
-<junction x="-68.58" y="96.52"/>
-</segment>
-<segment>
 <pinref part="SV1" gate="1" pin="6"/>
 <wire x1="-73.66" y1="68.58" x2="-66.04" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="VDD7" gate="G$1" pin="VDD"/>
@@ -19465,6 +19471,7 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <pinref part="C22" gate="G$1" pin="1"/>
 <pinref part="3.3VTP" gate="G$1" pin="TP"/>
 <junction x="187.96" y="-35.56"/>
+<pinref part="SJ10" gate="1" pin="2"/>
 </segment>
 <segment>
 <pinref part="IC2" gate="G$1" pin="VCC"/>
@@ -19729,6 +19736,11 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <wire x1="10.16" y1="-88.9" x2="10.16" y2="-83.82" width="0.1524" layer="91"/>
 <junction x="10.16" y="-88.9"/>
 <junction x="10.16" y="-83.82"/>
+</segment>
+<segment>
+<pinref part="SJ11" gate="1" pin="2"/>
+<pinref part="VDD6" gate="G$1" pin="VDD"/>
+<junction x="-58.42" y="96.52"/>
 </segment>
 </net>
 <net name="VSS" class="1">
@@ -22069,6 +22081,25 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <junction x="10.16" y="-210.82"/>
 </segment>
 </net>
+<net name="HEAVY" class="4">
+<segment>
+<wire x1="175.26" y1="-25.4" x2="175.26" y2="-10.16" width="0.1524" layer="91"/>
+<label x="177.8" y="-12.7" size="1.778" layer="95"/>
+<pinref part="SJ10" gate="1" pin="1"/>
+<junction x="175.26" y="-25.4"/>
+<junction x="175.26" y="-10.16"/>
+</segment>
+<segment>
+<pinref part="JP5" gate="A" pin="4"/>
+<wire x1="-78.74" y1="96.52" x2="-68.58" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="SJ11" gate="1" pin="1"/>
+<wire x1="-68.58" y1="96.52" x2="-68.58" y2="111.76" width="0.1524" layer="91"/>
+<junction x="-68.58" y="96.52"/>
+<junction x="-68.58" y="111.76"/>
+<label x="-73.66" y="106.68" size="1.778" layer="95"/>
+<label x="-73.66" y="101.6" size="1.778" layer="95"/>
+</segment>
+</net>
 </nets>
 </sheet>
 </sheets>
@@ -22103,7 +22134,6 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <approved hash="208,1,5.08,132.08,VDD,sup,,,,"/>
 <approved hash="208,1,-17.78,111.76,VDD,sup,,,,"/>
 <approved hash="208,1,193.04,93.98,VDD,sup,,,,"/>
-<approved hash="208,1,-68.58,96.52,VDD,sup,,,,"/>
 <approved hash="208,1,-66.04,68.58,VDD,sup,,,,"/>
 <approved hash="208,1,-76.2,45.72,VDD,sup,,,,"/>
 <approved hash="208,1,-68.58,45.72,VDD,sup,,,,"/>
@@ -22128,6 +22158,7 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <approved hash="208,1,251.46,-167.64,VDD,sup,,,,"/>
 <approved hash="208,1,238.76,-101.6,VDD,sup,,,,"/>
 <approved hash="208,1,10.16,-88.9,VDD,sup,,,,"/>
+<approved hash="208,1,-58.42,96.52,VDD,sup,,,,"/>
 <approved hash="206,1,116.84,-7.62,VREF+,,,,,"/>
 <approved hash="206,1,116.84,-5.08,VREF+,,,,,"/>
 </errors>

@@ -9,9 +9,9 @@ build/bma400/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
  ../src/config/bma400/peripheral/gpio/plib_gpio.h \
  ../src/config/bma400/peripheral/evic/plib_evic.h \
  ../src/config/bma400/peripheral/dmac/plib_dmac.h \
+ ../src/config/bma400/peripheral/coretimer/plib_coretimer.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr6.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr_common.h \
- ../src/config/bma400/peripheral/coretimer/plib_coretimer.h \
  ../src/config/bma400/peripheral/adchs/plib_adchs.h \
  ../src/config/bma400/peripheral/adchs/plib_adchs_common.h \
  ../src/config/bma400/peripheral/tmr/plib_tmr4.h \
@@ -63,11 +63,11 @@ build/bma400/production/_ext/1360937237/gfx.o: ../src/gfx.c ../src/gfx.h \
 
 ../src/config/bma400/peripheral/dmac/plib_dmac.h:
 
+../src/config/bma400/peripheral/coretimer/plib_coretimer.h:
+
 ../src/config/bma400/peripheral/tmr/plib_tmr6.h:
 
 ../src/config/bma400/peripheral/tmr/plib_tmr_common.h:
-
-../src/config/bma400/peripheral/coretimer/plib_coretimer.h:
 
 ../src/config/bma400/peripheral/adchs/plib_adchs.h:
 

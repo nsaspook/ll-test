@@ -18798,8 +18798,8 @@ In this library the device names are the same as the pin names of the symbols, t
 <attribute name="VALUE" x="150.622" y="153.67" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="C32" gate="G$1" x="149.86" y="152.4" smashed="yes" rot="R90">
-<attribute name="NAME" x="149.225" y="153.416" size="1.778" layer="95" rot="R90"/>
-<attribute name="VALUE" x="154.051" y="153.416" size="1.778" layer="96" rot="R90"/>
+<attribute name="NAME" x="153.924" y="161.925" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="156.464" y="159.131" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="VSS62" gate="G$1" x="157.48" y="152.4" smashed="yes" rot="R90">
 <attribute name="VALUE" x="160.02" y="154.94" size="1.778" layer="96" rot="R270"/>
