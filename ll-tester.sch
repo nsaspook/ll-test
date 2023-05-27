@@ -18379,6 +18379,7 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <part name="R22" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
 <part name="VSS78" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="VSS79" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="I2C" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="I2C"/>
 </parts>
 <sheets>
 <sheet>
@@ -19302,6 +19303,10 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 </instance>
 <instance part="VSS79" gate="G$1" x="-5.08" y="-48.26" smashed="yes" rot="R270">
 <attribute name="VALUE" x="-10.16" y="-45.72" size="1.778" layer="96"/>
+</instance>
+<instance part="I2C" gate="G$1" x="261.62" y="25.4" smashed="yes">
+<attribute name="NAME" x="255.27" y="31.115" size="1.778" layer="95"/>
+<attribute name="VALUE" x="255.27" y="20.32" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -21824,6 +21829,13 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <junction x="312.42" y="0"/>
 <label x="314.96" y="0" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="251.46" y1="25.4" x2="259.08" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="I2C" gate="G$1" pin="2"/>
+<junction x="251.46" y="25.4"/>
+<junction x="259.08" y="25.4"/>
+<label x="243.84" y="25.4" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="BSCL" class="0">
 <segment>
@@ -21848,6 +21860,13 @@ Device Model created 15.06.2016 by Johannes Kolb - Vishay Semiconductor GmbH &lt
 <junction x="320.04" y="5.08"/>
 <junction x="312.42" y="5.08"/>
 <label x="314.96" y="5.08" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="251.46" y1="27.94" x2="259.08" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="I2C" gate="G$1" pin="1"/>
+<junction x="259.08" y="27.94"/>
+<junction x="251.46" y="27.94"/>
+<label x="243.84" y="27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$20" class="1">

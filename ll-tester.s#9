@@ -18561,15 +18561,15 @@ Source: &lt;a href="https://bourns.com/docs/product-datasheets/em14.pdf?sfvrsn=6
 <attribute name="VALUE" x="160.02" y="154.94" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="SJ4" gate="1" x="121.92" y="154.94" smashed="yes" rot="R90">
-<attribute name="NAME" x="111.76" y="157.48" size="1.778" layer="95" rot="R180"/>
+<attribute name="NAME" x="116.84" y="149.86" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="119.38" y="153.67" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="VSS63" gate="G$1" x="121.92" y="147.32" smashed="yes">
 <attribute name="VALUE" x="124.46" y="144.78" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="SJ7" gate="1" x="116.84" y="160.02" smashed="yes" rot="R180">
-<attribute name="NAME" x="114.3" y="149.86" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="109.22" y="166.37" size="1.778" layer="96"/>
+<attribute name="NAME" x="114.3" y="167.64" size="1.778" layer="95"/>
+<attribute name="VALUE" x="109.22" y="163.83" size="1.778" layer="96"/>
 </instance>
 <instance part="DISP_SIGS" gate="G$1" x="43.18" y="-101.6" smashed="yes">
 <attribute name="NAME" x="36.83" y="-95.885" size="1.778" layer="95"/>
