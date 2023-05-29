@@ -5917,6 +5917,12 @@ Source: GLX-S-88M.pdf</description>
 <part name="GND3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="OS1" library="IQD-Frequency-Products" library_urn="urn:adsk.eagle:library:90" deviceset="OSC-OE" device="-CFPS-72" package3d_urn="urn:adsk.eagle:package:3365/1"/>
 <part name="U1" library="REF3440IDBVR" deviceset="REF3440IDBVR" device=""/>
+<part name="VDD2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
+<part name="VSS3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VDD3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
+<part name="VSS4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VDD4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
+<part name="VSS5" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5983,6 +5989,24 @@ Source: GLX-S-88M.pdf</description>
 <instance part="U1" gate="G$1" x="137.16" y="7.62" smashed="yes">
 <attribute name="NAME" x="124.46" y="16.24" size="2.0828" layer="95" ratio="10" rot="SR0"/>
 <attribute name="VALUE" x="124.46" y="-4" size="2.0828" layer="96" ratio="10" rot="SR0"/>
+</instance>
+<instance part="VDD2" gate="G$1" x="119.38" y="7.62" smashed="yes" rot="R180">
+<attribute name="VALUE" x="116.84" y="2.54" size="1.778" layer="96"/>
+</instance>
+<instance part="VSS3" gate="G$1" x="119.38" y="15.24" smashed="yes" rot="R180">
+<attribute name="VALUE" x="116.84" y="20.32" size="1.778" layer="96"/>
+</instance>
+<instance part="VDD3" gate="G$1" x="121.92" y="-20.32" smashed="yes">
+<attribute name="VALUE" x="124.46" y="-15.24" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="VSS4" gate="G$1" x="121.92" y="-35.56" smashed="yes">
+<attribute name="VALUE" x="124.46" y="-40.64" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="VDD4" gate="G$1" x="147.32" y="-20.32" smashed="yes">
+<attribute name="VALUE" x="149.86" y="-15.24" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="VSS5" gate="G$1" x="154.94" y="-5.08" smashed="yes">
+<attribute name="VALUE" x="157.48" y="-10.16" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -6096,6 +6120,21 @@ Source: GLX-S-88M.pdf</description>
 <label x="25.4" y="40.64" size="1.778" layer="95"/>
 <junction x="-7.62" y="40.64"/>
 </segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="IN"/>
+<pinref part="VDD2" gate="G$1" pin="VDD"/>
+<junction x="119.38" y="10.16"/>
+</segment>
+<segment>
+<pinref part="OS1" gate="A" pin="VDD"/>
+<pinref part="VDD3" gate="G$1" pin="VDD"/>
+<junction x="121.92" y="-22.86"/>
+</segment>
+<segment>
+<pinref part="OS1" gate="A" pin="CON"/>
+<pinref part="VDD4" gate="G$1" pin="VDD"/>
+<junction x="147.32" y="-22.86"/>
+</segment>
 </net>
 <net name="+24V" class="1">
 <segment>
@@ -6166,10 +6205,56 @@ Source: GLX-S-88M.pdf</description>
 <label x="25.4" y="38.1" size="1.778" layer="95"/>
 <junction x="-7.62" y="38.1"/>
 </segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="ENABLE"/>
+<pinref part="VSS3" gate="G$1" pin="VSS"/>
+<junction x="119.38" y="12.7"/>
+</segment>
+<segment>
+<pinref part="OS1" gate="A" pin="VSS"/>
+<pinref part="VSS4" gate="G$1" pin="VSS"/>
+<junction x="121.92" y="-33.02"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="GND_F"/>
+<wire x1="154.94" y1="5.08" x2="154.94" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="GND_S"/>
+<wire x1="154.94" y1="2.54" x2="154.94" y2="-2.54" width="0.1524" layer="91"/>
+<junction x="154.94" y="2.54"/>
+<junction x="154.94" y="5.08"/>
+<pinref part="VSS5" gate="G$1" pin="VSS"/>
+<junction x="154.94" y="-2.54"/>
+</segment>
+</net>
+<net name="N$4" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="OUT_S"/>
+<wire x1="154.94" y1="10.16" x2="154.94" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="OUT_F"/>
+<wire x1="154.94" y1="12.7" x2="154.94" y2="17.78" width="0.1524" layer="91"/>
+<junction x="154.94" y="12.7"/>
+<junction x="154.94" y="17.78"/>
+<junction x="154.94" y="10.16"/>
+</segment>
+</net>
+<net name="CPU_CLK" class="0">
+<segment>
+<pinref part="OS1" gate="A" pin="OUT"/>
+<wire x1="147.32" y1="-27.94" x2="157.48" y2="-27.94" width="0.1524" layer="91"/>
+<label x="149.86" y="-33.02" size="1.778" layer="95"/>
+<junction x="147.32" y="-27.94"/>
+<junction x="157.48" y="-27.94"/>
+</segment>
 </net>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,154.94,5.08,U1,GND_F,VSS,,,"/>
+<approved hash="104,1,154.94,2.54,U1,GND_S,VSS,,,"/>
+<approved hash="206,1,154.94,10.16,N$4,,,,,"/>
+<approved hash="206,1,154.94,12.7,N$4,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
