@@ -13,10 +13,10 @@
   Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.8
-        Device            :  PIC18F14Q41
-        Driver Version    :  2.00
-*/
+	Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.8
+	Device            :  PIC18F14Q41
+	Driver Version    :  2.00
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -39,39 +39,70 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
+ */
 
 #include "mcc_generated_files/mcc.h"
 
+uint8_t data = 0x00, dcount = 0, dstart = 0;
+uint16_t tbuf[64] = {0x100, 0x000, 0x1ff, 0x0ff}, rbuf[64];
+
+
+void FM_io(void);
+
 /*
-                         Main application
+			 Main application
  */
 void main(void)
 {
-    // Initialize the device
-    SYSTEM_Initialize();
+	// Initialize the device
+	SYSTEM_Initialize();
 
-    // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
-    // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
-    // Use the following macros to:
+	// If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
+	// If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
+	// Use the following macros to:
 
-    // Enable high priority global interrupts
-    INTERRUPT_GlobalInterruptHighEnable();
+	// Enable high priority global interrupts
+	INTERRUPT_GlobalInterruptHighEnable();
 
-    // Enable low priority global interrupts.
-    INTERRUPT_GlobalInterruptLowEnable();
+	// Enable low priority global interrupts.
+	INTERRUPT_GlobalInterruptLowEnable();
 
-    // Disable high priority global interrupts
-    //INTERRUPT_GlobalInterruptHighDisable();
+	// Disable high priority global interrupts
+	//INTERRUPT_GlobalInterruptHighDisable();
 
-    // Disable low priority global interrupts.
-    //INTERRUPT_GlobalInterruptLowDisable();
+	// Disable low priority global interrupts.
+	//INTERRUPT_GlobalInterruptLowDisable();
 
-    while (1)
-    {
-        // Add your application code
-    }
+	TMR4_SetInterruptHandler(FM_io);
+	TMR4_StartTimer();
+
+	while (1) {
+		// Add your application code
+		if (dcount == 0) {
+			dstart = 0;
+			dcount = 4;
+		}
+	}
+}
+
+void FM_io(void)
+{
+	static uint8_t pace = 0;
+
+	if (pace++ > 3) {
+		if (dcount-- > 0) {
+			if (tbuf[dstart] > 0xff) {
+				U1P1L = (uint8_t) tbuf[dstart]; // send with bit-9 high
+			} else {
+				UART1_Write((uint8_t) tbuf[dstart]); // send with bit-9 low
+			}
+			dstart++;
+		} else {
+			dstart = 0;
+		}
+		pace = 0;
+	}
 }
 /**
  End of File
-*/
+ */
