@@ -53,7 +53,8 @@ enum state_type {
 	state_init,
 	state_status,
 	state_panel,
-	state_battery,
+	state_batteryv,
+	state_batterya,
 	state_watts,
 	state_misc,
 	state_run,
@@ -83,6 +84,7 @@ void state_init_cb(void);
 void state_status_cb(void);
 void state_panelv_cb(void);
 void state_batteryv_cb(void);
+void state_batterya_cb(void);
 void state_watts_cb(void);
 void state_misc_cb(void);
 
@@ -130,9 +132,13 @@ void main(void)
 			send_mx_cmd(cmd_panelv);
 			rec_mx_cmd(state_panelv_cb);
 			break;
-		case state_battery:
+		case state_batteryv:
 			send_mx_cmd(cmd_batteryv);
 			rec_mx_cmd(state_batteryv_cb);
+			break;
+		case state_batterya:
+			send_mx_cmd(cmd_batterya);
+			rec_mx_cmd(state_batterya_cb);
 			break;
 		case state_watts:
 			send_mx_cmd(cmd_watts);
@@ -200,13 +206,21 @@ void state_status_cb(void)
 void state_panelv_cb(void)
 {
 	printf("%5d %3x %3x %3x %3x %3x   DATA: Panel Voltage %iVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
-	state = state_battery;
+	state = state_batteryv;
 }
 
 void state_batteryv_cb(void)
 {
 	volt_f((abuf[2] + (abuf[1] << 8)));
 	printf("%5d %3x %3x %3x %3x %3x   DATA: Battery Voltage %d.%01dVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], volt_whole, volt_fract);
+	state = state_batterya;
+}
+
+void state_batterya_cb(void)
+{
+	volt_f((abuf[2] + (abuf[1] << 8)));
+	// printf("%5d %3x %3x %3x %3x %3x   DATA: Battery Amps %d.%01dVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], volt_whole, volt_fract);
+	printf("%5d %3x %3x %3x %3x %3x   DATA: Battery Amps %dADC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[2] - 128);
 	state = state_watts;
 }
 
