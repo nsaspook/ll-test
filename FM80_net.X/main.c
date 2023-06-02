@@ -43,33 +43,54 @@
 #pragma warning disable 520
 #pragma warning disable 1498
 
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include <stdio.h>
-#include <string.h>
-#include "mcc_generated_files/mcc.h"
+#include "mxcmd.h"
 
-#define	FM_BUFFER	32
+#define PACE	31000	// commands delay in count units
+#define CMD_LEN	8
+#define REC_LEN 5
 
-volatile uint8_t data = 0x00, dcount = 0, dstart = 0, rdstart = 0;
-volatile uint16_t tbuf[FM_BUFFER] = {0x100, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02}, rbuf[FM_BUFFER];
-uint16_t *p_tbuf = (uint16_t*) tbuf, *p_rbuf = (uint16_t*) rbuf, abuf[FM_BUFFER];
+enum state_type {
+	state_init,
+	state_status,
+	state_panel,
+	state_battery,
+	state_watts,
+	state_misc,
+	state_run,
+	state_last,
+};
 
-void onesec_io(void);
-void FM_io(void);
-uint8_t FM_tx(uint8_t);
-bool FM_tx_empty(void);
-uint8_t FM_rx(uint16_t *);
-bool FM_rx_ready(void);
-uint8_t FM_rx_count(void);
+uint16_t abuf[FM_BUFFER];
+uint16_t volt_fract;
+uint16_t volt_whole;
+enum state_type state = state_init;
+uint16_t pacing = 0, rx_count = 0;
+/*
+ * show fixed point fractions
+ */
+void volt_f(uint16_t);
 
 /*
-			 Main application
+ * MX80 send/recv functions
+ */
+void send_mx_cmd(const uint16_t *);
+void rec_mx_cmd(void (* DataHandler)(void));
+
+/*
+ * callbacks to handle MX80 register data
+ */
+void state_init_cb(void);
+void state_status_cb(void);
+void state_panelv_cb(void);
+void state_batteryv_cb(void);
+void state_watts_cb(void);
+void state_misc_cb(void);
+
+/*
+ * Main application
  */
 void main(void)
 {
-	uint16_t pacing = 0, rx_count=0;
 	// Initialize the device
 	SYSTEM_Initialize();
 
@@ -96,135 +117,112 @@ void main(void)
 
 	while (true) {
 		// Add your application code
-		if (FM_tx_empty()) {
-			if (pacing++ > 31000) {
-				FM_tx(8); // returns the type of device connected
-				pacing = 0;
-			}
-		}
-
-		if (FM_rx_ready()) {
-			if (FM_rx_count() >= 10) {
-				FM_rx(abuf);
-				printf("%5d %x %x %x %x %x\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4]);
-			}
+		switch (state) {
+		case state_init:
+			send_mx_cmd(cmd_id);
+			rec_mx_cmd(state_init_cb);
+			break;
+		case state_status:
+			send_mx_cmd(cmd_status);
+			rec_mx_cmd(state_status_cb);
+			break;
+		case state_panel:
+			send_mx_cmd(cmd_panelv);
+			rec_mx_cmd(state_panelv_cb);
+			break;
+		case state_battery:
+			send_mx_cmd(cmd_batteryv);
+			rec_mx_cmd(state_batteryv_cb);
+			break;
+		case state_watts:
+			send_mx_cmd(cmd_watts);
+			rec_mx_cmd(state_watts_cb);
+			break;
+		case state_misc:
+			send_mx_cmd(cmd_misc);
+			rec_mx_cmd(state_misc_cb);
+			break;
+		default:
+			send_mx_cmd(cmd_id);
+			rec_mx_cmd(state_init_cb);
+			break;
 		}
 	}
 }
 
 /*
- * Check for TX transmission
+ * display  div 10 integer to fraction without FP
+ * %d.%01d  volt_whole, volt_fract
  */
-bool FM_tx_empty(void)
+void volt_f(uint16_t voltage)
 {
-	if (dcount == 0) {
-		return true;
-	} else {
-		return false;
+	volt_fract = (uint16_t) abs(voltage % 10);
+	volt_whole = voltage / 10;
+}
+
+void send_mx_cmd(const uint16_t * cmd)
+{
+	if (FM_tx_empty()) {
+		if (pacing++ > PACE) {
+			FM_tx(cmd, CMD_LEN); // send 8 9-bits command data stream
+			pacing = 0;
+		}
 	}
 }
 
 /*
- * after the tbuf has been loaded start the TX transfer
+ * process received data in abuf with callbacks
  */
-uint8_t FM_tx(uint8_t count)
+void rec_mx_cmd(void (* DataHandler)(void))
 {
-	if (dcount == 0) {
-		dstart = 0;
-		dcount = count;
+	if (FM_rx_ready()) {
+		if (FM_rx_count() >= REC_LEN) {
+			FM_rx(abuf);
+			DataHandler(); // execute callback
+		}
 	}
-	return dstart;
+}
+
+void state_init_cb(void)
+{
+	printf("\r\n\r\n%5d %3x %3x %3x %3x %3x   INIT: Found MX80 online\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4]);
+	state = state_status;
+}
+
+void state_status_cb(void)
+{
+	printf("%5d %3x %3x %3x %3x %3x STATUS: MX80 %s mode\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], state_name[abuf[2]]);
+	if (abuf[2] != STATUS_SLEEPING) {
+		state = state_panel;
+	}
+}
+
+void state_panelv_cb(void)
+{
+	printf("%5d %3x %3x %3x %3x %3x   DATA: Panel Voltage %iVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
+	state = state_battery;
+}
+
+void state_batteryv_cb(void)
+{
+	volt_f((abuf[2] + (abuf[1] << 8)));
+	printf("%5d %3x %3x %3x %3x %3x   DATA: Battery Voltage %d.%01dVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], volt_whole, volt_fract);
+	state = state_watts;
+}
+
+void state_watts_cb(void)
+{
+	printf("%5d %3x %3x %3x %3x %3x   DATA: Panel Watts %iW\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
+	state = state_misc;
 }
 
 /*
- * serial I/O ISR, TMR4 500us I/O sample rate
- * polls the required UART registers for 9-bit send and receive into 16-bit arrays
+ * testing callback
  */
-void FM_io(void)
+void state_misc_cb(void)
 {
-	static uint8_t pace = 0;
-
-	MISC_SetHigh(); // serial CPU usage signal
-
-	if (pace++ > 3) {
-		if (dcount-- > 0) {
-			if (tbuf[dstart] > 0xff) { // Check for bit-9
-				U1P1L = (uint8_t) tbuf[dstart]; // send with bit-9 high
-			} else {
-				UART1_Write((uint8_t) tbuf[dstart]); // send with bit-9 low
-			}
-			dstart++;
-		} else {
-			dstart = 0;
-			dcount = 0;
-		}
-		pace = 0;
-	}
-
-	/*
-	 * handle framing errors
-	 */
-	if (U1ERRIRbits.RXFOIF) {
-		rbuf[0] = U1RXB; // read bad data to clear error
-		U1ERRIRbits.RXFOIF = 0;
-		rdstart = 0; // reset buffer to start
-	}
-
-	/*
-	 * read serial data if polled interrupt flag is set
-	 */
-	if (PIR4bits.U1RXIF) {
-		if (U1ERRIRbits.FERIF) {
-		}
-
-		if (rdstart > FM_BUFFER - 1) { // overload buffer index
-			rdstart = 0; // reset buffer to start
-			MLED_SetHigh();
-		}
-		rbuf[rdstart++] = U1RXB;
-	}
-	MISC_SetLow();
+	state = state_status;
 }
-
-uint8_t FM_rx(uint16_t * data)
-{
-	uint8_t count;
-
-	RELAY_SetHigh();
-	INTERRUPT_GlobalInterruptHighDisable();
-	count = rdstart;
-	memcpy(data, (const void *) rbuf, (size_t) (count << 2)); // copy 16-bit values
-	rdstart = 0;
-	INTERRUPT_GlobalInterruptHighEnable();
-	RELAY_SetLow();
-	return count;
-}
-
-bool FM_rx_ready(void)
-{
-	if (rdstart == 0) {
-		return false;
-	} else {
-		return true;
-	}
-}
-
-uint8_t FM_rx_count(void)
-{
-	uint8_t count;
-
-	INTERRUPT_GlobalInterruptHighDisable();
-	count = rdstart;
-	INTERRUPT_GlobalInterruptHighEnable();
-	return count;
-}
-
-void onesec_io(void)
-{
-	RLED_Toggle();
-	MLED_SetLow();
-}
-
 /**
  End of File
  */
