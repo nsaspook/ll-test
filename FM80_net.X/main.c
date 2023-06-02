@@ -53,7 +53,7 @@
 #define	FM_BUFFER	32
 
 volatile uint8_t data = 0x00, dcount = 0, dstart = 0, rdstart = 0;
-volatile uint16_t tbuf[FM_BUFFER] = {0x100, 0x000, 0x1ff, 0x0ff}, rbuf[FM_BUFFER];
+volatile uint16_t tbuf[FM_BUFFER] = {0x100, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02}, rbuf[FM_BUFFER];
 uint16_t *p_tbuf = (uint16_t*) tbuf, *p_rbuf = (uint16_t*) rbuf, abuf[FM_BUFFER];
 
 void onesec_io(void);
@@ -69,6 +69,7 @@ uint8_t FM_rx_count(void);
  */
 void main(void)
 {
+	uint16_t pacing = 0, rx_count=0;
 	// Initialize the device
 	SYSTEM_Initialize();
 
@@ -96,12 +97,16 @@ void main(void)
 	while (true) {
 		// Add your application code
 		if (FM_tx_empty()) {
-			FM_tx(4);
+			if (pacing++ > 31000) {
+				FM_tx(8); // returns the type of device connected
+				pacing = 0;
+			}
 		}
 
 		if (FM_rx_ready()) {
-			if (FM_rx_count() > 16) {
+			if (FM_rx_count() >= 10) {
 				FM_rx(abuf);
+				printf("%5d %x %x %x %x %x\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4]);
 			}
 		}
 	}
@@ -151,6 +156,7 @@ void FM_io(void)
 			dstart++;
 		} else {
 			dstart = 0;
+			dcount = 0;
 		}
 		pace = 0;
 	}
@@ -218,6 +224,7 @@ void onesec_io(void)
 	RLED_Toggle();
 	MLED_SetLow();
 }
+
 /**
  End of File
  */
