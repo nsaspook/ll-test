@@ -205,7 +205,7 @@ void state_init_cb(void)
 
 void state_status_cb(void)
 {
-	printf("%5d %3x %3x %3x %3x %3x STATUS: MX80 %s mode\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], state_name[abuf[2]]);
+	printf("%5d: %3x %3x %3x %3x %3x STATUS: MX80 %s mode\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], state_name[abuf[2]]);
 	if (abuf[2] != STATUS_SLEEPING) {
 		state = state_panel;
 	} else {
@@ -215,14 +215,14 @@ void state_status_cb(void)
 
 void state_panelv_cb(void)
 {
-	printf("%5d %3x %3x %3x %3x %3x   DATA: Panel Voltage %iVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
+	printf("%5d: %3x %3x %3x %3x %3x   DATA: Panel Voltage %iVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
 	state = state_batteryv;
 }
 
 void state_batteryv_cb(void)
 {
 	volt_f((abuf[2] + (abuf[1] << 8)));
-	printf("%5d %3x %3x %3x %3x %3x   DATA: Battery Voltage %d.%01dVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], volt_whole, volt_fract);
+	printf("%5d: %3x %3x %3x %3x %3x   DATA: Battery Voltage %d.%01dVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], volt_whole, volt_fract);
 	state = state_batterya;
 }
 
@@ -230,13 +230,13 @@ void state_batterya_cb(void)
 {
 	volt_f((abuf[2] + (abuf[1] << 8)));
 	// printf("%5d %3x %3x %3x %3x %3x   DATA: Battery Amps %d.%01dVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], volt_whole, volt_fract);
-	printf("%5d %3x %3x %3x %3x %3x   DATA: Battery Amps %dADC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[2] - 128);
+	printf("%5d: %3x %3x %3x %3x %3x   DATA: Battery Amps %dADC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[2] - 128);
 	state = state_watts;
 }
 
 void state_watts_cb(void)
 {
-	printf("%5d %3x %3x %3x %3x %3x   DATA: Panel Watts %iW\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
+	printf("%5d: %3x %3x %3x %3x %3x   DATA: Panel Watts %iW\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
 	state = state_mx_status;
 }
 
@@ -248,9 +248,9 @@ void state_mx_status_cb(void)
 	vw = volt_whole;
 	vf = volt_fract;
 	volt_f((abuf[13] + (abuf[12] << 8)));
-	printf("%5d %3x %3x %3x %3x %3x  SDATA: MX80 Data mode %3x %3x %3x %3x %3x %d.%01dVDC %d.%01dVDC \r\n",
+	printf("%5d: %3x %3x %3x %3x %3x  SDATA: MX80 Data mode %3x %3x %3x %3x %3x %d.%01dVDC %d.%01dADC %d.%01dVDC \r\n",
 		rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[5], abuf[6], abuf[7], abuf[8], abuf[9],
-		vw, vf, volt_whole, volt_fract);
+		vw, vf, abuf[2] - 128, abuf[1]&0x0f, volt_whole, volt_fract);
 	state = state_misc;
 }
 
