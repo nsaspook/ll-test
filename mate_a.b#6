@@ -2078,6 +2078,7 @@ design rules under a new name.</description>
 <contactref element="C6" pad="2"/>
 <contactref element="SV1" pad="9"/>
 <contactref element="SV2" pad="9"/>
+<contactref element="TTL_SERIAL" pad="1"/>
 <wire x1="125.73" y1="53.02" x2="125.73" y2="61.28" width="0" layer="19" extent="1-1"/>
 <wire x1="121.92" y1="47.31" x2="125.73" y2="53.02" width="0" layer="19" extent="1-16"/>
 <wire x1="118.11" y1="47.31" x2="121.92" y2="47.31" width="0" layer="19" extent="16-16"/>
@@ -2092,6 +2093,7 @@ design rules under a new name.</description>
 <wire x1="91.44" y1="20.76" x2="88.58" y2="29.225" width="0" layer="19" extent="1-1"/>
 <wire x1="95.25" y1="21.91" x2="91.44" y2="20.76" width="0" layer="19" extent="1-1"/>
 <wire x1="77.47" y1="26.67" x2="86.68" y2="29.225" width="0" layer="19" extent="1-1"/>
+<wire x1="77.47" y1="6.35" x2="91.44" y2="20.76" width="0" layer="19" extent="1-1"/>
 <wire x1="77.47" y1="62.23" x2="91.44" y2="42.23" width="0" layer="19" extent="16-16"/>
 <wire x1="83.5" y1="69.85" x2="77.47" y2="62.23" width="0" layer="19" extent="16-16"/>
 </signal>
