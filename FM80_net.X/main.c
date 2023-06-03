@@ -48,6 +48,7 @@
 #define PACE	31000	// commands delay in count units
 #define CMD_LEN	8
 #define REC_LEN 5
+#define REC_STATUS_LEN	16
 
 enum state_type {
 	state_init,
@@ -57,7 +58,7 @@ enum state_type {
 	state_batterya,
 	state_watts,
 	state_misc,
-	state_run,
+	state_mx_status,
 	state_last,
 };
 
@@ -66,6 +67,8 @@ uint16_t volt_fract;
 uint16_t volt_whole;
 enum state_type state = state_init;
 uint16_t pacing = 0, rx_count = 0;
+
+mx_status_packed_t *status_packed = (void *) abuf;
 /*
  * show fixed point fractions
  */
@@ -75,7 +78,7 @@ void volt_f(uint16_t);
  * MX80 send/recv functions
  */
 void send_mx_cmd(const uint16_t *);
-void rec_mx_cmd(void (* DataHandler)(void));
+void rec_mx_cmd(void (* DataHandler)(void), uint8_t);
 
 /*
  * callbacks to handle MX80 register data
@@ -87,6 +90,7 @@ void state_batteryv_cb(void);
 void state_batterya_cb(void);
 void state_watts_cb(void);
 void state_misc_cb(void);
+void state_mx_status_cb(void);
 
 /*
  * Main application
@@ -122,35 +126,39 @@ void main(void)
 		switch (state) {
 		case state_init:
 			send_mx_cmd(cmd_id);
-			rec_mx_cmd(state_init_cb);
+			rec_mx_cmd(state_init_cb, REC_LEN);
 			break;
 		case state_status:
 			send_mx_cmd(cmd_status);
-			rec_mx_cmd(state_status_cb);
+			rec_mx_cmd(state_status_cb, REC_LEN);
 			break;
 		case state_panel:
 			send_mx_cmd(cmd_panelv);
-			rec_mx_cmd(state_panelv_cb);
+			rec_mx_cmd(state_panelv_cb, REC_LEN);
 			break;
 		case state_batteryv:
 			send_mx_cmd(cmd_batteryv);
-			rec_mx_cmd(state_batteryv_cb);
+			rec_mx_cmd(state_batteryv_cb, REC_LEN);
 			break;
 		case state_batterya:
 			send_mx_cmd(cmd_batterya);
-			rec_mx_cmd(state_batterya_cb);
+			rec_mx_cmd(state_batterya_cb, REC_LEN);
 			break;
 		case state_watts:
 			send_mx_cmd(cmd_watts);
-			rec_mx_cmd(state_watts_cb);
+			rec_mx_cmd(state_watts_cb, REC_LEN);
+			break;
+		case state_mx_status:
+			send_mx_cmd(cmd_mx_status);
+			rec_mx_cmd(state_mx_status_cb, REC_STATUS_LEN);
 			break;
 		case state_misc:
 			send_mx_cmd(cmd_misc);
-			rec_mx_cmd(state_misc_cb);
+			rec_mx_cmd(state_misc_cb, REC_LEN);
 			break;
 		default:
 			send_mx_cmd(cmd_id);
-			rec_mx_cmd(state_init_cb);
+			rec_mx_cmd(state_init_cb, REC_LEN);
 			break;
 		}
 	}
@@ -179,10 +187,10 @@ void send_mx_cmd(const uint16_t * cmd)
 /*
  * process received data in abuf with callbacks
  */
-void rec_mx_cmd(void (* DataHandler)(void))
+void rec_mx_cmd(void (* DataHandler)(void), uint8_t rec_len)
 {
 	if (FM_rx_ready()) {
-		if (FM_rx_count() >= REC_LEN) {
+		if (FM_rx_count() >= rec_len) {
 			FM_rx(abuf);
 			DataHandler(); // execute callback
 		}
@@ -200,6 +208,8 @@ void state_status_cb(void)
 	printf("%5d %3x %3x %3x %3x %3x STATUS: MX80 %s mode\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], state_name[abuf[2]]);
 	if (abuf[2] != STATUS_SLEEPING) {
 		state = state_panel;
+	} else {
+		state = state_mx_status;
 	}
 }
 
@@ -227,6 +237,20 @@ void state_batterya_cb(void)
 void state_watts_cb(void)
 {
 	printf("%5d %3x %3x %3x %3x %3x   DATA: Panel Watts %iW\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
+	state = state_mx_status;
+}
+
+void state_mx_status_cb(void)
+{
+	uint16_t vf, vw;
+
+	volt_f((abuf[11] + (abuf[10] << 8)));
+	vw = volt_whole;
+	vf = volt_fract;
+	volt_f((abuf[13] + (abuf[12] << 8)));
+	printf("%5d %3x %3x %3x %3x %3x  SDATA: MX80 Data mode %3x %3x %3x %3x %3x %d.%01dVDC %d.%01dVDC \r\n",
+		rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[5], abuf[6], abuf[7], abuf[8], abuf[9],
+		vw, vf, volt_whole, volt_fract);
 	state = state_misc;
 }
 
