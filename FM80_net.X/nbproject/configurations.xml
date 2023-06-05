@@ -15,6 +15,8 @@
         <itemPath>mcc_generated_files/device_config.h</itemPath>
         <itemPath>mcc_generated_files/pin_manager.h</itemPath>
         <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
+        <itemPath>mcc_generated_files/nco1.h</itemPath>
+        <itemPath>mcc_generated_files/tmr2.h</itemPath>
       </logicalFolder>
       <itemPath>mxcmd.h</itemPath>
     </logicalFolder>
@@ -36,6 +38,8 @@
         <itemPath>mcc_generated_files/uart2.c</itemPath>
         <itemPath>mcc_generated_files/tmr0.c</itemPath>
         <itemPath>mcc_generated_files/uart1.c</itemPath>
+        <itemPath>mcc_generated_files/nco1.c</itemPath>
+        <itemPath>mcc_generated_files/tmr2.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>mxcmd.c</itemPath>
@@ -57,7 +61,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.41</languageToolchainVersion>
+        <languageToolchainVersion>2.40</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <packs>

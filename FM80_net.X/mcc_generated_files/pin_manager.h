@@ -77,6 +77,18 @@
 #define RB5_SetAnalogMode()         do { ANSELBbits.ANSELB5 = 1; } while(0)
 #define RB5_SetDigitalMode()        do { ANSELBbits.ANSELB5 = 0; } while(0)
 
+// get/set RB6 procedures
+#define RB6_SetHigh()            do { LATBbits.LATB6 = 1; } while(0)
+#define RB6_SetLow()             do { LATBbits.LATB6 = 0; } while(0)
+#define RB6_Toggle()             do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0)
+#define RB6_GetValue()              PORTBbits.RB6
+#define RB6_SetDigitalInput()    do { TRISBbits.TRISB6 = 1; } while(0)
+#define RB6_SetDigitalOutput()   do { TRISBbits.TRISB6 = 0; } while(0)
+#define RB6_SetPullup()             do { WPUBbits.WPUB6 = 1; } while(0)
+#define RB6_ResetPullup()           do { WPUBbits.WPUB6 = 0; } while(0)
+#define RB6_SetAnalogMode()         do { ANSELBbits.ANSELB6 = 1; } while(0)
+#define RB6_SetDigitalMode()        do { ANSELBbits.ANSELB6 = 0; } while(0)
+
 // get/set MISC aliases
 #define MISC_TRIS                 TRISBbits.TRISB7
 #define MISC_LAT                  LATBbits.LATB7

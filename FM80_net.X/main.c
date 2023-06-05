@@ -120,6 +120,8 @@ void main(void)
 	TMR4_StartTimer();
 	TMR0_SetInterruptHandler(onesec_io);
 	TMR0_StartTimer();
+	TMR2_SetInterruptHandler(tensec_io);
+	TMR2_StartTimer();
 
 	while (true) {
 		// Add your application code
@@ -254,7 +256,6 @@ void state_watts_cb(void)
 void state_mx_status_cb(void)
 {
 	uint16_t vf, vw;
-	static uint8_t log_pace = 0;
 
 	volt_f((abuf[11] + (abuf[10] << 8)));
 	vw = volt_whole;
@@ -268,14 +269,12 @@ void state_mx_status_cb(void)
 	printf("%5d: %3x %3x %3x %3x %3x  SDATA: MX80 Data mode %3x %3x %3x %3x %3x %3x %3x %3x %3x\r\n",
 		rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[5], abuf[6], abuf[7], abuf[8], abuf[9], abuf[10], abuf[11], abuf[12], abuf[13]);
 #endif
-	if (log_pace++ == 0) {
+	if (ten_sec_flag) {
+		ten_sec_flag = false;
 		/*
 		 * log CSV values to the serial port for data storage and processing
 		 */
 		printf("^^^,%d.%01d,%d.%01d,%d,%d.%01d,%d,%d,%d\r\n", abuf[3] - 128, abuf[1]&0x0f, vw, vf, abuf[2] - 128, volt_whole, volt_fract, panel_watts, cc_mode, rx_count++);
-	}
-	if (log_pace > 5) {
-		log_pace = 0;
 	}
 	state = state_misc;
 }

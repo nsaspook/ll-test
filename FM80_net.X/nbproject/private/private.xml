@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/fred/ll-tester/FM80_net.X/mcc_generated_files/uart1.c</file>
-            <file>file:/fred/ll-tester/FM80_net.X/mcc_generated_files/tmr4.h</file>
-            <file>file:/fred/ll-tester/FM80_net.X/mcc_generated_files/uart1.h</file>
-            <file>file:/fred/ll-tester/FM80_net.X/main.c</file>
+            <file>file:/root/ll-test/FM80_net.X/mxcmd.c</file>
+            <file>file:/root/ll-test/FM80_net.X/mxcmd.h</file>
+            <file>file:/root/ll-test/FM80_net.X/mcc_generated_files/uart1.c</file>
+            <file>file:/root/ll-test/FM80_net.X/main.c</file>
         </group>
     </open-files>
 </project-private>

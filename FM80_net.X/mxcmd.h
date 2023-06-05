@@ -53,12 +53,15 @@ extern "C" {
 	} mx_status_packed_t;
 
 	extern void onesec_io(void);
+	extern void tensec_io(void);
 	extern void FM_io(void);
 	extern uint8_t FM_tx(const uint16_t *, uint8_t);
 	extern bool FM_tx_empty(void);
 	extern uint8_t FM_rx(uint16_t *);
 	extern bool FM_rx_ready(void);
 	extern uint8_t FM_rx_count(void);
+	
+	extern volatile bool ten_sec_flag;
 
 #ifdef	__cplusplus
 }
