@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'AD210JN'
+CLASS = IC
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET";
+{========================================================================================}
+ "Analog Devices", "AD210JN" (!) = "", "AD210_N_12", "Other", "584-AD210JN", "https://www.mouser.co.uk/ProductDetail/Analog-Devices/AD210JN?qs=NmRFExCfTkFa6nj1j%252BgrMw%3D%3D", "Precision, Wide Bandwidth 3-Port Isolation Amplifier", ""
+END_PART
+
+END.

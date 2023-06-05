@@ -150,7 +150,7 @@ void main(void)
 			send_mx_cmd(cmd_watts);
 			rec_mx_cmd(state_watts_cb, REC_LEN);
 			break;
-		case state_mx_status:
+		case state_mx_status: // wait for ten second flag in this state for logging 
 			send_mx_cmd(cmd_mx_status);
 			rec_mx_cmd(state_mx_status_cb, REC_STATUS_LEN);
 			break;
