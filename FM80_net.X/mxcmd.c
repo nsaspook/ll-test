@@ -35,7 +35,7 @@ uint8_t FM_tx(const uint16_t * data, uint8_t count)
  */
 void FM_io(void)
 {
-	static uint8_t pace = 0;
+	static uint8_t pace = 0; // the charge controller doesn't like back to back bytes
 
 	MISC_SetHigh(); // serial CPU usage signal
 

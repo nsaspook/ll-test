@@ -64,7 +64,7 @@ enum state_type {
 
 uint16_t abuf[FM_BUFFER];
 uint16_t volt_fract;
-uint16_t volt_whole;
+uint16_t volt_whole, panel_watts, cc_mode;
 enum state_type state = state_init;
 uint16_t pacing = 0, rx_count = 0;
 
@@ -205,52 +205,78 @@ void state_init_cb(void)
 
 void state_status_cb(void)
 {
+#ifdef debug_data
 	printf("%5d: %3x %3x %3x %3x %3x STATUS: MX80 %s mode\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], state_name[abuf[2]]);
+#endif
 	if (abuf[2] != STATUS_SLEEPING) {
 		state = state_panel;
 	} else {
 		state = state_mx_status;
 	}
+	cc_mode = abuf[2];
 }
 
 void state_panelv_cb(void)
 {
+#ifdef debug_data
 	printf("%5d: %3x %3x %3x %3x %3x   DATA: Panel Voltage %iVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
+#endif
 	state = state_batteryv;
 }
 
 void state_batteryv_cb(void)
 {
 	volt_f((abuf[2] + (abuf[1] << 8)));
+#ifdef debug_data
 	printf("%5d: %3x %3x %3x %3x %3x   DATA: Battery Voltage %d.%01dVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], volt_whole, volt_fract);
+#endif
 	state = state_batterya;
 }
 
 void state_batterya_cb(void)
 {
 	volt_f((abuf[2] + (abuf[1] << 8)));
-	// printf("%5d %3x %3x %3x %3x %3x   DATA: Battery Amps %d.%01dVDC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], volt_whole, volt_fract);
+#ifdef debug_data
 	printf("%5d: %3x %3x %3x %3x %3x   DATA: Battery Amps %dADC\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[2] - 128);
+#endif
 	state = state_watts;
 }
 
 void state_watts_cb(void)
 {
+#ifdef debug_data
 	printf("%5d: %3x %3x %3x %3x %3x   DATA: Panel Watts %iW\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], (abuf[2] + (abuf[1] << 8)));
+#endif
+	panel_watts = (abuf[2] + (abuf[1] << 8));
 	state = state_mx_status;
 }
 
 void state_mx_status_cb(void)
 {
 	uint16_t vf, vw;
+	static uint8_t log_pace = 0;
 
 	volt_f((abuf[11] + (abuf[10] << 8)));
 	vw = volt_whole;
 	vf = volt_fract;
 	volt_f((abuf[13] + (abuf[12] << 8)));
-	printf("%5d: %3x %3x %3x %3x %3x  SDATA: MX80 Data mode %3x %3x %3x %3x %3x %d.%01dVDC %d.%01dADC %d.%01dVDC \r\n",
-		rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[5], abuf[6], abuf[7], abuf[8], abuf[9],
-		vw, vf, abuf[2] - 128, abuf[1]&0x0f, volt_whole, volt_fract);
+	if ((abuf[1] &0x0f) > 9) { // check for whole Amp
+		abuf[2]++; // add extra Amp for fractional overflow.
+		abuf[1] = (abuf[1]&0x0f) - 10;
+	}
+#ifdef debug_data
+	printf("%5d: %3x %3x %3x %3x %3x  SDATA: MX80 Data mode %3x %3x %3x %3x %3x %3x %3x %3x %3x\r\n",
+		rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], abuf[5], abuf[6], abuf[7], abuf[8], abuf[9], abuf[10], abuf[11], abuf[12], abuf[13]);
+#endif
+	if (log_pace++ == 0) {
+		/*
+		 * log CSV values to the serial port for data storage and processing
+		 */
+		printf("^^^,%d.%01d,%d.%01d,%d,%d.%01d,%d,%d,%d\r\n", abuf[3] - 128, abuf[1]&0x0f, vw, vf, abuf[2] - 128, volt_whole, volt_fract, panel_watts, cc_mode, rx_count++);
+	}
+	if (log_pace > 5) {
+		log_pace = 0;
+	}
 	state = state_misc;
 }
 
