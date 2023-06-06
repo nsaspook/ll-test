@@ -85,7 +85,7 @@ void FM_io(void)
 			MLED_SetHigh();
 		}
 		if (U1ERRIRbits.PERIF) {
-			rdstart = 0; 
+			rdstart = 0; // restart receive buffer when we see a 9-th bit high
 			rbuf[rdstart] = 0x0100;
 		} else {
 			rbuf[rdstart] = 0x00;

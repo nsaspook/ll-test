@@ -67,7 +67,7 @@ uint16_t volt_fract;
 uint16_t volt_whole, panel_watts, cc_mode;
 enum state_type state = state_init;
 uint16_t pacing = 0, rx_count = 0, flush;
-volatile bool online = true;
+volatile bool mx80_online = true;
 
 mx_status_packed_t *status_packed = (void *) abuf;
 /*
@@ -204,10 +204,10 @@ void state_init_cb(void)
 {
 	if (abuf[2] == 0x03) {
 		printf("\r\n\r\n%5d %3x %3x %3x %3x %3x   INIT: Found MX80 online\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4]);
-		online = true;
+		mx80_online = true;
 	} else {
 		printf("\r\n\r\n%5d %3x %3x %3x %3x %3x   INIT: MX80 Not Found online\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4]);
-		online = false;
+		mx80_online = false;
 	}
 	state = state_status;
 }
@@ -278,7 +278,7 @@ void state_mx_status_cb(void)
 #endif
 	if (ten_sec_flag) {
 		ten_sec_flag = false;
-		if (online) {
+		if (mx80_online) {
 			/*
 			 * log CSV values to the serial port for data storage and processing
 			 */
@@ -294,9 +294,9 @@ void state_mx_status_cb(void)
 void state_misc_cb(void)
 {
 	if (abuf[2] == 0x03) {
-		online = true;
+		mx80_online = true;
 	} else {
-		online = false;
+		mx80_online = false;
 	}
 	if (!ten_sec_flag) {
 		state = state_misc;
