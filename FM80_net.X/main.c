@@ -297,6 +297,8 @@ void state_misc_cb(void)
 		mx80_online = true;
 	} else {
 		mx80_online = false;
+		state = state_init;
+		return;
 	}
 	if (!ten_sec_flag) {
 		state = state_misc;

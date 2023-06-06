@@ -46,13 +46,12 @@ uint8_t FM_tx(const uint16_t * data, uint8_t count)
  */
 void FM_io(void)
 {
-
 	MISC_SetHigh(); // serial CPU usage signal
 
-	if (pace++ > 3) {
+	if (pace++ > BUFFER_SPACING) {
 		if (dcount-- > 0) {
 			if (tbuf[dstart] > 0xff) { // Check for bit-9
-				U1P1L = (uint8_t) tbuf[dstart]; // send with bit-9 high
+				U1P1L = (uint8_t) tbuf[dstart]; // send with bit-9 high, start of packet
 			} else {
 				UART1_Write((uint8_t) tbuf[dstart]); // send with bit-9 low
 			}
@@ -86,7 +85,7 @@ void FM_io(void)
 		}
 		if (U1ERRIRbits.PERIF) {
 			rdstart = 0; // restart receive buffer when we see a 9-th bit high
-			rbuf[rdstart] = 0x0100;
+			rbuf[rdstart] = 0x0100; // start of packet
 		} else {
 			rbuf[rdstart] = 0x00;
 		}
