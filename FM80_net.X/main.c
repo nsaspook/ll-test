@@ -66,7 +66,8 @@ uint16_t abuf[FM_BUFFER];
 uint16_t volt_fract;
 uint16_t volt_whole, panel_watts, cc_mode;
 enum state_type state = state_init;
-uint16_t pacing = 0, rx_count = 0;
+uint16_t pacing = 0, rx_count = 0, flush;
+volatile bool online = true;
 
 mx_status_packed_t *status_packed = (void *) abuf;
 /*
@@ -201,7 +202,13 @@ void rec_mx_cmd(void (* DataHandler)(void), uint8_t rec_len)
 
 void state_init_cb(void)
 {
-	printf("\r\n\r\n%5d %3x %3x %3x %3x %3x   INIT: Found MX80 online\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4]);
+	if (abuf[2] == 0x03) {
+		printf("\r\n\r\n%5d %3x %3x %3x %3x %3x   INIT: Found MX80 online\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4]);
+		online = true;
+	} else {
+		printf("\r\n\r\n%5d %3x %3x %3x %3x %3x   INIT: MX80 Not Found online\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4]);
+		online = false;
+	}
 	state = state_status;
 }
 
@@ -211,7 +218,7 @@ void state_status_cb(void)
 	printf("%5d: %3x %3x %3x %3x %3x STATUS: MX80 %s mode\r\n", rx_count++, abuf[0], abuf[1], abuf[2], abuf[3], abuf[4], state_name[abuf[2]]);
 #endif
 	if (abuf[2] != STATUS_SLEEPING) {
-		state = state_panel;
+		state = state_watts;
 	} else {
 		state = state_mx_status;
 	}
@@ -271,20 +278,31 @@ void state_mx_status_cb(void)
 #endif
 	if (ten_sec_flag) {
 		ten_sec_flag = false;
-		/*
-		 * log CSV values to the serial port for data storage and processing
-		 */
-		printf("^^^,%d.%01d,%d.%01d,%d,%d.%01d,%d,%d,%d\r\n", abuf[3] - 128, abuf[1]&0x0f, vw, vf, abuf[2] - 128, volt_whole, volt_fract, panel_watts, cc_mode, rx_count++);
+		if (online) {
+			/*
+			 * log CSV values to the serial port for data storage and processing
+			 */
+			printf("^^^,%d.%01d,%d.%01d,%d,%d.%01d,%d,%d,%d\r\n", abuf[3] - 128, abuf[1]&0x0f, vw, vf, abuf[2] - 128, volt_whole, volt_fract, panel_watts, cc_mode, rx_count++);
+		}
 	}
 	state = state_misc;
 }
 
 /*
- * testing callback
+ * testing online status while waiting for 10 second flag callback
  */
 void state_misc_cb(void)
 {
-	state = state_status;
+	if (abuf[2] == 0x03) {
+		online = true;
+	} else {
+		online = false;
+	}
+	if (!ten_sec_flag) {
+		state = state_misc;
+	} else {
+		state = state_status;
+	}
 }
 /**
  End of File

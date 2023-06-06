@@ -4,6 +4,16 @@ static volatile uint8_t data = 0x00, dcount = 0, dstart = 0, rdstart = 0;
 static volatile uint16_t tbuf[FM_BUFFER], rbuf[FM_BUFFER];
 static uint16_t *p_tbuf = (uint16_t*) tbuf, *p_rbuf = (uint16_t*) rbuf;
 volatile bool ten_sec_flag = false;
+static volatile uint8_t pace = 0; // the charge controller doesn't like back to back bytes
+
+void FM_restart(void)
+{
+	data = U1RXB;
+	dcount = 0;
+	dstart = 0;
+	rdstart = 0;
+	ten_sec_flag = false;
+}
 
 /*
  * Check for TX transmission
@@ -36,7 +46,6 @@ uint8_t FM_tx(const uint16_t * data, uint8_t count)
  */
 void FM_io(void)
 {
-	static uint8_t pace = 0; // the charge controller doesn't like back to back bytes
 
 	MISC_SetHigh(); // serial CPU usage signal
 
@@ -76,6 +85,7 @@ void FM_io(void)
 			MLED_SetHigh();
 		}
 		if (U1ERRIRbits.PERIF) {
+			rdstart = 0; 
 			rbuf[rdstart] = 0x0100;
 		} else {
 			rbuf[rdstart] = 0x00;
