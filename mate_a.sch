@@ -15418,7 +15418,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <label x="175.26" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RD1" class="0">
+<net name="DB0" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RD1"/>
 <wire x1="38.1" y1="17.78" x2="25.4" y2="17.78" width="0.1524" layer="91"/>
@@ -15434,7 +15434,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <label x="-35.56" y="0" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RD2" class="0">
+<net name="DB1" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RD2"/>
 <wire x1="86.36" y1="17.78" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
@@ -15450,7 +15450,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <label x="-35.56" y="2.54" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RD3" class="0">
+<net name="CS" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RD3"/>
 <wire x1="86.36" y1="20.32" x2="99.06" y2="20.32" width="0.1524" layer="91"/>
@@ -15671,7 +15671,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="2.54" y="22.86"/>
 </segment>
 </net>
-<net name="RE0" class="0">
+<net name="RELAY" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RE0"/>
 <wire x1="38.1" y1="48.26" x2="25.4" y2="48.26" width="0.1524" layer="91"/>
@@ -15687,7 +15687,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <label x="0" y="0" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RE1" class="0">
+<net name="MISC" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RE1"/>
 <wire x1="38.1" y1="45.72" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
@@ -15865,7 +15865,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="144.78" y="63.5"/>
 </segment>
 </net>
-<net name="LED1" class="0">
+<net name="MLED" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RB1"/>
 <wire x1="86.36" y1="50.8" x2="111.76" y2="50.8" width="0.1524" layer="91"/>
@@ -15882,7 +15882,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <label x="129.54" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="LED2" class="0">
+<net name="RLED" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RB2"/>
 <wire x1="86.36" y1="53.34" x2="111.76" y2="53.34" width="0.1524" layer="91"/>
@@ -15899,7 +15899,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <label x="137.16" y="76.2" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="LED3" class="0">
+<net name="DLED" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RB3"/>
 <wire x1="86.36" y1="55.88" x2="111.76" y2="55.88" width="0.1524" layer="91"/>

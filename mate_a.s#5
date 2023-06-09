@@ -13337,10 +13337,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="IC1" library="PIC18F47Q84-E_P" deviceset="PIC18F47Q84-E_P" device=""/>
 <part name="OK1" library="optocoupler" library_urn="urn:adsk.eagle:library:320" deviceset="4N*?M" device="S" package3d_urn="urn:adsk.eagle:package:21970/1" technology="25"/>
 <part name="OK2" library="optocoupler" library_urn="urn:adsk.eagle:library:320" deviceset="4N*?M" device="S" package3d_urn="urn:adsk.eagle:package:21970/1" technology="25"/>
-<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1.5k"/>
-<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1.5k"/>
-<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="330ohm"/>
-<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="220ohm"/>
+<part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2.2k"/>
+<part name="R2" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2.2k"/>
+<part name="R3" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1k"/>
+<part name="R4" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="470ohm"/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+24V" device=""/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="0V" device=""/>
 <part name="VSS1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
@@ -13429,6 +13429,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uf"/>
 <part name="VSS32" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="VSS33" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="120ohm"/>
 </parts>
 <sheets>
 <sheet>
@@ -13583,10 +13584,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <attribute name="VALUE" x="-30.48" y="60.96" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="VSS12" gate="G$1" x="-38.1" y="20.32" smashed="yes" rot="R90">
-<attribute name="VALUE" x="-33.02" y="22.86" size="1.778" layer="96" rot="R270"/>
+<attribute name="VALUE" x="-35.56" y="20.32" size="1.778" layer="96"/>
 </instance>
 <instance part="VDD7" gate="G$1" x="-38.1" y="22.86" smashed="yes" rot="R270">
-<attribute name="VALUE" x="-33.02" y="20.32" size="1.778" layer="96" rot="R90"/>
+<attribute name="VALUE" x="-30.48" y="25.4" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="CANBUS" gate="1" x="-48.26" y="-33.02" smashed="yes">
 <attribute name="VALUE" x="-49.53" y="-43.18" size="1.778" layer="96"/>
@@ -13770,6 +13771,10 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="VSS33" gate="G$1" x="175.26" y="2.54" smashed="yes">
 <attribute name="VALUE" x="177.8" y="-2.54" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="R10" gate="G$1" x="198.12" y="43.18" smashed="yes" rot="R90">
+<attribute name="NAME" x="196.6214" y="39.37" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="201.422" y="39.37" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -13834,11 +13839,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <junction x="111.76" y="30.48"/>
 </segment>
 <segment>
-<wire x1="170.18" y1="81.28" x2="195.58" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="TTL_SERIAL" gate="1" pin="3"/>
-<junction x="170.18" y="81.28"/>
-<junction x="195.58" y="81.28"/>
-<label x="185.42" y="81.28" size="1.778" layer="95"/>
+<wire x1="-40.64" y1="17.78" x2="-27.94" y2="17.78" width="0.1524" layer="91"/>
+<pinref part="SV2" gate="1" pin="8"/>
+<junction x="-40.64" y="17.78"/>
+<junction x="-27.94" y="17.78"/>
+<label x="-35.56" y="17.78" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -13865,11 +13870,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <junction x="111.76" y="27.94"/>
 </segment>
 <segment>
-<wire x1="170.18" y1="78.74" x2="195.58" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="TTL_SERIAL" gate="1" pin="2"/>
-<junction x="170.18" y="78.74"/>
-<junction x="195.58" y="78.74"/>
-<label x="185.42" y="78.74" size="1.778" layer="95"/>
+<wire x1="-40.64" y1="15.24" x2="-27.94" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="SV2" gate="1" pin="7"/>
+<junction x="-40.64" y="15.24"/>
+<junction x="-27.94" y="15.24"/>
+<label x="-35.56" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VDD" class="1">
@@ -14404,11 +14409,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <junction x="25.4" y="20.32"/>
 </segment>
 <segment>
-<wire x1="-27.94" y1="17.78" x2="-40.64" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="8"/>
-<junction x="-40.64" y="17.78"/>
-<junction x="-27.94" y="17.78"/>
-<label x="-35.56" y="17.78" size="1.778" layer="95"/>
+<wire x1="182.88" y1="81.28" x2="170.18" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="TTL_SERIAL" gate="1" pin="3"/>
+<junction x="170.18" y="81.28"/>
+<junction x="182.88" y="81.28"/>
+<label x="175.26" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RD1" class="0">
@@ -14501,20 +14506,24 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <junction x="111.76" y="38.1"/>
 </segment>
 <segment>
-<wire x1="-40.64" y1="15.24" x2="-27.94" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="7"/>
-<junction x="-40.64" y="15.24"/>
-<junction x="-27.94" y="15.24"/>
-<label x="-35.56" y="15.24" size="1.778" layer="95"/>
+<wire x1="170.18" y1="78.74" x2="182.88" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="TTL_SERIAL" gate="1" pin="2"/>
+<junction x="170.18" y="78.74"/>
+<junction x="182.88" y="78.74"/>
+<label x="175.26" y="78.74" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CAN_N" class="0">
+<net name="CAN_N" class="1">
 <segment>
 <pinref part="U2" gate="G$1" pin="CANL"/>
 <wire x1="180.34" y1="43.18" x2="193.04" y2="43.18" width="0.1524" layer="91"/>
 <label x="182.88" y="43.18" size="1.778" layer="95"/>
 <junction x="180.34" y="43.18"/>
 <junction x="193.04" y="43.18"/>
+<wire x1="193.04" y1="43.18" x2="193.04" y2="38.1" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="1"/>
+<wire x1="193.04" y1="38.1" x2="198.12" y2="38.1" width="0.1524" layer="91"/>
+<junction x="198.12" y="38.1"/>
 </segment>
 <segment>
 <wire x1="-40.64" y1="-38.1" x2="-27.94" y2="-38.1" width="0.1524" layer="91"/>
@@ -14524,13 +14533,17 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <label x="-33.02" y="-38.1" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="CAN_P" class="0">
+<net name="CAN_P" class="1">
 <segment>
 <pinref part="U2" gate="G$1" pin="CANH"/>
 <wire x1="180.34" y1="45.72" x2="193.04" y2="45.72" width="0.1524" layer="91"/>
 <label x="182.88" y="45.72" size="1.778" layer="95"/>
 <junction x="180.34" y="45.72"/>
 <junction x="193.04" y="45.72"/>
+<wire x1="193.04" y1="45.72" x2="193.04" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="R10" gate="G$1" pin="2"/>
+<wire x1="193.04" y1="48.26" x2="198.12" y2="48.26" width="0.1524" layer="91"/>
+<junction x="198.12" y="48.26"/>
 </segment>
 <segment>
 <wire x1="-40.64" y1="-33.02" x2="-27.94" y2="-33.02" width="0.1524" layer="91"/>

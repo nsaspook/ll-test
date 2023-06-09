@@ -13424,6 +13424,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="VDD8" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
 <part name="RESET" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1" value="reset"/>
 <part name="VSS31" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VDD9" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VDD" device=""/>
+<part name="C16" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="0.1uf"/>
+<part name="C17" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uf"/>
+<part name="VSS32" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="VSS33" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13748,6 +13753,23 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <instance part="VSS31" gate="G$1" x="0" y="78.74" smashed="yes">
 <attribute name="VALUE" x="2.54" y="73.66" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="VDD9" gate="G$1" x="170.18" y="86.36" smashed="yes">
+<attribute name="VALUE" x="172.72" y="91.44" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="C16" gate="G$1" x="165.1" y="10.16" smashed="yes">
+<attribute name="NAME" x="166.116" y="10.795" size="1.778" layer="95"/>
+<attribute name="VALUE" x="166.116" y="5.969" size="1.778" layer="96"/>
+</instance>
+<instance part="C17" gate="G$1" x="175.26" y="10.16" smashed="yes">
+<attribute name="NAME" x="176.276" y="10.795" size="1.778" layer="95"/>
+<attribute name="VALUE" x="176.276" y="5.969" size="1.778" layer="96"/>
+</instance>
+<instance part="VSS32" gate="G$1" x="165.1" y="2.54" smashed="yes">
+<attribute name="VALUE" x="167.64" y="-2.54" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="VSS33" gate="G$1" x="175.26" y="2.54" smashed="yes">
+<attribute name="VALUE" x="177.8" y="-2.54" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -13946,6 +13968,11 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="CAN_PWR" gate="1" pin="2"/>
 <pinref part="VDD8" gate="G$1" pin="VDD"/>
 <junction x="-40.64" y="-20.32"/>
+</segment>
+<segment>
+<pinref part="TTL_SERIAL" gate="1" pin="4"/>
+<pinref part="VDD9" gate="G$1" pin="VDD"/>
+<junction x="170.18" y="83.82"/>
 </segment>
 </net>
 <net name="+24V" class="1">
@@ -14192,6 +14219,16 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <pinref part="VSS31" gate="G$1" pin="VSS"/>
 <junction x="0" y="81.28"/>
 </segment>
+<segment>
+<pinref part="C16" gate="G$1" pin="2"/>
+<pinref part="VSS32" gate="G$1" pin="VSS"/>
+<junction x="165.1" y="5.08"/>
+</segment>
+<segment>
+<pinref part="C17" gate="G$1" pin="2"/>
+<pinref part="VSS33" gate="G$1" pin="VSS"/>
+<junction x="175.26" y="5.08"/>
+</segment>
 </net>
 <net name="CPU_CLK" class="0">
 <segment>
@@ -14226,6 +14263,12 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <junction x="154.94" y="17.78"/>
 <junction x="154.94" y="10.16"/>
 <label x="157.48" y="15.24" size="1.778" layer="95"/>
+<pinref part="C17" gate="G$1" pin="1"/>
+<wire x1="154.94" y1="12.7" x2="165.1" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="C16" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="12.7" x2="175.26" y2="12.7" width="0.1524" layer="91"/>
+<junction x="165.1" y="12.7"/>
+<junction x="175.26" y="12.7"/>
 </segment>
 <segment>
 <wire x1="-27.94" y1="53.34" x2="-40.64" y2="53.34" width="0.1524" layer="91"/>
