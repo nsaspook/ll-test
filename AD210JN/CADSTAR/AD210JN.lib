@@ -1,0 +1,16 @@
+.AD210JN :1 ;Precision, Wide Bandwidth 3-Port Isolation Amplifier
+AD210_N_12
+*STM IC
+*NGS
+*PLB 1="VO" 2="OCOM" 3="+VOSS" 4="-VOSS" 14="+VISS" 15="-VISS" 16="FB" 17="-IN" 18="ICOM" 19="+IN" 29="PWR_COM" 30="PWR"
+*MXP 12
+*DFN AD210JN
+~!Mouser Part Number (584-AD210JN)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Analog-Devices/AD210JN?qs=NmRFExCfTkFa6nj1j%252BgrMw%3D%3D)
+~!Manufacturer_Name (Analog Devices)
+~!Manufacturer_Part_Number (AD210JN)
+~!Link Datasheet (-)
+~!Height (-)
+~!3D_Model (AD210JN)
+AD210JN
+1.1!U 2.1!U 3.1!U 4.1!U 14.1!U 15.1!U 16.1!U 17.1!U 18.1!U 19.1!U 29.1!U 30.1!U 

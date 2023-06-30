@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "AD210JN"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2023-01-20-11:07:55)
+    (mountForm default
+        (footprintRef "AD210_N_12")
+        (spec "System")
+    )
+)

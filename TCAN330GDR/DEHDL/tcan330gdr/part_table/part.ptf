@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'TCAN330GDR'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Texas Instruments", "TCAN330GDR" (!) = "", "SOIC127P600X175-8N", "Small Outline Packages", "595-TCAN330GDR", "https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TCAN330GDR?qs=9DwIlvx97adeWwzxdqwSPw%3D%3D", "3.3-V CAN Transceivers with CAN FD (Flexible Data Rate)", "http://www.ti.com/lit/gpn/TCAN330G", "1.75 mm"
+END_PART
+
+END.

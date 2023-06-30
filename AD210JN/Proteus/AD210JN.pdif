@@ -1,0 +1,553 @@
+;Proteus Design Interchange Format
+(PDIF
+ (vendor "SamacSys Limited")
+ (version 1 0)
+ (library
+  (part "AD210JN"
+   (description "Precision, Wide Bandwidth 3-Port Isolation Amplifier")
+   (family "ANA")
+   (package "AD210_N_12")
+   (attribute "Datasheet Link" "")
+   (attribute "Mouser Part Number" "584-AD210JN")
+   (attribute "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Analog-Devices/AD210JN?qs=NmRFExCfTkFa6nj1j%252BgrMw%3D%3D")
+   (attribute "Manufacturer_Name" "Analog Devices")
+   (attribute "Manufacturer_Part_Number" "AD210JN")
+   (gate
+    (symbol "AD210JN")
+    (pin "VO" 1 PS)
+    (pin "OCOM" 2 PS)
+    (pin "+VOSS" 3 PS)
+    (pin "-VOSS" 4 PS)
+    (pin "+VISS" 14 PS)
+    (pin "-VISS" 15 PS)
+    (pin "FB" 16 PS)
+    (pin "-IN" 17 PS)
+    (pin "ICOM" 18 PS)
+    (pin "+IN" 19 PS)
+    (pin "PWR_COM" 29 PS)
+    (pin "PWR" 30 PS)
+   )
+  )
+  (symbol "AD210JN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 200 100) (pt 1100 100) (pt 1100 -1000) (pt 200 -1000) (pt 200 100) (closed))
+   )
+   (terminal
+    (body (symbol "PIN") (pt 0 0) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -100) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -200) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -300) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -400) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -500) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -600) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -700) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -800) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 0 -900) (rot 0) (mir 0) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1300 -100) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+   (terminal
+    (body (symbol "PIN") (pt 1300 0) (rot 0) (mir X) (visible true))
+    (name (pt 230 0) (rot 0) (just MIDDLE LEFT) (visible true))
+    (number (pt 140 20) (rot 0) (just BOTTOM RIGHT) (visible true)))
+  )
+  (symbol "PIN"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 200 0))))
+  (symbol "PINSHORT"
+   (units THOU)
+   (origin (pt 0 0))
+   (graphic
+    (stroke 10)
+    (path (pt 0 0) (pt 100 0))))
+  (package "AD210_N_12"
+   (units MM)
+   (layer TSLK
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 -3.81)
+      (pt 2.54 -3.81))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 -3.81)
+      (pt 2.54 49.53))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 49.53)
+      (pt -9.8552 49.53))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -9.8552 49.53)
+      (pt -10.4648 49.53))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -10.4648 49.53)
+      (pt -22.86 49.53))))
+   (layer TSLK
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 49.53)
+      (pt -22.86 -3.81))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 46.101)
+      (pt -22.86 45.339))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 43.561)
+      (pt -22.86 42.799))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 41.021)
+      (pt -22.86 40.259))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 38.481)
+      (pt -22.86 37.719))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 35.941)
+      (pt -22.86 35.179))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 33.401)
+      (pt -22.86 32.639))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 30.861)
+      (pt -22.86 30.099))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 28.321)
+      (pt -22.86 27.559))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 25.781)
+      (pt -22.86 25.019))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 23.241)
+      (pt -22.86 22.479))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 20.701)
+      (pt -22.86 19.939))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 18.161)
+      (pt -22.86 17.399))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 15.621)
+      (pt -22.86 14.859))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 13.081)
+      (pt -22.86 12.319))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 10.541)
+      (pt -22.86 9.779))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 8.001)
+      (pt -22.86 7.239))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 5.461)
+      (pt -22.86 4.699))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 2.921)
+      (pt -22.86 2.159))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 0.381)
+      (pt -22.86 -0.381))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 -0.381)
+      (pt 2.54 0.381))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 2.159)
+      (pt 2.54 2.921))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 4.699)
+      (pt 2.54 5.461))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 7.239)
+      (pt 2.54 8.001))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 9.779)
+      (pt 2.54 10.541))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 12.319)
+      (pt 2.54 13.081))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 14.859)
+      (pt 2.54 15.621))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 17.399)
+      (pt 2.54 18.161))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 19.939)
+      (pt 2.54 20.701))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 22.479)
+      (pt 2.54 23.241))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 25.019)
+      (pt 2.54 25.781))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 27.559)
+      (pt 2.54 28.321))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 30.099)
+      (pt 2.54 30.861))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 32.639)
+      (pt 2.54 33.401))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 35.179)
+      (pt 2.54 35.941))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 37.719)
+      (pt 2.54 38.481))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 40.259)
+      (pt 2.54 41.021))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 42.799)
+      (pt 2.54 43.561))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 45.339)
+      (pt 2.54 46.101))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 -3.81)
+      (pt 2.54 -3.81))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 -3.81)
+      (pt 2.54 49.53))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt 2.54 49.53)
+      (pt -9.8552 49.53))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -9.8552 49.53)
+      (pt -10.4648 49.53))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -10.4648 49.53)
+      (pt -22.86 49.53))))
+   (layer TASM
+    (graphic
+     (stroke 0.1524)
+     (path
+      (closed false)
+      (pt -22.86 49.53)
+      (pt -22.86 -3.81))))
+   (leg 1 (pt -20.32 45.72) (padstack 0))
+   (leg 2 (pt -20.32 43.18) (padstack 2))
+   (leg 3 (pt -20.32 40.64) (padstack 3))
+   (leg 4 (pt -20.32 38.1) (padstack 4))
+   (leg 14 (pt -20.32 12.7) (padstack 5))
+   (leg 15 (pt -20.32 10.16) (padstack 6))
+   (leg 16 (pt -20.32 7.62) (padstack 7))
+   (leg 17 (pt -20.32 5.08) (padstack 8))
+   (leg 18 (pt -20.32 2.54) (padstack 9))
+   (leg 19 (pt -20.32 0) (padstack 10))
+   (leg 29 (pt 0 22.86) (padstack 11))
+   (leg 30 (pt 0 25.4) (padstack 12))
+   (padstack 0
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (square 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (square 1.143))
+   )
+   (padstack 2
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 3
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 4
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 5
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 6
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 7
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 8
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 9
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 10
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 11
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (padstack 12
+    (hole 0.762)
+    (plated true)
+    (pad (layer TCOP) (round 1.143))
+    (pad (layer INNER) (round 1.143))
+    (pad (layer BCOP) (round 1.143))
+   )
+   (model "AD210JN.stp"
+    (euler 0 0 0)
+    (offset 0 0 0)
+   )
+  )
+ )
+)

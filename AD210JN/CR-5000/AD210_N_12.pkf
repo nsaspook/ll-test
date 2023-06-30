@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "AD210_N_12"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "AD210_N_12")
+        (spec "default")
+    )
+)

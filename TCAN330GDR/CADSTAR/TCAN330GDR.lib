@@ -1,0 +1,16 @@
+.TCAN330GDR :1 ;3.3-V CAN Transceivers with CAN FD (Flexible Data Rate)
+SOIC127P600X175-8N
+*STM U
+*NGS
+*PLB 1="TXD" 2="GND" 3="VCC" 4="RXD" 5="SHDN" 6="CANL" 7="CANH" 8="S"
+*MXP 8
+*DFN TCAN330GDR
+~!Mouser Part Number (595-TCAN330GDR)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Texas-Instruments/TCAN330GDR?qs=9DwIlvx97adeWwzxdqwSPw%3D%3D)
+~!Manufacturer_Name (Texas Instruments)
+~!Manufacturer_Part_Number (TCAN330GDR)
+~!Link Datasheet (http://www.ti.com/lit/gpn/TCAN330G)
+~!Height (1.75mm)
+~!3D_Model (TCAN330GDR)
+TCAN330GDR
+1.1!I 2.1!G 3.1!P 4.1!Y 8.1!U 7.1!U 6.1!U 5.1!U 

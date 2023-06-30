@@ -44,7 +44,7 @@ public class Bnocube {
         ColorCube cube = new ColorCube(0.3);
         Font myFont = new Font("TimesRoman", Font.CENTER_BASELINE, 1);
         Font3D myFont3D = new Font3D(myFont, new FontExtrusion());
-        Point3f textPt = new Point3f(-1.6f, 0.4f, -1.0f); // place the text near the cube
+        Point3f textPt = new Point3f(-1.8f, 0.4f, -1.0f); // place the text near the cube
         Text3D myText3D = new Text3D(myFont3D, "BNO086", textPt);
         Shape3D myShape3D = new Shape3D(myText3D, new Appearance());
 
@@ -80,7 +80,6 @@ public class Bnocube {
 
                     if (token[0].equals("  1")) {
                         System.out.println(String.format("dtype = %3s  device = %s :%s:%s:%s:%s:%s:%s:%s:", token[0], token[1], token[2], token[3], token[4], token[5], token[6], token[7], token[8]));
-                        // multiply x/y/z by -1 to swap frames of reference
                         double x = Double.parseDouble(token[2]);
                         double y = Double.parseDouble(token[3]);
                         double z = Double.parseDouble(token[4]);
@@ -88,7 +87,8 @@ public class Bnocube {
                         double ax = Double.parseDouble(token[6]);
                         double ay = Double.parseDouble(token[7]);
                         double az = Double.parseDouble(token[8]);
-
+                        
+                        // multiply x/y/z by -1 to swap frames of reference
                         Quat4d quaternion = new Quat4d(w, -y, -z, -x); // cube 3D position
                         // -(√2)/2 = -0.70710678118f
                         Quat4d a = new Quat4d(1.0f, 0.0f, 0.0f, 0.0f); // set cube position correction rotation matrix
