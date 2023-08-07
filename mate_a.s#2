@@ -16170,7 +16170,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <label x="0" y="5.08" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RC0" class="0">
+<net name="MB_RX" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RC0"/>
 <wire x1="38.1" y1="30.48" x2="25.4" y2="30.48" width="0.1524" layer="91"/>
@@ -16193,7 +16193,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <label x="55.88" y="88.9" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RC1" class="0">
+<net name="MB_TX" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RC1"/>
 <wire x1="38.1" y1="27.94" x2="25.4" y2="27.94" width="0.1524" layer="91"/>
