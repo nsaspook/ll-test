@@ -14778,29 +14778,6 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="-5.08" y="-22.86"/>
 <label x="-2.54" y="-22.86" size="1.778" layer="95"/>
 </segment>
-<segment>
-<pinref part="OK1" gate="G$1" pin="EMI"/>
-<pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="76.2" y1="-7.62" x2="76.2" y2="-15.24" width="0.1524" layer="91"/>
-<junction x="76.2" y="-7.62"/>
-<wire x1="76.2" y1="-15.24" x2="99.06" y2="-15.24" width="0.1524" layer="91"/>
-<label x="91.44" y="-15.24" size="1.778" layer="95"/>
-<junction x="99.06" y="-15.24"/>
-</segment>
-<segment>
-<wire x1="86.36" y1="30.48" x2="111.76" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="RC7"/>
-<junction x="86.36" y="30.48"/>
-<label x="93.98" y="30.48" size="1.778" layer="95"/>
-<junction x="111.76" y="30.48"/>
-</segment>
-<segment>
-<wire x1="-40.64" y1="22.86" x2="-27.94" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="10"/>
-<label x="-35.56" y="22.86" size="1.778" layer="95"/>
-<junction x="-40.64" y="22.86"/>
-<junction x="-27.94" y="22.86"/>
-</segment>
 </net>
 <net name="MX_TX" class="0">
 <segment>
@@ -14819,28 +14796,6 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="7.62" y="-15.24"/>
 <junction x="-22.86" y="-15.24"/>
 <label x="-20.32" y="-15.24" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="OK2" gate="G$1" pin="A"/>
-<wire x1="58.42" y1="-25.4" x2="58.42" y2="-20.32" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="-20.32" x2="99.06" y2="-20.32" width="0.1524" layer="91"/>
-<label x="91.44" y="-22.86" size="1.778" layer="95"/>
-<junction x="58.42" y="-25.4"/>
-<junction x="99.06" y="-20.32"/>
-</segment>
-<segment>
-<wire x1="86.36" y1="27.94" x2="111.76" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="RC6"/>
-<junction x="86.36" y="27.94"/>
-<label x="93.98" y="27.94" size="1.778" layer="95"/>
-<junction x="111.76" y="27.94"/>
-</segment>
-<segment>
-<wire x1="-40.64" y1="15.24" x2="-27.94" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="7"/>
-<junction x="-40.64" y="15.24"/>
-<junction x="-27.94" y="15.24"/>
-<label x="-35.56" y="15.24" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -15914,6 +15869,55 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="144.78" y="78.74"/>
 <label x="139.7" y="81.28" size="1.778" layer="95"/>
 <label x="144.78" y="76.2" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="UC_TX" class="0">
+<segment>
+<pinref part="OK2" gate="G$1" pin="A"/>
+<wire x1="58.42" y1="-25.4" x2="58.42" y2="-20.32" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="-20.32" x2="99.06" y2="-20.32" width="0.1524" layer="91"/>
+<label x="91.44" y="-22.86" size="1.778" layer="95"/>
+<junction x="58.42" y="-25.4"/>
+<junction x="99.06" y="-20.32"/>
+</segment>
+<segment>
+<wire x1="86.36" y1="27.94" x2="111.76" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="RC6"/>
+<junction x="86.36" y="27.94"/>
+<label x="93.98" y="27.94" size="1.778" layer="95"/>
+<junction x="111.76" y="27.94"/>
+</segment>
+<segment>
+<wire x1="-40.64" y1="15.24" x2="-27.94" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="SV2" gate="1" pin="7"/>
+<junction x="-40.64" y="15.24"/>
+<junction x="-27.94" y="15.24"/>
+<label x="-35.56" y="15.24" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="UC_RX" class="0">
+<segment>
+<pinref part="OK1" gate="G$1" pin="EMI"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<wire x1="76.2" y1="-7.62" x2="76.2" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="76.2" y="-7.62"/>
+<wire x1="76.2" y1="-15.24" x2="99.06" y2="-15.24" width="0.1524" layer="91"/>
+<label x="91.44" y="-15.24" size="1.778" layer="95"/>
+<junction x="99.06" y="-15.24"/>
+</segment>
+<segment>
+<wire x1="86.36" y1="30.48" x2="111.76" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="RC7"/>
+<junction x="86.36" y="30.48"/>
+<label x="93.98" y="30.48" size="1.778" layer="95"/>
+<junction x="111.76" y="30.48"/>
+</segment>
+<segment>
+<wire x1="-40.64" y1="22.86" x2="-27.94" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="SV2" gate="1" pin="10"/>
+<label x="-35.56" y="22.86" size="1.778" layer="95"/>
+<junction x="-40.64" y="22.86"/>
+<junction x="-27.94" y="22.86"/>
 </segment>
 </net>
 </nets>

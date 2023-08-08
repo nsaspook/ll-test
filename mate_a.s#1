@@ -74,184 +74,6 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="PIC18F47Q84-E_P">
-<description>&lt;8-bit Microcontrollers - MCU CAN-FD, 128KB Flash, 13KB RAM, 12b ADC3, UTMR, DAC, Comp, PWM, CCP, CWG, HLT, WWDT, SCAN/CRC, ZCD, PPS,Comms IDLE/DOZE/PMD, JTAG&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
-<packages>
-<package name="DIP1543W58P254L5175H635Q40N">
-<description>&lt;b&gt;PDIP 40&lt;/b&gt;&lt;br&gt;
-</description>
-<pad name="1" x="-7.715" y="24.13" drill="0.784" diameter="1.184" shape="square"/>
-<pad name="2" x="-7.715" y="21.59" drill="0.784" diameter="1.184"/>
-<pad name="3" x="-7.715" y="19.05" drill="0.784" diameter="1.184"/>
-<pad name="4" x="-7.715" y="16.51" drill="0.784" diameter="1.184"/>
-<pad name="5" x="-7.715" y="13.97" drill="0.784" diameter="1.184"/>
-<pad name="6" x="-7.715" y="11.43" drill="0.784" diameter="1.184"/>
-<pad name="7" x="-7.715" y="8.89" drill="0.784" diameter="1.184"/>
-<pad name="8" x="-7.715" y="6.35" drill="0.784" diameter="1.184"/>
-<pad name="9" x="-7.715" y="3.81" drill="0.784" diameter="1.184"/>
-<pad name="10" x="-7.715" y="1.27" drill="0.784" diameter="1.184"/>
-<pad name="11" x="-7.715" y="-1.27" drill="0.784" diameter="1.184"/>
-<pad name="12" x="-7.715" y="-3.81" drill="0.784" diameter="1.184"/>
-<pad name="13" x="-7.715" y="-6.35" drill="0.784" diameter="1.184"/>
-<pad name="14" x="-7.715" y="-8.89" drill="0.784" diameter="1.184"/>
-<pad name="15" x="-7.715" y="-11.43" drill="0.784" diameter="1.184"/>
-<pad name="16" x="-7.715" y="-13.97" drill="0.784" diameter="1.184"/>
-<pad name="17" x="-7.715" y="-16.51" drill="0.784" diameter="1.184"/>
-<pad name="18" x="-7.715" y="-19.05" drill="0.784" diameter="1.184"/>
-<pad name="19" x="-7.715" y="-21.59" drill="0.784" diameter="1.184"/>
-<pad name="20" x="-7.715" y="-24.13" drill="0.784" diameter="1.184"/>
-<pad name="21" x="7.715" y="-24.13" drill="0.784" diameter="1.184"/>
-<pad name="22" x="7.715" y="-21.59" drill="0.784" diameter="1.184"/>
-<pad name="23" x="7.715" y="-19.05" drill="0.784" diameter="1.184"/>
-<pad name="24" x="7.715" y="-16.51" drill="0.784" diameter="1.184"/>
-<pad name="25" x="7.715" y="-13.97" drill="0.784" diameter="1.184"/>
-<pad name="26" x="7.715" y="-11.43" drill="0.784" diameter="1.184"/>
-<pad name="27" x="7.715" y="-8.89" drill="0.784" diameter="1.184"/>
-<pad name="28" x="7.715" y="-6.35" drill="0.784" diameter="1.184"/>
-<pad name="29" x="7.715" y="-3.81" drill="0.784" diameter="1.184"/>
-<pad name="30" x="7.715" y="-1.27" drill="0.784" diameter="1.184"/>
-<pad name="31" x="7.715" y="1.27" drill="0.784" diameter="1.184"/>
-<pad name="32" x="7.715" y="3.81" drill="0.784" diameter="1.184"/>
-<pad name="33" x="7.715" y="6.35" drill="0.784" diameter="1.184"/>
-<pad name="34" x="7.715" y="8.89" drill="0.784" diameter="1.184"/>
-<pad name="35" x="7.715" y="11.43" drill="0.784" diameter="1.184"/>
-<pad name="36" x="7.715" y="13.97" drill="0.784" diameter="1.184"/>
-<pad name="37" x="7.715" y="16.51" drill="0.784" diameter="1.184"/>
-<pad name="38" x="7.715" y="19.05" drill="0.784" diameter="1.184"/>
-<pad name="39" x="7.715" y="21.59" drill="0.784" diameter="1.184"/>
-<pad name="40" x="7.715" y="24.13" drill="0.784" diameter="1.184"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-8.78" y1="26.856" x2="8.78" y2="26.856" width="0.05" layer="51"/>
-<wire x1="8.78" y1="26.856" x2="8.78" y2="-26.856" width="0.05" layer="51"/>
-<wire x1="8.78" y1="-26.856" x2="-8.78" y2="-26.856" width="0.05" layer="51"/>
-<wire x1="-8.78" y1="-26.856" x2="-8.78" y2="26.856" width="0.05" layer="51"/>
-<wire x1="-7.366" y1="26.606" x2="7.366" y2="26.606" width="0.1" layer="51"/>
-<wire x1="7.366" y1="26.606" x2="7.366" y2="-26.606" width="0.1" layer="51"/>
-<wire x1="7.366" y1="-26.606" x2="-7.366" y2="-26.606" width="0.1" layer="51"/>
-<wire x1="-7.366" y1="-26.606" x2="-7.366" y2="26.606" width="0.1" layer="51"/>
-<wire x1="-7.366" y1="25.336" x2="-6.096" y2="26.606" width="0.1" layer="51"/>
-<wire x1="-8.307" y1="26.606" x2="7.366" y2="26.606" width="0.2" layer="21"/>
-<wire x1="-7.366" y1="-26.606" x2="7.366" y2="-26.606" width="0.2" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="PIC18F47Q84-E_P">
-<wire x1="5.08" y1="2.54" x2="43.18" y2="2.54" width="0.254" layer="94"/>
-<wire x1="43.18" y1="-50.8" x2="43.18" y2="2.54" width="0.254" layer="94"/>
-<wire x1="43.18" y1="-50.8" x2="5.08" y2="-50.8" width="0.254" layer="94"/>
-<wire x1="5.08" y1="2.54" x2="5.08" y2="-50.8" width="0.254" layer="94"/>
-<text x="44.45" y="7.62" size="1.778" layer="95" align="center-left">&gt;NAME</text>
-<text x="44.45" y="5.08" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
-<pin name="!MCLR!/VPP/RE3" x="0" y="0" length="middle"/>
-<pin name="RA0" x="0" y="-2.54" length="middle"/>
-<pin name="RA1" x="0" y="-5.08" length="middle"/>
-<pin name="RA2" x="0" y="-7.62" length="middle"/>
-<pin name="RA3" x="0" y="-10.16" length="middle"/>
-<pin name="RA4" x="0" y="-12.7" length="middle"/>
-<pin name="RA5" x="0" y="-15.24" length="middle"/>
-<pin name="RE0" x="0" y="-17.78" length="middle"/>
-<pin name="RE1" x="0" y="-20.32" length="middle"/>
-<pin name="RE2" x="0" y="-22.86" length="middle"/>
-<pin name="VDD_1" x="0" y="-25.4" length="middle"/>
-<pin name="VSS_1" x="0" y="-27.94" length="middle"/>
-<pin name="RA7" x="0" y="-30.48" length="middle"/>
-<pin name="RA6" x="0" y="-33.02" length="middle"/>
-<pin name="RC0" x="0" y="-35.56" length="middle"/>
-<pin name="RC1" x="0" y="-38.1" length="middle"/>
-<pin name="RC2" x="0" y="-40.64" length="middle"/>
-<pin name="RC3" x="0" y="-43.18" length="middle"/>
-<pin name="RD0" x="0" y="-45.72" length="middle"/>
-<pin name="RD1" x="0" y="-48.26" length="middle"/>
-<pin name="RB7/ICSPDAT" x="48.26" y="0" length="middle" rot="R180"/>
-<pin name="RB6/ICSPCLK" x="48.26" y="-2.54" length="middle" rot="R180"/>
-<pin name="RB5" x="48.26" y="-5.08" length="middle" rot="R180"/>
-<pin name="RB4" x="48.26" y="-7.62" length="middle" rot="R180"/>
-<pin name="RB3" x="48.26" y="-10.16" length="middle" rot="R180"/>
-<pin name="RB2" x="48.26" y="-12.7" length="middle" rot="R180"/>
-<pin name="RB1" x="48.26" y="-15.24" length="middle" rot="R180"/>
-<pin name="RB0" x="48.26" y="-17.78" length="middle" rot="R180"/>
-<pin name="VDD_2" x="48.26" y="-20.32" length="middle" rot="R180"/>
-<pin name="VSS_2" x="48.26" y="-22.86" length="middle" rot="R180"/>
-<pin name="RD7" x="48.26" y="-25.4" length="middle" rot="R180"/>
-<pin name="RD6" x="48.26" y="-27.94" length="middle" rot="R180"/>
-<pin name="RD5" x="48.26" y="-30.48" length="middle" rot="R180"/>
-<pin name="RD4" x="48.26" y="-33.02" length="middle" rot="R180"/>
-<pin name="RC7" x="48.26" y="-35.56" length="middle" rot="R180"/>
-<pin name="RC6" x="48.26" y="-38.1" length="middle" rot="R180"/>
-<pin name="RC5" x="48.26" y="-40.64" length="middle" rot="R180"/>
-<pin name="RC4" x="48.26" y="-43.18" length="middle" rot="R180"/>
-<pin name="RD3" x="48.26" y="-45.72" length="middle" rot="R180"/>
-<pin name="RD2" x="48.26" y="-48.26" length="middle" rot="R180"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="PIC18F47Q84-E_P" prefix="IC">
-<description>&lt;b&gt;8-bit Microcontrollers - MCU CAN-FD, 128KB Flash, 13KB RAM, 12b ADC3, UTMR, DAC, Comp, PWM, CCP, CWG, HLT, WWDT, SCAN/CRC, ZCD, PPS,Comms IDLE/DOZE/PMD, JTAG&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href=""&gt; Datasheet &lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="PIC18F47Q84-E_P" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="DIP1543W58P254L5175H635Q40N">
-<connects>
-<connect gate="G$1" pin="!MCLR!/VPP/RE3" pad="1"/>
-<connect gate="G$1" pin="RA0" pad="2"/>
-<connect gate="G$1" pin="RA1" pad="3"/>
-<connect gate="G$1" pin="RA2" pad="4"/>
-<connect gate="G$1" pin="RA3" pad="5"/>
-<connect gate="G$1" pin="RA4" pad="6"/>
-<connect gate="G$1" pin="RA5" pad="7"/>
-<connect gate="G$1" pin="RA6" pad="14"/>
-<connect gate="G$1" pin="RA7" pad="13"/>
-<connect gate="G$1" pin="RB0" pad="33"/>
-<connect gate="G$1" pin="RB1" pad="34"/>
-<connect gate="G$1" pin="RB2" pad="35"/>
-<connect gate="G$1" pin="RB3" pad="36"/>
-<connect gate="G$1" pin="RB4" pad="37"/>
-<connect gate="G$1" pin="RB5" pad="38"/>
-<connect gate="G$1" pin="RB6/ICSPCLK" pad="39"/>
-<connect gate="G$1" pin="RB7/ICSPDAT" pad="40"/>
-<connect gate="G$1" pin="RC0" pad="15"/>
-<connect gate="G$1" pin="RC1" pad="16"/>
-<connect gate="G$1" pin="RC2" pad="17"/>
-<connect gate="G$1" pin="RC3" pad="18"/>
-<connect gate="G$1" pin="RC4" pad="23"/>
-<connect gate="G$1" pin="RC5" pad="24"/>
-<connect gate="G$1" pin="RC6" pad="25"/>
-<connect gate="G$1" pin="RC7" pad="26"/>
-<connect gate="G$1" pin="RD0" pad="19"/>
-<connect gate="G$1" pin="RD1" pad="20"/>
-<connect gate="G$1" pin="RD2" pad="21"/>
-<connect gate="G$1" pin="RD3" pad="22"/>
-<connect gate="G$1" pin="RD4" pad="27"/>
-<connect gate="G$1" pin="RD5" pad="28"/>
-<connect gate="G$1" pin="RD6" pad="29"/>
-<connect gate="G$1" pin="RD7" pad="30"/>
-<connect gate="G$1" pin="RE0" pad="8"/>
-<connect gate="G$1" pin="RE1" pad="9"/>
-<connect gate="G$1" pin="RE2" pad="10"/>
-<connect gate="G$1" pin="VDD_1" pad="11"/>
-<connect gate="G$1" pin="VDD_2" pad="32"/>
-<connect gate="G$1" pin="VSS_1" pad="12"/>
-<connect gate="G$1" pin="VSS_2" pad="31"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="DESCRIPTION" value="8-bit Microcontrollers - MCU CAN-FD, 128KB Flash, 13KB RAM, 12b ADC3, UTMR, DAC, Comp, PWM, CCP, CWG, HLT, WWDT, SCAN/CRC, ZCD, PPS,Comms IDLE/DOZE/PMD, JTAG" constant="no"/>
-<attribute name="HEIGHT" value="6.35mm" constant="no"/>
-<attribute name="MANUFACTURER_NAME" value="Microchip" constant="no"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="PIC18F47Q84-E/P" constant="no"/>
-<attribute name="MOUSER_PART_NUMBER" value="579-PIC18F47Q84-E/P" constant="no"/>
-<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Microchip-Technology-Atmel/PIC18F47Q84-E-P?qs=d0WKAl%252BL4KbDzvuOzyvPrQ%3D%3D" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="optocoupler" urn="urn:adsk.eagle:library:320">
 <description>&lt;b&gt;Opto Couplers&lt;/b&gt;&lt;p&gt;
 Siemens, Hewlett-Packard, Texas Instuments, Sharp, Motorola&lt;p&gt;
@@ -14639,6 +14461,199 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </deviceset>
 </devicesets>
 </library>
+<library name="PIC18F47Q84-I_PT">
+<description>&lt;8-bit Microcontrollers - MCU CAN-FD, 128KB Flash, 13KB RAM, 12b ADC3, UTMR, DAC, Comp, PWM, CCP, CWG, HLT, WWDT, SCAN/CRC, ZCD, PPS,Comms IDLE/DOZE/PMD, JTAG&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="QFP80P1200X1200X120-44N">
+<description>&lt;b&gt;44-Lead Plastic Thin Quad Flatpack (PT) - 10x10x1.0 mm Body [TQFP]&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="-5.738" y="4" dx="1.475" dy="0.6" layer="1"/>
+<smd name="2" x="-5.738" y="3.2" dx="1.475" dy="0.6" layer="1"/>
+<smd name="3" x="-5.738" y="2.4" dx="1.475" dy="0.6" layer="1"/>
+<smd name="4" x="-5.738" y="1.6" dx="1.475" dy="0.6" layer="1"/>
+<smd name="5" x="-5.738" y="0.8" dx="1.475" dy="0.6" layer="1"/>
+<smd name="6" x="-5.738" y="0" dx="1.475" dy="0.6" layer="1"/>
+<smd name="7" x="-5.738" y="-0.8" dx="1.475" dy="0.6" layer="1"/>
+<smd name="8" x="-5.738" y="-1.6" dx="1.475" dy="0.6" layer="1"/>
+<smd name="9" x="-5.738" y="-2.4" dx="1.475" dy="0.6" layer="1"/>
+<smd name="10" x="-5.738" y="-3.2" dx="1.475" dy="0.6" layer="1"/>
+<smd name="11" x="-5.738" y="-4" dx="1.475" dy="0.6" layer="1"/>
+<smd name="12" x="-4" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="13" x="-3.2" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="14" x="-2.4" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="15" x="-1.6" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="16" x="-0.8" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="17" x="0" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="18" x="0.8" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="19" x="1.6" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="20" x="2.4" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="21" x="3.2" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="22" x="4" y="-5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="23" x="5.738" y="-4" dx="1.475" dy="0.6" layer="1"/>
+<smd name="24" x="5.738" y="-3.2" dx="1.475" dy="0.6" layer="1"/>
+<smd name="25" x="5.738" y="-2.4" dx="1.475" dy="0.6" layer="1"/>
+<smd name="26" x="5.738" y="-1.6" dx="1.475" dy="0.6" layer="1"/>
+<smd name="27" x="5.738" y="-0.8" dx="1.475" dy="0.6" layer="1"/>
+<smd name="28" x="5.738" y="0" dx="1.475" dy="0.6" layer="1"/>
+<smd name="29" x="5.738" y="0.8" dx="1.475" dy="0.6" layer="1"/>
+<smd name="30" x="5.738" y="1.6" dx="1.475" dy="0.6" layer="1"/>
+<smd name="31" x="5.738" y="2.4" dx="1.475" dy="0.6" layer="1"/>
+<smd name="32" x="5.738" y="3.2" dx="1.475" dy="0.6" layer="1"/>
+<smd name="33" x="5.738" y="4" dx="1.475" dy="0.6" layer="1"/>
+<smd name="34" x="4" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="35" x="3.2" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="36" x="2.4" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="37" x="1.6" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="38" x="0.8" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="39" x="0" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="40" x="-0.8" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="41" x="-1.6" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="42" x="-2.4" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="43" x="-3.2" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<smd name="44" x="-4" y="5.738" dx="1.475" dy="0.6" layer="1" rot="R90"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-6.725" y1="6.725" x2="6.725" y2="6.725" width="0.05" layer="51"/>
+<wire x1="6.725" y1="6.725" x2="6.725" y2="-6.725" width="0.05" layer="51"/>
+<wire x1="6.725" y1="-6.725" x2="-6.725" y2="-6.725" width="0.05" layer="51"/>
+<wire x1="-6.725" y1="-6.725" x2="-6.725" y2="6.725" width="0.05" layer="51"/>
+<wire x1="-5" y1="5" x2="5" y2="5" width="0.1" layer="51"/>
+<wire x1="5" y1="5" x2="5" y2="-5" width="0.1" layer="51"/>
+<wire x1="5" y1="-5" x2="-5" y2="-5" width="0.1" layer="51"/>
+<wire x1="-5" y1="-5" x2="-5" y2="5" width="0.1" layer="51"/>
+<wire x1="-5" y1="4.2" x2="-4.2" y2="5" width="0.1" layer="51"/>
+<wire x1="-4.65" y1="4.65" x2="4.65" y2="4.65" width="0.2" layer="21"/>
+<wire x1="4.65" y1="4.65" x2="4.65" y2="-4.65" width="0.2" layer="21"/>
+<wire x1="4.65" y1="-4.65" x2="-4.65" y2="-4.65" width="0.2" layer="21"/>
+<wire x1="-4.65" y1="-4.65" x2="-4.65" y2="4.65" width="0.2" layer="21"/>
+<circle x="-6.075" y="5.2" radius="0.2" width="0.4" layer="25"/>
+</package>
+</packages>
+<symbols>
+<symbol name="PIC18F47Q84-I_PT">
+<wire x1="5.08" y1="10.16" x2="35.56" y2="10.16" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-48.26" x2="35.56" y2="10.16" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-48.26" x2="5.08" y2="-48.26" width="0.254" layer="94"/>
+<wire x1="5.08" y1="10.16" x2="5.08" y2="-48.26" width="0.254" layer="94"/>
+<text x="36.83" y="15.24" size="1.778" layer="95" align="center-left">&gt;NAME</text>
+<text x="36.83" y="12.7" size="1.778" layer="96" align="center-left">&gt;VALUE</text>
+<pin name="RC7" x="0" y="0" length="middle"/>
+<pin name="RD4" x="0" y="-2.54" length="middle"/>
+<pin name="RD5" x="0" y="-5.08" length="middle"/>
+<pin name="RD6" x="0" y="-7.62" length="middle"/>
+<pin name="RD7" x="0" y="-10.16" length="middle"/>
+<pin name="VSS_1" x="0" y="-12.7" length="middle"/>
+<pin name="VDD_1" x="0" y="-15.24" length="middle"/>
+<pin name="RB0" x="0" y="-17.78" length="middle"/>
+<pin name="RB1" x="0" y="-20.32" length="middle"/>
+<pin name="RB2" x="0" y="-22.86" length="middle"/>
+<pin name="RB3" x="0" y="-25.4" length="middle"/>
+<pin name="NC_1" x="7.62" y="-53.34" length="middle" rot="R90"/>
+<pin name="NC_2" x="10.16" y="-53.34" length="middle" rot="R90"/>
+<pin name="RB4" x="12.7" y="-53.34" length="middle" rot="R90"/>
+<pin name="RB5" x="15.24" y="-53.34" length="middle" rot="R90"/>
+<pin name="ICSPCLK/RB6" x="17.78" y="-53.34" length="middle" rot="R90"/>
+<pin name="ICSPDAT/RB7" x="20.32" y="-53.34" length="middle" rot="R90"/>
+<pin name="VPP/!MCLR!/RE3" x="22.86" y="-53.34" length="middle" rot="R90"/>
+<pin name="RA0" x="25.4" y="-53.34" length="middle" rot="R90"/>
+<pin name="RA1" x="27.94" y="-53.34" length="middle" rot="R90"/>
+<pin name="RA2" x="30.48" y="-53.34" length="middle" rot="R90"/>
+<pin name="RA3" x="33.02" y="-53.34" length="middle" rot="R90"/>
+<pin name="NC_3" x="40.64" y="0" length="middle" rot="R180"/>
+<pin name="RC0" x="40.64" y="-2.54" length="middle" rot="R180"/>
+<pin name="RA6" x="40.64" y="-5.08" length="middle" rot="R180"/>
+<pin name="RA7" x="40.64" y="-7.62" length="middle" rot="R180"/>
+<pin name="VSS_2" x="40.64" y="-10.16" length="middle" rot="R180"/>
+<pin name="VDD_2" x="40.64" y="-12.7" length="middle" rot="R180"/>
+<pin name="RE2" x="40.64" y="-15.24" length="middle" rot="R180"/>
+<pin name="RE1" x="40.64" y="-17.78" length="middle" rot="R180"/>
+<pin name="RE0" x="40.64" y="-20.32" length="middle" rot="R180"/>
+<pin name="RA5" x="40.64" y="-22.86" length="middle" rot="R180"/>
+<pin name="RA4" x="40.64" y="-25.4" length="middle" rot="R180"/>
+<pin name="RC6" x="7.62" y="15.24" length="middle" rot="R270"/>
+<pin name="RC5" x="10.16" y="15.24" length="middle" rot="R270"/>
+<pin name="RC4" x="12.7" y="15.24" length="middle" rot="R270"/>
+<pin name="RD3" x="15.24" y="15.24" length="middle" rot="R270"/>
+<pin name="RD2" x="17.78" y="15.24" length="middle" rot="R270"/>
+<pin name="RD1" x="20.32" y="15.24" length="middle" rot="R270"/>
+<pin name="RD0" x="22.86" y="15.24" length="middle" rot="R270"/>
+<pin name="RC3" x="25.4" y="15.24" length="middle" rot="R270"/>
+<pin name="RC2" x="27.94" y="15.24" length="middle" rot="R270"/>
+<pin name="RC1" x="30.48" y="15.24" length="middle" rot="R270"/>
+<pin name="NC_4" x="33.02" y="15.24" length="middle" rot="R270"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="PIC18F47Q84-I_PT" prefix="IC">
+<description>&lt;b&gt;8-bit Microcontrollers - MCU CAN-FD, 128KB Flash, 13KB RAM, 12b ADC3, UTMR, DAC, Comp, PWM, CCP, CWG, HLT, WWDT, SCAN/CRC, ZCD, PPS,Comms IDLE/DOZE/PMD, JTAG&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47-57Q84-Data-Sheet-40002213D.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="PIC18F47Q84-I_PT" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="QFP80P1200X1200X120-44N">
+<connects>
+<connect gate="G$1" pin="ICSPCLK/RB6" pad="16"/>
+<connect gate="G$1" pin="ICSPDAT/RB7" pad="17"/>
+<connect gate="G$1" pin="NC_1" pad="12"/>
+<connect gate="G$1" pin="NC_2" pad="13"/>
+<connect gate="G$1" pin="NC_3" pad="33"/>
+<connect gate="G$1" pin="NC_4" pad="34"/>
+<connect gate="G$1" pin="RA0" pad="19"/>
+<connect gate="G$1" pin="RA1" pad="20"/>
+<connect gate="G$1" pin="RA2" pad="21"/>
+<connect gate="G$1" pin="RA3" pad="22"/>
+<connect gate="G$1" pin="RA4" pad="23"/>
+<connect gate="G$1" pin="RA5" pad="24"/>
+<connect gate="G$1" pin="RA6" pad="31"/>
+<connect gate="G$1" pin="RA7" pad="30"/>
+<connect gate="G$1" pin="RB0" pad="8"/>
+<connect gate="G$1" pin="RB1" pad="9"/>
+<connect gate="G$1" pin="RB2" pad="10"/>
+<connect gate="G$1" pin="RB3" pad="11"/>
+<connect gate="G$1" pin="RB4" pad="14"/>
+<connect gate="G$1" pin="RB5" pad="15"/>
+<connect gate="G$1" pin="RC0" pad="32"/>
+<connect gate="G$1" pin="RC1" pad="35"/>
+<connect gate="G$1" pin="RC2" pad="36"/>
+<connect gate="G$1" pin="RC3" pad="37"/>
+<connect gate="G$1" pin="RC4" pad="42"/>
+<connect gate="G$1" pin="RC5" pad="43"/>
+<connect gate="G$1" pin="RC6" pad="44"/>
+<connect gate="G$1" pin="RC7" pad="1"/>
+<connect gate="G$1" pin="RD0" pad="38"/>
+<connect gate="G$1" pin="RD1" pad="39"/>
+<connect gate="G$1" pin="RD2" pad="40"/>
+<connect gate="G$1" pin="RD3" pad="41"/>
+<connect gate="G$1" pin="RD4" pad="2"/>
+<connect gate="G$1" pin="RD5" pad="3"/>
+<connect gate="G$1" pin="RD6" pad="4"/>
+<connect gate="G$1" pin="RD7" pad="5"/>
+<connect gate="G$1" pin="RE0" pad="25"/>
+<connect gate="G$1" pin="RE1" pad="26"/>
+<connect gate="G$1" pin="RE2" pad="27"/>
+<connect gate="G$1" pin="VDD_1" pad="7"/>
+<connect gate="G$1" pin="VDD_2" pad="28"/>
+<connect gate="G$1" pin="VPP/!MCLR!/RE3" pad="18"/>
+<connect gate="G$1" pin="VSS_1" pad="6"/>
+<connect gate="G$1" pin="VSS_2" pad="29"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DESCRIPTION" value="8-bit Microcontrollers - MCU CAN-FD, 128KB Flash, 13KB RAM, 12b ADC3, UTMR, DAC, Comp, PWM, CCP, CWG, HLT, WWDT, SCAN/CRC, ZCD, PPS,Comms IDLE/DOZE/PMD, JTAG" constant="no"/>
+<attribute name="HEIGHT" value="1.2mm" constant="no"/>
+<attribute name="MANUFACTURER_NAME" value="Microchip" constant="no"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="PIC18F47Q84-I/PT" constant="no"/>
+<attribute name="MOUSER_PART_NUMBER" value="579-PIC18F47Q84-I/PT" constant="no"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Microchip-Technology/PIC18F47Q84-I-PT?qs=d0WKAl%252BL4KYthTnAmf%2FYSg%3D%3D" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -14651,7 +14666,6 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </class>
 </classes>
 <parts>
-<part name="IC1" library="PIC18F47Q84-E_P" deviceset="PIC18F47Q84-E_P" device=""/>
 <part name="OK1" library="optocoupler" library_urn="urn:adsk.eagle:library:320" deviceset="4N*?M" device="S" package3d_urn="urn:adsk.eagle:package:21970/1" technology="25"/>
 <part name="OK2" library="optocoupler" library_urn="urn:adsk.eagle:library:320" deviceset="4N*?M" device="S" package3d_urn="urn:adsk.eagle:package:21970/1" technology="25"/>
 <part name="R1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="2.2k"/>
@@ -14765,16 +14779,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <part name="C19" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0805" package3d_urn="urn:adsk.eagle:package:23617/2" value="10uf"/>
 <part name="VSS41" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="VSS42" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="IC4" library="PIC18F47Q84-I_PT" deviceset="PIC18F47Q84-I_PT" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="IC1" gate="G$1" x="38.1" y="66.04" smashed="yes">
-<attribute name="NAME" x="82.55" y="73.66" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="82.55" y="71.12" size="1.778" layer="96" align="center-left"/>
-</instance>
 <instance part="OK1" gate="G$1" x="68.58" y="-2.54" smashed="yes">
 <attribute name="NAME" x="61.595" y="3.175" size="1.778" layer="95"/>
 <attribute name="VALUE" x="61.595" y="-12.7" size="1.778" layer="96"/>
@@ -15089,7 +15100,7 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <attribute name="VALUE" x="176.276" y="5.969" size="1.778" layer="96"/>
 </instance>
 <instance part="VSS32" gate="G$1" x="165.1" y="2.54" smashed="yes">
-<attribute name="VALUE" x="167.64" y="-2.54" size="1.778" layer="96" rot="R180"/>
+<attribute name="VALUE" x="165.1" y="-2.54" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="VSS33" gate="G$1" x="175.26" y="2.54" smashed="yes">
 <attribute name="VALUE" x="177.8" y="-2.54" size="1.778" layer="96" rot="R180"/>
@@ -15174,6 +15185,10 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <instance part="VSS42" gate="G$1" x="35.56" y="104.14" smashed="yes">
 <attribute name="VALUE" x="38.1" y="99.06" size="1.778" layer="96" rot="R180"/>
 </instance>
+<instance part="IC4" gate="G$1" x="193.04" y="-2.54" smashed="yes">
+<attribute name="NAME" x="229.87" y="12.7" size="1.778" layer="95" align="center-left"/>
+<attribute name="VALUE" x="229.87" y="10.16" size="1.778" layer="96" align="center-left"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -15241,17 +15256,15 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </segment>
 <segment>
 <wire x1="86.36" y1="45.72" x2="104.14" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="VDD_2"/>
-<junction x="86.36" y="45.72"/>
 <label x="93.98" y="45.72" size="1.778" layer="95"/>
 <junction x="104.14" y="45.72"/>
+<junction x="86.36" y="45.72"/>
 </segment>
 <segment>
 <wire x1="5.08" y1="40.64" x2="38.1" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="VDD_1"/>
-<junction x="38.1" y="40.64"/>
 <label x="25.4" y="40.64" size="1.778" layer="95"/>
 <junction x="5.08" y="40.64"/>
+<junction x="38.1" y="40.64"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="IN"/>
@@ -15355,6 +15368,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <pinref part="VDD11" gate="G$1" pin="VDD"/>
 <junction x="157.48" y="96.52"/>
 </segment>
+<segment>
+<wire x1="180.34" y1="-17.78" x2="193.04" y2="-17.78" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="VDD_1"/>
+<junction x="193.04" y="-17.78"/>
+<junction x="180.34" y="-17.78"/>
+<label x="182.88" y="-17.78" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="233.68" y1="-15.24" x2="246.38" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="VDD_2"/>
+<junction x="233.68" y="-15.24"/>
+<junction x="246.38" y="-15.24"/>
+<label x="236.22" y="-15.24" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="+24V" class="1">
 <segment>
@@ -15413,17 +15440,15 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </segment>
 <segment>
 <wire x1="86.36" y1="43.18" x2="104.14" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="VSS_2"/>
-<junction x="86.36" y="43.18"/>
 <label x="93.98" y="43.18" size="1.778" layer="95"/>
 <junction x="104.14" y="43.18"/>
+<junction x="86.36" y="43.18"/>
 </segment>
 <segment>
 <wire x1="5.08" y1="38.1" x2="38.1" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="VSS_1"/>
-<junction x="38.1" y="38.1"/>
 <label x="25.4" y="38.1" size="1.778" layer="95"/>
 <junction x="5.08" y="38.1"/>
+<junction x="38.1" y="38.1"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="ENABLE"/>
@@ -15680,6 +15705,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <pinref part="VSS42" gate="G$1" pin="VSS"/>
 <junction x="35.56" y="106.68"/>
 </segment>
+<segment>
+<wire x1="180.34" y1="-15.24" x2="193.04" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="VSS_1"/>
+<junction x="193.04" y="-15.24"/>
+<junction x="180.34" y="-15.24"/>
+<label x="182.88" y="-15.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="233.68" y1="-12.7" x2="246.38" y2="-12.7" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="VSS_2"/>
+<junction x="233.68" y="-12.7"/>
+<junction x="246.38" y="-12.7"/>
+<label x="236.22" y="-12.7" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="CPU_CLK" class="0">
 <segment>
@@ -15691,19 +15730,24 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </segment>
 <segment>
 <wire x1="25.4" y1="35.56" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="RA7"/>
-<junction x="38.1" y="35.56"/>
 <junction x="25.4" y="35.56"/>
 <label x="15.24" y="35.56" size="1.778" layer="95"/>
+<junction x="38.1" y="35.56"/>
+</segment>
+<segment>
+<wire x1="233.68" y1="-10.16" x2="246.38" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RA7"/>
+<junction x="233.68" y="-10.16"/>
+<junction x="246.38" y="-10.16"/>
+<label x="236.22" y="-10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="VREF" class="1">
 <segment>
 <wire x1="38.1" y1="55.88" x2="5.08" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="RA3"/>
-<junction x="38.1" y="55.88"/>
 <junction x="5.08" y="55.88"/>
 <label x="7.62" y="55.88" size="1.778" layer="95"/>
+<junction x="38.1" y="55.88"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="OUT_S"/>
@@ -15735,15 +15779,21 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-25.4" y="40.64"/>
 <label x="-33.02" y="40.64" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="226.06" y1="-55.88" x2="226.06" y2="-68.58" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RA3"/>
+<junction x="226.06" y="-55.88"/>
+<junction x="226.06" y="-68.58"/>
+<label x="226.06" y="-66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="MCLR_SIG" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="!MCLR!/VPP/RE3"/>
 <wire x1="38.1" y1="66.04" x2="25.4" y2="66.04" width="0.1524" layer="91"/>
 <label x="22.86" y="66.04" size="1.778" layer="95"/>
-<junction x="38.1" y="66.04"/>
 <pinref part="R5" gate="G$1" pin="2"/>
 <junction x="25.4" y="66.04"/>
+<junction x="38.1" y="66.04"/>
 </segment>
 <segment>
 <wire x1="-12.7" y1="86.36" x2="-25.4" y2="86.36" width="0.1524" layer="91"/>
@@ -15759,14 +15809,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-7.62" y="17.78"/>
 <junction x="5.08" y="17.78"/>
 </segment>
+<segment>
+<wire x1="215.9" y1="-55.88" x2="215.9" y2="-68.58" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="VPP/!MCLR!/RE3"/>
+<junction x="215.9" y="-55.88"/>
+<junction x="215.9" y="-68.58"/>
+<label x="215.9" y="-68.58" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="PGD" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RB7/ICSPDAT"/>
 <wire x1="86.36" y1="66.04" x2="109.22" y2="66.04" width="0.1524" layer="91"/>
-<junction x="86.36" y="66.04"/>
 <junction x="109.22" y="66.04"/>
 <label x="99.06" y="66.04" size="1.778" layer="95"/>
+<junction x="86.36" y="66.04"/>
 </segment>
 <segment>
 <wire x1="-25.4" y1="93.98" x2="-2.54" y2="93.98" width="0.1524" layer="91"/>
@@ -15775,14 +15831,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-2.54" y="93.98"/>
 <label x="-10.16" y="93.98" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="213.36" y1="-68.58" x2="213.36" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="ICSPDAT/RB7"/>
+<junction x="213.36" y="-55.88"/>
+<junction x="213.36" y="-68.58"/>
+<label x="213.36" y="-66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="PGC" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RB6/ICSPCLK"/>
 <wire x1="86.36" y1="63.5" x2="109.22" y2="63.5" width="0.1524" layer="91"/>
-<junction x="86.36" y="63.5"/>
 <junction x="109.22" y="63.5"/>
 <label x="99.06" y="63.5" size="1.778" layer="95"/>
+<junction x="86.36" y="63.5"/>
 </segment>
 <segment>
 <wire x1="-27.94" y1="96.52" x2="-25.4" y2="96.52" width="0.1524" layer="91"/>
@@ -15791,6 +15853,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-25.4" y="96.52"/>
 <junction x="-2.54" y="96.52"/>
 <label x="-10.16" y="96.52" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="210.82" y1="-68.58" x2="210.82" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="ICSPCLK/RB6"/>
+<junction x="210.82" y="-55.88"/>
+<junction x="210.82" y="-68.58"/>
+<label x="210.82" y="-66.04" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -15807,7 +15876,6 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </net>
 <net name="AN0" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RA0"/>
 <wire x1="38.1" y1="63.5" x2="25.4" y2="63.5" width="0.1524" layer="91"/>
 <label x="27.94" y="63.5" size="1.778" layer="95"/>
 <junction x="25.4" y="63.5"/>
@@ -15820,10 +15888,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <wire x1="-25.4" y1="58.42" x2="-40.64" y2="58.42" width="0.1524" layer="91"/>
 <label x="-33.02" y="58.42" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="218.44" y1="-55.88" x2="218.44" y2="-68.58" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RA0"/>
+<junction x="218.44" y="-55.88"/>
+<junction x="218.44" y="-68.58"/>
+<label x="218.44" y="-66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="AN1" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RA1"/>
 <wire x1="38.1" y1="60.96" x2="25.4" y2="60.96" width="0.1524" layer="91"/>
 <label x="27.94" y="60.96" size="1.778" layer="95"/>
 <junction x="25.4" y="60.96"/>
@@ -15836,10 +15910,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-25.4" y="35.56"/>
 <label x="-33.02" y="35.56" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="220.98" y1="-55.88" x2="220.98" y2="-68.58" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RA1"/>
+<junction x="220.98" y="-55.88"/>
+<junction x="220.98" y="-68.58"/>
+<label x="220.98" y="-66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="AN2" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RA2"/>
 <wire x1="38.1" y1="58.42" x2="25.4" y2="58.42" width="0.1524" layer="91"/>
 <label x="27.94" y="58.42" size="1.778" layer="95"/>
 <junction x="25.4" y="58.42"/>
@@ -15852,14 +15932,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-25.4" y="38.1"/>
 <label x="-33.02" y="38.1" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="223.52" y1="-55.88" x2="223.52" y2="-68.58" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RA2"/>
+<junction x="223.52" y="-55.88"/>
+<junction x="223.52" y="-68.58"/>
+<label x="223.52" y="-66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="PC_RX2" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RD0"/>
 <wire x1="38.1" y1="20.32" x2="25.4" y2="20.32" width="0.1524" layer="91"/>
 <label x="25.4" y="20.32" size="1.778" layer="95"/>
-<junction x="38.1" y="20.32"/>
 <junction x="25.4" y="20.32"/>
+<junction x="38.1" y="20.32"/>
 </segment>
 <segment>
 <wire x1="182.88" y1="81.28" x2="170.18" y2="81.28" width="0.1524" layer="91"/>
@@ -15868,14 +15954,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="182.88" y="81.28"/>
 <label x="175.26" y="81.28" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="215.9" y1="25.4" x2="215.9" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RD0"/>
+<junction x="215.9" y="12.7"/>
+<junction x="215.9" y="25.4"/>
+<label x="215.9" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="DB0" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RD1"/>
 <wire x1="38.1" y1="17.78" x2="25.4" y2="17.78" width="0.1524" layer="91"/>
 <label x="25.4" y="17.78" size="1.778" layer="95"/>
-<junction x="38.1" y="17.78"/>
 <junction x="25.4" y="17.78"/>
+<junction x="38.1" y="17.78"/>
 </segment>
 <segment>
 <wire x1="-27.94" y1="0" x2="-40.64" y2="0" width="0.1524" layer="91"/>
@@ -15884,14 +15976,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-27.94" y="0"/>
 <label x="-35.56" y="0" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="213.36" y1="25.4" x2="213.36" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RD1"/>
+<junction x="213.36" y="12.7"/>
+<junction x="213.36" y="25.4"/>
+<label x="213.36" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="DB1" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RD2"/>
 <wire x1="86.36" y1="17.78" x2="99.06" y2="17.78" width="0.1524" layer="91"/>
 <label x="93.98" y="17.78" size="1.778" layer="95"/>
-<junction x="86.36" y="17.78"/>
 <junction x="99.06" y="17.78"/>
+<junction x="86.36" y="17.78"/>
 </segment>
 <segment>
 <wire x1="-40.64" y1="2.54" x2="-27.94" y2="2.54" width="0.1524" layer="91"/>
@@ -15900,14 +15998,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-27.94" y="2.54"/>
 <label x="-35.56" y="2.54" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="210.82" y1="12.7" x2="210.82" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RD2"/>
+<junction x="210.82" y="12.7"/>
+<junction x="210.82" y="25.4"/>
+<label x="210.82" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="CS" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RD3"/>
 <wire x1="86.36" y1="20.32" x2="99.06" y2="20.32" width="0.1524" layer="91"/>
 <label x="93.98" y="20.32" size="1.778" layer="95"/>
-<junction x="86.36" y="20.32"/>
 <junction x="99.06" y="20.32"/>
+<junction x="86.36" y="20.32"/>
 </segment>
 <segment>
 <wire x1="-40.64" y1="5.08" x2="-27.94" y2="5.08" width="0.1524" layer="91"/>
@@ -15916,15 +16020,21 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-27.94" y="5.08"/>
 <label x="-35.56" y="5.08" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="208.28" y1="12.7" x2="208.28" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RD3"/>
+<junction x="208.28" y="12.7"/>
+<junction x="208.28" y="25.4"/>
+<label x="208.28" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="CANRX" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RB0"/>
 <wire x1="86.36" y1="48.26" x2="111.76" y2="48.26" width="0.1524" layer="91"/>
 <label x="101.6" y="48.26" size="1.778" layer="95"/>
-<junction x="86.36" y="48.26"/>
 <junction x="111.76" y="48.26"/>
 <label x="101.6" y="48.26" size="1.778" layer="95"/>
+<junction x="86.36" y="48.26"/>
 </segment>
 <segment>
 <pinref part="U2" gate="G$1" pin="RXD"/>
@@ -15933,14 +16043,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="147.32" y="40.64"/>
 <label x="147.32" y="38.1" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="180.34" y1="-20.32" x2="193.04" y2="-20.32" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RB0"/>
+<junction x="193.04" y="-20.32"/>
+<junction x="180.34" y="-20.32"/>
+<label x="182.88" y="-20.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="CANTX" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RB4"/>
 <wire x1="86.36" y1="58.42" x2="111.76" y2="58.42" width="0.1524" layer="91"/>
 <label x="101.6" y="58.42" size="1.778" layer="95"/>
-<junction x="86.36" y="58.42"/>
 <junction x="111.76" y="58.42"/>
+<junction x="86.36" y="58.42"/>
 </segment>
 <segment>
 <wire x1="147.32" y1="48.26" x2="152.4" y2="48.26" width="0.1524" layer="91"/>
@@ -15949,14 +16065,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="147.32" y="48.26"/>
 <label x="147.32" y="50.8" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="205.74" y1="-68.58" x2="205.74" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RB4"/>
+<junction x="205.74" y="-55.88"/>
+<junction x="205.74" y="-68.58"/>
+<label x="205.74" y="-66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="PC_TX2" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RD6"/>
 <wire x1="86.36" y1="38.1" x2="111.76" y2="38.1" width="0.1524" layer="91"/>
 <label x="93.98" y="38.1" size="1.778" layer="95"/>
-<junction x="86.36" y="38.1"/>
 <junction x="111.76" y="38.1"/>
+<junction x="86.36" y="38.1"/>
 </segment>
 <segment>
 <wire x1="170.18" y1="78.74" x2="182.88" y2="78.74" width="0.1524" layer="91"/>
@@ -15964,6 +16086,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="170.18" y="78.74"/>
 <junction x="182.88" y="78.74"/>
 <label x="175.26" y="78.74" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="180.34" y1="-10.16" x2="193.04" y2="-10.16" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RD6"/>
+<junction x="193.04" y="-10.16"/>
+<junction x="180.34" y="-10.16"/>
+<label x="182.88" y="-10.16" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="CAN_N" class="1">
@@ -16029,11 +16158,10 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </net>
 <net name="AN3" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RA4"/>
 <wire x1="38.1" y1="53.34" x2="25.4" y2="53.34" width="0.1524" layer="91"/>
-<junction x="38.1" y="53.34"/>
 <junction x="25.4" y="53.34"/>
 <label x="27.94" y="53.34" size="1.778" layer="95"/>
+<junction x="38.1" y="53.34"/>
 </segment>
 <segment>
 <wire x1="-25.4" y1="43.18" x2="-40.64" y2="43.18" width="0.1524" layer="91"/>
@@ -16042,14 +16170,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-25.4" y="43.18"/>
 <label x="-33.02" y="43.18" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="246.38" y1="-27.94" x2="233.68" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RA4"/>
+<junction x="233.68" y="-27.94"/>
+<junction x="246.38" y="-27.94"/>
+<label x="241.3" y="-27.94" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="AN4" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RA5"/>
 <wire x1="38.1" y1="50.8" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
-<junction x="38.1" y="50.8"/>
 <junction x="25.4" y="50.8"/>
 <label x="27.94" y="50.8" size="1.778" layer="95"/>
+<junction x="38.1" y="50.8"/>
 </segment>
 <segment>
 <wire x1="-25.4" y1="45.72" x2="-40.64" y2="45.72" width="0.1524" layer="91"/>
@@ -16058,14 +16192,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-25.4" y="45.72"/>
 <label x="-33.02" y="45.72" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="246.38" y1="-25.4" x2="233.68" y2="-25.4" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RA5"/>
+<junction x="233.68" y="-25.4"/>
+<junction x="246.38" y="-25.4"/>
+<label x="236.22" y="-25.4" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="SCK1" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RC3"/>
 <wire x1="38.1" y1="22.86" x2="25.4" y2="22.86" width="0.1524" layer="91"/>
 <label x="25.4" y="22.86" size="1.778" layer="95"/>
-<junction x="38.1" y="22.86"/>
 <junction x="25.4" y="22.86"/>
+<junction x="38.1" y="22.86"/>
 </segment>
 <segment>
 <wire x1="-27.94" y1="7.62" x2="-40.64" y2="7.62" width="0.1524" layer="91"/>
@@ -16074,10 +16214,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-27.94" y="7.62"/>
 <label x="-35.56" y="7.62" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="218.44" y1="25.4" x2="218.44" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RC3"/>
+<junction x="218.44" y="12.7"/>
+<junction x="218.44" y="25.4"/>
+<label x="218.44" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="SDI1" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RC4"/>
 <wire x1="86.36" y1="22.86" x2="99.06" y2="22.86" width="0.1524" layer="91"/>
 <label x="93.98" y="22.86" size="1.778" layer="95"/>
 <junction x="86.36" y="22.86"/>
@@ -16089,14 +16235,21 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-27.94" y="10.16"/>
 <label x="-35.56" y="10.16" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="205.74" y1="12.7" x2="205.74" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RC4"/>
+<junction x="205.74" y="12.7"/>
+<junction x="205.74" y="25.4"/>
+<label x="205.74" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="SDO1" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RC5"/>
 <wire x1="86.36" y1="25.4" x2="99.06" y2="25.4" width="0.1524" layer="91"/>
 <label x="91.44" y="25.4" size="1.778" layer="95"/>
-<junction x="86.36" y="25.4"/>
 <junction x="99.06" y="25.4"/>
+<label x="106.68" y="25.4" size="1.778" layer="95"/>
+<junction x="86.36" y="25.4"/>
 </segment>
 <segment>
 <wire x1="-40.64" y1="12.7" x2="-27.94" y2="12.7" width="0.1524" layer="91"/>
@@ -16105,10 +16258,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-27.94" y="12.7"/>
 <label x="-35.56" y="12.7" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="203.2" y1="12.7" x2="203.2" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RC5"/>
+<junction x="203.2" y="12.7"/>
+<junction x="203.2" y="25.4"/>
+<label x="203.2" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="CLOCKO" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RA6"/>
 <wire x1="38.1" y1="33.02" x2="25.4" y2="33.02" width="0.1524" layer="91"/>
 <label x="27.94" y="33.02" size="1.778" layer="95"/>
 <junction x="25.4" y="33.02"/>
@@ -16121,14 +16280,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-7.62" y="22.86"/>
 <junction x="2.54" y="22.86"/>
 </segment>
+<segment>
+<wire x1="246.38" y1="-7.62" x2="233.68" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RA6"/>
+<junction x="233.68" y="-7.62"/>
+<junction x="246.38" y="-7.62"/>
+<label x="236.22" y="-7.62" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RELAY" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RE0"/>
 <wire x1="38.1" y1="48.26" x2="25.4" y2="48.26" width="0.1524" layer="91"/>
-<junction x="38.1" y="48.26"/>
 <junction x="25.4" y="48.26"/>
 <label x="27.94" y="48.26" size="1.778" layer="95"/>
+<junction x="38.1" y="48.26"/>
 </segment>
 <segment>
 <wire x1="5.08" y1="0" x2="-7.62" y2="0" width="0.1524" layer="91"/>
@@ -16137,14 +16302,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="5.08" y="0"/>
 <label x="0" y="0" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="246.38" y1="-22.86" x2="233.68" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RE0"/>
+<junction x="233.68" y="-22.86"/>
+<junction x="246.38" y="-22.86"/>
+<label x="236.22" y="-22.86" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="MISC" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RE1"/>
 <wire x1="38.1" y1="45.72" x2="25.4" y2="45.72" width="0.1524" layer="91"/>
-<junction x="38.1" y="45.72"/>
 <junction x="25.4" y="45.72"/>
 <label x="27.94" y="45.72" size="1.778" layer="95"/>
+<junction x="38.1" y="45.72"/>
 </segment>
 <segment>
 <wire x1="5.08" y1="2.54" x2="-7.62" y2="2.54" width="0.1524" layer="91"/>
@@ -16153,14 +16324,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="5.08" y="2.54"/>
 <label x="0" y="2.54" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="246.38" y1="-20.32" x2="233.68" y2="-20.32" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RE1"/>
+<junction x="233.68" y="-20.32"/>
+<junction x="246.38" y="-20.32"/>
+<label x="236.22" y="-20.32" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RE2" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RE2"/>
 <wire x1="38.1" y1="43.18" x2="25.4" y2="43.18" width="0.1524" layer="91"/>
-<junction x="38.1" y="43.18"/>
 <junction x="25.4" y="43.18"/>
 <label x="27.94" y="43.18" size="1.778" layer="95"/>
+<junction x="38.1" y="43.18"/>
 </segment>
 <segment>
 <wire x1="5.08" y1="5.08" x2="-7.62" y2="5.08" width="0.1524" layer="91"/>
@@ -16169,10 +16346,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="5.08" y="5.08"/>
 <label x="0" y="5.08" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="246.38" y1="-17.78" x2="233.68" y2="-17.78" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RE2"/>
+<junction x="233.68" y="-17.78"/>
+<junction x="246.38" y="-17.78"/>
+<label x="236.22" y="-17.78" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="MB_RX" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RC0"/>
 <wire x1="38.1" y1="30.48" x2="25.4" y2="30.48" width="0.1524" layer="91"/>
 <label x="27.94" y="30.48" size="1.778" layer="95"/>
 <junction x="25.4" y="30.48"/>
@@ -16192,10 +16375,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="68.58" y="88.9"/>
 <label x="55.88" y="88.9" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="246.38" y1="-5.08" x2="233.68" y2="-5.08" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RC0"/>
+<junction x="233.68" y="-5.08"/>
+<junction x="246.38" y="-5.08"/>
+<label x="236.22" y="-5.08" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="MB_TX" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RC1"/>
 <wire x1="38.1" y1="27.94" x2="25.4" y2="27.94" width="0.1524" layer="91"/>
 <label x="27.94" y="27.94" size="1.778" layer="95"/>
 <junction x="25.4" y="27.94"/>
@@ -16215,14 +16404,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="68.58" y="96.52"/>
 <label x="55.88" y="96.52" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="223.52" y1="25.4" x2="223.52" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RC1"/>
+<junction x="223.52" y="12.7"/>
+<junction x="223.52" y="25.4"/>
+<label x="223.52" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="RD5" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RD5"/>
 <wire x1="86.36" y1="35.56" x2="111.76" y2="35.56" width="0.1524" layer="91"/>
-<junction x="86.36" y="35.56"/>
 <junction x="111.76" y="35.56"/>
 <label x="93.98" y="35.56" size="1.778" layer="95"/>
+<junction x="86.36" y="35.56"/>
 </segment>
 <segment>
 <wire x1="-7.62" y1="10.16" x2="17.78" y2="10.16" width="0.1524" layer="91"/>
@@ -16231,14 +16426,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="17.78" y="10.16"/>
 <label x="5.08" y="10.16" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="180.34" y1="-7.62" x2="193.04" y2="-7.62" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RD5"/>
+<junction x="193.04" y="-7.62"/>
+<junction x="180.34" y="-7.62"/>
+<label x="182.88" y="-7.62" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RD7" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RD7"/>
 <wire x1="86.36" y1="40.64" x2="111.76" y2="40.64" width="0.1524" layer="91"/>
-<junction x="86.36" y="40.64"/>
 <junction x="111.76" y="40.64"/>
 <label x="93.98" y="40.64" size="1.778" layer="95"/>
+<junction x="86.36" y="40.64"/>
 </segment>
 <segment>
 <wire x1="-7.62" y1="15.24" x2="17.78" y2="15.24" width="0.1524" layer="91"/>
@@ -16247,10 +16448,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="17.78" y="15.24"/>
 <label x="5.08" y="15.24" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="180.34" y1="-12.7" x2="193.04" y2="-12.7" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RD7"/>
+<junction x="193.04" y="-12.7"/>
+<junction x="180.34" y="-12.7"/>
+<label x="182.88" y="-12.7" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RB5" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RB5"/>
 <wire x1="86.36" y1="60.96" x2="109.22" y2="60.96" width="0.1524" layer="91"/>
 <junction x="109.22" y="60.96"/>
 <label x="99.06" y="60.96" size="1.778" layer="95"/>
@@ -16262,6 +16469,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-7.62" y="12.7"/>
 <junction x="17.78" y="12.7"/>
 <label x="5.08" y="12.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="208.28" y1="-68.58" x2="208.28" y2="-55.88" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RB5"/>
+<junction x="208.28" y="-55.88"/>
+<junction x="208.28" y="-68.58"/>
+<label x="208.28" y="-66.04" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="V+" class="1">
@@ -16286,12 +16500,11 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </net>
 <net name="DERE" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RC2"/>
 <wire x1="38.1" y1="25.4" x2="15.24" y2="25.4" width="0.1524" layer="91"/>
 <junction x="15.24" y="25.4"/>
-<junction x="38.1" y="25.4"/>
 <label x="15.24" y="25.4" size="1.778" layer="95"/>
 <pinref part="TP1" gate="G$1" pin="TP"/>
+<junction x="38.1" y="25.4"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="!RE"/>
@@ -16302,6 +16515,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="68.58" y="93.98"/>
 <junction x="53.34" y="91.44"/>
 <label x="55.88" y="91.44" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="220.98" y1="25.4" x2="220.98" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RC2"/>
+<junction x="220.98" y="12.7"/>
+<junction x="220.98" y="25.4"/>
+<label x="220.98" y="15.24" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -16327,11 +16547,10 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </net>
 <net name="MLED" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RB1"/>
 <wire x1="86.36" y1="50.8" x2="111.76" y2="50.8" width="0.1524" layer="91"/>
-<junction x="86.36" y="50.8"/>
 <junction x="111.76" y="50.8"/>
 <label x="101.6" y="50.8" size="1.778" layer="95"/>
+<junction x="86.36" y="50.8"/>
 </segment>
 <segment>
 <wire x1="129.54" y1="73.66" x2="129.54" y2="78.74" width="0.1524" layer="91"/>
@@ -16341,14 +16560,20 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <label x="124.46" y="81.28" size="1.778" layer="95"/>
 <label x="129.54" y="76.2" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="180.34" y1="-22.86" x2="193.04" y2="-22.86" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RB1"/>
+<junction x="193.04" y="-22.86"/>
+<junction x="180.34" y="-22.86"/>
+<label x="182.88" y="-22.86" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RLED" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RB2"/>
 <wire x1="86.36" y1="53.34" x2="111.76" y2="53.34" width="0.1524" layer="91"/>
-<junction x="86.36" y="53.34"/>
 <junction x="111.76" y="53.34"/>
 <label x="101.6" y="53.34" size="1.778" layer="95"/>
+<junction x="86.36" y="53.34"/>
 </segment>
 <segment>
 <wire x1="137.16" y1="73.66" x2="137.16" y2="78.74" width="0.1524" layer="91"/>
@@ -16358,16 +16583,22 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <label x="132.08" y="81.28" size="1.778" layer="95"/>
 <label x="137.16" y="76.2" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="180.34" y1="-25.4" x2="193.04" y2="-25.4" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RB2"/>
+<junction x="193.04" y="-25.4"/>
+<junction x="180.34" y="-25.4"/>
+<label x="182.88" y="-25.4" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="DLED" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="RB3"/>
 <wire x1="86.36" y1="55.88" x2="99.06" y2="55.88" width="0.1524" layer="91"/>
-<junction x="86.36" y="55.88"/>
 <junction x="111.76" y="55.88"/>
 <label x="101.6" y="55.88" size="1.778" layer="95"/>
 <junction x="99.06" y="55.88"/>
 <wire x1="99.06" y1="55.88" x2="111.76" y2="55.88" width="0.1524" layer="91"/>
+<junction x="86.36" y="55.88"/>
 </segment>
 <segment>
 <wire x1="144.78" y1="73.66" x2="144.78" y2="78.74" width="0.1524" layer="91"/>
@@ -16385,11 +16616,24 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <label x="5.08" y="7.62" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="G$1" pin="RD4"/>
 <wire x1="86.36" y1="33.02" x2="111.76" y2="33.02" width="0.1524" layer="91"/>
-<junction x="86.36" y="33.02"/>
 <junction x="111.76" y="33.02"/>
 <label x="93.98" y="33.02" size="1.778" layer="95"/>
+<junction x="86.36" y="33.02"/>
+</segment>
+<segment>
+<wire x1="180.34" y1="-5.08" x2="193.04" y2="-5.08" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RD4"/>
+<junction x="193.04" y="-5.08"/>
+<junction x="180.34" y="-5.08"/>
+<label x="182.88" y="-5.08" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="180.34" y1="-27.94" x2="193.04" y2="-27.94" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RB3"/>
+<junction x="193.04" y="-27.94"/>
+<junction x="180.34" y="-27.94"/>
+<label x="182.88" y="-27.94" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="UC_TX" class="0">
@@ -16403,10 +16647,9 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </segment>
 <segment>
 <wire x1="86.36" y1="27.94" x2="111.76" y2="27.94" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="RC6"/>
-<junction x="86.36" y="27.94"/>
 <label x="93.98" y="27.94" size="1.778" layer="95"/>
 <junction x="111.76" y="27.94"/>
+<junction x="86.36" y="27.94"/>
 </segment>
 <segment>
 <wire x1="-40.64" y1="15.24" x2="-27.94" y2="15.24" width="0.1524" layer="91"/>
@@ -16414,6 +16657,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <junction x="-40.64" y="15.24"/>
 <junction x="-27.94" y="15.24"/>
 <label x="-35.56" y="15.24" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="200.66" y1="12.7" x2="200.66" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RC6"/>
+<junction x="200.66" y="12.7"/>
+<junction x="200.66" y="25.4"/>
+<label x="200.66" y="15.24" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="UC_RX" class="0">
@@ -16428,10 +16678,9 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 </segment>
 <segment>
 <wire x1="86.36" y1="30.48" x2="111.76" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="RC7"/>
-<junction x="86.36" y="30.48"/>
 <label x="93.98" y="30.48" size="1.778" layer="95"/>
 <junction x="111.76" y="30.48"/>
+<junction x="86.36" y="30.48"/>
 </segment>
 <segment>
 <wire x1="-40.64" y1="22.86" x2="-27.94" y2="22.86" width="0.1524" layer="91"/>
@@ -16439,6 +16688,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <label x="-35.56" y="22.86" size="1.778" layer="95"/>
 <junction x="-40.64" y="22.86"/>
 <junction x="-27.94" y="22.86"/>
+</segment>
+<segment>
+<wire x1="180.34" y1="-2.54" x2="193.04" y2="-2.54" width="0.1524" layer="91"/>
+<pinref part="IC4" gate="G$1" pin="RC7"/>
+<junction x="193.04" y="-2.54"/>
+<junction x="180.34" y="-2.54"/>
+<label x="180.34" y="-2.54" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MB_A" class="0">
