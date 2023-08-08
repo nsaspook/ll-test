@@ -14835,7 +14835,6 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <part name="VSS25" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="MISC_IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA10-1" device="" package3d_urn="urn:adsk.eagle:package:8346/1" value="misc-io"/>
 <part name="VSS26" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
-<part name="SUPPLY1" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="V+" device=""/>
 <part name="24VDC_PWR" library="con-molex" library_urn="urn:adsk.eagle:library:165" deviceset="22-23-2021" device="" package3d_urn="urn:adsk.eagle:package:8078633/1" value="24vdc power"/>
 <part name="SUPPLY2" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="V+" device=""/>
 <part name="VSS27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
@@ -14885,6 +14884,9 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <part name="R_RESET" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="remote_reset"/>
 <part name="EXT_IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA06-1" device="" package3d_urn="urn:adsk.eagle:package:8340/1" value="EXT_IO"/>
 <part name="VSS43" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
+<part name="TP2" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="PTR1" device="PAD1-13" package3d_urn="urn:adsk.eagle:package:27946/1"/>
+<part name="R12" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R1206" package3d_urn="urn:adsk.eagle:package:23540/2" value="0 ohm fuse"/>
+<part name="SUPPLY3" library="supply2" library_urn="urn:adsk.eagle:library:372" deviceset="V+" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15126,9 +15128,6 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <instance part="VSS26" gate="G$1" x="-5.08" y="20.32" smashed="yes" rot="R90">
 <attribute name="VALUE" x="0" y="22.86" size="1.778" layer="96" rot="R270"/>
 </instance>
-<instance part="SUPPLY1" gate="1" x="-15.24" y="-40.64" smashed="yes">
-<attribute name="VALUE" x="-16.51" y="-39.37" size="1.778" layer="96"/>
-</instance>
 <instance part="24VDC_PWR" gate="-1" x="-35.56" y="-50.8" smashed="yes">
 <attribute name="NAME" x="-33.02" y="-51.562" size="1.524" layer="95"/>
 <attribute name="VALUE" x="-36.322" y="-49.403" size="1.778" layer="96"/>
@@ -15304,6 +15303,17 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 </instance>
 <instance part="VSS43" gate="G$1" x="223.52" y="38.1" smashed="yes">
 <attribute name="VALUE" x="231.14" y="40.64" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="TP2" gate="G$1" x="157.48" y="-25.4" smashed="yes" rot="R180">
+<attribute name="NAME" x="158.496" y="-19.05" size="1.778" layer="95" rot="R270"/>
+<attribute name="TP_SIGNAL_NAME" x="156.21" y="-22.86" size="1.778" layer="97" rot="R180"/>
+</instance>
+<instance part="R12" gate="G$1" x="-10.16" y="-38.1" smashed="yes" rot="R90">
+<attribute name="NAME" x="-11.6586" y="-41.91" size="1.778" layer="95" rot="R90"/>
+<attribute name="VALUE" x="-6.858" y="-41.91" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="SUPPLY3" gate="1" x="-10.16" y="-30.48" smashed="yes">
+<attribute name="VALUE" x="-11.43" y="-29.21" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -15854,6 +15864,7 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <label x="149.86" y="-33.02" size="1.778" layer="95"/>
 <junction x="147.32" y="-27.94"/>
 <junction x="157.48" y="-27.94"/>
+<pinref part="TP2" gate="G$1" pin="TP"/>
 </segment>
 <segment>
 <wire x1="25.4" y1="35.56" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
@@ -16650,22 +16661,13 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 </net>
 <net name="V+" class="1">
 <segment>
-<pinref part="IC2" gate="A1" pin="VI"/>
-<wire x1="2.54" y1="-43.18" x2="0" y2="-43.18" width="0.1524" layer="91"/>
-<junction x="2.54" y="-43.18"/>
-<pinref part="C14" gate="G$1" pin="1"/>
-<junction x="0" y="-43.18"/>
-<wire x1="0" y1="-43.18" x2="-10.16" y2="-43.18" width="0.1524" layer="91"/>
-<pinref part="C15" gate="G$1" pin="1"/>
-<junction x="-10.16" y="-43.18"/>
-<wire x1="-10.16" y1="-43.18" x2="-15.24" y2="-43.18" width="0.1524" layer="91"/>
-<pinref part="SUPPLY1" gate="1" pin="V+"/>
-<junction x="-15.24" y="-43.18"/>
-</segment>
-<segment>
 <pinref part="24VDC_PWR" gate="-1" pin="S"/>
 <pinref part="SUPPLY2" gate="1" pin="V+"/>
 <junction x="-38.1" y="-50.8"/>
+</segment>
+<segment>
+<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="SUPPLY3" gate="1" pin="V+"/>
 </segment>
 </net>
 <net name="DERE" class="0">
@@ -16903,6 +16905,19 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <wire x1="147.32" y1="104.14" x2="147.32" y2="106.68" width="0.1524" layer="91"/>
 <junction x="157.48" y="104.14"/>
 <label x="104.14" y="99.06" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$2" class="1">
+<segment>
+<pinref part="IC2" gate="A1" pin="VI"/>
+<wire x1="2.54" y1="-43.18" x2="0" y2="-43.18" width="0.1524" layer="91"/>
+<junction x="2.54" y="-43.18"/>
+<pinref part="C14" gate="G$1" pin="1"/>
+<junction x="0" y="-43.18"/>
+<wire x1="0" y1="-43.18" x2="-10.16" y2="-43.18" width="0.1524" layer="91"/>
+<pinref part="C15" gate="G$1" pin="1"/>
+<junction x="-10.16" y="-43.18"/>
+<pinref part="R12" gate="G$1" pin="1"/>
 </segment>
 </net>
 </nets>

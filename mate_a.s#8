@@ -15706,22 +15706,6 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <label x="-33.02" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="RD4" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="RD4"/>
-<wire x1="86.36" y1="33.02" x2="111.76" y2="33.02" width="0.1524" layer="91"/>
-<junction x="86.36" y="33.02"/>
-<junction x="111.76" y="33.02"/>
-<label x="93.98" y="33.02" size="1.778" layer="95"/>
-</segment>
-<segment>
-<wire x1="-7.62" y1="7.62" x2="17.78" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="MISC_IO" gate="1" pin="4"/>
-<junction x="-7.62" y="7.62"/>
-<junction x="17.78" y="7.62"/>
-<label x="5.08" y="7.62" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="RD5" class="0">
 <segment>
 <pinref part="IC1" gate="G$1" pin="RD5"/>
@@ -15869,6 +15853,20 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <junction x="144.78" y="78.74"/>
 <label x="139.7" y="81.28" size="1.778" layer="95"/>
 <label x="144.78" y="76.2" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-7.62" y1="7.62" x2="17.78" y2="7.62" width="0.1524" layer="91"/>
+<pinref part="MISC_IO" gate="1" pin="4"/>
+<junction x="-7.62" y="7.62"/>
+<junction x="17.78" y="7.62"/>
+<label x="5.08" y="7.62" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="RD4"/>
+<wire x1="86.36" y1="33.02" x2="111.76" y2="33.02" width="0.1524" layer="91"/>
+<junction x="86.36" y="33.02"/>
+<junction x="111.76" y="33.02"/>
+<label x="93.98" y="33.02" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="UC_TX" class="0">
