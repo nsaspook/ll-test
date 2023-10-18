@@ -16316,7 +16316,7 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <pinref part="C8" gate="G$1" pin="1"/>
 </segment>
 </net>
-<net name="AN3" class="0">
+<net name="AN4" class="0">
 <segment>
 <wire x1="38.1" y1="53.34" x2="25.4" y2="53.34" width="0.1524" layer="91"/>
 <junction x="25.4" y="53.34"/>
@@ -16338,7 +16338,7 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <label x="241.3" y="-27.94" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="AN4" class="0">
+<net name="AN5" class="0">
 <segment>
 <wire x1="38.1" y1="50.8" x2="25.4" y2="50.8" width="0.1524" layer="91"/>
 <junction x="25.4" y="50.8"/>

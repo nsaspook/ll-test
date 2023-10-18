@@ -14363,6 +14363,50 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <rectangle x1="1.746" y1="-0.254" x2="2.254" y2="0.254" layer="51"/>
 <rectangle x1="3.746" y1="-0.254" x2="4.254" y2="0.254" layer="51"/>
 </package>
+<package name="1X02" urn="urn:adsk.eagle:footprint:22309/1" library_version="5">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-1.905" y1="1.27" x2="-0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="1.27" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="-0.635" x2="-0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="-1.905" y1="1.27" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="-0.635" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="-0.635" y1="-1.27" x2="-1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="0.635" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="1.27" x2="1.905" y2="1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="1.27" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.635" x2="2.54" y2="-0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-0.635" x2="1.905" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="1.905" y1="-1.27" x2="0.635" y2="-1.27" width="0.1524" layer="21"/>
+<wire x1="0.635" y1="-1.27" x2="0" y2="-0.635" width="0.1524" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="1.27" y="0" drill="1.016" shape="long" rot="R90"/>
+<text x="-2.6162" y="1.8288" size="1.27" layer="25" ratio="10">&gt;NAME</text>
+<text x="-2.54" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="-1.524" y1="-0.254" x2="-1.016" y2="0.254" layer="51"/>
+<rectangle x1="1.016" y1="-0.254" x2="1.524" y2="0.254" layer="51"/>
+</package>
+<package name="1X02/90" urn="urn:adsk.eagle:footprint:22310/1" library_version="5">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-2.54" y1="0.635" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
+<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
+<pad name="1" x="-1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<pad name="2" x="1.27" y="-3.81" drill="1.016" shape="long" rot="R90"/>
+<text x="-3.175" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="4.445" y="-3.81" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
+<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
+<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
+<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="1X05" urn="urn:adsk.eagle:package:22469/2" type="model" library_version="5">
@@ -14383,6 +14427,18 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <packageinstance name="1_05X2MM"/>
 </packageinstances>
 </package3d>
+<package3d name="1X02" urn="urn:adsk.eagle:package:22435/2" type="model" library_version="5">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X02"/>
+</packageinstances>
+</package3d>
+<package3d name="1X02/90" urn="urn:adsk.eagle:package:22437/2" type="model" library_version="5">
+<description>PIN HEADER</description>
+<packageinstances>
+<packageinstance name="1X02/90"/>
+</packageinstances>
+</package3d>
 </packages3d>
 <symbols>
 <symbol name="PINHD5" urn="urn:adsk.eagle:symbol:22353/1" library_version="5">
@@ -14397,6 +14453,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <pin name="3" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="4" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="5" x="-2.54" y="-5.08" visible="pad" length="short" direction="pas" function="dot"/>
+</symbol>
+<symbol name="PINHD2" urn="urn:adsk.eagle:symbol:22308/1" library_version="5">
+<wire x1="-6.35" y1="-2.54" x2="1.27" y2="-2.54" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.27" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="1.27" y1="5.08" x2="-6.35" y2="5.08" width="0.4064" layer="94"/>
+<wire x1="-6.35" y1="5.08" x2="-6.35" y2="-2.54" width="0.4064" layer="94"/>
+<text x="-6.35" y="5.715" size="1.778" layer="95">&gt;NAME</text>
+<text x="-6.35" y="-5.08" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
+<pin name="2" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -14454,6 +14520,42 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/ADM3095EBRZ.p
 <technologies>
 <technology name="">
 <attribute name="POPULARITY" value="0" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PINHD-1X2" urn="urn:adsk.eagle:component:22516/4" prefix="JP" uservalue="yes" library_version="5">
+<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="PINHD2" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="1X02">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:22435/2"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="POPULARITY" value="98" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="/90" package="1X02/90">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:22437/2"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="POPULARITY" value="24" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -14780,6 +14882,9 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <part name="VSS41" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="VSS42" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 <part name="IC4" library="PIC18F47Q84-I_PT" deviceset="PIC18F47Q84-I_PT" device=""/>
+<part name="R_RESET" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2" value="remote_reset"/>
+<part name="EXT_IO" library="con-lstb" library_urn="urn:adsk.eagle:library:162" deviceset="MA06-1" device="" package3d_urn="urn:adsk.eagle:package:8340/1" value="EXT_IO"/>
+<part name="VSS43" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VSS" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -15188,6 +15293,17 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <instance part="IC4" gate="G$1" x="193.04" y="-2.54" smashed="yes">
 <attribute name="NAME" x="229.87" y="12.7" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="229.87" y="10.16" size="1.778" layer="96" align="center-left"/>
+</instance>
+<instance part="R_RESET" gate="G$1" x="-33.02" y="78.74" smashed="yes" rot="R180">
+<attribute name="NAME" x="-26.67" y="73.025" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="-36.83" y="78.74" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="EXT_IO" gate="1" x="215.9" y="48.26" smashed="yes">
+<attribute name="VALUE" x="214.63" y="35.56" size="1.778" layer="96"/>
+<attribute name="NAME" x="214.63" y="56.642" size="1.778" layer="95"/>
+</instance>
+<instance part="VSS43" gate="G$1" x="223.52" y="38.1" smashed="yes">
+<attribute name="VALUE" x="231.14" y="40.64" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -15614,6 +15730,12 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <pinref part="RESET" gate="1" pin="2"/>
 <pinref part="VSS31" gate="G$1" pin="VSS"/>
 <junction x="0" y="81.28"/>
+<pinref part="R_RESET" gate="G$1" pin="1"/>
+<wire x1="-30.48" y1="76.2" x2="-7.62" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="76.2" x2="-7.62" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="-7.62" y1="81.28" x2="0" y2="81.28" width="0.1524" layer="91"/>
+<junction x="-30.48" y="76.2"/>
+<label x="-22.86" y="73.66" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="C16" gate="G$1" pin="2"/>
@@ -15718,6 +15840,11 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <junction x="233.68" y="-12.7"/>
 <junction x="246.38" y="-12.7"/>
 <label x="236.22" y="-12.7" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="EXT_IO" gate="1" pin="1"/>
+<pinref part="VSS43" gate="G$1" pin="VSS"/>
+<junction x="223.52" y="40.64"/>
 </segment>
 </net>
 <net name="CPU_CLK" class="0">
@@ -15838,6 +15965,13 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <junction x="213.36" y="-68.58"/>
 <label x="213.36" y="-66.04" size="1.778" layer="95" rot="R90"/>
 </segment>
+<segment>
+<wire x1="236.22" y1="53.34" x2="223.52" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="EXT_IO" gate="1" pin="6"/>
+<junction x="223.52" y="53.34"/>
+<junction x="236.22" y="53.34"/>
+<label x="226.06" y="53.34" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="PGC" class="0">
 <segment>
@@ -15861,8 +15995,15 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <junction x="210.82" y="-68.58"/>
 <label x="210.82" y="-66.04" size="1.778" layer="95" rot="R90"/>
 </segment>
+<segment>
+<wire x1="236.22" y1="50.8" x2="223.52" y2="50.8" width="0.1524" layer="91"/>
+<pinref part="EXT_IO" gate="1" pin="5"/>
+<junction x="223.52" y="50.8"/>
+<junction x="236.22" y="50.8"/>
+<label x="226.06" y="50.8" size="1.778" layer="95"/>
+</segment>
 </net>
-<net name="N$2" class="0">
+<net name="R_RESET" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="15.24" y1="66.04" x2="15.24" y2="81.28" width="0.1524" layer="91"/>
@@ -15872,6 +16013,14 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <junction x="10.16" y="81.28"/>
 <junction x="15.24" y="66.04"/>
 <pinref part="RESET" gate="1" pin="1"/>
+<label x="15.24" y="71.12" size="1.778" layer="95"/>
+</segment>
+<segment>
+<wire x1="-17.78" y1="78.74" x2="-30.48" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="R_RESET" gate="G$1" pin="2"/>
+<junction x="-17.78" y="78.74"/>
+<junction x="-30.48" y="78.74"/>
+<label x="-22.86" y="81.28" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="AN0" class="0">
@@ -16433,6 +16582,13 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <junction x="180.34" y="-7.62"/>
 <label x="182.88" y="-7.62" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="223.52" y1="43.18" x2="236.22" y2="43.18" width="0.1524" layer="91"/>
+<pinref part="EXT_IO" gate="1" pin="2"/>
+<junction x="223.52" y="43.18"/>
+<junction x="236.22" y="43.18"/>
+<label x="226.06" y="43.18" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RD7" class="0">
 <segment>
@@ -16455,6 +16611,13 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <junction x="180.34" y="-12.7"/>
 <label x="182.88" y="-12.7" size="1.778" layer="95"/>
 </segment>
+<segment>
+<wire x1="223.52" y1="45.72" x2="236.22" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="EXT_IO" gate="1" pin="3"/>
+<junction x="223.52" y="45.72"/>
+<junction x="236.22" y="45.72"/>
+<label x="226.06" y="45.72" size="1.778" layer="95"/>
+</segment>
 </net>
 <net name="RB5" class="0">
 <segment>
@@ -16476,6 +16639,13 @@ Source: &lt;a href="https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47
 <junction x="208.28" y="-55.88"/>
 <junction x="208.28" y="-68.58"/>
 <label x="208.28" y="-66.04" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<wire x1="236.22" y1="48.26" x2="223.52" y2="48.26" width="0.1524" layer="91"/>
+<pinref part="EXT_IO" gate="1" pin="4"/>
+<junction x="223.52" y="48.26"/>
+<junction x="236.22" y="48.26"/>
+<label x="226.06" y="48.26" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="V+" class="1">
