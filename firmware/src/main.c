@@ -365,6 +365,7 @@ int main(void)
 			enableReport(SENSOR_REPORTID_CIRCLE_DETECTOR, UPDATE_MS_MISC);
 			enableReport(SENSOR_REPORTID_AMBIENT_DETECTOR, UPDATE_MS_ENV);
 			enableReport(SENSOR_REPORTID_PRESSURE_DETECTOR, UPDATE_MS_ENV);
+			enableReport(SENSOR_REPORTID_HUMIDITY_DETECTOR, UPDATE_MS_ENV);
 			enableReport(SENSOR_REPORTID_TEMPERATURE_DETECTOR, UPDATE_MS_ENV);
 			enableReport(SENSOR_REPORTID_PROXIMITY_DETECTOR, UPDATE_MS_PROX);
 			if (!enableCalibration(true, true, true)) {
@@ -500,7 +501,7 @@ int main(void)
 				eaDogM_WriteStringAtPos(3, 0, buffer);
 				snprintf(buffer, max_buf, "DEV %d, Prox %3.1fcm", imu0.device, bno.proximity);
 				eaDogM_WriteStringAtPos(4, 0, buffer);
-				snprintf(buffer, max_buf, "RAN %d: %d,%d,%d,%d,%d,%d", imu0.acc_range, bno.stability, bno.tapDetected, bno.doubleTap, bno.significantMotionDetected, bno.shakeDetected, bno.circleDetected);
+				snprintf(buffer, max_buf, "RAN %d: %d,%d,%d,%d,%d,%d,%6.2fRH", imu0.acc_range, bno.stability, bno.tapDetected, bno.doubleTap, bno.significantMotionDetected, bno.shakeDetected, bno.circleDetected,bno.humidity);
 				eaDogM_WriteStringAtPos(5, 0, buffer);
 				snprintf(buffer, max_buf, "ANG %s , %d %d %d", imu0.angles ? "Yes" : "No", POS2CNT, SW3_Get(), wake_fft);
 				eaDogM_WriteStringAtPos(6, 0, buffer);
