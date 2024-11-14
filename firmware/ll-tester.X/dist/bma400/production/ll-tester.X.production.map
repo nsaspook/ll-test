@@ -7,17 +7,17 @@ Archive member included to satisfy reference by file (symbol)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libpic32.a(strlen.o)
                               build/bma400/production/_ext/1684788505/eadog.o (strlen)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libpic32.a(default-on-reset.o)
-                              /tmp/ccVpQGr7.o (_on_reset)
+                              /tmp/cck96Fyd.o (_on_reset)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libpic32.a(default-on-bootstrap.o)
-                              /tmp/ccVpQGr7.o (_on_bootstrap)
+                              /tmp/cck96Fyd.o (_on_bootstrap)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libpic32.a(default-nmi-handler.o)
-                              /tmp/ccVpQGr7.o (_nmi_handler)
+                              /tmp/cck96Fyd.o (_nmi_handler)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libpic32.a(pic32_data_init_core.o)
-                              /tmp/ccVpQGr7.o (__pic32_data_init)
+                              /tmp/cck96Fyd.o (__pic32_data_init)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libpic32.a(general-exception.o)
-                              /tmp/ccVpQGr7.o (_general_exception_context)
+                              /tmp/cck96Fyd.o (_general_exception_context)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libpic32.a(defaultinterrupt.o)
-                              /tmp/cc4yVNJD.o (_DefaultInterrupt)
+                              /tmp/ccmgjiAT.o (_DefaultInterrupt)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libc-musl.a(assert.o)
                               build/bma400/production/_ext/1360937237/quat.o (__assert_fail)
 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libc-musl.a(abort.o)
@@ -587,11 +587,11 @@ Microchip PIC32 Memory-Usage Report By Module
          768           0           0         768         300    ChrFont0.o                  build/bma400/production/_ext/1684788505/ChrFont0.o
          736           0           0         736         2e0    plib_spi2_master.o          build/bma400/production/_ext/305547027/plib_spi2_master.o
          720           0          12         732         2dc    imupic32mcj.o               build/bma400/production/_ext/1360937237/imupic32mcj.o
-           0         628           0         628         274    ccoh4wDp.o                  /tmp/ccoh4wDp.o
+           0         628           0         628         274    ccVqW2lV.o                  /tmp/ccVqW2lV.o
          620           0           0         620         26c    plib_uart1.o                build/bma400/production/_ext/2016467043/plib_uart1.o
          344           0         276         620         26c    OledChar.o                  build/bma400/production/_ext/1684788505/OledChar.o
          552           0          24         576         240    do_fft.o                    build/bma400/production/_ext/1360937237/do_fft.o
-         520           0           0         520         208    ccVpQGr7.o                  /tmp/ccVpQGr7.o
+         520           0           0         520         208    cck96Fyd.o                  /tmp/cck96Fyd.o
          512           0           0         512         200    __fmt_x.o                   libc-musl.a
          392           0           0         392         188    __pop_int.o                 libc-musl.a
          360           0           0         360         168    strlen.o                    libpic32.a
@@ -1538,31 +1538,31 @@ Discarded input sections
                 0x0000000000000000      0x234 build/bma400/production/_ext/1360937237/quat.o
  .rodata        0x0000000000000000      0x148 build/bma400/production/_ext/1360937237/quat.o
  .rodata.cst8   0x0000000000000000       0x28 build/bma400/production/_ext/1360937237/quat.o
- .text          0x0000000000000000        0x0 /tmp/ccVpQGr7.o
- .data          0x0000000000000000        0x0 /tmp/ccVpQGr7.o
- .bss           0x0000000000000000        0x0 /tmp/ccVpQGr7.o
- .reginfo       0x0000000000000000       0x18 /tmp/ccVpQGr7.o
+ .text          0x0000000000000000        0x0 /tmp/cck96Fyd.o
+ .data          0x0000000000000000        0x0 /tmp/cck96Fyd.o
+ .bss           0x0000000000000000        0x0 /tmp/cck96Fyd.o
+ .reginfo       0x0000000000000000       0x18 /tmp/cck96Fyd.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 /tmp/ccVpQGr7.o
- .text          0x0000000000000000        0x0 /tmp/ccyVTxJc.o
- .data          0x0000000000000000        0x0 /tmp/ccyVTxJc.o
- .bss           0x0000000000000000        0x0 /tmp/ccyVTxJc.o
- .reginfo       0x0000000000000000       0x18 /tmp/ccyVTxJc.o
+                0x0000000000000000       0x18 /tmp/cck96Fyd.o
+ .text          0x0000000000000000        0x0 /tmp/ccabRsWu.o
+ .data          0x0000000000000000        0x0 /tmp/ccabRsWu.o
+ .bss           0x0000000000000000        0x0 /tmp/ccabRsWu.o
+ .reginfo       0x0000000000000000       0x18 /tmp/ccabRsWu.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 /tmp/ccyVTxJc.o
- .text          0x0000000000000000        0x0 /tmp/ccoh4wDp.o
- .data          0x0000000000000000        0x0 /tmp/ccoh4wDp.o
- .bss           0x0000000000000000        0x0 /tmp/ccoh4wDp.o
- .reginfo       0x0000000000000000       0x18 /tmp/ccoh4wDp.o
+                0x0000000000000000       0x18 /tmp/ccabRsWu.o
+ .text          0x0000000000000000        0x0 /tmp/ccVqW2lV.o
+ .data          0x0000000000000000        0x0 /tmp/ccVqW2lV.o
+ .bss           0x0000000000000000        0x0 /tmp/ccVqW2lV.o
+ .reginfo       0x0000000000000000       0x18 /tmp/ccVqW2lV.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 /tmp/ccoh4wDp.o
- .text          0x0000000000000000        0x0 /tmp/cc4yVNJD.o
- .data          0x0000000000000000        0x0 /tmp/cc4yVNJD.o
- .bss           0x0000000000000000        0x0 /tmp/cc4yVNJD.o
- .reginfo       0x0000000000000000       0x18 /tmp/cc4yVNJD.o
+                0x0000000000000000       0x18 /tmp/ccVqW2lV.o
+ .text          0x0000000000000000        0x0 /tmp/ccmgjiAT.o
+ .data          0x0000000000000000        0x0 /tmp/ccmgjiAT.o
+ .bss           0x0000000000000000        0x0 /tmp/ccmgjiAT.o
+ .reginfo       0x0000000000000000       0x18 /tmp/ccmgjiAT.o
  .MIPS.abiflags
-                0x0000000000000000       0x18 /tmp/cc4yVNJD.o
- .discard       0x0000000000000000        0x4 /tmp/cc4yVNJD.o
+                0x0000000000000000       0x18 /tmp/ccmgjiAT.o
+ .discard       0x0000000000000000        0x4 /tmp/ccmgjiAT.o
  .data          0x0000000000000000        0x0 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/pic32_software_reset.o
  .bss           0x0000000000000000        0x0 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/pic32_software_reset.o
  .reginfo       0x0000000000000000       0x18 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/pic32_software_reset.o
@@ -2707,20 +2707,20 @@ END GROUP
 
 .reset          0x00000000bfc00000      0x194
  *(.reset)
- .reset         0x00000000bfc00000       0x18 /tmp/ccVpQGr7.o
+ .reset         0x00000000bfc00000       0x18 /tmp/cck96Fyd.o
                 0x00000000bfc00000                _reset
  *(.reset.startup)
  .reset.startup
-                0x00000000bfc00018      0x17c /tmp/ccVpQGr7.o
+                0x00000000bfc00018      0x17c /tmp/cck96Fyd.o
                 0x00000000bfc00018                _startup
 
 .bev_excpt      0x00000000bfc00380       0x10
  *(.bev_handler)
- .bev_handler   0x00000000bfc00380       0x10 /tmp/ccVpQGr7.o
+ .bev_handler   0x00000000bfc00380       0x10 /tmp/cck96Fyd.o
 
 .app_excpt      0x000000009d000180       0x10
  *(.gen_handler)
- .gen_handler   0x000000009d000180       0x10 /tmp/ccVpQGr7.o
+ .gen_handler   0x000000009d000180       0x10 /tmp/cck96Fyd.o
 
 .vectors        0x000000009d000200       0xd8
                 0x000000009d000200                . = ALIGN (0x4)
@@ -5287,13 +5287,13 @@ END GROUP
  .gnu.attributes
                 0x0000000000000330       0x10 build/bma400/production/_ext/1360937237/quat.o
  .gnu.attributes
-                0x0000000000000340       0x10 /tmp/ccVpQGr7.o
+                0x0000000000000340       0x10 /tmp/cck96Fyd.o
  .gnu.attributes
-                0x0000000000000350       0x10 /tmp/ccyVTxJc.o
+                0x0000000000000350       0x10 /tmp/ccabRsWu.o
  .gnu.attributes
-                0x0000000000000360       0x10 /tmp/ccoh4wDp.o
+                0x0000000000000360       0x10 /tmp/ccVqW2lV.o
  .gnu.attributes
-                0x0000000000000370       0x10 /tmp/cc4yVNJD.o
+                0x0000000000000370       0x10 /tmp/ccmgjiAT.o
  .gnu.attributes
                 0x0000000000000380       0x10 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/pic32_software_reset.o
  .gnu.attributes
@@ -5441,10 +5441,10 @@ END GROUP
  .gnu.attributes
                 0x0000000000000800       0x10 /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/libpic32.a(pic32_data_init_decompress.o)
                 0x0000000000000200                _min_heap_size = 0x200
-LOAD /tmp/ccVpQGr7.o
-LOAD /tmp/ccyVTxJc.o
-LOAD /tmp/ccoh4wDp.o
-LOAD /tmp/cc4yVNJD.o
+LOAD /tmp/cck96Fyd.o
+LOAD /tmp/ccabRsWu.o
+LOAD /tmp/ccVqW2lV.o
+LOAD /tmp/ccmgjiAT.o
 LOAD /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/../../../../pic32mx/lib/fpu64/pic32_software_reset.o
 LOAD /opt/microchip/xc32/v4.35/bin/bin/../../lib/gcc/pic32mx/8.3.1/fpu64/libgcc.a
 START GROUP
@@ -5500,77 +5500,77 @@ __xc_reference_data
 .__vector_offset_BF8106B8_data
                 0x00000000bf8106b8       0x80
  .__vector_offset_BF8106B8_data
-                0x00000000bf8106b8       0x80 /tmp/ccoh4wDp.o
+                0x00000000bf8106b8       0x80 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810540_data
                 0x00000000bf810540       0x70
  .__vector_offset_BF810540_data
-                0x00000000bf810540       0x70 /tmp/ccoh4wDp.o
+                0x00000000bf810540       0x70 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF81065C_data
                 0x00000000bf81065c       0x58
  .__vector_offset_BF81065C_data
-                0x00000000bf81065c       0x58 /tmp/ccoh4wDp.o
+                0x00000000bf81065c       0x58 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF8105CC_data
                 0x00000000bf8105cc       0x40
  .__vector_offset_BF8105CC_data
-                0x00000000bf8105cc       0x40 /tmp/ccoh4wDp.o
+                0x00000000bf8105cc       0x40 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF8107A0_data
                 0x00000000bf8107a0       0x2c
  .__vector_offset_BF8107A0_data
-                0x00000000bf8107a0       0x2c /tmp/ccoh4wDp.o
+                0x00000000bf8107a0       0x2c /tmp/ccVqW2lV.o
 
 .__vector_offset_BF8107E4_data
                 0x00000000bf8107e4       0x28
  .__vector_offset_BF8107E4_data
-                0x00000000bf8107e4       0x28 /tmp/ccoh4wDp.o
+                0x00000000bf8107e4       0x28 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810614_data
                 0x00000000bf810614       0x24
  .__vector_offset_BF810614_data
-                0x00000000bf810614       0x24 /tmp/ccoh4wDp.o
+                0x00000000bf810614       0x24 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF8105B8_data
                 0x00000000bf8105b8       0x10
  .__vector_offset_BF8105B8_data
-                0x00000000bf8105b8       0x10 /tmp/ccoh4wDp.o
+                0x00000000bf8105b8       0x10 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810748_data
                 0x00000000bf810748       0x10
  .__vector_offset_BF810748_data
-                0x00000000bf810748       0x10 /tmp/ccoh4wDp.o
+                0x00000000bf810748       0x10 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810818_data
                 0x00000000bf810818       0x10
  .__vector_offset_BF810818_data
-                0x00000000bf810818       0x10 /tmp/ccoh4wDp.o
+                0x00000000bf810818       0x10 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810924_data
                 0x00000000bf810924       0x10
  .__vector_offset_BF810924_data
-                0x00000000bf810924       0x10 /tmp/ccoh4wDp.o
+                0x00000000bf810924       0x10 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF8108F8_data
                 0x00000000bf8108f8        0xc
  .__vector_offset_BF8108F8_data
-                0x00000000bf8108f8        0xc /tmp/ccoh4wDp.o
+                0x00000000bf8108f8        0xc /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810914_data
                 0x00000000bf810914        0xc
  .__vector_offset_BF810914_data
-                0x00000000bf810914        0xc /tmp/ccoh4wDp.o
+                0x00000000bf810914        0xc /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810788_data
                 0x00000000bf810788        0x8
  .__vector_offset_BF810788_data
-                0x00000000bf810788        0x8 /tmp/ccoh4wDp.o
+                0x00000000bf810788        0x8 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810938_data
                 0x00000000bf810938        0x8
  .__vector_offset_BF810938_data
-                0x00000000bf810938        0x8 /tmp/ccoh4wDp.o
+                0x00000000bf810938        0x8 /tmp/ccVqW2lV.o
 
 .rgbOledBmp_page
                 0x00000000a0009ff0        0x5
@@ -5586,17 +5586,17 @@ __xc_reference_data
 .__vector_offset_BF8107DC_data
                 0x00000000bf8107dc        0x4
  .__vector_offset_BF8107DC_data
-                0x00000000bf8107dc        0x4 /tmp/ccoh4wDp.o
+                0x00000000bf8107dc        0x4 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF810834_data
                 0x00000000bf810834        0x4
  .__vector_offset_BF810834_data
-                0x00000000bf810834        0x4 /tmp/ccoh4wDp.o
+                0x00000000bf810834        0x4 /tmp/ccVqW2lV.o
 
 .__vector_offset_BF8108D8_data
                 0x00000000bf8108d8        0x4
  .__vector_offset_BF8108D8_data
-                0x00000000bf8108d8        0x4 /tmp/ccoh4wDp.o
+                0x00000000bf8108d8        0x4 /tmp/ccVqW2lV.o
 
 .COHERENTBSS$   0x00000000a0002b40     0x12d4
  .COHERENTBSS$  0x00000000a0002b40     0x12d4 build/bma400/production/_ext/1930658663/plib_canfd1.o
@@ -6507,7 +6507,7 @@ __xc_reference_data
 .text.main_entry
                 0x000000009d010820       0x54
  .text.main_entry
-                0x000000009d010820       0x54 /tmp/ccVpQGr7.o
+                0x000000009d010820       0x54 /tmp/cck96Fyd.o
                 0x000000009d010854                __crt0_exit
 
 .text.TP1_check
