@@ -14,7 +14,7 @@
 
 //DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -54,14 +54,14 @@
 #include "peripheral/gpio/plib_gpio.h"
 #include "peripheral/evic/plib_evic.h"
 #include "peripheral/dmac/plib_dmac.h"
-#include "peripheral/coretimer/plib_coretimer.h"
 #include "peripheral/tmr/plib_tmr6.h"
+#include "peripheral/coretimer/plib_coretimer.h"
 #include "peripheral/adchs/plib_adchs.h"
 #include "peripheral/qei/plib_qei2.h"
-#include "peripheral/uart/plib_uart1.h"
 #include "peripheral/tmr/plib_tmr4.h"
-#include "peripheral/uart/plib_uart2.h"
+#include "peripheral/uart/plib_uart1.h"
 #include "peripheral/tmr/plib_tmr5.h"
+#include "peripheral/uart/plib_uart2.h"
 #include "peripheral/tmr/plib_tmr2.h"
 #include "peripheral/tmr/plib_tmr3.h"
 #include "peripheral/mcpwm/plib_mcpwm.h"
@@ -78,8 +78,14 @@ extern "C" {
 #endif
 // DOM-IGNORE-END
 
+/* Device Information */
+#define DEVICE_NAME          "PIC32MK0512MCJ048"
+#define DEVICE_ARCH          "MIPS"
+#define DEVICE_FAMILY        "PIC32MK1570"
+#define DEVICE_SERIES        "PIC32MK"
+
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 120000000
+#define CPU_CLOCK_FREQUENCY 120000000U
 
 // *****************************************************************************
 // *****************************************************************************

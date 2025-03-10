@@ -69,12 +69,14 @@
 #define SW4_OutputEnable()      (TRISACLR = (1U<<7))
 #define SW4_InputEnable()       (TRISASET = (1U<<7))
 #define SW4_Get()               ((PORTA >> 7) & 0x1U)
+#define SW4_GetLatch()          ((LATA >> 7) & 0x1U)
 #define SW4_PIN                  GPIO_PIN_RA7
 #define SW4_InterruptEnable()   (CNENASET = (1U<<7))
 #define SW4_InterruptDisable()  (CNENACLR = (1U<<7))
 
 /*** Macros for BUZZER pin ***/
 #define BUZZER_Get()               ((PORTB >> 15) & 0x1U)
+#define BUZZER_GetLatch()          ((LATB >> 15) & 0x1U)
 #define BUZZER_PIN                  GPIO_PIN_RB15
 
 /*** Macros for EXT_SW2 pin ***/
@@ -84,6 +86,7 @@
 #define EXT_SW2_OutputEnable()      (TRISACLR = (1U<<12))
 #define EXT_SW2_InputEnable()       (TRISASET = (1U<<12))
 #define EXT_SW2_Get()               ((PORTA >> 12) & 0x1U)
+#define EXT_SW2_GetLatch()          ((LATA >> 12) & 0x1U)
 #define EXT_SW2_PIN                  GPIO_PIN_RA12
 
 /*** Macros for DIS_CS pin ***/
@@ -93,6 +96,7 @@
 #define DIS_CS_OutputEnable()      (TRISACLR = (1U<<11))
 #define DIS_CS_InputEnable()       (TRISASET = (1U<<11))
 #define DIS_CS_Get()               ((PORTA >> 11) & 0x1U)
+#define DIS_CS_GetLatch()          ((LATA >> 11) & 0x1U)
 #define DIS_CS_PIN                  GPIO_PIN_RA11
 
 /*** Macros for TP3 pin ***/
@@ -102,6 +106,7 @@
 #define TP3_OutputEnable()      (TRISBCLR = (1U<<0))
 #define TP3_InputEnable()       (TRISBSET = (1U<<0))
 #define TP3_Get()               ((PORTB >> 0) & 0x1U)
+#define TP3_GetLatch()          ((LATB >> 0) & 0x1U)
 #define TP3_PIN                  GPIO_PIN_RB0
 
 /*** Macros for TP2 pin ***/
@@ -111,6 +116,7 @@
 #define TP2_OutputEnable()      (TRISCCLR = (1U<<2))
 #define TP2_InputEnable()       (TRISCSET = (1U<<2))
 #define TP2_Get()               ((PORTC >> 2) & 0x1U)
+#define TP2_GetLatch()          ((LATC >> 2) & 0x1U)
 #define TP2_PIN                  GPIO_PIN_RC2
 
 /*** Macros for TP1 pin ***/
@@ -120,6 +126,7 @@
 #define TP1_OutputEnable()      (TRISCCLR = (1U<<11))
 #define TP1_InputEnable()       (TRISCSET = (1U<<11))
 #define TP1_Get()               ((PORTC >> 11) & 0x1U)
+#define TP1_GetLatch()          ((LATC >> 11) & 0x1U)
 #define TP1_PIN                  GPIO_PIN_RC11
 
 /*** Macros for LED_GREEN pin ***/
@@ -129,6 +136,7 @@
 #define LED_GREEN_OutputEnable()      (TRISACLR = (1U<<4))
 #define LED_GREEN_InputEnable()       (TRISASET = (1U<<4))
 #define LED_GREEN_Get()               ((PORTA >> 4) & 0x1U)
+#define LED_GREEN_GetLatch()          ((LATA >> 4) & 0x1U)
 #define LED_GREEN_PIN                  GPIO_PIN_RA4
 
 /*** Macros for LED_RED pin ***/
@@ -138,6 +146,7 @@
 #define LED_RED_OutputEnable()      (TRISCCLR = (1U<<15))
 #define LED_RED_InputEnable()       (TRISCSET = (1U<<15))
 #define LED_RED_Get()               ((PORTC >> 15) & 0x1U)
+#define LED_RED_GetLatch()          ((LATC >> 15) & 0x1U)
 #define LED_RED_PIN                  GPIO_PIN_RC15
 
 /*** Macros for SW2 pin ***/
@@ -147,6 +156,7 @@
 #define SW2_OutputEnable()      (TRISDCLR = (1U<<8))
 #define SW2_InputEnable()       (TRISDSET = (1U<<8))
 #define SW2_Get()               ((PORTD >> 8) & 0x1U)
+#define SW2_GetLatch()          ((LATD >> 8) & 0x1U)
 #define SW2_PIN                  GPIO_PIN_RD8
 #define SW2_InterruptEnable()   (CNENDSET = (1U<<8))
 #define SW2_InterruptDisable()  (CNENDCLR = (1U<<8))
@@ -158,6 +168,7 @@
 #define DIS_MODE_OutputEnable()      (TRISBCLR = (1U<<6))
 #define DIS_MODE_InputEnable()       (TRISBSET = (1U<<6))
 #define DIS_MODE_Get()               ((PORTB >> 6) & 0x1U)
+#define DIS_MODE_GetLatch()          ((LATB >> 6) & 0x1U)
 #define DIS_MODE_PIN                  GPIO_PIN_RB6
 
 /*** Macros for SW3 pin ***/
@@ -167,6 +178,7 @@
 #define SW3_OutputEnable()      (TRISBCLR = (1U<<8))
 #define SW3_InputEnable()       (TRISBSET = (1U<<8))
 #define SW3_Get()               ((PORTB >> 8) & 0x1U)
+#define SW3_GetLatch()          ((LATB >> 8) & 0x1U)
 #define SW3_PIN                  GPIO_PIN_RB8
 
 /*** Macros for DIS_RESET pin ***/
@@ -176,6 +188,7 @@
 #define DIS_RESET_OutputEnable()      (TRISBCLR = (1U<<9))
 #define DIS_RESET_InputEnable()       (TRISBSET = (1U<<9))
 #define DIS_RESET_Get()               ((PORTB >> 9) & 0x1U)
+#define DIS_RESET_GetLatch()          ((LATB >> 9) & 0x1U)
 #define DIS_RESET_PIN                  GPIO_PIN_RB9
 
 /*** Macros for IMU_CS pin ***/
@@ -185,6 +198,7 @@
 #define IMU_CS_OutputEnable()      (TRISCCLR = (1U<<9))
 #define IMU_CS_InputEnable()       (TRISCSET = (1U<<9))
 #define IMU_CS_Get()               ((PORTC >> 9) & 0x1U)
+#define IMU_CS_GetLatch()          ((LATC >> 9) & 0x1U)
 #define IMU_CS_PIN                  GPIO_PIN_RC9
 
 /*** Macros for MISC_0 pin ***/
@@ -194,6 +208,7 @@
 #define MISC_0_OutputEnable()      (TRISBCLR = (1U<<11))
 #define MISC_0_InputEnable()       (TRISBSET = (1U<<11))
 #define MISC_0_Get()               ((PORTB >> 11) & 0x1U)
+#define MISC_0_GetLatch()          ((LATB >> 11) & 0x1U)
 #define MISC_0_PIN                  GPIO_PIN_RB11
 
 /*** Macros for DIS_BLANK pin ***/
@@ -203,6 +218,7 @@
 #define DIS_BLANK_OutputEnable()      (TRISBCLR = (1U<<12))
 #define DIS_BLANK_InputEnable()       (TRISBSET = (1U<<12))
 #define DIS_BLANK_Get()               ((PORTB >> 12) & 0x1U)
+#define DIS_BLANK_GetLatch()          ((LATB >> 12) & 0x1U)
 #define DIS_BLANK_PIN                  GPIO_PIN_RB12
 
 /*** Macros for SW5 pin ***/
@@ -212,6 +228,7 @@
 #define SW5_OutputEnable()      (TRISACLR = (1U<<10))
 #define SW5_InputEnable()       (TRISASET = (1U<<10))
 #define SW5_Get()               ((PORTA >> 10) & 0x1U)
+#define SW5_GetLatch()          ((LATA >> 10) & 0x1U)
 #define SW5_PIN                  GPIO_PIN_RA10
 #define SW5_InterruptEnable()   (CNENASET = (1U<<10))
 #define SW5_InterruptDisable()  (CNENACLR = (1U<<10))
@@ -368,7 +385,7 @@ typedef struct {
 
 static inline void GPIO_PinWrite(GPIO_PIN pin, bool value)
 {
-	 uint32_t xvalue = (uint32_t)value;
+     uint32_t xvalue = (uint32_t)value;
     GPIO_PortWrite((pin>>4U), (uint32_t)(0x1U) << (pin & 0xFU), (xvalue) << (pin & 0xFU));
 }
 
@@ -415,7 +432,7 @@ void GPIO_PinIntDisable(GPIO_PIN pin);
 
 bool GPIO_PinInterruptCallbackRegister(
     GPIO_PIN pin,
-    const   GPIO_PIN_CALLBACK callBack,
+    const   GPIO_PIN_CALLBACK callback,
     uintptr_t context
 );
 

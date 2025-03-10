@@ -20,7 +20,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2025 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -48,9 +48,9 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include "interrupts.h"
 #include "definitions.h"
+
 
 
 // *****************************************************************************
@@ -60,114 +60,123 @@
 // *****************************************************************************
 
 
-void CORE_TIMER_InterruptHandler( void );
-void TIMER_2_InterruptHandler( void );
-void EXTERNAL_2_InterruptHandler( void );
-void TIMER_4_InterruptHandler( void );
-void TIMER_5_InterruptHandler( void );
-void RTCC_InterruptHandler( void );
-void SPI1_RX_InterruptHandler( void );
-void SPI1_TX_InterruptHandler( void );
-void CHANGE_NOTICE_A_InterruptHandler( void );
-void CHANGE_NOTICE_D_InterruptHandler( void );
-void UART2_FAULT_InterruptHandler( void );
-void UART2_RX_InterruptHandler( void );
-void UART2_TX_InterruptHandler( void );
-void DMA0_InterruptHandler( void );
-void DMA1_InterruptHandler( void );
-void DMA2_InterruptHandler( void );
-void TIMER_6_InterruptHandler( void );
-void DMA7_InterruptHandler( void );
-
-
-
 /* All the handlers are defined here.  Each will call its PLIB-specific function. */
-void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
+// *****************************************************************************
+// *****************************************************************************
+// Section: System Interrupt Vector declarations
+// *****************************************************************************
+// *****************************************************************************
+void CORE_TIMER_Handler (void);
+void TIMER_2_Handler (void);
+void EXTERNAL_2_Handler (void);
+void TIMER_4_Handler (void);
+void TIMER_5_Handler (void);
+void RTCC_Handler (void);
+void SPI1_RX_Handler (void);
+void SPI1_TX_Handler (void);
+void CHANGE_NOTICE_A_Handler (void);
+void CHANGE_NOTICE_D_Handler (void);
+void UART2_FAULT_Handler (void);
+void UART2_RX_Handler (void);
+void UART2_TX_Handler (void);
+void DMA0_Handler (void);
+void DMA1_Handler (void);
+void DMA2_Handler (void);
+void TIMER_6_Handler (void);
+void DMA7_Handler (void);
+
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: System Interrupt Vector definitions
+// *****************************************************************************
+// *****************************************************************************
+void __attribute__((used)) __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
 {
     CORE_TIMER_InterruptHandler();
 }
 
-void __ISR(_TIMER_2_VECTOR, ipl1SRS) TIMER_2_Handler (void)
+void __attribute__((used)) __ISR(_TIMER_2_VECTOR, ipl1SRS) TIMER_2_Handler (void)
 {
     TIMER_2_InterruptHandler();
 }
 
-void __ISR(_EXTERNAL_2_VECTOR, ipl1SRS) EXTERNAL_2_Handler (void)
+void __attribute__((used)) __ISR(_EXTERNAL_2_VECTOR, ipl1SRS) EXTERNAL_2_Handler (void)
 {
     EXTERNAL_2_InterruptHandler();
 }
 
-void __ISR(_TIMER_4_VECTOR, ipl1SRS) TIMER_4_Handler (void)
+void __attribute__((used)) __ISR(_TIMER_4_VECTOR, ipl1SRS) TIMER_4_Handler (void)
 {
     TIMER_4_InterruptHandler();
 }
 
-void __ISR(_TIMER_5_VECTOR, ipl1SRS) TIMER_5_Handler (void)
+void __attribute__((used)) __ISR(_TIMER_5_VECTOR, ipl1SRS) TIMER_5_Handler (void)
 {
     TIMER_5_InterruptHandler();
 }
 
-void __ISR(_RTCC_VECTOR, ipl1SRS) RTCC_Handler (void)
+void __attribute__((used)) __ISR(_RTCC_VECTOR, ipl1SRS) RTCC_Handler (void)
 {
     RTCC_InterruptHandler();
 }
 
-void __ISR(_SPI1_RX_VECTOR, ipl2SRS) SPI1_RX_Handler (void)
+void __attribute__((used)) __ISR(_SPI1_RX_VECTOR, ipl2SRS) SPI1_RX_Handler (void)
 {
     SPI1_RX_InterruptHandler();
 }
 
-void __ISR(_SPI1_TX_VECTOR, ipl2SRS) SPI1_TX_Handler (void)
+void __attribute__((used)) __ISR(_SPI1_TX_VECTOR, ipl2SRS) SPI1_TX_Handler (void)
 {
     SPI1_TX_InterruptHandler();
 }
 
-void __ISR(_CHANGE_NOTICE_A_VECTOR, ipl1SRS) CHANGE_NOTICE_A_Handler (void)
+void __attribute__((used)) __ISR(_CHANGE_NOTICE_A_VECTOR, ipl1SRS) CHANGE_NOTICE_A_Handler (void)
 {
     CHANGE_NOTICE_A_InterruptHandler();
 }
 
-void __ISR(_CHANGE_NOTICE_D_VECTOR, ipl1SRS) CHANGE_NOTICE_D_Handler (void)
+void __attribute__((used)) __ISR(_CHANGE_NOTICE_D_VECTOR, ipl1SRS) CHANGE_NOTICE_D_Handler (void)
 {
     CHANGE_NOTICE_D_InterruptHandler();
 }
 
-void __ISR(_UART2_FAULT_VECTOR, ipl1SRS) UART2_FAULT_Handler (void)
+void __attribute__((used)) __ISR(_UART2_FAULT_VECTOR, ipl1SRS) UART2_FAULT_Handler (void)
 {
     UART2_FAULT_InterruptHandler();
 }
 
-void __ISR(_UART2_RX_VECTOR, ipl1SRS) UART2_RX_Handler (void)
+void __attribute__((used)) __ISR(_UART2_RX_VECTOR, ipl1SRS) UART2_RX_Handler (void)
 {
     UART2_RX_InterruptHandler();
 }
 
-void __ISR(_UART2_TX_VECTOR, ipl1SRS) UART2_TX_Handler (void)
+void __attribute__((used)) __ISR(_UART2_TX_VECTOR, ipl1SRS) UART2_TX_Handler (void)
 {
     UART2_TX_InterruptHandler();
 }
 
-void __ISR(_DMA0_VECTOR, ipl1SRS) DMA0_Handler (void)
+void __attribute__((used)) __ISR(_DMA0_VECTOR, ipl1SRS) DMA0_Handler (void)
 {
     DMA0_InterruptHandler();
 }
 
-void __ISR(_DMA1_VECTOR, ipl1SRS) DMA1_Handler (void)
+void __attribute__((used)) __ISR(_DMA1_VECTOR, ipl1SRS) DMA1_Handler (void)
 {
     DMA1_InterruptHandler();
 }
 
-void __ISR(_DMA2_VECTOR, ipl1SRS) DMA2_Handler (void)
+void __attribute__((used)) __ISR(_DMA2_VECTOR, ipl1SRS) DMA2_Handler (void)
 {
     DMA2_InterruptHandler();
 }
 
-void __ISR(_TIMER_6_VECTOR, ipl2SRS) TIMER_6_Handler (void)
+void __attribute__((used)) __ISR(_TIMER_6_VECTOR, ipl2SRS) TIMER_6_Handler (void)
 {
     TIMER_6_InterruptHandler();
 }
 
-void __ISR(_DMA7_VECTOR, ipl1SRS) DMA7_Handler (void)
+void __attribute__((used)) __ISR(_DMA7_VECTOR, ipl1SRS) DMA7_Handler (void)
 {
     DMA7_InterruptHandler();
 }

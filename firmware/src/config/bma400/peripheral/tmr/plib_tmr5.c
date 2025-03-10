@@ -51,8 +51,9 @@
 
 #include "device.h"
 #include "plib_tmr5.h"
+#include "interrupts.h"
 
-static TMR_TIMER_OBJECT tmr5Obj;
+static volatile TMR_TIMER_OBJECT tmr5Obj;
 
 
 void TMR5_Initialize(void)
@@ -113,14 +114,15 @@ uint32_t TMR5_FrequencyGet(void)
     return (3750000);
 }
 
-void TIMER_5_InterruptHandler (void)
+void __attribute__((used)) TIMER_5_InterruptHandler (void)
 {
     uint32_t status = IFS0bits.T5IF;
     IFS0CLR = _IFS0_T5IF_MASK;
 
     if((tmr5Obj.callback_fn != NULL))
     {
-        tmr5Obj.callback_fn(status, tmr5Obj.context);
+        uintptr_t context = tmr5Obj.context;
+        tmr5Obj.callback_fn(status, context);
     }
 }
 
@@ -144,3 +146,5 @@ void TMR5_CallbackRegister( TMR_CALLBACK callback_fn, uintptr_t context )
     tmr5Obj.callback_fn = callback_fn;
     tmr5Obj.context = context;
 }
+
+

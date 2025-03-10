@@ -14993,27 +14993,27 @@
    <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>../src/config/bma400/definitions.h</file>
-         <hash>4f029029ad170e9963d23e0de0128508e8117b66b21266a8c7b0e1943cc93326</hash>
+         <hash>18f0510a1921602f4322b3ccadb881a31f746828695ca73714131710cdf3e140</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/device.h</file>
-         <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
+         <hash>4d4341a6f9628cea0bf73f980b639f7cb81089e55a60ad7e434be2a71e477442</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/exceptions.c</file>
-         <hash>bacd9060af8add5471ec3170808fe766dbd651e25104b5ecc8a7ebc02935e727</hash>
+         <hash>265c985839caadb2fa9e8fc76e7bc3c160e31e9b2c96dc4006add33e5d7ee212</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/initialization.c</file>
-         <hash>26b5da135a0520517749e978214cca88dacaf732eb053a5df7966f229d5013f7</hash>
+         <hash>ebc670bfcb91ae6fa1bd7231d9fcaa81b3beef7e36e3eb6cd32d3fef9f5250d4</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/interrupts.c</file>
-         <hash>9e26e6e629425e43b3d4929f36e1c41a0e611008f3587598d681f642c5f6339d</hash>
+         <hash>d444decaa5a1376451e19601f3666d7faba2662996bd9415bf9692398a8f19e3</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/interrupts.h</file>
-         <hash>91abdb8d191ae865fc6082f30783c3d6cca8aa8d5aca823a7fb2cc65e3a57d24</hash>
+         <hash>cd240628cbd71664542f6c599dd2685e8a022cb01af0d560987441f5fcf55a98</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/p32MK0512MCJ048.ld</file>
@@ -15021,7 +15021,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/adchs/plib_adchs.c</file>
-         <hash>04d4c40d3d3b7c07615878a44209822111e04f9ddf120960df7e60b6df7cc981</hash>
+         <hash>ea0d907abfd34a138dabd04183eb8f6812501a69e99ab7c5252c1d313cf75c95</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/adchs/plib_adchs.h</file>
@@ -15029,87 +15029,87 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/adchs/plib_adchs_common.h</file>
-         <hash>1a4c2059bdc6e2b0bc68496e4dbf798280a7d236652655ac138b97ace6147bcb</hash>
+         <hash>0a3ed23aee80cb9b469014d86ff35186abcfbeaa16f98921f950fcf43b9cc3db</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/canfd/plib_canfd1.c</file>
-         <hash>a2d152d2fda9c432c1f6cc28c2a2b4ad51ff8837e69e915883167f77e930011e</hash>
+         <hash>262c4334987ea4565af4e2d4438fef4db0ba5292d1f07e3103d6a0191c406847</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/canfd/plib_canfd1.h</file>
-         <hash>b75d9f762de983263e9c6dc009d2b74a1504e2d4695402535a576fc3f5deabb7</hash>
+         <hash>ffe6ae38e8992247fbc90680be6ac780b48adf67007f11063cc54381f567995b</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/canfd/plib_canfd_common.h</file>
-         <hash>85c035049f7cdd738e11d547cea98940329249529ba267c6a338f6caaaf5f9e3</hash>
+         <hash>fbf5091541d361f023f2c1fa3f04173ed84db75e64f475d14e1919856f1bf620</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/clk/plib_clk.c</file>
-         <hash>2ad6c3334813ef172d049780b058358f535e26f2a530f71b2f3463edef083829</hash>
+         <hash>7ae5219ccae0a50cb7f68435b0bcb96593ab173d890480b0e68ff4fa9591068f</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/clk/plib_clk.h</file>
-         <hash>aeb73e24e5a518024b1c3f7dce953a5cbacead08f55e80ae465fc8d2e522e477</hash>
+         <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/coretimer/plib_coretimer.c</file>
-         <hash>9d6acf01226eb43c1db60b4b6fba498114ee1980a8693a3acfc41326583ba8e1</hash>
+         <hash>7e3785efeaf90ff54fd2766619c47bc98a8df2ba5d01706d6c12c5f7231037e5</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/coretimer/plib_coretimer.h</file>
-         <hash>b4803baa11440eb8b100ddfccdcbb61bde17bf7b68cc78685c858d2a33fee12b</hash>
+         <hash>4bb450e5909dea7240cfa12f157a017270a36f274ae99a594e8b046706a88eda</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/dmac/plib_dmac.c</file>
-         <hash>db8c8528eb01baa1b7c4c8a6bb6feaf608ffea566b05026bd76ab4e4b0f59048</hash>
+         <hash>0b1be6f8e7c92107b49fdf2bf35341f6795089a98a332aaca186abb213812501</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/dmac/plib_dmac.h</file>
-         <hash>23017fe3fc9a89674736de1d7c9f8f14b7334f1e9df251120de1397731ab7299</hash>
+         <hash>78b9533671371600d12031eb6280ef51c292677cc636c809bb1b16ab772a4f8d</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/evic/plib_evic.c</file>
-         <hash>d6ee499cb9c908dcfb4e6b35c517ac969ecb5dd3a26de64ba23259a8b7e6f1be</hash>
+         <hash>23f91846636766a9339c541379371b22342bce4c26e9f94da75ba2e2666d9a9b</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/evic/plib_evic.h</file>
-         <hash>e92944d182b8c03b8839d1ba8f65627b4cd4f8fe40aed2fc30b397096b4c529c</hash>
+         <hash>e176451a09954f36506d46a77f6c1511116c77ad52e4f5d4a41c95634fa160df</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/gpio/plib_gpio.c</file>
-         <hash>1bba7e767833c96891d95822a981a93dabd02c5ca8fae983c358b4862e07c44c</hash>
+         <hash>552537c3921be02ac6b3ea67118d292a2b46a4e2fd9d0ea2fae7935ae4cf8420</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/gpio/plib_gpio.h</file>
-         <hash>880080b34b133395543332da29d293d23d96383e36b46df68ecadf13107eb1a6</hash>
+         <hash>1ee691ec6a90169e2496748e2544c57e08a27e96289ba5ce180776ab38ef4a15</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/mcpwm/plib_mcpwm.c</file>
-         <hash>46e4e75afb33853eb0dbfcec35139f7eb31f41afed9afb52739becc0cf0318c8</hash>
+         <hash>4ead13fe5a31b6b00fafae6e8b97172909317ed91c31be13e64ad5d8dad590e8</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/mcpwm/plib_mcpwm.h</file>
-         <hash>bcd46f45b3b2e8bf6f48002edc8ae381b25de602627153dac37269c2680c6269</hash>
+         <hash>fe315bf2bcba7ad56b08d0be1fcfd1ab7230542fc98b1b2726f73d49e2a26c87</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/mcpwm/plib_mcpwm_common.h</file>
-         <hash>92097067525e006e027efa54d1c6a97066c4870f41eac3b57dd02b6a9bb4cc2b</hash>
+         <hash>e1a7024335a9f1a1678aa24a8b52c02021dc9848a4e9c4fad36291e7375937f4</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/qei/plib_qei2.c</file>
-         <hash>8b7c8bf2ccdf3ae557541f841bdc91441ea8427d5531f5136393bedfdba68807</hash>
+         <hash>f949f5d551d47a01a9ae70f54d501c90ba8c988f574b9f2f3ecc9c36b2efebae</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/qei/plib_qei2.h</file>
-         <hash>81d0185b43ae7a90801b8c4e345e7b2a980da2c6438257da8c811b41011c171d</hash>
+         <hash>f86158eca0c327a5fe07352c19dce004416c513ab51e43b88fa9bee21f6294ca</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/qei/plib_qei_common.h</file>
-         <hash>9ea3b4f643d5ca367a1e9a98b6e2fe8f9d16f5b6ab36f65e27ca41b52f2bfcd5</hash>
+         <hash>63f1cbf111841acd9bf226772787e71a176289defa26b5611cab6df28115187d</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/rtcc/plib_rtcc.c</file>
-         <hash>fc2d12de522615c0d6475cf813328f5c0b286525ed7d38d007c9c5e21b374c49</hash>
+         <hash>e5a44c3c851706fe0459fc7c181cb2cb21238ab011868aa00e93fda59dd569da</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/rtcc/plib_rtcc.h</file>
@@ -15117,7 +15117,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.c</file>
-         <hash>8f267cd11707f9235e45e6614e270b6203cb39daa400795f597e06634a7d8a1e</hash>
+         <hash>f85629d370a814e0bd4b6537bff901f989f6134d4be0a206eda63310011cd10d</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h</file>
@@ -15125,7 +15125,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.c</file>
-         <hash>a7709fadd6eb78839214190eac5ef932685a9a73a9af2b9f463430bd98b18dc2</hash>
+         <hash>5c61f32c5d0a3aa36543af30ec1f1b7b8a027d678556ebcd23924adca5cd8a26</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.h</file>
@@ -15137,51 +15137,51 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr2.c</file>
-         <hash>d24b96f43bd869a12a562e447124afc0c9a7a7208ce5914f9199d741184a9bd5</hash>
+         <hash>4a77c51ed880db3e2ef43fd11bd5e07175fad858c243b67b50afe26f244f148a</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr2.h</file>
-         <hash>b1b006af9a8d82224e366535485154f5c0cbbe3bfba90d3b5eed6028e8bdb887</hash>
+         <hash>fbd4c230d2ebaf516aee9c9754c90f040132f730ca73573e13abfd9d23c419ed</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr3.c</file>
-         <hash>eeaddcf933986f69a9b4ea430e0c79d9afcbb46b16825d0567c141739610670b</hash>
+         <hash>99f0940d09acc6a7bfab4ad73a91b03c7a9dbd55c0cde8cc065a5e10d3130afb</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr3.h</file>
-         <hash>93f614d9bd9ebcac62cc522c494a8d6694d3e2b705e69bea1fe2c1b84e1b604b</hash>
+         <hash>19ee9614ac252cceed6414a6db106005ab1d2e35ecd4b97f4e8a6116e6facdf0</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr4.c</file>
-         <hash>4b0a493d5706fa57001a9a690de2acec5ec6dfb917daaae65ccdb24eb26b1047</hash>
+         <hash>2e4a91e90ba400cfa86c3cc9feb3b5c5ac7357662c73b093f28835a1366dc38d</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr4.h</file>
-         <hash>9044df34ae4c6535f5fe5298b5f9b0430db33d713d8bdb8576c4a597ffd009dc</hash>
+         <hash>495709ae2b529cdb861e5946cc9d73dbd1831047a2e39258747642f08d7e5dfb</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr5.c</file>
-         <hash>d739eca1f54b691ea558023107a95a1a9383ce3816533a88ae82413099e16b62</hash>
+         <hash>3946b04bf91c38405b98fc35b462866cd221210f36aae0587892420c93359f3e</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr5.h</file>
-         <hash>712a32bdde271364fb406e66908e62408bf51ab62268ce29f1d7829e569bc3a7</hash>
+         <hash>143ab36fd0f9b7755efb5ba29db0488c43f1fc1270098a70afe142a09f72f1fe</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr6.c</file>
-         <hash>d80270d36578b780adde1c49f8e211992d2146ab922028a81964b1de4a76c976</hash>
+         <hash>be0283d0a13be5bef240979873e3c17514db69b8cfcfb1a9e62389fe7a3fb51c</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr6.h</file>
-         <hash>10b7394a78b0a49cd652e852d9347108c00f6e39e59c43b3e5c87b8e82a40414</hash>
+         <hash>d559ab3f5f17c84eeb67f2da2a8b0b91770fb182bec53357d20317a2fc65d7a8</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr9.c</file>
-         <hash>7a797dd12b048facf453b5d74ea6242050c633f3ccd74b5c9a0f12a2fd28b047</hash>
+         <hash>d08dae6b6cc2d4a6d91b466fe62b9b09b17a584c9e083c18ef536affdec923d7</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr9.h</file>
-         <hash>5f927916b534a7995ade50cdf8da6d6a4046207285665302113a559a06e35314</hash>
+         <hash>a92367e78c6eed9679e741fb70c63340611b83e0869fa81ce568f7d5e9043c89</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/tmr/plib_tmr_common.h</file>
@@ -15189,7 +15189,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart1.c</file>
-         <hash>b699c0915d87ba370a61fc60405224729ef2f5ea7d5390967ef0a2a66b67fd2b</hash>
+         <hash>ed6ba02a5533f71cd5160560a41080841b880ceeccdd51dd4e0cd455c5e16867</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart1.h</file>
@@ -15197,7 +15197,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart2.c</file>
-         <hash>94f35b51bdf0b6dba14f3e8fca9e9110198d466181d08c6297bb6b3addbe3817</hash>
+         <hash>518fd9fbe9ec9333632fe9625d535aeb7458b6c02a68d6454fbb08ef2b068e64</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart2.h</file>
@@ -15205,7 +15205,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/peripheral/uart/plib_uart_common.h</file>
-         <hash>90d1791d0855caa86d5d529a0ba209330f20cd0da2436950a7e71b38ef8da02b</hash>
+         <hash>70213cd740b3ff9a591d93ad6aac9493335851db084dd862275effacdebf710d</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/stdio/xc32_monitor.c</file>
@@ -15213,7 +15213,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/toolchain_specifics.h</file>
-         <hash>9dfc75809b6eb23cee342231de51f6b382f8f7eabf8a939539cf44c0da32acbc</hash>
+         <hash>b4de6e02e3e48c62f7ba233405ffdf6ef31bb971d1a7b49efa1676f45cabc1ac</hash>
       </entry>
       <entry>
          <file>../src/main.c</file>

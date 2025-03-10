@@ -205,7 +205,6 @@ void LA_gfx(bool reset, bool redraw, uint32_t turns)
 	static double t = 0.01;
 	static uint32_t i = 0;
 
-	//	TP2_Set();
 	//Iterate and update x,y and z locations
 	//based upon the Lorenz equations
 	if (redraw) {

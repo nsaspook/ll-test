@@ -66,15 +66,13 @@
 // *****************************************************************************
 
 
-typedef enum
-{
-    MCPWM_CH_1 ,
-    MCPWM_CH_2 ,
-    MCPWM_CH_3 ,
-    MCPWM_CH_4 ,
-    MCPWM_CH_5 ,
-    MCPWM_CH_6 ,
-} MCPWM_CH_NUM;
+#define    MCPWM_CH_1  (0U)
+#define    MCPWM_CH_2  (1U)
+#define    MCPWM_CH_3  (2U)
+#define    MCPWM_CH_4  (3U)
+#define    MCPWM_CH_5  (4U)
+#define    MCPWM_CH_6  (5U)
+typedef uint32_t MCPWM_CH_NUM;
 
 typedef enum
 {

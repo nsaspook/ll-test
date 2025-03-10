@@ -51,8 +51,9 @@
 
 #include "device.h"
 #include "plib_tmr6.h"
+#include "interrupts.h"
 
-static TMR_TIMER_OBJECT tmr6Obj;
+static volatile TMR_TIMER_OBJECT tmr6Obj;
 
 
 void TMR6_Initialize(void)
@@ -113,14 +114,15 @@ uint32_t TMR6_FrequencyGet(void)
     return (60000000);
 }
 
-void TIMER_6_InterruptHandler (void)
+void __attribute__((used)) TIMER_6_InterruptHandler (void)
 {
     uint32_t status = IFS2bits.T6IF;
     IFS2CLR = _IFS2_T6IF_MASK;
 
     if((tmr6Obj.callback_fn != NULL))
     {
-        tmr6Obj.callback_fn(status, tmr6Obj.context);
+        uintptr_t context = tmr6Obj.context;
+        tmr6Obj.callback_fn(status, context);
     }
 }
 
@@ -144,3 +146,5 @@ void TMR6_CallbackRegister( TMR_CALLBACK callback_fn, uintptr_t context )
     tmr6Obj.callback_fn = callback_fn;
     tmr6Obj.context = context;
 }
+
+
