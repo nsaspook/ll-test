@@ -1,0 +1,159 @@
+\doxysection{definitions.\+h}
+\hypertarget{definitions_8h_source}{}\label{definitions_8h_source}\index{src/config/bma400/definitions.h@{src/config/bma400/definitions.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ System\ Definitions}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ definitions.h}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ project\ system\ definitions.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ This\ file\ contains\ the\ system-\/wide\ prototypes\ and\ definitions\ for\ a\ project.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *******************************************************************************/}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00016\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*\ Copyright\ (C)\ 2018\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*}}
+\DoxyCodeLine{00019\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *******************************************************************************/}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifndef\ DEFINITIONS\_H}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ DEFINITIONS\_H}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ Section:\ Included\ Files}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ "{}peripheral/canfd/plib\_canfd1.h"{}}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ "{}peripheral/clk/plib\_clk.h"{}}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ "{}peripheral/gpio/plib\_gpio.h"{}}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}peripheral/evic/plib\_evic.h"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}peripheral/dmac/plib\_dmac.h"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}peripheral/coretimer/plib\_coretimer.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}peripheral/tmr/plib\_tmr6.h"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}peripheral/adchs/plib\_adchs.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}peripheral/qei/plib\_qei2.h"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}peripheral/uart/plib\_uart1.h"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}peripheral/tmr/plib\_tmr4.h"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}peripheral/uart/plib\_uart2.h"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}peripheral/tmr/plib\_tmr5.h"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}peripheral/tmr/plib\_tmr2.h"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}peripheral/tmr/plib\_tmr3.h"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ "{}peripheral/mcpwm/plib\_mcpwm.h"{}}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}peripheral/spi/spi\_master/plib\_spi2\_master.h"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}peripheral/spi/spi\_master/plib\_spi1\_master.h"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}peripheral/rtcc/plib\_rtcc.h"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ "{}peripheral/tmr/plib\_tmr9.h"{}}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{/*\ CPU\ clock\ frequency\ */}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ CPU\_CLOCK\_FREQUENCY\ 120000000}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ Section:\ System\ Functions}}
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00091\ \textcolor{comment}{/*\ System\ Initialization\ Function}}
+\DoxyCodeLine{00092\ \textcolor{comment}{}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ \ Function:}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ void\ SYS\_Initialize(\ void\ *data\ )}}
+\DoxyCodeLine{00095\ \textcolor{comment}{}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ \ \ \ Function\ that\ initializes\ all\ modules\ in\ the\ system.}}
+\DoxyCodeLine{00098\ \textcolor{comment}{}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ \ \ \ This\ function\ initializes\ all\ modules\ in\ the\ system,\ including\ any\ drivers,}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ services,\ middleware,\ and\ applications.}}
+\DoxyCodeLine{00102\ \textcolor{comment}{}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ \ Precondition:}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00105\ \textcolor{comment}{}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ \ \ \ data\ \ \ \ \ \ \ \ \ \ \ \ -\/\ Pointer\ to\ the\ data\ structure\ containing\ any\ data}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ necessary\ to\ initialize\ the\ module.\ This\ pointer\ may}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ be\ null\ if\ no\ data\ is\ required\ and\ default\ initialization}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ is\ to\ be\ used.}}
+\DoxyCodeLine{00111\ \textcolor{comment}{}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00113\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00114\ \textcolor{comment}{}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00116\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ \ \ \ SYS\_Initialize\ (\ NULL\ );}}
+\DoxyCodeLine{00118\ \textcolor{comment}{}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ \ \ \ while\ (\ true\ )}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ \ \ \ \ \ \ \ SYS\_Tasks\ (\ );}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00124\ \textcolor{comment}{}}
+\DoxyCodeLine{00125\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00126\ \textcolor{comment}{\ \ \ \ This\ function\ will\ only\ be\ called\ once,\ after\ system\ reset.}}
+\DoxyCodeLine{00127\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keywordtype}{void}\ SYS\_Initialize(\ \textcolor{keywordtype}{void}\ *data\ );}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{/*\ Nullify\ SYS\_Tasks()\ if\ only\ PLIBs\ are\ used.\ */}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \ \ \ \ SYS\_Tasks()}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00135\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ Section:\ extern\ declarations}}
+\DoxyCodeLine{00137\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00138\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{comment}{//DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00145\ \}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00147\ \textcolor{comment}{//DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DEFINITIONS\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00150\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00151\ \textcolor{comment}{\ End\ of\ File}}
+\DoxyCodeLine{00152\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00153\ }
+
+\end{DoxyCode}

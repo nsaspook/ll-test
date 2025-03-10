@@ -1,0 +1,81 @@
+\doxysection{sh2\+\_\+\+Sensor\+Metadata Struct Reference}
+\hypertarget{structsh2__SensorMetadata}{}\label{structsh2__SensorMetadata}\index{sh2\_SensorMetadata@{sh2\_SensorMetadata}}
+
+
+Sensor Metadata Record.  
+
+
+
+
+{\ttfamily \#include $<$bno086\+\_\+reg.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structsh2__SensorMetadata_afa2bd756c7bb22e2104b3d97c5d73737}\label{structsh2__SensorMetadata_afa2bd756c7bb22e2104b3d97c5d73737} 
+uint8\+\_\+t {\bfseries me\+Version}
+\begin{DoxyCompactList}\small\item\em Motion Engine Version. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a82785f09037c163244624eca97eab2d4}\label{structsh2__SensorMetadata_a82785f09037c163244624eca97eab2d4} 
+uint8\+\_\+t {\bfseries mh\+Version}
+\begin{DoxyCompactList}\small\item\em Motion Hub Version. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_af27c3a8668b7acdb299a7dcff7a28529}\label{structsh2__SensorMetadata_af27c3a8668b7acdb299a7dcff7a28529} 
+uint8\+\_\+t {\bfseries sh\+Version}
+\begin{DoxyCompactList}\small\item\em Sensor\+Hub Version. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a6ff688cf56eb219d40c858d2115ef1ff}\label{structsh2__SensorMetadata_a6ff688cf56eb219d40c858d2115ef1ff} 
+uint32\+\_\+t {\bfseries range}
+\begin{DoxyCompactList}\small\item\em Same units as sensor reports. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_ae8834af86b361a19158f36f08eb13e87}\label{structsh2__SensorMetadata_ae8834af86b361a19158f36f08eb13e87} 
+uint32\+\_\+t {\bfseries resolution}
+\begin{DoxyCompactList}\small\item\em Same units as sensor reports. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a07a86a6123d2701ae2e6193df2be21f1}\label{structsh2__SensorMetadata_a07a86a6123d2701ae2e6193df2be21f1} 
+uint16\+\_\+t {\bfseries revision}
+\begin{DoxyCompactList}\small\item\em Metadata record format revision. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a70cf979bebc9622363e18958e4076093}\label{structsh2__SensorMetadata_a70cf979bebc9622363e18958e4076093} 
+uint16\+\_\+t {\bfseries power\+\_\+mA}
+\begin{DoxyCompactList}\small\item\em \mbox{[}mA\mbox{]} Fixed point 16Q10 format \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a4de9f6424c6f8e88c11545768ca15aba}\label{structsh2__SensorMetadata_a4de9f6424c6f8e88c11545768ca15aba} 
+uint32\+\_\+t {\bfseries min\+Period\+\_\+uS}
+\begin{DoxyCompactList}\small\item\em \mbox{[}uS\mbox{]} \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a188968a0ae4bf908dbbde5ceb4c37865}\label{structsh2__SensorMetadata_a188968a0ae4bf908dbbde5ceb4c37865} 
+uint32\+\_\+t {\bfseries max\+Period\+\_\+uS}
+\begin{DoxyCompactList}\small\item\em \mbox{[}uS\mbox{]} \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_ae17279f739b48615f4efe086b8a10806}\label{structsh2__SensorMetadata_ae17279f739b48615f4efe086b8a10806} 
+uint32\+\_\+t {\bfseries fifo\+Reserved}
+\begin{DoxyCompactList}\small\item\em (Unused) \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a2d933f8f7cf500c04641b18a00c12407}\label{structsh2__SensorMetadata_a2d933f8f7cf500c04641b18a00c12407} 
+uint32\+\_\+t {\bfseries fifo\+Max}
+\begin{DoxyCompactList}\small\item\em (Unused) \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a0549f43ee70f34077a457f99dff95f71}\label{structsh2__SensorMetadata_a0549f43ee70f34077a457f99dff95f71} 
+uint32\+\_\+t {\bfseries batch\+Buffer\+Bytes}
+\begin{DoxyCompactList}\small\item\em (Unused) \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_aaeff86659eeca700411a119bc1013959}\label{structsh2__SensorMetadata_aaeff86659eeca700411a119bc1013959} 
+uint16\+\_\+t {\bfseries q\+Point1}
+\begin{DoxyCompactList}\small\item\em q point for sensor values \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a5f12974326461d9ee3290c13ea6ca262}\label{structsh2__SensorMetadata_a5f12974326461d9ee3290c13ea6ca262} 
+uint16\+\_\+t {\bfseries q\+Point2}
+\begin{DoxyCompactList}\small\item\em q point for accuracy or bias fields \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a8cd46b384c6d508448f4863479832139}\label{structsh2__SensorMetadata_a8cd46b384c6d508448f4863479832139} 
+uint16\+\_\+t {\bfseries q\+Point3}
+\begin{DoxyCompactList}\small\item\em q point for sensor data change sensitivity \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_aed2cd472375d65495e162ebc3f0b79bd}\label{structsh2__SensorMetadata_aed2cd472375d65495e162ebc3f0b79bd} 
+uint32\+\_\+t {\bfseries vendor\+Id\+Len}
+\begin{DoxyCompactList}\small\item\em \mbox{[}bytes\mbox{]} \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a25026730c90b3b617dc661a9be766023}\label{structsh2__SensorMetadata_a25026730c90b3b617dc661a9be766023} 
+char {\bfseries vendor\+Id} \mbox{[}48\mbox{]}
+\begin{DoxyCompactList}\small\item\em Vendor name and part number. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_a79db906faf5f8b25a84ca1e6d17ac6e4}\label{structsh2__SensorMetadata_a79db906faf5f8b25a84ca1e6d17ac6e4} 
+uint32\+\_\+t {\bfseries sensor\+Specific\+Len}
+\begin{DoxyCompactList}\small\item\em \mbox{[}bytes\mbox{]} \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorMetadata_ac3ae8a5149814260de421f1ff286cec2}\label{structsh2__SensorMetadata_ac3ae8a5149814260de421f1ff286cec2} 
+uint8\+\_\+t {\bfseries sensor\+Specific} \mbox{[}48\mbox{]}
+\begin{DoxyCompactList}\small\item\em See SH-\/2 Reference Manual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sensor Metadata Record. 
+
+See the SH-\/2 Reference Manual for more detail. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/bno086\+\_\+reg.\+h\end{DoxyCompactItemize}

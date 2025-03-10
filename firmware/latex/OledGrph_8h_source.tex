@@ -1,0 +1,85 @@
+\doxysection{Oled\+Grph.\+h}
+\hypertarget{OledGrph_8h_source}{}\label{OledGrph_8h_source}\index{lcd\_drv/OledGrph.h@{lcd\_drv/OledGrph.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*\ \ OledGrph.h\ \ -\/-\/\ \ Declarations\ for\ OLED\ Graphics\ Routines\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ \ Author:\ \ \ \ \ Gene\ Apperson\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00007\ \textcolor{comment}{/*\ \ Copyright\ 2011,\ Digilent\ Inc.\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00008\ \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ This\ library\ is\ free\ software;\ you\ can\ redistribute\ it\ and/or}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ modify\ it\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ \ License\ as\ published\ by\ the\ Free\ Software\ Foundation;\ either}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ version\ 2.1\ of\ the\ License,\ or\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the\ GNU}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ Lesser\ General\ Public}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ License\ along\ with\ this\ library;\ if\ not,\ write\ to\ the\ Free\ Software}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ Foundation,\ Inc.,\ 51\ Franklin\ St,\ Fifth\ Floor,\ Boston,\ MA\ \ 02110-\/1301\ \ USA}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00024\ \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{00025\ \textcolor{comment}{/*\ \ File\ Description:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00026\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00027\ \textcolor{comment}{/*\ \ Interface\ declarations\ for\ OledGrph.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00028\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00029\ \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{00030\ \textcolor{comment}{/*\ \ Revision\ History:\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00032\ \textcolor{comment}{/*\ \ 06/03/2011(GeneA):\ created\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00033\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00034\ \textcolor{comment}{/************************************************************************/}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#if\ !defined(OLEDGRPH\_H)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ OLEDGRPH\_H}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}lcd\_drv.h"{}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ int32\_t\ xcoOledCur;}
+\DoxyCodeLine{00042\ \textcolor{keyword}{extern}\ int32\_t\ ycoOledCur;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{extern}\ uint8\_t\ *\ pbOledCur;}
+\DoxyCodeLine{00044\ \textcolor{keyword}{extern}\ uint8\_t\ rgbOledBmp0[];}
+\DoxyCodeLine{00045\ \textcolor{keyword}{extern}\ uint8\_t\ rgbOledBmp1[];}
+\DoxyCodeLine{00046\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ uint8\_t\ rgbFillPat[];}
+\DoxyCodeLine{00047\ \textcolor{keyword}{extern}\ int32\_t\ bnOledCur;}
+\DoxyCodeLine{00048\ \textcolor{keyword}{extern}\ uint8\_t\ clrOledCur;}
+\DoxyCodeLine{00049\ \textcolor{keyword}{extern}\ uint8\_t\ *\ pbOledPatCur;}
+\DoxyCodeLine{00050\ \textcolor{keyword}{extern}\ uint8\_t\ *\ pbOledFontUser;}
+\DoxyCodeLine{00051\ \textcolor{keyword}{extern}\ uint8\_t\ *\ pbOledFontCur;}
+\DoxyCodeLine{00052\ \textcolor{keyword}{extern}\ int32\_t\ dxcoOledFontCur;}
+\DoxyCodeLine{00053\ \textcolor{keyword}{extern}\ int32\_t\ dycoOledFontCur;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ uint8\_t\ disp\_frame;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ OledSetDrawColor(uint8\_t\ clr);}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ OledSetDrawMode(int32\_t\ mod);}
+\DoxyCodeLine{00059\ int32\_t\ OledGetDrawMode();}
+\DoxyCodeLine{00060\ uint8\_t\ *\ OledGetStdPattern(int32\_t\ ipat);}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ OledSetFillPattern(uint8\_t\ *\ pbPat);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ OledMoveTo(int32\_t\ xco,\ int32\_t\ yco);}
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ OledGetPos(int32\_t\ *\ pxco,\ int32\_t\ *\ pyco);}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ OledDrawPixel();}
+\DoxyCodeLine{00066\ uint8\_t\ OledGetPixel();}
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ OledLineTo(int32\_t\ xco,\ int32\_t\ yco);}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ OledDrawRect(int32\_t\ xco,\ int32\_t\ yco);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ OledFillRect(int32\_t\ xco,\ int32\_t\ yco);}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ OledGetBmp(int32\_t\ dxco,\ int32\_t\ dyco,\ uint8\_t\ *\ pbBmp);}
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ OledPutBmp(int32\_t\ dxco,\ int32\_t\ dyco,\ uint8\_t\ *\ pbBmp);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ OledDrawChar(\textcolor{keywordtype}{char}\ ch);}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ OledDrawString(\textcolor{keywordtype}{char}\ *\ sz);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/************************************************************************/}}
+
+\end{DoxyCode}

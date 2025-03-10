@@ -1,0 +1,54 @@
+\doxysection{buzzer.\+h}
+\hypertarget{buzzer_8h_source}{}\label{buzzer_8h_source}\index{src/buzzer.h@{src/buzzer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ TMR2\ buzzer\ PWM\ update\ timer}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ BUZZER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ BUZZER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00009\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ BUZZER\_DRIVER\ "{}V1.002"{}\ }}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ BUZZER\_ALIAS\ "{}BUZZER"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ BZ0\ 0}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ BZ1\ 1}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ BZ2\ 11}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ BZ3\ 21}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ BZ\_OFF\ \ 255}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ BZ\_ON\_LOUD\ \ 100}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ BZ\_ON\_LOW\ \ \ 101}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ B\_init,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ B\_abort,}
+\DoxyCodeLine{00029\ \ \ \ \ \}\ B\_STATE;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structB__type}{B\_type}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ arate,\ alimit;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ srate,\ slimit;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ drate,\ dlimit;}
+\DoxyCodeLine{00035\ \ \ \ \ \}\ \mbox{\hyperlink{structB__type}{B\_type}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ buzzer\_init(B\_STATE);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ buzzer\_trigger(uint32\_t);}
+\DoxyCodeLine{00039\ \ \ \ \ uint32\_t\ get\_buzzer\_trigger(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structB__type}{B\_type}}\ tone1,\ tone2,\ tone3;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ BUZZER\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00048\ }
+
+\end{DoxyCode}

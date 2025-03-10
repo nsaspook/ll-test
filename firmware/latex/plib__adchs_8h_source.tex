@@ -1,0 +1,127 @@
+\doxysection{plib\+\_\+adchs.\+h}
+\hypertarget{plib__adchs_8h_source}{}\label{plib__adchs_8h_source}\index{src/config/bma400/peripheral/adchs/plib\_adchs.h@{src/config/bma400/peripheral/adchs/plib\_adchs.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ ADCHS\ Peripheral\ Library\ Interface\ Header\ File}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_adchs.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ ADCHS\ peripheral\ library\ interface.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ file\ defines\ the\ interface\ to\ the\ ADCHS\ peripheral\ library.\ \ This}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ library\ provides\ access\ to\ and\ control\ of\ the\ associated\ peripheral}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ instance.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*\ Copyright\ (C)\ 2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00041\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifndef\ PLIB\_ADCHS\_H\ \ \ \ }\textcolor{comment}{//\ Guards\ against\ multiple\ inclusion}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ PLIB\_ADCHS\_H}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ Section:\ Included\ Files}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/*\ \ This\ section\ lists\ the\ other\ files\ that\ are\ included\ in\ this\ file.}}
+\DoxyCodeLine{00056\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}plib\_adchs\_common.h"{}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ Section:\ Data\ Types}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ \ The\ following\ data\ type\ definitions\ are\ used\ by\ the\ functions\ in\ this}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ interface\ and\ should\ be\ considered\ part\ it.}}
+\DoxyCodeLine{00076\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ Section:\ Interface\ Routines}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00084\ \textcolor{comment}{/*\ The\ following\ functions\ make\ up\ the\ methods\ (set\ of\ possible\ operations)\ of}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ this\ interface.}}
+\DoxyCodeLine{00086\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ ADCHS\_Initialize\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ ADCHS\_ModulesEnable\ (ADCHS\_MODULE\_MASK\ moduleMask);}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ ADCHS\_ModulesDisable\ (ADCHS\_MODULE\_MASK\ moduleMask);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ ADCHS\_GlobalEdgeConversionStart(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00094\ \textcolor{keywordtype}{void}\ ADCHS\_GlobalLevelConversionStart(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ ADCHS\_GlobalLevelConversionStop(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ ADCHS\_ChannelConversionStart(ADCHS\_CHANNEL\_NUM\ channel);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keywordtype}{void}\ ADCHS\_ChannelResultInterruptEnable\ (ADCHS\_CHANNEL\_NUM\ channel);}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ ADCHS\_ChannelResultInterruptDisable\ (ADCHS\_CHANNEL\_NUM\ channel);}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ ADCHS\_ChannelEarlyInterruptEnable\ (ADCHS\_CHANNEL\_NUM\ channel);}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ ADCHS\_ChannelEarlyInterruptDisable\ (ADCHS\_CHANNEL\_NUM\ channel);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{bool}\ ADCHS\_ChannelResultIsReady(ADCHS\_CHANNEL\_NUM\ channel);}
+\DoxyCodeLine{00104\ uint16\_t\ ADCHS\_ChannelResultGet(ADCHS\_CHANNEL\_NUM\ channel);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{bool}\ ADCHS\_EOSStatusGet(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PLIB\_ADCHS\_H}}
+\DoxyCodeLine{00121\ }
+
+\end{DoxyCode}

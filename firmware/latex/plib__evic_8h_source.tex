@@ -1,0 +1,461 @@
+\doxysection{plib\+\_\+evic.\+h}
+\hypertarget{plib__evic_8h_source}{}\label{plib__evic_8h_source}\index{src/config/bma400/peripheral/evic/plib\_evic.h@{src/config/bma400/peripheral/evic/plib\_evic.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ EVIC\ PLIB\ Header}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_evic.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ PIC32MZ\ Interrupt\ Module\ PLIB\ Header\ File}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00015\ \textcolor{comment}{}}
+\DoxyCodeLine{00016\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00019\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*\ Copyright\ (C)\ 2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifndef\ PLIB\_EVIC\_H}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ PLIB\_EVIC\_H}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ Section:\ Included\ Files}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <device.h>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <device.h>}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ Section:\ Data\ Types}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ INT\_SOURCE\_CORE\_TIMER\ =\ \_CORE\_TIMER\_VECTOR,}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ INT\_SOURCE\_CORE\_SOFTWARE\_0\ =\ \_CORE\_SOFTWARE\_0\_VECTOR,}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ INT\_SOURCE\_CORE\_SOFTWARE\_1\ =\ \_CORE\_SOFTWARE\_1\_VECTOR,}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ INT\_SOURCE\_EXTERNAL\_0\ =\ \_EXTERNAL\_0\_VECTOR,}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ INT\_SOURCE\_TIMER\_1\ =\ \_TIMER\_1\_VECTOR,}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_1\_ERROR\ =\ \_INPUT\_CAPTURE\_1\_ERROR\_VECTOR,}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_1\ =\ \_INPUT\_CAPTURE\_1\_VECTOR,}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_1\ =\ \_OUTPUT\_COMPARE\_1\_VECTOR,}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ INT\_SOURCE\_EXTERNAL\_1\ =\ \_EXTERNAL\_1\_VECTOR,}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ INT\_SOURCE\_TIMER\_2\ =\ \_TIMER\_2\_VECTOR,}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_2\_ERROR\ =\ \_INPUT\_CAPTURE\_2\_ERROR\_VECTOR,}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_2\ =\ \_INPUT\_CAPTURE\_2\_VECTOR,}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_2\ =\ \_OUTPUT\_COMPARE\_2\_VECTOR,}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ INT\_SOURCE\_EXTERNAL\_2\ =\ \_EXTERNAL\_2\_VECTOR,}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ INT\_SOURCE\_TIMER\_3\ =\ \_TIMER\_3\_VECTOR,}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_3\_ERROR\ =\ \_INPUT\_CAPTURE\_3\_ERROR\_VECTOR,}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_3\ =\ \_INPUT\_CAPTURE\_3\_VECTOR,}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_3\ =\ \_OUTPUT\_COMPARE\_3\_VECTOR,}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ INT\_SOURCE\_EXTERNAL\_3\ =\ \_EXTERNAL\_3\_VECTOR,}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ INT\_SOURCE\_TIMER\_4\ =\ \_TIMER\_4\_VECTOR,}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_4\_ERROR\ =\ \_INPUT\_CAPTURE\_4\_ERROR\_VECTOR,}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_4\ =\ \_INPUT\_CAPTURE\_4\_VECTOR,}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_4\ =\ \_OUTPUT\_COMPARE\_4\_VECTOR,}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ INT\_SOURCE\_EXTERNAL\_4\ =\ \_EXTERNAL\_4\_VECTOR,}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ INT\_SOURCE\_TIMER\_5\ =\ \_TIMER\_5\_VECTOR,}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_5\_ERROR\ =\ \_INPUT\_CAPTURE\_5\_ERROR\_VECTOR,}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_5\ =\ \_INPUT\_CAPTURE\_5\_VECTOR,}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_5\ =\ \_OUTPUT\_COMPARE\_5\_VECTOR,}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ INT\_SOURCE\_RTCC\ =\ \_RTCC\_VECTOR,}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ INT\_SOURCE\_FLASH\_CONTROL\ =\ \_FLASH\_CONTROL\_VECTOR,}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ INT\_SOURCE\_COMPARATOR\_1\ =\ \_COMPARATOR\_1\_VECTOR,}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ INT\_SOURCE\_COMPARATOR\_2\ =\ \_COMPARATOR\_2\_VECTOR,}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ INT\_SOURCE\_SPI1\_FAULT\ =\ \_SPI1\_FAULT\_VECTOR,}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ INT\_SOURCE\_SPI1\_RX\ =\ \_SPI1\_RX\_VECTOR,}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ INT\_SOURCE\_SPI1\_TX\ =\ \_SPI1\_TX\_VECTOR,}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ INT\_SOURCE\_UART1\_FAULT\ =\ \_UART1\_FAULT\_VECTOR,}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ INT\_SOURCE\_UART1\_RX\ =\ \_UART1\_RX\_VECTOR,}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ INT\_SOURCE\_UART1\_TX\ =\ \_UART1\_TX\_VECTOR,}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ INT\_SOURCE\_I2C1\_BUS\ =\ \_I2C1\_BUS\_VECTOR,}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ INT\_SOURCE\_I2C1\_SLAVE\ =\ \_I2C1\_SLAVE\_VECTOR,}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ INT\_SOURCE\_I2C1\_MASTER\ =\ \_I2C1\_MASTER\_VECTOR,}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ INT\_SOURCE\_CHANGE\_NOTICE\_A\ =\ \_CHANGE\_NOTICE\_A\_VECTOR,}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ INT\_SOURCE\_CHANGE\_NOTICE\_B\ =\ \_CHANGE\_NOTICE\_B\_VECTOR,}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ INT\_SOURCE\_CHANGE\_NOTICE\_C\ =\ \_CHANGE\_NOTICE\_C\_VECTOR,}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ INT\_SOURCE\_CHANGE\_NOTICE\_D\ =\ \_CHANGE\_NOTICE\_D\_VECTOR,}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ INT\_SOURCE\_CHANGE\_NOTICE\_E\ =\ \_CHANGE\_NOTICE\_E\_VECTOR,}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ INT\_SOURCE\_CHANGE\_NOTICE\_F\ =\ \_CHANGE\_NOTICE\_F\_VECTOR,}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ INT\_SOURCE\_CHANGE\_NOTICE\_G\ =\ \_CHANGE\_NOTICE\_G\_VECTOR,}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ INT\_SOURCE\_SPI2\_FAULT\ =\ \_SPI2\_FAULT\_VECTOR,}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ INT\_SOURCE\_SPI2\_RX\ =\ \_SPI2\_RX\_VECTOR,}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ INT\_SOURCE\_SPI2\_TX\ =\ \_SPI2\_TX\_VECTOR,}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ INT\_SOURCE\_UART2\_FAULT\ =\ \_UART2\_FAULT\_VECTOR,}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ INT\_SOURCE\_UART2\_RX\ =\ \_UART2\_RX\_VECTOR,}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ INT\_SOURCE\_UART2\_TX\ =\ \_UART2\_TX\_VECTOR,}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ INT\_SOURCE\_I2C2\_BUS\ =\ \_I2C2\_BUS\_VECTOR,}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ INT\_SOURCE\_I2C2\_SLAVE\ =\ \_I2C2\_SLAVE\_VECTOR,}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ INT\_SOURCE\_I2C2\_MASTER\ =\ \_I2C2\_MASTER\_VECTOR,}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ INT\_SOURCE\_CTMU\ =\ \_CTMU\_VECTOR,}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ INT\_SOURCE\_DMA0\ =\ \_DMA0\_VECTOR,}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ INT\_SOURCE\_DMA1\ =\ \_DMA1\_VECTOR,}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ INT\_SOURCE\_DMA2\ =\ \_DMA2\_VECTOR,}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ INT\_SOURCE\_DMA3\ =\ \_DMA3\_VECTOR,}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ INT\_SOURCE\_TIMER\_6\ =\ \_TIMER\_6\_VECTOR,}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_6\_ERROR\ =\ \_INPUT\_CAPTURE\_6\_ERROR\_VECTOR,}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_6\ =\ \_INPUT\_CAPTURE\_6\_VECTOR,}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_6\ =\ \_OUTPUT\_COMPARE\_6\_VECTOR,}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ INT\_SOURCE\_TIMER\_7\ =\ \_TIMER\_7\_VECTOR,}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_7\_ERROR\ =\ \_INPUT\_CAPTURE\_7\_ERROR\_VECTOR,}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_7\ =\ \_INPUT\_CAPTURE\_7\_VECTOR,}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_7\ =\ \_OUTPUT\_COMPARE\_7\_VECTOR,}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \ \ \ \ INT\_SOURCE\_TIMER\_8\ =\ \_TIMER\_8\_VECTOR,}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_8\_ERROR\ =\ \_INPUT\_CAPTURE\_8\_ERROR\_VECTOR,}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_8\ =\ \_INPUT\_CAPTURE\_8\_VECTOR,}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_8\ =\ \_OUTPUT\_COMPARE\_8\_VECTOR,}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ INT\_SOURCE\_TIMER\_9\ =\ \_TIMER\_9\_VECTOR,}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_9\_ERROR\ =\ \_INPUT\_CAPTURE\_9\_ERROR\_VECTOR,}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ INT\_SOURCE\_INPUT\_CAPTURE\_9\ =\ \_INPUT\_CAPTURE\_9\_VECTOR,}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ INT\_SOURCE\_OUTPUT\_COMPARE\_9\ =\ \_OUTPUT\_COMPARE\_9\_VECTOR,}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ INT\_SOURCE\_ADC\ =\ \_ADC\_VECTOR,}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ INT\_SOURCE\_ADC\_DC1\ =\ \_ADC\_DC1\_VECTOR,}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ INT\_SOURCE\_ADC\_DC2\ =\ \_ADC\_DC2\_VECTOR,}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ INT\_SOURCE\_ADC\_DF1\ =\ \_ADC\_DF1\_VECTOR,}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ INT\_SOURCE\_ADC\_DF2\ =\ \_ADC\_DF2\_VECTOR,}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ INT\_SOURCE\_ADC\_DF3\ =\ \_ADC\_DF3\_VECTOR,}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ INT\_SOURCE\_ADC\_DF4\ =\ \_ADC\_DF4\_VECTOR,}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ INT\_SOURCE\_ADC\_FAULT\ =\ \_ADC\_FAULT\_VECTOR,}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ INT\_SOURCE\_ADC\_EOS\ =\ \_ADC\_EOS\_VECTOR,}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ INT\_SOURCE\_ADC\_ARDY\ =\ \_ADC\_ARDY\_VECTOR,}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ INT\_SOURCE\_ADC\_URDY\ =\ \_ADC\_URDY\_VECTOR,}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ INT\_SOURCE\_ADC\_DMA\ =\ \_ADC\_DMA\_VECTOR,}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ INT\_SOURCE\_ADC\_EARLY\ =\ \_ADC\_EARLY\_VECTOR,}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ INT\_SOURCE\_ADC\_DATA0\ =\ \_ADC\_DATA0\_VECTOR,}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ INT\_SOURCE\_ADC\_DATA1\ =\ \_ADC\_DATA1\_VECTOR,}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \ \ \ \ INT\_SOURCE\_ADC\_DATA2\ =\ \_ADC\_DATA2\_VECTOR,}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ INT\_SOURCE\_ADC\_DATA3\ =\ \_ADC\_DATA3\_VECTOR,}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ INT\_SOURCE\_ADC\_DATA4\ =\ \_ADC\_DATA4\_VECTOR,}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ INT\_SOURCE\_ADC\_DATA5\ =\ \_ADC\_DATA5\_VECTOR,}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \ \ \ \ INT\_SOURCE\_ADC\_DATA6\ =\ \_ADC\_DATA6\_VECTOR,}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \ \ \ \ INT\_SOURCE\_ADC\_DATA7\ =\ \_ADC\_DATA7\_VECTOR,}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ INT\_SOURCE\_ADC\_DATA8\ =\ \_ADC\_DATA8\_VECTOR,}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ INT\_SOURCE\_ADC\_DATA9\ =\ \_ADC\_DATA9\_VECTOR,}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ INT\_SOURCE\_ADC\_DATA10\ =\ \_ADC\_DATA10\_VECTOR,}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ INT\_SOURCE\_ADC\_DATA11\ =\ \_ADC\_DATA11\_VECTOR,}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ INT\_SOURCE\_ADC\_DATA12\ =\ \_ADC\_DATA12\_VECTOR,}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ INT\_SOURCE\_ADC\_DATA13\ =\ \_ADC\_DATA13\_VECTOR,}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ INT\_SOURCE\_ADC\_DATA14\ =\ \_ADC\_DATA14\_VECTOR,}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ INT\_SOURCE\_ADC\_DATA15\ =\ \_ADC\_DATA15\_VECTOR,}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ INT\_SOURCE\_ADC\_DATA16\ =\ \_ADC\_DATA16\_VECTOR,}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ INT\_SOURCE\_ADC\_DATA17\ =\ \_ADC\_DATA17\_VECTOR,}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00292\ \ \ \ \ INT\_SOURCE\_ADC\_DATA18\ =\ \_ADC\_DATA18\_VECTOR,}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ INT\_SOURCE\_ADC\_DATA19\ =\ \_ADC\_DATA19\_VECTOR,}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ INT\_SOURCE\_ADC\_DATA24\ =\ \_ADC\_DATA24\_VECTOR,}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ INT\_SOURCE\_ADC\_DATA25\ =\ \_ADC\_DATA25\_VECTOR,}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ INT\_SOURCE\_ADC\_DATA26\ =\ \_ADC\_DATA26\_VECTOR,}
+\DoxyCodeLine{00301\ }
+\DoxyCodeLine{00302\ \ \ \ \ INT\_SOURCE\_ADC\_DATA27\ =\ \_ADC\_DATA27\_VECTOR,}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ \ \ \ \ INT\_SOURCE\_ADC\_DATA40\ =\ \_ADC\_DATA40\_VECTOR,}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ INT\_SOURCE\_ADC\_DATA41\ =\ \_ADC\_DATA41\_VECTOR,}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00308\ \ \ \ \ INT\_SOURCE\_ADC\_DATA46\ =\ \_ADC\_DATA46\_VECTOR,}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ INT\_SOURCE\_ADC\_DATA47\ =\ \_ADC\_DATA47\_VECTOR,}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ INT\_SOURCE\_ADC\_DATA48\ =\ \_ADC\_DATA48\_VECTOR,}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ INT\_SOURCE\_ADC\_DATA49\ =\ \_ADC\_DATA49\_VECTOR,}
+\DoxyCodeLine{00315\ }
+\DoxyCodeLine{00316\ \ \ \ \ INT\_SOURCE\_ADC\_DATA50\ =\ \_ADC\_DATA50\_VECTOR,}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ INT\_SOURCE\_ADC\_DATA51\ =\ \_ADC\_DATA51\_VECTOR,}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ INT\_SOURCE\_ADC\_DATA52\ =\ \_ADC\_DATA52\_VECTOR,}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ INT\_SOURCE\_ADC\_DATA53\ =\ \_ADC\_DATA53\_VECTOR,}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ INT\_SOURCE\_COMPARATOR\_3\ =\ \_COMPARATOR\_3\_VECTOR,}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ INT\_SOURCE\_COMPARATOR\_4\ =\ \_COMPARATOR\_4\_VECTOR,}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ INT\_SOURCE\_COMPARATOR\_5\ =\ \_COMPARATOR\_5\_VECTOR,}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ INT\_SOURCE\_CAN1\ =\ \_CAN1\_VECTOR,}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ INT\_SOURCE\_QEI1\ =\ \_QEI1\_VECTOR,}
+\DoxyCodeLine{00333\ }
+\DoxyCodeLine{00334\ \ \ \ \ INT\_SOURCE\_QEI2\ =\ \_QEI2\_VECTOR,}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \ \ \ \ INT\_SOURCE\_PWM\_PRI\ =\ \_PWM\_PRI\_VECTOR,}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ INT\_SOURCE\_PWM\_SEC\ =\ \_PWM\_SEC\_VECTOR,}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \ \ \ \ INT\_SOURCE\_PWM1\ =\ \_PWM1\_VECTOR,}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ INT\_SOURCE\_PWM2\ =\ \_PWM2\_VECTOR,}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ INT\_SOURCE\_PWM3\ =\ \_PWM3\_VECTOR,}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ INT\_SOURCE\_PWM4\ =\ \_PWM4\_VECTOR,}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ INT\_SOURCE\_PWM5\ =\ \_PWM5\_VECTOR,}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \ \ INT\_SOURCE\_PWM6\ =\ \_PWM6\_VECTOR,}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00352\ \ \ \ \ INT\_SOURCE\_DMA4\ =\ \_DMA4\_VECTOR,}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00354\ \ \ \ \ INT\_SOURCE\_DMA5\ =\ \_DMA5\_VECTOR,}
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00356\ \ \ \ \ INT\_SOURCE\_DMA6\ =\ \_DMA6\_VECTOR,}
+\DoxyCodeLine{00357\ }
+\DoxyCodeLine{00358\ \ \ \ \ INT\_SOURCE\_DMA7\ =\ \_DMA7\_VECTOR,}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ INT\_SOURCE\_QEI3\ =\ \_QEI3\_VECTOR,}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ INT\_SOURCE\_SYSTEM\_BUS\_PROTECTION\ =\ \_SYSTEM\_BUS\_PROTECTION\_VECTOR,}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ INT\_SOURCE\_PWM7\ =\ \_PWM7\_VECTOR,}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ INT\_SOURCE\_PWM8\ =\ \_PWM8\_VECTOR,}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ INT\_SOURCE\_PWM9\ =\ \_PWM9\_VECTOR,}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ INT\_SOURCE\_ADC\_DC3\ =\ \_ADC\_DC3\_VECTOR,}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \ \ \ \ INT\_SOURCE\_ADC\_DC4\ =\ \_ADC\_DC4\_VECTOR,}
+\DoxyCodeLine{00373\ }
+\DoxyCodeLine{00374\ \ \ \ \ INT\_SOURCE\_PCACHE\ =\ \_PCACHE\_VECTOR,}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \ \ \ \ INT\_SOURCE\_CLC1\ =\ \_CLC1\_VECTOR,}
+\DoxyCodeLine{00377\ }
+\DoxyCodeLine{00378\ \ \ \ \ INT\_SOURCE\_CLC2\ =\ \_CLC2\_VECTOR,}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \ \ \ \ INT\_SOURCE\_CLC3\ =\ \_CLC3\_VECTOR,}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00382\ \ \ \ \ INT\_SOURCE\_CLC4\ =\ \_CLC4\_VECTOR,}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00384\ \ \ \ \ INT\_SOURCE\_CORE\_PERF\_COUNT\ =\ \_CORE\_PERF\_COUNT\_VECTOR,}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00386\ \ \ \ \ INT\_SOURCE\_CORE\_FAST\_DEBUG\_CHAN\ =\ \_CORE\_FAST\_DEBUG\_CHAN\_VECTOR,}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \}\ INT\_SOURCE;}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00391\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ EXTERNAL\_INT\_2\ =\ \_IEC0\_INT2IE\_MASK,}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00397\ \}EXTERNAL\_INT\_PIN;}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \textcolor{keyword}{typedef}\ \ void\ (*EXTERNAL\_INT\_PIN\_CALLBACK)\ (EXTERNAL\_INT\_PIN\ pin,\ uintptr\_t\ context);}
+\DoxyCodeLine{00400\ }
+\DoxyCodeLine{00401\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00402\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00403\ \textcolor{comment}{//\ Section:\ Interface\ Routines}}
+\DoxyCodeLine{00404\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00405\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00406\ }
+\DoxyCodeLine{00407\ \textcolor{keywordtype}{void}\ EVIC\_Initialize\ (\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \textcolor{keywordtype}{void}\ EVIC\_SourceEnable(\ INT\_SOURCE\ source\ );}
+\DoxyCodeLine{00410\ }
+\DoxyCodeLine{00411\ \textcolor{keywordtype}{void}\ EVIC\_SourceDisable(\ INT\_SOURCE\ source\ );}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \textcolor{keywordtype}{bool}\ EVIC\_SourceIsEnabled(\ INT\_SOURCE\ source\ );}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \textcolor{keywordtype}{bool}\ EVIC\_SourceStatusGet(\ INT\_SOURCE\ source\ );}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \textcolor{keywordtype}{void}\ EVIC\_SourceStatusSet(\ INT\_SOURCE\ source\ );}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \textcolor{keywordtype}{void}\ EVIC\_SourceStatusClear(\ INT\_SOURCE\ source\ );}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \textcolor{keywordtype}{void}\ EVIC\_INT\_Enable(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00422\ }
+\DoxyCodeLine{00423\ \textcolor{keywordtype}{bool}\ EVIC\_INT\_Disable(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \textcolor{keywordtype}{void}\ EVIC\_INT\_Restore(\ \textcolor{keywordtype}{bool}\ state\ );}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \textcolor{keywordtype}{bool}\ EVIC\_ExternalInterruptCallbackRegister(}
+\DoxyCodeLine{00428\ \ \ \ \ \ \ \ \ EXTERNAL\_INT\_PIN\ extIntPin,}
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ EXTERNAL\_INT\_PIN\_CALLBACK\ callback,}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ uintptr\_t\ context}
+\DoxyCodeLine{00431\ \ \ \ \ );}
+\DoxyCodeLine{00432\ }
+\DoxyCodeLine{00433\ \textcolor{keywordtype}{void}\ EVIC\_ExternalInterruptEnable(\ EXTERNAL\_INT\_PIN\ extIntPin\ );}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \textcolor{keywordtype}{void}\ EVIC\_ExternalInterruptDisable(\ EXTERNAL\_INT\_PIN\ extIntPin\ );}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00438\ }
+\DoxyCodeLine{00439\ \ \ \ \ \textcolor{comment}{/*\ Callback\ for\ event\ on\ target\ pin*/}}
+\DoxyCodeLine{00440\ \ \ \ \ EXTERNAL\_INT\_PIN\_CALLBACK\ \ \ \ \ \ \ \ callback;}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{comment}{/*\ Callback\ Context\ */}}
+\DoxyCodeLine{00443\ \ \ \ \ uintptr\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ context;}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00445\ \}\ \mbox{\hyperlink{structEXT__INT__PIN__CALLBACK__OBJ}{EXT\_INT\_PIN\_CALLBACK\_OBJ}};}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \}}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00453\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLIB\_EVIC\_H}}
+
+\end{DoxyCode}

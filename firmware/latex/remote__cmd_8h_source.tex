@@ -1,0 +1,54 @@
+\doxysection{remote\+\_\+cmd.\+h}
+\hypertarget{remote__cmd_8h_source}{}\label{remote__cmd_8h_source}\index{src/remote\_cmd.h@{src/remote\_cmd.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ remote\_cmd.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ March\ 2,\ 2023,\ 10:11\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ REMOTE\_CMD\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ REMOTE\_CMD\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}cmd\_scanner.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}host.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ REMOTE\_DRIVER\ "{}V1.001"{}\ }}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ REMOTE\_ALIAS\ "{}REMOTE\ CMD"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ \ *\ command\ execute\ functions}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ \ \ \ \ *\ prototypes}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ fh\_show\_idle(\textcolor{keywordtype}{void}\ *a\_data);}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ fh\_stop\_trigger(\textcolor{keywordtype}{void}\ *a\_data);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ fh\_start\_trigger(\textcolor{keywordtype}{void}\ *a\_data);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ fh\_start\_safe(\textcolor{keywordtype}{void}\ *a\_data);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ fh\_start\_lock(\textcolor{keywordtype}{void}\ *a\_data);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ fh\_start\_unlock(\textcolor{keywordtype}{void}\ *a\_data);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ fh\_start\_warn(\textcolor{keywordtype}{void}\ *a\_data);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ remote\_cmd\_decode(imu\_host\_t\ *);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ fh\_start\_AT(\textcolor{keywordtype}{void}\ *a\_data);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ response\_buffer[RBUFFER\_SIZE];}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ cmd\_buffer[FBUFFER\_SIZE];}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{extern}\ imu\_host\_t\ host0;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{extern}\ t\_cmd\ g\_cmds[];}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ hbuffer[FBUFFER\_SIZE];}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{extern}\ imu\_cmd\_t\ imu0;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ REMOTE\_CMD\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00048\ }
+
+\end{DoxyCode}

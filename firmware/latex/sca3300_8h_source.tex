@@ -1,0 +1,98 @@
+\doxysection{sca3300.\+h}
+\hypertarget{sca3300_8h_source}{}\label{sca3300_8h_source}\index{src/sca3300.h@{src/sca3300.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ sca3300.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ nsasp}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ August\ 31,\ 2022,\ 6:28\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ SPI\ mode\ 0,\ 8MHz,\ 32-\/bit\ transfers}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ SCA3300\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SCA3300\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00013\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ \ *\ using\ code\ from\ Linux\ IIO\ driver\ for\ sca3300\ https://elixir.bootlin.com/linux/latest/source/drivers/iio/accel/sca3300.c}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stddef.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ NULL}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdbool.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ true}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ EXIT\_FAILURE}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}definitions.h"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SYS\ function\ prototypes}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}imu.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}timers.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}canfd.h"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ SCA3300\_DRIVER\ \ "{}V1.006"{}\ }}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ SCA3300\_ALIAS\ \ \ "{}SCx3300"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{/*\ Device\ commands\ and\ response\ */}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SCA3300\_REG\_WHOAMI\ \ 0x10}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ SCA3300\_WHOAMI\_ID\ \ \ 0x51}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ SCA3300\_WHOAMI\_ID\_SCL\ \ \ 0xC1}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SCA3300\_WHOAMI\_32B\ \ 0x40000091}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SCA3300\_SWRESET\_32B\ 0xB4002098}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SCA3300\_RS\_32B\ \ \ \ \ \ 0x180000E5}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ SCA3300\_ACC\_X\_32B\ \ \ 0x040000F7}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ SCA3300\_ACC\_Y\_32B\ \ \ 0x080000FD}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ SCA3300\_ACC\_Z\_32B\ \ \ 0x0C0000FB}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ SCA3300\_TEMP\_32B\ \ \ \ 0x140000EF}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ SCA3300\_MODE1\ \ \ \ \ \ \ 0xB400001F\ \ }}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ SCA3300\_MODE2\ \ \ \ \ \ \ 0xB4000102\ \ }}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ SCA3300\_MODE3\ \ \ \ \ \ \ 0xB4000225}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ SCA3300\_MODE4\ \ \ \ \ \ \ 0xB4000338}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ SCL3300\_MODE1\ \ \ \ \ \ \ 0xB400001F}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SCL3300\_MODE2\ \ \ \ \ \ \ 0xB4000102}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ SCL3300\_MODE3\ \ \ \ \ \ \ 0xB4000225}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ SCL3300\_MODE4\ \ \ \ \ \ \ 0xB4000338}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ SCL3300\_ANGLE\ \ \ \ \ \ \ 0xB0001F6F}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ SCL3300\_E\_FLAG1\ \ \ \ \ 0x1C0000E3}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ SCL3300\_E\_FLAG2\ \ \ \ \ 0x200000C1}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ SCL3300\_ANG\_X\_32B\ \ \ 0x240000C7}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ SCL3300\_ANG\_Y\_32B\ \ \ 0x280000CD}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SCL3300\_ANG\_Z\_32B\ \ \ 0x2C0000CB}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ SCA3300\_BANK0\ \ \ \ \ \ \ \ \ \ \ 0xFC000073}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ SCA3300\_BANK1\ \ \ \ \ \ \ \ \ \ \ 0xFC00016E}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ SCA3300\_SERIAL1\ \ \ \ \ \ \ \ \ 0x640000A7}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ SCA3300\_SERIAL2\ \ \ \ \ \ \ \ \ 0x680000AD\ \ \ \ }}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ SCA3300\_CHIP\_ID\_DELAY\ \ \ \ \ \ \ 10000\ \ \ }\textcolor{comment}{//\ ID\ command\ repeat\ delays\ in\ usec}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ SCA3300\_CHIP\_SWR\_DELAY\ \ \ \ \ \ 10000\ \ \ }\textcolor{comment}{//\ chip\ software\ reset\ delay}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ SCA3300\_CHIP\_MODE\_DELAY\ \ \ \ \ 100000\ \ }\textcolor{comment}{//\ chip\ G\ mode\ setup\ delay}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ SCA3300\_CHIP\_CS\_DELAY\ \ \ \ \ \ \ 11\ \ }\textcolor{comment}{//\ CS\ high\ min\ duration\ between\ toggles}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ SCA3300\_CHIP\_BTYES\_PER\_SPI\ \ 4\ \ \ }\textcolor{comment}{//\ 32-\/bit\ transfers,\ 4\ bytes}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ *\ function\ pointer\ templates}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ sca3300\_set\_spimode(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ sca3300\_getid(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ sca3300\_getserial(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ sca3300\_getdata(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ sca3300\_version(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{enum}\ sca3300\_crc\_check\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ SCA3300\_REC\ =\ 0,\ \textcolor{comment}{//\ first\ item\ in\ the\ 32-\/bit\ receiver\ buffer}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ SCA3300\_TRM\ =\ 0,\ \textcolor{comment}{//\ first\ item\ in\ the\ 32-\/bit\ transmit\ buffer}}
+\DoxyCodeLine{00081\ \ \ \ \ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ uint8\_t\ CalculateCRC(uint32\_t);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ sca3300\_imu\_transfer(imu\_cmd\_t\ *,\ uint32\_t);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ sca3300\_check\_crc(imu\_cmd\_t\ *,\ uint8\_t);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00088\ \}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ SCA3300\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00092\ }
+
+\end{DoxyCode}

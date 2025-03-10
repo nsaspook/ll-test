@@ -1,0 +1,492 @@
+\doxysection{bno086\+\_\+reg.\+h}
+\hypertarget{bno086__reg_8h_source}{}\label{bno086__reg_8h_source}\index{src/bno086\_reg.h@{src/bno086\_reg.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ bno086\_reg.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ April\ 20,\ 2023,\ 11:55\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ BNO086\_REG\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ BNO086\_REG\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_HDR\_SIZE\ \ \ \ \ \ \ \ 0x4}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_HDR\_LEN\_LSB\ \ \ \ \ 0x0}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_HDR\_LEN\_MSB\ \ \ \ \ 0x1}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_HDR\_CHAN\ \ \ \ \ \ \ \ 0x2}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_HDR\_SEQ\ \ \ \ \ 0x3}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_MAX\_SIZE\ \ \ \ \ \ \ \ 128}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_ADV\_MAX\_SIZE\ \ \ \ 512}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_SOFT\_RESET\ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_PROD\_ID\ \ \ \ \ 0xf8}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_PROD\_ID\_REQ\ \ \ \ \ 0xf9}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_GET\_FEATURE\_RESP\ \ \ \ 0xfc}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_SET\_FEATURE\_CMD\ 0xfd}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ BNO08x\_SHTP\_GET\_FEATURE\_REQ\ 0xfe}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ BNO08x\_ROT\_SCAN\_INDEX\ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ BNO08x\_REPORTID\_ROTATION\_VEC\ \ \ \ 0x05}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BNO08x\_REPORTID\_TIMESTAMP\_BASE\ \ 0xfb}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{enum}\ bno08x\_shtp\_channels\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ BNO08x\_SHTP\_COMMAND\_CHAN,}
+\DoxyCodeLine{00038\ \ \ \ \ BNO08x\_SHTP\_EXECTUABLE\_CHAN,}
+\DoxyCodeLine{00039\ \ \ \ \ BNO08x\_SHTP\_CONTROL\_CHAN,}
+\DoxyCodeLine{00040\ \ \ \ \ BNO08x\_SHTP\_REPORTS\_CHAN,}
+\DoxyCodeLine{00041\ \ \ \ \ BNO08x\_SHTP\_WAKE\_REPORTS\_CHAN,}
+\DoxyCodeLine{00042\ \ \ \ \ BNO08x\_SHTP\_GYRO\_CHAN,}
+\DoxyCodeLine{00043\ \ \ \ \ BNO08x\_NUM\_CHANNELS,}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ SH2\_MAX\_SENSOR\_EVENT\_LEN\ (60)}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__SensorEvent}{sh2\_SensorEvent}}\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ uint64\_t\ timestamp\_uS;}
+\DoxyCodeLine{00049\ \ \ \ \ int64\_t\ delay\_uS;}
+\DoxyCodeLine{00050\ \ \ \ \ uint8\_t\ len;}
+\DoxyCodeLine{00051\ \ \ \ \ uint8\_t\ reportId;}
+\DoxyCodeLine{00052\ \ \ \ \ uint8\_t\ report[SH2\_MAX\_SENSOR\_EVENT\_LEN];}
+\DoxyCodeLine{00053\ \}\ sh2\_SensorEvent\_t;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ void\ (sh2\_SensorCallback\_t)(\textcolor{keywordtype}{void}\ *\ cookie,\ sh2\_SensorEvent\_t\ *pEvent);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__ProductId__s}{sh2\_ProductId\_s}}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ uint8\_t\ resetCause;}
+\DoxyCodeLine{00064\ \ \ \ \ uint8\_t\ swVersionMajor;}
+\DoxyCodeLine{00065\ \ \ \ \ uint8\_t\ swVersionMinor;}
+\DoxyCodeLine{00066\ \ \ \ \ uint32\_t\ swPartNumber;}
+\DoxyCodeLine{00067\ \ \ \ \ uint32\_t\ swBuildNumber;}
+\DoxyCodeLine{00068\ \ \ \ \ uint16\_t\ swVersionPatch;}
+\DoxyCodeLine{00069\ \ \ \ \ uint8\_t\ reserved0;}
+\DoxyCodeLine{00070\ \ \ \ \ uint8\_t\ reserved1;}
+\DoxyCodeLine{00071\ \}\ sh2\_ProductId\_t;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ SH2\_MAX\_PROD\_ID\_ENTRIES\ (5)}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__ProductIds__s}{sh2\_ProductIds\_s}}\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ sh2\_ProductId\_t\ entry[SH2\_MAX\_PROD\_ID\_ENTRIES];}
+\DoxyCodeLine{00076\ \ \ \ \ uint8\_t\ numEntries;}
+\DoxyCodeLine{00077\ \}\ sh2\_ProductIds\_t;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{enum}\ sh2\_SensorId\_e\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ SH2\_RAW\_ACCELEROMETER\ =\ 0x14,}
+\DoxyCodeLine{00086\ \ \ \ \ SH2\_ACCELEROMETER\ =\ 0x01,}
+\DoxyCodeLine{00087\ \ \ \ \ SH2\_LINEAR\_ACCELERATION\ =\ 0x04,}
+\DoxyCodeLine{00088\ \ \ \ \ SH2\_GRAVITY\ =\ 0x06,}
+\DoxyCodeLine{00089\ \ \ \ \ SH2\_RAW\_GYROSCOPE\ =\ 0x15,}
+\DoxyCodeLine{00090\ \ \ \ \ SH2\_GYROSCOPE\_CALIBRATED\ =\ 0x02,}
+\DoxyCodeLine{00091\ \ \ \ \ SH2\_GYROSCOPE\_UNCALIBRATED\ =\ 0x07,}
+\DoxyCodeLine{00092\ \ \ \ \ SH2\_RAW\_MAGNETOMETER\ =\ 0x16,}
+\DoxyCodeLine{00093\ \ \ \ \ SH2\_MAGNETIC\_FIELD\_CALIBRATED\ =\ 0x03,}
+\DoxyCodeLine{00094\ \ \ \ \ SH2\_MAGNETIC\_FIELD\_UNCALIBRATED\ =\ 0x0f,}
+\DoxyCodeLine{00095\ \ \ \ \ SH2\_ROTATION\_VECTOR\ =\ 0x05,}
+\DoxyCodeLine{00096\ \ \ \ \ SH2\_GAME\_ROTATION\_VECTOR\ =\ 0x08,}
+\DoxyCodeLine{00097\ \ \ \ \ SH2\_GEOMAGNETIC\_ROTATION\_VECTOR\ =\ 0x09,}
+\DoxyCodeLine{00098\ \ \ \ \ SH2\_PRESSURE\ =\ 0x0a,}
+\DoxyCodeLine{00099\ \ \ \ \ SH2\_AMBIENT\_LIGHT\ =\ 0x0b,}
+\DoxyCodeLine{00100\ \ \ \ \ SH2\_HUMIDITY\ =\ 0x0c,}
+\DoxyCodeLine{00101\ \ \ \ \ SH2\_PROXIMITY\ =\ 0x0d,}
+\DoxyCodeLine{00102\ \ \ \ \ SH2\_TEMPERATURE\ =\ 0x0e,}
+\DoxyCodeLine{00103\ \ \ \ \ SH2\_RESERVED\ =\ 0x17,}
+\DoxyCodeLine{00104\ \ \ \ \ SH2\_TAP\_DETECTOR\ =\ 0x10,}
+\DoxyCodeLine{00105\ \ \ \ \ SH2\_STEP\_DETECTOR\ =\ 0x18,}
+\DoxyCodeLine{00106\ \ \ \ \ SH2\_STEP\_COUNTER\ =\ 0x11,}
+\DoxyCodeLine{00107\ \ \ \ \ SH2\_SIGNIFICANT\_MOTION\ =\ 0x12,}
+\DoxyCodeLine{00108\ \ \ \ \ SH2\_STABILITY\_CLASSIFIER\ =\ 0x13,}
+\DoxyCodeLine{00109\ \ \ \ \ SH2\_SHAKE\_DETECTOR\ =\ 0x19,}
+\DoxyCodeLine{00110\ \ \ \ \ SH2\_FLIP\_DETECTOR\ =\ 0x1a,}
+\DoxyCodeLine{00111\ \ \ \ \ SH2\_PICKUP\_DETECTOR\ =\ 0x1b,}
+\DoxyCodeLine{00112\ \ \ \ \ SH2\_STABILITY\_DETECTOR\ =\ 0x1c,}
+\DoxyCodeLine{00113\ \ \ \ \ SH2\_PERSONAL\_ACTIVITY\_CLASSIFIER\ =\ 0x1e,}
+\DoxyCodeLine{00114\ \ \ \ \ SH2\_SLEEP\_DETECTOR\ =\ 0x1f,}
+\DoxyCodeLine{00115\ \ \ \ \ SH2\_TILT\_DETECTOR\ =\ 0x20,}
+\DoxyCodeLine{00116\ \ \ \ \ SH2\_POCKET\_DETECTOR\ =\ 0x21,}
+\DoxyCodeLine{00117\ \ \ \ \ SH2\_CIRCLE\_DETECTOR\ =\ 0x22,}
+\DoxyCodeLine{00118\ \ \ \ \ SH2\_HEART\_RATE\_MONITOR\ =\ 0x23,}
+\DoxyCodeLine{00119\ \ \ \ \ SH2\_ARVR\_STABILIZED\_RV\ =\ 0x28,}
+\DoxyCodeLine{00120\ \ \ \ \ SH2\_ARVR\_STABILIZED\_GRV\ =\ 0x29,}
+\DoxyCodeLine{00121\ \ \ \ \ SH2\_GYRO\_INTEGRATED\_RV\ =\ 0x2A,}
+\DoxyCodeLine{00122\ \ \ \ \ SH2\_IZRO\_MOTION\_REQUEST\ =\ 0x2B,}
+\DoxyCodeLine{00123\ \ \ \ \ SH2\_RAW\_OPTICAL\_FLOW\ =\ 0x2C,}
+\DoxyCodeLine{00124\ \ \ \ \ SH2\_DEAD\_RECKONING\_POSE\ =\ 0x2D,}
+\DoxyCodeLine{00125\ \ \ \ \ SH2\_WHEEL\_ENCODER\ =\ 0x2E,}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ UPDATE\ to\ reflect\ greatest\ sensor\ id}}
+\DoxyCodeLine{00128\ \ \ \ \ SH2\_MAX\_SENSOR\_ID\ =\ 0x2E,}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ \textcolor{keyword}{typedef}\ uint8\_t\ sh2\_SensorId\_t;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__SensorConfig}{sh2\_SensorConfig}}\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{/*\ Change\ sensitivity\ enabled\ */}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structsh2__SensorConfig_a63c294ce959e04875439bbdad1464e5d}{changeSensitivityEnabled}};\ \ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{/*\ Change\ sensitivity\ -\/\ true\ if\ relative;\ false\ if\ absolute\ */}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structsh2__SensorConfig_a6fe61d44c6f2fd19769a417f006d9e9e}{changeSensitivityRelative}};\ \ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{/*\ Wake-\/up\ enabled\ */}}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structsh2__SensorConfig_a277ec3be0681991e92e986f0960464e7}{wakeupEnabled}};\ \ }
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{/*\ Always\ on\ enabled\ */}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structsh2__SensorConfig_aab7a8d24818fcb8d74c10786dca891f8}{alwaysOnEnabled}};\ \ }
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structsh2__SensorConfig_a6eab823f95f4d1ddefe726b7e6dd3a23}{sniffEnabled}};\ }
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{/*\ 16-\/bit\ signed\ fixed\ point\ integer\ representing\ the\ value\ a}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ \ *\ sensor\ output\ must\ exceed\ in\ order\ to\ trigger\ another\ input}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ \ \ \ \ *\ report.\ A\ setting\ of\ 0\ causes\ all\ reports\ to\ be\ sent.}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00159\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structsh2__SensorConfig_a35d4a80a2f67505d12d716c234718960}{changeSensitivity}};\ \ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{/*\ Interval\ in\ microseconds\ between\ asynchronous\ input\ reports.\ */}}
+\DoxyCodeLine{00162\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorConfig_a76842af4615764341f6adb4e618e3602}{reportInterval\_us}};\ \ }
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{/*\ Reserved\ field,\ not\ used.\ */}}
+\DoxyCodeLine{00165\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorConfig_a56205b57e2ca1f339a9f084c27552732}{batchInterval\_us}};\ \ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{comment}{/*\ Meaning\ is\ sensor\ specific\ */}}
+\DoxyCodeLine{00168\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorConfig_a290bbba376696d1f6ed940fbf9e59bf4}{sensorSpecific}};\ \ }
+\DoxyCodeLine{00169\ \}\ sh2\_SensorConfig\_t;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00176\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__SensorMetadata}{sh2\_SensorMetadata}}\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_afa2bd756c7bb22e2104b3d97c5d73737}{meVersion}};\ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a82785f09037c163244624eca97eab2d4}{mhVersion}};\ \ }
+\DoxyCodeLine{00179\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_af27c3a8668b7acdb299a7dcff7a28529}{shVersion}};\ \ }
+\DoxyCodeLine{00180\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a6ff688cf56eb219d40c858d2115ef1ff}{range}};\ \ }
+\DoxyCodeLine{00181\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_ae8834af86b361a19158f36f08eb13e87}{resolution}};\ \ }
+\DoxyCodeLine{00182\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a07a86a6123d2701ae2e6193df2be21f1}{revision}};\ \ }
+\DoxyCodeLine{00183\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a70cf979bebc9622363e18958e4076093}{power\_mA}};\ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a4de9f6424c6f8e88c11545768ca15aba}{minPeriod\_uS}};\ \ }
+\DoxyCodeLine{00185\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a188968a0ae4bf908dbbde5ceb4c37865}{maxPeriod\_uS}};\ \ }
+\DoxyCodeLine{00186\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_ae17279f739b48615f4efe086b8a10806}{fifoReserved}};\ \ }
+\DoxyCodeLine{00187\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a2d933f8f7cf500c04641b18a00c12407}{fifoMax}};\ \ }
+\DoxyCodeLine{00188\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a0549f43ee70f34077a457f99dff95f71}{batchBufferBytes}};\ \ }
+\DoxyCodeLine{00189\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_aaeff86659eeca700411a119bc1013959}{qPoint1}};\ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a5f12974326461d9ee3290c13ea6ca262}{qPoint2}};\ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a8cd46b384c6d508448f4863479832139}{qPoint3}};\ \ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_aed2cd472375d65495e162ebc3f0b79bd}{vendorIdLen}};\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structsh2__SensorMetadata_a25026730c90b3b617dc661a9be766023}{vendorId}}[48];\ \ }
+\DoxyCodeLine{00194\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_a79db906faf5f8b25a84ca1e6d17ac6e4}{sensorSpecificLen}};\ \ }
+\DoxyCodeLine{00195\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__SensorMetadata_ac3ae8a5149814260de421f1ff286cec2}{sensorSpecific}}[48];\ \ }
+\DoxyCodeLine{00196\ \}\ sh2\_SensorMetadata\_t;}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00203\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__ErrorRecord}{sh2\_ErrorRecord}}\ \{}
+\DoxyCodeLine{00204\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__ErrorRecord_abeed1da1d25cc4a17c78c569323bfffd}{severity}};\ \ \ }
+\DoxyCodeLine{00205\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__ErrorRecord_acb5c8866a58116314f6c8eda9dc3544c}{sequence}};\ \ \ }
+\DoxyCodeLine{00206\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__ErrorRecord_a36a99c772ae64e186f5264a662834eef}{source}};\ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__ErrorRecord_adc64ccb7538429fe78e3fe0139267370}{error}};\ \ \ \ \ \ }
+\DoxyCodeLine{00208\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__ErrorRecord_a8dc5dbc13ebe8eb221673980e57465b6}{module}};\ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structsh2__ErrorRecord_a966576744a473fafb7687f8e5649941f}{code}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00210\ \}\ sh2\_ErrorRecord\_t;}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00217\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__Counts}{sh2\_Counts}}\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__Counts_a92aa8d285fef9f749cd96f8c47e43443}{offered}};\ \ \ }
+\DoxyCodeLine{00219\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__Counts_ad5152de0a5aba83c54417e279db4c081}{accepted}};\ \ }
+\DoxyCodeLine{00220\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__Counts_ac1534195fc8f4fe2e55eee4af5c86af3}{on}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__Counts_a46b366895c84e3679bd945b544673f96}{attempted}};\ }
+\DoxyCodeLine{00222\ \}\ sh2\_Counts\_t;}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00229\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ sh2\_TareBasis\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ SH2\_TARE\_BASIS\_ROTATION\_VECTOR\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00231\ \ \ \ \ SH2\_TARE\_BASIS\_GAMING\_ROTATION\_VECTOR\ =\ 1,\ \ \ \ \ \ }
+\DoxyCodeLine{00232\ \ \ \ \ SH2\_TARE\_BASIS\_GEOMAGNETIC\_ROTATION\_VECTOR\ =\ 2,\ }
+\DoxyCodeLine{00233\ \}\ sh2\_TareBasis\_t;}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00240\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ sh2\_TareAxis\ \{}
+\DoxyCodeLine{00241\ \ \ \ \ SH2\_TARE\_X\ =\ 1,\ \ }
+\DoxyCodeLine{00242\ \ \ \ \ SH2\_TARE\_Y\ =\ 2,\ \ }
+\DoxyCodeLine{00243\ \ \ \ \ SH2\_TARE\_Z\ =\ 4,\ \ }
+\DoxyCodeLine{00244\ \}\ sh2\_TareAxis\_t;}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00251\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__Quaternion}{sh2\_Quaternion}}\ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{double}\ x;}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{double}\ y;}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{double}\ z;}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{double}\ w;}
+\DoxyCodeLine{00256\ \}\ sh2\_Quaternion\_t;}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00263\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00264\ \ \ \ \ SH2\_OSC\_INTERNAL\ \ \ \ =\ 0,}
+\DoxyCodeLine{00265\ \ \ \ \ SH2\_OSC\_EXT\_CRYSTAL\ =\ 1,}
+\DoxyCodeLine{00266\ \ \ \ \ SH2\_OSC\_EXT\_CLOCK\ \ \ =\ 2,}
+\DoxyCodeLine{00267\ \}\ sh2\_OscType\_t;}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00274\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00275\ \ \ \ \ SH2\_CAL\_SUCCESS\ =\ 0,}
+\DoxyCodeLine{00276\ \ \ \ \ SH2\_CAL\_NO\_ZRO,}
+\DoxyCodeLine{00277\ \ \ \ \ SH2\_CAL\_NO\_STATIONARY\_DETECTION,}
+\DoxyCodeLine{00278\ \ \ \ \ SH2\_CAL\_ROTATION\_OUTSIDE\_SPEC,}
+\DoxyCodeLine{00279\ \ \ \ \ SH2\_CAL\_ZRO\_OUTSIDE\_SPEC,}
+\DoxyCodeLine{00280\ \ \ \ \ SH2\_CAL\_ZGO\_OUTSIDE\_SPEC,}
+\DoxyCodeLine{00281\ \ \ \ \ SH2\_CAL\_GYRO\_GAIN\_OUTSIDE\_SPEC,}
+\DoxyCodeLine{00282\ \ \ \ \ SH2\_CAL\_GYRO\_PERIOD\_OUTSIDE\_SPEC,}
+\DoxyCodeLine{00283\ \ \ \ \ SH2\_CAL\_GYRO\_DROPS\_OUTSIDE\_SPEC,}
+\DoxyCodeLine{00284\ \}\ sh2\_CalStatus\_t;}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \textcolor{comment}{//\ FRS\ Record\ Ids}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ STATIC\_CALIBRATION\_AGM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x7979)}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ NOMINAL\_CALIBRATION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x4D4D)}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ STATIC\_CALIBRATION\_SRA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x8A8A)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ NOMINAL\_CALIBRATION\_SRA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x4E4E)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ DYNAMIC\_CALIBRATION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1F1F)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ ME\_POWER\_MGMT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xD3E2)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ SYSTEM\_ORIENTATION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x2D3E)}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ ACCEL\_ORIENTATION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x2D41)}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ SCREEN\_ACCEL\_ORIENTATION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x2D43)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ GYROSCOPE\_ORIENTATION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x2D46)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ MAGNETOMETER\_ORIENTATION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x2D4C)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ ARVR\_STABILIZATION\_RV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x3E2D)}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ ARVR\_STABILIZATION\_GRV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x3E2E)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ TAP\_DETECT\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xC269)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ SIG\_MOTION\_DETECT\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xC274)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ SHAKE\_DETECT\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x7D7D)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ MAX\_FUSION\_PERIOD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xD7D7)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ SERIAL\_NUMBER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x4B4B)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ ES\_PRESSURE\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x39AF)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ ES\_TEMPERATURE\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x4D20)}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ ES\_HUMIDITY\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1AC9)}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ ES\_AMBIENT\_LIGHT\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x39B1)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ ES\_PROXIMITY\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x4DA2)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ ALS\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xD401)}}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ PROXIMITY\_SENSOR\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xD402)}}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ PICKUP\_DETECTOR\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1B2A)}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ FLIP\_DETECTOR\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFC94)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ STABILITY\_DETECTOR\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xED85)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ ACTIVITY\_TRACKER\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xED88)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ SLEEP\_DETECTOR\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xED87)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ TILT\_DETECTOR\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xED89)}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ POCKET\_DETECTOR\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xEF27)}}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ CIRCLE\_DETECTOR\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xEE51)}}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ USER\_RECORD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x74B4)}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ ME\_TIME\_SOURCE\_SELECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xD403)}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ UART\_FORMAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xA1A1)}}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ GYRO\_INTEGRATED\_RV\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xA1A2)}}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ DR\_IMU\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDED2)}}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ DR\_VEL\_EST\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDED3)}}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ DR\_SYNC\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDED4)}}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ DR\_QUAL\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDED5)}}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#define\ DR\_CAL\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDED6)}}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ DR\_LIGHT\_REC\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDED8)}}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ DR\_FUSION\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDED9)}}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ DR\_OF\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDEDA)}}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ DR\_WHEEL\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDEDB)}}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ DR\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDEDC)}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ DR\_WHEEL\_SELECT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xDEDF)}}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_RAW\_ACCELEROMETER\ \ \ \ \ \ \ \ \ \ \ \ (0xE301)}}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_ACCELEROMETER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE302)}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_LINEAR\_ACCELERATION\ \ \ \ \ \ \ \ \ \ (0xE303)}}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_GRAVITY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE304)}}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_RAW\_GYROSCOPE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE305)}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_GYROSCOPE\_CALIBRATED\ \ \ \ \ \ \ \ \ (0xE306)}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_GYROSCOPE\_UNCALIBRATED\ \ \ \ \ \ \ (0xE307)}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_RAW\_MAGNETOMETER\ \ \ \ \ \ \ \ \ \ \ \ \ (0xE308)}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_MAGNETIC\_FIELD\_CALIBRATED\ \ \ \ (0xE309)}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_MAGNETIC\_FIELD\_UNCALIBRATED\ \ (0xE30A)}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_ROTATION\_VECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE30B)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_GAME\_ROTATION\_VECTOR\ \ \ \ \ \ \ \ \ (0xE30C)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_GEOMAGNETIC\_ROTATION\_VECTOR\ \ (0xE30D)}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_PRESSURE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE30E)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_AMBIENT\_LIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE30F)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_HUMIDITY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE310)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_PROXIMITY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE311)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_TEMPERATURE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE312)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_TAP\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE313)}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_STEP\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE314)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_STEP\_COUNTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE315)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_SIGNIFICANT\_MOTION\ \ \ \ \ \ \ \ \ \ \ (0xE316)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_STABILITY\_CLASSIFIER\ \ \ \ \ \ \ \ \ (0xE317)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_SHAKE\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE318)}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_FLIP\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE319)}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_PICKUP\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE31A)}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_STABILITY\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ (0xE31B)}}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_PERSONAL\_ACTIVITY\_CLASSIFIER\ (0xE31C)}}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_SLEEP\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE31D)}}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_TILT\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE31E)}}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_POCKET\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE31F)}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_CIRCLE\_DETECTOR\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xE320)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_HEART\_RATE\_MONITOR\ \ \ \ \ \ \ \ \ \ \ (0xE321)}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_ARVR\_STABILIZED\_RV\ \ \ \ \ \ \ \ \ \ \ (0xE322)}}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_ARVR\_STABILIZED\_GRV\ \ \ \ \ \ \ \ \ \ (0xE323)}}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_GYRO\_INTEGRATED\_RV\ \ \ \ \ \ \ \ \ \ \ (0xE324)}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ FRS\_ID\_META\_RAW\_OPTICAL\_FLOW\ \ \ \ \ \ \ \ \ \ \ \ \ (0xE326)}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00378\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00379\ \ \ \ \ SH2\_IZRO\_MI\_UNKNOWN\ =\ 0,}
+\DoxyCodeLine{00380\ \ \ \ \ SH2\_IZRO\_MI\_STATIONARY\_NO\_VIBRATION,}
+\DoxyCodeLine{00381\ \ \ \ \ SH2\_IZRO\_MI\_STATIONARY\_WITH\_VIBRATION,}
+\DoxyCodeLine{00382\ \ \ \ \ SH2\_IZRO\_MI\_IN\_MOTION,}
+\DoxyCodeLine{00383\ \ \ \ \ SH2\_IZRO\_MI\_ACCELERATING,}
+\DoxyCodeLine{00384\ \}\ sh2\_IZroMotionIntent\_t;}
+\DoxyCodeLine{00385\ }
+\DoxyCodeLine{00391\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ SH2\_IZRO\_MR\_NO\_REQUEST\ =\ 0,}
+\DoxyCodeLine{00393\ \ \ \ \ SH2\_IZRO\_MR\_STAY\_STATIONARY,}
+\DoxyCodeLine{00394\ \ \ \ \ SH2\_IZRO\_MR\_STATIONARY\_NON\_URGENT,}
+\DoxyCodeLine{00395\ \ \ \ \ SH2\_IZRO\_MR\_STATIONARY\_URGENT,}
+\DoxyCodeLine{00396\ \}\ sh2\_IZroMotionRequest\_t;}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \textcolor{keyword}{enum}\ sh2\_AsyncEventId\_e\ \{}
+\DoxyCodeLine{00406\ \ \ \ \ SH2\_RESET,}
+\DoxyCodeLine{00407\ \ \ \ \ SH2\_SHTP\_EVENT,}
+\DoxyCodeLine{00408\ \ \ \ \ SH2\_GET\_FEATURE\_RESP,}
+\DoxyCodeLine{00409\ \};}
+\DoxyCodeLine{00410\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ sh2\_AsyncEventId\_e\ sh2\_AsyncEventId\_t;}
+\DoxyCodeLine{00411\ }
+\DoxyCodeLine{00412\ \textcolor{keyword}{enum}\ sh2\_ShtpEvent\_e\ \{}
+\DoxyCodeLine{00413\ \ \ \ \ SH2\_SHTP\_TX\_DISCARD\ =\ 0,}
+\DoxyCodeLine{00414\ \ \ \ \ SH2\_SHTP\_SHORT\_FRAGMENT\ =\ 1,}
+\DoxyCodeLine{00415\ \ \ \ \ SH2\_SHTP\_TOO\_LARGE\_PAYLOADS\ =\ 2,}
+\DoxyCodeLine{00416\ \ \ \ \ SH2\_SHTP\_BAD\_RX\_CHAN\ =\ 3,}
+\DoxyCodeLine{00417\ \ \ \ \ SH2\_SHTP\_BAD\_TX\_CHAN\ =\ 4,}
+\DoxyCodeLine{00418\ \ \ \ \ SH2\_SHTP\_BAD\_FRAGMENT\ =\ 5,}
+\DoxyCodeLine{00419\ \ \ \ \ SH2\_SHTP\_BAD\_SN\ =\ 6,}
+\DoxyCodeLine{00420\ \ \ \ \ SH2\_SHTP\_INTERRUPTED\_PAYLOAD\ =\ 7,}
+\DoxyCodeLine{00421\ \};}
+\DoxyCodeLine{00422\ \textcolor{keyword}{typedef}\ uint8\_t\ sh2\_ShtpEvent\_t;}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__SensorConfigResp__e}{sh2\_SensorConfigResp\_e}}\ \{}
+\DoxyCodeLine{00425\ \ \ \ \ sh2\_SensorId\_t\ sensorId;}
+\DoxyCodeLine{00426\ \ \ \ \ sh2\_SensorConfig\_t\ sensorConfig;}
+\DoxyCodeLine{00427\ \}\ sh2\_SensorConfigResp\_t;}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__AsyncEvent}{sh2\_AsyncEvent}}\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ uint32\_t\ eventId;}
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ sh2\_ShtpEvent\_t\ shtpEvent;}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ sh2\_SensorConfigResp\_t\ sh2SensorConfigResp;}
+\DoxyCodeLine{00434\ \ \ \ \ \};}
+\DoxyCodeLine{00435\ \}\ sh2\_AsyncEvent\_t;}
+\DoxyCodeLine{00436\ }
+\DoxyCodeLine{00437\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ shtp\_Event\_e\ \{}
+\DoxyCodeLine{00438\ \ \ \ \ SHTP\_SHORT\_FRAGMENT\ =\ 1,}
+\DoxyCodeLine{00439\ \ \ \ \ SHTP\_TOO\_LARGE\_PAYLOADS\ =\ 2,}
+\DoxyCodeLine{00440\ \ \ \ \ SHTP\_BAD\_RX\_CHAN\ =\ 3,}
+\DoxyCodeLine{00441\ \ \ \ \ SHTP\_BAD\_TX\_CHAN\ =\ 4,}
+\DoxyCodeLine{00442\ \ \ \ \ SHTP\_BAD\_FRAGMENT\ =\ 5,}
+\DoxyCodeLine{00443\ \ \ \ \ SHTP\_BAD\_SN\ =\ 6,}
+\DoxyCodeLine{00444\ \ \ \ \ SHTP\_INTERRUPTED\_PAYLOAD\ =\ 7,}
+\DoxyCodeLine{00445\ \}\ shtp\_Event\_t;}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \textcolor{comment}{/*\ Note\ on\ quaternion\ naming\ conventions:}}
+\DoxyCodeLine{00448\ \textcolor{comment}{\ *\ Quaternions\ are\ values\ with\ four\ real\ components\ that\ are\ usually}}
+\DoxyCodeLine{00449\ \textcolor{comment}{\ *\ interpreted\ as\ coefficients\ in\ the\ complex\ quantity,\ Q.}}
+\DoxyCodeLine{00450\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00451\ \textcolor{comment}{\ *\ As\ in,\ Q\ =\ W\ +\ Xi\ +\ Yj\ +\ Zk}}
+\DoxyCodeLine{00452\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00453\ \textcolor{comment}{\ *\ Where\ i,\ j\ and\ k\ represent\ the\ three\ imaginary\ dimensions.}}
+\DoxyCodeLine{00454\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00455\ \textcolor{comment}{\ *\ So\ W\ represents\ the\ Real\ components\ and\ X,\ Y\ and\ Z\ the\ Imaginary\ ones.}}
+\DoxyCodeLine{00456\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00457\ \textcolor{comment}{\ *\ In\ the\ Hillcrest\ datasheets\ and\ in\ this\ code,\ however,\ the\ four\ components}}
+\DoxyCodeLine{00458\ \textcolor{comment}{\ *\ are\ named\ real,\ i,\ j\ and\ k,\ to\ make\ it\ explicit\ which\ is\ which.\ \ If\ you\ }}
+\DoxyCodeLine{00459\ \textcolor{comment}{\ *\ need\ to\ translate\ these\ names\ into\ the\ "{}wxyz"{}\ or\ "{}xyzw"{}\ convention,\ then,\ the}}
+\DoxyCodeLine{00460\ \textcolor{comment}{\ *\ appropriate\ mapping\ is\ this:}}
+\DoxyCodeLine{00461\ \textcolor{comment}{\ *\ \ \ \ \ w\ =\ real}}
+\DoxyCodeLine{00462\ \textcolor{comment}{\ *\ \ \ \ \ x\ =\ i}}
+\DoxyCodeLine{00463\ \textcolor{comment}{\ *\ \ \ \ \ y\ =\ j}}
+\DoxyCodeLine{00464\ \textcolor{comment}{\ *\ \ \ \ \ z\ =\ k}}
+\DoxyCodeLine{00465\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00466\ \ \ \ \ }
+\DoxyCodeLine{00472\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__RawAccelerometer}{sh2\_RawAccelerometer}}\ \{}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{comment}{/*\ Units\ are\ ADC\ counts\ */}}
+\DoxyCodeLine{00474\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawAccelerometer_ae1c2d516777e6b42af0d281c9ecc7375}{x}};\ \ }
+\DoxyCodeLine{00475\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawAccelerometer_af77b1a54442f2443cf64a4766f916bcd}{y}};\ \ }
+\DoxyCodeLine{00476\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawAccelerometer_abd938edbea27ed4f351dc19d69039222}{z}};\ \ }
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00478\ \ \ \ \ \textcolor{comment}{/*\ Microseconds\ */}}
+\DoxyCodeLine{00479\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__RawAccelerometer_ab20b0c7772544cf5d318507f34231fbe}{timestamp}};\ \ }
+\DoxyCodeLine{00480\ \}\ sh2\_RawAccelerometer\_t;}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00487\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__Accelerometer}{sh2\_Accelerometer}}\ \{}
+\DoxyCodeLine{00488\ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{00489\ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
+\DoxyCodeLine{00490\ \ \ \ \ \textcolor{keywordtype}{float}\ z;}
+\DoxyCodeLine{00491\ \}\ sh2\_Accelerometer\_t;}
+\DoxyCodeLine{00492\ }
+\DoxyCodeLine{00498\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__RawGyroscope}{sh2\_RawGyroscope}}\ \{}
+\DoxyCodeLine{00499\ \ \ \ \ \textcolor{comment}{/*\ Units\ are\ ADC\ counts\ */}}
+\DoxyCodeLine{00500\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawGyroscope_ae1c2d516777e6b42af0d281c9ecc7375}{x}};\ \ }
+\DoxyCodeLine{00501\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawGyroscope_af77b1a54442f2443cf64a4766f916bcd}{y}};\ \ }
+\DoxyCodeLine{00502\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawGyroscope_abd938edbea27ed4f351dc19d69039222}{z}};\ \ }
+\DoxyCodeLine{00503\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawGyroscope_a4af92569ea830250443045233c9bf5fb}{temperature}};\ \ }
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{comment}{/*\ Microseconds\ */}}
+\DoxyCodeLine{00506\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__RawGyroscope_ab20b0c7772544cf5d318507f34231fbe}{timestamp}};\ \ }
+\DoxyCodeLine{00507\ \}\ sh2\_RawGyroscope\_t;}
+\DoxyCodeLine{00508\ }
+\DoxyCodeLine{00514\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__Gyroscope}{sh2\_Gyroscope}}\ \{}
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{comment}{/*\ Units\ are\ rad/s\ */}}
+\DoxyCodeLine{00516\ \ \ \ \ \textcolor{keywordtype}{float}\ x;}
+\DoxyCodeLine{00517\ \ \ \ \ \textcolor{keywordtype}{float}\ y;}
+\DoxyCodeLine{00518\ \ \ \ \ \textcolor{keywordtype}{float}\ z;}
+\DoxyCodeLine{00519\ \}\ sh2\_Gyroscope\_t;}
+\DoxyCodeLine{00520\ }
+\DoxyCodeLine{00526\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__GyroscopeUncalibrated}{sh2\_GyroscopeUncalibrated}}\ \{}
+\DoxyCodeLine{00527\ \ \ \ \ \textcolor{comment}{/*\ Units\ are\ rad/s\ */}}
+\DoxyCodeLine{00528\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__GyroscopeUncalibrated_ad0da36b2558901e21e7a30f6c227a45e}{x}};\ \ }
+\DoxyCodeLine{00529\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__GyroscopeUncalibrated_aa4f0d3eebc3c443f9be81bf48561a217}{y}};\ \ }
+\DoxyCodeLine{00530\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__GyroscopeUncalibrated_af73583b1e980b0aa03f9884812e9fd4d}{z}};\ \ }
+\DoxyCodeLine{00531\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__GyroscopeUncalibrated_a5c3fbea9b1c3981f3cdc97121a614aaa}{biasX}};\ \ }
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__GyroscopeUncalibrated_ad8f617e5502038c17a0f629744afe896}{biasY}};\ \ }
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__GyroscopeUncalibrated_a4ec71f71e0433164e55ac6c44cc8dc6c}{biasZ}};\ \ }
+\DoxyCodeLine{00534\ \}\ sh2\_GyroscopeUncalibrated\_t;}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00541\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__RawMagnetometer}{sh2\_RawMagnetometer}}\ \{}
+\DoxyCodeLine{00542\ \ \ \ \ \textcolor{comment}{/*\ Units\ are\ ADC\ counts\ */}}
+\DoxyCodeLine{00543\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawMagnetometer_ae1c2d516777e6b42af0d281c9ecc7375}{x}};\ \ }
+\DoxyCodeLine{00544\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawMagnetometer_af77b1a54442f2443cf64a4766f916bcd}{y}};\ \ }
+\DoxyCodeLine{00545\ \ \ \ \ int16\_t\ \mbox{\hyperlink{structsh2__RawMagnetometer_abd938edbea27ed4f351dc19d69039222}{z}};\ \ }
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \ \ \ \ \textcolor{comment}{/*\ Microseconds\ */}}
+\DoxyCodeLine{00548\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{structsh2__RawMagnetometer_ab20b0c7772544cf5d318507f34231fbe}{timestamp}};\ \ }
+\DoxyCodeLine{00549\ \}\ sh2\_RawMagnetometer\_t;}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00556\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__MagneticField}{sh2\_MagneticField}}\ \{}
+\DoxyCodeLine{00557\ \ \ \ \ \textcolor{comment}{/*\ Units\ are\ uTesla\ */}}
+\DoxyCodeLine{00558\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticField_ad0da36b2558901e21e7a30f6c227a45e}{x}};\ \ }
+\DoxyCodeLine{00559\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticField_aa4f0d3eebc3c443f9be81bf48561a217}{y}};\ \ }
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticField_af73583b1e980b0aa03f9884812e9fd4d}{z}};\ \ }
+\DoxyCodeLine{00561\ \}\ sh2\_MagneticField\_t;}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00568\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__MagneticFieldUncalibrated}{sh2\_MagneticFieldUncalibrated}}\ \{}
+\DoxyCodeLine{00569\ \ \ \ \ \textcolor{comment}{/*\ Units\ are\ uTesla\ */}}
+\DoxyCodeLine{00570\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticFieldUncalibrated_ad0da36b2558901e21e7a30f6c227a45e}{x}};\ \ }
+\DoxyCodeLine{00571\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticFieldUncalibrated_aa4f0d3eebc3c443f9be81bf48561a217}{y}};\ \ }
+\DoxyCodeLine{00572\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticFieldUncalibrated_af73583b1e980b0aa03f9884812e9fd4d}{z}};\ \ }
+\DoxyCodeLine{00573\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticFieldUncalibrated_a5c3fbea9b1c3981f3cdc97121a614aaa}{biasX}};\ \ }
+\DoxyCodeLine{00574\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticFieldUncalibrated_ad8f617e5502038c17a0f629744afe896}{biasY}};\ \ }
+\DoxyCodeLine{00575\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__MagneticFieldUncalibrated_a4ec71f71e0433164e55ac6c44cc8dc6c}{biasZ}};\ \ }
+\DoxyCodeLine{00576\ \}\ sh2\_MagneticFieldUncalibrated\_t;}
+\DoxyCodeLine{00577\ }
+\DoxyCodeLine{00583\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__RotationVectorWAcc}{sh2\_RotationVectorWAcc}}\ \{}
+\DoxyCodeLine{00584\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVectorWAcc_a58e739b7bdf8275493686ae76e3705c3}{i}};\ \ }
+\DoxyCodeLine{00585\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVectorWAcc_ac25976cf079d34d71c9da8ca3517dfb5}{j}};\ \ }
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVectorWAcc_a9fc4cca635a26c692681a7071e379aa7}{k}};\ \ }
+\DoxyCodeLine{00587\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVectorWAcc_a06ed4269b34924d748f2f77b17db7d21}{real}};\ \ }
+\DoxyCodeLine{00588\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVectorWAcc_a4655b4ced08b73119087d8af58680ff1}{accuracy}};\ \ }
+\DoxyCodeLine{00589\ \}\ sh2\_RotationVectorWAcc\_t;}
+\DoxyCodeLine{00590\ }
+\DoxyCodeLine{00596\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsh2__RotationVector}{sh2\_RotationVector}}\ \{}
+\DoxyCodeLine{00597\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVector_a58e739b7bdf8275493686ae76e3705c3}{i}};\ \ }
+\DoxyCodeLine{00598\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVector_ac25976cf079d34d71c9da8ca3517dfb5}{j}};\ \ }
+\DoxyCodeLine{00599\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVector_a9fc4cca635a26c692681a7071e379aa7}{k}};\ \ }
+\DoxyCodeLine{00600\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structsh2__RotationVector_a06ed4269b34924d748f2f77b17db7d21}{real}};\ \ }
+\DoxyCodeLine{00601\ \}\ sh2\_RotationVector\_t;}
+\DoxyCodeLine{00602\ }
+\DoxyCodeLine{00603\ }
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00605\ \}}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00607\ }
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ BNO086\_REG\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00609\ }
+
+\end{DoxyCode}

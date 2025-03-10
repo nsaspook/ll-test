@@ -1,0 +1,91 @@
+\doxysection{quat.\+h}
+\hypertarget{quat_8h_source}{}\label{quat_8h_source}\index{src/quat.h@{src/quat.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ quat.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ April\ 28,\ 2023,\ 6:54\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ QUAT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ QUAT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ Copyright\ (C)\ 2019\ Martin\ Weigel\ <mail@MartinWeigel.com>}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ https://github.com/MartinWeigel/Quaternion}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ Permission\ to\ use,\ copy,\ modify,\ and/or\ distribute\ this\ software\ for\ any}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ purpose\ with\ or\ without\ fee\ is\ hereby\ granted,\ provided\ that\ the\ above}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ copyright\ notice\ and\ this\ permission\ notice\ appear\ in\ all\ copies.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//}}
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{}\ AND\ THE\ AUTHOR\ DISCLAIMS\ ALL\ WARRANTIES}}
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ WITH\ REGARD\ TO\ THIS\ SOFTWARE\ INCLUDING\ ALL\ IMPLIED\ WARRANTIES\ OF}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ MERCHANTABILITY\ AND\ FITNESS.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHOR\ BE\ LIABLE\ FOR}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ ANY\ SPECIAL,\ DIRECT,\ INDIRECT,\ OR\ CONSEQUENTIAL\ DAMAGES\ OR\ ANY\ DAMAGES}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ WHATSOEVER\ RESULTING\ FROM\ LOSS\ OF\ USE,\ DATA\ OR\ PROFITS,\ WHETHER\ IN\ AN}}
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ ACTION\ OF\ CONTRACT,\ NEGLIGENCE\ OR\ OTHER\ TORTIOUS\ ACTION,\ ARISING\ OUT\ OF}}
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ OR\ IN\ CONNECTION\ WITH\ THE\ USE\ OR\ PERFORMANCE\ OF\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ QUATERNION\_EPS\ (1e-\/4)}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structQuaternion}{Quaternion}}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structQuaternion_afb3248bab1c7ee0ad97e9d4c275b4c67}{w}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structQuaternion_ad8b2664bf7d7db7f9685845624616041}{v}}[3];\ \ \ \ }
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{structQuaternion}{Quaternion}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ Quaternion\_set(\textcolor{keywordtype}{double}\ w,\ \textcolor{keywordtype}{double}\ v1,\ \textcolor{keywordtype}{double}\ v2,\ \textcolor{keywordtype}{double}\ v3,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ Quaternion\_setIdentity(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ Quaternion\_copy(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{bool}\ Quaternion\_equal(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q1,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q2);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ Quaternion\_fprint(FILE*\ file,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ Quaternion\_fromAxisAngle(\textcolor{keywordtype}{double}\ axis[3],\ \textcolor{keywordtype}{double}\ angle,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{double}\ Quaternion\_toAxisAngle(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q,\ \textcolor{keywordtype}{double}\ output[3]);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ Quaternion\_fromEulerZYX(\textcolor{keywordtype}{double}\ eulerZYX[3],\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ Quaternion\_toEulerZYX(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q,\ \textcolor{keywordtype}{double}\ output[3]);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{void}\ Quaternion\_fromXRotation(\textcolor{keywordtype}{double}\ angle,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{void}\ Quaternion\_fromYRotation(\textcolor{keywordtype}{double}\ angle,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ Quaternion\_fromZRotation(\textcolor{keywordtype}{double}\ angle,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{double}\ Quaternion\_norm(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ Quaternion\_normalize(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00146\ \textcolor{keywordtype}{void}\ Quaternion\_conjugate(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00155\ \textcolor{keywordtype}{void}\ Quaternion\_multiply(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q1,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q2,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00160\ \textcolor{keywordtype}{void}\ Quaternion\_rotate(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q,\ \textcolor{keywordtype}{double}\ v[3],\ \textcolor{keywordtype}{double}\ output[3]);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00168\ \textcolor{keywordtype}{void}\ Quaternion\_slerp(\mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q1,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ q2,\ \textcolor{keywordtype}{double}\ t,\ \mbox{\hyperlink{structQuaternion}{Quaternion}}*\ output);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00172\ \}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ QUAT\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00176\ }
+
+\end{DoxyCode}

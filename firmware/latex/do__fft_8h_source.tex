@@ -1,0 +1,54 @@
+\doxysection{do\+\_\+fft.\+h}
+\hypertarget{do__fft_8h_source}{}\label{do__fft_8h_source}\index{src/do\_fft.h@{src/do\_fft.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ do\_fft.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ November\ 6,\ 2022,\ 1:53\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ DO\_FFT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ DO\_FFT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <xc.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <p32xxxx.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00021\ \ \ \ \ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}fft.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ \_XTAL\_FREQ\ 120000000UL}}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ DO\_FFT\_DRIVER\ \ \ "{}V1.002"{}\ }}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ DO\_FFT\_ALIAS\ \ \ \ "{}DO\_FFT\ \ "{}}}
+\DoxyCodeLine{00028\ \ \ \ \ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ fft\_sample\_rate\ 100.0}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ fft\_cutoff\_freq\ 0.5}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ do\_fft(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \_\_delay\_ms\_fft(uint32\_t);}
+\DoxyCodeLine{00034\ \textcolor{keywordtype}{void}\ \_\_delay\_us\_fft(uint32\_t);}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ do\_fft\_version(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{double}\ do\_fft\_dc\_x(\textcolor{keywordtype}{double}\ input);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{double}\ do\_fft\_dc\_y(\textcolor{keywordtype}{double}\ input);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{double}\ do\_fft\_dc\_z(\textcolor{keywordtype}{double}\ input);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ uint8\_t\ inB[N\_FFT];}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ DO\_FFT\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00048\ }
+
+\end{DoxyCode}

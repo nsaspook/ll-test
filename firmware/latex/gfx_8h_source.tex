@@ -1,0 +1,49 @@
+\doxysection{gfx.\+h}
+\hypertarget{gfx_8h_source}{}\label{gfx_8h_source}\index{src/gfx.h@{src/gfx.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ gfx.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ October\ 30,\ 2020,\ 9:35\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ GFX\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ GFX\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}../../firmware/lcd\_drv/OledGrph.h"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\#define\ GFX\_BOX}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ SHOW\_LA}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ fft\_max\_pixel\ \ \ \ \ \ \ 64}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ fft\_resolution\_shift\ \ \ \ 1}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ fft\_scale\ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ sine\_res\ =\ 3600.0;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ sinea\ =\ 0.0;}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ sineb\ =\ 1200.0;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ sinec\ =\ 2400.0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{extern}\ int32\_t\ xa,\ ya,\ za;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{double}\ q0,\ q1,\ q2,\ q3;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ line\_rot(uint32\_t,\ uint32\_t,\ uint32\_t,\ uint32\_t);}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ vector\_graph(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ vector\_graph\_fs(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ LA\_gfx(\textcolor{keywordtype}{bool},\ \textcolor{keywordtype}{bool},\ uint32\_t);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ fft\_draw(uint8\_t,\ uint8\_t);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ GFX\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00043\ }
+
+\end{DoxyCode}

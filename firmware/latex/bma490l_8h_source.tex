@@ -1,0 +1,93 @@
+\doxysection{bma490l.\+h}
+\hypertarget{bma490l_8h_source}{}\label{bma490l_8h_source}\index{src/bma490l.h@{src/bma490l.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ bma490.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ nsasp}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ July\ 29,\ 2022,\ 12:37\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ SPI\ mode\ 0,\ 8MHz,\ 8-\/bit\ transfers}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ 100Hz\ sensor\ sample\ rate}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ BMA490L\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ BMA490L\_H}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stddef.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ NULL}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdbool.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ true}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ EXIT\_FAILURE}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}definitions.h"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SYS\ function\ prototypes}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}bma490l\_reg.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}imu.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ BMA490\_DRIVER\ \ \ "{}V1.100"{}\ }}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ BMA490\_ALIAS\ \ \ \ "{}BMA490L"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ BMA400\_DRIVER\ \ \ "{}V1.604"{}\ }}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ BMA400\_ALIAS\ \ \ \ "{}BMA400"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ RBIT\ \ \ \ \ \ \ \ 0x80}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ WBIT\ \ \ \ \ \ \ \ \ \ \ \ 0x7f}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ CHIP\_ID\ \ \ \ \ 0}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ CHIP\_STATUS\ 3}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ CHIP\_IS\ \ \ \ \ 0x2A}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ CHIP\_ID\_INDEX\ \ \ 1}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ CHIP\_ID\_DATA\ \ \ \ 2}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ BMA490L\_ID\ \ 0x1A}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BMA400\_ID\ \ \ 0x90}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ CHIP\_ID\_DELAY\ \ \ 100000}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ BMA490\_ID\_LEN\ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ BMA490\_REG\_LEN\ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ BMA490\_DATA\_LEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ BMA400\_DATA\_LEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ BMA490\_DATA\_BUFFER\_LEN\ \ \ \ \ \ 64}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ BMA400\_DATA\_BUFFER\_LEN\ \ \ \ \ \ 64}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ BMA490\_DATA\_INDEX\ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ BMA400\_DATA\_INDEX\ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ BMA490\_RD\_WR\_MAX\_LEN\ \ \ \ \ \ \ \ 0x0514\ }\textcolor{comment}{//\ IMU\ ASIC\ firmware\ file\ size}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ ACCEL\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ 0xa9\ }\textcolor{comment}{//\ 10101001\ 200Hz\ ODR\ 80Hz\ filter}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{comment}{//\#define\ ACCEL\_CONFIG\ \ \ \ \ \ \ \ \ \ 0xa5\ //\ 10100101\ 12.5Hz\ ODR\ 5.06Hz\ filter}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ \#define\ ACCEL\_CONFIG\ \ \ \ \ \ \ \ \ 0x55\ //\ 01010101\ 12.5Hz\ ODR\ avg\ 32\ \ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ INT\_MAP\_DATA\ \ \ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ INT1\_IO\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ REG\_POWER\_CTRL\ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ BMA490L\_RESERVED\_REG\_5B\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x5B)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ BMA490L\_RESERVED\_REG\_5C\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x5C)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ BMA490L\_FEATURE\_CONFIG\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x5E)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ BMA490L\_INTERNAL\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x5F)}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ imu\_timeout\ 2000\ \ \ \ }\textcolor{comment}{//\ timeout\ for\ IMU\ ID\ data\ from\ query}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ *\ function\ pointer\ templates}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ bma490l\_set\_spimode(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ bma490l\_getid(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ bma490l\_getdata(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ bma490\_version(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ imu\_getis(imu\_cmd\_t\ *);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ \ \ \ *\ BMA490L\ chip\ instance}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{extern}\ imu\_cmd\_t\ imu0;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ BMA490L\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00088\ }
+
+\end{DoxyCode}

@@ -1,0 +1,80 @@
+\doxysection{canfd.\+h}
+\hypertarget{canfd_8h_source}{}\label{canfd_8h_source}\index{src/canfd.h@{src/canfd.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ canfd.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ September\ 22,\ 2022,\ 6:48\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CANFD\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CANFD\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stddef.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ NULL}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdbool.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ true}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ EXIT\_FAILURE}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{/*\ Application's\ state\ machine\ enum\ */}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ APP\_STATE\_CAN\_RECEIVE,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ APP\_STATE\_CAN\_TRANSMIT,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ APP\_STATE\_CAN\_IDLE,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ APP\_STATE\_CAN\_USER\_INPUT,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ APP\_STATE\_CAN\_XFER\_SUCCESSFUL,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ APP\_STATE\_CAN\_XFER\_ERROR}
+\DoxyCodeLine{00029\ \ \ \ \ \}\ APP\_STATES;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ CAN\_RECEIVE,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ CAN\_TRANSMIT\_N,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ CAN\_TRANSMIT\_FD,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ CAN\_IDLE,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ CAN\_USER\_INPUT,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ CAN\_XFER\_SUCCESSFUL,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ CAN\_XFER\_ERROR}
+\DoxyCodeLine{00039\ \ \ \ \ \}\ CANFD\_STATES;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ CAN\_NULL,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ CAN\_IMU\_DATA,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ CAN\_IMU\_INFO,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ CAN\_IMU\_RAW,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ CAN\_IMU\_GET,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ CAN\_IMU\_SET,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ CAN\_STAT,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ CAN\_MISC,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ CAN\_FFT\_LO,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ CAN\_FFT\_HI,}
+\DoxyCodeLine{00052\ \ \ \ \ \}\ CANFD\_MESSAGE;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifdef\ \_\_32MZ1025W104132\_\_}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ CANDEV2}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//\#define\ DEBUG\_FILTER}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ APP\_CAN\_Callback(uintptr\_t);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ canfd\_state(CANFD\_STATES,\ \textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00062\ \ \ \ \ uint32\_t\ canfd\_num\_tx(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ \ \ \ \ uint32\_t\ canfd\_num\_rx(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ \ \ \ \ uint32\_t\ canfd\_num\_stall(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ tx\_msg\_ready;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ rx\_msg\_ready;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ CANFD\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00074\ }
+
+\end{DoxyCode}

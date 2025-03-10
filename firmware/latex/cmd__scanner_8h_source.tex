@@ -1,0 +1,81 @@
+\doxysection{cmd\+\_\+scanner.\+h}
+\hypertarget{cmd__scanner_8h_source}{}\label{cmd__scanner_8h_source}\index{src/cmd\_scanner.h@{src/cmd\_scanner.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ cmd\_scanner.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ February\ 2,\ 2023,\ 8:23\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CMD\_SCANNER\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CMD\_SCANNER\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stddef.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ NULL}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdbool.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ true}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ EXIT\_FAILURE}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <proc/p32mk0512mcj048.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}definitions.h"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SYS\ function\ prototypes}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}imu.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ CMD\_DRIVER\ "{}V1.701"{}\ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ CMD\_ALIAS\ "{}COMMAND"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ *\ serial\ port\ command\ parser}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ CLI\_CMD\_BUFFER\_SIZE\ 128}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__t__cmd}{\_t\_cmd}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *cmd;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ void\ (*fh)(\textcolor{keywordtype}{void}*);}
+\DoxyCodeLine{00034\ \ \ \ \ \}\ t\_cmd;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__t__cli__ctx}{\_t\_cli\_ctx}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ t\_cmd\ *cmds;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ cmd[CLI\_CMD\_BUFFER\_SIZE];}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ uint8\_t\ cpos;}
+\DoxyCodeLine{00040\ \ \ \ \ \}\ t\_cli\_ctx;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ CLI\_IO\_INPUT(\_\_data)\ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\ \ \ \ linux\_getc(\_\_data)}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ CLI\_IO\_OUTPUT(\_\_data,\ \_\_len)\ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ linux\_putc(\_\_data,\ \_\_len)}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ KEY\_CODE\_BACKSPACE\ \ 0x7f}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ KEY\_CODE\_DELETE\ \ \ \ \ 0x7e}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ KEY\_CODE\_ENTER\ \ \ \ \ \ '\(\backslash\)r'}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ KEY\_CODE\_ESCAPE\ \ \ \ \ 0x1b}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ POSINC(\_\_x)\ (((\_\_x)\ <\ (CLI\_CMD\_BUFFER\_SIZE\ -\/\ 1))\ ?\ (\_\_x\ +\ 1)\ :\ (\_\_x))}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ POSDEC(\_\_x)\ ((\_\_x)\ ?\ ((\_\_x)\ -\/\ 1)\ :\ 0)}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \_t\_cmd\_status\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ E\_CMD\_OK\ =\ 0,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ E\_CMD\_NOT\_FOUND,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ E\_CMD\_TOO\_SHORT,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ E\_CMD\_EMPTY}
+\DoxyCodeLine{00061\ \ \ \ \ \}\ t\_cmd\_status;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ \ \ \ \ *\ command\ parser\ functions}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ scmd\_init(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ cli\_read(t\_cli\_ctx\ *);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ dump\_uart(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ CMD\_SCANNER\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00075\ }
+
+\end{DoxyCode}

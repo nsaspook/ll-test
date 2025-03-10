@@ -1,0 +1,526 @@
+\doxysection{plib\+\_\+dmac.\+h}
+\hypertarget{plib__dmac_8h_source}{}\label{plib__dmac_8h_source}\index{src/config/bma400/peripheral/dmac/plib\_dmac.h@{src/config/bma400/peripheral/dmac/plib\_dmac.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ DMAC\ Peripheral\ Library\ Interface\ Header\ File}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_dmac.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ DMAC\ peripheral\ library\ interface.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ file\ defines\ the\ interface\ to\ the\ DMAC\ peripheral\ library.\ This}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ library\ provides\ access\ to\ and\ control\ of\ the\ DMAC\ controller.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00023\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ Copyright\ (C)\ 2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00041\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00042\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ PLIB\_DMAC\_H\ \ \ \ }\textcolor{comment}{//\ Guards\ against\ multiple\ inclusion}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ PLIB\_DMAC\_H}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ Section:\ Included\ Files}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <device.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <sys/kmem.h>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ Section:\ type\ definitions}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00077\ \textcolor{comment}{/*\ DMA\ error\ type}}
+\DoxyCodeLine{00078\ \textcolor{comment}{}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ Identifies\ the\ available\ DMA\ operating\ modes.}}
+\DoxyCodeLine{00081\ \textcolor{comment}{}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ This\ data\ type\ Identifies\ if\ a\ transfer\ had\ an\ address\ error\ or\ not.}}
+\DoxyCodeLine{00084\ \textcolor{comment}{}}
+\DoxyCodeLine{00085\ \textcolor{comment}{}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ \ \ \ The\ identification\ of\ an\ error\ transaction\ takes\ place\ in\ the\ DMA\ ISR.}}
+\DoxyCodeLine{00088\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{/*\ Data\ was\ transferred\ successfully.\ */}}
+\DoxyCodeLine{00092\ \ \ \ \ DMAC\_ERROR\_NONE\ \textcolor{comment}{/*DOM-\/IGNORE-\/BEGIN*/}\ =\ 1,\ \textcolor{comment}{/*\ DOM-\/IGNORE-\/END*/}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{comment}{/*\ DMA\ address\ error.\ */}}
+\DoxyCodeLine{00095\ \ \ \ \ DMAC\_ERROR\_ADDRESS\_ERROR\ \textcolor{comment}{/*DOM-\/IGNORE-\/BEGIN*/}\ =\ 2\ \textcolor{comment}{/*\ DOM-\/IGNORE-\/END*/}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \}\ DMAC\_ERROR;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00100\ \textcolor{comment}{/*\ DMA\ transfer\ event}}
+\DoxyCodeLine{00101\ \textcolor{comment}{}}
+\DoxyCodeLine{00102\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ \ \ \ Identifies\ the\ status\ of\ the\ transfer\ event.}}
+\DoxyCodeLine{00104\ \textcolor{comment}{}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ \ \ Used\ to\ report\ back,\ via\ registered\ callback,\ the\ status\ of\ a\ transaction.}}
+\DoxyCodeLine{00107\ \textcolor{comment}{}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00110\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{/*\ No\ events\ yet.\ */}}
+\DoxyCodeLine{00114\ \ \ \ \ DMAC\_TRANSFER\_EVENT\_NONE\ =\ 0,}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{/*\ Data\ was\ transferred\ successfully.\ */}}
+\DoxyCodeLine{00117\ \ \ \ \ DMAC\_TRANSFER\_EVENT\_COMPLETE\ =\ 1,}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{/*\ Error\ while\ processing\ the\ request\ */}}
+\DoxyCodeLine{00120\ \ \ \ \ DMAC\_TRANSFER\_EVENT\_ERROR\ =\ 2,}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{/*\ Half\ Data\ is\ transferred\ */}}
+\DoxyCodeLine{00123\ \ \ \ \ DMAC\_TRANSFER\_EVENT\_HALF\_COMPLETE\ =\ 4}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \}\ DMAC\_TRANSFER\_EVENT;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00128\ \textcolor{comment}{/*\ DMA\ Data\ Pattern\ Size}}
+\DoxyCodeLine{00129\ \textcolor{comment}{}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ \ \ \ Identifies\ the\ pattern\ size\ for\ data\ matching}}
+\DoxyCodeLine{00132\ \textcolor{comment}{}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ \ \ \ This\ data\ type\ Identifies\ size\ of\ pattern\ data\ which\ will\ be\ matched\ with}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ \ \ \ transmitted\ data.}}
+\DoxyCodeLine{00136\ \textcolor{comment}{}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00139\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00140\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00141\ \{}
+\DoxyCodeLine{00142\ \ \ \textcolor{comment}{/*\ pattern\ size\ is\ of\ 1\ byte\ */}}
+\DoxyCodeLine{00143\ \ \ DMAC\_DATA\_PATTERN\_SIZE\_1\_BYTE,}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{comment}{/*\ pattern\ size\ is\ of\ 2\ bytes\ */}}
+\DoxyCodeLine{00146\ \ \ DMAC\_DATA\_PATTERN\_SIZE\_2\_BYTE}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \}\ DMAC\_DATA\_PATTERN\_SIZE;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{typedef}\ void\ (*DMAC\_CHANNEL\_CALLBACK)\ (DMAC\_TRANSFER\_EVENT\ status,\ uintptr\_t\ contextHandle);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00153\ \textcolor{comment}{/*\ DMA\ channel\ object}}
+\DoxyCodeLine{00154\ \textcolor{comment}{}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ Fundamental\ data\ object\ for\ a\ DMA\ channel.}}
+\DoxyCodeLine{00157\ \textcolor{comment}{}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\ \ \ \ Used\ by\ DMA\ logic\ to\ register/use\ a\ DMA\ callback,\ report\ back\ error\ information}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\ \ \ \ from\ the\ ISR\ handling\ a\ transfer\ event.}}
+\DoxyCodeLine{00161\ \textcolor{comment}{}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00163\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00164\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00165\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00166\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ inUse;}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{comment}{/*\ Inidcates\ the\ error\ information\ for}}
+\DoxyCodeLine{00170\ \textcolor{comment}{\ \ \ \ \ \ \ the\ last\ DMA\ operation\ on\ this\ channel\ */}}
+\DoxyCodeLine{00171\ \ \ \ \ DMAC\_ERROR\ errorInfo;}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{comment}{/*\ Call\ back\ function\ for\ this\ DMA\ channel\ */}}
+\DoxyCodeLine{00174\ \ \ \ \ DMAC\_CHANNEL\_CALLBACK\ \ pEventCallBack;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{/*\ Client\ data(Event\ Context)\ that\ will\ be\ returned\ at\ callback\ */}}
+\DoxyCodeLine{00177\ \ \ \ \ uintptr\_t\ hClientArg;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \}\ \mbox{\hyperlink{structDMAC__CHANNEL__OBJECT}{DMAC\_CHANNEL\_OBJECT}};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00182\ \textcolor{comment}{/*\ DMA\ channel}}
+\DoxyCodeLine{00183\ \textcolor{comment}{}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00185\ \textcolor{comment}{\ \ \ \ Fundamental\ data\ object\ that\ represents\ DMA\ channel\ number.}}
+\DoxyCodeLine{00186\ \textcolor{comment}{}}
+\DoxyCodeLine{00187\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00188\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00189\ \textcolor{comment}{}}
+\DoxyCodeLine{00190\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00191\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00192\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00193\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00194\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ DMAC\_CHANNEL\_0\ =\ 0x0,}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ DMAC\_CHANNEL\_1\ =\ 0x1,}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ DMAC\_CHANNEL\_2\ =\ 0x2,}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ DMAC\_CHANNEL\_3\ =\ 0x3,}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ DMAC\_CHANNEL\_4\ =\ 0x4,}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ DMAC\_CHANNEL\_5\ =\ 0x5,}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ DMAC\_CHANNEL\_6\ =\ 0x6,}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ DMAC\_CHANNEL\_7\ =\ 0x7,}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ DMAC\_NUMBER\_OF\_CHANNELS\ =\ 0x8}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \}\ DMAC\_CHANNEL;}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00216\ \textcolor{comment}{/*\ DMA\ CRC\ Setup}}
+\DoxyCodeLine{00217\ \textcolor{comment}{}}
+\DoxyCodeLine{00218\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00219\ \textcolor{comment}{\ \ \ \ Fundamental\ data\ object\ that\ represents\ DMA\ CRC\ setup\ parameters.}}
+\DoxyCodeLine{00220\ \textcolor{comment}{}}
+\DoxyCodeLine{00221\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00222\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00223\ \textcolor{comment}{}}
+\DoxyCodeLine{00224\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00225\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00226\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00227\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00228\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{/*\ DCRCCON[CRCAPP]:\ The\ DMA\ transfers\ data\ from\ the\ source\ into\ the\ CRC\ engine\ and}}
+\DoxyCodeLine{00230\ \textcolor{comment}{\ \ \ \ \ *\ writes\ the\ calculated\ CRC\ value\ to\ the\ destination\ when\ enabled}}
+\DoxyCodeLine{00231\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{bool}\ append\_mode;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{comment}{/*\ DCRCCON[BITO]:\ The\ input\ data\ is\ bit\ reversed\ (reflected\ input)\ when\ enabled\ */}}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{bool}\ reverse\_crc\_input;}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{comment}{/*\ DCRCCON[PLEN]:\ Determines\ the\ length\ of\ the\ polynomial\ Example:\ 16,\ 32\ */}}
+\DoxyCodeLine{00238\ \ \ \ \ uint8\_t\ polynomial\_length;}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{comment}{/*\ DCRCXOR:\ Polynomial\ for\ calculating\ the\ CRC\ */}}
+\DoxyCodeLine{00241\ \ \ \ \ uint32\_t\ polynomial;}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{comment}{/*\ DRCRDATA:\ Input\ Non\ direct\ Seed\ for\ calculating\ the\ CRC\ */}}
+\DoxyCodeLine{00244\ \ \ \ \ uint32\_t\ non\_direct\_seed;}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{comment}{/*\ The\ calculated\ CRC\ is\ bit\ reversed\ (reflected\ output)\ before\ final\ XOR\ */}}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{bool}\ reverse\_crc\_output;}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{comment}{/*\ The\ XOR\ value\ used\ to\ generate\ final\ CRC\ output\ */}}
+\DoxyCodeLine{00250\ \ \ \ \ uint32\_t\ final\_xor\_value;}
+\DoxyCodeLine{00251\ \}\ \mbox{\hyperlink{structDMAC__CRC__SETUP}{DMAC\_CRC\_SETUP}};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00254\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00255\ \textcolor{comment}{//\ Section:\ DMAC\ API}}
+\DoxyCodeLine{00256\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00257\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00258\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00259\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00260\ \textcolor{comment}{\ \ \ void\ DMAC\_ChannelCallbackRegister}}
+\DoxyCodeLine{00261\ \textcolor{comment}{}}
+\DoxyCodeLine{00262\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00263\ \textcolor{comment}{\ \ \ \ Callback\ function\ registration\ function}}
+\DoxyCodeLine{00264\ \textcolor{comment}{}}
+\DoxyCodeLine{00265\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00266\ \textcolor{comment}{\ \ \ \ Registers\ the\ callback\ function\ (and\ context\ pointer,\ if\ used)\ for\ a\ given\ DMA\ interrupt.}}
+\DoxyCodeLine{00267\ \textcolor{comment}{}}
+\DoxyCodeLine{00268\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00269\ \textcolor{comment}{\ \ \ \ DMAC\_CHANNEL\ channel\ -\/\ DMA\ channel\ this\ callback\ pertains\ to}}
+\DoxyCodeLine{00270\ \textcolor{comment}{\ \ \ \ const\ DMAC\_CHANNEL\_CALLBACK\ eventHandler\ -\/\ pointer\ to\ callback\ function}}
+\DoxyCodeLine{00271\ \textcolor{comment}{\ \ \ \ const\ uintptr\_t\ contextHandle\ -\/\ pointer\ of\ context\ information\ callback\ is\ to\ use\ (set\ to\ NULL\ if\ not\ used)}}
+\DoxyCodeLine{00272\ \textcolor{comment}{}}
+\DoxyCodeLine{00273\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00274\ \textcolor{comment}{\ \ \ \ void}}
+\DoxyCodeLine{00275\ \textcolor{comment}{}}
+\DoxyCodeLine{00276\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00277\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00278\ \textcolor{comment}{\ \ \ \ DMAC\_ChannelCallbackRegister(DMAC\_CHANNEL\_0,\ DMAC\_Callback,\ 0);}}
+\DoxyCodeLine{00279\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00280\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00281\ \textcolor{keywordtype}{void}\ DMAC\_ChannelCallbackRegister(DMAC\_CHANNEL\ channel,\ \textcolor{keyword}{const}\ DMAC\_CHANNEL\_CALLBACK\ eventHandler,\ \textcolor{keyword}{const}\ uintptr\_t\ contextHandle\ );}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00283\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00284\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00285\ \textcolor{comment}{\ \ \ bool\ DMAC\_ChannelTransfer}}
+\DoxyCodeLine{00286\ \textcolor{comment}{}}
+\DoxyCodeLine{00287\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00288\ \textcolor{comment}{\ \ \ \ DMA\ channel\ transfer\ function}}
+\DoxyCodeLine{00289\ \textcolor{comment}{}}
+\DoxyCodeLine{00290\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00291\ \textcolor{comment}{\ \ \ \ Sets\ up\ a\ DMA\ transfer,\ and\ starts\ the\ transfer\ if\ user\ specified\ a}}
+\DoxyCodeLine{00292\ \textcolor{comment}{\ \ \ \ software-\/initiated\ transfer\ in\ Harmony.}}
+\DoxyCodeLine{00293\ \textcolor{comment}{}}
+\DoxyCodeLine{00294\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00295\ \textcolor{comment}{\ \ \ \ DMAC\_CHANNEL\ channel\ -\/\ DMA\ channel\ to\ use\ for\ this\ transfer}}
+\DoxyCodeLine{00296\ \textcolor{comment}{\ \ \ \ const\ void\ *srcAddr\ -\/\ pointer\ to\ source\ data}}
+\DoxyCodeLine{00297\ \textcolor{comment}{\ \ \ \ size\_t\ srcSize\ -\/\ Size\ of\ the\ source}}
+\DoxyCodeLine{00298\ \textcolor{comment}{\ \ \ \ const\ void\ *destAddr\ -\/\ pointer\ to\ where\ data\ is\ to\ be\ moved\ to}}
+\DoxyCodeLine{00299\ \textcolor{comment}{\ \ \ \ size\_t\ destSize\ -\/\ Size\ of\ the\ destination}}
+\DoxyCodeLine{00300\ \textcolor{comment}{\ \ \ \ size\_t\ cellSize\ -\/\ Size\ of\ the\ cell}}
+\DoxyCodeLine{00301\ \textcolor{comment}{}}
+\DoxyCodeLine{00302\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00303\ \textcolor{comment}{\ \ \ \ false,\ if\ DMA\ already\ is\ busy\ /\ true,\ if\ DMA\ is\ not\ busy\ before\ calling\ function}}
+\DoxyCodeLine{00304\ \textcolor{comment}{}}
+\DoxyCodeLine{00305\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00306\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00307\ \textcolor{comment}{\ \ \ \ DMAC\_ChannelCallbackRegister(DMAC\_CHANNEL\_0,\ DMAC\_Callback,\ 0);}}
+\DoxyCodeLine{00308\ \textcolor{comment}{\ \ \ \ DMAC\_ChannelTransfer(DMAC\_CHANNEL\_0,srcAddr,srcSize,destAddr,destSize,cellSize);}}
+\DoxyCodeLine{00309\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00310\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00311\ \textcolor{keywordtype}{bool}\ DMAC\_ChannelTransfer(\ DMAC\_CHANNEL\ channel,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *srcAddr,\ \textcolor{keywordtype}{size\_t}\ srcSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *destAddr,\ \textcolor{keywordtype}{size\_t}\ destSize,\ \textcolor{keywordtype}{size\_t}\ cellSize);}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00313\ \textcolor{keywordtype}{bool}\ DMAC\_ChainTransferSetup(\ DMAC\_CHANNEL\ channel,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *srcAddr,\ \textcolor{keywordtype}{size\_t}\ srcSize,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}\ *destAddr,\ \textcolor{keywordtype}{size\_t}\ destSize,\ \textcolor{keywordtype}{size\_t}\ cellSize);}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \textcolor{keywordtype}{void}\ DMAC\_ChannelPatternMatchSetup(DMAC\_CHANNEL\ channel,\ DMAC\_DATA\_PATTERN\_SIZE\ patternSize,\ uint16\_t\ patternMatchData);}
+\DoxyCodeLine{00316\ \textcolor{keywordtype}{void}\ DMAC\_ChannelPatternMatchDisable(DMAC\_CHANNEL\ channel);}
+\DoxyCodeLine{00317\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00318\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00319\ \textcolor{comment}{\ \ \ void\ DMAC\_ChannelDisable\ (DMAC\_CHANNEL\ channel)}}
+\DoxyCodeLine{00320\ \textcolor{comment}{}}
+\DoxyCodeLine{00321\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00322\ \textcolor{comment}{\ \ \ \ This\ function\ disables\ the\ DMA\ channel.}}
+\DoxyCodeLine{00323\ \textcolor{comment}{}}
+\DoxyCodeLine{00324\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00325\ \textcolor{comment}{\ \ \ \ Disables\ the\ DMA\ channel\ specified.}}
+\DoxyCodeLine{00326\ \textcolor{comment}{}}
+\DoxyCodeLine{00327\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00328\ \textcolor{comment}{\ \ \ \ DMAC\_CHANNEL\ channel\ -\/\ the\ particular\ channel\ to\ be\ disabled}}
+\DoxyCodeLine{00329\ \textcolor{comment}{}}
+\DoxyCodeLine{00330\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00331\ \textcolor{comment}{\ \ \ \ void}}
+\DoxyCodeLine{00332\ \textcolor{comment}{}}
+\DoxyCodeLine{00333\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00334\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00335\ \textcolor{comment}{\ \ \ \ DMAC\_ChannelDisable\ (DMAC\_CHANNEL\_0);}}
+\DoxyCodeLine{00336\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00337\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00338\ \textcolor{keywordtype}{void}\ DMAC\_ChannelDisable\ (DMAC\_CHANNEL\ channel);}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00341\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00342\ \textcolor{comment}{\ \ \ bool\ DMAC\_ChannelIsBusy\ (DMAC\_CHANNEL\ channel)}}
+\DoxyCodeLine{00343\ \textcolor{comment}{}}
+\DoxyCodeLine{00344\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00345\ \textcolor{comment}{\ \ \ \ Reads\ the\ busy\ status\ of\ a\ channel.}}
+\DoxyCodeLine{00346\ \textcolor{comment}{}}
+\DoxyCodeLine{00347\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00348\ \textcolor{comment}{\ \ \ \ Reads\ the\ busy\ status\ of\ a\ channel\ and\ returns\ status\ to\ caller.}}
+\DoxyCodeLine{00349\ \textcolor{comment}{}}
+\DoxyCodeLine{00350\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00351\ \textcolor{comment}{\ \ \ \ DMAC\_CHANNEL\ channel\ -\/\ the\ particular\ channel\ to\ be\ interrogated}}
+\DoxyCodeLine{00352\ \textcolor{comment}{}}
+\DoxyCodeLine{00353\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00354\ \textcolor{comment}{\ \ \ \ true\ -\/\ channel\ is\ busy}}
+\DoxyCodeLine{00355\ \textcolor{comment}{\ \ \ \ false\ -\/\ channel\ is\ not\ busy}}
+\DoxyCodeLine{00356\ \textcolor{comment}{}}
+\DoxyCodeLine{00357\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00358\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00359\ \textcolor{comment}{\ \ \ \ bool\ returnVal;}}
+\DoxyCodeLine{00360\ \textcolor{comment}{\ \ \ \ returnVal\ =\ DMAC\_ChannelIsBusy(DMAC\_CHANNEL\_0);}}
+\DoxyCodeLine{00361\ \textcolor{comment}{\ \ \ \ while(\ returnVal\ )}}
+\DoxyCodeLine{00362\ \textcolor{comment}{\ \ \ \ \ \ \ \ ;}}
+\DoxyCodeLine{00363\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00364\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00365\ \textcolor{keywordtype}{bool}\ DMAC\_ChannelIsBusy\ (DMAC\_CHANNEL\ channel);}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00368\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00369\ \textcolor{comment}{\ \ \ void\ DMAC\_ChannelCRCSetup}}
+\DoxyCodeLine{00370\ \textcolor{comment}{}}
+\DoxyCodeLine{00371\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00372\ \textcolor{comment}{\ \ \ \ DMA\ Channel\ CRC\ setup\ and\ enable\ function}}
+\DoxyCodeLine{00373\ \textcolor{comment}{}}
+\DoxyCodeLine{00374\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00375\ \textcolor{comment}{\ \ \ \ Sets\ up\ the\ DMA\ CRC\ engine\ for\ a\ particular\ channel\ and\ enables\ it.}}
+\DoxyCodeLine{00376\ \textcolor{comment}{\ \ \ \ CRC\ can\ be\ enabled\ for\ only\ one\ channel\ at\ a\ time.}}
+\DoxyCodeLine{00377\ \textcolor{comment}{\ \ \ \ Application\ needs\ to\ call\ this\ API\ with\ proper\ setup\ parameters\ every\ time}}
+\DoxyCodeLine{00378\ \textcolor{comment}{\ \ \ \ before\ starting\ any\ DMA\ transfer.}}
+\DoxyCodeLine{00379\ \textcolor{comment}{}}
+\DoxyCodeLine{00380\ \textcolor{comment}{\ \ \ \ Note:}}
+\DoxyCodeLine{00381\ \textcolor{comment}{\ \ \ \ -\/\ A\ non\ direct\ seed\ should\ be\ used\ while\ setting\ up\ the\ DMA\ CRC}}
+\DoxyCodeLine{00382\ \textcolor{comment}{}}
+\DoxyCodeLine{00383\ \textcolor{comment}{\ \ \ \ -\/\ The\ source\ buffer\ used\ for\ the\ DMA\ transfer\ should\ be\ appended\ with}}
+\DoxyCodeLine{00384\ \textcolor{comment}{\ \ \ \ \ \ additional\ zero\ bits\ based\ on\ the\ CRC\ to\ be\ generated\ as\ shown\ in\ example}}
+\DoxyCodeLine{00385\ \textcolor{comment}{\ \ \ \ \ \ -\/\ For\ 16\ Bit\ CRC\ -\/\ Two\ bytes\ of\ 0's\ needs\ to\ be\ appended}}
+\DoxyCodeLine{00386\ \textcolor{comment}{\ \ \ \ \ \ -\/\ For\ 32\ Bit\ CRC\ -\/\ Four\ bytes\ of\ 0's\ needs\ to\ be\ appended}}
+\DoxyCodeLine{00387\ \textcolor{comment}{}}
+\DoxyCodeLine{00388\ \textcolor{comment}{\ \ \ \ -\/\ Currently\ LFSR\ CRC\ type\ is\ only\ supported}}
+\DoxyCodeLine{00389\ \textcolor{comment}{}}
+\DoxyCodeLine{00390\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00391\ \textcolor{comment}{\ \ \ \ -\/\ DMAC\_CHANNEL\ channel\ \ \ \ \ \ :\ DMA\ channel\ this\ callback\ pertains\ to}}
+\DoxyCodeLine{00392\ \textcolor{comment}{\ \ \ \ -\/\ DMAC\_CRC\_SETUP\ crcSetup\ \ \ :\ parameter\ holding\ the\ crc\ setup\ information}}
+\DoxyCodeLine{00393\ \textcolor{comment}{}}
+\DoxyCodeLine{00394\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00395\ \textcolor{comment}{\ \ \ \ void}}
+\DoxyCodeLine{00396\ \textcolor{comment}{}}
+\DoxyCodeLine{00397\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00398\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00399\ \textcolor{comment}{\ \ \ \ const\ uint8\_t\ srcBuffer[13]\ =\ \{'1',\ '2',\ '3',\ '4',\ '5',\ '6',\ '7',\ '8',\ '9',\ 0,\ 0,\ 0,\ 0\};}}
+\DoxyCodeLine{00400\ \textcolor{comment}{\ \ \ \ uint8\_t\ CACHE\_ALIGN\ dstBuffer[13]\ =\ \{0\};}}
+\DoxyCodeLine{00401\ \textcolor{comment}{}}
+\DoxyCodeLine{00402\ \textcolor{comment}{\ \ \ \ DMAC\_CRC\_SETUP\ crcSetup\ =\ \{0\};}}
+\DoxyCodeLine{00403\ \textcolor{comment}{}}
+\DoxyCodeLine{00404\ \textcolor{comment}{\ \ \ \ crcSetup.reverse\_data\_input\ =\ true;}}
+\DoxyCodeLine{00405\ \textcolor{comment}{\ \ \ \ crcSetup.polynomial\_length\ \ =\ 32;}}
+\DoxyCodeLine{00406\ \textcolor{comment}{\ \ \ \ crcSetup.polynomial\ \ \ \ \ \ \ \ \ =\ 0x04C11DB7;}}
+\DoxyCodeLine{00407\ \textcolor{comment}{\ \ \ \ crcSetup.non\_direct\_seed\ \ \ \ =\ 0x46AF6449;}}
+\DoxyCodeLine{00408\ \textcolor{comment}{\ \ \ \ crcSetup.reverse\_crc\_output\ =\ true;}}
+\DoxyCodeLine{00409\ \textcolor{comment}{\ \ \ \ crcSetup.final\_xor\_value\ \ \ \ =\ 0xFFFFFFFF;}}
+\DoxyCodeLine{00410\ \textcolor{comment}{}}
+\DoxyCodeLine{00411\ \textcolor{comment}{\ \ \ \ DMAC\_ChannelCRCSetup(DMAC\_CHANNEL\_0,\ crcSetup);}}
+\DoxyCodeLine{00412\ \textcolor{comment}{}}
+\DoxyCodeLine{00413\ \textcolor{comment}{\ \ \ \ DMAC\_ChannelTransfer(DMAC\_CHANNEL\_0,\ \&srcBuffer,\ 13,\ \&dstBuffer,\ 13,\ 13);}}
+\DoxyCodeLine{00414\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00415\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00416\ \textcolor{keywordtype}{void}\ DMAC\_ChannelCRCSetup(\ DMAC\_CHANNEL\ channel,\ \mbox{\hyperlink{structDMAC__CRC__SETUP}{DMAC\_CRC\_SETUP}}\ CRCSetup\ );}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00419\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00420\ \textcolor{comment}{\ \ \ void\ DMAC\_CRCDisable}}
+\DoxyCodeLine{00421\ \textcolor{comment}{}}
+\DoxyCodeLine{00422\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00423\ \textcolor{comment}{\ \ \ \ DMA\ CRC\ disable\ function}}
+\DoxyCodeLine{00424\ \textcolor{comment}{}}
+\DoxyCodeLine{00425\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00426\ \textcolor{comment}{\ \ \ \ Disables\ CRC\ generation\ for\ the\ DMA\ transfers}}
+\DoxyCodeLine{00427\ \textcolor{comment}{}}
+\DoxyCodeLine{00428\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00429\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00430\ \textcolor{comment}{}}
+\DoxyCodeLine{00431\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00432\ \textcolor{comment}{\ \ \ \ void}}
+\DoxyCodeLine{00433\ \textcolor{comment}{}}
+\DoxyCodeLine{00434\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00435\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00436\ \textcolor{comment}{\ \ \ \ DMAC\_CRCDisable();}}
+\DoxyCodeLine{00437\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00438\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00439\ \textcolor{keywordtype}{void}\ DMAC\_CRCDisable(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00442\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00443\ \textcolor{comment}{\ \ \ uint32\_t\ DMAC\_CRCRead}}
+\DoxyCodeLine{00444\ \textcolor{comment}{}}
+\DoxyCodeLine{00445\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00446\ \textcolor{comment}{\ \ \ \ DMA\ CRC\ read\ function}}
+\DoxyCodeLine{00447\ \textcolor{comment}{}}
+\DoxyCodeLine{00448\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00449\ \textcolor{comment}{\ \ \ \ Reads\ the\ generated\ DMA\ CRC\ value.\ It\ performs\ crc\ reverse\ and\ final\ xor}}
+\DoxyCodeLine{00450\ \textcolor{comment}{\ \ \ \ opeartion\ based\ on\ setup\ paramters\ during\ DMAC\_ChannelCRCSetup()}}
+\DoxyCodeLine{00451\ \textcolor{comment}{}}
+\DoxyCodeLine{00452\ \textcolor{comment}{\ \ \ \ Note:\ Once\ Read\ is\ done,\ DMAC\_ChannelCRCSetup()\ has\ to\ be\ called}}
+\DoxyCodeLine{00453\ \textcolor{comment}{\ \ \ \ again\ to\ setup\ the\ seed\ before\ performing\ DMA\ transfer\ for\ CRC\ generation.}}
+\DoxyCodeLine{00454\ \textcolor{comment}{}}
+\DoxyCodeLine{00455\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00456\ \textcolor{comment}{\ \ \ \ None}}
+\DoxyCodeLine{00457\ \textcolor{comment}{}}
+\DoxyCodeLine{00458\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00459\ \textcolor{comment}{\ \ \ \ -\/\ crc:\ Generated\ crc\ value}}
+\DoxyCodeLine{00460\ \textcolor{comment}{}}
+\DoxyCodeLine{00461\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00462\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00463\ \textcolor{comment}{\ \ \ \ DMAC\_CRC\_SETUP\ crcSetup\ =\ \{0\};}}
+\DoxyCodeLine{00464\ \textcolor{comment}{\ \ \ \ transfer\_completed\ =\ false;}}
+\DoxyCodeLine{00465\ \textcolor{comment}{\ \ \ \ uint32\_t\ crc\ =\ 0;}}
+\DoxyCodeLine{00466\ \textcolor{comment}{}}
+\DoxyCodeLine{00467\ \textcolor{comment}{\ \ \ \ crcSetup.reverse\_data\_input\ =\ true;}}
+\DoxyCodeLine{00468\ \textcolor{comment}{\ \ \ \ crcSetup.polynomial\_length\ \ =\ 32;}}
+\DoxyCodeLine{00469\ \textcolor{comment}{\ \ \ \ crcSetup.polynomial\ \ \ \ \ \ \ \ \ =\ 0x04C11DB7;}}
+\DoxyCodeLine{00470\ \textcolor{comment}{\ \ \ \ crcSetup.non\_direct\_seed\ \ \ \ =\ 0x46AF6449;}}
+\DoxyCodeLine{00471\ \textcolor{comment}{\ \ \ \ crcSetup.reverse\_crc\_output\ =\ true;}}
+\DoxyCodeLine{00472\ \textcolor{comment}{\ \ \ \ crcSetup.final\_xor\_value\ \ \ \ =\ 0xFFFFFFFF;}}
+\DoxyCodeLine{00473\ \textcolor{comment}{}}
+\DoxyCodeLine{00474\ \textcolor{comment}{\ \ \ \ DMAC\_ChannelCRCSetup(DMAC\_CHANNEL\_0,\ crcSetup);}}
+\DoxyCodeLine{00475\ \textcolor{comment}{}}
+\DoxyCodeLine{00476\ \textcolor{comment}{\ \ \ \ DMAC\_ChannelTransfer(...);}}
+\DoxyCodeLine{00477\ \textcolor{comment}{}}
+\DoxyCodeLine{00478\ \textcolor{comment}{\ \ \ \ if\ (transfer\_completed\ ==\ true)}}
+\DoxyCodeLine{00479\ \textcolor{comment}{\ \ \ \ \{}}
+\DoxyCodeLine{00480\ \textcolor{comment}{\ \ \ \ \ \ \ \ crc\ =\ DMAC\_CRCRead();}}
+\DoxyCodeLine{00481\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{00482\ \textcolor{comment}{}}
+\DoxyCodeLine{00483\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00484\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00485\ uint32\_t\ DMAC\_CRCRead(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00487\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00488\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00489\ \textcolor{comment}{\ \ \ void\ DMAC\_Initialize(\ void\ )}}
+\DoxyCodeLine{00490\ \textcolor{comment}{}}
+\DoxyCodeLine{00491\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00492\ \textcolor{comment}{\ \ \ \ This\ function\ initializes\ the\ DMAC\ controller\ of\ the\ device.}}
+\DoxyCodeLine{00493\ \textcolor{comment}{}}
+\DoxyCodeLine{00494\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00495\ \textcolor{comment}{\ \ \ \ Sets\ up\ a\ DMA\ controller\ for\ subsequent\ transfer\ activity.}}
+\DoxyCodeLine{00496\ \textcolor{comment}{}}
+\DoxyCodeLine{00497\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00498\ \textcolor{comment}{\ \ \ \ none}}
+\DoxyCodeLine{00499\ \textcolor{comment}{}}
+\DoxyCodeLine{00500\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00501\ \textcolor{comment}{\ \ \ \ void}}
+\DoxyCodeLine{00502\ \textcolor{comment}{}}
+\DoxyCodeLine{00503\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00504\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00505\ \textcolor{comment}{\ \ \ \ DMAC\_Initialize();}}
+\DoxyCodeLine{00506\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00507\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00508\ \textcolor{keywordtype}{void}\ DMAC\_Initialize(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ }
+\DoxyCodeLine{00511\ DMAC\_TRANSFER\_EVENT\ DMAC\_ChannelTransferStatusGet(DMAC\_CHANNEL\ channel);}
+\DoxyCodeLine{00512\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \}}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00518\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PLIB\_DMAC\_H}}
+
+\end{DoxyCode}

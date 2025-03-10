@@ -1,0 +1,124 @@
+\doxysection{plib\+\_\+clk.\+h}
+\hypertarget{plib__clk_8h_source}{}\label{plib__clk_8h_source}\index{src/config/bma400/peripheral/clk/plib\_clk.h@{src/config/bma400/peripheral/clk/plib\_clk.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ SYS\ CLK\ Static\ Functions\ for\ Clock\ System\ Service}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_clk.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ SYS\ CLK\ static\ function\ interface\ for\ the\ Clock\ System\ Service.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ The\ Clock\ System\ Service\ provides\ a\ simple\ interface\ to\ manage\ the}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ oscillators\ on\ Microchip\ microcontrollers.\ This\ file\ defines\ the\ static}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ implementation\ for\ the\ Clock\ System\ Service.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ \ \ \ Static\ functions\ incorporate\ all\ system\ clock\ configuration\ settings\ as}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ \ \ \ determined\ by\ the\ user\ via\ the\ Microchip\ Harmony\ Configurator\ GUI.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ \ \ \ It\ provides\ static\ version\ of\ the\ routines,\ eliminating\ the\ need\ for\ an}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ \ \ \ object\ ID\ or\ object\ handle.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ Static\ single-\/open\ interfaces\ also\ eliminate\ the\ need\ for\ the\ open\ handle.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*\ Copyright\ (C)\ 2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{*}}
+\DoxyCodeLine{00042\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00044\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00045\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00046\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00047\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00048\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ PLIB\_CLK\_H}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ PLIB\_CLK\_H}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ Section:\ Included\ Files}}
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <stdbool.h>}\ \ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00070\ \ }
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ Section:\ CLK\ Module\ System\ Interface\ Routines}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00078\ \textcolor{comment}{/*\ Function:}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ \ \ void\ CLK\_Initialize(\ void\ )}}
+\DoxyCodeLine{00080\ \textcolor{comment}{}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00082\ \textcolor{comment}{\ \ \ \ Initializes\ hardware\ of\ the\ System\ Clock\ and\ Peripheral\ Clock.}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ \ This\ function\ initializes\ the\ hardware\ of\ System\ Clock\ and\ Peripheral\ Clocks.}}
+\DoxyCodeLine{00086\ \textcolor{comment}{}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ \ Precondition:}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00089\ \textcolor{comment}{}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ \ Parameters:}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00092\ \textcolor{comment}{}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ \ Returns:}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00095\ \textcolor{comment}{}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ \ Example:}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ \ \ \ <code>}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ \ \ \ //Example\ 1:\ Do\ not\ alter\ the\ configuration\ bit\ settings}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ \ \ \ CLK\_Initialize\ (\ );}}
+\DoxyCodeLine{00100\ \textcolor{comment}{}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ </code>}}
+\DoxyCodeLine{00102\ \textcolor{comment}{}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00105\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ CLK\_Initialize(\ \textcolor{keywordtype}{void}\ );}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PLIB\_CLK\_H}}
+\DoxyCodeLine{00118\ }
+
+\end{DoxyCode}

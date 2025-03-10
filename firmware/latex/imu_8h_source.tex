@@ -1,0 +1,210 @@
+\doxysection{imu.\+h}
+\hypertarget{imu_8h_source}{}\label{imu_8h_source}\index{src/imu.h@{src/imu.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ imu.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ September\ 19,\ 2022,\ 8:50\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IMU\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IMU\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stddef.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ NULL}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdbool.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ true}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ EXIT\_FAILURE}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}bno086\_reg.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}quat.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ IMU\_DRIVER\ "{}V1.715"{}\ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifdef\ BNO086}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ IMU\_ALIAS\ "{}BNO086\ IMU"{}\ \ \ \ }}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ IMU\_ALIAS\ "{}IMU"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ IMU\_ID\_DELAY\ 400}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ IMU\_DATA\_RAW\_LEN\ \ 30}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ IMU\_DATA\_BUFFER\_INDEX\ \ 1}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__sSensorData__t}{\_sSensorData\_t}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ id;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ sh2\_Quaternion\_t\ fusion;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct__sSensorData__t_af88b946fb90d5f08b5fb740c70e98c10}{x}};\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct__sSensorData__t_ab927965981178aa1fba979a37168db2a}{y}};\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct__sSensorData__t_ab3e6ed577a7c669c19de1f9c1b46c872}{z}};\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__sSensorData__t_aa143a216ef247be8c91f3697b4d47808}{xa}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__sSensorData__t_a9278c67d3afa6dd504d9a7779f399320}{ya}};\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{struct__sSensorData__t_ac4781db73ab270ee87910536604b518c}{za}};\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ xerr;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ yerr;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ zerr;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct__sSensorData__t_a8d2a4bde24b56336d3ebedfc3ea75d4c}{sensortime}};\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ sensortemp;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ uint8\_t\ buffer[64];\ \textcolor{comment}{//\ can-\/fd\ frame\ buffer\ space}}
+\DoxyCodeLine{00050\ \ \ \ \ \}\ sSensorData\_t;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ \ \ \ \ *\ function\ pointer\ templates\ structure}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ \ \ \ \ *\ for\ the\ device\ I/O\ routines\ and\ data}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__op__t}{\_op\_t}}\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ void\ (*info\_ptr)(void);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ void\ (*imu\_set\_spimode)(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ bool\ (*imu\_getid)(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ bool\ (*imu\_getdata)(\textcolor{keywordtype}{void}\ *);}
+\DoxyCodeLine{00061\ \ \ \ \ \}\ op\_t;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{enum}\ device\_type\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ IMU\_BMA490L\ =\ 0,\ \textcolor{comment}{//\ IMU\ chip\ model}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ IMU\_SCA3300,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ IMU\_SCL3300,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ IMU\_BMA400,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ IMU\_BNO086,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ IMU\_NONE,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ IMU\_LAST,}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ \ *\ IMU\ data\ structure\ for\ driver}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__imu__cmd__t}{\_imu\_cmd\_t}}\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ id;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ uint32\_t\ board\_serial\_id;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ device\_type\ device;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ cs,\ spi\_bytes,\ acc\_range\_scl;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ uint8\_t\ acc\_range;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ uint32\_t\ log\_timeout,\ rs,\ ss;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ online,\ run,\ update,\ features,\ crc\_error,\ angles;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ uint64\_t\ host\_serial\_id;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ locked,\ warn,\ down;}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#ifdef\ BNO086}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ uint8\_t\ rbuf[512],\ tbuf[512];}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ uint8\_t\ rbuf[512],\ tbuf[512];}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ uint32\_t\ rbuf32[2],\ tbuf32[2];}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ uint16\_t\ serial1,\ serial2;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ op\_t\ op;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ init\_good;}
+\DoxyCodeLine{00095\ \ \ \ \ \}\ imu\_cmd\_t;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{enum}\ hcmd\_type\ \{\ \textcolor{comment}{//\ IMU\ sensor\ chip\ commands\ from\ the\ host}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ CMD\_UNLOCK\ =\ 0,}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ CMD\_LOCK,}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ CMD\_SAFE,}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ CMD\_SPIN\_DOWN,}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ CMD\_WARN\_ON,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ CMD\_WARN\_OFF,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ CMD\_ACK,}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ CMD\_IDLE,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ CMD\_ACTIVE,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ CMD\_LAST,}
+\DoxyCodeLine{00108\ \ \ \ \ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ \ \ \ \ *\ IMU\ data\ structure\ for\ host\ messages}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__imu__host__t}{\_imu\_host\_t}}\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ uint16\_t\ id;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ uint64\_t\ host\_serial\_id;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ uint8\_t\ cmd;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ uint32\_t\ cmd\_data[4];}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ uint64\_t\ secret;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ uint8\_t\ buf[64];}
+\DoxyCodeLine{00120\ \ \ \ \ \}\ imu\_host\_t;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsca3300__data}{sca3300\_data}}\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ id;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ int16\_t\ channels[9];}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ ret\_status;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ ts;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \}\ scan;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ uint8\_t\ rs;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ uint8\_t\ ss;}
+\DoxyCodeLine{00132\ \ \ \ \ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{enum}\ accel\_g\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ range\_2g\ =\ 0,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ range\_4g,}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ range\_8g,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ range\_16g,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ range\_scale,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ range\_15g,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ range\_3g,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ range\_6g,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ range\_15gl,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ range\_12g,}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ range\_24g,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ range\_inc1,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ range\_inc2,}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ range\_bno,}
+\DoxyCodeLine{00149\ \ \ \ \ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{enum}\ sca3300\_scan\_indexes\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ SCA3300\_ACC\_X\ =\ 0,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ SCA3300\_ACC\_Y,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ SCA3300\_ACC\_Z,}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ SCA3300\_TEMP,}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ SCA3300\_TIMESTAMP,}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ SCL3300\_ANG\_X,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ SCL3300\_ANG\_Y,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ SCL3300\_ANG\_Z,}
+\DoxyCodeLine{00160\ \ \ \ \ \};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ GRAVITY\_EARTH\ \ \ (9.80665f)\ }}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00165\ \textcolor{comment}{\ \ \ \ \ *\ device\ earth\ gravity\ range\ calibration\ scalars}}
+\DoxyCodeLine{00166\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ BMA400\_ACCEL\_MG\_LSB\_2G\ \ 0.000980665f}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ BMA490\_ACCEL\_MG\_LSB\_2G\ \ 0.000061035f\ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ BMA490\_ACCEL\_MG\_LSB\_4G\ \ 0.000122070f\ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ BMA490\_ACCEL\_MG\_LSB\_8G\ \ 0.000244141f\ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ BMA490\_ACCEL\_MG\_LSB\_16G\ \ 0.000488281f\ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ IMU\_ACCEL\_MG\_SCALE\ \ \ \ \ \ 1.000000000f}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ IMU\_BNO\_ACCEL\_MG\_SCALE\ \ \ \ \ \ 0.9840000000f}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ IMU\_BNO\_ACCEL\_MG\_SCALE\_0\ \ \ \ 0.9840000000f}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ IMU\_BNO\_ACCEL\_MG\_SCALE\_1\ \ \ \ 0.9220000000f}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ SCA3300\_ACCEL\_MG\_LSB\_15G\ 0.000207000f\ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ SCA3300\_ACCEL\_MG\_LSB\_3G\ \ 0.000395000f\ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ SCA3300\_ACCEL\_MG\_LSB\_6G\ \ 0.000765000f\ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ SCL3300\_ACCEL\_MG\_LSB\_12G\ 0.000167400f\ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ SCL3300\_ACCEL\_MG\_LSB\_24G\ 0.000333800f\ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ SCL3300\_INC1\ \ \ 0.000083700f}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ SCL3300\_INC2\ \ \ 0.000083700f}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ ANGLE\_RES1\ \ 16384.0f}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ ANGLE\_RES2\ \ 90.0f}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ TEMPERATURE\_RES\ \ 18.9f}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ TEMPERATURE\_OFFSET\ -\/273.0f}}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsFFTData__t}{sFFTData\_t}}\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ uint16\_t\ id;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ uint8\_t\ buffer[64];\ \textcolor{comment}{//\ can-\/fd\ frame\ buffer\ space}}
+\DoxyCodeLine{00192\ \ \ \ \ \}\ \mbox{\hyperlink{structsFFTData__t}{sFFTData\_t}};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{double}\ get\_imu\_scale(imu\_cmd\_t\ *);}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ getAllData(sSensorData\_t\ *,\ imu\_cmd\_t\ *);}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *\ imu\_string(imu\_cmd\_t\ *);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{char}\ imu\_buffer[256];}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ IMU\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00205\ }
+
+\end{DoxyCode}
