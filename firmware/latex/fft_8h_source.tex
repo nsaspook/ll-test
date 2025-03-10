@@ -1,0 +1,59 @@
+\doxysection{fft.\+h}
+\hypertarget{fft_8h_source}{}\label{fft_8h_source}\index{src/fft.h@{src/fft.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ fft.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ November\ 6,\ 2022,\ 1:51\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ FFT\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ FFT\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ FFT\_DRIVER\ "{}V1.160"{}\ }}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ FFT\_ALIAS\ "{}FFT"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ N\_FFT\ 256}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ PI2N\ 2\ *\ M\_PI\ /\ N\_FFT}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ FFT\_COUNT\ \ \ 256}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ BNO086}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifdef\ BMA400\ }\textcolor{comment}{//\ Bosch\ devices,\ gain\ and\ noise\ product}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ FFT\_GAIN\ \ \ \ 5.0\ \ }\textcolor{comment}{//\ low\ cost,\ high\ noise}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ FFT\_GAIN\ \ \ \ 40.0\ }\textcolor{comment}{//\ Murata\ imu}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ FFT\_GAIN\ \ \ \ 5.0\ \ }\textcolor{comment}{//\ BNO\ gain}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{extern}\ uint8\_t\ inB[],\ fft\_buffer[];}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{double}\ fft\_gain;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ initFFT(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ windowFFT(uint8\_t\ *source);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ FFT(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ powerScale(uint8\_t\ *dest);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ fft\_version(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00049\ \}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ FFT\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00053\ }
+
+\end{DoxyCode}

@@ -1,0 +1,135 @@
+\doxysection{plib\+\_\+spi\+\_\+master\+\_\+common.\+h}
+\hypertarget{plib__spi__master__common_8h_source}{}\label{plib__spi__master__common_8h_source}\index{src/config/bma400/peripheral/spi/spi\_master/plib\_spi\_master\_common.h@{src/config/bma400/peripheral/spi/spi\_master/plib\_spi\_master\_common.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ SPI\ PLIB}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_spi\_master\_common.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ SPI\ PLIB\ Master\ Common\ Header\ File}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ file\ has\ prototype\ of\ all\ the\ interfaces\ which\ are\ common\ for\ all\ the}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ SPI\ peripherals.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*\ Copyright\ (C)\ 2018-\/2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifndef\ PLIB\_SPI\_MASTER\_COMMON\_H}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ PLIB\_SPI\_MASTER\_COMMON\_H}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/*\ Provide\ C++\ Compatibility\ */}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/******************************\ SPI\$\{SPI\_INDEX?string\}\ Interface\ *********************************/}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ SPI\_CLOCK\_PHASE\_TRAILING\_EDGE\ =\ 0x00000000,}
+\DoxyCodeLine{00062\ \ \ \ \ SPI\_CLOCK\_PHASE\_LEADING\_EDGE\ =\ 0x00000100,}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{/*\ Force\ the\ compiler\ to\ reserve\ 32-\/bit\ space\ for\ each\ enum\ value\ */}}
+\DoxyCodeLine{00065\ \ \ \ \ SPI\_CLOCK\_PHASE\_INVALID\ =\ 0xFFFFFFFF}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \}SPI\_CLOCK\_PHASE;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ SPI\_CLOCK\_POLARITY\_IDLE\_LOW\ =\ 0x00000000,}
+\DoxyCodeLine{00072\ \ \ \ \ SPI\_CLOCK\_POLARITY\_IDLE\_HIGH\ =\ 0x00000040,}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{/*\ Force\ the\ compiler\ to\ reserve\ 32-\/bit\ space\ for\ each\ enum\ value\ */}}
+\DoxyCodeLine{00075\ \ \ \ \ SPI\_CLOCK\_POLARITY\_INVALID\ =\ 0xFFFFFFFF}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \}SPI\_CLOCK\_POLARITY;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ SPI\_DATA\_BITS\_8\ =\ 0x00000000,}
+\DoxyCodeLine{00082\ \ \ \ \ SPI\_DATA\_BITS\_16\ =\ 0x00000400,}
+\DoxyCodeLine{00083\ \ \ \ \ SPI\_DATA\_BITS\_32\ =\ 0x00000800,}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{comment}{/*\ Force\ the\ compiler\ to\ reserve\ 32-\/bit\ space\ for\ each\ enum\ value\ */}}
+\DoxyCodeLine{00086\ \ \ \ \ SPI\_DATA\_BITS\_INVALID\ =\ 0xFFFFFFFF}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \}SPI\_DATA\_BITS;}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ uint32\_t\ \ \ \ clockFrequency;}
+\DoxyCodeLine{00093\ \ \ \ \ SPI\_CLOCK\_PHASE\ clockPhase;}
+\DoxyCodeLine{00094\ \ \ \ \ SPI\_CLOCK\_POLARITY\ clockPolarity;}
+\DoxyCodeLine{00095\ \ \ \ \ SPI\_DATA\_BITS\ \ \ dataBits;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \}\mbox{\hyperlink{structSPI__TRANSFER__SETUP}{SPI\_TRANSFER\_SETUP}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{typedef}\ \ void\ (*SPI\_CALLBACK)\ (uintptr\_t\ context);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ Section:\ Local:\ ****\ Do\ Not\ Use\ ****}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00108\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ txBuffer;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rxBuffer;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ txSize;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rxSize;}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dummySize;}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rxCount;}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ txCount;}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transferIsBusy;}
+\DoxyCodeLine{00117\ \ \ \ \ SPI\_CALLBACK\ \ \ \ \ \ \ \ \ \ \ \ callback;}
+\DoxyCodeLine{00118\ \ \ \ \ uintptr\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ context;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \}\ \mbox{\hyperlink{structSPI__OBJECT}{SPI\_OBJECT}}\ ;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{/*\ Provide\ C++\ Compatibility\ */}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLIB\_SPI\_MASTER\_COMMON\_H}}
+
+\end{DoxyCode}

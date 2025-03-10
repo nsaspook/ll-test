@@ -1,0 +1,122 @@
+\doxysection{bma490l\+\_\+reg.\+h}
+\hypertarget{bma490l__reg_8h_source}{}\label{bma490l__reg_8h_source}\index{src/bma490l\_reg.h@{src/bma490l\_reg.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ bma490l\_reg.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ nsasp}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ August\ 4,\ 2022,\ 11:18\ AM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ BMA490L\_REG\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_CHIP\_ID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00\ }}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02\ }}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x03\ }}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_DATA\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0A\ }}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_DATA\_8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_SENSORTIME\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x18\ }}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_EVENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1B}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INT\_STAT\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INT\_STAT\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1D\ }}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_TEMPERATURE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_FIFO\_LENGTH\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x24\ }}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_FIFO\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x26}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INTERNAL\_STAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2A}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_ACCEL\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40\ }}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_ACCEL\_RANGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x41}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_AUX\_CONF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x44}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_FIFO\_DOWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x45\ }}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_FIFO\_WTM\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x46\ }}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_FIFO\_CONFIG\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x48\ }}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_FIFO\_CONFIG\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x49}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_AUX\_DEV\_ID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4B}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_AUX\_IF\_CONF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4C}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_AUX\_RD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4D}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INT1\_IO\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x53}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INT2\_IO\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x54}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INT\_LATCH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x55\ \ }}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INT\_MAP\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x56\ }}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INT\_MAP\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x57\ }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INT\_MAP\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x58\ }}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INIT\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x59}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_RESERVED\_REG\_5B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x5B\ }}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_RESERVED\_REG\_5C\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x5C\ }}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_FEATURE\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x5E\ }}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_INTERNAL\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x5F\ }}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_ACC\_SELF\_TEST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6D\ }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_ACC\_SELF\_TEST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6D}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_NV\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_OFFSET\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x71\ }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_OFFSET\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x72\ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_OFFSET\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x73\ \ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_POWER\_CONF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7C\ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_POWER\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7D\ }}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ BMA490L\_REG\_CMD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7E\ \ }}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ BMA490L\_INIT\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00\ }}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ BMA490L\_INIT\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01\ }}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ BMA490L\_SOFT\_RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xB6\ }}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ BMA490L\_APS\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ BMA490L\_APS\_ON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01\ }}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ BMA490L\_FSW\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ BMA490L\_FSW\_ON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ BMA490L\_NV\_ENABLE\_I2C\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00\ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ BMA490L\_NV\_DISABLE\_I2C\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01\ }}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ BMA490L\_NV\_ACCEL\_OFFSET\_POS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ BMA490L\_NV\_ACCEL\_OFFSET\_MSK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x08\ }}
+\DoxyCodeLine{00073\ \ \ \ \ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ BMA400\ Register\ Address\ */}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_CHIP\_ID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x00)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_STATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x03)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_ACCEL\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x04)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_INT\_STAT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x0E)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_TEMP\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x11)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_FIFO\_LENGTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x12)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_FIFO\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x14)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_STEP\_CNT\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x15)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_ACCEL\_CONFIG\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x19)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_ACCEL\_CONFIG\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x1A)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_ACCEL\_CONFIG\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x1B)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_INT\_CONF\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x1F)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_INT\_12\_IO\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x24)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_INT\_MAP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x21)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_FIFO\_CONFIG\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x26)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_FIFO\_READ\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x29)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_AUTO\_LOW\_POW\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x2A)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_AUTO\_LOW\_POW\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x2B)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_AUTOWAKEUP\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x2C)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_AUTOWAKEUP\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x2D)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_WAKEUP\_INT\_CONF\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x2F)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_ORIENTCH\_INT\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x35)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_GEN1\_INT\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x3F)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_GEN2\_INT\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x4A)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_ACT\_CH\_CONFIG\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x55)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_TAP\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x57)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_SELF\_TEST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x7D)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ BMA400\_REG\_COMMAND\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UINT8\_C(0x7E)}}
+\DoxyCodeLine{00103\ \ \ \ \ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ BMA400\_NORM\_MODE\ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ BMA400\_RANGE\_MODE\ \ \ \ \ \ \ \ \ \ \ 0x38}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ BMA400\_FILTER\_MODE\ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ BMA400\_INT\_CONF\ \ \ \ \ \ \ \ \ \ \ \ \ 0x80}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ BMA400\_INT\_MAP\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ BMA400\_CMD\_DUMMY\ \ \ \ \ \ \ \ \ \ \ \ 0x7F}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00112\ \}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ BMA490L\_REG\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00116\ }
+
+\end{DoxyCode}

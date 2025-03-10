@@ -1,0 +1,88 @@
+\doxysection{lcd\+\_\+drv.\+h}
+\hypertarget{lcd__drv_8h_source}{}\label{lcd__drv_8h_source}\index{lcd\_drv/lcd\_drv.h@{lcd\_drv/lcd\_drv.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ lcd\_drv.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ October\ 12,\ 2021,\ 7:01\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ LCD\_DRV\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ LCD\_DRV\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ DMA\_MAGIC\ \ \ 1957}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ USE\_DMA\ }\textcolor{comment}{//\ use\ DMA\ spi\ driver}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ USE\_DMA}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ DMA\_GAP\ \ \ \ \ 1\ \ \ }\textcolor{comment}{//\ set\ to\ 0\ for\ SPI\ byte\ gaps\ in\ DMA\ transmissions}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ DMA\_STATE\_M}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ EDOGS}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ \ *\ DMA\ driver\ for\ DOGXL240\ @15MHz\ SPI\ clock}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ *\ 2021\ XC32\ and\ H3}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}definitions.h"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SYS\ function\ prototypes}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifdef\ \_\_32MK0512MCJ048\_\_X}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}../src/config/mcj/peripheral/spi/spi\_master/plib\_spi\_master\_common.h"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}../src/config/mcj/peripheral/gpio/plib\_gpio.h"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}../src/config/mcj/peripheral/dmac/plib\_dmac.h"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}../src/config/mcj/peripheral/coretimer/plib\_coretimer.h"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifdef\ \_\_32MZ1025W104132\_\_X}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}../src/config/default/peripheral/spi/spi\_master/plib\_spi\_master\_common.h"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}../src/config/default/peripheral/gpio/plib\_gpio.h"{}}ww}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}../src/config/default/peripheral/dmac/plib\_dmac.h"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}../src/config/default/peripheral/coretimer/plib\_coretimer.h"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}display\_type.h"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}eadog.h"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}dogm-\/graphic.h"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}OledDriver.h"{}}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}OledChar.h"{}}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}OledGrph.h"{}}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ "{}device.h"{}}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ BMP\_DELAY\ \ \ 1000000\ }\textcolor{comment}{//\ image\ display\ delay\ counts}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ bmp\_x\ \ \ \ \ \ \ 60\ \ \ \ \ \ }\textcolor{comment}{//\ screen\ positions\ of\ image}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ bmp\_y\ \ \ \ \ \ \ 24}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ bmp\_size\ \ \ \ 100\ \ \ \ \ }\textcolor{comment}{//\ x,y\ size\ of\ image}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ BANK1\ \ \ \ \ \ \ 0xA000A000\ \ }\textcolor{comment}{//\ bank\ 1\ frame\ buffer\ memory\ address}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ BANK2\ \ \ \ \ \ \ 0x80030000\ \ }\textcolor{comment}{//\ bank\ 2\ frame\ buffer\ memory\ address}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ LCD\_DRIVER\ \ "{}V1.003"{}\ }}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ LCD\_ALIAS\ \ \ "{}EADOG\ LCD"{}}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ D\_INIT,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ D\_MISC,}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ D\_BLANK,}
+\DoxyCodeLine{00068\ \ \ \ \ \}\ LCD\_DVR\_STATE;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ lcd\_frame\ \ \ 0\ \ \ }\textcolor{comment}{//\ frame\ buffer\ 1\ or\ 0}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ init\_lcd\_drv(LCD\_DVR\_STATE\ init\_type);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ lcd\_version(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ uint8\_t\ foo\_map[];\ \textcolor{comment}{//\ image\ in\ flash\ array}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ LCD\_DRV\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00082\ }
+
+\end{DoxyCode}

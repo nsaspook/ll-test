@@ -1,0 +1,341 @@
+\doxysection{plib\+\_\+canfd\+\_\+common.\+h}
+\hypertarget{plib__canfd__common_8h_source}{}\label{plib__canfd__common_8h_source}\index{src/config/bma400/peripheral/canfd/plib\_canfd\_common.h@{src/config/bma400/peripheral/canfd/plib\_canfd\_common.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ CANFD\ Peripheral\ Library\ Interface\ Header\ File}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_canfd\_common.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ CANFD\ peripheral\ library\ interface.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ file\ defines\ the\ interface\ to\ the\ CANFD\ peripheral\ library.\ This}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ library\ provides\ access\ to\ and\ control\ of\ the\ associated\ peripheral}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ \ \ instance.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00019\ \textcolor{comment}{}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00023\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ Copyright\ (C)\ 2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00041\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00042\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ PLIB\_CANFD\_COMMON\_H}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ PLIB\_CANFD\_COMMON\_H}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Section:\ Data\ Types}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ CANFD\ Mode}}
+\DoxyCodeLine{00066\ \textcolor{comment}{}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ \ CANFD\ Mode\ for\ Classic\ CAN\ and\ CAN\ FD.}}
+\DoxyCodeLine{00069\ \textcolor{comment}{}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ \ \ \ This\ data\ type\ defines\ CANFD\ mode\ Classic\ CAN,\ CAN\ FD\ without\ BRS(Bit\ rate\ switching)}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ \ \ \ and\ CAN\ FD\ with\ BRS.}}
+\DoxyCodeLine{00073\ \textcolor{comment}{}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00076\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00077\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ CANFD\_MODE\_NORMAL\ =\ 0,}
+\DoxyCodeLine{00080\ \ \ \ \ CANFD\_MODE\_FD\_WITHOUT\_BRS,}
+\DoxyCodeLine{00081\ \ \ \ \ CANFD\_MODE\_FD\_WITH\_BRS}
+\DoxyCodeLine{00082\ \}\ CANFD\_MODE;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00085\ \textcolor{comment}{/*\ CANFD\ Tx\ Message\ Attribute}}
+\DoxyCodeLine{00086\ \textcolor{comment}{}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ \ CANFD\ Tx\ Message\ Attribute\ for\ Tx\ FIFO\ and\ Tx\ Queue.}}
+\DoxyCodeLine{00089\ \textcolor{comment}{}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ \ \ \ This\ data\ type\ defines\ CANFD\ Message\ TX\ Attribute\ for\ Data\ Frame\ and\ Remote\ Frame.}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ \ \ \ Only\ One\ attribute\ need\ to\ be\ passed\ as\ parameter\ value\ while\ invoking}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ \ \ \ message\ transmit\ function.}}
+\DoxyCodeLine{00094\ \textcolor{comment}{}}
+\DoxyCodeLine{00095\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00097\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ CANFD\_MSG\_TX\_DATA\_FRAME\ =\ 0,}
+\DoxyCodeLine{00101\ \ \ \ \ CANFD\_MSG\_TX\_REMOTE\_FRAME}
+\DoxyCodeLine{00102\ \}\ CANFD\_MSG\_TX\_ATTRIBUTE;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00105\ \textcolor{comment}{/*\ CANFD\ Message\ Object\ Type\ RX\ Attribute}}
+\DoxyCodeLine{00106\ \textcolor{comment}{}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ \ \ \ CANFD\ Message\ RX\ Attribute\ for\ Data\ Frame\ and\ Remote\ Frame.}}
+\DoxyCodeLine{00109\ \textcolor{comment}{}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ \ \ \ This\ data\ type\ defines\ CANFD\ Message\ RX\ Attribute\ for\ Data\ Frame\ and\ Remote\ Frame.}}
+\DoxyCodeLine{00112\ \textcolor{comment}{}}
+\DoxyCodeLine{00113\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00114\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00115\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00117\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ CANFD\_MSG\_RX\_DATA\_FRAME\ =\ 0,}
+\DoxyCodeLine{00119\ \ \ \ \ CANFD\_MSG\_RX\_REMOTE\_FRAME}
+\DoxyCodeLine{00120\ \}\ CANFD\_MSG\_RX\_ATTRIBUTE;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00123\ \textcolor{comment}{/*\ CANFD\ FIFO\ Interrupt\ Status\ Flag\ Mask}}
+\DoxyCodeLine{00124\ \textcolor{comment}{}}
+\DoxyCodeLine{00125\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00126\ \textcolor{comment}{\ \ \ \ CANFD\ FIFO\ Interrupt\ Status\ Flag\ Mask.}}
+\DoxyCodeLine{00127\ \textcolor{comment}{}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ \ \ This\ data\ type\ defines\ the\ CANFD\ FIFO\ Interrupt\ Status\ Flag\ Mask.}}
+\DoxyCodeLine{00130\ \textcolor{comment}{}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00133\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00134\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{comment}{/*\ Receive\ FIFO\ Not\ Empty\ /\ Transmit\ FIFO\ Not\ Full\ Interrupt\ Mask\ */}}
+\DoxyCodeLine{00137\ \ \ \ \ CANFD\_FIFO\_INTERRUPT\_TFNRFNIF\_MASK\ =\ 0x1,}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{/*\ Transmit\ FIFO\ Half\ Empty\ /\ Receive\ FIFO\ Half\ Full\ Interrupt\ Mask\ */}}
+\DoxyCodeLine{00140\ \ \ \ \ CANFD\_FIFO\_INTERRUPT\_TFHRFHIF\_MASK\ =\ 0x2,}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{/*\ Transmit\ FIFO\ Empty\ /\ Receive\ FIFO\ Full\ Interrupt\ Mask\ */}}
+\DoxyCodeLine{00143\ \ \ \ \ CANFD\_FIFO\_INTERRUPT\_TFERFFIF\_MASK\ =\ 0x4,}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{comment}{/*\ Receive\ FIFO\ Overflow\ Interrupt\ Mask\ */}}
+\DoxyCodeLine{00146\ \ \ \ \ CANFD\_FIFO\_INTERRUPT\_RXOVIF\_MASK\ =\ 0x8,}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{/*\ Transmit\ Attempts\ Exhausted\ Interrupt\ Pending\ Mask\ */}}
+\DoxyCodeLine{00149\ \ \ \ \ CANFD\_FIFO\_INTERRUPT\_TXATIF\_MASK\ =\ 0x10}
+\DoxyCodeLine{00150\ \}\ CANFD\_FIFO\_INTERRUPT\_FLAG\_MASK;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00153\ \textcolor{comment}{/*\ CANFD\ Transfer\ Error}}
+\DoxyCodeLine{00154\ \textcolor{comment}{}}
+\DoxyCodeLine{00155\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00156\ \textcolor{comment}{\ \ \ \ CANFD\ Transfer\ Error\ data\ type.}}
+\DoxyCodeLine{00157\ \textcolor{comment}{}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\ \ \ \ This\ data\ type\ defines\ the\ CANFD\ Transfer\ Error.}}
+\DoxyCodeLine{00160\ \textcolor{comment}{}}
+\DoxyCodeLine{00161\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00162\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00163\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00164\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00165\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ CANFD\_ERROR\_NONE\ =\ 0x0,}
+\DoxyCodeLine{00167\ \ \ \ \ CANFD\_ERROR\_TX\_RX\_WARNING\_STATE\ =\ 0x10000,}
+\DoxyCodeLine{00168\ \ \ \ \ CANFD\_ERROR\_RX\_WARNING\_STATE\ =\ 0x20000,}
+\DoxyCodeLine{00169\ \ \ \ \ CANFD\_ERROR\_TX\_WARNING\_STATE\ =\ 0x40000,}
+\DoxyCodeLine{00170\ \ \ \ \ CANFD\_ERROR\_RX\_BUS\_PASSIVE\_STATE\ =\ 0x80000,}
+\DoxyCodeLine{00171\ \ \ \ \ CANFD\_ERROR\_TX\_BUS\_PASSIVE\_STATE\ =\ 0x100000,}
+\DoxyCodeLine{00172\ \ \ \ \ CANFD\_ERROR\_TX\_BUS\_OFF\_STATE\ =\ 0x200000}
+\DoxyCodeLine{00173\ \}\ CANFD\_ERROR;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00176\ \textcolor{comment}{/*\ CANFD\ Callback}}
+\DoxyCodeLine{00177\ \textcolor{comment}{}}
+\DoxyCodeLine{00178\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00179\ \textcolor{comment}{\ \ \ \ CANFD\ Callback\ Function\ Pointer.}}
+\DoxyCodeLine{00180\ \textcolor{comment}{}}
+\DoxyCodeLine{00181\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00182\ \textcolor{comment}{\ \ \ \ This\ data\ type\ defines\ the\ CANFD\ Callback\ Function\ Pointer.}}
+\DoxyCodeLine{00183\ \textcolor{comment}{}}
+\DoxyCodeLine{00184\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00185\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00186\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00187\ \textcolor{keyword}{typedef}\ void\ (*CANFD\_CALLBACK)\ (uintptr\_t\ contextHandle);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00190\ \textcolor{comment}{/*\ CANFD\ RX\ Message}}
+\DoxyCodeLine{00191\ \textcolor{comment}{}}
+\DoxyCodeLine{00192\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00193\ \textcolor{comment}{\ \ \ \ CANFD\ RX\ Message\ Buffer\ structure.}}
+\DoxyCodeLine{00194\ \textcolor{comment}{}}
+\DoxyCodeLine{00195\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00196\ \textcolor{comment}{\ \ \ \ This\ data\ structure\ stores\ RX\ Message.}}
+\DoxyCodeLine{00197\ \textcolor{comment}{}}
+\DoxyCodeLine{00198\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00199\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00200\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00201\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00202\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{comment}{/*\ Rx\ Message\ ID\ */}}
+\DoxyCodeLine{00204\ \ \ \ \ uint32\_t\ *id;}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{comment}{/*\ Rx\ Message\ buffer\ */}}
+\DoxyCodeLine{00206\ \ \ \ \ uint8\_t\ \ *buffer;}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{comment}{/*\ Rx\ Message\ size\ */}}
+\DoxyCodeLine{00208\ \ \ \ \ uint8\_t\ \ *size;}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{comment}{/*\ Rx\ Message\ timestamp\ */}}
+\DoxyCodeLine{00210\ \ \ \ \ uint32\_t\ *timestamp;}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{comment}{/*\ Rx\ Message\ attribute\ */}}
+\DoxyCodeLine{00212\ \ \ \ \ CANFD\_MSG\_RX\_ATTRIBUTE\ *msgAttr;}
+\DoxyCodeLine{00213\ \}\ \mbox{\hyperlink{structCANFD__RX__MSG}{CANFD\_RX\_MSG}};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00216\ \textcolor{comment}{/*\ CANFD\ Receive\ Message\ Object}}
+\DoxyCodeLine{00217\ \textcolor{comment}{}}
+\DoxyCodeLine{00218\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00219\ \textcolor{comment}{\ \ \ \ CANFD\ Receive\ Message\ Object\ structure.}}
+\DoxyCodeLine{00220\ \textcolor{comment}{}}
+\DoxyCodeLine{00221\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00222\ \textcolor{comment}{\ \ \ \ This\ data\ structure\ defines\ the\ CANFD\ Rx\ Message\ Object\ format.}}
+\DoxyCodeLine{00223\ \textcolor{comment}{}}
+\DoxyCodeLine{00224\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00225\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00226\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00227\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00228\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Rx\ message\ -\/\ SID[10:0]\ and\ EID[28:11]\ \ */}}
+\DoxyCodeLine{00230\ \ \ \ \ uint32\_t\ r0;}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Rx\ message\ -\/\ DLC[3:0],\ IDE[4],\ RTR[5],\ BRS[6],\ FDF[7]}}
+\DoxyCodeLine{00233\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ESI[8]\ and\ FILHIT[15:11]\ \ \ \ */}}
+\DoxyCodeLine{00234\ \ \ \ \ uint32\_t\ r1;}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Rx\ message\ -\/\ RXMSGTS\ and\ Receive\ Buffer\ Data\ Bytes\ */}}
+\DoxyCodeLine{00237\ \ \ \ \ uint8\_t\ data[];}
+\DoxyCodeLine{00238\ \}\ \mbox{\hyperlink{structCANFD__RX__MSG__OBJECT}{CANFD\_RX\_MSG\_OBJECT}};}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00241\ \textcolor{comment}{/*\ CANFD\ Trasmit\ Message\ Object}}
+\DoxyCodeLine{00242\ \textcolor{comment}{}}
+\DoxyCodeLine{00243\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00244\ \textcolor{comment}{\ \ \ \ CANFD\ Transmit\ Message\ Object\ structure.}}
+\DoxyCodeLine{00245\ \textcolor{comment}{}}
+\DoxyCodeLine{00246\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00247\ \textcolor{comment}{\ \ \ \ This\ data\ structure\ defines\ the\ CANFD\ Tx\ Message\ Object\ format.}}
+\DoxyCodeLine{00248\ \textcolor{comment}{}}
+\DoxyCodeLine{00249\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00250\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00251\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00252\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00253\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Tx\ message\ -\/\ SID[10:0]\ and\ EID[28:11]\ */}}
+\DoxyCodeLine{00255\ \ \ \ \ uint32\_t\ t0;}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Tx\ message\ -\/\ DLC[3:0],\ IDE[4],\ RTR[5],\ BRS[6],\ FDF[7]}}
+\DoxyCodeLine{00258\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ESI[8]\ and\ SEQ[31:9]\ */}}
+\DoxyCodeLine{00259\ \ \ \ \ uint32\_t\ t1;}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Tx\ message\ -\/\ Transmit\ Buffer\ Data\ Bytes\ */}}
+\DoxyCodeLine{00262\ \ \ \ \ uint8\_t\ data[];}
+\DoxyCodeLine{00263\ \}\ \mbox{\hyperlink{structCANFD__TX__MSG__OBJECT}{CANFD\_TX\_MSG\_OBJECT}};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00266\ \textcolor{comment}{/*\ CANFD\ Trasmit\ Event\ FIFO\ Element}}
+\DoxyCodeLine{00267\ \textcolor{comment}{}}
+\DoxyCodeLine{00268\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00269\ \textcolor{comment}{\ \ \ \ CANFD\ Trasmit\ Event\ FIFO\ Element\ structure.}}
+\DoxyCodeLine{00270\ \textcolor{comment}{}}
+\DoxyCodeLine{00271\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00272\ \textcolor{comment}{\ \ \ \ This\ data\ structure\ defines\ the\ CANFD\ Tx\ Event\ FIFO\ Element\ format.}}
+\DoxyCodeLine{00273\ \textcolor{comment}{}}
+\DoxyCodeLine{00274\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00275\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00276\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00277\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00278\ \{}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Tx\ Event\ FIFO\ -\/\ SID[10:0]\ and\ EID[28:11]\ */}}
+\DoxyCodeLine{00280\ \ \ \ \ uint32\_t\ te0;}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Tx\ Event\ FIFO\ -\/\ DLC[3:0],\ IDE[4],\ RTR[5],\ BRS[6],\ FDF[7]}}
+\DoxyCodeLine{00283\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ESI[8]\ and\ SEQ[31:9]\ */}}
+\DoxyCodeLine{00284\ \ \ \ \ uint32\_t\ te1;}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Tx\ Event\ FIFO\ -\/\ Transmit\ Message\ Time\ Stamp\ */}}
+\DoxyCodeLine{00287\ \ \ \ \ uint8\_t\ timestamp[];}
+\DoxyCodeLine{00288\ \}\ \mbox{\hyperlink{structCANFD__TX__EVENT__FIFO__ELEMENT}{CANFD\_TX\_EVENT\_FIFO\_ELEMENT}};}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00291\ \textcolor{comment}{/*\ CANFD\ Callback\ Object}}
+\DoxyCodeLine{00292\ \textcolor{comment}{}}
+\DoxyCodeLine{00293\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00294\ \textcolor{comment}{\ \ \ \ CANFD\ transfer\ event\ callback\ structure.}}
+\DoxyCodeLine{00295\ \textcolor{comment}{}}
+\DoxyCodeLine{00296\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00297\ \textcolor{comment}{\ \ \ \ This\ data\ structure\ stores\ transfer\ event\ callback\ and\ it's\ context.}}
+\DoxyCodeLine{00298\ \textcolor{comment}{}}
+\DoxyCodeLine{00299\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00300\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00301\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00302\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00303\ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{comment}{/*\ Transfer\ Event\ Callback\ */}}
+\DoxyCodeLine{00305\ \ \ \ \ CANFD\_CALLBACK\ callback;}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{comment}{/*\ Transfer\ Event\ Callback\ Context\ */}}
+\DoxyCodeLine{00308\ \ \ \ \ uintptr\_t\ context;}
+\DoxyCodeLine{00309\ \}\ \mbox{\hyperlink{structCANFD__CALLBACK__OBJ}{CANFD\_CALLBACK\_OBJ}};}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00312\ \textcolor{comment}{/*\ CANFD\ PLib\ Instance\ Object}}
+\DoxyCodeLine{00313\ \textcolor{comment}{}}
+\DoxyCodeLine{00314\ \textcolor{comment}{\ \ \ Summary:}}
+\DoxyCodeLine{00315\ \textcolor{comment}{\ \ \ \ CANFD\ PLib\ Object\ structure.}}
+\DoxyCodeLine{00316\ \textcolor{comment}{}}
+\DoxyCodeLine{00317\ \textcolor{comment}{\ \ \ Description:}}
+\DoxyCodeLine{00318\ \textcolor{comment}{\ \ \ \ This\ data\ structure\ defines\ the\ CANFD\ PLib\ Instance\ Object.}}
+\DoxyCodeLine{00319\ \textcolor{comment}{}}
+\DoxyCodeLine{00320\ \textcolor{comment}{\ \ \ Remarks:}}
+\DoxyCodeLine{00321\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00322\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00323\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00324\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \textcolor{comment}{/*\ CANFD\ Error\ Status\ */}}
+\DoxyCodeLine{00326\ \ \ \ \ uint32\_t\ errorStatus;}
+\DoxyCodeLine{00327\ \}\ \mbox{\hyperlink{structCANFD__OBJ}{CANFD\_OBJ}};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00331\ \}}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00333\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PLIB\_CANFD\_COMMON\_H}}
+
+\end{DoxyCode}

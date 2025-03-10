@@ -1,0 +1,51 @@
+\doxysection{sh2\+\_\+\+Sensor\+Config Struct Reference}
+\hypertarget{structsh2__SensorConfig}{}\label{structsh2__SensorConfig}\index{sh2\_SensorConfig@{sh2\_SensorConfig}}
+
+
+Sensor Configuration settings.  
+
+
+
+
+{\ttfamily \#include $<$bno086\+\_\+reg.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structsh2__SensorConfig_a63c294ce959e04875439bbdad1464e5d}\label{structsh2__SensorConfig_a63c294ce959e04875439bbdad1464e5d} 
+bool {\bfseries change\+Sensitivity\+Enabled}
+\begin{DoxyCompactList}\small\item\em Enable reports on change. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorConfig_a6fe61d44c6f2fd19769a417f006d9e9e}\label{structsh2__SensorConfig_a6fe61d44c6f2fd19769a417f006d9e9e} 
+bool {\bfseries change\+Sensitivity\+Relative}
+\begin{DoxyCompactList}\small\item\em Change reports relative (vs absolute) \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorConfig_a277ec3be0681991e92e986f0960464e7}\label{structsh2__SensorConfig_a277ec3be0681991e92e986f0960464e7} 
+bool {\bfseries wakeup\+Enabled}
+\begin{DoxyCompactList}\small\item\em Wake host on event. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorConfig_aab7a8d24818fcb8d74c10786dca891f8}\label{structsh2__SensorConfig_aab7a8d24818fcb8d74c10786dca891f8} 
+bool {\bfseries always\+On\+Enabled}
+\begin{DoxyCompactList}\small\item\em Sensor remains on in sleep state. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorConfig_a6eab823f95f4d1ddefe726b7e6dd3a23}\label{structsh2__SensorConfig_a6eab823f95f4d1ddefe726b7e6dd3a23} 
+bool {\bfseries sniff\+Enabled}
+\begin{DoxyCompactList}\small\item\em Any output from this sensor should be sent to host, but report\+Interval\+\_\+us and sensor\+Specific do not influence sensor operation. Not supported by all sensors. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorConfig_a35d4a80a2f67505d12d716c234718960}\label{structsh2__SensorConfig_a35d4a80a2f67505d12d716c234718960} 
+uint16\+\_\+t {\bfseries change\+Sensitivity}
+\begin{DoxyCompactList}\small\item\em Report-\/on-\/change threshold. \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorConfig_a76842af4615764341f6adb4e618e3602}\label{structsh2__SensorConfig_a76842af4615764341f6adb4e618e3602} 
+uint32\+\_\+t {\bfseries report\+Interval\+\_\+us}
+\begin{DoxyCompactList}\small\item\em \mbox{[}uS\mbox{]} Report interval \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorConfig_a56205b57e2ca1f339a9f084c27552732}\label{structsh2__SensorConfig_a56205b57e2ca1f339a9f084c27552732} 
+uint32\+\_\+t {\bfseries batch\+Interval\+\_\+us}
+\begin{DoxyCompactList}\small\item\em \mbox{[}uS\mbox{]} Batch interval \end{DoxyCompactList}\item 
+\Hypertarget{structsh2__SensorConfig_a290bbba376696d1f6ed940fbf9e59bf4}\label{structsh2__SensorConfig_a290bbba376696d1f6ed940fbf9e59bf4} 
+uint32\+\_\+t {\bfseries sensor\+Specific}
+\begin{DoxyCompactList}\small\item\em See SH-\/2 Reference Manual for details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sensor Configuration settings. 
+
+See the SH-\/2 Reference Manual for more detail. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/bno086\+\_\+reg.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,106 @@
+\doxysection{plib\+\_\+tmr4.\+h}
+\hypertarget{plib__tmr4_8h_source}{}\label{plib__tmr4_8h_source}\index{src/config/bma400/peripheral/tmr/plib\_tmr4.h@{src/config/bma400/peripheral/tmr/plib\_tmr4.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ Data\ Type\ definition\ of\ Timer\ PLIB}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_tmr4.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ Data\ Type\ definition\ of\ the\ Timer\ Peripheral\ Interface\ Plib.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ file\ defines\ the\ Data\ Types\ for\ the\ Timer\ Plib.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ \ Remarks:}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ \ \ \ None.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{}}
+\DoxyCodeLine{00019\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*\ Copyright\ (C)\ 2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00041\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifndef\ PLIB\_TMR4\_H}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ PLIB\_TMR4\_H}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ "{}device.h"{}}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}plib\_tmr\_common.h"{}}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ Section:\ Data\ Types}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ Section:\ Interface\ Routines}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ TMR4\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ TMR4\_Start(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ TMR4\_Stop(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ TMR4\_PeriodSet(uint32\_t);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ uint32\_t\ TMR4\_PeriodGet(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ uint32\_t\ TMR4\_CounterGet(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ uint32\_t\ TMR4\_FrequencyGet(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ TMR4\_InterruptEnable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ TMR4\_InterruptDisable(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ TMR4\_CallbackRegister(\ TMR\_CALLBACK\ callback\_fn,\ uintptr\_t\ context\ );}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ DOM-\/IGNORE-\/BEGIN}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ \ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ DOM-\/IGNORE-\/END}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PLIB\_TMR4\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

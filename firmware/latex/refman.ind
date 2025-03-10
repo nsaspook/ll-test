@@ -1,0 +1,223 @@
+\begin{theindex}
+
+  \item {\_BnoData\_t}, \hyperpage{5}
+  \item {\_SPid}, \hyperpage{8}
+  \item {\_SYS\_RTCC\_OBJ\_STRUCT}, \hyperpage{10}
+  \item {\_imu\_cmd\_t}, \hyperpage{6}
+  \item {\_imu\_host\_t}, \hyperpage{7}
+  \item {\_op\_t}, \hyperpage{8}
+  \item {\_sSensorData\_t}, \hyperpage{8}
+    \subitem {sensortime}, \hyperpage{9}
+    \subitem {x}, \hyperpage{9}
+    \subitem {xa}, \hyperpage{9}
+    \subitem {y}, \hyperpage{9}
+    \subitem {ya}, \hyperpage{9}
+    \subitem {z}, \hyperpage{9}
+    \subitem {za}, \hyperpage{10}
+  \item {\_t\_cli\_ctx}, \hyperpage{10}
+  \item {\_t\_cmd}, \hyperpage{11}
+
+  \indexspace
+
+  \item {ADCHS\_CALLBACK\_OBJECT}, \hyperpage{11}
+  \item {ADCHS\_EOS\_CALLBACK\_OBJECT}, \hyperpage{11}
+
+  \indexspace
+
+  \item {B\_type}, \hyperpage{12}
+
+  \indexspace
+
+  \item {CANFD\_CALLBACK\_OBJ}, \hyperpage{12}
+  \item {CANFD\_OBJ}, \hyperpage{12}
+  \item {CANFD\_RX\_MSG}, \hyperpage{12}
+  \item {CANFD\_RX\_MSG\_OBJECT}, \hyperpage{13}
+  \item {CANFD\_TX\_EVENT\_FIFO\_ELEMENT}, \hyperpage{13}
+  \item {CANFD\_TX\_MSG\_OBJECT}, \hyperpage{13}
+  \item {CORETIMER\_OBJECT}, \hyperpage{13}
+
+  \indexspace
+
+  \item {DMAC\_CHANNEL\_OBJECT}, \hyperpage{14}
+  \item {DMAC\_CRC\_SETUP}, \hyperpage{14}
+
+  \indexspace
+
+  \item {EXT\_INT\_PIN\_CALLBACK\_OBJ}, \hyperpage{14}
+
+  \indexspace
+
+  \item {GPIO\_PIN\_CALLBACK\_OBJ}, \hyperpage{15}
+
+  \indexspace
+
+  \item {H\_type}, \hyperpage{15}
+
+  \indexspace
+
+  \item {lcd\_drv/display\_type.h}, \hyperpage{33}
+  \item {lcd\_drv/dogm-\/graphic.h}, \hyperpage{33}
+  \item {lcd\_drv/eadog.h}, \hyperpage{39}
+  \item {lcd\_drv/lcd\_drv.h}, \hyperpage{40}
+  \item {lcd\_drv/OledChar.h}, \hyperpage{41}
+  \item {lcd\_drv/OledDriver.h}, \hyperpage{42}
+  \item {lcd\_drv/OledGrph.h}, \hyperpage{43}
+
+  \indexspace
+
+  \item {MCPWM\_CH\_OBJECT}, \hyperpage{15}
+  \item {MCPWM\_OBJECT}, \hyperpage{15}
+
+  \indexspace
+
+  \item {QEI\_CH\_OBJECT}, \hyperpage{16}
+  \item {Quaternion}, \hyperpage{16}
+    \subitem {v}, \hyperpage{16}
+    \subitem {w}, \hyperpage{16}
+
+  \indexspace
+
+  \item {sca3300\_data}, \hyperpage{17}
+  \item {sensortime}
+    \subitem {\_sSensorData\_t}, \hyperpage{9}
+  \item {sFFTData\_t}, \hyperpage{17}
+  \item {sh2\_Accelerometer}, \hyperpage{17}
+  \item {sh2\_AsyncEvent}, \hyperpage{18}
+  \item {sh2\_Counts}, \hyperpage{18}
+  \item {sh2\_ErrorRecord}, \hyperpage{19}
+  \item {sh2\_Gyroscope}, \hyperpage{19}
+  \item {sh2\_GyroscopeUncalibrated}, \hyperpage{20}
+  \item {sh2\_MagneticField}, \hyperpage{21}
+  \item {sh2\_MagneticFieldUncalibrated}, \hyperpage{21}
+  \item {sh2\_ProductId\_s}, \hyperpage{22}
+  \item {sh2\_ProductIds\_s}, \hyperpage{22}
+  \item {sh2\_Quaternion}, \hyperpage{23}
+  \item {sh2\_RawAccelerometer}, \hyperpage{23}
+  \item {sh2\_RawGyroscope}, \hyperpage{24}
+  \item {sh2\_RawMagnetometer}, \hyperpage{24}
+  \item {sh2\_RotationVector}, \hyperpage{25}
+  \item {sh2\_RotationVectorWAcc}, \hyperpage{26}
+  \item {sh2\_SensorConfig}, \hyperpage{26}
+  \item {sh2\_SensorConfigResp\_e}, \hyperpage{27}
+  \item {sh2\_SensorEvent}, \hyperpage{27}
+  \item {sh2\_SensorMetadata}, \hyperpage{28}
+  \item {SPI\_OBJECT}, \hyperpage{29}
+  \item {SPI\_TRANSFER\_SETUP}, \hyperpage{29}
+  \item {src/bma490l.h}, \hyperpage{44}
+  \item {src/bma490l\_reg.h}, \hyperpage{45}
+  \item {src/bno086.h}, \hyperpage{47}
+  \item {src/bno086\_reg.h}, \hyperpage{50}
+  \item {src/buzzer.h}, \hyperpage{56}
+  \item {src/canfd.h}, \hyperpage{57}
+  \item {src/cmd\_scanner.h}, \hyperpage{58}
+  \item {src/config/bma400/definitions.h}, \hyperpage{59}
+  \item {src/config/bma400/device.h}, \hyperpage{60}
+  \item {src/config/bma400/interrupts.h}, \hyperpage{61}
+  \item {src/config/bma400/peripheral/adchs/plib\_adchs.h}, 
+		\hyperpage{62}
+  \item {src/config/bma400/peripheral/adchs/plib\_adchs\_common.h}, 
+		\hyperpage{63}
+  \item {src/config/bma400/peripheral/canfd/plib\_canfd1.h}, 
+		\hyperpage{65}
+  \item {src/config/bma400/peripheral/canfd/plib\_canfd\_common.h}, 
+		\hyperpage{66}
+  \item {src/config/bma400/peripheral/clk/plib\_clk.h}, \hyperpage{70}
+  \item {src/config/bma400/peripheral/coretimer/plib\_coretimer.h}, 
+		\hyperpage{72}
+  \item {src/config/bma400/peripheral/dmac/plib\_dmac.h}, 
+		\hyperpage{73}
+  \item {src/config/bma400/peripheral/evic/plib\_evic.h}, 
+		\hyperpage{79}
+  \item {src/config/bma400/peripheral/gpio/plib\_gpio.h}, 
+		\hyperpage{84}
+  \item {src/config/bma400/peripheral/mcpwm/plib\_mcpwm.h}, 
+		\hyperpage{89}
+  \item {src/config/bma400/peripheral/mcpwm/plib\_mcpwm\_common.h}, 
+		\hyperpage{91}
+  \item {src/config/bma400/peripheral/qei/plib\_qei2.h}, \hyperpage{92}
+  \item {src/config/bma400/peripheral/qei/plib\_qei\_common.h}, 
+		\hyperpage{93}
+  \item {src/config/bma400/peripheral/rtcc/plib\_rtcc.h}, 
+		\hyperpage{95}
+  \item {src/config/bma400/peripheral/spi/spi\_master/plib\_spi1\_master.h}, 
+		\hyperpage{96}
+  \item {src/config/bma400/peripheral/spi/spi\_master/plib\_spi2\_master.h}, 
+		\hyperpage{97}
+  \item {src/config/bma400/peripheral/spi/spi\_master/plib\_spi\_master\_common.h}, 
+		\hyperpage{98}
+  \item {src/config/bma400/peripheral/tmr/plib\_tmr2.h}, 
+		\hyperpage{100}
+  \item {src/config/bma400/peripheral/tmr/plib\_tmr3.h}, 
+		\hyperpage{101}
+  \item {src/config/bma400/peripheral/tmr/plib\_tmr4.h}, 
+		\hyperpage{102}
+  \item {src/config/bma400/peripheral/tmr/plib\_tmr5.h}, 
+		\hyperpage{103}
+  \item {src/config/bma400/peripheral/tmr/plib\_tmr6.h}, 
+		\hyperpage{105}
+  \item {src/config/bma400/peripheral/tmr/plib\_tmr9.h}, 
+		\hyperpage{106}
+  \item {src/config/bma400/peripheral/tmr/plib\_tmr\_common.h}, 
+		\hyperpage{107}
+  \item {src/config/bma400/peripheral/uart/plib\_uart1.h}, 
+		\hyperpage{108}
+  \item {src/config/bma400/peripheral/uart/plib\_uart2.h}, 
+		\hyperpage{110}
+  \item {src/config/bma400/peripheral/uart/plib\_uart\_common.h}, 
+		\hyperpage{111}
+  \item {src/config/bma400/toolchain\_specifics.h}, \hyperpage{114}
+  \item {src/do\_fft.h}, \hyperpage{115}
+  \item {src/fft.h}, \hyperpage{115}
+  \item {src/gfx.h}, \hyperpage{116}
+  \item {src/hid.h}, \hyperpage{117}
+  \item {src/host.h}, \hyperpage{117}
+  \item {src/imu.h}, \hyperpage{118}
+  \item {src/imupic32mcj.h}, \hyperpage{121}
+  \item {src/pid.h}, \hyperpage{122}
+  \item {src/quat.h}, \hyperpage{123}
+  \item {src/remote\_cmd.h}, \hyperpage{124}
+  \item {src/sca3300.h}, \hyperpage{125}
+  \item {src/timers.h}, \hyperpage{126}
+
+  \indexspace
+
+  \item {TMR\_TIMER\_OBJECT}, \hyperpage{30}
+
+  \indexspace
+
+  \item {UART\_OBJECT}, \hyperpage{30}
+  \item {UART\_RING\_BUFFER\_OBJECT}, \hyperpage{30}
+  \item {UART\_SERIAL\_SETUP}, \hyperpage{31}
+
+  \indexspace
+
+  \item {v}
+    \subitem {Quaternion}, \hyperpage{16}
+
+  \indexspace
+
+  \item {w}
+    \subitem {Quaternion}, \hyperpage{16}
+
+  \indexspace
+
+  \item {x}
+    \subitem {\_sSensorData\_t}, \hyperpage{9}
+  \item {xa}
+    \subitem {\_sSensorData\_t}, \hyperpage{9}
+
+  \indexspace
+
+  \item {y}
+    \subitem {\_sSensorData\_t}, \hyperpage{9}
+  \item {ya}
+    \subitem {\_sSensorData\_t}, \hyperpage{9}
+
+  \indexspace
+
+  \item {z}
+    \subitem {\_sSensorData\_t}, \hyperpage{9}
+  \item {za}
+    \subitem {\_sSensorData\_t}, \hyperpage{10}
+
+\end{theindex}

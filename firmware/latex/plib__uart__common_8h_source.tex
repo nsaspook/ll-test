@@ -1,0 +1,226 @@
+\doxysection{plib\+\_\+uart\+\_\+common.\+h}
+\hypertarget{plib__uart__common_8h_source}{}\label{plib__uart__common_8h_source}\index{src/config/bma400/peripheral/uart/plib\_uart\_common.h@{src/config/bma400/peripheral/uart/plib\_uart\_common.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ UART\ PLIB}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_uart\_common.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ UART\ PLIB\ Common\ Header\ File}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ file\ has\ prototype\ of\ all\ the\ interfaces\ which\ are\ common\ for\ all\ the}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ \ \ \ UART\ peripherals.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{}}
+\DoxyCodeLine{00017\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*\ Copyright\ (C)\ 2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00039\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifndef\ PLIB\_UART\_COMMON\_H}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ PLIB\_UART\_COMMON\_H}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/*\ Provide\ C++\ Compatibility\ */}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ UART\_RXFIFO\_DEPTH\ \ \ \ \ \ \ 9}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ UART\_PARITY\_NONE\ =\ 0x00,}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ UART\_PARITY\_EVEN\ =\ 0x02,}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ UART\_PARITY\_ODD\ =\ \ 0x04,}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{comment}{/*\ Force\ the\ compiler\ to\ reserve\ 32-\/bit\ space\ for\ each\ enum\ */}}
+\DoxyCodeLine{00068\ \ \ \ \ UART\_PARITY\_INVALID\ =\ 0xFFFFFFFF}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}\ UART\_PARITY;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ UART\_DATA\_8\_BIT\ =\ 0x00,}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ UART\_DATA\_9\_BIT\ =\ 0x06,}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{/*\ Force\ the\ compiler\ to\ reserve\ 32-\/bit\ memory\ for\ each\ enum\ */}}
+\DoxyCodeLine{00080\ \ \ \ \ UART\_DATA\_INVALID\ =\ 0xFFFFFFFF}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \}\ UART\_DATA;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ UART\_STOP\_1\_BIT\ =\ 0x00,}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ UART\_STOP\_2\_BIT\ =\ 0x01,}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{/*\ Force\ the\ compiler\ to\ reserve\ 32-\/bit\ memory\ for\ each\ enum\ */}}
+\DoxyCodeLine{00091\ \ \ \ \ UART\_STOP\_INVALID\ =\ 0xFFFFFFFF}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \}\ UART\_STOP;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ uint32\_t\ baudRate;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ UART\_PARITY\ parity;}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ UART\_DATA\ dataWidth;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ UART\_STOP\ stopBits;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \}\ \mbox{\hyperlink{structUART__SERIAL__SETUP}{UART\_SERIAL\_SETUP}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00108\ \textcolor{comment}{/*\ UART\ Errors}}
+\DoxyCodeLine{00109\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ UART\_ERROR\_NONE\ =\ 0,}
+\DoxyCodeLine{00114\ \ \ \ \ UART\_ERROR\_OVERRUN\ =\ 0x02,}
+\DoxyCodeLine{00115\ \ \ \ \ UART\_ERROR\_FRAMING\ =\ 0x04,}
+\DoxyCodeLine{00116\ \ \ \ \ UART\_ERROR\_PARITY\ \ =\ 0x08}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \}\ UART\_ERROR;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{typedef}\ void\ (*\ UART\_CALLBACK)(\ uintptr\_t\ context\ );}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ Section:\ Local:\ ****\ Do\ Not\ Use\ ****}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00126\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ uint8\_t\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ txBuffer;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ txSize;}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ txProcessedSize;}
+\DoxyCodeLine{00133\ \ \ \ \ UART\_CALLBACK\ \ \ \ \ \ \ \ \ \ \ txCallback;}
+\DoxyCodeLine{00134\ \ \ \ \ uintptr\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ txContext;}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ txBusyStatus;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ uint8\_t\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rxBuffer;}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rxSize;}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rxProcessedSize;}
+\DoxyCodeLine{00140\ \ \ \ \ UART\_CALLBACK\ \ \ \ \ \ \ \ \ \ \ rxCallback;}
+\DoxyCodeLine{00141\ \ \ \ \ uintptr\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rxContext;}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rxBusyStatus;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{volatile}\ UART\_ERROR\ \ \ \ \ errors;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \}\ \mbox{\hyperlink{structUART__OBJECT}{UART\_OBJECT}}\ ;}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00149\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{/*\ Threshold\ number\ of\ bytes\ are\ available\ in\ the\ receive\ ring\ buffer\ */}}
+\DoxyCodeLine{00151\ \ \ \ \ UART\_EVENT\_READ\_THRESHOLD\_REACHED\ =\ 0,}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{comment}{/*\ Receive\ ring\ buffer\ is\ full.\ Application\ must\ read\ the\ data\ out\ to\ avoid\ missing\ data\ on\ the\ next\ RX\ interrupt.\ */}}
+\DoxyCodeLine{00154\ \ \ \ \ UART\_EVENT\_READ\_BUFFER\_FULL,}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{comment}{/*\ USART\ error.\ Application\ must\ call\ the\ UARTx\_ErrorGet\ API\ to\ get\ the\ type\ of\ error\ and\ clear\ the\ error.\ */}}
+\DoxyCodeLine{00157\ \ \ \ \ UART\_EVENT\_READ\_ERROR,}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{comment}{/*\ Threshold\ number\ of\ free\ space\ is\ available\ in\ the\ transmit\ ring\ buffer\ */}}
+\DoxyCodeLine{00160\ \ \ \ \ UART\_EVENT\_WRITE\_THRESHOLD\_REACHED,}
+\DoxyCodeLine{00161\ \}UART\_EVENT;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{typedef}\ void\ (*\ UART\_RING\_BUFFER\_CALLBACK)(UART\_EVENT\ event,\ uintptr\_t\ context\ );}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00166\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00167\ \textcolor{comment}{//\ Section:\ Local:\ ****\ Do\ Not\ Use\ ****}}
+\DoxyCodeLine{00168\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ *****************************************************************************}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00172\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ UART\_RING\_BUFFER\_CALLBACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrCallback;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ uintptr\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrContext;}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrInIndex;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrOutIndex;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrThreshold;}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isWrNotificationEnabled;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isWrNotifyPersistently;}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wrBufferSize;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ UART\_RING\_BUFFER\_CALLBACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rdCallback;}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ uintptr\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rdContext;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rdInIndex;}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rdOutIndex;}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rdBufferSize;}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isRdNotificationEnabled;}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rdThreshold;}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isRdNotifyPersistently;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{volatile}\ UART\_ERROR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ errors;}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \}\ \mbox{\hyperlink{structUART__RING__BUFFER__OBJECT}{UART\_RING\_BUFFER\_OBJECT}};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{comment}{/*\ Provide\ C++\ Compatibility\ */}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLIB\_UART\_COMMON\_H}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00219\ \textcolor{comment}{\ End\ of\ File}}
+\DoxyCodeLine{00220\ \textcolor{comment}{*/}}
+
+\end{DoxyCode}

@@ -1,0 +1,86 @@
+\doxysection{host.\+h}
+\hypertarget{host_8h_source}{}\label{host_8h_source}\index{src/host.h@{src/host.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ host.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ nsasp}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ December\ 29,\ 2022,\ 9:14\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ HOST\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ HOST\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stddef.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ NULL}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdbool.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ true}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ EXIT\_FAILURE}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <proc/p32mk0512mcj048.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}definitions.h"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SYS\ function\ prototypes}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}imu.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}../../firmware/lcd\_drv/lcd\_drv.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}remote\_cmd.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ HOST\_DRIVER\ "{}V1.701"{}\ }}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ HOST\_ALIAS\ "{}HOST"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ HOST\_MAGIC\ \ 0x1957}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HOST\_MAGIC\_ID\ \ \ 0x101957}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ HOST\_SECRET\ 0xBD6FDC7BC925CD3E\ }\textcolor{comment}{//\ 64-\/bit\ random\ number\ for\ unlocking\ machine\ control\ functions}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ host\_lcd\_update\ 100}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifdef\ XPRJ\_nsensor}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ HOST\_BOARD}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ INT\_BOARD}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ debounce\_delay\ 7000\ }\textcolor{comment}{//\ a\ few\ seconds\ in\ host\ mode}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ debounce\_delay\ 3000000\ }\textcolor{comment}{//\ a\ few\ seconds\ in\ sensor\ mode}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ XPRJ\_mcj}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ SENSOR\_BOARD}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ BLOCK\_BOARD}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#ifdef\ XPRJ\_bma400}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SENSOR\_BOARD}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ BLOCK\_BOARD}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifdef\ XPRJ\_mcj\_remote}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ SENSOR\_BOARD}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ BLOCK\_BOARD}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ \ \ \ \ *\ these\ routines\ can\ corrupt\ the\ display\ buffer\ with\ ISR\ level\ modifications\ of\ memory}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\#define\ DEBUG\_can\_callback}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\#define\ DEBUG\_can\_callback1}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ avg\_samples\ 10000.0}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ uart\_wait\ \ \ 32300}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ host\_xmit\_wait\ \ 10000}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ *\ CAN-\/FD\ vibration\ sensor\ host\ to\ network\ state\ machine}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ host\_sm(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{bool}\ TP1\_check(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ send\_from\_host(uint32\_t);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ HOST\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00080\ }
+
+\end{DoxyCode}

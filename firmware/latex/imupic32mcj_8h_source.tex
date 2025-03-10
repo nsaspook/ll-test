@@ -1,0 +1,140 @@
+\doxysection{imupic32mcj.\+h}
+\hypertarget{imupic32mcj_8h_source}{}\label{imupic32mcj_8h_source}\index{src/imupic32mcj.h@{src/imupic32mcj.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ imupic32mcj.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ nsasp}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ August\ 31,\ 2022,\ 6:40\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ IMUPIC32MCJ\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ IMUPIC32MCJ\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stddef.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ NULL}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdbool.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ true}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Defines\ EXIT\_FAILURE}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}definitions.h"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ SYS\ function\ prototypes}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}imu.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}timers.h"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ SDEBUG\_psd\ \ }\textcolor{comment}{//\ parse\ sensor\ data}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ \ *\ Board\ hardware\ configurations}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ \ *\ and\ hardware\ specific\ functions}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ \ \ \ *\ what\ type\ of\ Ethernet\ TCP\ adapter\ are\ we\ using}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\#define\ USR\_TCP}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ WAVESHARE}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ \ \ \ *\ what\ IMU\ chip\ are\ we\ using}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//\#define\ SCA3300\ //\ this\ includes\ the\ SCL3300\ device,\ SPI2\ 32-\/bit\ transfers}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//\#define\ BMA400\ //\ Bosch\ devices,\ SPI2\ 8-\/bit\ transfers}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ BNO086\ }\textcolor{comment}{//\ SPI2\ 8-\/bit\ transfers\ 3MHz\ mode\ 3}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifdef\ BNO086}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#undef\ BMA400}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#undef\ SCA3300}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifdef\ SCA3300}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ SPI2\_32BIT}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#undef\ BMA400}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifdef\ BMA400\ }\textcolor{comment}{//\ vibration\ sensor\ used}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ BMA490L\ }\textcolor{comment}{//\ this\ device\ is\ not\ longer\ used\ but\ functions\ are\ needed}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#undef\ SCA3300}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ B\_ID\_0\ \ 0xFF0108}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ B\_ID\_1\ \ 0x10534743}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ IMU\_CS\ 0}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ LCD\_CS\ 0}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ BMA\_LOG\_TIMEOUT\ 150}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ BNO\_LOG\_TIMEOUT\ 100}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ SCA\_LOG\_TIMEOUT\ 10\ }\textcolor{comment}{//\ 8}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//\#define\ SHOW\_LOG}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ SHOW\_LCD}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ SHOW\_VG}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ FFT\_MIX\ false}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ FBUFFER\_SIZE\ \ \ \ 256}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ max\_buf\ \ \ \ \ FBUFFER\_SIZE-\/1}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ RBUFFER\_SIZE\ \ \ \ FBUFFER\_SIZE}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#ifndef\ \ LED\_GREEN\_On}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ LED\_GREEN\_On()\ LED\_GREEN\_Set()}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ LED\_GREEN\_Off()\ LED\_GREEN\_Clear()}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifndef\ \ LED\_RED\_On}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ LED\_RED\_On()\ LED\_RED\_Set()}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ LED\_RED\_Off()\ LED\_RED\_Clear()}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{/*\ hardware\ dependant\ define\ */}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ BLANK\_COUNTER\ \ \ TMR4}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ CFD\_RETRAN\ \ 0b01}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ CFD\_RETRAN\_MODE\ 1}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ \ \ \ \ *\ setup\ external\ interrupt\ \#2\ for\ IMU\ BMA4x0\ data\ update\ interrupt\ trigger\ output}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ init\_imu\_int(\textcolor{keyword}{const}\ imu\_cmd\_t\ *);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ \ \ \ \ *\ user\ callback\ function\ per\ BMA490L\ data\ interrupt}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ update\_imu\_int1(uint32\_t,\ uintptr\_t);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ \ \ \ \ *\ setup\ external\ interrupt\ \#2\ for\ IMU\ BNO08X\ data\ update\ interrupt\ trigger\ output}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ init\_imu\_int\_bno(\textcolor{keyword}{const}\ imu\_cmd\_t\ *);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ \ \ \ \ *\ user\ callback\ function\ per\ BNO08X\ data\ interrupt}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ update\_imu\_int\_bno(uint32\_t,\ uintptr\_t);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ delay\_us(uint32\_t);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00114\ \textcolor{comment}{\ \ \ \ \ *\ start\ core-\/timer}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ \ \ \ \ *\ ms\ tick-\/timer}}
+\DoxyCodeLine{00116\ \textcolor{comment}{\ \ \ \ \ *\ set\ cpu\ serial\ ID\ numbers}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ start\_tick(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ \ \ \ \ *\ configure\ the\ SPI\ port\ bit\ size\ for\ data\ transfers}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00122\ \ \ \ \ uint8\_t\ set\_imu\_bits(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ canfd\_set\_filter(uint32\_t,\ uint32\_t);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ clear\_can\_errors(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_can\_retran(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{extern}\ uint32\_t\ board\_serial\_id,\ cpu\_serial\_id;}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keyword}{volatile}\ uint32\_t\ bno08x\_int\_count;}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00130\ \}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ IMUPIC32MCJ\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00134\ }
+
+\end{DoxyCode}

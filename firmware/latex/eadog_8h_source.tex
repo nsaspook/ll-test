@@ -1,0 +1,88 @@
+\doxysection{eadog.\+h}
+\hypertarget{eadog_8h_source}{}\label{eadog_8h_source}\index{lcd\_drv/eadog.h@{lcd\_drv/eadog.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ eadog.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ July\ 27,\ 2015,\ 2:05\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ Parts\ taken\ from:}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ This\ version\ for\ XC32\ PIC32MK\ MCM}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ modified\ for\ DMA\ and\ 32-\/bit\ hardware}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ file:\ EA-\/DOGM\_MIO.c}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ version:\ 2.03}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ \ \ \ \ description:\ Multi\ I/O\ driver\ for\ EA\ DOGM\ displays}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Uses\ 8Bit,\ SPI\ HW\ or\ SPI\ SW\ (bitbang)}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ \ \ \ \ written\ by\ :\ Michael\ Bradley\ (mbradley@mculabs.com)}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ \ \ contributions:\ Imaginos\ (CCS\ forum),\ Emil\ Nad\ (8Bit\ testing)}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ jgschmidt\ (CCS\ forum)}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ \ machine\ dependant\ hardware\ routines\ should\ be\ here}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ EADOG\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ EADOG\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}lcd\_drv.h"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_MASK\ \ \ \ 0x01}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LCD\_CMD\_SET\ 0x100}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ LCD\_CLEAR\_HOME\ \ 0x04}}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ \ \ \ *\ for\ 2MHz\ SPI\ clock}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ IS\_DELAYSHORT\ \ \ 4}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ IS\_DELAYMED\ 5}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ IS\_DELAYLONG\ \ \ \ 800}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ IS\_DELAYPOWERUP\ 400000}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_CLR\ \ \ \ \ \ 1}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_CURSOR\_ON\ \ \ \ \ 0b00001111}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_CURSOR\_OFF\ \ \ \ 0b00001100}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_DISPLAY\_ON\ \ \ \ 0b00001100}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_DISPLAY\_OFF\ \ \ 0b00001000}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_DDRAM\_ADDR\ \ \ \ 0b10000000}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_CGRAM\_ADDR\ \ \ \ 0b01000000}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_SELECT\_R0\ \ \ \ \ 0b00011000}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_SELECT\_R1\ \ \ \ \ 0b00010000}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ EADOGM\_CMD\_SET\_TABLE2\ \ \ \ 0b00101010}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ EADOGM\_COLSPAN\ \ \ \ \ \ 16}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ wdtdelay(uint32\_t);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ init\_display(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ eaDogM\_WriteChr(int8\_t);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ eaDogM\_WriteCommand(uint8\_t);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ eaDogM\_SetPos(uint8\_t,\ uint8\_t);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ eaDogM\_ClearRow(uint8\_t);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ eaDogM\_WriteString(\textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ eaDogM\_WriteStringAtPos(uint8\_t,\ uint8\_t,\ \textcolor{keywordtype}{char}\ *);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ eaDogM\_WriteIntAtPos(uint8\_t,\ uint8\_t,\ uint8\_t);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ eaDogM\_WriteByteToCGRAM(uint8\_t,\ uint8\_t);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ SPI1\_Initialize\_edogm(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ SPI1\_Initialize\_edogs(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ SPI1\_ExchangeBuffer(uint8\_t\ *,\ uint16\_t);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ eaDogM\_Cls()\ \ \ \ \ \ \ \ \ \ \ \ \ eaDogM\_WriteCommand(EADOGM\_CMD\_CLR)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ eaDogM\_CursorOn()\ \ \ \ \ \ \ \ eaDogM\_WriteCommand(EADOGM\_CMD\_CURSOR\_ON)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ eaDogM\_CursorOff()\ \ \ \ \ \ \ eaDogM\_WriteCommand(EADOGM\_CMD\_CURSOR\_OFF)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ eaDogM\_DisplayOn()\ \ \ \ \ \ \ eaDogM\_WriteCommand(EADOGM\_CMD\_DISPLAY\_ON)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ eaDogM\_DisplayOff()\ \ \ \ \ \ eaDogM\_WriteCommand(EADOGM\_CMD\_DISPLAY\_OFF)}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ EADOG\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00082\ }
+
+\end{DoxyCode}

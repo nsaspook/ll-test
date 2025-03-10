@@ -1,0 +1,61 @@
+\doxysection{hid.\+h}
+\hypertarget{hid_8h_source}{}\label{hid_8h_source}\index{src/hid.h@{src/hid.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ TMR3\ debounce\ timer}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ TMR4\ screen\ blank\ timer}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ HID\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ HID\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}buzzer.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}gfx.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ HID\_DRIVER\ "{}V1.015"{}\ }}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ HID\_ALIAS\ "{}HID"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ FFT\_WAKE\ \ \ \ 1500}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ HID\_LONG\_BLANK\ \ 14062499U\ *\ 10U}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ DBOUNCE\_COUNTS\ \ 70000}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ \ \ \ \ *\ silent\ mode\ animation}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SDOT\_ON\ \ \ \ \ 70}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ SDOT\_OFF\ \ \ \ 140}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PROX\_T\_H\ \ \ \ 8.5f}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ PROX\_T\_L\ \ \ \ 1.0f}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ H\_init,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ H\_home,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ H\_run,}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ H\_blank,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ H\_zero\_blank,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ H\_abort,}
+\DoxyCodeLine{00039\ \ \ \ \ \}\ H\_STATE;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structH__type}{H\_type}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ H\_STATE\ hid\_state;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{volatile}\ \textcolor{keywordtype}{bool}\ dis\_alt,\ show\_la,\ la\_mod,\ dis\_unblank,\ dis\_reset,\ silent;}
+\DoxyCodeLine{00044\ \ \ \ \ \}\ \mbox{\hyperlink{structH__type}{H\_type}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{extern}\ \mbox{\hyperlink{structH__type}{H\_type}}\ H;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ hid\_init(H\_STATE);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00051\ \}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ HID\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00055\ }
+
+\end{DoxyCode}

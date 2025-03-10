@@ -1,0 +1,40 @@
+\doxysection{timers.\+h}
+\hypertarget{timers_8h_source}{}\label{timers_8h_source}\index{src/timers.h@{src/timers.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TIMERS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TIMERS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//Software\ timers\ -\/\ use\ these\ to\ refer\ to\ timers\ rather\ than}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//integers.\ \ Add\ more\ as\ needed.}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//NOTE:\ 32767\ ms\ max\ delay}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{enum}\ APP\_TIMERS\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ TMR\_INTERNAL\ =\ 0,\ \textcolor{comment}{//Used\ in\ timers.c\ -\/\ do\ not\ remove\ or\ use\ elsewhere}}
+\DoxyCodeLine{00013\ \ \ \ \ TMR\_IMU,}
+\DoxyCodeLine{00014\ \ \ \ \ TMR\_LOG,}
+\DoxyCodeLine{00015\ \ \ \ \ TMR\_CS,}
+\DoxyCodeLine{00016\ \ \ \ \ TMR\_HOST,}
+\DoxyCodeLine{00017\ \ \ \ \ TMR\_REPLY,}
+\DoxyCodeLine{00018\ \ \ \ \ TMR\_BNO\_INT,}
+\DoxyCodeLine{00019\ \ \ \ \ TMR\_BNO\_TO,}
+\DoxyCodeLine{00020\ \ \ \ \ TMR\_IMU\_DATA,}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{comment}{//(Add\ timers\ here\ as\ needed)}}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00024\ \ \ \ \ TMR\_COUNT\ \textcolor{comment}{//number\ of\ timers\ -\/\ always\ keep\ at\ end\ of\ enum!}}
+\DoxyCodeLine{00025\ \};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keywordtype}{void}\ StartTimer(\textcolor{keyword}{const}\ uint8\_t\ timer,\ \textcolor{keyword}{const}\ uint16\_t\ count);}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{bool}\ TimerDone(\textcolor{keyword}{const}\ uint8\_t\ timer);}
+\DoxyCodeLine{00029\ \textcolor{keywordtype}{void}\ WaitMs(\textcolor{keyword}{const}\ uint16\_t\ numMilliseconds);}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ timer\_ms\_tick(uint32\_t,\ uintptr\_t);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ delay\_ms\_tick(uint32\_t);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//TIMERS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,40 @@
+\doxysection{pid.\+h}
+\hypertarget{pid_8h_source}{}\label{pid_8h_source}\index{src/pid.h@{src/pid.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ }}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ File:\ \ \ pid.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Author:\ root}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Created\ on\ July\ 19,\ 2020,\ 3:04\ PM}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ PID\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ PID\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00012\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}imupic32mcj.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct__SPid}{\_SPid}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dState;\ \textcolor{comment}{//\ Last\ position\ input}}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ iState;\ \textcolor{comment}{//\ Integrator\ state}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ iMax,\ iMin;\ \textcolor{comment}{//\ Maximum\ and\ minimum\ allowable\ integrator\ state}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ iGain,\ \textcolor{comment}{//\ integral\ gain}}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ pGain,\ \textcolor{comment}{//\ proportional\ gain}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ dGain;\ \textcolor{comment}{//\ derivative\ gain}}
+\DoxyCodeLine{00024\ \ \ \ \ \}\ SPid;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{double}\ UpdatePI(\textcolor{keyword}{volatile}\ SPid\ *\ \textcolor{keyword}{const},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ ResetPI(\textcolor{keyword}{volatile}\ SPid\ *\ \textcolor{keyword}{const});}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ \ \_\_cplusplus}}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*\ PID\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}

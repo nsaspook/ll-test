@@ -1,0 +1,88 @@
+\doxysection{plib\+\_\+coretimer.\+h}
+\hypertarget{plib__coretimer_8h_source}{}\label{plib__coretimer_8h_source}\index{src/config/bma400/peripheral/coretimer/plib\_coretimer.h@{src/config/bma400/peripheral/coretimer/plib\_coretimer.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ \ Interface\ definition\ of\ Core\ Timer\ PLIB.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ \ Company:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ \ \ \ Microchip\ Technology\ Inc.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ \ File\ Name:}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ \ \ \ plib\_coretimer.h}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ \ Summary:}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ \ \ \ Interface\ definition\ of\ the\ Core\ Timer\ Plib\ .}}
+\DoxyCodeLine{00012\ \textcolor{comment}{}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ \ Description:}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ \ \ \ This\ file\ defines\ the\ interface\ for\ the\ Core\ Timer\ Plib.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00018\ \textcolor{comment}{*\ Copyright\ (C)\ 2019\ Microchip\ Technology\ Inc.\ and\ its\ subsidiaries.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{*}}
+\DoxyCodeLine{00020\ \textcolor{comment}{*\ Subject\ to\ your\ compliance\ with\ these\ terms,\ you\ may\ use\ Microchip\ software}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*\ and\ any\ derivatives\ exclusively\ with\ Microchip\ products.\ It\ is\ your}}
+\DoxyCodeLine{00022\ \textcolor{comment}{*\ responsibility\ to\ comply\ with\ third\ party\ license\ terms\ applicable\ to\ your}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*\ use\ of\ third\ party\ software\ (including\ open\ source\ software)\ that\ may}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*\ accompany\ Microchip\ software.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*\ THIS\ SOFTWARE\ IS\ SUPPLIED\ BY\ MICROCHIP\ "{}AS\ IS"{}.\ NO\ WARRANTIES,\ WHETHER}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*\ EXPRESS,\ IMPLIED\ OR\ STATUTORY,\ APPLY\ TO\ THIS\ SOFTWARE,\ INCLUDING\ ANY\ IMPLIED}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*\ WARRANTIES\ OF\ NON-\/INFRINGEMENT,\ MERCHANTABILITY,\ AND\ FITNESS\ FOR\ A}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*\ PARTICULAR\ PURPOSE.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*\ IN\ NO\ EVENT\ WILL\ MICROCHIP\ BE\ LIABLE\ FOR\ ANY\ INDIRECT,\ SPECIAL,\ PUNITIVE,}}
+\DoxyCodeLine{00032\ \textcolor{comment}{*\ INCIDENTAL\ OR\ CONSEQUENTIAL\ LOSS,\ DAMAGE,\ COST\ OR\ EXPENSE\ OF\ ANY\ KIND}}
+\DoxyCodeLine{00033\ \textcolor{comment}{*\ WHATSOEVER\ RELATED\ TO\ THE\ SOFTWARE,\ HOWEVER\ CAUSED,\ EVEN\ IF\ MICROCHIP\ HAS}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*\ BEEN\ ADVISED\ OF\ THE\ POSSIBILITY\ OR\ THE\ DAMAGES\ ARE\ FORESEEABLE.\ TO\ THE}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*\ FULLEST\ EXTENT\ ALLOWED\ BY\ LAW,\ MICROCHIP'S\ TOTAL\ LIABILITY\ ON\ ALL\ CLAIMS\ IN}}
+\DoxyCodeLine{00036\ \textcolor{comment}{*\ ANY\ WAY\ RELATED\ TO\ THIS\ SOFTWARE\ WILL\ NOT\ EXCEED\ THE\ AMOUNT\ OF\ FEES,\ IF\ ANY,}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*\ THAT\ YOU\ HAVE\ PAID\ DIRECTLY\ TO\ MICROCHIP\ FOR\ THIS\ SOFTWARE.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*******************************************************************************/}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifndef\ PLIB\_CORETIMER\_H\ \ \ \ }\textcolor{comment}{//\ Guards\ against\ multiple\ inclusion}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ PLIB\_CORETIMER\_H}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ CORE\_TIMER\_FREQUENCY\ \ \ \ 60000000}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ CORE\_TIMER\_INTERRUPT\_PERIOD\_VALUE\ \ \ \ 0xea60}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ CORE\_TIMER\_INTERRUPT\_PERIOD\_IN\_US\ \ \ \ \ 1000}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ void\ (*CORETIMER\_CALLBACK)(uint32\_t\ status,\ uintptr\_t\ context);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ CORETIMER\_CALLBACK\ \ callback;}
+\DoxyCodeLine{00060\ \ \ \ \ uintptr\_t\ \ \ \ \ \ \ \ \ \ \ context;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{volatile}\ uint32\_t\ \ \ tickCounter;}
+\DoxyCodeLine{00062\ \ \ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ period;}
+\DoxyCodeLine{00063\ \}\ \mbox{\hyperlink{structCORETIMER__OBJECT}{CORETIMER\_OBJECT}}\ ;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ CORETIMER\_Initialize(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{void}\ CORETIMER\_CallbackSet\ (\ CORETIMER\_CALLBACK\ callback,\ uintptr\_t\ context\ );}
+\DoxyCodeLine{00067\ uint32\_t\ CORETIMER\_FrequencyGet\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ CORETIMER\_PeriodSet\ (uint32\_t\ period);}
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ CORETIMER\_Start(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ CORETIMER\_Stop(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ CORETIMER\_DelayMs\ (uint32\_t\ delay\_ms);}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ CORETIMER\_DelayUs\ (uint32\_t\ delay\_us);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus\ }\textcolor{comment}{//\ Provide\ C++\ Compatibility}}
+\DoxyCodeLine{00079\ \ \}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
