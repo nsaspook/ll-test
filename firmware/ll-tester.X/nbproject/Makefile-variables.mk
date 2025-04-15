@@ -16,10 +16,10 @@ CND_ARTIFACT_PATH_mcj_testing=dist/mcj_testing/production/ll-tester.X.production
 CND_ARTIFACT_DIR_mjc_remote=dist/mjc_remote/production
 CND_ARTIFACT_NAME_mjc_remote=ll-tester.X.production.hex
 CND_ARTIFACT_PATH_mjc_remote=dist/mjc_remote/production/ll-tester.X.production.hex
-# bma400 configuration
-CND_ARTIFACT_DIR_bma400=dist/bma400/production
-CND_ARTIFACT_NAME_bma400=ll-tester.X.production.hex
-CND_ARTIFACT_PATH_bma400=dist/bma400/production/ll-tester.X.production.hex
+# bno086 configuration
+CND_ARTIFACT_DIR_bno086=dist/bno086/production
+CND_ARTIFACT_NAME_bno086=ll-tester.X.production.hex
+CND_ARTIFACT_PATH_bno086=dist/bno086/production/ll-tester.X.production.hex
 # nsensor configuration
 CND_ARTIFACT_DIR_nsensor=dist/nsensor/production
 CND_ARTIFACT_NAME_nsensor=ll-tester.X.production.hex

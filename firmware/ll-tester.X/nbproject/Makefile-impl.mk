@@ -27,11 +27,11 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 PROJECTNAME=ll-tester.X
 
 # Active Configuration
-DEFAULTCONF=bma400
+DEFAULTCONF=bno086
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=mcj mcj_testing mjc_remote bma400 nsensor 
+ALLCONFS=mcj mcj_testing mjc_remote bno086 nsensor 
 
 
 # build
@@ -48,7 +48,7 @@ ALLCONFS=mcj mcj_testing mjc_remote bma400 nsensor
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mcj clean
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mcj_testing clean
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mjc_remote clean
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=bma400 clean
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=bno086 clean
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=nsensor clean
 
 
@@ -58,7 +58,7 @@ ALLCONFS=mcj mcj_testing mjc_remote bma400 nsensor
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mcj build
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mcj_testing build
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=mjc_remote build
-	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=bma400 build
+	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=bno086 build
 	    ${MAKE} SUBPROJECTS=${SUBPROJECTS} CONF=nsensor build
 
 
