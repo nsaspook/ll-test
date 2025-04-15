@@ -1394,24 +1394,24 @@
     &lt;/PowerProfiles&gt;
     &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adchs&quot; x=&quot;221&quot; y=&quot;101&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;can1&quot; x=&quot;519&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adchs&quot; x=&quot;224&quot; y=&quot;83&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;can1&quot; x=&quot;510&quot; y=&quot;100&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;239&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core_timer&quot; x=&quot;514&quot; y=&quot;293&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core_timer&quot; x=&quot;486&quot; y=&quot;360&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;mcpwm&quot; x=&quot;800&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;qei2&quot; x=&quot;940&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;rtcc&quot; x=&quot;515&quot; y=&quot;202&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;spi1&quot; x=&quot;369&quot; y=&quot;21&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;spi2&quot; x=&quot;368&quot; y=&quot;100&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;stdio&quot; x=&quot;666&quot; y=&quot;203&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;rtcc&quot; x=&quot;493&quot; y=&quot;248&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;spi1&quot; x=&quot;366&quot; y=&quot;43&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;spi2&quot; x=&quot;371&quot; y=&quot;119&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;stdio&quot; x=&quot;246&quot; y=&quot;315&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;tmr2&quot; x=&quot;520&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;tmr3&quot; x=&quot;1080&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;tmr4&quot; x=&quot;1220&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;tmr5&quot; x=&quot;368&quot; y=&quot;296&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;tmr6&quot; x=&quot;45&quot; y=&quot;202&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;tmr9&quot; x=&quot;44&quot; y=&quot;104&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;uart1&quot; x=&quot;369&quot; y=&quot;204&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;tmr5&quot; x=&quot;346&quot; y=&quot;377&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;tmr6&quot; x=&quot;81&quot; y=&quot;184&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;tmr9&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;uart1&quot; x=&quot;373&quot; y=&quot;246&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;18&quot; id=&quot;uart2&quot; x=&quot;660&quot; y=&quot;20&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
@@ -14993,7 +14993,7 @@
    <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>../src/config/bma400/definitions.h</file>
-         <hash>bb74275cd7571b511cc4480769f3e84b3a8d9ecca462e623e80b3f4b09cbfe6b</hash>
+         <hash>de35d5ac73caacd4dc0f99316714669e6a387b55c4a673655db94f92b8f8b95d</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/device.h</file>
@@ -15005,7 +15005,7 @@
       </entry>
       <entry>
          <file>../src/config/bma400/initialization.c</file>
-         <hash>89d4b053f4d0b2b2a0483299cbbc12b4998967ab0133057b69fbd62f80665f19</hash>
+         <hash>1a0cc9f9cc885f7e6faa676bceb11d84c7c8787ffb471d2dcc775b55ef8ae62f</hash>
       </entry>
       <entry>
          <file>../src/config/bma400/interrupts.c</file>

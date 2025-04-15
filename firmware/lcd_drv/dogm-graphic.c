@@ -294,7 +294,7 @@ void lcd_init(void)
 	WaitMs(170);
 	LCD_SET_COM_END(127); // set last COM electrode
 	LCD_SET_PARTIAL_DISPLAY(0, 127); // set partial display start and end
-	LCD_SET_POTI(0x8F); // set Contrast to mid range lvl
+	LCD_SET_POTI(0x87); // set Contrast to mid range lvl
 	LCD_SET_MAPPING_CTRL(2); // set mapping control to "bottom view"
 	LCD_SET_LINE_RATE(11); // set line rate to 9.4 kilo lines per second
 	LCD_SET_TEMP_COMP(1); // set temp compensation to -0.10%

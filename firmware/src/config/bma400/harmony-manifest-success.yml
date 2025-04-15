@@ -4,7 +4,7 @@
 
 
 project: ll-test
-creation_date: 2025-03-05T19:33:39.886-08:00[America/Los_Angeles]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-03-22T09:38:20.027-07:00[America/Los_Angeles]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Linux
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.2
@@ -14,7 +14,7 @@ harmony_version: v1.5.3
 compiler: XC32 4.60
 
 modules:
-    - {name: "csp", version: "v3.22.0"}
+    - {name: "csp", version: "v3.22.2"}
 
 packs:
     - {name: "PIC32MK-MC_DFP", version: "1.11.151"}

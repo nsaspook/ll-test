@@ -178,9 +178,9 @@ void CAN1_Initialize(void)
         /* Do Nothing */
     }
 
-    /* Set the Data bitrate to 2000 Kbps */
+    /* Set the Data bitrate to 5000 Kbps */
     CFD1DBTCFG = ((0UL << _CFD1DBTCFG_BRP_POSITION) & _CFD1DBTCFG_BRP_MASK)
-               | ((17UL << _CFD1DBTCFG_TSEG1_POSITION) & _CFD1DBTCFG_TSEG1_MASK)
+               | ((5UL << _CFD1DBTCFG_TSEG1_POSITION) & _CFD1DBTCFG_TSEG1_MASK)
                | ((0UL << _CFD1DBTCFG_TSEG2_POSITION) & _CFD1DBTCFG_TSEG2_MASK)
                | ((0UL << _CFD1DBTCFG_SJW_POSITION) & _CFD1DBTCFG_SJW_MASK);
 
