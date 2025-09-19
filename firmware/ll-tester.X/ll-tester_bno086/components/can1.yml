@@ -1,0 +1,519 @@
+configVersion: 1.0.0
+componentName: can1
+coreVersion: 5.8.2
+device: PIC32MK0512MCJ048
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: can1
+  type: module
+  version: ''
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: can1
+          x: '519'
+          y: '100'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    AUTO_DATA_BIT_TIMING_CALCULATION:
+      attributes:
+        id: AUTO_DATA_BIT_TIMING_CALCULATION
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    AUTO_NOMINAL_BIT_TIMING_CALCULATION:
+      attributes:
+        id: AUTO_NOMINAL_BIT_TIMING_CALCULATION
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    CALCULATED_DATA_BITRATE:
+      attributes:
+        id: CALCULATED_DATA_BITRATE
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '5000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    CALCULATED_DATA_ERRORRATE:
+      attributes:
+        id: CALCULATED_DATA_ERRORRATE
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '0.000'
+          type: Dynamic
+        type: Values
+      type: String
+    CALCULATED_NOMINAL_BITRATE:
+      attributes:
+        id: CALCULATED_NOMINAL_BITRATE
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '1000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    CALCULATED_NOMINAL_ERRORRATE:
+      attributes:
+        id: CALCULATED_NOMINAL_ERRORRATE
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '0.000'
+          type: Dynamic
+        type: Values
+      type: String
+    CAN1_FIFO1_SIZE:
+      attributes:
+        id: CAN1_FIFO1_SIZE
+      children:
+      - children:
+        - attributes:
+            value: '32'
+          type: User
+        type: Values
+      type: Integer
+    CAN1_FIFO2_SIZE:
+      attributes:
+        id: CAN1_FIFO2_SIZE
+      children:
+      - children:
+        - attributes:
+            value: '32'
+          type: User
+        type: Values
+      type: Integer
+    CAN1_FILTER0_FIFO_SELECT:
+      attributes:
+        id: CAN1_FILTER0_FIFO_SELECT
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: KeyValueSet
+    CAN1_FILTER0_MASK_ID:
+      attributes:
+        id: CAN1_FILTER0_MASK_ID
+      children:
+      - children:
+        - attributes:
+            value: '299020625'
+          type: User
+        type: Values
+      type: Hex
+    CAN1_FILTER0_MASK_ID_DECIMAL:
+      attributes:
+        id: CAN1_FILTER0_MASK_ID_DECIMAL
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '299020625'
+          type: Dynamic
+        type: Values
+      type: Integer
+    CAN1_FILTER1_ENABLE:
+      attributes:
+        id: CAN1_FILTER1_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    CAN1_FILTER1_FIFO_SELECT:
+      attributes:
+        id: CAN1_FILTER1_FIFO_SELECT
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: KeyValueSet
+    CAN1_FILTER1_MASK_ID:
+      attributes:
+        id: CAN1_FILTER1_MASK_ID
+      children:
+      - children:
+        - attributes:
+            value: '519896856'
+          type: User
+        type: Values
+      type: Hex
+    CAN1_FILTER1_MASK_ID_DECIMAL:
+      attributes:
+        id: CAN1_FILTER1_MASK_ID_DECIMAL
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '519896856'
+          type: Dynamic
+        type: Values
+      type: Integer
+    CAN_CORE_CLOCK_FREQ:
+      attributes:
+        id: CAN_CORE_CLOCK_FREQ
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '40000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    CAN_CORE_SELECT_CLOCK_SOURCE:
+      attributes:
+        id: CAN_CORE_SELECT_CLOCK_SOURCE
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    CAN_INTERRUPT_MODE:
+      attributes:
+        id: CAN_INTERRUPT_MODE
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    CAN_TIMESTAMP_ENABLE:
+      attributes:
+        id: CAN_TIMESTAMP_ENABLE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+    CAN_TIMESTAMP_EOF:
+      attributes:
+        id: CAN_TIMESTAMP_EOF
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    CAN_TIMESTAMP_PRESCALER:
+      attributes:
+        id: CAN_TIMESTAMP_PRESCALER
+      children:
+      - children:
+        - attributes:
+            id: visible
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: Integer
+    DATA_BITRATE:
+      attributes:
+        id: DATA_BITRATE
+      children:
+      - children:
+        - attributes:
+            value: '5000'
+          type: User
+        type: Values
+      type: Integer
+    DATA_SAMPLE_POINT:
+      attributes:
+        id: DATA_SAMPLE_POINT
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: can1
+            value: '87.5'
+          type: Dynamic
+        type: Values
+      type: Float
+    DATA_TIME_QUANTA_PERIOD:
+      attributes:
+        id: DATA_TIME_QUANTA_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '25.000'
+          type: Dynamic
+        type: Values
+      type: String
+    DBT_BRP:
+      attributes:
+        id: DBT_BRP
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: can1
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    DBT_SJW:
+      attributes:
+        id: DBT_SJW
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    DBT_TOTAL_TIME_QUANTA:
+      attributes:
+        id: DBT_TOTAL_TIME_QUANTA
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '8'
+          type: Dynamic
+        type: Values
+      type: Integer
+    DBT_TSEG1:
+      attributes:
+        id: DBT_TSEG1
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '6'
+          type: Dynamic
+        type: Values
+      type: Integer
+    DBT_TSEG2:
+      attributes:
+        id: DBT_TSEG2
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    FIFO_OFFSET:
+      attributes:
+        id: FIFO_OFFSET
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '0xc'
+          type: Dynamic
+        type: Values
+      type: String
+    FILTER_OBJ_MASK_OFFSET:
+      attributes:
+        id: FILTER_OBJ_MASK_OFFSET
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '0x8'
+          type: Dynamic
+        type: Values
+      type: String
+    FILTER_OFFSET:
+      attributes:
+        id: FILTER_OFFSET
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '0x4'
+          type: Dynamic
+        type: Values
+      type: String
+    NBT_BRP:
+      attributes:
+        id: NBT_BRP
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: can1
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Integer
+    NBT_SJW:
+      attributes:
+        id: NBT_SJW
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    NBT_TOTAL_TIME_QUANTA:
+      attributes:
+        id: NBT_TOTAL_TIME_QUANTA
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '40'
+          type: Dynamic
+        type: Values
+      type: Integer
+    NBT_TSEG1:
+      attributes:
+        id: NBT_TSEG1
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '38'
+          type: Dynamic
+        type: Values
+      type: Integer
+    NBT_TSEG2:
+      attributes:
+        id: NBT_TSEG2
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '1'
+          type: Dynamic
+        type: Values
+      type: Integer
+    NOMINAL_BITRATE:
+      attributes:
+        id: NOMINAL_BITRATE
+      children:
+      - children:
+        - attributes:
+            value: '1000'
+          type: User
+        type: Values
+      type: Integer
+    NOMINAL_SAMPLE_POINT:
+      attributes:
+        id: NOMINAL_SAMPLE_POINT
+      children:
+      - children:
+        - attributes:
+            id: readOnly
+          children:
+          - type: Value
+            value: 'true'
+          type: Boolean
+        type: Attributes
+      - children:
+        - attributes:
+            id: can1
+            value: '97.5'
+          type: Dynamic
+        type: Values
+      type: Float
+    NOMINAL_TIME_QUANTA_PERIOD:
+      attributes:
+        id: NOMINAL_TIME_QUANTA_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: can1
+            value: '25.000'
+          type: Dynamic
+        type: Values
+      type: String
+    NUMBER_OF_FILTER:
+      attributes:
+        id: NUMBER_OF_FILTER
+      children:
+      - children:
+        - attributes:
+            value: '2'
+          type: User
+        type: Values
+      type: Integer
+    TX_QUEUE_MESSAGE_BUFFER:
+      attributes:
+        id: TX_QUEUE_MESSAGE_BUFFER
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: Integer
+  userData: {}

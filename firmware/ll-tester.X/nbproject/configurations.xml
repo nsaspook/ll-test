@@ -5,68 +5,68 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="bma400" displayName="bma400" projectFiles="true">
+        <logicalFolder name="bno086" displayName="bno086" projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="adchs" displayName="adchs" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/adchs/plib_adchs_common.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/adchs/plib_adchs.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/adchs/plib_adchs.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/adchs/plib_adchs_common.h</itemPath>
             </logicalFolder>
             <logicalFolder name="canfd" displayName="canfd" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/canfd/plib_canfd_common.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/canfd/plib_canfd1.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/canfd/plib_canfd_common.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/canfd/plib_canfd1.h</itemPath>
             </logicalFolder>
             <logicalFolder name="clk" displayName="clk" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/clk/plib_clk.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/clk/plib_clk.h</itemPath>
             </logicalFolder>
             <logicalFolder name="coretimer" displayName="coretimer" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/coretimer/plib_coretimer.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/coretimer/plib_coretimer.h</itemPath>
             </logicalFolder>
             <logicalFolder name="dmac" displayName="dmac" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/dmac/plib_dmac.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/dmac/plib_dmac.h</itemPath>
             </logicalFolder>
             <logicalFolder name="evic" displayName="evic" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/evic/plib_evic.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/evic/plib_evic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/gpio/plib_gpio.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/gpio/plib_gpio.h</itemPath>
             </logicalFolder>
             <logicalFolder name="mcpwm" displayName="mcpwm" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/mcpwm/plib_mcpwm_common.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/mcpwm/plib_mcpwm.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/mcpwm/plib_mcpwm_common.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/mcpwm/plib_mcpwm.h</itemPath>
             </logicalFolder>
             <logicalFolder name="qei" displayName="qei" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/qei/plib_qei2.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/qei/plib_qei_common.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/qei/plib_qei_common.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/qei/plib_qei2.h</itemPath>
             </logicalFolder>
             <logicalFolder name="rtcc" displayName="rtcc" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/rtcc/plib_rtcc.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/rtcc/plib_rtcc.h</itemPath>
             </logicalFolder>
             <logicalFolder name="spi" displayName="spi" projectFiles="true">
               <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
-                <itemPath>../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.h</itemPath>
-                <itemPath>../src/config/bma400/peripheral/spi/spi_master/plib_spi_master_common.h</itemPath>
-                <itemPath>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.h</itemPath>
+                <itemPath>../src/config/bno086/peripheral/spi/spi_master/plib_spi_master_common.h</itemPath>
+                <itemPath>../src/config/bno086/peripheral/spi/spi_master/plib_spi2_master.h</itemPath>
+                <itemPath>../src/config/bno086/peripheral/spi/spi_master/plib_spi1_master.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="tmr" displayName="tmr" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr4.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr6.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr2.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr3.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr5.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr9.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr_common.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr_common.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr6.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr4.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr5.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr2.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr3.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr9.h</itemPath>
             </logicalFolder>
             <logicalFolder name="uart" displayName="uart" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/uart/plib_uart2.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/uart/plib_uart_common.h</itemPath>
-              <itemPath>../src/config/bma400/peripheral/uart/plib_uart1.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/uart/plib_uart_common.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/uart/plib_uart1.h</itemPath>
+              <itemPath>../src/config/bno086/peripheral/uart/plib_uart2.h</itemPath>
             </logicalFolder>
           </logicalFolder>
-          <itemPath>../src/config/bma400/device.h</itemPath>
-          <itemPath>../src/config/bma400/toolchain_specifics.h</itemPath>
-          <itemPath>../src/config/bma400/interrupts.h</itemPath>
-          <itemPath>../src/config/bma400/definitions.h</itemPath>
+          <itemPath>../src/config/bno086/toolchain_specifics.h</itemPath>
+          <itemPath>../src/config/bno086/definitions.h</itemPath>
+          <itemPath>../src/config/bno086/interrupts.h</itemPath>
+          <itemPath>../src/config/bno086/device.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/bma490l.h</itemPath>
@@ -92,6 +92,32 @@
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="true">
+      <logicalFolder name="ll-tester_bno086"
+                     displayName="ll-tester_bno086"
+                     projectFiles="true">
+        <logicalFolder name="components" displayName="components" projectFiles="true">
+          <itemPath>ll-tester_bno086/components/tmr3.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/uart1.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/qei2.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/tmr5.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/dfp.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/can1.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/tmr9.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/rtcc.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/stdio.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/core.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/mcpwm.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/tmr2.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/spi1.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/uart2.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/spi2.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/adchs.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/tmr4.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/tmr6.yml</itemPath>
+          <itemPath>ll-tester_bno086/components/core_timer.yml</itemPath>
+        </logicalFolder>
+        <itemPath>ll-tester_bno086/mcc-config.mc4</itemPath>
+      </logicalFolder>
       <logicalFolder name="f1" displayName="mcj.mhc" projectFiles="true">
         <itemPath>../src/config/mcj/mcj.mhc/adchs.yml</itemPath>
         <itemPath>../src/config/mcj/mcj.mhc/can1.yml</itemPath>
@@ -114,7 +140,6 @@
       </logicalFolder>
       <itemPath>Makefile</itemPath>
       <itemPath>../src/config/mcj/harmony-manifest-success.yml</itemPath>
-      <itemPath>wfipic32mcj.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="lcd_drv" displayName="lcd_drv" projectFiles="true">
       <itemPath>../lcd_drv/lcd_drv.c</itemPath>
@@ -134,12 +159,16 @@
       <itemPath>../lcd_drv/eadog.h</itemPath>
       <itemPath>../lcd_drv/lcd_drv.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="LibraryFiles"
+                   displayName="LibraryFiles"
+                   projectFiles="true">
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="bma400" displayName="bma400" projectFiles="true">
-          <itemPath>../src/config/bma400/p32MK0512MCJ048.ld</itemPath>
+        <logicalFolder name="bno086" displayName="bno086" projectFiles="true">
+          <itemPath>../src/config/bno086/p32MK0512MCJ048.ld</itemPath>
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
@@ -147,63 +176,63 @@
                    displayName="Source Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="bma400" displayName="bma400" projectFiles="true">
+        <logicalFolder name="bno086" displayName="bno086" projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="adchs" displayName="adchs" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/adchs/plib_adchs.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/adchs/plib_adchs.c</itemPath>
             </logicalFolder>
             <logicalFolder name="canfd" displayName="canfd" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/canfd/plib_canfd1.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/canfd/plib_canfd1.c</itemPath>
             </logicalFolder>
             <logicalFolder name="clk" displayName="clk" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/clk/plib_clk.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
             <logicalFolder name="coretimer" displayName="coretimer" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/coretimer/plib_coretimer.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/coretimer/plib_coretimer.c</itemPath>
             </logicalFolder>
             <logicalFolder name="dmac" displayName="dmac" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/dmac/plib_dmac.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/dmac/plib_dmac.c</itemPath>
             </logicalFolder>
             <logicalFolder name="evic" displayName="evic" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/evic/plib_evic.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/evic/plib_evic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="gpio" displayName="gpio" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/gpio/plib_gpio.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/gpio/plib_gpio.c</itemPath>
             </logicalFolder>
             <logicalFolder name="mcpwm" displayName="mcpwm" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/mcpwm/plib_mcpwm.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/mcpwm/plib_mcpwm.c</itemPath>
             </logicalFolder>
             <logicalFolder name="qei" displayName="qei" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/qei/plib_qei2.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/qei/plib_qei2.c</itemPath>
             </logicalFolder>
             <logicalFolder name="rtcc" displayName="rtcc" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/rtcc/plib_rtcc.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/rtcc/plib_rtcc.c</itemPath>
             </logicalFolder>
             <logicalFolder name="spi" displayName="spi" projectFiles="true">
               <logicalFolder name="spi_master" displayName="spi_master" projectFiles="true">
-                <itemPath>../src/config/bma400/peripheral/spi/spi_master/plib_spi1_master.c</itemPath>
-                <itemPath>../src/config/bma400/peripheral/spi/spi_master/plib_spi2_master.c</itemPath>
+                <itemPath>../src/config/bno086/peripheral/spi/spi_master/plib_spi2_master.c</itemPath>
+                <itemPath>../src/config/bno086/peripheral/spi/spi_master/plib_spi1_master.c</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="tmr" displayName="tmr" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr4.c</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr6.c</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr2.c</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr9.c</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr5.c</itemPath>
-              <itemPath>../src/config/bma400/peripheral/tmr/plib_tmr3.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr6.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr4.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr5.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr2.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr3.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/tmr/plib_tmr9.c</itemPath>
             </logicalFolder>
             <logicalFolder name="uart" displayName="uart" projectFiles="true">
-              <itemPath>../src/config/bma400/peripheral/uart/plib_uart2.c</itemPath>
-              <itemPath>../src/config/bma400/peripheral/uart/plib_uart1.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/uart/plib_uart1.c</itemPath>
+              <itemPath>../src/config/bno086/peripheral/uart/plib_uart2.c</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
-            <itemPath>../src/config/bma400/stdio/xc32_monitor.c</itemPath>
+            <itemPath>../src/config/bno086/stdio/xc32_monitor.c</itemPath>
           </logicalFolder>
-          <itemPath>../src/config/bma400/interrupts.c</itemPath>
-          <itemPath>../src/config/bma400/initialization.c</itemPath>
-          <itemPath>../src/config/bma400/exceptions.c</itemPath>
+          <itemPath>../src/config/bno086/initialization.c</itemPath>
+          <itemPath>../src/config/bno086/interrupts.c</itemPath>
+          <itemPath>../src/config/bno086/exceptions.c</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/bma490l.c</itemPath>
@@ -756,6 +785,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
         <property key="poweroptions.powerenable" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="/root/ll-test/firmware/ll-tester.X/debug/mcj/pic32mcj_ptg"/>
         <property key="programmerToGoImageName" value="pic32mcj_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
@@ -1087,6 +1118,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="/root/ll-test/firmware/ll-tester.X/debug/mcj_testing/ll-tester_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
@@ -1648,6 +1681,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
         <property key="poweroptions.powerenable" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="/root/ll-test/firmware/ll-tester.X/debug/mjc_remote/ll-tester_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
@@ -1913,13 +1948,13 @@
         <targetDevice>PIC32MK0512MCJ048</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>pk4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.60</languageToolchainVersion>
         <platform>2</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32MK-MC_DFP" vendor="Microchip" version="1.11.151"/>
+        <pack name="PIC32MK-MC_DFP" vendor="Microchip" version="1.12.263"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -1951,6 +1986,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="cast-align" value="false"/>
         <property key="code-model" value="default"/>
         <property key="const-model" value="default"/>
@@ -1965,7 +2001,7 @@
         <property key="exclude-floating-point" value="false"/>
         <property key="expand-pragma-config" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/bma400;../src/config/mcj"/>
+                  value="../src;../src/config/bma400;../src/config/bno086;../src/config/mcj"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -2029,6 +2065,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -2074,6 +2111,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -2083,7 +2121,7 @@
         <property key="exceptions" value="true"/>
         <property key="exclude-floating-point" value="false"/>
         <property key="extra-include-directories"
-                  value="../src;../src/config/bma400;../src/config/mcj"/>
+                  value="../src;../src/config/bma400;../src/config/bno086;../src/config/mcj"/>
         <property key="generate-16-bit-code" value="false"/>
         <property key="generate-micro-compressed-code" value="false"/>
         <property key="isolate-each-function" value="true"/>
@@ -2231,6 +2269,122 @@
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value="3.60"/>
       </ICD4Tool>
+      <ICD5Tool>
+        <property key="ADC" value="true"/>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="CAN1" value="true"/>
+        <property key="CHANGE NOTICE A" value="true"/>
+        <property key="CHANGE NOTICE B" value="true"/>
+        <property key="CHANGE NOTICE C" value="true"/>
+        <property key="CHANGE NOTICE D" value="true"/>
+        <property key="CLC" value="true"/>
+        <property key="CMP" value="true"/>
+        <property key="CTMU" value="true"/>
+        <property key="DMA" value="true"/>
+        <property key="Freeze All Other Peripherals" value="true"/>
+        <property key="HLVD" value="true"/>
+        <property key="I2C 1" value="true"/>
+        <property key="I2C 2" value="true"/>
+        <property key="INPUT CAPTURE 1" value="true"/>
+        <property key="INPUT CAPTURE 2" value="true"/>
+        <property key="INPUT CAPTURE 3" value="true"/>
+        <property key="INPUT CAPTURE 4" value="true"/>
+        <property key="INPUT CAPTURE 5" value="true"/>
+        <property key="INPUT CAPTURE 6" value="true"/>
+        <property key="INPUT CAPTURE 7" value="true"/>
+        <property key="INPUT CAPTURE 8" value="true"/>
+        <property key="INPUT CAPTURE 9" value="true"/>
+        <property key="INTERRUPT CONTROL" value="true"/>
+        <property key="OUTPUT COMPARE 1" value="true"/>
+        <property key="OUTPUT COMPARE 2" value="true"/>
+        <property key="OUTPUT COMPARE 3" value="true"/>
+        <property key="OUTPUT COMPARE 4" value="true"/>
+        <property key="OUTPUT COMPARE 5" value="true"/>
+        <property key="OUTPUT COMPARE 6" value="true"/>
+        <property key="OUTPUT COMPARE 7" value="true"/>
+        <property key="OUTPUT COMPARE 8" value="true"/>
+        <property key="OUTPUT COMPARE 9" value="true"/>
+        <property key="REAL TIME CLOCK" value="true"/>
+        <property key="REFERENCE CLOCK1" value="true"/>
+        <property key="REFERENCE CLOCK2" value="true"/>
+        <property key="REFERENCE CLOCK3" value="true"/>
+        <property key="REFERENCE CLOCK4" value="true"/>
+        <property key="SPI/I2S 1" value="true"/>
+        <property key="SPI/I2S 2" value="true"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
+        <property key="TIMER1" value="true"/>
+        <property key="TIMER2" value="true"/>
+        <property key="TIMER3" value="true"/>
+        <property key="TIMER4" value="true"/>
+        <property key="TIMER5" value="true"/>
+        <property key="TIMER6" value="true"/>
+        <property key="TIMER7" value="true"/>
+        <property key="TIMER8" value="true"/>
+        <property key="TIMER9" value="true"/>
+        <property key="ToolFirmwareFilePath"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions"
+                  value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack"
+                  value="Press to select which tool pack to use"/>
+        <property key="UART1" value="true"/>
+        <property key="UART2" value="true"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface"
+                  value="${communication.interface.default}"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.simultaneous.debug" value="false"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="hwtoolclock.clock.frequency" value="4"/>
+        <property key="hwtoolclock.frcindebug" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
+        <property key="poweroptions.powerenable" value="true"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgcconfig" value="pull up"/>
+        <property key="programoptions.pgcresistor.value" value="4.7"/>
+        <property key="programoptions.pgdconfig" value="pull up"/>
+        <property key="programoptions.pgdresistor.value" value="4.7"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.program.otpconfig" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="Never"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value="3.3"/>
+      </ICD5Tool>
       <PK5Tool>
         <property key="ADC" value="true"/>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -2293,7 +2447,8 @@
         <property key="UART2" value="true"/>
         <property key="bluetoothsetting" value="do.not.change"/>
         <property key="communication.activationmode" value="nohv"/>
-        <property key="communication.interface" value=""/>
+        <property key="communication.interface"
+                  value="${communication.interface.default}"/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
@@ -2322,12 +2477,12 @@
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
-        <property key="programoptions.pgcconfig" value="pull down"/>
+        <property key="programoptions.pgcconfig" value="pull up"/>
         <property key="programoptions.pgcresistor.value" value="4.7"/>
-        <property key="programoptions.pgdconfig" value="pull down"/>
+        <property key="programoptions.pgdconfig" value="pull up"/>
         <property key="programoptions.pgdresistor.value" value="4.7"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="2"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
@@ -2337,7 +2492,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
-        <property key="programoptions.smart.program" value="When debugging only"/>
+        <property key="programoptions.smart.program" value="Never"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="ptgProgramImage" value="true"/>
         <property key="ptgSendImage" value="true"/>
@@ -2345,7 +2500,7 @@
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
-        <property key="voltagevalue" value="3.25"/>
+        <property key="voltagevalue" value="3.3"/>
       </PK5Tool>
       <Tool>
         <property key="ADC" value="true"/>
@@ -2408,8 +2563,10 @@
                   value="Press to select which tool pack to use"/>
         <property key="UART1" value="true"/>
         <property key="UART2" value="true"/>
+        <property key="bluetoothsetting" value="do.not.change"/>
         <property key="communication.activationmode" value="nohv"/>
-        <property key="communication.interface" value=""/>
+        <property key="communication.interface"
+                  value="${communication.interface.default}"/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
@@ -2420,6 +2577,7 @@
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
+        <property key="hwtoolclock.clock.frequency" value="4"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
@@ -2444,15 +2602,15 @@
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
-        <property key="programoptions.pgcconfig" value="pull down"/>
+        <property key="programoptions.pgcconfig" value="pull up"/>
         <property key="programoptions.pgcresistor.value" value="4.7"/>
-        <property key="programoptions.pgdconfig" value="pull down"/>
+        <property key="programoptions.pgdconfig" value="pull up"/>
         <property key="programoptions.pgdresistor.value" value="4.7"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
-        <property key="programoptions.pgmspeed" value="2"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
-                  value="${programoptions.preservedataflash.ranges}"/>
+                  value="${memories.dataflash.default}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
@@ -2471,7 +2629,7 @@
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
-        <property key="voltagevalue" value="3.25"/>
+        <property key="voltagevalue" value="3.6"/>
       </Tool>
       <pk4hybrid>
         <property key="ADC" value="true"/>
@@ -2542,12 +2700,13 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
         <property key="lastid" value=""/>
         <property key="memories.aux" value="false"/>
-        <property key="memories.bootflash" value="false"/>
+        <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.configurationmemory2" value="true"/>
         <property key="memories.dataflash" value="true"/>
@@ -2560,18 +2719,21 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
         <property key="poweroptions.powerenable" value="true"/>
-        <property key="programmerToGoImageName" value="pic32mcj_ptg"/>
+        <property key="programmerToGoFilePath"
+                  value="/root/ll-test/firmware/ll-tester.X/debug/bno086/ll-tester_ptg"/>
+        <property key="programmerToGoImageName" value="ll-tester_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
-        <property key="programoptions.pgcconfig" value="pull down"/>
+        <property key="programoptions.pgcconfig" value="pull up"/>
         <property key="programoptions.pgcresistor.value" value="4.7"/>
-        <property key="programoptions.pgdconfig" value="pull down"/>
+        <property key="programoptions.pgdconfig" value="pull up"/>
         <property key="programoptions.pgdresistor.value" value="4.7"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
         <property key="programoptions.pgmspeed" value="Med"/>
         <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges" value=""/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
@@ -2580,6 +2742,7 @@
         <property key="programoptions.program.otpconfig" value="false"/>
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.smart.program" value="When debugging only"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="ptgProgramImage" value="true"/>
         <property key="ptgSendImage" value="true"/>
@@ -2587,7 +2750,7 @@
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
-        <property key="voltagevalue" value="3.60"/>
+        <property key="voltagevalue" value="3.6"/>
       </pk4hybrid>
     </conf>
     <conf name="nsensor" type="2">
@@ -3122,6 +3285,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d07ffff"/>
         <property key="poweroptions.powerenable" value="true"/>
+        <property key="programmerToGoFilePath"
+                  value="/root/ll-test/firmware/ll-tester.X/debug/nsensor/pic32mcj_ptg"/>
         <property key="programmerToGoImageName" value="pic32mcj_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>

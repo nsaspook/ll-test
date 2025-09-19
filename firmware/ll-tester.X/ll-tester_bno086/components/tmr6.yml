@@ -1,0 +1,127 @@
+configVersion: 1.0.0
+componentName: tmr6
+coreVersion: 5.8.2
+device: PIC32MK0512MCJ048
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tmr6
+  type: module
+  version: ''
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: tmr6
+          x: '45'
+          y: '202'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    TCON_REG_VALUE:
+      attributes:
+        id: TCON_REG_VALUE
+      children:
+      - children:
+        - attributes:
+            id: tmr6
+            value: '0'
+          type: Dynamic
+        type: Values
+      type: Hex
+    TIMER_32BIT_MODE_SEL:
+      attributes:
+        id: TIMER_32BIT_MODE_SEL
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TIMER_CLOCK_FREQ:
+      attributes:
+        id: TIMER_CLOCK_FREQ
+      children:
+      - children:
+        - attributes:
+            id: tmr6
+            value: '60000000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TIMER_PERIOD:
+      attributes:
+        id: TIMER_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '65535'
+          type: Long
+        type: Attributes
+      - children:
+        - attributes:
+            id: tmr6
+            value: '29999'
+          type: Dynamic
+        type: Values
+      type: Long
+    TIMER_TIME_PERIOD_MS:
+      attributes:
+        id: TIMER_TIME_PERIOD_MS
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '1092.2833'
+          type: Float
+        type: Attributes
+      - children:
+        - attributes:
+            value: '500.0'
+          type: User
+        type: Values
+      type: Float
+    TIMER_UNIT:
+      attributes:
+        id: TIMER_UNIT
+      children:
+      - children:
+        - attributes:
+            value: microsecon
+          type: User
+        type: Values
+      type: Combo
+    TIMER_WIDTH:
+      attributes:
+        id: TIMER_WIDTH
+      children:
+      - children:
+        - attributes:
+            id: tmr6
+            value: '16'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TMR_INTERRUPT_MODE:
+      attributes:
+        id: TMR_INTERRUPT_MODE
+      children:
+      - children:
+        - attributes:
+            value: 'true'
+          type: User
+        type: Values
+      type: Boolean
+  userData: {}

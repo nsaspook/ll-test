@@ -195,9 +195,9 @@ void SYS_Initialize ( void* data )
 
     QEI2_Initialize();
 
-	UART1_Initialize();
-
     TMR4_Initialize();
+
+	UART1_Initialize();
 
 	UART2_Initialize();
 

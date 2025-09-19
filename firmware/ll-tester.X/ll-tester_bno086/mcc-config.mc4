@@ -1,0 +1,142 @@
+configVersion: 1.0.0
+coreVersion: 5.8.2
+spaHostVersion: 1.0.0
+device: PIC32MK0512MCJ048
+deviceLibrary:
+  className: com.microchip.mcc.harmony.Harmony3Library
+groupModules: []
+modules:
+- adchs
+- can1
+- core
+- core_timer
+- dfp
+- mcpwm
+- qei2
+- rtcc
+- spi1
+- spi2
+- stdio
+- tmr2
+- tmr3
+- tmr4
+- tmr5
+- tmr6
+- tmr9
+- uart1
+- uart2
+generatedFileHashHistoryMap:
+- file: ../src/config/bno086/definitions.h
+  hash: 9390bd4954deb133747c0613fdaf274a1552deec8a266fb04f6e5491de3e5af4
+- file: ../src/config/bno086/device.h
+  hash: 4d4341a6f9628cea0bf73f980b639f7cb81089e55a60ad7e434be2a71e477442
+- file: ../src/config/bno086/exceptions.c
+  hash: 265c985839caadb2fa9e8fc76e7bc3c160e31e9b2c96dc4006add33e5d7ee212
+- file: ../src/config/bno086/initialization.c
+  hash: 16406202772137291ce712db58aa8debacfd27fa8eb163b5e8790fc05e7f7bde
+- file: ../src/config/bno086/interrupts.c
+  hash: d444decaa5a1376451e19601f3666d7faba2662996bd9415bf9692398a8f19e3
+- file: ../src/config/bno086/interrupts.h
+  hash: cd240628cbd71664542f6c599dd2685e8a022cb01af0d560987441f5fcf55a98
+- file: ../src/config/bno086/p32MK0512MCJ048.ld
+  hash: 6b3d7aeb85d7682571d01621bb9f286b9a8ab42ba720b8a660c85459f8452d12
+- file: ../src/config/bno086/peripheral/adchs/plib_adchs.c
+  hash: ea0d907abfd34a138dabd04183eb8f6812501a69e99ab7c5252c1d313cf75c95
+- file: ../src/config/bno086/peripheral/adchs/plib_adchs.h
+  hash: 92e6af4a81b6f5ec626422a05fb890e0c5d536acd35a0b67ec71723a05832baa
+- file: ../src/config/bno086/peripheral/adchs/plib_adchs_common.h
+  hash: 0a3ed23aee80cb9b469014d86ff35186abcfbeaa16f98921f950fcf43b9cc3db
+- file: ../src/config/bno086/peripheral/canfd/plib_canfd1.c
+  hash: c2a45df59994718b53f9a04d544cc3a6f8ef440757681d083db781762258e233
+- file: ../src/config/bno086/peripheral/canfd/plib_canfd1.h
+  hash: ffe6ae38e8992247fbc90680be6ac780b48adf67007f11063cc54381f567995b
+- file: ../src/config/bno086/peripheral/canfd/plib_canfd_common.h
+  hash: fbf5091541d361f023f2c1fa3f04173ed84db75e64f475d14e1919856f1bf620
+- file: ../src/config/bno086/peripheral/clk/plib_clk.c
+  hash: 7ae5219ccae0a50cb7f68435b0bcb96593ab173d890480b0e68ff4fa9591068f
+- file: ../src/config/bno086/peripheral/clk/plib_clk.h
+  hash: 35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255
+- file: ../src/config/bno086/peripheral/coretimer/plib_coretimer.c
+  hash: 7e3785efeaf90ff54fd2766619c47bc98a8df2ba5d01706d6c12c5f7231037e5
+- file: ../src/config/bno086/peripheral/coretimer/plib_coretimer.h
+  hash: 4bb450e5909dea7240cfa12f157a017270a36f274ae99a594e8b046706a88eda
+- file: ../src/config/bno086/peripheral/dmac/plib_dmac.c
+  hash: 0b1be6f8e7c92107b49fdf2bf35341f6795089a98a332aaca186abb213812501
+- file: ../src/config/bno086/peripheral/dmac/plib_dmac.h
+  hash: 78b9533671371600d12031eb6280ef51c292677cc636c809bb1b16ab772a4f8d
+- file: ../src/config/bno086/peripheral/evic/plib_evic.c
+  hash: 23f91846636766a9339c541379371b22342bce4c26e9f94da75ba2e2666d9a9b
+- file: ../src/config/bno086/peripheral/evic/plib_evic.h
+  hash: e176451a09954f36506d46a77f6c1511116c77ad52e4f5d4a41c95634fa160df
+- file: ../src/config/bno086/peripheral/gpio/plib_gpio.c
+  hash: 552537c3921be02ac6b3ea67118d292a2b46a4e2fd9d0ea2fae7935ae4cf8420
+- file: ../src/config/bno086/peripheral/gpio/plib_gpio.h
+  hash: 1ee691ec6a90169e2496748e2544c57e08a27e96289ba5ce180776ab38ef4a15
+- file: ../src/config/bno086/peripheral/mcpwm/plib_mcpwm.c
+  hash: 4ead13fe5a31b6b00fafae6e8b97172909317ed91c31be13e64ad5d8dad590e8
+- file: ../src/config/bno086/peripheral/mcpwm/plib_mcpwm.h
+  hash: fe315bf2bcba7ad56b08d0be1fcfd1ab7230542fc98b1b2726f73d49e2a26c87
+- file: ../src/config/bno086/peripheral/mcpwm/plib_mcpwm_common.h
+  hash: e1a7024335a9f1a1678aa24a8b52c02021dc9848a4e9c4fad36291e7375937f4
+- file: ../src/config/bno086/peripheral/qei/plib_qei2.c
+  hash: f949f5d551d47a01a9ae70f54d501c90ba8c988f574b9f2f3ecc9c36b2efebae
+- file: ../src/config/bno086/peripheral/qei/plib_qei2.h
+  hash: f86158eca0c327a5fe07352c19dce004416c513ab51e43b88fa9bee21f6294ca
+- file: ../src/config/bno086/peripheral/qei/plib_qei_common.h
+  hash: 63f1cbf111841acd9bf226772787e71a176289defa26b5611cab6df28115187d
+- file: ../src/config/bno086/peripheral/rtcc/plib_rtcc.c
+  hash: e5a44c3c851706fe0459fc7c181cb2cb21238ab011868aa00e93fda59dd569da
+- file: ../src/config/bno086/peripheral/rtcc/plib_rtcc.h
+  hash: f6e5f8ac90300fe16c18b0ef127a3aaf3b522ac36c87f64571f3cafabadf3e13
+- file: ../src/config/bno086/peripheral/spi/spi_master/plib_spi1_master.c
+  hash: f85629d370a814e0bd4b6537bff901f989f6134d4be0a206eda63310011cd10d
+- file: ../src/config/bno086/peripheral/spi/spi_master/plib_spi1_master.h
+  hash: e022deaa6bc614442c072622acf6a7ebb292ba4db067510bd6e37af805bea226
+- file: ../src/config/bno086/peripheral/spi/spi_master/plib_spi2_master.c
+  hash: 5c61f32c5d0a3aa36543af30ec1f1b7b8a027d678556ebcd23924adca5cd8a26
+- file: ../src/config/bno086/peripheral/spi/spi_master/plib_spi2_master.h
+  hash: 1e6470640bead49b6050d7221654e480015df4d8a6ffa22494aa97e9711717c8
+- file: ../src/config/bno086/peripheral/spi/spi_master/plib_spi_master_common.h
+  hash: 844a71566e886cd1f28024000d440ac48841cdb4f4059f5feefac8e4334f12ef
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr2.c
+  hash: 4a77c51ed880db3e2ef43fd11bd5e07175fad858c243b67b50afe26f244f148a
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr2.h
+  hash: fbd4c230d2ebaf516aee9c9754c90f040132f730ca73573e13abfd9d23c419ed
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr3.c
+  hash: 99f0940d09acc6a7bfab4ad73a91b03c7a9dbd55c0cde8cc065a5e10d3130afb
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr3.h
+  hash: 19ee9614ac252cceed6414a6db106005ab1d2e35ecd4b97f4e8a6116e6facdf0
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr4.c
+  hash: 2e4a91e90ba400cfa86c3cc9feb3b5c5ac7357662c73b093f28835a1366dc38d
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr4.h
+  hash: 495709ae2b529cdb861e5946cc9d73dbd1831047a2e39258747642f08d7e5dfb
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr5.c
+  hash: 3946b04bf91c38405b98fc35b462866cd221210f36aae0587892420c93359f3e
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr5.h
+  hash: 143ab36fd0f9b7755efb5ba29db0488c43f1fc1270098a70afe142a09f72f1fe
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr6.c
+  hash: be0283d0a13be5bef240979873e3c17514db69b8cfcfb1a9e62389fe7a3fb51c
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr6.h
+  hash: d559ab3f5f17c84eeb67f2da2a8b0b91770fb182bec53357d20317a2fc65d7a8
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr9.c
+  hash: d08dae6b6cc2d4a6d91b466fe62b9b09b17a584c9e083c18ef536affdec923d7
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr9.h
+  hash: a92367e78c6eed9679e741fb70c63340611b83e0869fa81ce568f7d5e9043c89
+- file: ../src/config/bno086/peripheral/tmr/plib_tmr_common.h
+  hash: fe0f7e886eba99992a90f718b6aa9f2b438b8204094495f72a0d1e83418d3187
+- file: ../src/config/bno086/peripheral/uart/plib_uart1.c
+  hash: ed6ba02a5533f71cd5160560a41080841b880ceeccdd51dd4e0cd455c5e16867
+- file: ../src/config/bno086/peripheral/uart/plib_uart1.h
+  hash: 7a1eb131a20e49ee5e46ba34845ec01b77fdcea9750992bbebccd3dec805b35a
+- file: ../src/config/bno086/peripheral/uart/plib_uart2.c
+  hash: 518fd9fbe9ec9333632fe9625d535aeb7458b6c02a68d6454fbb08ef2b068e64
+- file: ../src/config/bno086/peripheral/uart/plib_uart2.h
+  hash: da05a7ed6c39b6fc8ae114f44203e312dd5847565df0783789b7f15450d5e1ad
+- file: ../src/config/bno086/peripheral/uart/plib_uart_common.h
+  hash: 70213cd740b3ff9a591d93ad6aac9493335851db084dd862275effacdebf710d
+- file: ../src/config/bno086/stdio/xc32_monitor.c
+  hash: 34c7efa285dd6778faf01a0097bf7bebc131e7a8a0ed97bb737ff3e0a39895d2
+- file: ../src/config/bno086/toolchain_specifics.h
+  hash: b4de6e02e3e48c62f7ba233405ffdf6ef31bb971d1a7b49efa1676f45cabc1ac
+- file: ../src/main.c
+  hash: d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5

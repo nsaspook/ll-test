@@ -1,0 +1,148 @@
+configVersion: 1.0.0
+componentName: spi2
+coreVersion: 5.8.2
+device: PIC32MK0512MCJ048
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: spi2
+  type: module
+  version: ''
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: spi2
+          x: '368'
+          y: '100'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    SPIS_SLAVE_SELECT_ENABLE:
+      attributes:
+        id: SPIS_SLAVE_SELECT_ENABLE
+      children:
+      - children:
+        - attributes:
+            id: spi2
+            value: 'true'
+          type: Dynamic
+        type: Values
+      type: Boolean
+    SPI_BAUD_RATE:
+      attributes:
+        id: SPI_BAUD_RATE
+      children:
+      - children:
+        - attributes:
+            value: '3000000'
+          type: User
+        type: Values
+      type: Integer
+    SPI_BRG_VALUE:
+      attributes:
+        id: SPI_BRG_VALUE
+      children:
+      - children:
+        - attributes:
+            id: spi2
+            value: '19'
+          type: Dynamic
+        type: Values
+      type: Integer
+    SPI_DUMMY_DATA:
+      attributes:
+        id: SPI_DUMMY_DATA
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '255'
+          type: Long
+        type: Attributes
+      - children:
+        - attributes:
+            id: spi2
+            value: '255'
+          type: Dynamic
+        type: Values
+      type: Hex
+    SPI_INTERRUPT_MODE:
+      attributes:
+        id: SPI_INTERRUPT_MODE
+      children:
+      - children:
+        - attributes:
+            value: 'false'
+          type: User
+        type: Values
+      type: Boolean
+    SPI_MASTER_CLOCK:
+      attributes:
+        id: SPI_MASTER_CLOCK
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SPI_SPICON_CLK_PH:
+      attributes:
+        id: SPI_SPICON_CLK_PH
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SPI_SPICON_CLK_POL:
+      attributes:
+        id: SPI_SPICON_CLK_POL
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SPI_SPICON_MODE:
+      attributes:
+        id: SPI_SPICON_MODE
+      children:
+      - children:
+        - attributes:
+            value: '3'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SPI_SPICON_MSSEN:
+      attributes:
+        id: SPI_SPICON_MSSEN
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+    SPI_SPICON_SMP:
+      attributes:
+        id: SPI_SPICON_SMP
+      children:
+      - children:
+        - attributes:
+            value: '1'
+          type: User
+        type: Values
+      type: KeyValueSet
+  userData: {}

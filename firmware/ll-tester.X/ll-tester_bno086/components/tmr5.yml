@@ -1,0 +1,143 @@
+configVersion: 1.0.0
+componentName: tmr5
+coreVersion: 5.8.2
+device: PIC32MK0512MCJ048
+library: []
+dependency:
+- dependencyPackage: class com.microchip.mcc.harmony.HarmonyModule
+  name: tmr5
+  type: module
+  version: ''
+customDataClassName: com.microchip.utils_mh3.utils.persistence.CustomModuleData
+data:
+  attachments: {}
+  elementPosition:
+    attributes:
+      id: __ROOTVIEW
+    children:
+    - children:
+      - attributes:
+          id: tmr5
+          x: '368'
+          y: '296'
+        type: ElementPosition
+      type: ElementPositions
+    type: ComponentGraph
+  symbols:
+    SYS_TIME_COMPONENT_ID:
+      attributes:
+        id: SYS_TIME_COMPONENT_ID
+      children:
+      - children:
+        - attributes:
+            id: tmr5
+            value: ''
+          type: Dynamic
+        type: Values
+      type: String
+    TCON_REG_VALUE:
+      attributes:
+        id: TCON_REG_VALUE
+      children:
+      - children:
+        - attributes:
+            id: tmr5
+            value: '72'
+          type: Dynamic
+        type: Values
+      type: Hex
+    TIMER_32BIT_MODE_SEL:
+      attributes:
+        id: TIMER_32BIT_MODE_SEL
+      children:
+      - children:
+        - attributes:
+            value: '0'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TIMER_CLOCK_FREQ:
+      attributes:
+        id: TIMER_CLOCK_FREQ
+      children:
+      - children:
+        - attributes:
+            id: tmr5
+            value: '3750000'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TIMER_PERIOD:
+      attributes:
+        id: TIMER_PERIOD
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '4294967295'
+          type: Long
+        type: Attributes
+      - children:
+        - attributes:
+            id: tmr5
+            value: '37499'
+          type: Dynamic
+        type: Values
+      type: Long
+    TIMER_PRE_SCALER:
+      attributes:
+        id: TIMER_PRE_SCALER
+      children:
+      - children:
+        - attributes:
+            value: '3'
+          type: User
+        type: Values
+      type: KeyValueSet
+    TIMER_TIME_PERIOD_MS:
+      attributes:
+        id: TIMER_TIME_PERIOD_MS
+      children:
+      - children:
+        - attributes:
+            id: max
+          children:
+          - type: Value
+            value: '1145324.6'
+          type: Float
+        type: Attributes
+      - children:
+        - attributes:
+            id: tmr5
+            value: '0.3'
+          type: Dynamic
+        - attributes:
+            value: '10.0'
+          type: User
+        type: Values
+      type: Float
+    TIMER_WIDTH:
+      attributes:
+        id: TIMER_WIDTH
+      children:
+      - children:
+        - attributes:
+            id: tmr5
+            value: '32'
+          type: Dynamic
+        type: Values
+      type: Integer
+    TMR_PRESCALER_VALUE:
+      attributes:
+        id: TMR_PRESCALER_VALUE
+      children:
+      - children:
+        - attributes:
+            id: tmr5
+            value: '16'
+          type: Dynamic
+        type: Values
+      type: Integer
+  userData: {}
