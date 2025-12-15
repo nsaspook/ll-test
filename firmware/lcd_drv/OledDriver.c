@@ -107,9 +107,9 @@ uint8_t * pbOledFontUser;
 uint8_t __attribute__((address(BANK1), coherent)) rgbOledBmp0[cbOledDispMax]; // two display buffers for page flipping
 uint8_t __attribute__((address(BANK1 + cbOledDispMax), coherent)) rgbOledBmp1[cbOledDispMax];
 #ifdef USE_DMA
-static uint8_t __attribute__((address(BANK1 - 8), coherent)) rgbOledBmp_blank[4] = {0x00, 0x00, 0x00, 0x00}; // 32-bit frame-buffer clearing variable
+static uint8_t __attribute__((address(BANK1 - 16), coherent)) rgbOledBmp_blank[4] = {0x00, 0x00, 0x00, 0x00}; // 32-bit frame-buffer clearing variable
 #endif
-volatile uint8_t __attribute__((address(BANK1 - 16), coherent)) rgbOledBmp_page[5];
+volatile uint8_t __attribute__((address(BANK1 - 32), coherent)) rgbOledBmp_page[5];
 #endif
 
 #ifdef __32MZ1025W104132__	// bank 2 for this CPU
