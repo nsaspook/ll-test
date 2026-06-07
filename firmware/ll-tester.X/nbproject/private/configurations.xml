@@ -58,7 +58,7 @@
       </runprofile>
     </conf>
     <conf name="bno086" type="2">
-      <platformToolSN>noToolString</platformToolSN>
+      <platformToolSN>:=MPLABComm-USB-Microchip:=&lt;vid>04D8:=&lt;pid>903F:=&lt;rev>0100:=&lt;man>Microchip Technology Incorporated:=&lt;prod>MPLAB ICD 5:=&lt;sn>020054102RYN000454:=&lt;drv>x:=&lt;xpt>b:=end</platformToolSN>
       <languageToolchainDir>/ldrv/opt/microchip/xc32/v5.00/bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
